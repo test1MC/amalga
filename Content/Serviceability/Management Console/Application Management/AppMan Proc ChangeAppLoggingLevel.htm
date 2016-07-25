@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="702" MadCap:lastWidth="1085" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.20 - Development: under 50%,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Change application service logging levels</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>You can change the diagnostic or performance logging levels of an application's services through the <MadCap:variable name="FeatureName.Management Console second use" />. For information on the available <MadCap:variable name="BrandingHSG.Amalga Short" /> logging levels, see <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>. </p>
+        <p>To change a service logging level through <MadCap:variable name="BrandingMS.Doors PowerShell" />, use the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting</MadCap:xref> cmdlet. For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short" /> PowerShell cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaAppAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To change an application service logging level</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../../Snippets/procst-SelectAppGUI.flsnp" /> <![CDATA[ ]]></li>
+            <li>In the Application Configuration Tasks pane, click <span class="UIElementAction">Configure Settings</span>. The Configure Application Settings pane will open to display the configurable application and service settings.</li>
+            <li>
+                <p>Click the service DiagnosticsLogLevel or PerformanceLogLevel setting you wish to configure.</p>
+            </li>
+            <li>Click the down arrow next to the current setting and select the desired logging setting from the drop-down list.</li>
+            <li>Click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Other resources </p>
+        <p>
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

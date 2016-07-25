@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3895" MadCap:lastWidth="534" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Prepare all <MadCap:variable name="BrandingHSG.Amalga Short" /> hosts</h1>
+        <p class="warning">These steps are not optional and must be completed on each server.</p>
+        <p>The following steps must be repeated for each logical host (server) in your <MadCap:variable name="BrandingHSG.Amalga Short" /> environment. Failure to complete any of these steps will make the installation unstable and possibly unusable. </p>
+        <h2>Copy installation files</h2>
+        <ol>
+            <li>Log in to the server</li>
+            <li>Create a folder on the desktop called 'AmalgaInstallationFiles'</li>
+            <li>Copy the contents of your distribution CD into the new folder</li>
+        </ol>
+        <h2>Activate IIS </h2>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Click 'Roles'</li>
+            <li>Click 'Add Roles'</li>
+            <li>Click 'Web Server (IIS)'</li>
+            <li>Click 'Install'</li>
+            <li>Follow the wizard selecting the default options</li>
+        </ol>
+        <h2>  Ensure ASP.NET is registered to <MadCap:variable name="BrandingMS.IIS 6,0 second" /></h2>
+        <ol>
+            <li>Open a command prompt with Administrator privileges</li>
+            <li>Navigate to c:\Doors\Microsoft.NET\Framework64\v4.0.30319\</li>
+            <li>Type 'aspnet_regiss.exe -i 'and press Enter</li>
+        </ol>
+        <h2>Download and install Doors Installer 4.5</h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=8483</li>
+            <li>Select the file from the list appropriate for your operating environment.</li>
+            <li>Save the file to the server</li>
+            <li>Double-click the installer setup file click 'Run'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Native Client</h2>
+        <p class="note">Your system may already have the latest version of the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Native Client installed. If so, ignore this step and continue to the Command Line Utilities installation step.</p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/search.aspx?q=sql%20server%20native%20client</li>
+            <li>Scroll down to the Microsoft SQL Server 2008 Native Client</li>
+            <li>Click on the file appropriate for your environment and download it to your server</li>
+            <li>Double-click the downloaded file</li>
+            <li>Click 'Run'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities</h2>
+        <p class="note">Your system may already have the latest version of the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities installed. If so, ignore this step and continue to the<MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> installation step.</p>
+        <ol>
+            <li>If you have not already done so, navigate to http://www.microsoft.com/download/en/search.aspx?q=sql%20server%20native%20client</li>
+            <li>Scroll down to the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities</li>
+            <li>Click on the file appropriate for your environment and download it to your server</li>
+            <li>Double-click the downloaded file</li>
+            <li>Click 'Run'</li>
+        </ol>
+        <h2>Activate the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot" /></h2>
+        <p class="note">Both <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot" /> and <MadCap:variable name="BrandingMS..NET4.0" /> must be installed on all Amalga machines for full functionality.</p>
+        <p class="note">Your system must already have the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable> installed. To enable further functionality, <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> must also be installed. </p>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Right click 'Features'</li>
+            <li>Click 'Add feature'</li>
+            <li>Select '.NET Framework 3.5.1 Features' and click 'Install'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable></h2>
+        <p class="note">Both <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot" /> and <MadCap:variable name="BrandingMS..NET4.0" /> must be installed on all Amalga machines for full functionality.</p>
+        <p class="note">Your system must already have the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot" /> installed. To enable further functionality, <MadCap:variable name="BrandingMS..NET4.0" /> must also be installed.         <![CDATA[ ]]></p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=17851</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the wizard accepting the default options as they are presented</li>
+        </ol>
+        <h2>Register <MadCap:variable name="BrandingMS.ASP.NET second use" /></h2>
+        <ol>
+            <li>Click Start</li>
+            <li>Locate the Command Prompt</li>
+            <li>Right click Command Prompt and click 'Run as administrator'</li>
+            <li>Navigate to c:\Doors\microsoft.net\framework\v4.0.30319</li>
+            <li>Enter the following command and press enter<ol><li class="InputText">aspnet_regiis.exe -i</li></ol></li>
+            <li>Type 'Exit' to close the command prompt</li>
+        </ol>
+        <h2>Install and enable Microsoft Distributed Transaction Coordinator (DTC)</h2>
+        <ol>
+            <li>Open the Start menu</li>
+            <li>In the search box type DCOMCNFG and press enter</li>
+            <li style="font-weight: normal;">In the console tree, click to expand 'Component Services', then expand 'Computers', then 'My Computer', and then 'Distributed Transaction Coordinator'</li>
+            <li>Right click 'Local DTC' and select 'Properties'</li>
+            <li>Click the 'Security' tab</li>
+            <li>Ensure only the following values are selected (note that these are not necessarily the default values)<ul><li>Network DTC Access</li><li>Allow Inbound</li><li>Allow Outbound</li><li>Mutual Authentication Required</li><li>Enable SNA LU 6.2 Transactions</li></ul></li>
+            <li>Click 'Ok'</li>
+            <li>Allow the service to be stopped and restarted when prompted. Click 'Ok' when a window shows that the service has been restarted.</li>
+        </ol>
+        <h2>Install Doors Identity Foundation </h2>
+        <p class="warning">Be sure to restart each logical host before beginning this procedure!</p>
+        <p class="warning">Be sure to choose one of the two Doors6.1 versions available. Version 6.0 is not suitable for an <MadCap:variable name="BrandingHSG.Amalga Short" /> installation.</p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=17331</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the instructions on the screen</li>
+        </ol>
+        <h2>Install <MadCap:variable name="BrandingMS.Visual C++ 2010 Redistributable Package" /></h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=5555</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the installation wizard selecting the default values</li>
+        </ol>
+        <h2>Disable Internet Explorer Enhanced Security</h2>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Click 'Server Manager'</li>
+            <li>Click 'Configure IE ESC' on the right-hand side of the screen</li>
+            <li>Select 'Off' under both Administrators and Users</li>
+            <li>Click OK</li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

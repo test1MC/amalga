@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1010" MadCap:lastWidth="963" MadCap:fileTags="Status.40 - Ready for Tech Review,TopicOwner.v-wpete,ReleaseTarget.TAP,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Message conventions</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the elements that define a message convention for a <MadCap:variable name="FeatureName.Amalga Framework second use" /> messaging group.</p>
+        <p>Every page messaging group depends on a message-handling convention in order to allow its participants to share data. For all groups except <span class="codeEntity">CommonContext</span>, the convention must be specified by the developer, and should be created along with the message group itself.</p>
+        <p>For the <span class="codeEntity">CommonContext</span> group, the message convention is an implementation of the HL7 CCOW standard. For more information on the requirements for a <b>CommonContext</b> message, see <a href="AF_Con_PageMessagingDefineDataItem.htm">Common context message data</a>.</p>
+        <p>A message-handling convention should specify how to set and handle the following values:</p>
+        <ul>
+            <li>Group name</li>
+            <li>Source ID</li>
+            <li>Topic</li>
+            <li>Payload</li>
+        </ul>
+        <h4>Group name</h4>
+        <p>The name of the group should be unique, and should be known to any control that needs to join the group. It is good practice to prefix the name of each group with a developer-specific value (for example, "MyName.MyApplication.Group1") in order to prevent run-time name collisions.</p>
+        <h4>Source ID<br></br></h4>
+        <p>The source ID is always the messaging participant that created and sent the message to the group, unless the message was sent by a non-participant using the <span class="codeEntity">MessagingManager.Send()</span> function. Messages sent using the messaging manager are anonymous. </p>
+        <p>Most message-handling conventions do not filter messages by source ID, but it is possible to do so.</p>
+        <h4>Topic</h4>
+        <p>The topic of a message is specifically intended to provide a non-payload value that developers can use to filter incoming messages. Deciding which topic values will be used to identify different kinds of messages within the message group is a central part of defining a message handling convention.</p>
+        <h4>Payload</h4>
+        <p>The payload of a message is a structured JavaScript object, and has no additional restrictions beyond the limitations imposed by that type. The structure of the message payload should fit the kind of data that the message needs to carry. These are some alternatives:</p>
+        <ul>
+            <li>A single string value with a predefined key name. If the string value is an XML&#160;fragment, this provides a simple wrapper for passing XML data.</li>
+            <li>A standard key-value pair with one or more predefined keys.</li>
+            <li>A nested, structured JavaScript object, in which the value of each key-value pair may contain a string or another structured object. This object provides a way to send data in a hierarchical structure. The internal representation of <span class="Label">CommonContext </span>messages uses this approach.</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingParts.htm">Page messaging</a>
+        </p>
+        <p>&#160;</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1358" MadCap:lastWidth="274" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.70 - Complete,EditingTags.4 - Ready for Writer">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">View or update a value set</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="value sets, viewing;value sets, updating;updating value sets;viewing value sets" />This topic describes how to use the ValueSetUpdateScript to view or update a value set.</p>
+        <p>After a value set is created, you can view its properties and update any of the properties using the ValueSetUpdateScript.sql script located in the Samples\DataExplorer folder of the installation media.</p>
+        <p class="LabelforProcedures">To view a value set</p>
+        <ol>
+            <li>
+                <p>Provide a value for either the @ValueSetID or @ValueSetName or both. Leave all other variables as empty strings.</p>
+                <p class="note">You can only view one value set at a time.</p>
+            </li>
+            <li class="note">Run the script to retrieve and display data associated with the value set.</li>
+        </ol>
+        <p class="LabelforProcedures">To modify a value set</p>
+        <ol>
+            <li>
+                <p>Provide a value for either the @ValueSetID or @ValueSetName, or both.</p>
+                <p class="note">
+                    <MadCap:annotation MadCap:createDate="2012-02-23T14:20:42.1387578-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Is it OK to \r\n&quot;stack&quot; notes?" MadCap:editor="v-kathen" MadCap:editDate="2012-03-05T15:25:34.2774443-06:00">You</MadCap:annotation> can only update one value set at a time.</p>
+                <p class="note">If both a name and ID pattern are supplied, the value set must match both for the update to occur.</p>
+            </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="note">In @UpdateValueSet, enter any single character; for example, <span class="InputText">1</span>.</li>
+            <li class="note">Enter values for any variables that you want to change, including the query itself.</li>
+            <li class="note">
+                <p>Run the script.</p>
+                <p>Basic information about the value set and properties modified will be displayed.</p>
+            </li>
+        </ol>
+        <p class="LabelforProcedures">To remove a value set</p>
+        <ul>
+            <li>
+                <p>Use the ValueSetUpdateScript to remove all entity attribute bindings.</p>
+                <p class="note">All lists using the value set will continue to work.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

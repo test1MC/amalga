@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="743" MadCap:lastWidth="629" MadCap:conditions="Features.Imaging,Region.US" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Image Delivery server" /> application instance name resolution operation</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Imaging Registry Service:IDA name resolution" />This topic describes how the <MadCap:variable name="Imaging.Imaging Registry and Document server" /> application (<MadCap:variable name="Imaging.IRDA" />) can resolve the instance name of the <MadCap:variable name="Imaging.Image Delivery server" /> application (IDA) that provides for image queries.</p>
+        <p>You can use the <MadCap:variable name="Imaging.IRDA" /> to retrieve the instance name of the IDA instance for a given site ID.</p>
+        <p class="h7">GetImageDeliveryApplicationInstanceName</p>
+        <p class="code">string GetImageDeliveryApplicationInstanceName(string <span class="InputTextVariable">SiteID</span>)</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 100px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="InputTextVariable">SiteID</td>
+                    <td>The unique identifier of a remote site. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For the method, GetImageDeliveryApplicationInstanceName, see <MadCap:xref href="../../API/Ref/Microsoft.Amalga.Imaging.Registry/M_ImagingRegistryService_GetImageDeliveryApplicationInstanceName_1_d6a6689c.htm">Syntax on page 1</MadCap:xref>. For all members of the IRS see <MadCap:xref href="../../API/Ref/Microsoft.Amalga.Imaging.Registry/AllMembers_T_ImagingRegistryService.htm">Constructors on page 1</MadCap:xref>.</p>
+        <p class="h7">Operation </p>
+        <ol>
+            <li>The client queries the <MadCap:variable name="Imaging.IRDA" /> for the <MadCap:variable name="Imaging.IDA" /> configuration with the following interface:<p class="code">string GetImageDeliveryApplicationInstanceName(string <span class="Placeholder">SiteID</span>)</p></li>
+            <li>The <MadCap:variable name="Imaging.IRDA" />uses the discovery functionality of the topology service to find all installed IDA instances. The <MadCap:variable name="Imaging.IRDA" /> returns <span class="Label">InstanceName </span>.</li>
+            <li>The client uses the returned <span class="Label">InstanceName </span> to resolve the to resolve the SOAP endpoint of the <MadCap:variable name="Imaging.IDA" />.</li>
+        </ol>
+        <p class="h7">Summary</p>
+        <p>The client can use the returned <span class="Label">InstanceName </span>to resolve the hosted application endpoint through the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology web service for getting a reference to query the SOAP endpoint.</p>
+        <p>All of the calls are on the same local network. </p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="MIM-LND-Introduction to the IRS.htm"> IRDA on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../Deployment MIM/TASK-MIM-Dep-IDS.htm">Deploy Image Delivery Service on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

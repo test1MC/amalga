@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1229" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.15 - Blocked">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Update-AmServiceEncryptionCertificate</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>  The Update-AmServiceEncryptionCertificate cmdlet updates the service encryption certificate associated with the endpoints of an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component. This certificate is also used as the token encryption certificate in <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-09T12:56:08.2738699-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="remarks from Pritvi input 3/9" MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:56:14.5868699-08:00">The </MadCap:annotation>SSL certificate of the logical host to which a service is assigned is used as the service and token encryption certificate.</p>
+        <h2 MadCap:conditions="">Syntax</h2>
+        <p class="Syntax">Update-AmServiceEncryptionCertificate -InstanceName &lt;String&gt; -InstanceType &lt;String&gt; -EncryptionCertificate &lt;String&gt;</p>
+        <h2 MadCap:conditions="">Parameter descriptions</h2>
+        <p class="h7">[-InstanceName] &lt;string&gt;</p>
+        <p>Takes the name of an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component instance.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Name of an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component instance.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-InstanceType] &lt;string&gt;</p>
+        <p>Takes the type of instance. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>ServiceInstance</p>
+                        <p>ComponentInstance</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-EncryptionCertificate] &lt;string&gt;</p>
+        <p>Takes the encryption certificate, encoded as a base64 string. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Encryption certificate encoded as a base64 <MadCap:annotation MadCap:createDate="2012-03-09T12:55:13.1628699-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="the sample from Pritvi 3/9 shows an example of encoding a certificate to get the $cert64 seen in the example below." MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:55:50.5058699-08:00">string</MadCap:annotation>. Example: $cert64</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="">Example</p>
+        <p class="InputText">Update-AmServiceEncryptionCertificate -InstanceName TopologyService -InstanceType ComponentInstance -EncryptionCertificate $cert64</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+    </body>
+</html>

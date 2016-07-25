@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,TopicType.Procedure,Status.70 - Complete,Personas.Carlos: IT Admin,TopicOwner.v-ssiera" MadCap:lastBlockDepth="7" MadCap:lastHeight="7727" MadCap:lastWidth="377.3333" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure applications</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The configuration steps should be completed after installing the relevant applications.</p>
+        <h2><MadCap:variable name="BrandingMS.SharePoint" /> application configuration</h2>
+        <p class="note">Perform this step after installing the Framework application (number 15 in the application sequence).</p>
+        <p><MadCap:variable name="BrandingMS.SharePoint" /> applications need to configured one time to bind to their lower tier services.</p>
+        <p class="LabelforProcedures">To configure <MadCap:variable name="BrandingMS.SharePoint" /> application</p>
+        <ol>
+            <li>
+                <p>Open a browser and navigate to https://&lt;FQDN&gt;:8080/staff.</p>
+                <p class="note">In the example topology for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the fully qualified domain name (FQDN) would correspond to AppsLogicalHost2, and the port number is the default. If you selected a different port number during installation, use that port number in the URL.</p>
+            </li>
+            <li>Click <span class="UIElementAction">Click here to fix it</span> in the error message. It is the only link available.</li>
+            <li>Select the application in the drop-down list. Only one application will be available.</li>
+            <li>Click <span class="UIElementAction">Save</span>.</li>
+            <li>Click <span class="UIElementAction">Change</span> in the resulting <MadCap:annotation MadCap:createDate="2011-11-16T19:53:47.7913482-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="for post-Refresh: what is a &quot;light box&quot;?\r\n\r\nKH- Yes, I asked that myself. It is a legitimate UI gadget of some sort. Unfortunately, I don't have the details. This whole procedure is worth a look after CTP" MadCap:editor="v-keith" MadCap:editDate="2011-11-17T22:14:17.2129851-08:00">light box</MadCap:annotation>.</li>
+            <li>In the resulting error message, click <span class="UIElementAction">Click here to return</span>.</li>
+        </ol>
+        <h2>Notification configuration</h2>
+        <p class="note">Perform this step after installing the notification application (number 12 in the application install sequence).<br />Notification configuration is only required in multi-server scenarios for <MadCap:variable name="BrandingHSG.Amalga Short" />. The single-server script referenced in <MadCap:xref href="Install Proc SingleBox Installation.htm" target="" title="" alt="">Single server platform installation</MadCap:xref> executes this script automatically.</p>
+        <p>This step provisions standard notification type definitions required by the<MadCap:variable name="FeatureName.Amalga Framework application" />. The<MadCap:variable name="FeatureName.Amalga Framework application" />won’t work correctly without these definitions. The script inserts rows into the NotificationDefinitions table in the amalga_private_db_inst_NotificationApplication_Ins1 data base.</p>
+        <p class="LabelforProcedures">To provision notifications</p>
+        <ol>
+            <li>Start<MadCap:variable name="BrandingMS.Doors PowerShell" />as an administrator.&#160;Click<span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>
+                <p>Run the following command where &lt;InstallationMedia&gt; represents the drive containing the installation media, or the folder where the installation media was copied.</p>
+                <p class="InputTextPara">cd "&lt;InstallationMedia&gt;\Samples\AppFramework"</p>
+            </li>
+            <li>
+                <p>Run the InstallNotificationDefintions.sql script by executing the following command.</p>
+                <p class="InputTextPara">sqlcmd -S $AmalgaComputerName -d "amalga_private_db_inst_NotificationApplication_Ins1" -i .\InstallNotificationDefinitions.sql</p>
+            </li>
+        </ol>
+        <h2>Data Connector database access configuration</h2>
+        <p>Data Connector service needs access to the ClinicalData database.</p>
+        <p class="LabelforProcedures">To provide Data Connector database access</p>
+        <ol>
+            <li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> (SSMS)</li>
+            <li>In the Object Explorer pane, expand <span class="UIElementAction">Security </span>.</li>
+            <li>Expand <span class="UIElementAction">Logins</span>.</li>
+            <li>Right-click the domain\machine that is hosting the Data Connector and click <span class="UIElementAction">Properties</span>.</li>
+            <li>In the navigation pane of the Login Properties window, select <span class="UIElementAction">User Mapping</span>.</li>
+            <li>
+                <p>Select the <span class="UIElementAction">ClinicalData </span>database in the upper content window, and check <span class="UIElementAction">Public</span> in the roles content window.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">OK </span> to finish.</p>
+            </li>
+        </ol>
+        <h2>Data pipeline database configuration</h2>
+        <p class="note">Perform these procedures after installing the data pipeline, materializer, and terminology applications.</p>
+        <p>Database Doors authentication must be allowed for data pipeline applications to connect to the database.  Two types of topologies (single server and multiple server) can be configured for this, and the steps are different for each.</p>
+        <p>This is a onetime setup that will allow all data pipeline applications in the table below to properly access <MadCap:variable name="BrandingMS.SQL Server 2008" />.</p>
+        <h3>Single server configuration</h3>
+        <p>Use the following procedure to allow data pipeline applications appropriate access.</p>
+        <p class="LabelforProcedures">To enable <MadCap:variable name="FeatureName.data pipeline" /> application database access on a single server</p>
+        <ol>
+            <li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio" />&#160;(SSMS)</li>
+            <li>In the Object Explorer pane, expand <span class="UIElementAction">Security </span>and then <span class="UIElementAction">Logins </span>.</li>
+            <li>Right-click <span class="UIElementAction">NT Authority\Network Service</span> and select <span class="UIElementAction">Properties</span>.</li>
+            <li>In the navigation pane, select <span class="UIElementAction">User Mapping</span>.</li>
+            <li>
+                <p>Using the application database access matrix below, select the database to change in the upper content window, and modify the database role membership following in the lower content window to match the permissions in the matrix.</p>
+                <p>Using the ClinicalData database as an example, select the ClinicalData database, and select the db_datareader,db_datawriter, and db_owner options.</p>
+            </li>
+            <li>When you have configured all three databases, click <span class="UIElementAction">OK </span> to finish.</li>
+        </ol>
+        <h3>Multiple server  configuration</h3>
+        <p>Use the following procedure to allow data pipeline applications appropriate access to a multiple server implementation.</p>
+        <p class="LabelforProcedures">To enable <MadCap:variable name="FeatureName.data pipeline" /> application database access on multiple servers</p>
+        <ol>
+            <li>Identify all the servers where you will run the applications listed in the application database access matrix (AppsLogicalHost1 in the <MadCap:xref href="Install Proc MultiBox Installation.htm#Example" target="" title="" alt="">Example installation Topology</MadCap:xref>).</li>
+            <li>
+                <p>Using Active Directory, create a domain or local security group to contain the servers identified in step 1. </p>
+                <p class="note"> A local security group requires adding the security group to all nodes in a cluster (active/passive).</p>
+            </li>
+            <li>Add the computer accounts for the servers identified in step 1 to the security group.</li>
+            <li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> (SSMS).</li>
+            <li>In the Object Explorer pane, expand <span class="UIElementAction">Security</span>.</li>
+            <li>Right-click <span class="UIElementAction">Logins </span>and then select <span class="UIElementAction">New login</span>.</li>
+            <li>Enter the domain\name of the security group in the <span class="UIElementAction">Login name</span> field and click <span class="UIElementAction">OK</span>.</li>
+            <li>In the SSMS Object Explorer pane, right-click the newly created login representing the security group, and then select <span class="UIElementAction">Properties</span>.</li>
+            <li>In the navigation pane of the Login Properties window, select <span class="UIElementAction">User Mapping</span>.</li>
+            <li>
+                <p>Using the application database access matrix below, select the database to change in the upper content window, and modify the database role membership in the lower content window to match the permissions in the matrix.</p>
+                <p>Using the ClinicalData database as an example, select the ClinicalData database, and select the db_datareader,db_datawriter, and db_owner options.</p>
+                <p>When you have configured all three databases, click <span class="UIElementAction">OK </span> to finish.</p>
+            </li>
+        </ol>
+        <h4><a name="Applicat"></a>Application database access matrix</h4>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Application</th>
+                    <th>ClinicalData database</th>
+                    <th>MessageQueue database</th>
+                    <th>Terminology database</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FeedAcquisition</td>
+                    <td>&#160;</td>
+                    <td>db_datareader, db_datawriter</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>MessageShredder</td>
+                    <td>db_datareader, db_datawriter, db_owner</td>
+                    <td>db_datareader</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>DataParser</td>
+                    <td>db_datareader, db_datawriter, db_owner</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Materializer</td>
+                    <td>db_datareader, db_datawriter, db_owner</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Terminology Service</td>
+                    <td>db_datareader, db_datawriter</td>
+                    <td>&#160;</td>
+                    <td>db_datareader</td>
+                </tr>
+                <tr>
+                    <td>EnterpriseId</td>
+                    <td>db_datareader, db_datawriter</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Framework application configuration</h2>
+        <p>The Framework application contains a virtual schema in which two entities are not bound by default. Binding these entities is required only if you plan to use the PatientSearch function of the Application Framework.</p>
+        <p class="note">PatientSearch is required if you plan to use the Patient Portal. PatientSearch is a key component of Patient Matching.</p>
+        <ol>
+            <li>The PatientSearch entity can be bound to either Common.beta.Patient, or Common.beta.Encounter to access all non-derived attributes. PatientSearch contains an attribute for the last four numbers of a Social Security Number (SSN). If the last four SSN numbers is a desired search criteria, that field must be derived by a data parser and bound to the PatientSearch entity.</li>
+            <li>
+                <p>The DemographicDummyValue entity contains attribute and value fields. This entity is optional and can be used to eliminate matches based on dummy attribute-value pairs (constants) such as SSN = “999-99-9999” or LastName = “Doe”. To use this entity, you must create a table or view that conjoins tables with the constants you want to eliminate from a patient search, such as dummy SSN values, dummy last names values, or dummy driver’s license numbers. After that table or view is created, it should then be bound to the DemographicDummyValue entity.</p>
+            </li>
+        </ol>
+        <p>For procedures on how to bind data entities, <MadCap:annotation MadCap:createDate="2012-01-04T07:51:55.5367703-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="FYI. Changed xref to point to landing page with list of procedures; the previous topic is being retired." MadCap:editor="v-padenc" MadCap:editDate="2012-01-04T07:52:18.1100274-08:00">see</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBinding.htm" target="" title="" alt="">Entity binding configuration</MadCap:xref> (available in Amalga 3.0 CTP CHM file).</p>
+        <h2><MadCap:variable name="BrandingHSG.HealthVault" />Connector configuration</h2>
+        <p><MadCap:variable name="BrandingHSG.HealthVault" />Connector service settings need to be adjusted to reflect the correct<MadCap:variable name="BrandingHSG.HealthVault" />application id and certificate information. This enables Amalga to communicate with the external<MadCap:variable name="BrandingHSG.HealthVault" />system. Two actions are required to configure the<MadCap:variable name="BrandingHSG.HealthVault" />service settings.</p>
+        <ol>
+            <li>Find the value of the subject field of the certificate described in the <MadCap:xref alt="" href="Prereq Proc Certificates.htm" target="" title="">Certificate prerequisites</MadCap:xref> section as<MadCap:xref alt="" href="Prereq Proc Certificates.htm#HealthVaultAppCert" target="" title=""> HealthVault Application (HealthVaultAppCert)</MadCap:xref>. This is the same certificate referenced during the installation of the HealthVaultSts feature.</li>
+            <li>Run Microsoft PowerShell cmdlets to configure the<MadCap:variable name="BrandingHSG.HealthVault" />connector service settings.</li>
+        </ol>
+        <p class="LabelforProcedures">To find the subject of the HealthVault Application certificate</p>
+        <ol>
+            <li>Open the<MadCap:variable name="BrandingMS.Microsoft" />Management Console (MMC)<ol style="list-style-type: lower-alpha;"><li>From Start, search for and start mmc.exe.</li><li>Click <span class="UIElementAction">File</span>, and then click <span class="UIElementAction">Add/Remove Snap-in</span>.</li><li>Select <span class="UIElementAction">Certificates</span> from <span class="UIElementAction">Available snap-ins</span>, and then click <span class="UIElementAction">Add</span>.</li><li>Select <span class="UIElementAction">Computer account</span>, and then click <span class="UIElementAction">Next</span>.</li><li>Select <span class="UIElementAction">Local computer</span>, and then click <span class="UIElementAction">Finish</span>.</li><li>Click <span class="UIElementAction">OK</span>.</li><li>In the tree pane, expand <span class="UIElementAction">Certificates (Local Computer)</span>.</li></ol></li>
+            <li>Copy the subject of the certififcate.<ol style="list-style-type: lower-alpha;"><li>In the MMC tree pane, expand the appropriate container node.</li><li>Click the <span class="UIElementAction">Certificates</span> child node. This displays the certificates in the content pane of MMC.</li><li>In the content pane, double-click the appropriate private key (.pfx) file.</li><li>Click the <span class="UIElementAction">Details</span> tab.</li><li>In the field grid, select the row in which the Field column is set to Subject.</li><li><p>Copy the contents of the subject field. The subject field should be in the following form.</p><p class="code" style="font-size: 10pt;">CN=GenericApp-42500dec-6730-4c97-9cd1-896ae69c91f2</p></li></ol></li>
+        </ol>
+        <p class="LabelforProcedures">To configure the <MadCap:variable name="BrandingHSG.HealthVault" />Connector settings</p>
+        <ol>
+            <li>Prepare<MadCap:variable name="BrandingMS.Doors PowerShell" />.<ol style="list-style-type: lower-alpha;"><li>Start Doors PowerShell as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li><li><p>Run the following commands to prepare<MadCap:variable name="BrandingMS.Doors PowerShell" />.</p><p class="InputTextPara">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell'</p><p class="InputTextPara">Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</p></li></ol></li>
+            <li>
+                <p>Run the following cmdlets in order to configure the<MadCap:variable name="BrandingHSG.HealthVault" />Connector settings. Replace the<span class="Placeholder">placeholders</span>with variables appropriate for your installation. Definitions of the placeholders are in the table following the commands.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">InstanceName</span>&gt; -SettingName HVApplicationId -SettingValue<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">HVApplicationId</span>&gt;</li>
+                    <li>
+                        <p>Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">InstanceName</span>&gt; -SettingName HVCertSubject -SettingValue<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">HVCertSubject</span>&gt;</p>
+                    </li>
+                    <li>
+                        <p>Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">InstanceName</span>&gt; -SettingName HVServiceUrl -SettingValue<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">HVServiceUrl</span>&gt;</p>
+                    </li>
+                    <li>
+                        <p>Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName<br MadCap:conditions="Production.PrintOnly" />&lt;<span class="Placeholder">InstanceName</span>&gt; -SettingName HVShellUrl -SettingValue &lt;<span class="Placeholder">HVShellUrl</span>&gt;</p>
+                    </li>
+                </ol>
+                <table style="caption-side: top;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Placeholder</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>InstanceName</td>
+                            <td>Yes</td>
+                            <td>The instance name that was used to resolve the HealthVaultConnectorService manifest during installation. For more information, see <MadCap:xref alt="" href="Install Proc Application manifest resolution.htm#Applicat" target="" title="">Application manifest resolution procedure</MadCap:xref>.</td>
+                        </tr>
+                        <tr>
+                            <td>HVApplicationId</td>
+                            <td>Yes</td>
+                            <td>The application ID obtained during the preparation for <MadCap:variable name="BrandingHSG.HealthVault" />Connector installation. For more information, see<MadCap:xref alt="" href="Install Nav HVConnect Prereqs.htm" target="" title=""> Connection prerequisites</MadCap:xref>.</td>
+                        </tr>
+                        <tr>
+                            <td>HVCertSubject</td>
+                            <td>Yes</td>
+                            <td>The certificate subject obtained in the previous procedure.</td>
+                        </tr>
+                        <tr>
+                            <td>HVServiceUrl</td>
+                            <td>No</td>
+                            <td>The <MadCap:variable name="BrandingHSG.HealthVault" /> service URL. This is not required if you are using <MadCap:variable name="BrandingHSG.HealthVault" /> PPE.<br />If you are using <MadCap:variable name="BrandingHSG.HealthVault" /> RD, provide your existing service URL, or contact your <MadCap:variable name="BrandingHSG.HealthVault" /> operations representative.</td>
+                        </tr>
+                        <tr>
+                            <td>HVShellUrl</td>
+                            <td>No</td>
+                            <td>The <MadCap:variable name="BrandingHSG.HealthVault" /> shell URL. This is not required if you are using <MadCap:variable name="BrandingHSG.HealthVault" /> PPE.<br />If you are using <MadCap:variable name="BrandingHSG.HealthVault" /> RD, provide your existing shell URL, or contact your <MadCap:variable name="BrandingHSG.HealthVault" /> operations representative.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="Label">Tasks</p>
+        <p>
+            <MadCap:xref href="Install Proc Application manifest resolution.htm" target="" title="" alt="">Resolve application manifests</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Install Proc App Verification.htm" target="" title="" alt="">Verify application installation</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Install Ref Appendix B PowerShell Ref.htm" target="" title="" alt=""> installation Doors PowerShell reference</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="Install Con Applications Mini-toc.htm" target="" title="" alt="">Install applications process overview</MadCap:xref>
+        </p>
+    </body>
+</html>

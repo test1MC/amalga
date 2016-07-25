@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1206" MadCap:lastWidth="721" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Condition element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Condition element" />Declares a condition under which the specified transform action is applied.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+             &lt;EnterpriseId&gt;
+                &lt;EnterpriseIdAction Action="<i>String</i>" ArchorTable="<i>String</i>"&gt;<b>
+                   &lt;Condition&gt;</b>
+                      &lt;Action&gt;...&lt;/Action&gt;
+                      &lt;InputParameters /&gt;<b>
+                   &lt;/Condition&gt;</b>
+                &lt;/EnterpriseIdAction&gt;	
+             &lt;/EnterpriseId&gt;
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_EnterpriseIdAction.htm">EnterpriseIdAction</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Action.htm">Action</a>, <a href="DI_XML_Manifest_InputParameter.htm">InputParameters</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Condition</span> element performs a specified action with the input parameters that you supply. If the condition is met, the parameter values are included in the root action. Specify only one action for each condition. If you intend to perform multiple actions, declare multiple conditions.</p>
+        <p>Declare the <span class="MarkupLanguageElements">Condition</span> element in the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p>
+        <p>The following example determines if values for the EventLocation and EventCode parameters are equal.</p><pre xml:space="preserve">&lt;Condition&gt;
+        &lt;Action&gt;Equals&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter Name="EventLocation" Label="MSH_9_2" ReferenceTable="MSH" Source="ShreddedInput"/&gt;
+            &lt;Parameter Name="EventCode" Label="A43" Source="Constant"/&gt;
+        &lt;/InputParameters&gt;
+ &lt;/Condition&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">&#160;</a>
+        </p>
+    </body>
+</html>

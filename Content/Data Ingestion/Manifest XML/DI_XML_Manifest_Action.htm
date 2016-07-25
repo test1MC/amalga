@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1952" MadCap:lastWidth="842" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:ignoredWords="FeedConfigurationXML" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Action element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Action element" />Declares a transform action, a condition action to evaluate, or an action in response to an error.</p>
+        <h4>Syntax</h4>
+        <p><span class="Label">FeedConfigurationXml</span> (See the <a href="DI_XML_Manifest_Transform.htm">Transform</a> and <a href="DI_XML_Manifest_Condition.htm">Condition</a> elements for complete syntax.)</p><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Transform&gt;&gt;<b>
+   &lt;Action&gt;...&lt;/Action&gt;</b>
+&lt;/Transform&gt;
+                   
+&lt;Condition&gt;<b>
+   &lt;Action&gt;...&lt;/Action&gt;</b>
+&lt;/Condition&gt; ]</span></p></pre>
+        <p><span class="Label">ErrorHandlingConfigurationXml</span> (See the <a href="DI_XML_Manifest_ErrorHandlingPolicy.htm">ErrorHandlingPolicy</a> element for complete syntax.)</p><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;ErrorHandlingPolicy&gt;<b>
+   &lt;Action&gt;...&lt;/Action&gt;</b>
+&lt;/ErrorHandlingPolicy&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Condition.htm">Condition</a>, <a href="DI_XML_Manifest_ErrorHandlingPolicy.htm">ErrorHandlingPolicy</a>, <a href="DI_XML_Manifest_Transform.htm">Transform</a> <![CDATA[                   ]]></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Action</span> element is mandatory to define a transform or condition action. It is also mandatory to handle errors.</p>
+        <p class="Label">Transform and Condition actions</p>
+        <ul>
+            <li>Declare a transform (method) and specify a predefined transform action. Use the following list to see the parameters for each method:<ul><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_ApplyXPath_2_ad7cebce.htm">ApplyXPath</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_Base64ToBinary_1_856598db.htm">Base64ToBinary</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_Concatenate_3_4cd24835.htm">Concatenate</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_ConcatenateChildren_4_c1b54ebd.htm">ConcatenateChildren</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_ConcatenateStringList_1_6fe791b1.htm">ConcatenateStringList</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_Copy_1_0babf803.htm">Copy</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_GetCurrentUTCTime.htm">GetCurrentUTCTime</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_HexToBinary_1_fd6f9e5f.htm">HexToBinary</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_StringEqualsIgnoreCase_2_0cf82859.htm">StringEqualsIgnoreCase</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/O_T_MessageHelpers_ToDateTime.htm">ToDateTime</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_ToTitleCase_1_0e42867c.htm">ToTitleCase</a></li><li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.Transforms/M_MessageHelpers_Trim_2_3d01873b.htm">Trim</a></li></ul></li>
+            <li>Declare a condition that uses Common Language Specification (CLS) compliant actions.</li>
+        </ul>
+        <p>Constraints for transform and condition actions are:</p>
+        <ul>
+            <li>Declare a transform or condition action in the service manifest of the <MadCap:variable name="Applications.Data Parser application" /> only. Do not declare transform or condition actions the manifests of other pipeline applications.</li>
+            <li>Apply one action to a transform or condition. If you intend to perform multiple actions, declare multiple transforms or conditions.</li>
+        </ul>
+        <p>Example for a transform action:</p><pre xml:space="preserve">&lt;Transform&gt;
+   &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+   &lt;InputParameters&gt;
+      &lt;Parameter Name="LowCaseString" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+   &lt;/InputParameters&gt;
+&lt;/Transform&gt;
+</pre>
+        <p>Example for a condition action:</p><pre xml:space="preserve">&lt;Condition&gt;
+   &lt;Action&gt;StringEqualsIgnoreCase&lt;/Action&gt;
+   &lt;InputParameters&gt;
+     &lt;Parameter Name="left" Type="System.String" SourceTable="MSH" SourceType="ShreddedInput" SourceName="MSH_9_2"/&gt;
+     &lt;Parameter Name="right" Type="System.String" SourceType="Inline" Value="A40" /&gt;
+   &lt;/InputParameters&gt;
+&lt;/Condition&gt;</pre>
+        <p class="Label">Error-handling actions          <![CDATA[ ]]></p>
+        <p>The <span class="MarkupLanguageElements">Action</span> element is mandatory if you want to handle errors in your manifest. Declare one of the following error-handling actions for a specified exception:</p>
+        <ul>
+            <li>Stop: Stops the process entirely.</li>
+            <li>Continue: Ignores the error and continues processing the same message.</li>
+            <li>Retry: Retries the failed message.</li>
+        </ul>
+        <p>Constraints for error-handling actions are:</p>
+        <ul>
+            <li>Declare the <span class="MarkupLanguageElements">Action</span> element only within a service manifest of the <MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Materializer (application)" />, and <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> applications. Do not declare this element in the feed-acquisition service manifest.</li>
+            <li>You must first specify the retry action if you want to define a retry interval, maximum retries, or a final action.</li>
+        </ul>
+        <p>Example for an error-handling action:</p>
+        <p class="code">&lt;Action&gt;Retry&lt;/Action&gt;</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXml setting</a>
+        </p>
+        <p><a href="../DI_XML_List_Parse.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Condition.htm">Condition element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_EnterpriseIdAction.htm">EnterpriseIdAction element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Transform.htm">Transform element</a><a href="DI_Intro_FeedConfigurationXML.htm">&#160;</a>
+        </p>
+    </body>
+</html>

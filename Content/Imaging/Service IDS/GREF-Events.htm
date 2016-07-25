@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1018.333" MadCap:lastWidth="616" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Event logs for the <MadCap:variable name="Imaging.IDA" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Image Delivery Application:event log" />This topic describes event logging  for the <MadCap:variable name="Imaging.Image Delivery server" />&#160;application (<MadCap:variable name="Imaging.IDA" />).</p>
+        <p>Performance markers measure the duration from the time a request is received until a response is sent. These markers are recorded in the performance logs after the service has been started.</p>
+        <p>You can use Event Tracing for Doors (ETW) for troubleshooting purposes. For more information, see "<a href="http://go.microsoft.com/fwlink?LinkId=245653">Improve Debugging and Performance Tuning with ETW</a>."</p>
+        <h2>Performance counters</h2>
+        <p>The following performance events are logged.</p>
+        <ul>
+            <li>Total number of requests rejected by <MadCap:variable name="Imaging.IDA" />.</li>
+            <li>Total number of BLOB retrieval requests received by <MadCap:variable name="Imaging.IDA" />.</li>
+            <li>Total number of thumbnail requests received by <MadCap:variable name="Imaging.IDA" />.</li>
+            <li>The total number of BLOB retrieval request failures by <MadCap:variable name="Imaging.IDA" />.</li>
+            <li>The total number of thumbnail request failures by <MadCap:variable name="Imaging.IDA" />.</li>
+            <li>Number of BLOB retrieval requests received per second.</li>
+            <li>Number of thumbnail retrieval requests received per second.</li>
+            <li>Number of thumbnail retrieval request failures per second.</li>
+            <li>Number of BLOB retrieval request failures per second.</li>
+            <li>Average time for the <MadCap:variable name="Imaging.IDA" /> to handle BLOB retrieval requests.<p class="note">This time is defined as the interval between  receipt of the request and the sending of the first byte to the client.</p></li>
+            <li>The average time for <MadCap:variable name="Imaging.IDA" /> to handle thumbnail retrieval request.<p class="note">This time is defined as the interval between receipt of the request and the sending of the first byte is sent to the client.</p></li>
+        </ul>
+        <h2>Diagnostic logging</h2>
+        <p>The following events are logged for each service.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 80px;" />
+            <col style="width: 124px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SOAP</td>
+                    <td>Start/End request reference</td>
+                    <td>Start/End create reference</td>
+                </tr>
+                <tr>
+                    <td>IDS Core</td>
+                    <td>Start/End request reference</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>IDS Core</td>
+                    <td>Start/End <MadCap:variable name="Imaging.DICOM" /> export</td>
+                    <td>Start/End retrieve <MadCap:variable name="Imaging.DICOM" /> file. You can find additional information<MadCap:variable name="Imaging.DICOM" /><MadCap:variable name="Applications.Data Connector (application)" /> logs.</td>
+                </tr>
+                <tr>
+                    <td>IDS Core</td>
+                    <td>Start/End thumbnail retrieval</td>
+                    <td>Start/End retrieve Thumbnail
+More logging from <MadCap:variable name="Imaging.DICOM" /> data connector
+</td>
+                </tr>
+                <tr>
+                    <td>IDS Core</td>
+                    <td>Start/End render frame</td>
+                    <td>Start/End retrieve DICOM instance
+More logging from <MadCap:variable name="Imaging.DICOM" />&#160;data connector
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LND-IDS-Logs.htm"> Application Event Logging and Performance Counters on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

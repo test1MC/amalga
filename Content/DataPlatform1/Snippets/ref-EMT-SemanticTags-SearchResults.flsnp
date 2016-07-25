@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="107" MadCap:lastWidth="567" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementAction">Terminology</span>:&#160;Name of the terminology standard that contains the current semantic tag (concept).</li>
+            <li><span class="UIElementAction">Code</span>:&#160;String defined by the terminology standard to identify the semantic tag (concept).</li>
+            <li><span class="UIElementAction">Meaning</span>:&#160;Description of the semantic tag (concept).</li>
+        </ul>
+    </body>
+</html>

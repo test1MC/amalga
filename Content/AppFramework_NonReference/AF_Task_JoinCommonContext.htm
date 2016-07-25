@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1396" MadCap:lastWidth="963" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="CommonContext" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Join CommonContext and respond to the participant survey</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes how to join the CommonContext message group.</p>
+        <p>The common context is a named messaging group created by each page instance of the Page Messaging System. It is used to communicate persistent information about the clinical context of a user's interaction with a <MadCap:variable name="FeatureName.Amalga Framework second use" /> application as the user interacts with page elements and navigates from page to page.</p>
+        <p>&#160;</p>
+        <h2>CommonContext group name</h2>
+        <p>The message group that represents the common context has a predefined name. By default, its value is "__CommonContext__", but it can also be determined at run time by calling the <a href="AF_Con_API_PageMessaging.htm#MessagingManager">MessagingManager.get_CommonContext()</a> function.</p>
+        <p>However, it is not necessary to use the predefined name to join the CommonContext message group. The <a href="AF_Con_API_PageMessaging.htm#Participant">Participant.Join()</a> and <a href="AF_Con_API_PageMessaging.htm#Participant">Participant.Leave()</a> functions interpret any group name that evaluates to <span class="codeEntity">null</span>, or to an empty string, as the name of the common context group.</p>
+        <p class="caution">A participant in the common context, like any other group, should explicitly use the <a href="AF_Con_API_PageMessaging.htm#Participant">Leave()</a> function to leave  the group if it stops participating before its host page is closed.</p>
+        <h2>MessageReceiveCallback function</h2>
+        <p>Participants in the CommonContext message group must provide a callback function to receive messages from the group. As with any message group participant, the message callback function must handle message payloads that are serialized according to the message conventions defined for the group.</p>
+        <p>CommonContext message payloads use Javascript dictionaries to represent HL7 CCOW messages. For more information on CommonContext message structure and message handling, see <a href="AF_Con_PageMessagingDefineDataItem.htm">common context message data</a> and <a href="AF_Task_UseCommonContext.htm">read and change the common context</a>.</p>
+        <h2>MessageSurveyCallback function</h2>
+        <p>By default, every update message sent by a  CommonContext participant is applied to the common context automatically.    The common context is intended to reflect recent user activity, and applications that use the common context should be implemented with the understanding that the context may be changed by another participant at any time.</p>
+        <p>However, there are situations where an immediate context update could result in data loss or  other unsafe condition.  Participants that may encounter such situations should specify a survey callback function--that is, they should pass a non-null survey callback argument when they join the common context group.   Whenever the message queue processes an update to the common context, it polls the survey callback function of each  CommonContext participant to determine whether or not it is safe to proceed.</p>
+        <h3>Determine whether or not the update is safe</h3>
+        <p>Identify program states where an immediate context update could result in data loss or  other unsafe condition. For example, if an application allows a clinician to take notes while viewing patient data and saves those notes to a writeable <MadCap:variable name="FeatureName.application view" />, the survey callback might warn against a context change under the following conditions:</p>
+        <ul>
+            <li>The content of the clinical notes has changed.</li>
+            <li>The changed content has not yet been saved.</li>
+            <li>The proposed context update would force a change to the patient context.</li>
+        </ul>
+        <h3>Provide an informative user message</h3>
+        <p>The message queue assumes that any non-null response to a survey callback is a message to the user explaining the potential consequences of a proposed context update.  It collects all such messages and displays them in a dialog box, giving the user the option to cancel the context change or allow it to continue.</p>
+        <p class="caution">The survey callback cannot prevent a change to the common context. It can only inform the user of what the consequences of the change will be.</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="AF_Task_JoinMessageGroup.htm">Join a messaging group</a>
+        </p>
+        <p><a href="AF_Task_UseCommonContext.htm">Read and change the common context</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_PageMessaging.htm">JavaScript API reference: Page Messaging</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>
+        </p>
+        <p><a href="AF_Con_PageMessagingDefineDataItem.htm">Common context message data</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

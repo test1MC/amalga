@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1911" MadCap:lastWidth="1162" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Retrieving data using AmalgaDbDataReader
+</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the AmalgaDbDataReader class in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve data.</p>
+        <p>Retrieving data using the <span class="ForeignCodeElements">AmalgaDbDataReader</span> class involves creating an <span class="ForeignCodeElements">AmalgaDbCommand</span> object, and then invoking the <span class="ForeignCodeElements">ExecuteReader</span> method of the <span class="ForeignCodeElements">AmalgaDbCommand</span> object to return an <span class="ForeignCodeElements">AmalgaDbDataReader</span> object that retrieves rows for the command.</p>
+        <p>Once you have created an <span class="ForeignCodeElements">AmalgaDbDataReader</span> object, you can then use the <span class="ForeignCodeElements">Read</span> method of the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object to return a single row from the results of the command. You can access each column of the returned row by passing the name or ordinal reference of the column to the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object. However, for best performance, the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object provides a series of methods that allow you to access column values in their native data types. Using these typed accessor methods, assuming the underlying data type is known, reduces the amount of type conversion required when retrieving a value from a column.</p>
+        <h2>Example</h2>
+        <p>The following example demonstrates how to use the <span class="ForeignCodeElements">ExecuteReader</span> method of an <span class="ForeignCodeElements">AmalgaDbCommand</span> object to obtain an <span class="ForeignCodeElements">AmalgaDbDataReader</span> object, and how to use the accessor methods of an <span class="ForeignCodeElements">AmalgaDbDataReader</span> object to retrieve column values by ordinal position from the results.</p><pre xml:space="preserve">public IEnumerable&lt;Patient&gt; GetTop100PatientsOrdinal()
+{
+    // Define a List object that will contain a list of Patient objects.
+    List&lt;Patient&gt; patients = new List&lt;Patient&gt;();
+
+    // Instantiate a new AmalgaDbConnection object within a using block, with
+    // a connection string returned by the GetVirtualSchemaConnectionString
+    // method.
+
+    using (AmalgaDbConnection connection = 
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString()))
+    {
+        // Read a list of patients from an Amalga ADO.NET connection connected to  
+        // the deployed virtual schema for the hosted application.
+
+        // First, instantiate a new AmalgaDbCommand object.
+        // The object queries an application view named Patient, defined in
+        // virtual schema for the hosted application, and returns the topmost
+        // 100 rows in the application view.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+                    @" SELECT TOP 100
+                            Patient.PersonID AS PatientID,
+                            Patient.FullName AS Name,
+                            Patient.DateOfBirth AS DateOfBirth
+                            FROM Patient";
+
+        // Write an entry into the diagnostic log providing information that the 
+        // hosted service is about to execute a query.
+        DiagLog.WriteInformation("Application " + 
+            ApplicationConfiguration.InstanceName.ToString() + 
+            " about to query patients");
+
+        // Open the connection and read from deployed virtual schema.
+        try
+        {
+            // Open the connection for the AmalgaDbCommand object.
+            command.Connection.Open();
+
+            // Using the AmalgaDbDataReader object, read information from the 
+            // application view and add it to the list defined earlier in the method.
+            AmalgaDbDataReader amalgaReader = command.ExecuteReader();
+            while (amalgaReader.Read())
+            {
+                // For each row returned by the ExecuteReader method, 
+                // instantiate and populate a new Patient object.
+                Patient p = new Patient();
+                p.PatientID = amalgaReader.GetString(0);
+                p.Name = amalgaReader.GetString(1);
+                p.DateOfBirth = amalgaReader.GetDateTime(2);
+
+                // Add the new Patient object to the list.
+                patients.Add(p);
+            }
+
+            // Write an entry into the diagnostic log providing information 
+            // that the hosted service successfully queried patients.
+            DiagLog.WriteInformation("{0} records read", patients.Count);
+
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not read data from the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+
+    }
+
+    // Return the list of Patient objects.
+    return patients;
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

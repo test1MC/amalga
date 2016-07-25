@@ -1,0 +1,146 @@
+/*<meta fileTags="TopicOwner.StyleMasterResource" conditions="Production.StyleMaster" />*/
+
+p.internal
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #FF0000;
+	border-bottom: solid 1px #FF0000;
+	background-color: #ffff00;
+	background-image: url('../Images/notepage.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.note
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #0000ff;
+	border-bottom: solid 1px #0000ff;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageInformation_16x16.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+p.noteInTable
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #0000ff;
+	border-bottom: solid 1px #0000ff;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageInformation_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.tip
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #00ff00;
+	border-bottom: solid 1px #00ff00;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageTip_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.TipInTable
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #00ff00;
+	border-bottom: solid 1px #00ff00;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageTip_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.caution
+{
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #ffd700;
+	border-bottom: solid 1px #ffd700;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageCaution_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+	margin-bottom: 5pt;
+}
+
+p.CautionInTable
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #ffd700;
+	border-bottom: solid 1px #ffd700;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageCaution_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.warning
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #ff0000;
+	border-bottom: solid 1px #ff0000;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageAlert_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+p.WarningInTable
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-top: solid 1px #ff0000;
+	border-bottom: solid 1px #ff0000;
+	background-color: #e7e7e7;
+	background-image: url('../Images/messageAlert_16x16.png');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+

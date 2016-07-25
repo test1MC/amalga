@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="862" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Procedure,Status.70 - Complete,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,EditingTags.7 - Editing issues resolved,TopicOwner.v-ssiera" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a <MadCap:variable name="BrandingHSG.HealthVault" /> PPE application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>You need to create an application ID in the <MadCap:variable name="BrandingHSG.HealthVault" /> PPE to use for the testing and validation of your initial <MadCap:variable name="BrandingHSG.HealthVault" />Connection installation and customizations. The following procedure creates that application ID.</p>
+        <p>As part of that procedure. you will need to upload a public key certificate file (.cer). However, in order to create the certificate, you must have the application ID provided by the <MadCap:variable name="BrandingHSG.HealthVault" /> Application Configuration Center (ACC). So, before you start the application ID process, make sure you are prepared to create the certificate at the same time.</p>
+        <p class="note">The <MadCap:variable name="BrandingHSG.HealthVault" /> pre-production environment (PPE) is not secured at the same level as the production version of <MadCap:variable name="BrandingHSG.HealthVault" />. The <MadCap:variable name="BrandingHSG.HealthVault" />operations team recommends that de-identified patient data be used for testing and validation of the <MadCap:variable name="BrandingHSG.HealthVault" />Connection in the PPE. If de-identified data is not available, see <MadCap:xref href="Install PRoc HVConnect RD.htm" target="" title="" alt="">Install PRoc HVConnect RD</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To create a PPE application ID</p>
+        <ol>
+            <li>
+                <p>Open a browser and navigate to <a href="http://go.microsoft.com/fwlink?LinkId=209977">HealthVault Application Configuration Center (ACC)</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkId=209977)</MadCap:conditionalText> to create and register a new <MadCap:variable name="BrandingHSG.HealthVault" /> application.  </p>
+                <p class="note">A <MadCap:variable name="BrandingHSG.HealthVault" /> account is required to sign in. A Doors Live ID can also be used to create the <MadCap:variable name="BrandingHSG.HealthVault" /> account.</p>
+            </li>
+            <li>On the ACC Welcome page, under Applications, click <span class="UIElementAction">Create a New Application</span>.</li>
+            <li>On the ACC Application page, make a note of the application ID.</li>
+            <li>
+                <p>Now, using that application ID, create your certificate. You should follow your established process of generating a certificate.  If such a process does not exist, generate a self-signed certificate using the <a href="http://go.microsoft.com/fwlink?LinkId=209978">MakeCert.exe</a> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">(http://go.microsoft.com/fwlink?LinkId=209978)</MadCap:conditionalText> tool.  Run the MakeCert command on the machine where <MadCap:variable name="BrandingHSG.HealthVault" />Connection will be deployed for development and test.  Make sure to use the application ID noted in step 3.</p>
+                <p class="LabelforProcedures">MakeCert syntax</p>
+                <p class="code" style="font-size: 10pt;">makecert.exe "&lt;OutputPath&gt;\&lt;CertFileName&gt;.cer" -a sha1 -n "CN=NewApp-&lt;HVAppId&gt;" -sr LocalMachine -ss My -sky signature -pe -len 2048</p>
+                <p class="LabelforProcedures">MakeCert example</p>
+                <p class="code" style="font-size: 10pt;">makecert.exe "c:\temp\MyCert.cer" -a sha1 -n "CN=NewApp-6296418d-a6c7-418d-84ea-f4c04b9dd1b6" -sr LocalMachine -ss My -sky signature -pe -len 2048</p>
+            </li>
+            <li>Back on the ACC Application page, enter an application name (for example, “My Hospital Patient Portal”).  This name will be shown to the patient when they authorize <MadCap:variable name="BrandingHSG.HealthVault" />Connection for access to <MadCap:variable name="BrandingHSG.HealthVault" />.</li>
+            <li>Select <span class="UIElementAction">Web</span> as the Application Type.</li>
+            <li>Browse to the public key certificate file (.cer) that you just created and enter the file name in the <span class="UIElementAction">Public Certificate</span> text box.</li>
+            <li>Review and accept “Microsoft HealthVault Developer Site Terms of Use” and click <span class="UIElementAction">Create application</span>.</li>
+        </ol>
+        <p>The application is now registered in the <MadCap:variable name="BrandingHSG.HealthVault" /> PPE environment.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Reference</p>
+        <p>
+            <MadCap:xref href="Install Ref Prerequisites II.htm" target="" title="" alt="">Installation prerequisites</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Prereq Proc Certificates.htm" target="" title="" alt="">Certificate prerequisites</MadCap:xref>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/healthvault/bb802509">HealthVault SDK and Application Information</a>
+        </p>
+    </body>
+</html>

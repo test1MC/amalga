@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="955" MadCap:lastWidth="781" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:ignoredWords="BatchSize" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve <MadCap:variable name="Applications.Message Shredder (application)" /> manifests</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="message shredder:add a new shredder" />This topic describes how to resolve application and service manifests.</p>
+        <p>For an application profile, see <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message Shredder application</MadCap:xref>.</p>
+        <h2>Application manifest</h2>
+        <p class="Label">To resolve an application manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an example file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the application instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>
+                <p>Replace the dependency instance name with the instance name of local Terminology application. </p><pre xml:space="preserve">&lt;Dependencies&gt;
+        &lt;Dependency Name="TerminologyAppDependency" InstanceName="<span class="Placeholder">TerminologyApplication_Ins1</span>" 
+                    Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" /&gt;
+&lt;/Dependencies&gt;</pre>
+                <p class="tip">Get the local terminology instance name from the <a href="../Serviceability/Management Console/AMC Introduction.htm">Amalga Management Console</a>.</p>
+            </li>
+            <li>Save the file.</li>
+        </ol>
+        <h2>Service manifest</h2>
+        <p class="Label">To resolve a service manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an example file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the service instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>
+                <p>Replace the logical host name with the local name. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DoorsWorkerManifest.htm" target="" title="" alt="">DoorsWorkerManifest element</MadCap:xref>.</p>
+                <p class="tip">Get the local logical-host name from the <a href="../Serviceability/Management Console/AMC Introduction.htm">Amalga Management Console</a>.</p>
+            </li>
+            <li>Replace the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> value with the value used in the related feed-acquisition service manifest to define the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref>. For example, if the feed's message-type value is ABC, then the shredder's feed-information type must be ABC. For more feed-related options, see <MadCap:xref href="Manifest XML/DI_Intro_FeedInfoXML.htm" target="" title="" alt="">FeedInfoXML setting</MadCap:xref>.</li>
+            <li>(Optional) Assign a parent segment. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_MessageShredderConfiguration.htm" target="" title="" alt="">MessageShredderConfiguration element</MadCap:xref> and <MadCap:xref href="Manifest XML/DI_XML_Manifest_Segments.htm" target="" title="" alt="">Segments element</MadCap:xref>.</li>
+            <li>(Optional) Define comma-separated values (CSV) data characteristics, such as row and field delimiters. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_CSVConfiguration.htm" target="" title="" alt="">CSVConfiguration element</MadCap:xref>.</li>
+            <li>(Optional) Update the attributes of an existing error policy. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_ErrorHandlingConfiguration.htm" target="" title="" alt="">ErrorHandlingConfiguration element</MadCap:xref>.</li>
+            <li>(Optional) Declare a custom plug-in application. For help, see <MadCap:xref href="DI_Con_ShredExtend.htm" target="" title="" alt="">Add a shredder plug-in</MadCap:xref>.</li>
+            <li>Save the file.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

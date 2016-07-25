@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/application"
+                    Type = "Application"
+                    Name="DataParserApplication"
+                    InstanceName="DataParserApp_Model_ADT_G"
+                    Id ="576d0ffe-c339-4b15-852f-58d66315b736"
+                    Version ="1.0.0.0">
+    <Settings />
+    <Dependencies>
+        <Dependency Name="TerminologyAppDependency" InstanceName="TerminologyApplication_Ins1" Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" />
+    </Dependencies>
+    <ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0" />
+</DeploymentManifest>

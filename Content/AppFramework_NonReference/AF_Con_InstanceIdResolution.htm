@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="WebServiceRegistry;InstanceResolutionException" MadCap:lastBlockDepth="4" MadCap:lastHeight="1645" MadCap:lastWidth="1171" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Application instance resolution</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="application identity;application instance resolution;application instance binding" />
+        </p>
+        <p class="abstract">This topic describes the features used to associate a <MadCap:variable name="BrandingMS.SharePoint" /> application with an <MadCap:variable name="BrandingHSG.Amalga Short" /> application instance at run time.</p>
+        <p>When a <MadCap:variable name="BrandingMS.SharePoint" /> application first connects to the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform, its capabilities are limited. The application views and other abstractions that allow access to <MadCap:variable name="BrandingHSG.Amalga Short" /> data are defined in terms of deployed instances of <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications, and the association between a <MadCap:variable name="BrandingMS.SharePoint" /> application and an <MadCap:variable name="BrandingHSG.Amalga Short" /> application instance is unknown when the <MadCap:variable name="BrandingMS.SharePoint" /> application is deployed.</p>
+        <p>Instance resolution and binding is the process of making a runtime connection between <MadCap:variable name="BrandingMS.SharePoint" /> artifacts and an <MadCap:variable name="BrandingHSG.Amalga Short" /> application instance.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Applicat" target="" title="" alt="">Application identity on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Instance" target="" title="" alt="">Instance Resolution on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Applicat"></a>Application identity</h2>
+        <p>Application instance resolution depends on two definitions of application identity: one for deployed <MadCap:variable name="BrandingHSG.Amalga Short" /> application instances and another for <MadCap:variable name="BrandingMS.SharePoint" /> artifacts.</p>
+        <h3>Application instance identity</h3>
+        <p>Within the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform, application instances are identified using two values: the application instance name and the application ID. The instance name is a friendly name assigned to the application instance when it was deployed. The instance ID is a GUID assigned to the application by the application developer.</p>
+        <p>(The instance name alone is sufficient to identify the application instance, if its use is exclusively within the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform. However, since the instance name is not available to <MadCap:variable name="BrandingMS.SharePoint" />, it must be paired with the application ID when it is used for instance resolution.)</p>
+        <h3><MadCap:variable name="BrandingMS.SharePoint" /> application identity</h3>
+        <p><MadCap:variable name="BrandingMS.SharePoint" /> application identity depends on three values: the application ID, version, and context. The Application ID must match the ID&#160;specified in the deployment manifest of at least one deployed application. The other two may be specified as needed to group <MadCap:variable name="BrandingMS.SharePoint" /> artifacts together.</p>
+        <p>For more information on the different values used to identify <MadCap:variable name="BrandingMS.SharePoint" /> applications and <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application instances, see <a href="AF_Con_ApplicationIdentity.htm">Application identity</a>.</p>
+        <h2><a name="Instance"></a>Instance Resolution</h2>
+        <p>Instance resolution is the process of matching a <MadCap:variable name="BrandingMS.SharePoint" /> application identity to a named instance of an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application. Before instance resolution, the <MadCap:variable name="BrandingMS.SharePoint" /> application cannot access any scoped <MadCap:variable name="BrandingHSG.Amalga Short" /> data. After resolution and binding, the <MadCap:variable name="BrandingMS.SharePoint" /> application has access to the application views and other resources of the bound <MadCap:variable name="BrandingHSG.Amalga Short" /> application instance. The binding extends to other <MadCap:variable name="BrandingMS.SharePoint" /> objects that use the same application identity, but no farther. <MadCap:variable name="BrandingMS.SharePoint" /> artifacts that are identified with different values of <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity (that is, a different application identity)</a> must go through the resolution and binding process again, and may be bound to a different application instance.</p>
+        <p>For example, the application identity interface is used by the <MadCap:variable name="BrandingHSG.Amalga Short" />&#160;<a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/T_WebServiceRegistry.htm">WebServiceRegistry</a> to bind a <MadCap:variable name="BrandingMS.SharePoint" /> application instance to the <MadCap:variable name="BrandingMS.WCF service" />  contract of an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted service. When <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/M_WebServiceRegistry_GetFederatedService``1_3_f1c31c1b.htm">WebServiceRegistry.GetFederatedService()</a> is called with an application identity and service name that do not have an associated binding, it throws an <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_InstanceResolutionException.htm">InstanceResolutionException</a>. The Framework layer traps the exception and automatically brings up the application binding UI.</p>
+        <p>The application binding UI&#160;provides the user with a list of available application instances whose application ID matches the value provided by <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetApplicationId.htm">GetApplicationId()</a>. The user's selection is cached, so the application does not have to go through the resolution and binding process each time it is run.</p>
+        <h4>Example</h4>
+        <p>The following example uses a standalone class that implements <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> and a <MadCap:variable name="BrandingMS.WCF service"></MadCap:variable>&#160;contract to load a proxy for the <MadCap:variable name="BrandingMS.WCF service"></MadCap:variable>.  If the application and service do not yet have a binding, the Framework will bring up the application binding UI.</p><pre xml:space="preserve">
+// In the following example, AppProps is a simple implementation of IAmalgaApplicationIdentity.
+//  It takes the ID values through its constructor and responds with those values when the
+//  ID methods are called.
+// IMyServiceInterface is a service contract interface for a WCF service that is deployed as
+//  part of an Amalga hosted application.
+protected override void OnFirstLoadRuntime(EventArgs e)
+{
+    // Call BasePage.OnFirstLoadRuntime()
+    base.OnFirstLoadRuntime(e);
+
+    // Replace with the application ID value from the application manifest
+    Guid myAppApplicationId = new Guid(Guid.Empty.ToString());
+
+    // Replace with the application ID value from the service manifest
+    Guid mySvcApplicationId = new Guid(Guid.Empty.ToString());
+
+    // Create an object whose IAmalgaApplicationIdentity methods return the required values:
+    //  -- The application ID from the application manifest
+    //  -- The application version from the application manifest
+    //  -- An arbitrary string
+    AppProps app1 = new AppProps(new Guid("f2e10cec-bd55-4916-acb1-e5c3bf925f78"), "1.0.0.0", "Context1");
+
+    // Create a service proxy that binds the current application to a WCF service.
+    //  This call will throw InstanceResolutionException on first use.  This is expected behavior.
+    //  The Framework layer will catch the exception and bring up the app binding UI.
+    var _Service = WebServiceRegistry.Current.GetFederatedService&lt;IMyServiceInterface&gt;(
+        new Guid("5010bf30-9389-4ffa-bbc0-fa9290460880"), "MyServiceClass.IMyServiceInterface", app1);
+}
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_ApplicationIdentity.htm">Application identity</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

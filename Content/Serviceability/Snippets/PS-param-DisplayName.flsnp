@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="223.3333" MadCap:lastWidth="621">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p class="h7">[-DisplayName] &lt;string&gt;</p>
+        <p>Takes the user-friendly display name of the <MadCap:variable name="BrandingHSG.Amalga Short" /> role.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>ASCII characters. No leading spaces allowed. </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

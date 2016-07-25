@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1970" MadCap:lastWidth="750" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">DoorsWorkerManifest element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the DoorsWorkerManifest element.</p>
+        <p>Contains service-specific metadata required by a hosted <MadCap:variable name="BrandingMS.Doors service" />.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;DeploymentManifest&gt;<br />&#160;&#160;&#160;&lt;DoorsWorkerManifest <br />&#160;&#160;&#160;&#160;&#160;&#160;ClusteringMode = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;AuthenticationMode = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;HostAssembly = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;[ ClusterGroup = "<span class="Parameter">string</span>" ]<br />&#160;&#160;&#160;&#160;&#160;&#160;[ TestLogicalHostName = "<span class="Parameter">string</span>" ] <br />&#160;&#160;&#160;&#160;&#160;&#160;[ LogicalHostName = "<span class="Parameter">string</span>" ] /&gt;<br />&lt;/DeploymentManifest&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>
+                        <p>1-1: Required element that can occur once and only once.</p>
+                        <p class="note">This element is required only for <MadCap:variable name="BrandingMS.Doors service" /> manifests. Other deployment manifest types do not use this element.</p>
+                        <br />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_DeploymentManifest.htm">DeploymentManifest</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ClusteringMode</td>
+                    <td>
+                        <p>(Required string.) The clustering mode supported by the hosted <MadCap:variable name="BrandingMS.Doors service" />. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>None</td>
+                                    <td>The hosted <MadCap:variable name="BrandingMS.Doors service" /> does not support clustering.</td>
+                                </tr>
+                                <tr>
+                                    <td>NLB</td>
+                                    <td>The hosted <MadCap:variable name="BrandingMS.Doors service" /> supports Network Load Balancing (NLB) clustering.</td>
+                                </tr>
+                                <tr>
+                                    <td>FailOver</td>
+                                    <td>The hosted <MadCap:variable name="BrandingMS.Doors service" /> supports failover clustering.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AuthenticationMode</td>
+                    <td>
+                        <p>(Required string.) The authentication mode supported by the hosted <MadCap:variable name="BrandingMS.Doors service" />. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>None</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td>AuthenticatedUser</td>
+                                    <td>AuthenticatedUser</td>
+                                </tr>
+                                <tr>
+                                    <td>TrustedCaller</td>
+                                    <td>TrustedCaller</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HostAssembly</td>
+                    <td>
+                        <p>(Required string.) The file name of the assembly file that contains the hosted <MadCap:variable name="BrandingMS.Doors service" />.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ClusterGroup</td>
+                    <td>
+                        <p>(Optional string.) The name of the cluster group on which the hosted <MadCap:variable name="BrandingMS.Doors service" /> should be deployed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TestLogicalHostName</td>
+                    <td>
+                        <p>(Optional string.) The name of the logical host on which the hosted <MadCap:variable name="BrandingMS.Doors service" /> should be deployed while running in debug mode.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LogicalHostName</td>
+                    <td>
+                        <p>(Optional string.) The name of the logical host on which the hosted <MadCap:variable name="BrandingMS.Doors service" /> should be deployed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>This element is required only if the parent <span class="MarkupLanguageElements">DeploymentManifest</span> element represents a hosted <MadCap:variable name="BrandingMS.Doors service" /> manifest. Otherwise, this element cannot be included. This element provides information on the clustering support, authorization support, and the logical host for the hosted <MadCap:variable name="BrandingMS.Doors service" />.</p>
+        <p class="SeeAlso">See Also</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_ApplicationManifest.htm" target="" title="" alt="">ApplicationManifest Element on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_WcfServiceManifest.htm" target="" title="" alt="">WcfServiceManifest Element on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

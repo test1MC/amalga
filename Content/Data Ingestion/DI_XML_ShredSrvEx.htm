@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1373" MadCap:lastWidth="1528" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Message shredder: service manifest example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration values as needed. For value descriptions, see <MadCap:xref href="DI_Task_ShredApp.htm" target="" title="" alt="">Message shredder application</MadCap:xref>.</p><pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "DoorsWorker"
+                    Name="MessageShredder"
+                    InstanceName="MessageShredderSvc_ADT_G"
+                    Id="2684661F-AAE0-40C1-9AC9-2D8061CEA8C6"
+                    i:Version ="1.0.0.0"
+                    &gt;
+
+    &lt;DoorsWorkerManifest LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="NLB" HostAssembly="Microsoft.Amalga.Pipeline.MessageShredder.exe" /&gt;
+    &lt;PerformanceCategories&gt;
+        &lt;PerformanceCategory Name="Amalga Message Shredder Service Stats" Version="" CodeName="MessageShredder" Help="Store the stats for the Message Shredder" MultiInstance="Yes"&gt;
+            &lt;PerformanceCounter Name="Messages Received" CodeName="MessagesReceived" Type="NumberOfItems64" Help="Records the the total number of messages received by the Message Shredder" /&gt;
+            &lt;PerformanceCounter Name="Messages Per Second" CodeName="MessagesProcessedPerSec" Type="RateOfCountsPerSecond32" Help="Records the number of messages received per second" /&gt;
+            &lt;PerformanceCounter Name="Messages Successful" CodeName="MessagesSuccessful" Type="NumberOfItems64" Help="Records the total number of messages processed successfully" /&gt;
+            &lt;PerformanceCounter Name="Messages Unsuccessful" CodeName="MessagesUnsuccessful" Type="NumberOfItems64" Help="Records the number of messages that failed during processing" /&gt;
+        &lt;/PerformanceCategory&gt;
+    &lt;/PerformanceCategories&gt;
+    &lt;Settings&gt;
+        &lt;Setting Name="LastProcessedSequenceNumber" Type="System.Int32"&gt;
+            &lt;DefaultValue&gt;0&lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="BatchSize" Type="System.Int32"&gt;
+            &lt;DefaultValue&gt;250&lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="IdleSleepSeconds" Type="System.Int32"&gt;
+          &lt;DefaultValue&gt;5&lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="FeedInfoXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA
+[&lt;FeedInfo&gt;
+    &lt;Name&gt;ADT.G Feed&lt;/Name&gt;
+    &lt;Type&gt;ADT.G&lt;/Type&gt;
+    &lt;Provider&gt;MS Internal&lt;/Provider&gt;
+    &lt;TerminologyName&gt;Microsoft Beta HL7 V2.X Code&lt;/TerminologyName&gt;
+    &lt;PreferenceRanking&gt;0&lt;/PreferenceRanking&gt;
+    &lt;PreferredCulture&gt;en-US&lt;/PreferredCulture&gt;
+    &lt;DefaultTimeZone&gt;Pacific Standard Time&lt;/DefaultTimeZone&gt;
+&lt;/FeedInfo&gt;
+			]]&gt;
+	     &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA[
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;MessageShredderConfiguration&gt;
+    &lt;Segments&gt;
+        &lt;Segment Name="MSH" SourceName="MSH" Description="Message Header"&gt;
+        &lt;/Segment&gt;
+        &lt;Segment Name="PID" SourceName="PID" ParentName="MSH" Description="Person Identification"&gt;
+            &lt;DerivedElements&gt;
+                &lt;DerivedElement Name="MRN" Description="Patient MRN" SourceName="PID_3_Repeating" Filter="/Repetitions/Repetition[2]/PID-3-1"&gt;
+                    &lt;ConceptId&gt;565F4011-15F7-4D48-823F-BB6775B06B7B&lt;/ConceptId&gt;
+                &lt;/DerivedElement&gt;
+            &lt;/DerivedElements&gt;
+                &lt;ContextKey&gt;
+                    &lt;Name&gt;Account_PID_ExternalId&lt;/Name&gt;
+                    &lt;ConceptId&gt;F9CE1E7F-925E-40BF-BE84-BF2CFBD08B71&lt;/ConceptId&gt;
+                    &lt;IsPrimary&gt;True&lt;/IsPrimary&gt;
+                    &lt;SourceKeys&gt;
+                        &lt;SourceKey SourceTable="PID" SourceName="PID_18_1" Description="Account" /&gt;
+                    &lt;/SourceKeys&gt;
+                &lt;/ContextKey&gt;
+        &lt;/Segment&gt;
+        &lt;Segment Name="PV1" SourceName="PV1" ParentName="PID" Description="Patient Visit"&gt;
+            
+        &lt;/Segment&gt;        
+    &lt;/Segments&gt;
+&lt;/MessageShredderConfiguration&gt;
+			]]&gt;
+	    &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="ShredderPluginConfigurationXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA[
+&lt;Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Shredders, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" ClassName ="HL7Shredder"&gt;
+          &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Shredders&lt;/NameSpace&gt;
+          &lt;URL&gt;C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\MessageShredderSvc_ADT_G\Microsoft.Amalga.Pipeline.Shredders.dll&lt;/URL&gt;
+          &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+			]]&gt;
+	      &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+    &lt;/Settings&gt;
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message shredder</MadCap:xref>
+        </p>
+    </body>
+</html>

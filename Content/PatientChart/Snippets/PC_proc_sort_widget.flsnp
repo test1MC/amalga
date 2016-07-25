@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To sort data within a widget</p>
+        <ul>
+            <li>Click a column title to sort the column contents.</li>
+            <li>Click the column title again to reverse the sort order.</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Logger concepts"
+    Link="/Content/Amalga_PlatformSDK/Logger/LOG_OVW_Concepts.htm">
+    <TocEntry
+      Title="Audit log"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_AuditLog.htm" />
+    <TocEntry
+      Title="Diagnostic log"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_DiagLog.htm" />
+    <TocEntry
+      Title="Event log"
+      Link="/Content/Amalga_PlatformSDK/LOG_CON_EventLog.htm" />
+    <TocEntry
+      Title="Performance log"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_PerformanceLog.htm" />
+  </TocEntry>
+</CatapultToc>

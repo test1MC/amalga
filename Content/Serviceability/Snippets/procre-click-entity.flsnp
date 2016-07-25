@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="60" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>The entity summary pane appears in the details pane, listing the bound applications, summarized access policy, and entity properties for the selected entity.  See <MadCap:xref href="../Management Console/Entity Management/SERV_VREF_EntitySummary.htm" target="" title="" alt="">Entity summary pane</MadCap:xref> for more information about this pane. </body>
+</html>

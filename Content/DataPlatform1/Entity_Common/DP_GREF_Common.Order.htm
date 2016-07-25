@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2242.001" MadCap:lastWidth="779" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Order entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.Order.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].Order" /><span class="Label">Entity concept code</span>: ORC</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCode</td>
+                    <td>ORC-28-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the confidentiality code.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCodingSystem</td>
+                    <td>ORC-28-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityText</td>
+                    <td>ORC-28-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the level of security, sensitivity surrounding the order, or both.</td>
+                </tr>
+                <tr>
+                    <td>DateTimeofTransaction</td>
+                    <td>ORC-9</td>
+                    <td>HL7</td>
+                    <td>Date and time of the event that initiated the current transaction.</td>
+                </tr>
+                <tr>
+                    <td>DateTimeofTransaction_o</td>
+                    <td>ORC-9</td>
+                    <td>HL7</td>
+                    <td>Date and time offset of the event that initiated the current transaction.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key of the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumber</td>
+                    <td>ORC-3-1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberNamespaceID</td>
+                    <td>ORC-3-2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberUniversalID</td>
+                    <td>ORC-3-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberUniversalIDType</td>
+                    <td>ORC-3-4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>OrderedByProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>OrderedByProviderName</td>
+                    <td>ORC-10</td>
+                    <td>HL7</td>
+                    <td>Identity of the person who actually keyed the request into the application.</td>
+                </tr>
+                <tr>
+                    <td>OrderID</td>
+                    <td>OrderID</td>
+                    <td>Amalga</td>
+                    <td>Primary key to of the <MadCap:variable name="Namespace.Entity_Common" />.Order entity.
+</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressCity</td>
+                    <td>ORC-22-3</td>
+                    <td>HL7</td>
+                    <td>City.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressCountry</td>
+                    <td>ORC-22-6</td>
+                    <td>HL7</td>
+                    <td>Country.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressPostalCode</td>
+                    <td>ORC-22-5</td>
+                    <td>HL7</td>
+                    <td>Zip or postal code.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressStateOrProvince</td>
+                    <td>ORC-22-4</td>
+                    <td>HL7</td>
+                    <td>State or province.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressStreet</td>
+                    <td>ORC-22-1</td>
+                    <td>HL7</td>
+                    <td>Street address.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityContactInfo
+</td>
+                    <td>ORC-23</td>
+                    <td>HL7</td>
+                    <td>Telephone number of the facility placing the order.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityName</td>
+                    <td>ORC-21-1</td>
+                    <td>HL7</td>
+                    <td>Organization name.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityNameIDNumber</td>
+                    <td>ORC-21-3</td>
+                    <td>HL7</td>
+                    <td>Identifier number. </td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityNameTypeCode</td>
+                    <td>ORC-21-2</td>
+                    <td>HL7</td>
+                    <td>Organization name type code.</td>
+                </tr>
+                <tr>
+                    <td>OrderNotes</td>
+                    <td>NTE-3</td>
+                    <td>HL7</td>
+                    <td>Comment contained in the segment.</td>
+                </tr>
+                <tr>
+                    <td>OrderNoteType</td>
+                    <td>NTE-4</td>
+                    <td>HL7</td>
+                    <td>Value to identify the type of comment text being sent in the specific comment record.</td>
+                </tr>
+                <tr>
+                    <td>OrderStatus</td>
+                    <td>ORC-5</td>
+                    <td>HL7</td>
+                    <td>Status of an order.</td>
+                </tr>
+                <tr>
+                    <td>OrderStatusNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized status of an order.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCode</td>
+                    <td>ORC-29-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the order type that is executed in an inpatient or outpatient setting.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCode_LOINC</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Order type code in LOINC.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCodingSystem</td>
+                    <td>ORC-29-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeText</td>
+                    <td>ORC-29-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the order.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifier</td>
+                    <td>ORC-8-2-1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierNamespaceID</td>
+                    <td>ORC-8-2-2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierUniversalID</td>
+                    <td>ORC-8-2-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierUniversalIDType</td>
+                    <td>ORC-8-2-4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>ParentOrderID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Identifier of the parent order.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifier</td>
+                    <td>ORC-8-1-1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierNamespaceID</td>
+                    <td>ORC-8-1-2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierUniversalID</td>
+                    <td>ORC-8-1-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierUniversalIDType</td>
+                    <td>ORC-8-1-4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumber</td>
+                    <td>ORC-4-1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberNamespaceID</td>
+                    <td>ORC-4-2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberUniversalID</td>
+                    <td>ORC-4-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberUniversalIDType</td>
+                    <td>ORC-4-4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumber</td>
+                    <td>ORC-2-1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberNamespaceID</td>
+                    <td>ORC-2-2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberUniversalID</td>
+                    <td>ORC-2-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberUniversalIDType</td>
+                    <td>ORC-2-4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>ResponseFlag</td>
+                    <td>ORC-6</td>
+                    <td>HL7</td>
+                    <td>Information to be returned from the filler.</td>
+                </tr>
+                <tr>
+                    <td>ResponseFlagNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized information to be returned from the filler.</td>
+                </tr>
+                <tr>
+                    <td>SpecimenDateTime</td>
+                    <td>SPM-18</td>
+                    <td>HL7</td>
+                    <td>Date and time when the specimen is received at the diagnostic service.</td>
+                </tr>
+                <tr>
+                    <td>SpecimenDateTimeOffset</td>
+                    <td>SPM-18</td>
+                    <td>&#160;</td>
+                    <td>Date and time offset for when the specimen is received at the diagnostic service.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCode</td>
+                    <td>OBR-4-1</td>
+                    <td>HL7</td>
+                    <td>Identifier code for the requested observation, test, or battery.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCode_LOINC</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Order Universal Service Code in LOINC.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCodingSystem</td>
+                    <td>OBR-4-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceText</td>
+                    <td>OBR-4-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the order.</td>
+                </tr>
+                <tr>
+                    <td>VerifiedByProviderID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr style="height: 36px;">
+                    <td>VerifiedByProviderName</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Identity of the person who verified the accuracy of the entered request.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

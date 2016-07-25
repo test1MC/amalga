@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1816" MadCap:lastWidth="700" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materialized entity views</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p class="abstract">Generate a materialized entity view (SQL Server table) for an existing entity view to improve query performance of the Amalga applications that use the virtual schema based on the entity.</p>
+        <p>
+            <MadCap:keyword term="entity:materialized" />To enhance the performance of an entity view, which is already bound using Microsoft Amalga Management Console, follow these steps:</p>
+        <ol>
+            <li>Prepare an instance of the Materializer application for the bound entity. <a href="DP_Task_MaterializeApp.htm">Go to instructions</a>.</li>
+            <li><a href="DP_Task_MaterializerPublish.htm">Publish</a> and <a href="AAA_RENAME.htm">deploy</a> the application instance to populate the materialized table with new changes from the shredded or parsed messages.</li>
+            <li>Redirect an entity binding view to start consuming data from the materialized entity view. <a href="DP_Task_MaterializerRedirect.htm">Go to instructions</a>.</li>
+        </ol>
+        <p class="h7">
+            <MadCap:keyword term="materialized entity view:overview" />Materializer process overview</p>
+        <p>A deployed Materializer application periodically monitors the underlying tables used by the entity for any changes. The Materializer service identifies which rows have changed since the last materialization operation and obtains the list of values from the column marked as context key. It then removes all rows from the materialized entity view (SQL Server table) based on the context key values and execute the query that defines the entity for those context key values. </p>
+        <p> The following figure shows the SQL Server objects that support a materialized entity view.</p>
+        <p class="Figure">
+            <img src="Images/Materialization.png" />
+        </p>
+        <p>An entity binds directly to the Entity view, binding object, which is a SQL Server view. By default, the Entity view, binding object reads data from the Entity view, defining object, which is also a SQL Server view. When a materialized entity view is ready—that is, when you have performed the procedures to create and populate the SQL Server table—you must alter the Entity view, binding query to start reading from the materialized entity view instead of the Entity view, defining object.</p>
+        <p class="h7">Unsupported materializer scenarios</p>
+        <p>The materializer process works on auto-bound entities as well as on the entities that you bind manually. However, there are several unsupported scenarios for materializing an entity view, and in those scenarios, the materialized entity view might produce different results than expected. These unsupported scenarios include situations in which the binding query definition for the entity:</p>
+        <ul>
+            <li>Fails to include context keys for the underlying tables and views.</li>
+            <li>Includes a computed column based on a non-deterministic function. For example, if the entity includes a column that calculates a patient’s age as of today’s date, you expect the value for the column to change daily even though no actual change occurred in the base table.</li>
+            <li>Includes only a subset of context key values. For example, if you defined the binding query as SELECT TOP 10 PatientID, then the materializer process might not completely remove the previous values and you can end up with more rows than expected.</li>
+            <li>Brings in additional related rows for the context key column. For example, if the binding query contains a self-join, the materializer might not delete the related rows if there is no change to that row. During the materializer insert process, however, the related rows can be re-inserted, resulting in duplicate rows.</li>
+        </ul>
+        <p>If the entity-binding query of an entity contains one of the unsupported scenarios in the previous list, you can potentially simplify the binding query by moving the unsupported clause, query logic, or both into the application.</p>
+        <p class="h7">Troubleshooting materialized entity views</p>
+        <p>When a Materializer application stops processing, do the following:</p>
+        <ul>
+            <li>
+                <p>Verify that there has been no update to the entity defining query. In particular, you might see the following error on the Doors Event Viewer: </p>
+                <p>The query definition for <span class="Placeholder">Entityname</span> has been changed for an existing materialized entity view. The entity is redirected to read from defining view, which has no materialization.</p>
+                <p>For instructions to resolve the issue, see <MadCap:xref href="Fred.htm" target="" title="" alt="">Rebuild a materialized entity view after an update</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p>When  a materialized entity view does not produce the expected results or when query against the application view related to the entity is running slowly, do the following:</p>
+        <ul>
+            <li>Verify that the defining query is supported for materialization. See Unsupported materializer scenarios in the previous section.</li>
+            <li>Verify that there is no update to the entity defining query. See <MadCap:xref href="Fred.htm" target="" title="" alt="">Rebuild a materialized entity view after an update</MadCap:xref>.</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>
+        </p>
+    </body>
+</html>

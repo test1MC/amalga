@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2314.667" MadCap:lastWidth="416" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Software prerequisites</h1>
+        <p><span class="Label">Following are the software requirements for </span><MadCap:variable name="BrandingHSG.Amalga Short" style="mc-tag-and-class: ;" /><span class="Label">. Software required on all </span><MadCap:variable name="BrandingHSG.Amalga Short" style="mc-tag-and-class: ;" /><span class="Label"> servers is specified and then additional requirements are listed by the server type.</span>
+        </p>
+        <table>
+            <col>
+            </col>
+            <col>
+            </col>
+            <thead>
+                <tr>
+                    <th>Server type</th>
+                    <th>Prerequisites</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2011-11-17T16:37:44.1318273-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="This table was originally set up with the &quot;All Servers&quot; (and other multi-line sections) cells merged to provide a visual reference that all the lines on the right belonged to the big merged &quot;All Servers&quot; cell. Unfortunately, that causes the table to break incorrectly. Reverted to standard formatting as no solution was forthcoming from Flare support." MadCap:editor="v-keith" MadCap:editDate="2011-11-17T16:41:01.9556228-08:00">All</MadCap:annotation> servers</td>
+                    <td><MadCap:variable name="BrandingMS.Doors Server 2008 Enterprise SP1 x64"></MadCap:variable>, or Doors Server 2008 Data Center x64 with SP1<ul><li>Fail-over clustering must be enabled on Physical Hosts in a Logical Host of type "failover".</li></ul></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS.IIS 7.5"></MadCap:variable>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>SQL Command Utility, download from <a href="http://go.microsoft.com/fwlink?LinkID=198503">SQL Server 2008 Feature Pack</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> <![CDATA[ ]]><br></br>(http://go.microsoft.com/fwlink?LinkID=198503)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p><MadCap:variable name="BrandingMS..NET4.0" />, download from <a href="http://go.microsoft.com/fwlink?LinkId=232680">.NET Framework 4.0</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> <![CDATA[ ]]><br />(http://go.microsoft.com/fwlink/?LinkId=232680)</MadCap:conditionalText>.</p>
+                        <p class="noteInTable"><MadCap:variable name="BrandingMS.SharePoint Server 2010 - short" /> is not compatible with <MadCap:variable name="BrandingMS..NET4.0" />. If an <MadCap:variable name="FeatureName.Amalga Framework" /> server (see below) does not host any non-<MadCap:variable name="BrandingMS.SharePoint" /> content, then <MadCap:variable name="BrandingMS..NET4.0" /> is not required.</p>
+                    </td>
+                </tr>
+                <tr MadCap:conditions="Production.InternalOnly,Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>System Center Operations Manager (SCOM) 2007 V2 Agent (optional)</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Doors PowerShell 2.0, download from <a href="http://go.microsoft.com/fwlink?LinkId=232681">Doors Management Framework</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232681)</MadCap:conditionalText>.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Distributed Transaction Coordinator (DTC) must be installed and enabled. For more information, see <MadCap:xref href="Prereq Proc DTC Config.htm" target="" title="" alt="">Prereq Proc DTC Config</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>Doors Identity Foundations (WIF), download the Doors6.1-KB974405 version from the <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=EB9C345F-E830-40B8-A5FE-AE7A864C4D76">WIF download page</a><br MadCap:conditions="Production.PrintOnly"></br><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232826)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>Visual C++ 2010 Runtime. For download, see the <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=14632">C++ download page</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232827)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Platform servers</td>
+                    <td>
+                        <p>Active Directory Federation Services ADFS V2.0</p>
+                        <p class="caution">For critical information on how to install and configure ADFS, see <MadCap:xref href="Prereq Proc ADFS.htm" target="" title="" alt="">Appendix C: ADFS</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Application servers</td>
+                    <td>None additional.</td>
+                </tr>
+                <tr>
+                    <td>Data servers</td>
+                    <td><MadCap:variable name="BrandingMS.SQL Server 2008 R2 Enterprise"></MadCap:variable>, Data Center, or Developer editions.<p class="note">After <MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable>, the minimum requirement will be <MadCap:variable name="BrandingMS.SQL Server 2008 Enterprise SP1"></MadCap:variable>, Data Center, or Developer.</p></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Health Language International (HLI) database must be installed. To download and install the HLI database, go to <a href="http://connect.microsoft.com/">http://connect.microsoft.com</a> and navigate to the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> download page. Download the HLI zip file, which contains both the database and the instructions. Your sign-in to this site is part of the invitation to participate in <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> CTP program.</td>
+                </tr>
+                <tr>
+                    <td><MadCap:variable name="FeatureName.Amalga Framework" /> servers</td>
+                    <td>
+                        <p><MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> 2010 Foundation. For installation information see <a href="http://go.microsoft.com/fwlink?LinkID=229491">SharePoint deployment</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=229491)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable>, download from <a href="http://go.microsoft.com/fwlink?LinkId=232682">.NET Framework 3.5 Service Pack 1</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232682)</MadCap:conditionalText>.</td>
+                </tr>
+                <tr>
+                    <td>Development servers (SDK)</td>
+                    <td>Either <MadCap:variable name="BrandingMS.Doors Server 2008 Enterprise SP1 x64"></MadCap:variable>, or <MadCap:variable name="BrandingMS.Doors 7 Enterprise SP1 x64"></MadCap:variable></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS.Visual Studio 2010 second use"></MadCap:variable> Professional</td>
+                </tr>
+                <tr>
+                    <td>Non-specific Requirements</td>
+                    <td>Any enterprise level firewall<br></br>Any enterprise level antivirus program<br></br>Any virtualization program supported by the <a href="http://go.microsoft.com/fwlink?LinkID=227289">Server Virtualization Validation Program</a> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">(http://go.microsoft.com/fwlink?LinkID=227289)</MadCap:conditionalText>.  </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Supported browsers and issues</h2>
+        <p class="CHANGEME">Check for updated list of browsers</p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> supports the same set of browsers as <MadCap:variable name="BrandingMS.SharePoint Server 2010 - short"></MadCap:variable>. For more information, see <a href="http://go.microsoft.com/fwlink?LinkId=234069">Plan browser support - SharePoint Server 2010</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=234069)</MadCap:conditionalText>.</p>
+        <p class="note">Review the following browser issues.</p>
+        <ul>
+            <li>If Internet Explorer Enhanced Security Configuration is enabled, users will not be able to access <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> portals.</li>
+            <li>If you intend to support Firefox browsers, turn off "Extended Protection for Authentication" in ADFS.</li>
+            <li>Only 32 bit browsers can access the Amalga Management Console.</li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

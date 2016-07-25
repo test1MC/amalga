@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.StyleMasterResource" MadCap:conditions="Manuals.doNOTbuild,Production.StyleMaster,Production.doNOTbuild,Region.US">
+    <head>
+        <link href="Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:annotation MadCap:createDate="2009-11-17T16:15:39.5565367-08:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="PD" MadCap:comment="PD 11/18: I think it makes sense to get as much of the style guide into StyleMaster as possible! Maybe make a TOC for it? In your spare time! haha\r\n&gt;&gt;from Cindy: This (as well as the other examples) is really Amalga UA Style Guide content. I need to get the Style Guide into Flare!  So leave it here for now." MadCap:editDate="2009-11-18T12:16:58.8037613-08:00" MadCap:editor="v-padenc@REDMOND">Ex</MadCap:annotation>ample-Indents Edit</h1>
+        <p>All of these indentations can be accomplished without using styles that force an indent. </p>
+        <p>Reasons to indent:&#160;</p>
+        <ul>
+            <li>Align unnumbered/unbulleted paragraph between list items</li>
+            <li>Align lists under a glossary definition or other outside-list, already-indented paragraph </li>
+            <li>Multiple single item lists without bullets or numbers</li>
+        </ul>
+        <h2>Non-list Paragraphs between List Items</h2>
+        <p>In this example, unnumbered/unbulleted paragraphs are aligned within a list. This alignment requires making sure that the paragraphs are within the OL&#160;or UL&#160;tag for the list. No other special tagging is required to achieve the indentation in the output. Remember to check the preview window to see how the content will line up. </p>
+        <p class="LabelforProcedures">
+            <MadCap:annotation MadCap:createDate="2010-03-05T15:55:21.1175086-08:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="CJW">To</MadCap:annotation><![CDATA[ ]]>add an non-list paragraph to a list item</p>
+        <ol>
+            <li>This is a standard list item. </li>
+            <li>
+                <p>This is in a p block because it has a following non-list paragraph. You get a structure like this by typing in this line, right-clicking on the &lt;li&gt; block and selecting <b>Make paragraph item(s)</b>. Then you go to the end of this text, and press ENTER to get the next paragraph, which will be without a number.</p>
+                <p>This paragraph is also in a "p" (no class) block and it will line up under the text in step 2. You would do a note, tip, etc. the same way. Click the preview button to see what it looks like.</p>
+                <p>To make the next numbered item, press ENTER, then click on the yellow and black arrow icon.</p>
+            </li>
+            <li>Now you have another numbered item. </li>
+        </ol>
+        <p>This paragraph is tagged "p" but is outside the OL&#160;tag so it won't align with the list. </p>
+        <p>For information on lining up "p"&#160;classes, such as notes, tips, cautions, and warnings, within lists, see the "Example-Note-Tip-Caution-Warning.htm"&#160;<MadCap:annotation MadCap:createDate="2009-11-17T16:14:55.3679055-08:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="PD" MadCap:comment="PD 11/18: Makes sense! \r\n&gt;&gt;from Cindy: Simplified this, because if they are reading this file, they almost certainly have the other Example topic in their project also!" MadCap:editDate="2009-11-18T12:15:49.9446332-08:00" MadCap:editor="v-padenc@REDMOND">topic in the Content root.</MadCap:annotation><![CDATA[ ]]></p>
+        <h2>Second and Third Level Indents           <![CDATA[ ]]></h2>
+        <p>In this example, hierarchy relative to an already-indented paragraph (p.GlossaryDefinition) is indicated by further indentation, achieved by two layers of unordered lists (two nested UL&#160;tags). </p>
+        <p class="GlossaryTerm">
+            <MadCap:annotation MadCap:createDate="2009-11-17T16:08:52.1867333-08:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="PD" MadCap:comment="PD 11/18: Cindy, the indentation I'm doing here is the &quot;Carnation&quot; and &quot;Tulip&quot; paragraphs, to line them up with the p.GlossaryDefinition paragraph above. Make sense?\r\n&gt;&gt;from Cindy: I think I already sent you an email on this: if they are doing a list of terms and defninitions, use Glossary styles.  That should work here, right?" MadCap:editDate="2009-11-18T12:16:01.4601638-08:00" MadCap:editor="v-padenc@REDMOND">Term X</MadCap:annotation>
+        </p>
+        <p class="GlossaryDefinition">A word that by any other word is a rose. Except in these conditions:&#160;</p>
+        <ul>
+            <ul>
+                <li>Carnation</li>
+                <li>Tulip</li>
+            </ul>
+        </ul>
+        <h2>Multiple Single Item Lists - No Bullets or Numbers</h2>
+        <p>In this example, information is emphasized by relative indentation in running text (not in numbered/bulleted lists), achieved by nesting paragraphs ("p" tags)&#160;in unordered lists (UL tags). </p>
+        <p>For Doors 2008 etc         <![CDATA[ ]]></p>
+        <ul>
+            <p>Install the file here: /path . . .         <![CDATA[ ]]></p>
+        </ul>
+        <p>For Doors 2003 etc.</p>
+        <ul>
+            <p>Install the file here:&#160;         <![CDATA[ ]]>/path . . .</p>
+        </ul>
+        <p class="note">To move a paragraph out of the list (UL&#160;or OL tag)&#160;that you are setting up, click the <span class="UIElementAction">Outdent Items </span>button (or select <span class="UIElementAction">Format &gt;&#160;List &gt; Outdent Items</span>). </p>
+    </body>
+</html>

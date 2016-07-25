@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="844" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.CTP1,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.60 - Revising">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Hosted applications</h1>
+        <p class="abstract" MadCap:conditions="">
+            <MadCap:keyword term="hosted applications" />This topic describes the components of a hosted application, an Amalga application hosted by the <MadCap:variable name="FeatureName.Amalga fabric first use" />.</p>
+        <p>A hosted application in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> consists of several required and optional components, as illustrated in the following diagram.</p>
+        <p>
+            <img src="Images/AmalgaAppComponents.png" />
+        </p>
+        <p>An application project serves to contain only the metadata associated with a hosted application.</p>
+        <p class="Label">Sections in this topic:</p>
+        <p class="Label" style="font-weight: normal;">
+            <MadCap:xref href="#Applicat" target="" title="" alt="">Application Manifest</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="#Data" target="" title="" alt="">Data Manifest</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="#Amalga" target="" title="" alt="">Hosted Services</MadCap:xref>
+        </p>
+        <h2><a name="Applicat"></a>Application Manifest</h2>
+        <p>The application manifest is an  XML&#160;file that declares the identifiers, configuration settings, application dependencies, and authorization model for the hosted application. A hosted application must contain exactly one  application manifest. For more information about application manifests, see <MadCap:xref href="DeploymentManifest/SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests on page 1</MadCap:xref>.</p>
+        <p class="note">You cannot add assemblies to an application manifest.</p>
+        <p>The application manifest is typically defined by creating a <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution containing a project based on the Amalga Application Project template. Once defined, the application manifest can be edited either manually or by using the Manifest Editor in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />. </p>
+        <h2><a name="Data"></a>Data Manifest</h2>
+        <p>The data manifest is a Virtual Schema Designer (.edmx) file that declares the virtual schema used by the hosted application when accessing data. Similar to an ADO.NET entity data mode. the data manifest contains the the conceptual model, storage model, and mappings that define  the read and write access that your hosted application will use through <MadCap:variable name="FeatureName.Amalga ADO.NET" />. A hosted application can optionally contain exactly one data manifest, to define the virtual schema for the hosted application and all hosted services contained by that hosted application. For more information about virtual schemas and data manifests, see <MadCap:xref href="SDK_OVW_Virtual_Schema_Overview.htm" target="" title="" alt="">Virtual schemas on page 1</MadCap:xref>.</p>
+        <p>The data manifest is typically defined by adding a data manifest to a <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> project based on the Amalga Application Project template. Once created, the data manifest can be edited either manually or by using the Virtual Schema Editor in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</p>
+        <h2><a name="Amalga"></a>Hosted Services</h2>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, hosted services are <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />s and <MadCap:variable name="BrandingMS.Doors service" />s that are built on and hosted by the <MadCap:variable name="FeatureName.Amalga fabric first use" />. A hosted application can optionally include one or more hosted services. Each hosted service consists of a service manifest and the files needed to implement the hosted service. For more information about hosted services, see <MadCap:xref href="SDK_LND_Amalga_Hosted_Services.htm" target="" title="" alt="">Hosted services on page 1</MadCap:xref>.</p>
+        <h3>Service Manifest</h3>
+        <p>The service manifest is an XML&#160;file that declares the identifiers, configuration settings, clustering mode, authentication mode, performance counters, and service contracts for the hosted service. Each hosted service must contain exactly one  service manifest. For more information about service manifests, see <MadCap:xref href="DeploymentManifest/SDK_CON_Service_Manifests.htm" target="" title="" alt="">Service manifests on page 1</MadCap:xref>.</p>
+        <h3>Service Files</h3>
+        <p>A hosted service typically contains files and resources that, when compiled, provide the features and functions of that hosted service. This includes, but is not limited to:</p>
+        <ul>
+            <li>Managed code to run business logic.</li>
+            <li><MadCap:variable name="FeatureName.Amalga ADO.NET" /> code to access data, using the virtual schema for the hosted application containing the hosted service.</li>
+            <li>Doors Communication Foundation (WCF) endpoints, using the Amalga Hosting Runtime API, that have access at runtime to their hosted configuration store, resolved dependencies, and other <MadCap:variable name="FeatureName.Amalga fabric first use" /> services, such as logging, auditing, and application discovery. For more information about WCF endpoints, see <a href="http://go.microsoft.com/fwlink?LinkID=227921">Endpoints: Addresses, Bindings, and Contracts</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://go.microsoft.com/fwlink?LinkID=227921">http://go.microsoft.com/fwlink?LinkID=227921</a></MadCap:conditionalText>.</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Application_Project.htm" target="" title="" alt="">Create a new Amalga application project on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DeploymentManifest/SDK_PROC_Edit_AppSvc_Manifest.htm" target="" title="" alt="">Edit an application manifest or service manifest on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Data_Manifest.htm" target="" title="" alt="">Add a new data manifest on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Add_WCF_Project.htm" target="" title="" alt="">Add a new service project on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest.htm" target="" title="" alt="">Deployment Manifest XML&#160;Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_VS_Proj_Templates.htm" target="" title="" alt=""> project templates on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Manifest_Editor.htm" target="" title="" alt="">Manifest Editor on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Creating a Virtual Schema on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

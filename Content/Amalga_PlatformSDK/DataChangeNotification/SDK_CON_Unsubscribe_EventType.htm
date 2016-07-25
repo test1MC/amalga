@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="787" MadCap:lastWidth="738" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Deleting a DCN event subscription</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event subscriptions:Data Change Notification platform application;Data Change Notification platform application:event subscriptions;Unsubscribe method:Data Change Notification platform application;Data Change Notification platform application:Unsubscribe method;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service" />This topic describes how to delete a DCN event subscription, without deleting the associated DCN event type, by using the Unsubscribe operation.</p>
+        <p>A hosted application can unsubscribe from a Data Change Notification (DCN) event type by deleting the DCN event subscription associated with that DCN event type. Deleting the DCN event subscription does not delete the associated DCN event type.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>asdfasdfsadf</p>
+        <p>The Unsubscribe operation, in the IEventManagmentService contract for the EventingManagerService service, is used to delete a DCN event subscription. </p>
+        <p class="note">Only the user account that created the DCN event subscription can delete that DCN event subscription. The user account that calls the Unsubscribe operation must match the value of the Owner property for the EventSubscription object that represents the DCN event subscription to be deleted. Otherwise, an error occurs.</p>
+        <p class="Figure">The Unsubscribe operation performs the following tasks when deleting a DCN event type:</p>
+        <ul>
+            <li>Deletes existing relationships between the DCN event subscription and the associated DCN event type.</li>
+            <li>Deletes the DCN event subscription.</li>
+        </ul>
+        <p>Unlike deleting a DCN event type, in which the DCN event type is actually retired, but still present in the database for the Microsoft.Amalga.Event.Application application, the DCN event subscription is actually deleted from the database.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="75" MadCap:lastWidth="567" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource,EditingTags.7 - Editing issues resolved,Personas.Carlos: IT Admin,ReleaseTarget.CTP1,Status.70 - Complete">
+    <head>
+    </head>
+    <body>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> supports adding user and user groups from Active Directory and any SAML-compliant security token service.</p>
+    </body>
+</html>

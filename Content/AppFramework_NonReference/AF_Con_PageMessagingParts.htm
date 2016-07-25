@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="MessagingManager;ConnectWithTopWindow;PageMessagingManager;deserialized" MadCap:lastBlockDepth="6" MadCap:lastHeight="3322.333" MadCap:lastWidth="940" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Page messaging</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the structure of the <MadCap:variable name="FeatureName.Amalga Framework" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-15T19:22:23.7545731-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Why is this a system, vs just page messageing, vs an application, etc.?  System is such a vague word -- what does it mean here, and will each writer use it for the same meaning?  \r\n(Not that I am biased)  If you can get rid of system that would be great. \r\nYou have it lower case here, so I am going to assume that is correct." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-15T19:26:40.7922743-08:00"><MadCap:annotation MadCap:createDate="2011-11-17T17:04:48.9653198-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Good question, but I'll take it up after CTP." MadCap:editor="v-wipete" MadCap:editDate="2011-11-17T17:05:08.3938683-08:00">page messaging system</MadCap:annotation></MadCap:annotation>.</p>
+        <p>Page messaging is a primarily client-side messaging system used to synchronize otherwise independent elements of a single page within a     <MadCap:variable name="FeatureName.Amalga Framework second use" /> application. It also uses a web service to synchronize some application states as a "common context" across page boundaries that the client-side messaging API cannot cross.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Overview" target="" title="" alt="">Overview on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Supporte" target="" title="" alt="">Supported levels of participation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Parts" target="" title="" alt="">Parts of the page messaging system</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Overview"></a>Overview</h2>
+        <p>The core of the page messaging system is a JavaScript message broker that manages a message queue and a common context object for each page hosted by the browser. Message creation and delivery are event-driven, asynchronous, and employ a callback-based "push" pattern based on callback methods registered by participants in named messaging groups.</p>
+        <p>Using this model, participants in the messaging system are not required to poll for new messages, or even know which other participants are members of the same messaging group. They only need to register a callback method with each named group whose messages they want to receive. </p>
+        <p>For elements that coexist within a browser window, message delivery takes place via the browser domain object model (DOM), and does not depend on communication with any <MadCap:variable name="BrandingHSG.Amalga Short" /> servers. This structure allows messaging participants to share information without incurring the latency cost associated with a page postback to the web server.</p>
+        <p>Page messaging system includes a web service that allows an application state, and specifically an HL7 CCOW clinical context object, to propagate from one page to another when the user navigates within an <MadCap:variable name="BrandingHSG.Amalga Short" /> portal. Communication with the server is also event-driven and asynchronous, and is often managed by a single dedicated messaging participant per page.  </p>
+        <h2><a name="Supporte"></a>
+            <MadCap:annotation MadCap:createDate="2012-03-12T19:44:00.6352219-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="More levels?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T19:44:04.4791360-07:00">Supported levels of participation</MadCap:annotation>
+        </h2>
+        <p>The page messaging system currently supports two levels of participation. These levels correspond to the scope of message propagation within a given message group. The scope of each group is determined by the messaging system and cannot be manually changed.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Level of participation</th>
+                    <th>Functionality</th>
+                </tr>
+                <tr>
+                    <td>Level One (L1)</td>
+                    <td>
+                        <p>Supports communication between elements of a single web page.  L1 participants share a single page messaging object.</p>
+                        <p>All page messaging groups support L1 participation.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Level Two (L2)</td>
+                    <td>
+                        <p>Supports communication between elements of multiple web pages, as a user navigates from one page to another. L2 participants share information across multiple page messaging objects, using the page messaging service as a broker.</p>
+                        <p>Only the CommonContext message group supports L2 participation, and it does so automatically.</p>
+                        <p class="CautionInTable">The <MadCap:variable name="FeatureName.Amalga Framework second use" /> implementation of L2 context passing uses the user session ID&#160;to identify context states. Changes to the common context in one web page will affect the content of the common context in every other page within its user session. For more information and best practices for managing common context across user sessions, see <a href="AF_Con_PageMessagingBestPractices.htm">Page messaging best practices</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Parts"></a>
+            <MadCap:annotation MadCap:createDate="2012-03-12T22:59:58.2368863-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Think of a better heading" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T23:00:09.3705888-07:00">Parts</MadCap:annotation> of page messaging </h2>
+        <p>The <MadCap:annotation MadCap:createDate="2012-03-04T17:09:41.9473791-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="For post-CTP2, suggest one of the following\r\nCreate a new topic that starts with Parts of page messaging&quot;\r\n-or-\r\nReplace this intro sentence with &quot;In this section&quot; and add  bulleted list/mini-TOC" MadCap:editor="v-labenn" MadCap:editDate="2012-03-04T17:09:43.0223791-08:00">following sections</MadCap:annotation> describe the major parts of the page messaging system in more detail.</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2012-03-12T23:11:39.6031328-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="The graphic isn't very accurate any more. Replace with something that provides a better illustration of message groups." MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T23:12:06.5762244-07:00">Architectural overview</MadCap:annotation>
+        </h3>
+        <p>In the following diagram, page messaging objects on browser pages 1 and 2 independently manage  L1 context and message passing on each page. The individual context participant controls and WebParts on each page register with page messaging for participation in message groups.</p>
+        <p>The common context object associated with each page messaging system maintains context (state) for each page.  The Context Manager web service allows them to communicate across pages (or other scope boundaries, such as independent Doors) to enable L2 and higher levels of context passing.  </p>
+        <p>Messages sent to the CommonContext messaging group propagate directly to registered CommonContext participants on the same page, and to CommoContext participants on other pages through the message manager object and web service. </p>
+        <p>Messages sent to all other named groups propagate to group participants on the same page. They do not propagate to messaging participants on other pages, even if the other pages have groups with identical names.</p>
+        <p>
+            <img src="Images/Context Passing dataflow.png" />
+        </p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2012-02-28T14:30:18.8779455-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Post-CTP2: edit lables in conceptual diagram." MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T14:30:35.4653893-08:00">Messaging</MadCap:annotation> manager</h3>
+        <p>The <a href="AF_Con_API_PageMessaging.htm#MessagingManager">MessagingManager</a> is a Javascript object that provides a central access point for creating and working with page messaging system elements. Many of its methods are either transparent in normal use (such as initialization) or are more conveniently accessed with subsidiary objects. However, some core activities (such as locating the common context or identifying other messaging participants) can  be carried out only with the messaging manager.</p>
+        <p>The messaging manager is always available within any <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal page, or any web page that contains at least one control derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>. <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PageMessagingManager.htm">PageMessagingManager</a> is a non-UI server control that will load the messaging manager into the browser DOM&#160;if no other <MadCap:variable name="FeatureName.Amalga Framework second use" /> page elements are available.</p>
+        <h3>Messaging group</h3>
+        <p>A message group is a label used by the messaging manager to group, address and deliver messages.</p>
+        <p>Participants in a messaging group send and receive messages that are serialized and deserialized according to a common convention. In most cases, the convention is informal and is not enforced, but it is still required in order to interoperate with other participants in the messaging group.</p>
+        <p>The CommonContext messaging group is a specialized group whose message content is mediated by a Web service, and whose message content is an implementation of the HL7 CCOW standard. For more information on the common context group, see <a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>.</p>
+        <h3>Message</h3>
+        <p>A <a href="AF_Con_API_PageMessaging.htm#Message">Message</a> encapsulates a data item that is sent from one page messaging participant to other participants, or to the common context. It consists of the following parts:</p>
+        <ul>
+            <li>The <b>SourceId</b> is the <b>Id</b> of the messaging <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> that sent the message. </li>
+            <li>The <b>GroupName</b> is the name of the group whose members will receive the message. Messages whose group name is set to <span class="Label">Amalga.Messaging._messageGroupRegistry.commonContext</span> are delivered to subscribers to the <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a> message group.</li>
+            <li>The <b>Topic</b> is an optional <span class="LabelCShrp">String</span> that identifies the topic of the message. Message recipients may use the value of the message topic to determine whether or not to process the message payload.</li>
+            <li>The <span class="Label">Payload</span> is a JavaScript <b>Dictionary</b> that contains the data that will either be sent to other messaging participants or merged into the common context. If the message is sent to the <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a> message group, its content must correspond to <MadCap:annotation MadCap:createDate="2011-11-15T19:35:44.1046681-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="An Amalga standard that is contrary to MSTP, whcih likes the more typical key/value, which you had..\r\n\r\nLLB: Cj, you corrected me on this during CTP1. &quot;key-value&quot; is a carryover from Amalga UIS, and the usage is endemic in AV3 docs. Leave as is." MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T14:21:17.9494950-08:00">key-value</MadCap:annotation> pairs as specified by the HL7 CCOW standard (although stored internally as a <span class="Label">Dictionary</span> instead of plain text.) If the message is delivered to any other group, there are no restrictions on the content of the payload beyond those imposed by the <b>Dictionary</b> data type itself. The consequence of this free form payload capability is that participants of a particular message group must agree to a contract for message content and format.  This format is completely up to you.</li>
+        </ul>
+        <h3>Message broker</h3>
+        <p>The message broker receives and delivers messages to and from messaging participants.  It processes messages in the order that it receives them.</p>
+        <p>The queue takes the following steps for each message:</p>
+        <ul>
+            <li>It identifies the group named by the message.</li>
+            <li>If the message is sent to any group other than <span class="Label">CommonContext</span>, it passes the message object to the <span class="Label">MessageReceiveCallback</span> method of each messaging participant that is registered with that group.</li>
+            <li>If the message is sent to the <b>CommonContext</b> group, it polls all participants with non-null <b>MessageSurveyCallback</b> methods (if any) to make sure that it is safe to commit a context change. (For more information on the context change survey workflow as part of propagating <span class="Label">CommonContext</span> changes on the page, see <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>). If the survey poll does not indicate an unsafe condition (or the user chooses to proceed anyway), it merges the message content into the common context, then sends the message to the <span class="Label">MessageReceiveCallback</span> methods registered with the <b>CommonContext</b> group, as<MadCap:annotation MadCap:createDate="2012-02-28T13:26:50.1165213-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="provide link to pertinent section?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T13:27:06.3097213-08:00"> above</MadCap:annotation>.</li>
+        </ul>
+        <p class="note">It is usually not necessary to call message broker methods directly. Each <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> handles its interaction with the message queue on its own.</p>
+        <h3>CommonContext</h3>
+        <p>CommonContext is both a named messaging group, and a client-side representation of the merged messages that have been sent to that group. Each page instance of the Page Messaging System maintains a dedicated non-visible participating control described  which automatically joins the CommonContext message group in order to handle local messages sent to the group and merge them with the existing context. </p>
+        <p>From the perspective of a messaging participant, the CommonContext is a single shared string value that contains a list of key-value pairs. It is available to any messaging participant that joins the CommonContext message group, and propagates from one page to the next as a user navigates within an <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> portal. Its operation is mostly transparent to individual controls.</p>
+        <p>For more information about the common context and how it is used, see <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>.</p>
+        <h3>Participant</h3>
+        <p>A page messaging participant is any server control, WebPart, or other web page element that uses the Page Messaging API to exchange state information with other participating page elements. </p>
+        <p>The <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> object provides the entry point to the Page Messaging API for controls that need to share information with other controls on the page. It exposes methods for the most frequently used messaging activities, including joining and leaving groups,  sending messages, and registering callback methods for handling received messages.</p>
+        <h3>Web service participant</h3>
+        <p>Most elements of the messaging system run inside the local browser and do not connect directly to the <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> servers.  The system does create a special Javascript object, <b>PageMessagingServiceClient</b>, which is joined to the CommonContext message group. Its role is to synchronize the content of the local common context with a server-side context managed by the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService </a> web service.</p>
+        <p>The behavior of the web service participant is generally transparent to the other participants.</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">Values and actions in page <MadCap:annotation MadCap:createDate="2012-02-28T13:35:44.7797798-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="MISSING CONTENT - DnB this section?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T13:36:01.9973372-08:00">messaging</MadCap:annotation></h2>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References [Optional]</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

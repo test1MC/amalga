@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="914.3332" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Procedure entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.Procedure.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].Procedure" /><span class="Label">Entity concept code</span>: PR1</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AnesthesiaMinutes</td>
+                    <td>PR1-10</td>
+                    <td>HL7</td>
+                    <td>Length of time in minutes that the anesthesia was administered.</td>
+                </tr>
+                <tr>
+                    <td>AnesthesiologistID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref></td>
+                </tr>
+                <tr>
+                    <td>AnesthesiologistName</td>
+                    <td>PR1-8</td>
+                    <td>HL7</td>
+                    <td>Name of the anesthesiologist.</td>
+                </tr>
+                <tr>
+                    <td>AssociatedDiagnosisCode</td>
+                    <td>PR1-15</td>
+                    <td>HL7</td>
+                    <td>Diagnosis that is the primary reason this procedure was performed.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>PractitionerID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Identifier of the practitioner who performs the procedure.</td>
+                </tr>
+                <tr>
+                    <td>PractitionerName</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Name of the practitioner who performs the procedure.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCode</td>
+                    <td>PR1-3-1</td>
+                    <td>HL7</td>
+                    <td>Unique identifier assigned to the procedure.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCode_CPT4</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Procedure Code in CPT4.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCode_ICD10PCS</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Procedure Code in ICD10PCS.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCode_ICD9</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Procedure Code in ICD9.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCode_SNOMED</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Procedure Code in SNOMED.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureCodingSystem</td>
+                    <td>PR1-3-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureDateTime</td>
+                    <td>PR1-5</td>
+                    <td>HL7</td>
+                    <td>Date and time when the procedure was performed.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureDateTime_o</td>
+                    <td>PR1-5</td>
+                    <td>HL7</td>
+                    <td>Date and time offset when the procedure was performed.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureID</td>
+                    <td>ProcedureID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.Procedure entity.
+</td>
+                </tr>
+                <tr>
+                    <td>ProcedureIdentifier</td>
+                    <td>PR1-19</td>
+                    <td>HL7</td>
+                    <td>Unique identifier of the anesthesia used during the procedure.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureMinutes</td>
+                    <td>PR1-7</td>
+                    <td>HL7</td>
+                    <td>Length of time in whole minutes that the procedure took to complete.</td>
+                </tr>
+                <tr>
+                    <td>ProcedureText</td>
+                    <td>PR1-3-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the procedure.</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>PR1-20</td>
+                    <td>HL7</td>
+                    <td>Action to be taken for this procedure.</td>
+                </tr>
+                <tr>
+                    <td>StatusNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized action.</td>
+                </tr>
+                <tr>
+                    <td>SurgeonID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>SurgeonName</td>
+                    <td>PR1-11</td>
+                    <td>HL7</td>
+                    <td>Name of the surgeon who performed the procedure.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>PR1-6</td>
+                    <td>HL7</td>
+                    <td>Optional code that further defines the type of procedure.</td>
+                </tr>
+                <tr>
+                    <td>TypeNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized code.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

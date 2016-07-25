@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="897.6666" MadCap:lastWidth="746.6666" MadCap:fileTags="EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-dennk" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Terminology.Relationship entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p>
+            <MadCap:keyword term="entity definitions:Microsoft.Terminology.Relationship" />
+            <MadCap:snippetText src="SummarySnippets/T.Relationship.flsnp" />
+        </p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>LanguageId
+</td>
+                    <td>Unique identifier of the language associated with the Meaning attribute in the <MadCap:xref href="DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>RelationshipTypeId
+</td>
+                    <td>Unique identifier of the relationship type, which is a foreign key to the <MadCap:xref href="DP_GREF_Terminology.RelationshipType.htm" target="" title="" alt="">Microsoft.Terminology.RelationshipType entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>RelationshipTypeName
+</td>
+                    <td>Description of the relationship type.</td>
+                </tr>
+                <tr>
+                    <td>SourceconceptCode
+</td>
+                    <td>For a binary relationship, the source concept code defined by the source terminology. For a unary relationship,  the concept code.</td>
+                </tr>
+                <tr>
+                    <td>SourceconceptCodeId
+</td>
+                    <td>Unique identifier of the source concept code, which is a foreign key to the CodeId attribute in the <MadCap:xref href="DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>SourceConceptId
+</td>
+                    <td>Unique identifier for the source concept, which is a foreign key to the ConceptId attribute in the <MadCap:xref href="DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity.</MadCap:xref></td>
+                </tr>
+                <tr>
+                    <td>SourceConceptMeaning
+</td>
+                    <td>Description of the source concept.</td>
+                </tr>
+                <tr>
+                    <td>TargetConceptCode
+</td>
+                    <td>For a binary relationship,  the target concept code defined by the target terminology.</td>
+                </tr>
+                <tr>
+                    <td>TargetConceptCodeId
+</td>
+                    <td>Unique identifier of the target concept code, which is a foreign key to the CodeId attribute in the <MadCap:xref href="DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>TargetConceptId
+</td>
+                    <td>Unique identifier of the target concept, which is a foreign key to the ConceptId attribute in the <MadCap:xref href="DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>SourceConceptMeaning
+</td>
+                    <td>Description of the target concept.</td>
+                </tr>
+                <tr>
+                    <td>TerminologyId
+</td>
+                    <td>Unique identifier of the terminology that contains the current relationship.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2068.333" MadCap:lastWidth="1158" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Logging activity with JavaScript</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="logging" />
+        </p>
+        <p class="abstract">This section describes how to use the client-side Logging API available to <MadCap:variable name="FeatureName.Amalga Framework" /> applications.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> Logging API&#160;allows <MadCap:variable name="BrandingMS.SharePoint" /> applications to use JavaScript to record messages in the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic and performance logs. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#The" target="" title="" alt="">The Logger object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Diagnost" target="" title="" alt="">Diagnostic logging on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Performa" target="" title="" alt="">Performance logging on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Callback" target="" title="" alt="">Callback methods on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h2><a name="The"></a>The Logger object</h2>
+        <p>The client side of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> Logging API is based on a central function, <span class="ForeignCodeElements">Logger()</span>, which initializes the logging service wrapper and defines a set of helper functions. The logging functions are located in <code>global.js</code>. Each of the  <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal master pages loads <code>global.js</code> and initializes the logger the first time it is used to render a page.</p>
+        <h3>Logging level</h3>
+        <p>The logging level of a log message identifies its purpose and also specifies its destination. </p>
+        <p>Every log message must have an associated logging level. Depending on the logging method used to generate the message, the logging level may need to be set manually, or it may be automatically assigned an appropriate value.</p>
+        <p>The JavaScript methods support five logging levels:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Logging level</th>
+                    <th>Message type</th>
+                    <th>Message destination</th>
+                </tr>
+                <tr>
+                    <td>"detailed"</td>
+                    <td>TraceDetailed</td>
+                    <td>Performance log</td>
+                </tr>
+                <tr>
+                    <td>"minimal"</td>
+                    <td>TraceMinimal</td>
+                    <td>Performance log</td>
+                </tr>
+                <tr>
+                    <td>"info"</td>
+                    <td>Info</td>
+                    <td>Diagnostic log</td>
+                </tr>
+                <tr>
+                    <td>"warn"</td>
+                    <td>Warn</td>
+                    <td>Diagnostic log</td>
+                </tr>
+                <tr>
+                    <td>"error"</td>
+                    <td>Error</td>
+                    <td>Diagnostic log</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Diagnost"></a>Diagnostic logging</h2>
+        <p>Informational, warning, and error log messages are sent to the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic log. The API includes helper functions for creating all three types of diagnostic message.</p>
+        <p class="note">Unlike the .NET logging methods, the JavaScript logging functions do not require a logging context.</p>
+        <h2><a name="Performa"></a>Performance logging</h2>
+        <p>Trace log messages are sent to the <MadCap:variable name="BrandingHSG.Amalga Short" /> performance log.</p>
+        <h3>Event markers</h3>
+        <p>The JavaScript API uses event markers for performance tracking. An event marker is an object that tracks the activity of an application event or process, and can be used to create performance log messages when the event begins and ends.</p>
+        <p>Unlike the <MadCap:variable name="BrandingMS.SharePoint" /> monitored scopes used by the .NET logging API, event markers do not automatically generate performance log messages. The <span class="ForeignCodeElements">StartEvent()</span> and <span class="ForeignCodeElements">StopEvent()</span> methods must be called explicitly.</p>
+        <p class="note">Each <span class="ForeignCodeElements">EventMarker</span> instance can only track the state of a single event. If <span class="ForeignCodeElements">StartEvent()</span> is called twice without a call to <span class="ForeignCodeElements">StopEvent()</span> in between, the second call to <span class="ForeignCodeElements">StartEvent()</span>&#160;will have no effect. Similarly, a call to <span class="ForeignCodeElements">StopEvent()</span> will have no effect if the event marker is not already active.</p>
+        <h2><a name="Callback"></a>Callback methods</h2>
+        <p>Unlike the .NET API, the JavaScript logging methods allow you to specify a callback method. The callback method will be called when the message has been successfully added to the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic or performance log.</p>
+        <p>The logging callback method is always optional.</p>
+        <h4>Example</h4><pre xml:space="preserve">
+// This function uses the Amalga performance log to record the time it takes
+//  to send an informational message to the diagnostic log.
+function testLogger() {
+			
+    // Identify the informational message
+    var myEventId = 20001;
+			
+    // Define the message contents
+    var myInformationalMessage = "This is a test.";
+    var myStartMessage = "Log message sent.";
+    var myStopMessage = "Message confirmation received.";
+
+    // Create a new event marker
+    //  Note that the default message is not specified. Each
+    //  call to StartEvent() and StopEvent() will have to set
+    //  its own message content.
+    var myEventMarker = EventMarker("detailed", myEventId);;
+
+    // Define the callback function
+    function msgCallback() {
+        // Record the time that the message confirmation arrives
+        myEventMarker.StopEvent(myStopMessage);;
+    }
+			
+    // Record the time that the message is sent
+    myEventMarker.StartEvent(myStartMessage);;
+			
+    // Send the informational message to the diagnostic log
+    //  NOTE - a robust implementation would include a timer, and
+    //  would call StopEvent with a different stop message if the
+    //  timer runs out before the callback method is called
+    Logger.Info(myEventId, myInformationalMessage, msgCallback);
+}			
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Logging.htm">JavaScript API reference: Logging</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_ErrorHandling.htm">Error handling</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/Logger/LOG_CON_DiagnosticLog.htm">Diagnostic log</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/Logger/LOG_CON_ViewingLogs.htm">Viewing log entries</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To filter the laboratory data displayed</p>
+        <ul>
+            <li>Click <span class="UIElementAction">All </span>or one of the lab types.</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="801" MadCap:lastWidth="626" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-11T21:25:54.6479784-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-11T21:25:54.7329784-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;"><MadCap:variable name="FeatureName.Amalga ADO.NET" /> schema collections</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the provider-specific schema collections, including schema restrictions, supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The following provider-specific schema collections are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />. You can query the .NET data provider included with <MadCap:variable name="FeatureName.Amalga ADO.NET" />, .NET&#160;Framework Data Provider for Amalga, to determine the list of supported schema collections by calling the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbCollection</span> object with no arguments.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Columns" target="" title="" alt="">Columns on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Database" target="" title="" alt="">Databases on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#ForeignK" target="" title="" alt="">ForeignKeys on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PrimaryK2" target="" title="" alt="">PrimaryKeyColumns on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PrimaryK" target="" title="" alt="">PrimaryKeys on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Tables" target="" title="" alt="">Tables on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Columns"></a>Columns</h2>
+        <p>This schema collection exposes information about all of the properties for entities and application views supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>TABLE_CATALOG</td>
+                    <td>string? schema</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TABLE_SCHEMA</td>
+                    <td>string</td>
+                    <td>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to the namespace for that public entity. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_NAME</td>
+                    <td>string</td>
+                    <td>The name of the entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>COLUMN_NAME</td>
+                    <td>string</td>
+                    <td>The name of the property for the entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>CHARACTER_MAXIMUM_LENGTH</td>
+                    <td>int</td>
+                    <td>Maximum length, in characters, for binary data, character data, or text and image data. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>ORDINAL_POSITION</td>
+                    <td>int</td>
+                    <td>The ordinal position of the property within the entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>COLUMN_DEFAULT</td>
+                    <td>string</td>
+                    <td>Default value of the property for the entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>IS_NULLABLE</td>
+                    <td>string</td>
+                    <td>Nullability of the property. If the property is nullable, the value of this column is set to "True". Otherwise, the value of this column is set to "False".</td>
+                </tr>
+                <tr>
+                    <td>DATA_TYPE</td>
+                    <td>string</td>
+                    <td>System-supplied data type.</td>
+                </tr>
+                <tr>
+                    <td>NUMERIC_PRECISION</td>
+                    <td>unsignedByte</td>
+                    <td>Precision of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>NUMERIC_SCALE</td>
+                    <td>int</td>
+                    <td>Scale of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>CODING_SYSTEM</td>
+                    <td>string</td>
+                    <td>Ignored.</td>
+                </tr>
+                <tr>
+                    <td>DATA_FORMAT</td>
+                    <td>string</td>
+                    <td>Ignored.</td>
+                </tr>
+                <tr>
+                    <td>OPTIONAL</td>
+                    <td>boolean</td>
+                    <td>The optionality of the property for the entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>CONCEPT</td>
+                    <td>string</td>
+                    <td>Semantic tag applied to the column. If no semantic tag has been applied to the column, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Database"></a>Databases</h2>
+        <p>This schema collection exposes information about all of the virtual schemas supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DATABASE_NAME</td>
+                    <td>string</td>
+                    <td>Name of the <MadCap:variable name="FeatureName.virtual schema" MadCap:changes="2" /><MadCap:change MadCap:changes="1">virtual schema</MadCap:change>.</td>
+                </tr>
+                <tr>
+                    <td>PUBLISHER</td>
+                    <td>string</td>
+                    <td>Publisher of the <MadCap:variable name="FeatureName.virtual schema" MadCap:changes="2" /><MadCap:change MadCap:changes="1">virtual schema</MadCap:change>.</td>
+                </tr>
+                <tr>
+                    <td>CREATE_DATE</td>
+                    <td>dateTime</td>
+                    <td>Creation date of the <MadCap:variable name="FeatureName.virtual schema" MadCap:changes="2" /><MadCap:change MadCap:changes="1">virtual schema</MadCap:change>.</td>
+                </tr>
+                <tr>
+                    <td>TYPE</td>
+                    <td>string</td>
+                    <td>If set to "Public", the <MadCap:variable name="FeatureName.virtual schema" MadCap:changes="2" /><MadCap:change MadCap:changes="1">virtual schema</MadCap:change> can be accessed by platform features and hosted applications other than the one that published it. If set to "Internal", only the platform feature or hosted application that published the <MadCap:variable name="FeatureName.virtual schema" MadCap:changes="2" /><MadCap:change MadCap:changes="1">virtual schema</MadCap:change> can access it.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="ForeignK"></a>ForeignKeys</h2>
+        <p>This schema collection exposes information about all of the foreign key constraints supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_SCHEMA</td>
+                    <td>string</td>
+                    <td>Ignored.</td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_NAME</td>
+                    <td>string</td>
+                    <td>The name of the foreign key constraint.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TABLE_SCHEMA</td>
+                    <td>string</td>
+                    <td>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to the namespace for that public entity. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_NAME</td>
+                    <td>string</td>
+                    <td>The name of the public entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_TYPE</td>
+                    <td>string</td>
+                    <td>
+                        <p>The type of constraint. </p>
+                        <p>The value of this column is set to "FOREIGN&#160;KEY".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="PrimaryK2"></a>PrimaryKeyColumns</h2>
+        <p>This schema collection exposes information about all of the primary key columns supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>TABLE_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TABLE_SCHEMA</td>
+                    <td>string</td>
+                    <td>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to the namespace for that public entity. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_NAME</td>
+                    <td>string</td>
+                    <td>The name of the public entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>COLUMN_NAME</td>
+                    <td>string</td>
+                    <td>The name of the property for the public entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>ORDINAL_POSITION</td>
+                    <td>int</td>
+                    <td>The ordinal position of the property within the public entity or application view.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="PrimaryK"></a>PrimaryKeys</h2>
+        <p>This schema collection exposes information about all of the primary key constraints supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_SCHEMA</td>
+                    <td>string</td>
+                    <td>Ignored.</td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_NAME</td>
+                    <td>string</td>
+                    <td>The name of the primary key constraint.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TABLE_SCHEMA</td>
+                    <td>string</td>
+                    <td>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to the namespace for that public entity. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_NAME</td>
+                    <td>string</td>
+                    <td>The name of the public entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>CONSTRAINT_TYPE</td>
+                    <td>string</td>
+                    <td>
+                        <p>The type of constraint. </p>
+                        <p>The value of this column is set to "PRIMARY&#160;KEY".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Tables"></a>Tables</h2>
+        <p>This schema collection exposes information about all of the public entities and application views supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>TABLE_CATALOG</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the platform feature or hosted application.</p>
+                        <p>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to "Amalga Entity Registry". Otherwise, the column represents an entity property for an application view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TABLE_SCHEMA</td>
+                    <td>string</td>
+                    <td>If the column represents an entity property for a public entity registered in the Entity Registry, the value of this column is set to the namespace for that public entity. Otherwise, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_NAME</td>
+                    <td>string</td>
+                    <td>The name of the public entity or application view.</td>
+                </tr>
+                <tr>
+                    <td>TABLE_TYPE</td>
+                    <td>string</td>
+                    <td>
+                        <p>The type of public entity or application view.</p>
+                        <p>The value of this column is set to "BASE&#160;TABLE".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CONCEPT</td>
+                    <td>string</td>
+                    <td>Semantic tag applied to the public entity or application view. If no semantic tag has been applied to the column, <span class="ForeignCodeElements">DBNull.Value</span> is returned.</td>
+                </tr>
+                <tr>
+                    <td>IS_WRITABLE</td>
+                    <td>string</td>
+                    <td>If the value of this column is set to "true", the entity or application view is writable. Otherwise, the value of this column is set to "false".</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

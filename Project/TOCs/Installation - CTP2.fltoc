@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Installation"
+    Link="/Content/Installation/CTP2 - 01 Welcome">
+    <TocEntry
+      Title="Terminology"
+      Link="/Content/Installation/CTP2 - 02 Terminology.htm" />
+    <TocEntry
+      Title="Topology concepts"
+      Link="/Content/Installation/CTP2 - 03 Topology Concepts.htm" />
+    <TocEntry
+      Title="System prerequisites"
+      Link="/Content/Installation/CTP2 - 04 System prerequisites.htm">
+      <TocEntry
+        Title="Hardware Prerequisites"
+        Link="/Content/Installation/CTP2 - 04a Hardware Prereqs.htm" />
+      <TocEntry
+        Title="Software prerequisites"
+        Link="/Content/Installation/CTP2 - 04b Software Prereqs.htm" />
+      <TocEntry
+        Title="Additional prerequisites"
+        Link="/Content/Installation/CTP2 - 04c Additional Prereqs.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Installation Overview"
+      Link="/Content/Installation/CTP2 - 05 Installation Overview.htm" />
+    <TocEntry
+      Title="Single server platform installation"
+      Link="/Content/Installation/CTP2 - 06 Single server platform installation.htm" />
+    <TocEntry
+      Title="Multiple server platform installation"
+      Link="/Content/Installation/CTP2 - 07 Multiple server platform installation.htm">
+      <TocEntry
+        Title="Multiple server configuration"
+        Link="/Content/Installation/CTP2 - 07a Server configuration.htm">
+        <TocEntry
+          Title="Installations required on all [%=BrandingHSG.Amalga Short%] servers"
+          Link="/Content/Installation/CTP2 - 07aa All Servers.htm" />
+        <TocEntry
+          Title="Platform server configuration"
+          Link="/Content/Installation/CTP2 - 07ab Platform server configuration.htm" />
+        <TocEntry
+          Title="CTP2 - 07ab Database server configuration"
+          Link="/Content/Installation/CTP2 - 07ac Database server configuration.htm" />
+        <TocEntry
+          Title="CTP2 - 07ac Application server configuration"
+          Link="/Content/Installation/CTP2 - 07ad Application server configuration.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="CTP2 - 07b Application configuration"
+        Link="/Content/Installation/CTP2 - 07b Application configuration.htm">
+        <TocEntry
+          Title="CTP2 - 07ba Required applications"
+          Link="/Content/Installation/CTP2 - 07ba Required applications.htm" />
+        <TocEntry
+          Title="CTP2 - 07bb Application deployment"
+          Link="/Content/Installation/CTP2 - 07bb Application deployment.htm" />
+        <TocEntry
+          Title="CTP2 - 07bc Verify application"
+          Link="/Content/Installation/CTP2 - 07bc Verify application.htm" />
+        <TocEntry
+          Title="CTP2 - 07bd Remove an application"
+          Link="/Content/Installation/CTP2 - 07bd Remove an application.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Topic Title"
+        Link="/Content/Installation/CTP2 - 07c HealthVault Connector.htm">
+        <TocEntry
+          Title="[%=BrandingHSG.HealthVault%] Connection prerequisites"
+          Link="/Content/Installation/CTP2 - 07ca HealthVault Prerequisites.htm" />
+        <TocEntry
+          Title="Create a [%=BrandingHSG.HealthVault%] PPE application"
+          Link="/Content/Installation/CTP2 - 07cb HealthVault PPE application.htm" />
+        <TocEntry
+          Title="Create a [%=BrandingHSG.HealthVault%] RD application"
+          Link="/Content/Installation/CTP2 - 07cc HealthVault RD application.htm" />
+        <TocEntry
+          Title="[%=BrandingHSG.HealthVault%] Connection authorization configuration"
+          Link="/Content/Installation/CTP2 - 07cd HealthVault Connection authorization.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="CTP2 - 07d DataExplorer Installation"
+        Link="/Content/Installation/CTP2 - 07d DataExplorer Installation.htm">
+        <TocEntry
+          Title="CTP2 - 07da DataExplorer Prereqs"
+          Link="/Content/Installation/CTP2 - 07da DataExplorer Prereqs.htm" />
+        <TocEntry
+          Title="Install the [%=BrandingHSG.Brussels second use%][%=BrandingMS.SharePoint%] Front End"
+          Link="/Content/Installation/CTP2 - 07db Install DE SP Front End.htm" />
+        <TocEntry
+          Title="Complete the [%=BrandingHSG.Brussels second use%] front end installation"
+          Link="/Content/Installation/CTP2 - 07dc Complete DE FE Installation.htm" />
+        <TocEntry
+          Title="Complete the [%=BrandingHSG.Brussels second use%] Application Installation"
+          Link="/Content/Installation/CTP2 - 07dd Complete DE App Installation.htm" />
+        <TocEntry
+          Title="Prepare the [%=BrandingHSG.Brussels second use%] client"
+          Link="/Content/Installation/CTP2 - 07df Prepare the DE Client.htm" />
+        <TocEntry
+          Title="[%=BrandingHSG.Brussels second use%] sample SQL queries"
+          Link="/Content/Installation/CTP2 - 07dg DE SQL Sample.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="CTP2 - 08 Setup utility"
+      Link="/Content/Installation/CTP2 - 08 Installation References.htm">
+      <TocEntry
+        Title="Setup  utility reference"
+        Link="/Content/Installation/CTP2 - 08a Setup utility.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

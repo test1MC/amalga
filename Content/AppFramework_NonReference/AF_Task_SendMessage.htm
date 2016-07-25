@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="695" MadCap:lastWidth="963" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create and send a message</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes how to create a message and send it to a message group.</p>
+        <p> To create a new message, call the <a href="AF_Con_API_PageMessaging.htm#Message">Message</a> constructor. The new message is empty, and each of its properties must be explicitly set.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-28T16:12:52.1113742-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="convert to a procedure? number steps?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T16:13:13.8528662-08:00">The process for setting the message properties depends on the <a href="AF_Con_PageMessagingConventions.htm">message convention</a> for the group, but generally requires the following elements:</MadCap:annotation>
+        </p>
+        <ul>
+            <li>Assign the <span class="Label">sourceId</span> (the ID value that was used to register the <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> with the page messaging system) and the <span class="Label">groupName</span> of the destination message group.</li>
+            <li>Create a string representation (often JSON) of the appropriate message data and assign it to the payload.</li>
+            <li>If the message-handling convention includes support for filtering by <span class="Label">topic</span> values, assign the appropriate <span class="Label">topic</span>.</li>
+            <li>To receive confirmation of message delivery, assign a callback method to the <span class="Label">completeCallback</span> property.</li>
+        </ul>
+        <p>Once the <a href="AF_Con_API_PageMessaging.htm#Message">Message</a> is complete, pass it to the <a href="AF_Con_API_PageMessaging.htm#Participant">Participant.Send()</a> function to send it to the recipients of the named message group.</p>
+        <p class="note">Messages sent with the <span class="codeEntity">MessagingManager.Sent()</span> function are anonymous by default. Their <span class="codeEntity">sourceId</span> is <span class="codeEntity">null</span>.</p>
+        <p>Messages sent to the CommonContext message group will replace some or all of the content of the common context, depending whether or not any of the existing content on the information that is already there. For more information about subject dependency and merging new messages into the CommonContext, see <a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a> and <a href="AF_Con_PageMessagingDefineDataItem.htm">common context message data.</a></p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_PageMessaging.htm">JavaScript API reference: Page Messaging</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>
+        </p>
+        <p><a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>
+        </p>
+        <p><a href="AF_Con_PageMessagingConventions.htm">Message conventions</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1701" MadCap:lastWidth="368" MadCap:fileTags="TopicType.Procedure,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,TopicOwner.v-dennk">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a new read-only application view</h1>
+        <p class="abstract">
+            <MadCap:keyword term="application views" />This topic describes how to use the Update Wizard to add read-only application views, based on existing Amalga entities from the <MadCap:variable name="FeatureName.entity registry" />, to a virtual schema.</p>
+        <p>If you have Amalga entities that already have been created in the <MadCap:variable name="FeatureName.entity registry" />, then you can automatically create read-only application views for those Amalga entities by using the Update Wizard. </p>
+        <p class="tip">Adding read-only application views to a virtual schema is typically the first action performed with a virtual schema.</p>
+        <p>The following procedure uses the Update Wizard to connect to the <MadCap:variable name="FeatureName.entity registry" /> of an Amalga topology, </p>
+        <p class="LabelforProcedures">To add a new read-only application view using the Update Wizard</p>
+        <ol>
+            <li>In Solution Explorer, right-click the data manifest (.edmx) file for the hosted application, and then click <span class="UIElementAction">Open</span>.</li>
+            <li>Right-click an empty area in the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />, and then click&#160;<span class="UIElementAction">Update Model from Database</span>.</li>
+            <li>
+                <p class="Figure">If a data connection is not yet associated with the data manifest, click <span class="UIElementAction">New Connection</span>. </p>
+            </li>
+            <li>
+                <p>If <span class="UIElementAction">Data source</span> is not already set to  <span class="UIElementAction">Amalga Data Provider (Data&#160;Client)</span>, perform the following steps.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Click <span class="UIElementAction">Change</span>.</li>
+                    <li>In <span class="UIElementAction">Data source</span>, select <span class="UIElementAction">Amalga Data Provider</span>.</li>
+                    <li>Click <span class="UIElementAction">OK</span>.</li>
+                </ol>
+            </li>
+            <li>In <span class="UIElementAction">Amalga application server address</span>, type the Uniform Resource Locator (URL), including port number, of the data host containing the Entity Registry.</li>
+            <li>In <span class="UIElementAction">Log on to the server</span>, select <span class="UIElementAction">Use Doors Authentication</span>.</li>
+            <li>In <span class="UIElementAction">Connect to</span>, select <span class="UIElementAction">Entity Registry</span>.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>
+                <p>If you want to save the data connection in an application configuration (app.config) file for later use, select <span class="UIElementAction">Save entity connection settings in App.Config as</span>.</p>
+                <p class="note">If an app.config file does not exist in the application project, a new app.config file is created for the project and the connection string for the data connection is added to it. Otherwise, the connection string for the data connection is added to the existing app.config file for the application project.</p>
+                <p class="note">The <span class="InputText">username</span> and <span class="InputText">password</span> keywords are not supported in connection strings for  <![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Next</span>. </p>
+                <p class="note">Retrieving information from the entity registry may take some time.</p>
+            </li>
+            <li>In the <span class="UIElementAction">Add</span> tab, expand <span class="UIElementAction">Tables </span>and select the <MadCap:variable name="BrandingHSG.Amalga Short" /> entities from which you want to create the read-only application views.</li>
+            <li>
+                <p>Click <span class="UIElementAction">Finish</span>.</p>
+                <p class="note">Depending on the number of selected <MadCap:variable name="BrandingHSG.Amalga Short" /> entities, generating a virtual schema may take some time.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

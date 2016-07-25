@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,TopicType.Procedure,EditingTags.7 - Editing issues resolved,Status.10 - Not in use" MadCap:lastBlockDepth="4" MadCap:lastHeight="514" MadCap:lastWidth="576" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Change application settings</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, you can change application settings by using the Set-AmConfigurationSetting <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet. For more information about the syntax and parameters of this command, see <MadCap:xref href="../../../Installation/Install Ref Appendix B PowerShell Ref.htm#Set-AmCo" target="" title="" alt="">Set-AmConfigurationSetting</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To change application settings</p>
+        <ol>
+            <li>Start <MadCap:variable name="BrandingMS.Doors PowerShell" /> as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>
+                <p>Run the following commands to prepare <MadCap:variable name="BrandingMS.Doors PowerShell" />.</p>
+                <p class="InputTextPara">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell'</p>
+                <p class="InputTextPara">Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll
+</p>
+                <p class="InputTextPara">Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll
+</p>
+            </li>
+            <li>
+                <p>Run the following command to change application settings. Replace the <span class="Placeholder">placeholders </span>with variables appropriate for your installation.</p>
+                <p class="InputTextPara">Set-AmConfigurationSetting –InstanceType &lt;String&gt; -InstanceName &lt;String&gt;  -SettingName &lt;String&gt; [-SettingValue] &lt;String&gt; [-SettingValueFile] &lt;String&gt;</p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="../System Management/Manage Amalga Logical Hosts Header.htm" target="" title="" alt="">Managing logical hosts</MadCap:xref>
+        </p>
+    </body>
+</html>

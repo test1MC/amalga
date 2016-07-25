@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1491" MadCap:lastWidth="904" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Service manifests</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="service manifest" />This topic describes the service manifest, an XML file that contains the service-specific metadata for a hosted service.</p>
+        <p>All hosted services contained in a hosted application must each contain a service manifest. A service manifest is an XML file, named AmalgaService.xml, that contains elements and attributes from the deployment manifest XML schema. For more information about the deployment manifest XML schema, see <MadCap:xref href="SDK_XML_Manifest.htm" target="" title="" alt="">Deployment Manifest XML&#160;Reference on page 1</MadCap:xref>.</p>
+        <p>The service manifest is edited by a developer building a hosted application that contains hosted services. It contains the metadata required by the <MadCap:variable name="FeatureName.Amalga fabric first use" /> to host and expose the service. The service manifest is organized around four sections, which provide the following information to the <MadCap:variable name="FeatureName.Amalga fabric first use" /> when an instance of the hosted application is debugged, deployed, or managed:</p>
+        <ul>
+            <li>
+                <p>Service instance identification</p>
+                <p>The service manifest contains the name, version, and unique identifier of the hosted service. Once resolved, the service manifest also contains the unique name of the specific deployed instance of the hosted service. Multiple instances of the same hosted application can be supported on a single target topology, and so each instance of the hosted services contained in that hosted application must also be uniquely identified.</p>
+            </li>
+            <li>
+                <p>Configuration settings</p>
+                <p>Included in the service manifest, configuration settings provide service-specific variables that can be used to change the behavior of a hosted service. On deployment, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> automatically creates a configuration store, for an administrator to manage the settings of a hosted application, and a page in the Microsoft Amalga Management Console to manage these settings for the deployed instance of that hosted application. The settings for a hosted service contained by that hosted application are also included. If default values are included, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> applies those values to the settings in the configuration store during deployment. If validation rules are included, the <MadCap:variable name="FeatureName.Management Console second use" /> applies those rules when changing the values for those settings.</p>
+            </li>
+            <li>
+                <p>Performance categories and performance counters</p>
+                <p>After deployment, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> uses the performance categories and performance counters declared in the service manifest to monitor the performance of a hosted service.</p>
+            </li>
+            <li>
+                <p>Clustering mode and cluster group</p>
+                <p>For hosted services that are designed to take advantage of clustering, the service manifest provides information on the supported clustering mode and intended cluster group for a hosted service.</p>
+            </li>
+            <li>
+                <p>Authentication mode</p>
+                <p>The service manifest provides information on the authentication mode required by the hosted service.</p>
+            </li>
+            <li>
+                <p>Logical host name</p>
+                <p>After deployment, this attribute identifies the logical host on which an instance of a hosted service is hosted. You can specify a logical host name for debugging purposes, before deploying a hosted service.</p>
+            </li>
+            <li>
+                <p>Access level</p>
+                <p>For hosted <MadCap:variable name="BrandingMS.WCF service" />s, this attribute indicates whether the hosted service supports private or public access.</p>
+            </li>
+            <li>
+                <p>Service contracts</p>
+                <p>For hosted <MadCap:variable name="BrandingMS.WCF service" />s, the service manifest describes the service classes, service contracts, and bindings exposed by the hosted service. This information is used by the <MadCap:variable name="FeatureName.Amalga fabric first use" /> to expose and support the hosted service.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Edit_AppSvc_Manifest.htm" target="" title="" alt="">Edit an application manifest or service manifest on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest.htm" target="" title="" alt="">Deployment Manifest XML&#160;Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

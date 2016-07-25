@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1885.333" MadCap:lastWidth="712" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Segment element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Segment element" />Declares a message segment.</p>
+        <h4>Syntax</h4>
+        <p>Use within the <MadCap:variable name="Applications.Message Shredder (application)" /> service manifest only.</p><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;MessageShredderConfiguration&gt;
+            &lt;Segments&gt;<b>
+               &lt;Segment&gt;...&lt;/Segment&gt;</b>					
+            &lt;/Segments&gt;
+         &lt;/MessageShredderConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <p>Use within the <MadCap:variable name="Applications.Data Parser (application)" /> service manifest only.</p><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;MessageShredderInput&gt;<b>
+               &lt;Segment&gt;</b>					
+                  &lt;Elements /&gt;<b>
+               &lt;/Segment&gt;</b>
+         &lt;/MessageShredderInput&gt;				
+
+         &lt;DataParserOutput&gt;<b>
+            &lt;Segment&gt;</b>					
+               &lt;Elements /&gt;<b>
+            &lt;/Segment&gt;</b>
+         &lt;/DataParserOutput&gt;
+					
+         &lt;ExtensibleDataParserOutput&gt;<b>
+            &lt;Segment&gt;</b>					
+               &lt;Elements /&gt;<b>
+            &lt;/Segment&gt;</b>
+         &lt;/ExtensibleDataParserOutput&gt;
+					
+         &lt;ExpandableDataParserOutput&gt;<b>
+            &lt;Segment&gt;</b>					
+               &lt;Elements /&gt;<b>
+            &lt;/Segment&gt;</b>
+         &lt;/ExpandableDataParserOutput&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Segments.htm">Segments</a>, <a href="DI_XML_Manifest_DataParserOutput.htm">DataParserOutput</a>, <a href="DI_XML_Manifest_ExpandableDataParserOutput.htm">ExpandableDataParserOutput</a> <![CDATA[ ]]><a href="DI_XML_Manifest_ExtensibleDataParserOutput.htm">ExtensibleDataParserOutput</a> <![CDATA[
+                    ]]></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Elements.htm">Elements</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string) Segment name used to generate a table.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SourceName</td>
+                    <td>(Required string) Name of segment from which the data for the table derives.</td>
+                </tr>
+                <tr>
+                    <td>ParentName</td>
+                    <td>(Optional string) Parent segment name or segment table.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>(Optional string) Description of the segment.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>You can declare the <span class="MarkupLanguageElements">Segment</span> element in the service manifest of both <MadCap:variable name="Applications.Message Shredder (application)" /> and <MadCap:variable name="Applications.Data Parser (application)" /> applications. Constraints on this element vary, depending on the hosting manifest and the location within the <MadCap:variable name="Applications.Data Parser (application)" /> service manifest. Do not declare this element in the manifests of other pipeline applications. </p>
+        <p><MadCap:variable name="Applications.Message Shredder (application)" class="Label" /><span class="Label"> service manifest</span>
+        </p>
+        <p>Segment declaration is optional within the <MadCap:xref href="DI_XML_Manifest_MessageShredderConfiguration.htm" target="" title="" alt="">MessageShredderConfiguration element</MadCap:xref> unless you need to specify a parent segment for one or more segments in a message. Always declare all the segments within a parent <MadCap:xref href="DI_XML_Manifest_Segments.htm" target="" title="" alt="">Segments element</MadCap:xref>. Do not declare child elements for segments within a shredder service manifest.</p>
+        <p><MadCap:variable name="Applications.Data Parser (application)" class="Label" /><span class="Label"> service manifest</span>
+        </p>
+        <p>The <span class="MarkupLanguageElements">Segment</span> element has two distinct purposes within a parser service manifest. The following table describes each purpose.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Usage</th>
+                    <th>Related elements</th>
+                </tr>
+                <tr>
+                    <td>Identify a segment that requires further activity, such as a transform action or lookup function. Inclusion is mandatory.</td>
+                    <td><a href="DI_XML_Manifest_MessageShredderInput.htm">MessageShredderInput</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Apply a transform action or lookup function.</td>
+                    <td><a href="DI_XML_Manifest_DataParserOutput.htm">DataParserOutput</a>, <a href="DI_XML_Manifest_ExpandableDataParserOutput.htm">ExpandableDataParserOutput</a>, or <a href="DI_XML_Manifest_ExtensibleDataParserOutput.htm">ExtensibleDataParserOutput</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_MessageShredderConfiguration.htm">MessageShredderConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2312" MadCap:lastWidth="413" MadCap:fileTags="TopicType.Procedure,Personas.Elvis: App Dev,ReleaseTarget.TAP,TopicOwner.v-dennk,Status.60 - Revising,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Get a list of CDC-enabled tables from <MadCap:variable name="BrandingMS.SQL Server 2008" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Change Data Capture;Data Change Notification platform application" />This topic describes how to use a SQL&#160;Server script to retrieve a list of CDC-enabled tables.</p>
+        <p>The following procedure describes how to run a SQL&#160;Server script, included in the procedure, in <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> to retrieve a table containing the names of tables for which Change Data Capture (CDC) is enabled.</p>
+        <p>The SQL&#160;Server script included in this procedure is complex, because of the context limitations in the sys.tables object catalog view. The SQL&#160;Server script defines, and then iterates through, a static cursor containing the list of databases present on the <MadCap:variable name="BrandingMS.SQL Server" /> instance.</p>
+        <p>During each iteration, the script dynamically generates a query for each database, returning the name of each table in sys.tables for which the is_tracked_by_cdc column is set to 1, indicating that the table is enabled for CDC. Once generated, the query is then executed and the results stored in a table variable.</p>
+        <p>Finally, once all iterations are completed, the results contained in the table variable are retrieved.</p>
+        <p class="LabelforProcedures">To get a list of CDC-enabled tables from <MadCap:variable name="BrandingMS.SQL Server 2008" /></p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-Start-SSMS-SQL2008R2.flsnp" />
+            </li>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-SSMS-Connect.flsnp" />
+            </li>
+            <li>Click <span class="UIElementAction">New Query</span>.</li>
+            <li>
+                <p>Paste the following SQL&#160;Server script into the query window.</p><pre xml:space="preserve">DECLARE @SQL VARCHAR(1000)
+DECLARE @DatabaseName sysname
+
+-- Declare a static, forward-only cursor containing the
+-- list of available databases on the SQL Server instance.
+DECLARE curDatabases CURSOR FORWARD_ONLY STATIC FOR
+SELECT [name] FROM sys.databases 
+WHERE 
+	[name] NOT IN (
+		'master',
+		'model', 
+		'msdb',
+		'tempdb',
+		'Eventing',  
+		'ScriptEngine')
+
+-- Declare a table variable to store the names of
+-- tables for which CDC is enabled.
+DECLARE @CDCTables TABLE (
+	[Database Name] sysname,
+	[Schema Name] sysname,
+	[Table Name] sysname
+	)
+-- Iterate through the list of databases,
+-- dynamically constructing a SELECT statement to be
+-- executed for each database that will retrieve the
+-- names of tables for which CDC is enabled, and the
+-- names of the schemas to which the tables belong.	
+OPEN curDatabases
+FETCH NEXT FROM curDatabases into @DatabaseName
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	SELECT @SQL = 'USE [' + @DatabaseName + ']' + CHAR(13) +
+		'SELECT [Database Name] = ''' + @DatabaseName + ''', ' +
+		'[Schema Name] = b.[name], [Table Name] = a.[name] ' +
+		'FROM sys.tables a JOIN sys.schemas b ON ' +
+		'a.schema_id = b.schema_id ' +
+		'WHERE a.is_tracked_by_cdc = 1 ' +
+		'ORDER BY [Database Name], [Schema Name], [Table Name]'
+	-- Print the dynamically generated query.
+	PRINT @SQL
+	-- Execute the dynamically generated query and insert the 
+	-- results into the table variable.
+	INSERT @CDCTables EXEC(@SQL)
+	FETCH NEXT FROM curDatabases INTO @DatabaseName
+END
+
+-- Close and deallocate the static, forward-only
+-- cursor containing database names.
+CLOSE curDatabases
+DEALLOCATE curDatabases
+
+-- Retrieve the aggregated results from the table
+-- variable.
+SELECT * FROM @CDCTables
+</pre>
+            </li>
+            <li>Click <span class="UIElementAction">Execute</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_GetCDCDatabases.htm" target="" title="" alt="">Get a list of CDC-enabled databases from </MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1594" MadCap:lastWidth="543.6666" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Activating a virtual schema</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to activate a virtual schema using the VirtualSchema platform service in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can invoke the <span class="codeEntity">ActivateVirtualSchema</span> operation, from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service, to activate a virtual schema. When invoking <span class="codeEntity">ActivateVirtualSchema</span>, you must provide the instance name of the virtual schema to be activated.</p>
+        <p>If the virtual schema is not yet active, invoking <span class="codeEntity">ActivateVirtualSchema</span> activates it; otherwise, invoking <span class="codeEntity">ActivateVirtualSchema</span> returns information on the active virtual schema instance. In both cases, the <span class="codeEntity">ActivateVirtualSchema</span> operation returns a <span class="codeEntity">VirtualSchemaInfo</span> object containing information on the active virtual schema instance.</p>
+        <p class="Label" MadCap:conditions="">In this topic</p>
+        <ul>
+            <li MadCap:conditions="">
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+            <li MadCap:conditions="">
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the VirtualSchemaInfo object on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When invoked, the ActivateVirtualSchema operation performs the following actions:</p>
+        <ol>
+            <li>Ensures that the specified virtual schema instance exists; otherwise, an exception is thrown.</li>
+            <li>
+                <p>Validates the specified virtual schema instance,  to ensure that the following conditions are met. If the following conditions are not met, an exception is thrown:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>The virtual schema instance contains at least one entity.</li>
+                    <li>For each entity representing an application view, ensure that all entity bindings have a defining query.</li>
+                </ol>
+            </li>
+            <li>Activates the virtual schema instance.</li>
+            <li>Returns a VirtualSchemaInfo object representing the active virtual schema instance.</li>
+        </ol>
+        <h2><a name="Working"></a>Working with the VirtualSchemaInfo object</h2>
+        <p>The <span class="codeEntity">VirtualSchemaInfo</span> object contains information about an instance of a virtual schema, such as the creation date, publisher, and associated data manifest. The <span class="codeEntity">VirtualSchemaInfo</span> object has the following properties:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CreatedOn</td>
+                    <td>A <span class="codeEntity">System.DateTime</span> object representing the creation date for the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>DataManifestId</td>
+                    <td>A <span class="codeEntity">System.Guid</span> object containing the globally unique identifier (GUID) for the data manifest associated with the virtual schema instance. If this value is set to null, a data manifest is not associated with this virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>ExtensionData</td>
+                    <td>An <span class="codeEntity">ExtensionDataObject</span> object representing extra data used when serializing and deserializing the object.</td>
+                </tr>
+                <tr>
+                    <td>HasPrivateDataStore</td>
+                    <td>A Boolean value that indicates whether the virtual schema instance has an associated application private database.</td>
+                </tr>
+                <tr>
+                    <td>InstanceId</td>
+                    <td>A <span class="codeEntity">System.Guid</span> object containing the globally unique identifier for the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>InstanceName</td>
+                    <td>A string containing the name of the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>IsActive</td>
+                    <td>A Boolean value indicating whether the virtual schema instance is active.</td>
+                </tr>
+                <tr>
+                    <td>PrivateDatabaseName</td>
+                    <td> If the value of the <span class="codeEntity">HasPrivateDataStore</span> property is set to true, this property is set to a string containing the name of the application private database associated with this virtual schema instance. Otherwise, this property is set to null.</td>
+                </tr>
+                <tr>
+                    <td>PrivateDataStoreScript</td>
+                    <td> If the value of the <span class="codeEntity">HasPrivateDataStore</span> property is set to true, this property is set to a string containing the SQL script used to create the application private database associated with this virtual schema instance. Otherwise, this property is set to null.</td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td>A string containing the name of the publisher for the virtual schema instance.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

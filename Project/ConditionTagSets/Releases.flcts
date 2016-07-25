@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet Comment="My set of condition tags" conditions="Default.StyleMaster,Production.StyleMaster">
+    <ConditionTag BackgroundColor="#9966ff" Name="Investigation Use" Comment="" />
+</CatapultConditionTagSet>

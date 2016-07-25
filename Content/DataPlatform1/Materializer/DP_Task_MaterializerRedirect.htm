@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1132" MadCap:lastWidth="703" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Redirect an entity view to a materialized entity view</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p>
+            <MadCap:keyword term="materialized entity view:redirect view" />After the SQL Server table is populated, you must modify the binding view definition to read from the materialized table. An entity uses the binding view to obtain the data. This topic provides several procedures to assist you with redirecting the entity view.</p>
+        <p>You must have administrative rights to the ClinicalData database and access to <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> to complete this procedure.</p>
+        <p class="LabelforProcedures">To validate that materializer has started</p>
+        <ol>
+            <li>Start SQL Server Management Studio and connect to the server hosting the ClinicalData database.</li>
+            <li>
+                <p>Click <span class="UIElementAction">New Query</span> and type the SQL statement that follows in the query workspace.</p>
+                <p class="InputText">SELECT COUNT(*) FROM EntityViews.<span class="InputTextVariable">NamespaceEntityname</span>Materialized</p>
+                <p>For example, type <span class="InputText">SELECT COUNT(*) FROM EntityViews.Common_Beta.PatientMaterialized</span> to evaluate the <MadCap:xref href="../Entity_Common/DP_GREF_Common.Patient.htm" target="" title="" alt="">Common.Beta.Patient entity</MadCap:xref>. If COUNT(*) is greater than 0, then the materializer process has started successfully. If COUNT(*) remains 0 after a few minutes, then materializer process failed to start and you should check the event log viewer for an error message.</p>
+                <p class="tip">Replace the dot format of a compound namespace (Common.Beta) with an underscore for all SQL queries that involve entities.</p>
+            </li>
+        </ol>
+        <p class="LabelforProcedures">To validate that materializer has complete initial seeding</p>
+        <ul>
+            <li>Compare the row count between the EntityViews.v_Def.NamepaceEntityname and EntityViews.NamespaceEntitynameMaterialized objects. If the difference is less than or equal to the materializer batch size (default = 500), then the materializer has completed the initial seeding.</li>
+        </ul>
+        <p class="LabelforProcedures">To locate the binding view</p>
+        <ol>
+            <li>
+                <p>Do one of the following:</p>
+                <ul>
+                    <li>Locate the binding view manually, under ClinicalData and then Views. Use the following naming convention:
+                        <p>EntityViews.v_bind<span class="Placeholder">NamespaceEntityname</span> (for example, EntityViews.v_bindCommon_BetaPatient).</p></li>
+                    <li>Open the <MadCap:xref href="DP_XML_MaterializerSqlQueryToAlter.htm" target="" title="" alt="">Materializer: SQL Query to alter the binding view</MadCap:xref> topic and use the script to assist you.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Ovw_MaterializeView.htm" target="" title="" alt="">Materialized entity views</MadCap:xref>
+        </p>
+    </body>
+</html>

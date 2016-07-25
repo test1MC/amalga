@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1145" MadCap:lastWidth="361" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Data vectors</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:data vectors;data vectors:Terminology platform application;Terminology platform application:positional data vectors;positional data vectors:Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;Terminology platform application:ISemanticLabelTaggingService interface;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes data vectors and how the Terminology platform application interacts with them for semantic tagging purposes.</p>
+        <p>In data ingestion terms, a data vector identifies the physical location of a data asset in the storage system. In order of precedence, the following information in combination uniquely identifies a data vector:</p>
+        <ul>
+            <li>The network address of the data host.</li>
+            <li>The <MadCap:variable name="BrandingMS.SQL Server" /> instance name.</li>
+            <li>The database name.</li>
+            <li>The schema name.</li>
+            <li>The table or view name.</li>
+            <li>The column name.</li>
+        </ul>
+        <h2>Positional data vectors</h2>
+        <p class="Figure">The Terminology platform application uses positional data vectors to identify data assets for semantic tagging purposes. The positional data vector represents a combination of a source system, a data feed from which data is received, and a data vector, a data asset to which data is stored.  For more information about source systems, see <MadCap:xref href="TRM_CON_SourceSystems.htm" target="" title="" alt="">Source systems on page 1.</MadCap:xref></p>
+        <p class="Figure">Once a positional data vector is identified and added to the Terminology platform application, a semantic tag can be applied to it for discoverability and organization purposes. You can use the <MadCap:variable name="UI-Labels.Entity Management" /> module included with <MadCap:variable name="FeatureName.Management Console second use" /> to manually apply semantic tags to data assets. For more information about adding semantic tags to data assets using <MadCap:variable name="FeatureName.Management Console second use" />, see <MadCap:xref href="../../Serviceability/Management Console/Entity Management/SERV_VREF_SemanticTags.htm" target="" title="" alt=""> dialog box on page 1</MadCap:xref>.</p>
+        <p class="Figure">You can programmatically retrieve information about existing positional data vectors, add new positional data vectors, and update semantic tags using operations provided by the ISemanticLabelTaggingService service contract from the TerminologyService service.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingDataVectors.htm" target="" title="" alt="">Querying data vectors on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="TRM_CON_AddingDataVectors.htm" target="" title="" alt="">Adding data vectors on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="TRM_CON_UpdatingSemanticTags.htm" target="" title="" alt="">Updating semantic tags on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_SourceSystems.htm" target="" title="" alt="">Source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

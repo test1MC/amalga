@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.TAP,Status.30 - Development: over 50%,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Predefined error codes for the data pipeline</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Pipeline:predefined error codes" />The following predefined error codes apply to pipeline and materialization applications.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Overwritable</th>
+                    <th>ErrorCode</th>
+                    <th>ExceptionType</th>
+                    <th>ErrorTitle</th>
+                    <th>Action</th>
+                    <th>RetryInterval</th>
+                    <th>MaximumRetry</th>
+                    <th>FinalAction</th>
+                    <th>EventId</th>
+                    <th>ErrorDescription</th>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>7</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbServerNotResponding</td>
+                    <td>Retry</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>Stop</td>
+                    <td>33001</td>
+                    <td>The component has attempted to connect to the database server; however, the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>9</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbServerNotResponding</td>
+                    <td>Retry</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>Stop</td>
+                    <td>33001</td>
+                    <td>The component has attempted to connect to the database server; however, the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>18452</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbServerAccessDenied</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33002</td>
+                    <td>The application instance has attempted to connect to the database server, and access was denied.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>18456</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbServerAccessDenied</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33002</td>
+                    <td>The application instance has attempted to connect to the database server, and access was denied.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>615</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>942</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>2525</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>15327</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>15328</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>21378</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbOffline</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33101</td>
+                    <td>The application instance is attempting to connect to the database, but the database is offline.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>218</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbPermissionDenied</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33102</td>
+                    <td>The application instance cannot connect to the database on the database server. Permission denied.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>297</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbPermissionDenied</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33102</td>
+                    <td>The application instance cannot connect to the database on the database server. Permission denied.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>10011</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbPermissionDenied</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33102</td>
+                    <td>The application instance cannot connect to the database on the database server. Permission denied.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>911</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>2520</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>2521</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>2702</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>5002</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>7821</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>15010</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>33104</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>37002</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33103</td>
+                    <td>The application instance cannot connect to the database on the database server as the database does not exist.</td>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>-2</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbTimeoutOnConnect</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33104</td>
+                    <td>The application instance cannot connect to the database on the database server as the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>3</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbTimeoutOnConnect</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33104</td>
+                    <td>The application instance cannot connect to the database on the database server as the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>4</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbTimeoutOnConnect</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33104</td>
+                    <td>The application instance cannot connect to the database on the database server as the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>TRUE</td>
+                    <td>5</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbTimeoutOnConnect</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33104</td>
+                    <td>The application instance cannot connect to the database on the database server as the connection has timed out.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>1205</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbDeadLock</td>
+                    <td>Retry</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>Stop</td>
+                    <td>33104</td>
+                    <td>The application instance cannot connect to the database on the database server as a deadlock happens.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>8440</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33105</td>
+                    <td>The application instance cannot connect to the database on the database server as the database is corrupt.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>8444</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33105</td>
+                    <td>The application instance cannot connect to the database on the database server as the database is corrupt.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>8461</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33105</td>
+                    <td>The application instance cannot connect to the database on the database server as the database is corrupt.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>9655</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33105</td>
+                    <td>The application instance cannot connect to the database on the database server as the database is corrupt.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>11555</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33105</td>
+                    <td>The application instance cannot connect to the database on the database server as the database is corrupt.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>3805</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbIndexCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33301</td>
+                    <td>The application instance cannot access the table in the database on the database server due to a corrupt Index.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>3806</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbIndexCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33301</td>
+                    <td>The application instance cannot access the table in the database on the database server due to a corrupt Index.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>8646</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbIndexCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33301</td>
+                    <td>The application instance cannot access the table in the database on the database server due to a corrupt Index.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>9100</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>DbIndexCorrupt</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33301</td>
+                    <td>The application instance cannot access the table in the database on the database server due to a corrupt Index.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>2706</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>TableDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33402</td>
+                    <td>The application instance cannot access the table in the database on the database server as the table does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>10034</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>TableDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33402</td>
+                    <td>The application instance cannot access the table in the database on the database server as the table does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>21078</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>TableDoesNotExist</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33402</td>
+                    <td>The application instance cannot access the table in the database on the database server as the table does not exist.</td>
+                </tr>
+                <tr>
+                    <td>FALSE</td>
+                    <td>9002</td>
+                    <td>System.Data.SqlClient.SqlException</td>
+                    <td>TransactionLogFull</td>
+                    <td>Stop</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>33501</td>
+                    <td>The Transaction Log for the database is full.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

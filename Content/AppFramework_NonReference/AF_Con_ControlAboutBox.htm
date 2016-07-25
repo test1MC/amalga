@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="545" MadCap:lastWidth="941" MadCap:fileTags="TopicType.Concept,ReleaseTarget.TAP,TopicOwner.v-wfren,EditingTags.4 - Ready for Writer,Personas.All" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">About Box</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-11T16:55:15.8064994-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Three notes: \r\n1)No Persona file tag was selected, so I selected All, which agrees with the line above.  If this topic would be used by more than one persona, then All is correct.\r\n\r\n2) Don't forget to add an index entry. \r\nThere is some training rel to indexing in the UIS/UA-SRC/Sandbox/writeir's handbook.  Ignore anythign having to do with Pivots or Facets.\r\n\r\n3) Don't forget to select a Status file tag. If you don't your work is invisible to management in our mgmt reporting." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T17:01:02.6531806-08:00">The</MadCap:annotation> About Box is used to display information about the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform to end-users. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-11T16:52:08.6727879-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This is the about box that is referenced from Amalga Mgmt Console? Did you not state that because it could be accessed from another place?  Still it might be nice to know that in Amalga, you can access it from AMC," MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T17:02:49.4328575-08:00">The</MadCap:annotation> About Box control is not intended to be extensible by partners. Third-party developers must implement their own "about box," and may optionally launch the <MadCap:variable name="BrandingHSG.Amalga Short" /> About Box control from within their control. The About Box provides information relative to the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform, including the name of the application, its version number, the base version build number, copyright information, all applicable third party attributions, and a feedback link. By default the About Box can be accessed from portal page footers.</p>
+        <h2>Invoking the About Box</h2>
+        <p class="Figure">You can invoke the <MadCap:variable name="BrandingHSG.Amalga Short" /> About Box control by using the following URL:</p>
+        <p class="code">https://[yourURL]:8080/_layouts/amalga/about.aspx</p>
+        <p>To ensure that the About Box is displayed properly, we recommend using something similar to the following HTML:</p>
+        <p class="code">&lt;a href="#" onClick="MyWindow=window.open(</p>
+        <p class="code">'https://[yourURL]:8080/_layouts/amalga/about.aspx',</p>
+        <p class="code">'MyWindow','toolbar=no,</p>
+        <p class="code">location=no,</p>
+        <p class="code">directories=no,</p>
+        <p class="code">status=no,</p>
+        <p class="code">menubar=no,</p>
+        <p class="code">scrollbars=no,</p>
+        <p class="code">resizable=no,</p>
+        <p class="code">width=800,</p>
+        <p class="code">height=520'); return false;"&gt;About <MadCap:variable name="BrandingHSG.Microsoft Amalga" />&lt;/a&gt;</p>
+        <p>The sample HTML displays the About Box in a new non-resizable 800x520 pixel browser window, with no scroll bars and no address bar.</p>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="About Box"
+    Link="/Content/AppFramework_NonReference/AF_Con_ControlAboutBox.htm" />
+  <TocEntry
+    Title="Localizable List Control"
+    Link="/Content/AppFramework_NonReference/AF_Con_ControlLocalizableList.htm" />
+</CatapultToc>

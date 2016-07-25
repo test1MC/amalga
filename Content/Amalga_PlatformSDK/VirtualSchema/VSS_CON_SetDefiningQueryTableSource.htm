@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1010.667" MadCap:lastWidth="519" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Setting the defining query table source for an entity</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to set the table source for the defining query of an entity using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can set the table source for the defining query of an entity in the <MadCap:variable name="FeatureName.Amalga entity registry" /> by invoking the <span class="codeEntity">SetDefiningQueryTableSource</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">SetDefiningQueryTableSource</span>, you must specify the following arguments.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Argument name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>entityNamespace</td>
+                    <td>A string containing the namespace of the entity to be updated.</td>
+                </tr>
+                <tr>
+                    <td>entityName</td>
+                    <td>A string containing the name of the entity to be updated.</td>
+                </tr>
+                <tr>
+                    <td>tableOrViewName</td>
+                    <td>A string containing the fully qualified table or view name to be used by the entity to be updated.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Invoking the operation</h2>
+        <p>When invoked, the SetDefiningQueryTableSource operation performs the following steps:</p>
+        <ol>
+            <li>Ensure that values have been specified for all three arguments.</li>
+            <li>Start a new transaction.</li>
+            <li>Retrieve the entity binding for the specified entity. If no entity binding exists for the specified entity, throw an exception.</li>
+            <li>If the entity binding is not materialized, or if the generated query for the entity binding does not exist, throw an exception.</li>
+            <li>
+                <p>Parse the specified table or view name and update the defining query for the entity binding with the new table or view.</p>
+                <p class="note">The SQL statement for the defining query of an entity is changed when the table source for the defining query is updated.</p>
+            </li>
+            <li>Commit the transaction.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2704" MadCap:lastWidth="930" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren,EditingTags.4 - Ready for Writer,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient Banner control</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">The Patient Banner control provides a configurable summary of patient data for portal pages.</p>
+        <p>The Patient Banner control displays information such as the patient name, MRN (or other hospital ID), gender, age, etc. It can be  used on the Provider, and Staff portal pages. The patient banner control is a server control wrapper that hosts a collection of user modules, each one providing a different set of patient related data. It receives its patient context information by subscribing to CommonContext messages by using the Page Messaging system. You can customize the Patient Banner control, and extend it to provide additional data. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Default">Default Patient Banner structure</a>
+            </li>
+            <li><a href="#Activate">Activate the common Patient Banner instance</a>
+            </li>
+            <li><a href="#Add">Add the Patient Banner control to a project</a>
+            </li>
+            <li><a href="#Interfac">Page messaging and context changes</a>
+            </li>
+            <li><a href="#Configur">Configure the Patient Banner control</a>
+            </li>
+            <li><a href="#Age">Age display format</a>
+            </li>
+            <li><a href="#Extend">Extend the Patient Banner control</a>
+            </li>
+        </ul>
+        <h2><a name="Default"></a>Default Patient Banner <MadCap:annotation MadCap:createDate="2012-02-13T14:52:36.4617628-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="add pictures of the pieces and parts to make it easier to understand for folks" MadCap:editor="v-wfren" MadCap:editDate="2012-02-13T14:52:38.7129879-08:00">structure</MadCap:annotation></h2>
+        <p>  The Patient Banner control contains three separate server controls to allow for independent customization of each section. The sections are as follows: Patient Profile image, Patient Identification, and Clinical Brief.</p>
+        <p>The sections of the Patient Banner each access <MadCap:variable name="BrandingHSG.Amalga Short" /> patient data by using the following entities from the Entity Data Model:</p>
+        <ul>
+            <li>Common.Beta.Patient (GivenName, FamilyName, MiddleName, NamePrefix, NameSuffix, Gender, DateOfBirth, PersonId)</li>
+            <li>Common.Beta.ContactInfo (AreaCityCode, LocalNumber, EmailOrOtherAddress)</li>
+            <li>Common.Beta.Allergy</li>
+            <li>Common.Beta.PatientIdentifier (PatientIdentifierId)</li>
+            <li>Common.Beta.Encounter (Patient Status, Current Physicians)</li>
+            <li>Common.Beta.PatientAddendum1(DeathIndicator, DeathDateTime)</li>
+        </ul>
+        <p>By default the Patient Banner control  is hooked into the page messaging system, and will render according to the page CSS.</p>
+        <h2><a name="Activate"></a>Activate the common patient banner instance</h2>
+        <p>The provider and staff portals already contain an instance of the Patient Banner control, which is turned off by default. To enable the patient banner, locate the the Amalga:PatientBanner element on the master page, and set the Visible attribute to true. For example:</p>
+        <p class="code">&lt;Amalga:PatientBanner id="PatientBanner" runat="server" CssClass="patientBannerContainer" Visible="true" /&gt;</p>
+        <p>When the Visible property is set to true on the master page, the Patient Banner control will be visible on all pages using that master page. To restrict the display of the Patient Banner control to a particular page, override the HasPatientBanner method in the code-behind for the page. The following example shows how to do this.</p>
+        <p class="code">public override bool HasPatientBanner()</p>
+        <p class="code">{</p>
+        <p class="code"> return true;</p>
+        <p class="code">}</p>
+        <h2><a name="Add"></a>Add the Patient Banner control to a project</h2>
+        <p>You can add a local Patient Banner control instance to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>. Once you add an instance of the control, it will automatically hook into the page messaging system, and will render according to the page CSS.</p>
+        <h2><a name="Interfac"></a>Page messaging and context changes</h2>
+        <p>The Patient Banner control synchronizes with context changes by subscribing to CommonContext messages via the PageMessageManager. The Patient Banner control is notified of patient context changes initiated by the <a href="AF_Con_ControlHVRecordSelector.htm"><MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector</a>, and refreshes patient-centric data accordingly. The Patient Banner control parses the Amalga Person ID by finding the following subject identifier in the CommonContext payload:</p>
+        <p class="code">Patient.ID.MRN.AmalgaPersonId = "xxxxx"</p>
+        <p>For more information about consuming CommonContext messages, see <a href="AF_Con_PageMessagingParts.htm">Page messaging</a>.</p>
+        <h2><a name="Configur"></a>Configure the Patient Banner control</h2>
+        <p>You can customize aspects of the Patient Banner control, as shown in the following subsections:</p>
+        <ul>
+            <li>Edit visual appearance in the <MadCap:annotation MadCap:createDate="2012-02-28T21:52:18.0001618-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="We can either update each toolbox control topic with a custom section listing the style names. Or we can write a generic &quot;Edit control CSS&quot; topic. Sleep on it?" MadCap:editor="v-wfren" MadCap:editDate="2012-02-28T21:53:11.1376774-08:00">CSS</MadCap:annotation></li>
+            <li>Edit label strings</li>
+            <li>Configure patient name format</li>
+        </ul>
+        <h3>Edit visual appearance in the CSS</h3>
+        <p>You can edit the visual appearance of the control by overriding the default styles. For more information, see <a href="AF_Con_PagesMasterPageStyles.htm">Base structural styles</a>.</p>
+        <h3>Edit label strings</h3>
+        <p>The values for Patient Banner control label strings are  defined in C:\inetpub\wwwroot\wss\VirtualDirectories\8080\App_GlobalResources\AmalgaJavaScript.resx. The resource names for these are denoted by the "_Text" suffix. For instance, the name of the referring physician is defined by the PatientBanner_ReferringPhysician_Text resource string which has a default value of "Referring doctor". Some of the label strings only appear when certain conditions are true, such as the PatientBanner_PatientStatusUnknown_Text resource string, which is only used if the patient's status is unknown.</p>
+        <h3>Configure patient name format</h3>
+        <p>By default, the patient name has the following formatting:</p>
+        <p class="code">[FamilyName][FamilyNameSeparator][GivenName][GivenNameSeparator][MiddleName][MiddleNameSeparator][Suffix][SuffixSeparator][Title][TitleSeparator]</p>
+        <p>The display format of the string is defined in C:\inetpub\wwwroot\wss\VirtualDirectories\8080\App_GlobalResources\AmalgaJavaScript.resx. All of the relevant strings begin with the prefix "PatientBanner_". You can edit this file to change which parts of the patient name are displayed, the separator character to use for each, and the order in which they are displayed.</p>
+        <ul>
+            <li>To change the order in which the patient name parts are displayed, edit the PatientBanner_NameFormat_Text string which is formatted as a semicolon-delimited list.</li>
+            <li>To change a separator character, edit the resource string that contains the word "separator". For example, the value of "PatientBanner_FamilyNameSeparator_Text" defines the separator which follows the value for FamilyName.</li>
+            <li>Note that resource strings, such as separator characters, are defined as literal text and identified as such by a "_text" suffix in the resource string name. </li>
+            <li>Resource string values can contain placeholder variables, which correspond to the element for which the resource string is intended. The meanings of these are noted in the Comment field of the resource editor.</li>
+            <li>Resource string values can contain HTML markup.</li>
+        </ul>
+        <h2><a name="Age"></a>Age display format</h2>
+        <p>The display format of patient age is based on a progressive unit, data dependent algorithm.  This progressive scale defines which units to use across the range of possible patient ages. </p>
+        <p class="note">The age display format is not configurable.</p>
+        <p>The following table describes how the age display format varies with patient age.</p>
+        <table style="width: 100%;">
+            <col style="width: 160px;" />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Age Range</th>
+                    <th>Rule</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>0 &lt;= Age &lt; 2h</td>
+                    <td>If minutes are available
+express in minutes 
+else if hours are available
+express in hours
+else
+express in days (0)
+</td>
+                    <td>72mi<br />1h<br />0d
+</td>
+                </tr>
+                <tr>
+                    <td>2h &lt;= Age &lt; 3d</td>
+                    <td>If hours are available
+express in hours
+else
+express in days
+</td>
+                    <td>55h<br />2d
+</td>
+                </tr>
+                <tr>
+                    <td>3d &lt;= Age &lt; 28d</td>
+                    <td>Express in days</td>
+                    <td>5d</td>
+                </tr>
+                <tr>
+                    <td>28d &lt;= Age &lt; 3mo</td>
+                    <td>Express in weeks and days</td>
+                    <td>7w 3d</td>
+                </tr>
+                <tr>
+                    <td>3mo &lt;= Age &lt; 3y</td>
+                    <td>Express in months</td>
+                    <td>15mo</td>
+                </tr>
+                <tr>
+                    <td>3y &lt;= Age &lt; 11y</td>
+                    <td>Express in years and months (if month value is 0 only the year value will display)</td>
+                    <td>7y 11mo</td>
+                </tr>
+                <tr>
+                    <td>11y &lt;= Age</td>
+                    <td>Express in years</td>
+                    <td>44y</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">In the event the age data is incomplete, the age format function will round down to the next whole unit. For example, a patient of 9 years and 9 months will have the date displayed as 9y.</p>
+        <h2><a name="Extend"></a>Extend the Patient Banner control</h2>
+        <p> The Patient Banner control can be extended to expose additional data in the form of "clinical brief modules". Examples of this include allergies, address and contact information, and current care providers. </p>
+        <p>In order to extend an instance of the Patient Banner control, you need to take the following steps:</p>
+        <ul>
+            <li>Create a <MadCap:variable name="FeatureName.virtual schema" /> for the data you want to add. For more information, see <a href="../Amalga_PlatformSDK/SDK_OVW_Virtual_Schema_Overview.htm">Virtual schemas</a>.</li>
+            <li>Create a user control to hold the list, including the top line (collapsed view), and an expanded view that shows a larger portion of the <MadCap:annotation MadCap:createDate="2012-02-13T14:32:25.3536547-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="[Shawna: I think you definitely need some images here to explain what the heck we mean by a collapsed view and a larger portion of the list. For a first-timer reading this it won’t make sense at all.]" MadCap:editor="v-wfren" MadCap:editDate="2012-02-13T14:32:39.7890981-08:00">list</MadCap:annotation>.</li>
+            <li>Attach the control to the Patient Banner control instance by adding the newly created module to the Clinical Brief section.</li>
+            <li>Add code to access the data from the virtual schema you created. This is accomplished by using Transact-SQL transactions and <MadCap:variable name="FeatureName.Amalga ADO.NET" />. For more information, see <a href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm">Accessing data with Amalga ADO.NET</a>.</li>
+        </ul>
+        <p>To use the Patient Banner control on a custom page, the page must derive from <MadCap:annotation MadCap:createDate="2012-01-30T17:42:33.3738375-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Are we changing the name to “ProviderPortal” instead of “InternalProviderPortal”?" MadCap:editor="v-wfren" MadCap:editDate="2012-01-30T17:42:35.8920893-08:00">BaseProviderPortalPage and use the AmalgaProviderMaster </MadCap:annotation><MadCap:annotation MadCap:createDate="2012-02-13T14:34:14.5935776-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="[Shawna: I think you also need to say something about the picture and how they hook up the picture are a to data. You may need to get more info from Jason Ramsay (dev) and Joe S. (PM) for that section. \r\n\r\nYou have a section about adding to the Patient Banner, but you don’t have a section about hiding/removing a section. I think you should do that. \r\n\r\nWe also should likely mention what will happen if there is sensitive data that shows in the banner and a set of users don’t have access to that data. To be honest, if ACF rules are set-up to restrict something in the banner from being seen, the developer may want to take that into consideration and only show info in the banner most people will have access to. \r\n]" MadCap:editor="v-wfren" MadCap:editDate="2012-02-13T14:34:24.4565638-08:00">template</MadCap:annotation>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PatientBanner.htm">PatientBanner</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm">Accessing data with Amalga ADO.NET</a>
+        </p>
+        <p><a href="AF_Con_PagesMasterPageStyles.htm">Base structural styles</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_UsingControls.htm">Toolbox controls</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="../Amalga_PlatformSDK/SDK_OVW_Virtual_Schema_Overview.htm">Virtual schemas</a>
+        </p>
+    </body>
+</html>

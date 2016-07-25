@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Interacting with Terminology"
+    Link="/Content/Amalga_PlatformSDK/Terminology/TRM_NAV_Interacting.htm">
+    <TocEntry
+      Title="Working with terminology queries"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_NAV_Terminologies.htm">
+      <TocEntry
+        Title="Querying terminologies"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingTerminologies.htm" />
+      <TocEntry
+        Title="Querying concepts"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingConcepts.htm" />
+      <TocEntry
+        Title="Querying relationships"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingRelationships.htm"></TocEntry>
+      <TocEntry
+        Title="Querying relationship types"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingRelationshipTypes.htm" />
+      <TocEntry
+        Title="Querying synonyms"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingSynonyms.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with semantic tags"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_NAV_SemanticTags.htm">
+      <TocEntry
+        Title="Adding source systems"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_AddingSourceSystems.htm" />
+      <TocEntry
+        Title="Querying source systems"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingSourceSystems.htm" />
+      <TocEntry
+        Title="Adding data vectors"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_AddingDataVectors.htm" />
+      <TocEntry
+        Title="Querying data vectors"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_QueryingDataVectors.htm" />
+      <TocEntry
+        Title="Updating semantic tags"
+        Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_UpdatingSemanticTags.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

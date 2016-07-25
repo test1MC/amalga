@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient linking</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="patient matching;automatic linking;manual linking;patient linking;staff role" />This topic explains how patient linking can be configured.</p>
+        <p>Patient linking is integrated into the patient's experience when signing up for an account or adding a new record. In patient linking, patients identify themselves to the hospital so that they can access their hospital records through the <MadCap:variable name="Applications.patient site" />. Linking is the action of connecting an <MadCap:variable name="BrandingHSG.Amalga Short" /> patient record to a <MadCap:variable name="BrandingHSG.HealthVault" /> record. Linking also gives the hospital access to the patient's <MadCap:variable name="BrandingHSG.HealthVault" /> data, depending on the <MadCap:variable name="BrandingHSG.HealthVault" /> application authorization privileges set for the organization.</p>
+        <p class="h7">Automatic and manual linking</p>
+        <p>
+            <i>Manual linking</i> requires hospital staff to approve or reject <strong>all</strong> patient link requests. For more information about how staff users handle patient linking requests, see <MadCap:xref href="AF_Con_Patient_linking_staff.htm" target="" title="" alt="">Staff handle link requests</MadCap:xref>.</p>
+        <p>
+            <i>Automatic linking</i> links the patient's information entered on the <MadCap:variable name="Applications.patient site" />  with a patient’s hospital record without interaction with  hospital staff. The patient enters data that exactly and uniquely matches a hospital patient file. If no exact, unique match is found, manual intervention by hospital staff using the staff site will be required.</p>
+        <p class="note">If another <MadCap:variable name="BrandingHSG.HealthVault" /> ID is already matched to that  ID, it does not link again, but is sent to the hospital staff.</p>
+        <p>These are requirements for an exact, unique match:</p>
+        <ul>
+            <li>All required patient-entered data and data in the <MadCap:variable name="BrandingHSG.Amalga Short" /> database must match exactly.</li>
+            <li> Data entered by the patient must map to only a single patient in the <MadCap:variable name="BrandingHSG.Amalga Short" /> database (a unique match).</li>
+        </ul>
+        <p>If the automatic linking feature is turned on, the IT administrator must set a maximum number of retry attempts for patients to try to match and link from the patient to their <MadCap:variable name="BrandingHSG.Amalga Short" /> records. This is a setting in the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. For any match attempt that is not exact and unique, the count is incremented. For more information about settings for patient linking, see <MadCap:xref href="AF_Con_Patient_linking_config.htm" target="" title="" alt="">Patient linking configuration</MadCap:xref>.</p>
+        <p>When the count reaches the allowable limit based on failed exact and unique matches, the application transitions into manual linking mode. <MadCap:variable name="BrandingHSG.Amalga Short" /> generates a patient link request that hospital staff can see on the <MadCap:variable name="Applications.staff site" /> and process  manually.</p>
+        <p>If the patient has reached the maximum number of attempts, the user interface of the <MadCap:variable name="Applications.patient site" /> takes this condition into account, and displays an appropriate message.The patient cannot fill out another patient link form until the hospital staff either approves or declines the original request, at which time the autolink request count is reset to zero.<br /></p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_config.htm" target="" title="" alt="">Patient linking configuration</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_process.htm" target="" title="" alt="">Patient signup and linking process</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_staff.htm" target="" title="" alt="">Staff handles link requests</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_Site.htm" target="" title="" alt="">Patient site</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Staff_Site.htm" target="" title="" alt="">Staff site</MadCap:xref>
+        </p>
+    </body>
+</html>

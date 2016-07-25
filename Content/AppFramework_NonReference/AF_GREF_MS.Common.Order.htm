@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,TopicOwner.v-wpete,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="5" MadCap:lastHeight="814.6666" MadCap:lastWidth="842.6667" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Common.Order entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="../DataPlatform1/Entity_Common/SummarySnippets/C.Order.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:Microsoft.Common.Order" /><span class="Label">Entity tag</span>: ORC</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AdvancedBeneficiaryNoticeCodeCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>AdvancedBeneficiaryNoticeCodeIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>AdvancedBeneficiaryNoticeCodeText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCodeCodingSystem</td>
+                    <td>ORC-28.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCodeIdentifier</td>
+                    <td>ORC-28.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the confidentiality code.</td>
+                </tr>
+                <tr>
+                    <td>ConfidentialityCodeText</td>
+                    <td>ORC-28.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the level of security, sensitivity surrounding the order, or both.</td>
+                </tr>
+                <tr>
+                    <td>DateTimeofTransaction</td>
+                    <td>ORC-9</td>
+                    <td>HL7</td>
+                    <td>Date and time of the event that initiated the current transaction.</td>
+                </tr>
+                <tr>
+                    <td>DateTimeofTransaction_o</td>
+                    <td>ORC-9.TZ</td>
+                    <td>HL7</td>
+                    <td>Date and time offset of the event that initiated the current transaction.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key of Microsoft.Common.Encounter.EncounterID</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumber</td>
+                    <td>ORC-3.1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberNamespaceID</td>
+                    <td>ORC-3.2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberUniversalID</td>
+                    <td>ORC-3.3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>FillerOrderNumberUniversalIDType</td>
+                    <td>ORC-3.4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>OrderedBy</td>
+                    <td>ORC-10</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.Provider.ProviderID. The ID of the doctor who placed the order.</td>
+                </tr>
+                <tr>
+                    <td>OrderID</td>
+                    <td>OrderID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the Microsoft.Common.Order entity</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressCity</td>
+                    <td>ORC-22.3</td>
+                    <td>HL7</td>
+                    <td>City.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressCountry</td>
+                    <td>ORC-22.6</td>
+                    <td>HL7</td>
+                    <td>Country.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressOtherDesignation</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressPostalCode</td>
+                    <td>ORC-22.5</td>
+                    <td>HL7</td>
+                    <td>Zip or postal code.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressStateOrProvince</td>
+                    <td>ORC-22.4</td>
+                    <td>HL7</td>
+                    <td>State or province.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressStreet</td>
+                    <td>ORC-22.1</td>
+                    <td>HL7</td>
+                    <td>Street address.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityAddressType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityName</td>
+                    <td>ORC-21.1</td>
+                    <td>HL7</td>
+                    <td>Organization name.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityNameIDNumber</td>
+                    <td>ORC-21.3</td>
+                    <td>HL7</td>
+                    <td>Identifier number.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityNameTypeCode</td>
+                    <td>ORC-21.2</td>
+                    <td>HL7</td>
+                    <td>Organization name type code.</td>
+                </tr>
+                <tr>
+                    <td>OrderingFacilityPhoneNumber</td>
+                    <td>ORC-23</td>
+                    <td>HL7</td>
+                    <td>Phone number.</td>
+                </tr>
+                <tr>
+                    <td>OrderNotes</td>
+                    <td>NTE.3</td>
+                    <td>HL7</td>
+                    <td>Comment contained in the segment.</td>
+                </tr>
+                <tr>
+                    <td>OrderStatus</td>
+                    <td>ORC-5</td>
+                    <td>HL7</td>
+                    <td>Status of an order.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeCodingSystem</td>
+                    <td>ORC-29.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeIdentifier</td>
+                    <td>ORC-29.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the order type; executed in an inpatient setting or an outpatient setting.</td>
+                </tr>
+                <tr>
+                    <td>OrderTypeText</td>
+                    <td>ORC-29.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the order.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifier</td>
+                    <td>ORC-8.2.1</td>
+                    <td>HL7</td>
+                    <td>Entity <MadCap:annotation MadCap:createDate="2011-11-30T01:18:56.8168186-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="is the information in this table complete?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T01:19:13.8505218-08:00">identifier</MadCap:annotation>.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierNamespaceID</td>
+                    <td>ORC-8.2.2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierUniversalID</td>
+                    <td>ORC-8.2.3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentFillerAssignedIdentifierUniversalIDType</td>
+                    <td>ORC-8.2.4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifier</td>
+                    <td>ORC-8.1.1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierNamespaceID</td>
+                    <td>ORC-8.1.2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierUniversalID</td>
+                    <td>ORC-8.1.3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>ParentPlacerAssignedIdentifierUniversalIDType</td>
+                    <td>ORC-8.1.4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>PatientID</td>
+                    <td>PatientID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key of Microsoft.Common.Patient.PatientID</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumber</td>
+                    <td>ORC-4.1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberNamespaceID</td>
+                    <td>ORC-4.2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberUniversalID</td>
+                    <td>ORC-4.3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerGroupNumberUniversalIDType</td>
+                    <td>ORC-4.4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumber</td>
+                    <td>ORC-2.1</td>
+                    <td>HL7</td>
+                    <td>Entity identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberNamespaceID</td>
+                    <td>ORC-2.2</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberUniversalID</td>
+                    <td>ORC-2.3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlacerOrderNumberUniversalIDType</td>
+                    <td>ORC-2.4</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingCondition</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingConjunction</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingDuration</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingEndDateTime</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingEndDateTime_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingIntervalExplicitTimeInterval</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingIntervalPattern</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOccurrenceDurationCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOccurrenceDurationIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOccurrenceDurationText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingConditionValue</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingFillerOrderNumber</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingFillerOrderNumber2</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingFillerOrderNumber2NamespaceID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingFillerOrderNumberNamespaceID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingMaximumNumberOfRepeats</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingPlacerOrderNumber</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingPlacerOrderNumber2</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingPlacerOrderNumber2NamespaceID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingPlacerOrderNumberNamespaceID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingOrderSequencingResultsFlag</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingPriority</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingQuantity</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingQuantityUnitsCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingQuantityUnitsIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingQuantityUnitsText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingStartDateTime</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingStartDateTime_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuantityTimingTotalOccurrences</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ReasonForStudyCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ReasonForStudyIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ReasonForStudyText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>RelevantClinicalInformation</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ResponseFlag</td>
+                    <td>ORC-6</td>
+                    <td>HL7</td>
+                    <td>Information to be returned from the filler.</td>
+                </tr>
+                <tr>
+                    <td>ResultsReportStatusChangeDateTime</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ResultsReportStatusChangeDateTime_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceAlternateCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceAlternateIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceAlternateText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceCodingSystem</td>
+                    <td>OBR-4.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceIdentifier</td>
+                    <td>OBR-4.1</td>
+                    <td>HL7</td>
+                    <td>Identifier code for the requested observation, test, or battery.</td>
+                </tr>
+                <tr>
+                    <td>UniversalServiceText</td>
+                    <td>OBR-4.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the order.</td>
+                </tr>
+                <tr>
+                    <td>VerifiedBy</td>
+                    <td>ORC-11</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.Provider.ProviderID</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

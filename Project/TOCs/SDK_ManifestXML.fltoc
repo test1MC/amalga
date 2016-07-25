@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="Deployment manifest XML&#160;reference" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest.htm">
+        <TocEntry Title="Deployment manifest overview" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Overview.htm" />
+        <TocEntry Title="Deployment manifest XML hierarchy" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Hierarchy.htm" />
+        <TocEntry Title="Deployment manifest XML&#160;elements" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Elements.htm">
+            <TocEntry Title="AccessLevel element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_AccessLevel.htm" />
+            <TocEntry Title="AccessLevels element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_AccessLevels.htm" />
+            <TocEntry Title="ApplicationAuthorization element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_ApplicationAuthorization.htm" />
+            <TocEntry Title="ApplicationManifest element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_ApplicationManifest.htm" />
+            <TocEntry Title="Bindings element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Bindings.htm" />
+            <TocEntry Title="Contract element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Contract.htm" />
+            <TocEntry Title="Contracts element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Contracts.htm" />
+            <TocEntry Title="DefaultValue element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" />
+            <TocEntry Title="Dependencies element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependencies.htm" />
+            <TocEntry Title="Dependency element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependency.htm" />
+            <TocEntry Title="DeploymentManifest element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" />
+            <TocEntry Title="FederationBinding element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_FederationBinding.htm" />
+            <TocEntry Title="Id element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Id.htm" />
+            <TocEntry Title="MinVersion element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_MinVersion.htm" />
+            <TocEntry Title="PerformanceCategories element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_PerformanceCategories.htm" />
+            <TocEntry Title="PerformanceCategory element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_PerformanceCategory.htm" />
+            <TocEntry Title="PerformanceCounter element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_PerformanceCounter.htm" />
+            <TocEntry Title="QueueBinding element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_QueueBinding.htm" />
+            <TocEntry Title="Resource element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Resource.htm" />
+            <TocEntry Title="Resources element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Resources.htm" />
+            <TocEntry Title="Role element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Role.htm" />
+            <TocEntry Title="Setting element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm" />
+            <TocEntry Title="Settings element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Settings.htm" />
+            <TocEntry Title="TestConfiguration element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_TestConfiguration.htm" />
+            <TocEntry Title="Validation element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Validation.htm" />
+            <TocEntry Title="WcfManifest element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_WcfServiceManifest.htm" />
+            <TocEntry Title="WindowsWorkerManifest element" Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_WindowsWorkerManifest.htm" />
+        </TocEntry>
+    </TocEntry>
+</CatapultToc>

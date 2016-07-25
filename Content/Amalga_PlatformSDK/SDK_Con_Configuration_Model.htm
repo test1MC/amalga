@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="2472" MadCap:lastWidth="340" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Concept,Personas.Elvis: App Dev,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-pegrue" MadCap:initials="PG" MadCap:id="67" MadCap:timestamp="2011-08-16T10:24:09.7775143-07:00" />
+            <MadCap:AddChange MadCap:userName="v-pegrue" MadCap:initials="PG" MadCap:id="80" MadCap:timestamp="2011-08-29T15:27:53.9841386-07:00" />
+            <MadCap:AddChange MadCap:userName="v-pegrue" MadCap:initials="PG" MadCap:id="83" MadCap:timestamp="2011-08-29T15:32:34.8482222-07:00" />
+            <MadCap:AddChange MadCap:userName="v-pegrue" MadCap:initials="PG" MadCap:id="85" MadCap:timestamp="2011-08-29T15:33:42.2589626-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="92" MadCap:timestamp="2011-09-03T02:28:21.7551509-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="93" MadCap:timestamp="2011-09-03T02:28:21.7641518-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="94" MadCap:timestamp="2011-09-03T02:31:46.1135847-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="95" MadCap:timestamp="2011-09-03T02:31:46.1195853-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="98" MadCap:timestamp="2011-09-03T02:36:10.7040411-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="99" MadCap:timestamp="2011-09-03T02:36:10.7200427-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="100" MadCap:timestamp="2011-09-03T02:41:18.9598636-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="101" MadCap:timestamp="2011-09-03T02:41:18.9638640-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="105" MadCap:timestamp="2011-09-03T02:46:27.5647210-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="106" MadCap:timestamp="2011-09-03T02:46:27.5697215-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="116" MadCap:timestamp="2011-09-03T03:03:56.2305771-07:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Application configuration model</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-09-03T03:09:47.0426468-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="In this topic, things were getting hard to read, so I went through and accepted most of the purple text on the assumption that these wer th tech review changes and if I was happy with them, you would be also.  \r\nHope it was a good assumption &lt;g&gt;. If  not, there is alwas the previous version on Source control. :o(" MadCap:editor="v-ciwyco" MadCap:editDate="2011-09-03T03:13:44.5019144-07:00">
+                <MadCap:keyword term="configuration" />The</MadCap:annotation> <![CDATA[ ]]><MadCap:variable name="BrandingHSG.Amalga Short" /> application configuration model is contained in manifest files which can be read and modified through <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. Separate manifests are required for hosted applications, hosted WCF services, and hosted Doors services. The manifests contain information such as instance data, settings, dependencies, authorization, and performance counters.</p>
+        <p class="Label">Sections in this topic:</p>
+        <p>
+            <MadCap:xref href="#Applicat" target="" title="" alt="">Application Manifest</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="#WCF&#160;Serv" target="" title="" alt="">WCF&#160;Service Manifest</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="#Doors" target="" title="" alt="">Doors&#160;Service Manifest</MadCap:xref>
+        </p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="93" />
+            <MadCap:change MadCap:changes="92">Amalga</MadCap:change> hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="93" /><MadCap:change MadCap:changes="92">Amalga</MadCap:change> hosted WCF services, and <MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="93" /><MadCap:change MadCap:changes="92">Amalga</MadCap:change> hosted Doors services all have manifest files, which are XML files  used for configuration. Application manifests are a mandatory description of the application properties, and are required in order to host an application in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" MadCap:changes="93" /><MadCap:change MadCap:changes="92">Amalga v3</MadCap:change>. Manifests are designed by application developers using the <MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="93" /><MadCap:change MadCap:changes="92,80">Amalga</MadCap:change><MadCap:change MadCap:changes="80"> development tools in </MadCap:change><MadCap:annotation MadCap:createDate="2011-09-03T02:31:09.0448782-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Making a variable for these next week -- or that's the plan." MadCap:editor="v-ciwyco" MadCap:editDate="2011-09-03T02:31:37.9267661-07:00">Visual Studio 2010</MadCap:annotation>. The configuration data can be read and modified through <MadCap:variable name="FeatureName.Management Console second use" />. </p>
+        <h2>Application <MadCap:change MadCap:changes="95">m</MadCap:change><MadCap:change MadCap:changes="94">M</MadCap:change>anifest</h2>
+        <p>The application manifest contains the following information:</p>
+        <p class="h8">Top level properties</p>
+        <p>Information about the application instance, such as name, global identity, version, and publisher.</p>
+        <p class="h8">Settings</p>
+        <p>The application settings, which  enable <MadCap:change MadCap:changes="94">Amalga</MadCap:change> <![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga fabric first use" MadCap:changes="95" /><MadCap:change MadCap:changes="95">&#160;</MadCap:change><MadCap:change MadCap:changes="94">fabric </MadCap:change>to automatically create a configuration store for an administrator to manage the settings of the application, and automatically create the page in <MadCap:variable name="FeatureName.Management Console second use" /> to manage these settings. Examples of settings could include a “Welcome text” specific to an application instance, the default size of queries returned by an application instance, and the background color of an application, configurable by an <MadCap:variable name="BrandingHSG.Amalga Short" /> administrator.</p>
+        <p class="h8">Dependencies </p>
+        <p>The application dependencies, which <MadCap:change MadCap:changes="83">give</MadCap:change><MadCap:change MadCap:changes="116,83">s</MadCap:change><MadCap:change MadCap:changes="83"> runtime access to services from other application instances deployed in an </MadCap:change><MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="99" /><MadCap:change MadCap:changes="99">&#160;</MadCap:change><MadCap:change MadCap:changes="98,83">Amalga </MadCap:change><MadCap:change MadCap:changes="83">topology. At application deployment time, </MadCap:change><MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="99" /><MadCap:change MadCap:changes="98,83">Amalga</MadCap:change><MadCap:change MadCap:changes="83"> automatically </MadCap:change>checks whether the other <MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="99" /><MadCap:change MadCap:changes="98">Amalga</MadCap:change> applications required for this application to work are  preinstalled in the <MadCap:annotation MadCap:createDate="2011-08-12T14:28:54.5173342-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="[LLB] define? [ CJW]Peter, can you make an annotation with the definition for this?\r\n[PG] Keith is working on a glossary term \r\nfor this.\r\nCJW -- cool." MadCap:editor="v-ciwyco" MadCap:editDate="2011-09-03T02:34:29.6469364-07:00">target topology</MadCap:annotation>. If multiple instances of these applications are present, <MadCap:variable name="BrandingHSG.Amalga Short" MadCap:changes="99" /><MadCap:change MadCap:changes="98,85">Amalga</MadCap:change><MadCap:change MadCap:changes="85"> asks the administrator to pick the instance that will support the dependent application.</MadCap:change></p>
+        <p class="h8">Authorization </p>
+        <p>The application authorization model, which is a description of all resources that require authorization that are used by the application, as well as the access levels required for a user in order to be able to access one of these resources.</p>
+        <h2><a name="WCF&#160;Serv" MadCap:changes="67"></a>WCF&#160;<MadCap:change MadCap:changes="101">s</MadCap:change><MadCap:change MadCap:changes="100">S</MadCap:change>ervice <MadCap:change MadCap:changes="101">m</MadCap:change><MadCap:change MadCap:changes="100">M</MadCap:change>anifest</h2>
+        <p>The WCF&#160;service manifest contains the following information:</p>
+        <p class="h8">Top level properties</p>
+        <p>Information about the service instance, such as name, global identity, and version.</p>
+        <p class="h8">Service <MadCap:change MadCap:changes="101">m</MadCap:change><MadCap:change MadCap:changes="100">M</MadCap:change>anifest</p>
+        <p> Information about the service, including clustering mode and exposed service contracts and their bindings <MadCap:variable name="BrandingHSG.Amalga Short" /> supports federated, streaming, and queue binding.</p>
+        <p class="h8">Settings</p>
+        <p>The service settings, which enable <MadCap:variable name="FeatureName.Amalga fabric first use" /> to automatically create a configuration store for an administrator to manage the settings of the service, and automatically create the page in <MadCap:variable name="FeatureName.Management Console second use" /> to manage these settings. </p>
+        <p class="h8">Performance Counter Information</p>
+        <p> The performance counters introduced by this service. By specifying the performance counters here, you can access them through the Doors Performance Monitoring Tools and from hosted applications and services.</p>
+        <h2><a name="Doors" MadCap:changes="67"></a>Doors&#160;<MadCap:change MadCap:changes="106">s</MadCap:change><MadCap:change MadCap:changes="105">S</MadCap:change>ervice <MadCap:change MadCap:changes="106">m</MadCap:change><MadCap:change MadCap:changes="105">M</MadCap:change>anifest</h2>
+        <p>The Doors service manifest contains the following information:</p>
+        <p class="h8">Top level properties</p>
+        <p>Information about the service instance, such as name, global identity, version, and publisher.</p>
+        <p class="h8">Service <MadCap:change MadCap:changes="106">m</MadCap:change><MadCap:change MadCap:changes="105">M</MadCap:change>anifest</p>
+        <p> Information about the service, including clustering mode. </p>
+        <p class="h8">Settings</p>
+        <p>The service settings, which enable <MadCap:variable name="FeatureName.Amalga fabric first use" /> to automatically create a configuration store for an administrator to manage the settings of the service, and automatically create the page in <MadCap:variable name="FeatureName.Management Console second use" /> to manage these settings.  </p>
+        <p class="h8">Performance Counter Information</p>
+        <p>The performance counters introduced by this service. By specifying the performance counters here, you can access them through the Doors Performance Monitoring Tools and from hosted applications and services. </p>
+    </body>
+</html>

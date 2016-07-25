@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2248.667" MadCap:lastWidth="685" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,Status.70 - Complete,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Update Wizard</h1>
+        <p class="abstract">
+            <MadCap:keyword term="Update Wizard;Virtual Schema Designer;data manifests;virtual schema" />This topic describes the Update Wizard, included with <MadCap:variable name="FeatureName.Amalga SDK" /> and used with <MadCap:variable name="FeatureName.virtual schema designer" /> to update a data manifest (.edmx) file after changes have been made to the underlying data source.</p>
+        <p>The Update Wizard in <MadCap:variable name="FeatureName.Amalga SDK" /> is used to add, refresh, or delete entity definitions contained in the storage model of a data manifest (.edmx) file from an underlying data source, such as the <MadCap:variable name="FeatureName.entity registry" />. </p>
+        <p>The Update Wizard starts after you right-click the data manifest file in Solution Explorer and select <span class="UIElementAction">Update Model from Database</span>. <MadCap:annotation MadCap:createDate="2011-10-28T15:25:18.4928159-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="for post-CTP, how about a screen shot?\r\n[DWK] Absolutely. The corresponding topic did not have one, but that's their loss." MadCap:editor="v-dennk" MadCap:editDate="2011-11-16T15:01:13.2256018-08:00">For</MadCap:annotation> new data manifest files, the Update Wizard first attempts to connect to a data source from which to obtain entity definitions. Once a data source has been identified, the wizard displays the following three tabs in the <span class="UIElementAction">Choose Your Database Objects</span> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-10-28T15:26:32.7602419-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="post-CTP: what about breaking up this topic into procedures rather than listing tabs/task in table format?\r\n[DWK] This topic is modeled directly (read &quot;blatantly stolen&quot;) from the corresponding topic for the Choose Your Database Objects Dialog Box, part of the Update Model Wizard, at http://msdn.microsoft.com/en-us/library/cc716689.aspx. Most of what we do for the virtual schema is basically pulled from the ADO.NET Entity Framework, so we're going to have a lot of parallel topics (including this one.)\r\n[CJW]  --------What's the logic for keeping our doc in sync with teh update model wizard doc, if the difference is formatting, or as in the note below, improved clarity?  That said, the table is very like our visual reference style, without the visual. &lt;g&gt;\r\n" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-18T11:35:23.9815861-08:00">pane</MadCap:annotation>.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Tab</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td class="UIElementAction">Add</td>
+                    <td>
+                        <p>Displays a tree view of data source objects that are not represented in the current storage model of the data manifest. When you select an object to add, the Update Wizard makes changes to the conceptual model, storage model, and mappings contained in the data manifest.</p>
+                        <p>If you do not want the wizard to apply English language rules for singulars and plurals to <span class="MarkupLanguageElements">Entity</span>, <span class="MarkupLanguageElements">EntitySet</span>, and <span class="MarkupLanguageElements">NavigationProperty</span> names, clear the <span class="UIElementAction">Pluralize or singularize generated object names</span> check box. if you proceed with the check box checked, the wizard will to the following for newly added items:</p>
+                        <ul>
+                            <li>Make all EntityType names singular.</li>
+                            <li>Make all EntitySet names plural.</li>
+                            <li>For each NavigationProperty that returns, at most, one entity, make the name singular.</li>
+                            <li>For each NavigationProperty that returns more than one entity, make the name plural.</li>
+                        </ul>
+                        <p class="note">The Update Wizard applies English language rules for singulars and plurals by creating a PluralizationService and passing it to an EntityModelSchemaGenerator.</p>
+                        <p>If you do not want the wizard to generate properties on entity types that correspond to foreign key columns in the underlying data source, clear the Include foreign key columns in the model check box. </p>
+                        <p class="note">If a table in an underlying data source contains only foreign keys (sometimes called a pure join table), the wizard will not generate a corresponding entity type, nor will it generate properties on related entity types that correspond to the foreign keys. Instead, a many-to-many association will be generated between the two entity types linked by the pure join table.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="UIElementAction">Refresh</td>
+                    <td>Displays a tree view of all objects that are present in both the storage model of the data manifest and in the underlying data source. If an object is selected, the definition for that object is retrieved from the underlying data source, overwriting the definition in the storage model of the data manifest.</td>
+                </tr>
+                <tr>
+                    <td class="UIElementAction">Delete</td>
+                    <td>Displays a tree view of all objects that are present in the storage model of the data manifest, but not in the underlying data source. If an object is selected, the definition for that object is deleted from the storage model of the data manifest.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Figure">The Update Wizard does the following:</p>
+        <ul>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-10-28T15:31:17.0596690-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="(if possible) To make this bulleted list more scannable, pls consider starting each bullet with a short phrase that summarizes each point.\r\n[DWK] See above comments." MadCap:editor="v-dennk" MadCap:editDate="2011-11-16T15:01:30.0740338-08:00">If</MadCap:annotation> an object has been deleted from the underlying data source, the wizard removes the object from the data manifest. Mapping specifications are updated so that application views in the application virtual schema are not mapped to objects that no longer exist.</li>
+            <li>If an object has been added to the underlying data source (or was not included in the data manifest), you can choose to add the object to the data manifest. The storage model in the data manifest is then updated with the newly-added object. In the case of a table or view, a corresponding entity type is created and mapped to the object.</li>
+            <li>If an object has been updated, the wizard updates the object definition in the storage model of the data manifest. If any new columns have been added to a table or view, the corresponding entity types are updated with matching properties. If the corresponding entity types are part of an inheritance hierarchy, only the affected entity closest to the root of the hierarchy is updated with matching properties. This prevents child entities in the hierarchy from defining the same properties as their ancestors.</li>
+        </ul>
+        <p class="note">If you delete an object from the conceptual model, but then decide you want to use the Update Wizard to add the object back to the conceptual model, you must first delete the object from the storage model.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProjectImport
+  AutoSync="false"
+  IncludePattern="*.*"
+  DeleteStale="false"
+  LastImport="2012-03-12T13:01:27.2299974-07:00">
+  <Files>
+    <Url
+      Source="../../../StyleMaster-v3/StyleMaster-v3.flprj"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/StyleMaster-v3.flprj" />
+  </Files>
+  <ExcludedFiles>
+    <Url
+      Source="../TOCs/TestingOnly.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Project/TOCs/TestingOnly.fltoc" />
+    <Url
+      Source="../Targets/Test target local.fltar"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Project/Targets/Test target local.fltar" />
+    <Url
+      Source="../../Content/fm-Title.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/fm-Title.htm" />
+    <Url
+      Source="../../Content/fm-CopyrightPageWeb.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/fm-CopyrightPageWeb.htm" />
+  </ExcludedFiles>
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-Contents.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-Contents.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-Conventions.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-Conventions.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-CopyrightPage-White paper.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-CopyrightPage-White paper.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-CopyrightPage.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-CopyrightPage.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-CopyrightPageWeb.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-CopyrightPageWeb.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-Headings for Word Template.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-Headings for Word Template.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-Title.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-Title.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/fm-UA Instructions for Word Template.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/fm-UA Instructions for Word Template.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Forward Link Collection Update.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Forward Link Collection Update.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Forward Link Collection.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Forward Link Collection.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/LastUpdated.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/LastUpdated.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Create VM.docx"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Create VM.docx" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Generic Word template/Generic word template for Amalga 3 0 CTP.docx"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Generic Word template/Generic word template for Amalga 3 0 CTP.docx" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Generic Word template/Release Notes Template.doc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Generic Word template/Release Notes Template.doc" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/add_new_topic_dialog.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/add_new_topic_dialog.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/alert.jpg"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/alert.jpg" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/alert.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/alert.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/alert2.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/alert2.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Amalga UIS 2009.PNG"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Amalga UIS 2009.PNG" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/AmalgaUIS for Title page - whiter.PNG"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/AmalgaUIS for Title page - whiter.PNG" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/CE_Transparent.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/CE_Transparent.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/CE_whitebkgrd.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/CE_whitebkgrd.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/checkmark.jpg"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/checkmark.jpg" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/checkmark.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/checkmark.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/clear.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/clear.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/download_icon.jpg"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/download_icon.jpg" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/DRAFT.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/DRAFT.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Error_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Error_16x16.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/example-newpinlist.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/example-newpinlist.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/example-snippetconvert.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/example-snippetconvert.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/example-snippetinplace.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/example-snippetinplace.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/example-snippetselect.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/example-snippetselect.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/example-snippettable.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/example-snippettable.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/headerleft.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/headerleft.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Hg-Master-Web_Primary_Target.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Hg-Master-Web_Primary_Target.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/leftendapplies.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/leftendapplies.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageAlert_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageAlert_16x16.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageCaution_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageCaution_16x16.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageCaution_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageCaution_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageError2_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageError2_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageError_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageError_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageExclamationPoint_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageExclamationPoint_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageInformation_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageInformation_16x16.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageInformation_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageInformation_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageInfo_75x75.gif"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageInfo_75x75.gif" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageSuccessA_75X75.gif"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageSuccessA_75X75.gif" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageTip_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageTip_16x16.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/messageTip_75x75.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/messageTip_75x75.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Microsoft Amalga 2011.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Microsoft Amalga 2011.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/note.jpg"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/note.jpg" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/note.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/note.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/notepage.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/notepage.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Reselect_AmalgaMain_css.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Reselect_AmalgaMain_css.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/rightendapplies.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/rightendapplies.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Template footer.PNG"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Template footer.PNG" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/TitleMS-HSG.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/TitleMS-HSG.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/warning.jpg"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/warning.jpg" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/warning.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/warning.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Style Guides/iconFileTag.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Style Guides/iconFileTag.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Style Guides/ID_Template_Folder1.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Style Guides/ID_Template_Folder1.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Images/Style Guides/ID_Template_Folder2.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Images/Style Guides/ID_Template_Folder2.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/MasterPages/AmalgaMaster - AppliesHeader.flmsp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/MasterPages/AmalgaMaster - AppliesHeader.flmsp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/MasterPages/AmalgaMaster.flmsp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/MasterPages/AmalgaMaster.flmsp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/MasterPages/AmalgaMasterNoCSS.flmsp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/MasterPages/AmalgaMasterNoCSS.flmsp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/Chapter.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/Chapter.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/Default.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/Default.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/DefaultPageNumbers.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/DefaultPageNumbers.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/FrontMatterNoPageNumbers.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/FrontMatterNoPageNumbers.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/FrontMatterPageNumbers.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/FrontMatterPageNumbers.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/Imaging.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/Imaging.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/Solutions.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/Solutions.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/Title.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/Title.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/PageLayouts/WordTemplateGeneric.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/PageLayouts/WordTemplateGeneric.flpgl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/Copyrightfooter.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/Copyrightfooter.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/disclaimer-C-sharp-sample.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/disclaimer-C-sharp-sample.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/disclaimer-Markup-sample.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/disclaimer-Markup-sample.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/disclaimer-ResourceKit-Tools.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/disclaimer-ResourceKit-Tools.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/frontmatter-DocConventions.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/frontmatter-DocConventions.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/frontmatter-JQuery.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/frontmatter-JQuery.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/frontmatter-MIM-Fed-Caution.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/frontmatter-MIM-Fed-Caution.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/info-Client_Install_Method.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/info-Client_Install_Method.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-AmalgaWeb.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-AmalgaWeb.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-ClientInstall.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-ClientInstall.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-ComponentRef.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-ComponentRef.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-ContextPassingSupp.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-ContextPassingSupp.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-DeskReference.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-DeskReference.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-EnhLabViewer.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-EnhLabViewer.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-HVC.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-HVC.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-Imaging.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-Imaging.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-Scripting.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-Scripting.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-ServerInstallation.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-ServerInstallation.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-UGA.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-UGA.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-UGB.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-UGB.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/phrase-your-Microsoft-representative.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/phrase-your-Microsoft-representative.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/proc-Access-CustomerPortal-Docs.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/proc-Access-CustomerPortal-Docs.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/proc-Open-Amalga-Manager.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/proc-Open-Amalga-Manager.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/Table-ChildOnly.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/Table-ChildOnly.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/Table-ParentChild.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/Table-ParentChild.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/Table-ParentChildAttributes.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/Table-ParentChildAttributes.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/TableInformal-heading.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/TableInformal-heading.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/TableInformal-noheading.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/TableInformal-noheading.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/TableProcess.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/TableProcess.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/Vis-Ref-AMC-Purpose.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/Vis-Ref-AMC-Purpose.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/warning-admin-roles-manual-update.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/warning-admin-roles-manual-update.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/warning-Schema-No-Change.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/warning-Schema-No-Change.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMain-Editorial.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMain-Editorial.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMain.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMain.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMainRefCard.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/AmalgaMainRefCard.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/appliesto.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/appliesto.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/code.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/code.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/copyright.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/copyright.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/edtiorial.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/edtiorial.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/notes.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/notes.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/numbered-headers.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/numbered-headers.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/personas.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/personas.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/Presentation.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/Presentation.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/refcards.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/refcards.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Amalga Style Guide/SG-ForwardLinks In Topics.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Amalga Style Guide/SG-ForwardLinks In Topics.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Amalga Style Guide/SG_Terms.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Amalga Style Guide/SG_Terms.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Conceptual.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Conceptual.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Reference.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Reference.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Resolution.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Resolution.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_General_Reference.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_General_Reference.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Navigation_by_Mini-TOC.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Navigation_by_Mini-TOC.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Procedure.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Procedure.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Process_Sequence.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Process_Sequence.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_RefCard.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_RefCard.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Troubleshooting.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Troubleshooting.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Visual_Reference.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Visual_Reference.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Add_Work_Item_in_TFS.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Add_Work_Item_in_TFS.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Create_Topic_with_Amalga_Templates.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Create_Topic_with_Amalga_Templates.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Remove_Bad_CSS_Links_Template.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Remove_Bad_CSS_Links_Template.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Request_VM_with_SP_Server_2010.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_Request_VM_with_SP_Server_2010.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_SetUpLocalTemplateFolder.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_SetUpLocalTemplateFolder.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_VM_Nav.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/UAP_VM_Nav.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/AddNewTopic_Dialog.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/AddNewTopic_Dialog.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/New_Bug_dialog_TFS.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/New_Bug_dialog_TFS.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Save_msg_as.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Save_msg_as.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Save_New_Bug.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Save_New_Bug.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Stylesheet_Dropdown.png"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/Images/Stylesheet_Dropdown.png" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/EditingTags.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/EditingTags.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/Personas.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/Personas.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/ReleaseTarget.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/ReleaseTarget.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/Status.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/Status.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/TopicOwner.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/TopicOwner.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Advanced/TopicType.flfts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Advanced/TopicType.flfts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/API.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/API.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/Features.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/Features.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/Manuals.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/Manuals.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/Production.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/Production.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/ProductSKUs.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/ProductSKUs.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/Region.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/Region.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/ConditionTagSets/Releases.flcts"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/ConditionTagSets/Releases.flcts" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Imports/WordDocs.flimp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Imports/WordDocs.flimp" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Skins/Default-w-Index.flskn"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Skins/Default-w-Index.flskn" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Skins/Default.flskn"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Skins/Default.flskn" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/Amalga 3 0 Word Template.fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/Amalga 3 0 Word Template.fltar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/PDF standard.fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/PDF standard.fltar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/RefCard.fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/RefCard.fltar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/Test target local.fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/Test target local.fltar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/TEST Target.fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/TEST Target.fltar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/FrontMatter-WhitePaper.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/FrontMatter-WhitePaper.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/FrontMatter.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/FrontMatter.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/TestingOnly.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/TestingOnly.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/Word Template.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/Word Template.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Applications.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Applications.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/BrandingHSG.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/BrandingHSG.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/BrandingMS.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/BrandingMS.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Controls.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Controls.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Databases.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Databases.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/FeatureBrussels.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/FeatureBrussels.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/FeatureName.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/FeatureName.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Filenames.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Filenames.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Imaging.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Imaging.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/LegalAnd3rdParty.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/LegalAnd3rdParty.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/ManualNames.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/ManualNames.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Paths.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Paths.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/PlatformServices.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/PlatformServices.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/TechnicalTerms.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/TechnicalTerms.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/UI-Buttons.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/UI-Buttons.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/UI-Labels.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/UI-Labels.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/lists-HV.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/lists-HV.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/HSGcore.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/HSGcore.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/HealthVaultMain.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/HealthVaultMain.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/reflection.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/reflection.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Imports/TopicTemplates.flimpfl"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Imports/TopicTemplates.flimpfl" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/MasterPages/IPMMaster.flmsp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/MasterPages/IPMMaster.flmsp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/PROC_Flare_Tips.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/UA Procedures/PROC_Flare_Tips.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/HealthVaultValidation.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/HealthVaultValidation.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Stylesheets/editorial.css"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Stylesheets/editorial.css" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Visual_Reference_Instructions.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Visual_Reference_Instructions.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/BrandingHV.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/BrandingHV.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/FeatureHV.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/FeatureHV.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_PowerShell_Reference.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_PowerShell_Reference.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Conceptual_Instructions.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Conceptual_Instructions.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT PowerShell_Reference_Example.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT PowerShell_Reference_Example.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/Namespace.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/Namespace.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/Targets/TEST Target (Primary).fltar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/Targets/TEST Target (Primary).fltar" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles>
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/WordDocs.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/WordDocs.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/Copy of TestingOnly.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/Copy of TestingOnly.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/TOCs/Copy of FrontMatter.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/TOCs/Copy of FrontMatter.fltoc" />
+    <Url
+      Source="../../../StyleMaster-v3/Project/VariableSets/PD Copy of UI-Labels.flvar"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Project/VariableSets/PD Copy of UI-Labels.flvar" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Conceptual_Instructions.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Conceptual_Instructions.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT PowerShell_Reference_Example.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT PowerShell_Reference_Example.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/TT_xref-built-in-roles.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/TT_xref-built-in-roles.flsnp" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_XML_Manifest_reference.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_XML_Manifest_reference.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/TT_Heading_levels.htm"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/TT_Heading_levels.htm" />
+    <Url
+      Source="../../../StyleMaster-v3/Content/Resources/Snippets/mref-AV3UG.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/StyleMaster-v3/Content/Resources/Snippets/mref-AV3UG.flsnp" />
+  </SkippedSourceFiles>
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/fm-Contents.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-Conventions.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-CopyrightPage-White paper.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-CopyrightPage.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-CopyrightPageWeb.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-Headings for Word Template.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-Title.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/fm-UA Instructions for Word Template.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Forward Link Collection Update.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Forward Link Collection.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/LastUpdated.htm"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Create VM.docx"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Generic Word template/Generic word template for Amalga 3 0 CTP.docx"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Generic Word template/Release Notes Template.doc"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/add_new_topic_dialog.png"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/alert.jpg"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/alert.png"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/alert2.png"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Amalga UIS 2009.PNG"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/AmalgaUIS for Title page - whiter.PNG"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/CE_Transparent.png"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/CE_whitebkgrd.png"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/checkmark.jpg"
+      TimeStamp="1/5/2012 12:03:10 AM" />
+    <Url
+      Source="../../Content/Resources/Images/checkmark.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/clear.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/download_icon.jpg"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/DRAFT.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Error_16x16.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/example-newpinlist.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/example-snippetconvert.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/example-snippetinplace.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/example-snippetselect.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/example-snippettable.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/headerleft.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Hg-Master-Web_Primary_Target.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/leftendapplies.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageAlert_16x16.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageCaution_16x16.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageCaution_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageError2_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageError_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageExclamationPoint_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageInformation_16x16.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageInformation_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageInfo_75x75.gif"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageSuccessA_75X75.gif"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageTip_16x16.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageTip_75x75.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Microsoft Amalga 2011.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/note.jpg"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/note.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/notepage.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Reselect_AmalgaMain_css.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/rightendapplies.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Template footer.PNG"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/TitleMS-HSG.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/warning.jpg"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/warning.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Style Guides/iconFileTag.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Style Guides/ID_Template_Folder1.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/Images/Style Guides/ID_Template_Folder2.png"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/AmalgaMaster - AppliesHeader.flmsp"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/AmalgaMaster.flmsp"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/AmalgaMasterNoCSS.flmsp"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Chapter.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Default.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/DefaultPageNumbers.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/FrontMatterNoPageNumbers.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/FrontMatterPageNumbers.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Imaging.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Solutions.flpgl"
+      TimeStamp="1/5/2012 12:03:11 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Title.flpgl"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/WordTemplateGeneric.flpgl"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/Copyrightfooter.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/disclaimer-C-sharp-sample.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/disclaimer-Markup-sample.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/disclaimer-ResourceKit-Tools.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-CopyrightText.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-DocConventions.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-JQuery.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-MIM-Fed-Caution.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/info-Client_Install_Method.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-AmalgaWeb.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-ClientInstall.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-ComponentRef.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-ContextPassingSupp.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-DeskReference.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-EnhLabViewer.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-HVC.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-Imaging.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-Scripting.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-ServerInstallation.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-UGA.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/mref-UGB.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/phrase-your-Microsoft-representative.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/proc-Access-CustomerPortal-Docs.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/proc-Open-Amalga-Manager.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/Table-ChildOnly.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/Table-ParentChild.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/Table-ParentChildAttributes.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/TableInformal-heading.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/TableInformal-noheading.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/TableProcess.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/Vis-Ref-AMC-Purpose.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/warning-admin-roles-manual-update.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Snippets/warning-Schema-No-Change.flsnp"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/AmalgaMain-Editorial.css"
+      TimeStamp="1/5/2012 12:02:23 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/AmalgaMain.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/AmalgaMainRefCard.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/appliesto.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/code.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/copyright.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/edtiorial.css"
+      TimeStamp="1/5/2012 12:02:23 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/notes.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/numbered-headers.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/personas.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/Presentation.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/refcards.css"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Amalga Style Guide/SG-ForwardLinks In Topics.htm"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Amalga Style Guide/SG_Terms.htm"
+      TimeStamp="1/5/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Conceptual.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Reference.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Error_Resolution.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_General_Reference.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Navigation_by_Mini-TOC.htm"
+      TimeStamp="1/5/2012 12:02:23 PM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Procedure.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Process_Sequence.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_RefCard.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Troubleshooting.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_Visual_Reference.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_Add_Work_Item_in_TFS.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_Create_Topic_with_Amalga_Templates.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_Remove_Bad_CSS_Links_Template.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_Request_VM_with_SP_Server_2010.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_SetUpLocalTemplateFolder.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/UAP_VM_Nav.htm"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/Images/AddNewTopic_Dialog.png"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/Images/New_Bug_dialog_TFS.png"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/Images/Save_msg_as.png"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/Images/Save_New_Bug.png"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/Images/Stylesheet_Dropdown.png"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/EditingTags.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/Personas.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/ReleaseTarget.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/Status.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/TopicOwner.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Advanced/TopicType.flfts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/API.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/Features.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/Manuals.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/Production.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/ProductSKUs.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/Region.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../ConditionTagSets/Releases.flcts"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="WordDocs.flimp"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Skins/Default-w-Index.flskn"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Skins/Default.flskn"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Targets/Amalga 3 0 Word Template.fltar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Targets/PDF standard.fltar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Targets/RefCard.fltar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Targets/Test target local.fltar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../Targets/TEST Target.fltar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../TOCs/FrontMatter-WhitePaper.fltoc"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../TOCs/FrontMatter.fltoc"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../TOCs/TestingOnly.fltoc"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../TOCs/Word Template.fltoc"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Applications.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/BrandingHSG.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/BrandingMS.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Controls.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Databases.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/FeatureBrussels.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/FeatureName.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Filenames.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Imaging.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/LegalAnd3rdParty.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/ManualNames.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/Paths.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/PlatformServices.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/TechnicalTerms.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/UI-Buttons.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../VariableSets/UI-Labels.flvar"
+      TimeStamp="1/5/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/lists-HV.css"
+      TimeStamp="1/9/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/HSGcore.css"
+      TimeStamp="1/9/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/HealthVaultMain.css"
+      TimeStamp="1/9/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/reflection.css"
+      TimeStamp="1/9/2012 4:40:34 PM" />
+    <Url
+      Source="TopicTemplates.flimpfl"
+      TimeStamp="1/9/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/MasterPages/IPMMaster.flmsp"
+      TimeStamp="1/9/2012 4:27:49 PM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/UA Procedures/PROC_Flare_Tips.htm"
+      TimeStamp="1/9/2012 12:03:13 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/HealthVaultValidation.css"
+      TimeStamp="1/10/2012 2:08:30 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/editorial.css"
+      TimeStamp="1/11/2012 12:03:12 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Visual_Reference_Instructions.htm"
+      TimeStamp="1/11/2012 9:21:15 AM" />
+    <Url
+      Source="../VariableSets/BrandingHV.flvar"
+      TimeStamp="1/12/2012 6:51:33 PM" />
+    <Url
+      Source="../VariableSets/FeatureHV.flvar"
+      TimeStamp="1/13/2012 6:00:27 PM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content/TT_PowerShell_Reference.htm"
+      TimeStamp="1/24/2012 4:14:32 PM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT Conceptual_Instructions.htm"
+      TimeStamp="1/25/2012 12:03:14 AM" />
+    <Url
+      Source="../../Content/Standards and Style Guides/Templates/Amalga Templates/Content - instructions and examples/TT PowerShell_Reference_Example.htm"
+      TimeStamp="1/25/2012 12:03:14 AM" />
+    <Url
+      Source="../VariableSets/Namespace.flvar"
+      TimeStamp="2/2/2012 2:07:40 PM" />
+    <Url
+      Source="../Targets/TEST Target (Primary).fltar"
+      TimeStamp="2/22/2012 12:03:13 AM" />
+  </GeneratedFiles>
+</CatapultProjectImport>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="34" MadCap:lastWidth="997">
+    <head>
+    </head>
+    <body>
+        <p>Represents the core services required to support and manage a functional <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. Functions include logging, security, and host registration.</p>
+    </body>
+</html>

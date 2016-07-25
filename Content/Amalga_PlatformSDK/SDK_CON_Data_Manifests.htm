@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="990" MadCap:lastWidth="423" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,Status.70 - Complete">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Data manifests</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="data manifests;virtual schema;Virtual Schema Designer" />This topic describes the data manifest, an EDMX file which defines a virtual schema, a conceptual model that separates access to data from where the data is actually stored.</p>
+        <p>For hosted applications, data access is managed using a virtual schema. Based on the ADO.NET Entity Framework, the virtual schema provides an abstraction layer that allows hosted applications to use a portable, dynamic data model. The virtual schema is defined as a data manifest (.edmx) file, which stores the virtual schema, the definitions of the underlying data structures referenced by the virtual schema, and the mappings between the virtual schema and the underlying data structures.</p>
+        <p>The virtual schema for a hosted application is defined in the conceptual schema definition language (CSDL) section of the data manifest. The entities used by that virtual schema are defined in the store schema definition language (SSDL) section of the data manifest. The mappings that connect the conceptual model to the storage model are defined in the mapping definition language (MDL) section of the data manifest.</p>
+        <p>For more information about the structure and contents of a data manifest file, see .edmx File Overview<MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at http://msdn.microsoft.com/en-us/library/cc982042.aspx</MadCap:conditionalText>.</p>
+        <p>To include a virtual schema for a hosted application, you can add a data manifest file to the Amalga application project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />for the hosted application. </p>
+        <p class="note">Only one data manifest can be added to the Amalga application project for a hosted application. If you add more than one data manifest, an error occurs when the hosted application is published or deployed.</p>
+        <p>The data manifest is edited in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> using the <MadCap:variable name="FeatureName.virtual schema designer" />, a graphical tool that allows you to work with the virtual schema in a visual design surface.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Data_Manifest.htm" target="" title="" alt="">Add a new data manifest on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_OVW_Virtual_Schema_Overview.htm" target="" title="" alt="">Virtual schemas on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt=""> on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

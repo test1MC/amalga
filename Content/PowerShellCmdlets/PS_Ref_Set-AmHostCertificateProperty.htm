@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2100.333" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.15 - Blocked">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Set-AmHostCertificateProperty</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The Set-AmHostCertificateProperty cmdlet sets the SSL certificate on the logical host. This certificate will be used as the service and token encryption certificate for <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> services or components that are assigned to this logical host.</p>
+        <h2 MadCap:conditions="">Syntax</h2>
+        <p class="Syntax">Set-AmHostCertificateProperty -Type &lt;String&gt; -InstanceName &lt;String&gt; -PropertyName &lt;String&gt; -PropertyValue &lt;String&gt; -PropertyType &lt;String&gt; -PropertyCategory &lt;String&gt; -OverwriteOption &lt;String&gt;</p>
+        <h2 MadCap:conditions="">Parameter descriptions</h2>
+        <p class="h7">[-Type] &lt;string&gt;</p>
+        <p>Takes the instance type of the item. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>LogicalHost </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-InstanceName] &lt;string&gt;</p>
+        <p>Takes the instance name of the logical host.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Name of the instance of the logical host. </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-PropertyName] &lt;string&gt;</p>
+        <p>Takes the name of the property. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>HostCertificate</p>
+                        <p>PlatformCertificate</p>
+                        <p>AdminCertificate </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-PropertyValue] &lt;string&gt;</p>
+        <p>Takes the thumbprint of the SSL certificate. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Thumbprint of the SSL certificate <MadCap:annotation MadCap:createDate="2012-03-09T12:08:13.2995440-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="what is the convention for indicating allowed characters?" MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:08:20.9073047-08:00">(can contain spaces).</MadCap:annotation></td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-PropertyType] &lt;string&gt;</p>
+        <p>Takes the type of the property. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>String </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-PropertyCategory] &lt;string&gt;</p>
+        <p>Takes the category of the property. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Metadata </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-OverwriteOption] &lt;string&gt;</p>
+        <p>Overwrites any existing SSL certificate for the specified logical host; takes no input.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Overwrite </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="">Examples</p>
+        <p class="InputText">Set-AmHostCertificateProperty -Type LogicalHost -InstanceName ApplicationLogicalHost -PropertyName HostCertificate -PropertyValue "3f b0 6f 20 5b e4 7e 2f 30 70 65 c0 28 8b de 72 0a b8 9d c9" -PropertyType String -PropertyCategory Metadata -OverwriteOption Overwrite</p>
+        <p class="InputText">Set-AmHostCertificateProperty -Type LogicalHost -InstanceName PlatformLogicalHost -PropertyName PlatformCertificate -PropertyValue 308efdee6453fff68c402e5eceee5b8bb9eaa619 -PropertyType String -PropertyCategory Metadata -OverwriteOption Overwrite</p>
+        <p class="InputText">Set-AmHostCertificateProperty -Type LogicalHost -InstanceName AdministrationLogicalHost -PropertyName AdminCertificate -PropertyValue " 30 8e fd ee 64 53 ff f6 8c 40 2e 5e ce ee 5b 8b b9 ea a6 19" -PropertyType String -PropertyCategory Metadata -OverwriteOption Overwrite</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+    </body>
+</html>

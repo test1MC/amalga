@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Terminology concepts"
+    Link="/Content/Amalga_PlatformSDK/Terminology/TRM_OVW_Concepts.htm">
+    <TocEntry
+      Title="Terminologies"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_Terminologies.htm" />
+    <TocEntry
+      Title="Concepts"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_Concepts.htm" />
+    <TocEntry
+      Title="Relationships"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_Relationships.htm" />
+    <TocEntry
+      Title="Relationship types"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_RelationshipTypes.htm" />
+    <TocEntry
+      Title="Synonyms"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_Synonyms.htm" />
+    <TocEntry
+      Title="Source systems"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_SourceSystems.htm" />
+    <TocEntry
+      Title="Data vectors"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_DataVectors.htm" />
+    <TocEntry
+      Title="Semantic tags"
+      Link="/Content/Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:lastBlockDepth="6" MadCap:lastHeight="683.3334" MadCap:lastWidth="1175" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Common.Allergy entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="../DataPlatform1/Entity_Common/SummarySnippets/C.Allergy.flsnp" />
+        <p><span class="Label"><MadCap:keyword term="entity definitions:Microsoft.Common.Allergy" />Entity tag</span>: IAM</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AllergyID</td>
+                    <td>AllergyID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the Microsoft.Common.Allergy entity.
+</td>
+                </tr>
+                <tr>
+                    <td>DescriptionCodingSystem</td>
+                    <td>IAM-3-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>DescriptionIdentifier</td>
+                    <td>IAM-3-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for a particular allergen.</td>
+                </tr>
+                <tr>
+                    <td>DescriptionText</td>
+                    <td>IAM-3-2</td>
+                    <td>HL7</td>
+                    <td>Text describing the allergen.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="../DataPlatform1/Entity_Common/DP_GREF_Common.Encounter.htm" target="" title="" alt="">Microsoft.Common.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>EnteredBy</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="../DataPlatform1/Entity_Common/DP_GREF_Common.Provider.htm" target="" title="" alt="">Microsoft.Common.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>IdentificationDate</td>
+                    <td>AL1-6</td>
+                    <td>HL7</td>
+                    <td>Date that the allergy was identified.</td>
+                </tr>
+                <tr>
+                    <td>IdentificationDate_o</td>
+                    <td>AL1-6</td>
+                    <td>HL7</td>
+                    <td>Date offset that the allergy was identified. For backward compatibility only.</td>
+                </tr>
+                <tr>
+                    <td>LocationOrFacility</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>Notes</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PatientID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="../DataPlatform1/Entity_Common/DP_GREF_Common.Patient.htm" target="" title="" alt="">Common.Beta.Patient entity</MadCap:xref>. Enterprise level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>Reaction</td>
+                    <td>AL1-5-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for a specific allergic reaction that was documented.</td>
+                </tr>
+                <tr>
+                    <td>SetID</td>
+                    <td>IAM-1</td>
+                    <td>HL7</td>
+                    <td>Number that identifies this transaction.</td>
+                </tr>
+                <tr>
+                    <td>SeverityCodingSystem</td>
+                    <td>IAM-4-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>SeverityIdentifier</td>
+                    <td>IAM-4-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the general severity of the allergy.</td>
+                </tr>
+                <tr>
+                    <td>SeverityText</td>
+                    <td>IAM-4-2</td>
+                    <td>HL7</td>
+                    <td>Text describing the severity of the allergy.</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>IAM-17</td>
+                    <td>HL7</td>
+                    <td>Verification status for the allergy.</td>
+                </tr>
+                <tr>
+                    <td>TypeCodingSystem</td>
+                    <td>IAM-2-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>TypeIdentifier</td>
+                    <td>IAM-2.1</td>
+                    <td>HL7	</td>
+                    <td>The type of allergen, such as drug, food, environment, etc.</td>
+                </tr>
+                <tr>
+                    <td>TypeText</td>
+                    <td>IAM-2-2</td>
+                    <td>HL7</td>
+                    <td>Text describing the category.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

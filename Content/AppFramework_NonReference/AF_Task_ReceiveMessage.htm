@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="909" MadCap:lastWidth="963" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Receive a message</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes how to receive a message from a message group.</p>
+        <p>To receive messages, a <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> must register a receive callback function when it joins the group. The page messaging manager will call the function with each message that is sent to the group with which it is registered, so the callback function must accept a <a href="AF_Con_API_PageMessaging.htm#Message">Message</a> as its only required parameter.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-28T16:09:28.3804775-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="convert to a procedure? number steps?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-28T16:13:04.5480678-08:00">The process for handling the message depends on the message handling convention for the group, but generally requires the following elements.</MadCap:annotation>
+        </p>
+        <p>&#160;</p>
+        <h2>Provide a callback function</h2>
+        <p>Each participant in a message group must provide a callback function to receive messages from the group. The function must handle message payloads that are serialized according to the message conventions defined for the group.</p>
+        <h2>Determine whether or not to handle the message</h2>
+        <p>Each participant in a message group receives every message that is sent to the group. It is not necessarily required to handle each message.</p>
+        <p>The meaning of the <span class="codeEntity">topic</span> value is determined by the message convention associated with the group, but its intended use is to separate messages by function. Filtering messages according to their topic value is often a good way to limit the scope of a message handler.</p>
+        <p>It is also possible to filter messages according to their <span class="codeEntity">sourceId</span> values. </p>
+        <h2>Handle the message payload</h2>
+        <p>The payload of each handled message should contain a string value that was serialized from some other data according to the message conventions of the group. The callback method must deserialize the string and handle its content.</p>
+        <h3>Validate the message</h3>
+        <p>Each payload should contain a properly serialized message, but the application must not assume that it does. Group message conventions are not accessible to or enforced by the API, so the message handler should be prepared to handle any string data.</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="AF_Task_SendMessage.htm">Send a message</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_PageMessaging.htm">JavaScript API reference: Page Messaging</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingDefineDataItem.htm">Common Context message data</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

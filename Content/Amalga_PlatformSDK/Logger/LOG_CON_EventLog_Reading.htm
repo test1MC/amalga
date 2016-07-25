@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1063" MadCap:lastWidth="686" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Reading event log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to read event log entries from the Doors event logs for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can use the Event Viewer, included with Doors, to examine and analyze the Doors event logs used by hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. <MadCap:variable name="BrandingHSG.Amalga Short" /> maintains three custom event logs, into which events are written depending on the source of the event:</p>
+        <ul>
+            <li>
+                <p>Amalga Applications</p>
+                <p>Events from hosted applications, including hosted services owned by hosted applications, are written to this custom event log.</p>
+            </li>
+            <li>
+                <p>Amalga Features</p>
+                <p>Events from platform features, including hosted services owned by platform features, are written to this custom event log. Events from hosted applications, including hosted services owned by hosted applications, may also be written to this custom event log if errors occur when writing events to the Amalga Applications event log.</p>
+            </li>
+            <li>
+                <p>AmalgaAppFramework</p>
+                <p>Events from <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications are written to this custom event log. </p>
+            </li>
+        </ul>
+        <p>The following procedure describes how to use Event Viewer to read the Amalga Applications event log, used to store event log entries for hosted applications.</p>
+        <p class="LabelforProcedures">To use Event Viewer to read the Amalga Applications event log</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-Start-EventViewer.flsnp" />
+            </li>
+            <li>
+                <p>In the tree view, expand <span class="UIElementAction">Applications and Services Logs</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Amalga Applications</span>.</p>
+            </li>
+        </ol>
+        <p>Once you have selected an event log to examine and analyze, you can use the actions provided in the Actions pane of Event Viewer to create custom views, filter the event log, export event log entries, or clear the event log, as needed.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_EventLog_Writing.htm" target="" title="" alt="">Writing event log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../LOG_CON_EventLog.htm" target="" title="" alt="">Event logging on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Default.StyleMaster,Production.StyleMaster">
+  <Variable
+    Name="Amalga Short"
+    Comment="Use for general references to Amalga UIS product -- not to the application. If changed, revise copyright page."
+    Definition="Some text">Amalga</Variable>
+  <Variable
+    Name="HealthVault"
+    Comment="Short version of trademarked product name. If changed, revise copyright page."
+    Definition="Some text">HealthVault</Variable>
+  <Variable
+    Name="Amalga Long TM"
+    Comment="Used ONLY on the title and copyright page, and introduction, and at Hg's discretion; the official bugged version per branding guidelines as of 2/5/09"
+    Definition="Some text">Microsoft® Amalga™ 3.0 Community Technology Preview 2</Variable>
+  <Variable
+    Name="Medical Imaging Module"
+    Comment="Full branded name is Amalga UIS Medical Imaging Module: Use full name for first use in a topic, and Medical Imaging or Medical Imaging module after that."
+    Definition="Some text">Medical Imaging Module</Variable>
+  <Variable
+    Name="HealthVault Long"
+    Comment="Trademarked product name. (re-checked 11/10/09)"
+    Definition="Some text">Microsoft® HealthVault®</Variable>
+  <Variable
+    Name="Amalga Medical Imaging Module"
+    Comment="First use in section or topic"
+    Definition="Some text">Amalga Medical Imaging Module</Variable>
+  <Variable
+    Name="Amalga Long"
+    Definition="Some text"
+    Comment="For use when the version needs to be set in the target, and where TMs not required.">Microsoft Amalga 3.0 Community Technology Preview 2</Variable>
+  <Variable
+    Name="HealthVault Long No TM"
+    Comment="For first use in topic"
+    Definition="Some text">Microsoft HealthVault</Variable>
+  <Variable
+    Name="Microsoft Amalga"
+    Comment="Branding for Solutions"
+    Definition="Some text">Microsoft Amalga</Variable>
+  <Variable
+    Name="Customer Portal"
+    Comment="Portal. Customer Portal. Text is what is used in the portal (not the page banner)  as of 4/25/11"
+    Definition="Some text">Community Portal for Microsoft's health customers</Variable>
+  <Variable
+    Name="Partner Portal"
+    Comment="Portal. Partner Portal. Text is what is used in the portal (not the page banner)  as of 4/25/11"
+    Definition="Some text">Community Portal for Microsoft's health partners</Variable>
+  <Variable
+    Name="AmalgaV3 first use"
+    Comment="(this will change) AmalgaV3 first use -- product name specific to AV3, no versioning"
+    Definition="Some text">Amalga 3.0 CTP2</Variable>
+  <Variable
+    Name="AmalgaV3 second use"
+    Comment="(this will change) AmalgaV3 second use -- product name specific to AV3, no versioning"
+    Definition="Some text">Amalga</Variable>
+  <Variable
+    Name="AmalgaV2"
+    Comment="Approved by Roberto Ruggieri; Amy Lavin and Julia Hungerford CC'd"
+    Definition="Some text">Amalga UIS</Variable>
+  <Variable
+    Name="Brussels Long"
+    Comment="For use when the version needs to be set in the target, and where TMs not required."
+    Definition="Some text">Microsoft Amalga 3.0 Community Technology Preview CTP2 Sample Data Explorer</Variable>
+  <Variable
+    Name="Brussels first use"
+    Comment=""
+    Definition="Some text">Amalga 3.0 CTP Sample Data Explorer</Variable>
+  <Variable
+    Name="Brussels second use"
+    Comment="Brussels second use"
+    Definition="Some text">Data Explorer</Variable>
+</CatapultVariableSet>

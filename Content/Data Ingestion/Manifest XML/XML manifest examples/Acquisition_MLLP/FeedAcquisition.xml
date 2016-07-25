@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    Type = "WindowsWorker"
+                    Name="FeedAcquisition"
+                    InstanceName="AcquisitionService_MLLP"
+                    Id="ff003bed-0e89-48ea-af49-51bf20621729"
+                    Version ="1.0.0.0"
+                    >
+
+  <WindowsWorkerManifest
+    AuthenticationMode ="None"
+    ClusteringMode="FailOver"
+    HostAssembly="Microsoft.Amalga.Pipeline.FeedAcquisition.exe"
+    LogicalHostName="FabricLogicalHost"/>
+
+  <Settings>
+    <!-- Add plug-in configuration detail here, this allows manipulating the message prior to insertion in the messagequeue-->
+    <Setting Name="PluginConfigurationXml" Type="System.String">
+      <DefaultValue>
+        <![CDATA[]]>
+      </DefaultValue>
+    </Setting>
+    <Setting Name="FeedConfigurationXml" Type="System.String">
+      <DefaultValue>
+        <![CDATA[
+<feeds>
+  <feed name="ADT">
+    <receiveadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.MLLPServer">
+      <port>20000</port>
+      <startblockcharacter>0x0B</startblockcharacter>
+      <endblockcharacter>0x1C</endblockcharacter>
+      <carriagereturncharacter>0x0D</carriagereturncharacter>
+	  <ackcapture>(?&lt;tok0&gt;[^|]*)\|(?&lt;tok1&gt;[^|]*)\|(?&lt;tok2&gt;[^|]*)\|(?&lt;tok3&gt;[^|]*)\|(?&lt;tok4&gt;[^|]*)\|(?&lt;tok5&gt;[^|]*)\|(?&lt;tok6&gt;[^|]*)\|(?&lt;tok7&gt;[^|]*)\|(?&lt;tok8&gt;[^|]*)\|(?&lt;tok9&gt;[^|]*)\|(?&lt;tok10&gt;[^|]*)\|(?&lt;tok11&gt;[^|]*)\|(?&lt;tok12&gt;[^|]*)\|(?&lt;tok13&gt;[^|]*)</ackcapture>
+	  <ackformular>MSH|&lt;tok1&gt;|&lt;tok4&gt;|&lt;tok5&gt;|&lt;tok2&gt;|&lt;tok3&gt;|$date||ACK^&lt;tok8&gt;|&lt;tok9&gt;|&lt;tok10&gt;|2.1|&lt;tok12&gt;\rMSA|AA|&lt;tok9&gt;||&lt;tok12&gt;</ackformular>
+	  <nackcapture>(?&lt;tok0&gt;[^|]*)\|(?&lt;tok1&gt;[^|]*)\|(?&lt;tok2&gt;[^|]*)\|(?&lt;tok3&gt;[^|]*)\|(?&lt;tok4&gt;[^|]*)\|(?&lt;tok5&gt;[^|]*)\|(?&lt;tok6&gt;[^|]*)\|(?&lt;tok7&gt;[^|]*)\|(?&lt;tok8&gt;[^|]*)\|(?&lt;tok9&gt;[^|]*)\|(?&lt;tok10&gt;[^|]*)\|(?&lt;tok11&gt;[^|]*)\|(?&lt;tok12&gt;[^|]*)\|(?&lt;tok13&gt;[^|]*)</nackcapture>
+	  <nackformular>MSH|&lt;tok1&gt;|&lt;tok4&gt;|&lt;tok5&gt;|&lt;tok2&gt;|&lt;tok3&gt;|$date||ACK^&lt;tok8&gt;|&lt;tok9&gt;|&lt;tok10&gt;|2.1|&lt;tok12&gt;\rMSA|AA|&lt;tok9&gt;||&lt;tok12&gt;</nackformular>
+      <defaultack>0x0B, 0x15, 0x1C, 0x0D</defaultack>
+      <defaultnack>0x0B, 0x06, 0x1C, 0x0D</defaultnack>
+    </receiveadapter>
+    <sendadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.SqlStorage"></sendadapter>
+    <tempstorageadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileStorage">
+      <directory>C:\TempStorage</directory>
+    </tempstorageadapter>
+    <msgtype>ADT</msgtype>
+    <verifier>^MSH\|([^|\r\n]*\|){13,}.*\r\n</verifier>
+    <KeepOnTemporaryStorage>False</KeepOnTemporaryStorage>
+  </feed>
+</feeds>
+ 	]]>
+      </DefaultValue>
+    </Setting>
+    <Setting Name="IdleConnectionTimeout" Type="System.Int32">
+      <DefaultValue>5000</DefaultValue>
+    </Setting>
+    <Setting Name="ConnectionTimeoutSeconds" Type="System.Int32">
+      <DefaultValue>60</DefaultValue>
+    </Setting>
+  </Settings>
+</DeploymentManifest>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1342" MadCap:lastWidth="522" MadCap:fileTags="TopicOwner.StyleMasterResource" MadCap:conditions="Production.PrintOnly,Production.StyleMaster">
+    <body>
+        <p class="h7">General Formatting Conventions</p>
+        <table>
+            <col />
+            <col />
+            <col style="width: 254px;" />
+            <tr>
+                <th>
+                    <p class="TableTitle">Kind of information</p>
+                </th>
+                <th>
+                    <p class="TableTitle">Convention</p>
+                </th>
+                <th>
+                    <p class="TableTitle">Examples</p>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p>The name of any displayed object (such as buttons, tabs, or menu selections) that you use to take action</p>
+                </td>
+                <td>
+                    <p>Appears capitalized in accordance with the screen text, and formatted as <span class="UIElementAction">bold text</span>.</p>
+                </td>
+                <td>
+                    <p>Click <span class="UIElementAction">Save</span>.</p>
+                    <p>Select <span class="UIElementAction">Edit All</span>. </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Text you type</p>
+                </td>
+                <td>
+                    <p>Appears as <span class="InputText">bold text</span>.</p>
+                </td>
+                <td>
+                    <p>To run setup.exe, type <span class="InputText">Setup.exe /feature=Pla . . .</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Parameters, placeholders and variables</p>
+                </td>
+                <td>
+                    <p>Appear as <span class="Placeholder">italic text</span>.</p>
+                </td>
+                <td>
+                    <p><i>drive</i>:\...\amalga<MadCap:footnote class="footnote"><p>The placeholder <i>drive</i> indicates a local, network, or storage area network (SAN) drive.</p></MadCap:footnote></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Code listings for programming languages (such as VB and C#), SQL statements, and markup languages</p>
+                </td>
+                <td>
+                    <p>Appear as <span class="code">Courier New font</span>.</p>
+                </td>
+                <td>
+                    <p class="code">SELECT (message)</p>
+                    <p class="code">FROM (database)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Markup language elements mentioned outside a code listing</p>
+                </td>
+                <td>
+                    <p>Appear as <span class="MarkupLanguageElements">bold text</span>.</p>
+                </td>
+                <td>
+                    <p>This CCR document defines a <span class="MarkupLanguageElements">&lt;DateTime&gt; &lt;Type&gt;</span>. </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Programmatic types</p>
+                </td>
+                <td>
+                    <P>Appear as <span class="AmalgaType">bold text</span></P>
+                </td>
+                <td>
+                    <p>Use the <span class="AmalgaType">HistoryEntry</span> class. </p>
+                    <p>The service passes an object of type <span class="ForeignCodeElements">SortedList</span> to the script.</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Features.Imaging,Region.US" MadCap:fileTags="TopicType.Concept,Personas.Carlos: IT Admin,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:lastBlockDepth="4" MadCap:lastHeight="2589" MadCap:lastWidth="328">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Study browser web part" /> operation</h1>
+        <p class="abstract">
+            <MadCap:keyword term="Web part: study browser" />This topic describes the availability of the control, process flow, communication, data access, workflow, and extension of the <MadCap:variable name="Imaging.study browser web part" />.</p>
+        <p>The  <MadCap:variable name="Imaging.study browser web part" />displays the list of studies given patient context.</p>
+        <h2>Process flow</h2>
+        <p>The <MadCap:variable name="Imaging.study browser web part" /> <![CDATA[ ]]>displays the list of studies given patient context, and the user selects a particular study.</p>
+        <p>The control facilitates the following process flow.</p>
+        <ol>
+            <li>The<MadCap:variable name="Imaging.study browser" />control sends the patient ID&#160;to the IRS.</li>
+            <li>The Image Registry and Document Service Application returns the available study information for the patient ID to the<MadCap:variable name="Imaging.study browser" />control.</li>
+            <li>The<MadCap:variable name="Imaging.study browser" />control displays the list of studies for the patient ID.</li>
+            <li>A user selects a row, the<MadCap:variable name="Imaging.study browser web part" />sends the selected study information to other controls through context passing.</li>
+        </ol>
+        <h3>Control input</h3>
+        <p>The control expects to receive a unique patient ID  from  context passing.</p>
+        <p>The control binds to the  StudyInfoEntry[] API exposed by the Image Registry Service Application.</p>
+        <p>The Image Registry and Document Service Application (IRDA) exposes APIs to provide patient, study, series,and instance-level metadata for consumption by<MadCap:variable name="BrandingHSG.Amalga Short" />controls and applications, including the<MadCap:variable name="Imaging.study browser web part" /></p>
+        <p>For more information aboutthe Image Registry Service Application,see<MadCap:xref href="../Service IRS/MIM-LND-Introduction to the IRS.htm">Imaging Registry and Document Service Application on page 1</MadCap:xref>.</p>
+        <h3>Control output</h3>
+        <p>The <MadCap:variable name="Imaging.study browser web part" /> displays the list of studies given patient context.</p>
+        <p>The following is the patient context changed message format the<MadCap:variable name="Imaging.study browser" />expects as input.</p>
+        <p>The<MadCap:variable name="Imaging.study browser" />expects this message to be sent through the Common Context group, a special group defined by the<MadCap:variable name="FeatureName.Amalga Framework" />context passing.</p>
+        <p class="Syntax">&#160;{</p>
+        <p class="Syntax">&#160;&#160;&#160;Patient: {</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Id: {</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MRN: {</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AmalgaPersonId: "Patient ID"</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;amalga: {</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;oid: "PatientID"</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+        <p class="Syntax">&#160;}</p>
+        <p class="Syntax">}</p>
+        <p>When a user selects a single row, the study browser control broadcasts the following information using context passing.</p>
+        <p>The following is the outbound “study selected” message format, expressed as a JavaScript object. The study browser sends this message through a message group named <span class="Label">Amalga.Messaging.Imaging</span>.</p>
+        <p class="Syntax">{</p>
+        <p class="Syntax">&#160;&#160;type: "StudySelectedMessage",</p>
+        <p class="Syntax">&#160;&#160;payload: {</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;StudyId: "Study ID",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;StudyInstanceId: "Study Instance UID",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Series: [</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SeriesId: "Series ID",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SeriesInstanceId: "Series Instance UID",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Modality: "Modality",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ImageDeliveryAddress: "SiteA",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ImageIds: [</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"Image ID 1",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"Image ID 2",</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]</p>
+        <p class="Syntax">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+        <p class="Syntax">}</p>
+        <h2>Communication</h2>
+        <p>The control uses  context passing for communication between controls.</p>
+        <p>The control communicates to the Image Registry Service Application through exposed APIs.</p>
+        <h2>Extend the control</h2>
+        <p>The <MadCap:variable name="Imaging.study browser web part" /> is a based on the <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> grid web part. The base Amalga Grid View  is available with the <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> package. It can be used to extend the <MadCap:variable name="Imaging.study browser web part" />.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="MIM-VREF-Study Browser Structure.htm">Study Browser Web Part Structure on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="MIM-PRC-Study-Browser-Config-Admin.htm">Modify the Study Web Browser Web Part Configuration on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

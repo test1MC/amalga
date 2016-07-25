@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-kathen,TopicType.Concept,EditingTags.7 - Editing issues resolved,Personas.All,Status.70 - Complete,ReleaseTarget.CTP1" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Framework style sheets</h1>
+        <p class="abstract">
+            <MadCap:keyword term="style sheet: structural;style sheet: themable;style sheet: extensible;style sheet;accessibility" />This topic describes the style sheets in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> and their use.</p>
+        <p MadCap:conditions="Production.doNOTbuild">There are three types of style sheets that control the look and feel of the<MadCap:annotation MadCap:createDate="2011-10-07T15:12:04.6464888-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="vs. &quot;portals&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2011-10-07T15:12:10.1900431-07:00"> provider sites. </MadCap:annotation></p>
+        <ol>
+            <li>Structural- controls the basic layout of pages<ul><li><p>Base.css – contains all common styles applicable to all portals. Use these styles whenever possible to keep site styling consistent.</p></li><li><p>Public.css – contains styles applicable only to public portal pages</p></li><li><p>Patient.css – contains styles applicable only to patient portal pages</p></li><li><p>InternalProvider.css – contains styles applicable only to internal provider portal pages</p></li><li MadCap:conditions="Production.doNOTbuild"><p>ExternalProvider.css – contains styles applicable only to external portal <MadCap:annotation MadCap:createDate="2011-10-06T15:49:57.5083616-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="Not in CTP1" MadCap:editor="v-kathen" MadCap:editDate="2011-10-06T15:50:02.3893852-07:00">pages</MadCap:annotation></p></li><li><p>Staff.css – contains styles applicable only to staff portal pages</p></li></ul></li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li MadCap:conditions="Production.doNOTbuild">Themable - controls the default look and feel of pages when no theme is applied<ul><li><p MadCap:conditions="Production.doNOTbuild">Theme.css – contains all common styles applicable to all portals</p></li><li><p MadCap:conditions="Production.doNOTbuild">Public.css – contains styles applicable only to public portal pages</p></li><li><p MadCap:conditions="Production.doNOTbuild">Patient.css – contains styles applicable only to patient portal pages</p></li><li><p MadCap:conditions="Production.doNOTbuild">InternalProvider.css – contains styles applicable only to internal provider portal pages</p></li><li MadCap:conditions="Production.doNOTbuild"><p MadCap:conditions="Production.doNOTbuild">ExternalProvider.css – contains styles applicable only to external portal pages</p></li><li><p MadCap:conditions="Production.doNOTbuild">Staff.css – contains styles applicable only to staff portal pages</p></li></ul></li>
+        </ol>
+        <p class="note" MadCap:conditions="Production.doNOTbuild">Theme styles map directly to the color and font customization guidelines developed by the <MadCap:annotation MadCap:createDate="2011-10-11T14:55:57.1006427-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="I have marked this as DNB. Per Suz, they don't want people customizing these at the present time. Theming isn't in the current release. I am adding a note about functionality in CTP for now. I think I somehow deleted your annotation, but MSDN content isn't applicable to anything we're doing." MadCap:editor="v-kathen" MadCap:editDate="2011-10-11T14:57:49.2218537-07:00">User Experience (UX) team</MadCap:annotation> at Microsoft. Only styles that are designated in the <MadCap:annotation MadCap:createDate="2011-09-23T20:52:19.1458570-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Should this be a link?\r\nKSH - I need to find this location." MadCap:editor="v-kathen" MadCap:editDate="2011-09-27T13:18:24.6636423-07:00">UX Style Guide</MadCap:annotation>lines are supported. Unsupported style modifications to the controls shipped with the base package can make upgrades unworkable.</p>
+        <ol MadCap:continue="true">
+            <li>
+                <p MadCap:conditions="Production.doNOTbuild">Customizable style sheets – can be used to  customize the layout, or look and feel of a page. To  minimize the number of style sheets a customer has to manage, these style sheets contain styles to support layout and look and feel.</p>
+                <ul>
+                    <li>
+                        <p MadCap:conditions="Production.doNOTbuild">Common.custom.css</p>
+                    </li>
+                    <li>
+                        <p MadCap:conditions="Production.doNOTbuild">Public.custom.css</p>
+                    </li>
+                    <li>
+                        <p MadCap:conditions="Production.doNOTbuild">Patient.custom.css</p>
+                    </li>
+                    <li>
+                        <p MadCap:conditions="Production.doNOTbuild">InternalProvider.custom.css</p>
+                    </li>
+                    <li MadCap:conditions="Production.doNOTbuild">
+                        <p MadCap:conditions="Production.doNOTbuild">ExternalProvider.custom.css</p>
+                    </li>
+                    <li>
+                        <p MadCap:conditions="Production.doNOTbuild">Staff.custom.css</p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p class="h7" MadCap:conditions="Production.doNOTbuild">Style-sheet precedence</p>
+        <p MadCap:conditions="Production.doNOTbuild"> Style sheets are loaded for a public portal page in the following order.</p>
+        <p MadCap:conditions="Production.doNOTbuild">1.	Corev4.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">2.	Amalga\Base.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">3.	Amalga\Public.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">4.	Themable\Amalga\Theme.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">5.	Themable\Amalga\Public.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">6.	Themable\Amalga\Common.custom.css</p>
+        <p MadCap:conditions="Production.doNOTbuild">7.	Themable\Amalga\Public.custom.css</p>
+        <p class="note" MadCap:conditions="Production.doNOTbuild">By default, any master page with the following element  “&lt;SharePoint:CssLink runat="server" Version="4" /&gt;” in a <MadCap:variable name="BrandingMS.SharePoint" /> environment will load  corev4.css.</p>
+        <p class="h7">Location of style sheets </p>
+        <p>All style sheets are deployed to this folder: \Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\TEMPLATE\LAYOUTS\1033\STYLES.</p>
+    </body>
+</html>

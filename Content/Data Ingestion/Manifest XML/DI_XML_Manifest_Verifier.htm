@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="957" MadCap:lastWidth="797" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Verifier element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Verifier element" />Declares a regular expression to verify the pattern of the received message. </p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed Name="<i>String</i>"&gt;<b>
+                &lt;Verifier&gt;...&lt;/Verifier&gt;</b>
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt; 
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None.</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None.</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Feed.htm">Feed.</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Verifier</span> element is mandatory in the service manifest of the <MadCap:variable name="Applications.Feed Acquisition application" /> when the message transport format is MLLP. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p>If the specified regular expression successfully matches the message content, and you include the <a href="DI_XML_Manifest_AckCapture.htm">AckCapture</a> and <a href="DI_XML_Manifest_AckFormular.htm">AckFormular</a> element values, then the subsystem creates an appropriate return acknowledgement message.</p>
+        <p class="Label">Example</p>
+        <p class="code">&lt;verifier&gt;^MSH\|([^|\r\n]*\|){13,}.*\r\n&lt;/verifier&gt;</p>
+        <p class="SeeAlso">See Also</p>
+        <p><a href="../DI_Xml_AcquireSrvMLLPEx.htm">Feed acquisition: service manifest example for MLLP format</a>
+        </p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

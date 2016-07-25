@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="265" MadCap:lastWidth="1214">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To prepare the <MadCap:variable name="BrandingMS.Doors PowerShell" /> environment on other computers</p>
+        <ol>
+            <li>Ensure that your user account meets role membership requirements for the cmdlets you want to use. Role membership requirements are listed for each cmdlet. </li>
+            <li>Log on to a computer joined to a topology that is running either platform or application services.</li>
+            <li>Start <MadCap:variable name="BrandingMS.Doors PowerShell 2.0"></MadCap:variable>:&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <MadCap:variable name="BrandingMS.Doors PowerShell" class="UIElementAction"></MadCap:variable>, and then click <MadCap:variable name="BrandingMS.Doors PowerShell" class="UIElementAction"></MadCap:variable>. </li>
+            <li>Load <MadCap:snippetText src="file-powershell-dll.flsnp"></MadCap:snippetText>:&#160;
+<ol style="list-style-type: lower-alpha;"><li><p>Navigate to the appropriate folder. 
+
+</p><p>The default installation folder is: C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell</p></li><li><p>Enter the following cmdlet.</p><p class="InputText"><MadCap:snippetText src="cmdlet-importmod-forAMC.flsnp"></MadCap:snippetText></p></li></ol></li>
+        </ol>
+    </body>
+</html>

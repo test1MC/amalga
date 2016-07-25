@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="12" MadCap:lastHeight="4670.333" MadCap:lastWidth="675" MadCap:fileTags="TopicType.Ref-Visual,Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,EditingTags.7 - Editing issues resolved,Status.60 - Revising">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Entity binding pane</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic includes several images of the <MadCap:annotation MadCap:createDate="2012-01-18T10:42:00.5296942-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="UI label incorrect. Actual label in UI is the variable name of the selected entity. See bug 109068. " MadCap:editor="v-padenc" MadCap:editDate="2012-01-18T10:42:05.2396942-08:00">entity binding</MadCap:annotation> pane and describes its key elements. </p>
+        <p>
+            <MadCap:keyword term="entities;entity registry;entity binding" />
+            <MadCap:snippetText src="../../../Resources/Snippets/Vis-Ref-AMC-Purpose.flsnp" class="Label" />&#160;<MadCap:annotation MadCap:createDate="2012-02-23T07:04:42.4558178-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic complete when xrefs added as relevant" MadCap:editor="v-padenc" MadCap:editDate="2012-02-23T07:04:50.3508178-08:00">View </MadCap:annotation>and edit binding for entity properties. </p>
+        <p><span class="Label">Access</span> For access steps, see <MadCap:xref href="../../../DataPlatform1/DP_Task_BindColRec.htm" target="" title="" alt="">Configure binding: recommended column</MadCap:xref>. </p>
+        <p>This topic describes elements visible in the following variations of the entity binding pane. </p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Initial display</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p> The following image shows the entity binding pane when it is first accessed for the Encounter entity. In this example, the Encounter entity has two binding sources: Contoso Hospital and Eastlake.</p>
+                <p>
+                    <img src="../../Images/EMT-bind-view.png" />
+                </p>
+                <table style="width: 95%;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Ref#</th>
+                            <th>Name</th>
+                            <th>Description and tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>(binding source name)</td>
+                            <td>User-entered name for a binding source. The position of the binding source indicates its precedence.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><MadCap:variable name="UI-Labels.Edit Binding" />
+                            </td>
+                            <td>Activates the editing display for changing the property binding for this entity. </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><MadCap:variable name="UI-Labels.Binding SQL" />
+                            </td>
+                            <td>When clicked, displays the Transact-SQL SELECT statement, also called the binding SQL statement, &#160;for the entity (all binding sources).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Expanded binding source in the initial display</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The following image illustrates the Contoso Hospital binding source for the Encounter entity after the binding source is clicked in the initial display of the entity binding pane. As shown here, an expanded binding source lists the properties in the Encounter entity and the property-specific columns or values from this binding source. This is an informational display. To take any action, click <MadCap:variable name="UI-Labels.Edit Binding"></MadCap:variable>.</p>
+                <p>
+                    <img src="../../Images/EMT-bind-view-source.png" style="max-width: 675px;max-height: auto;" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" />
+                </p>
+                <table style="width: 95%;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Ref#</th>
+                            <th>Name</th>
+                            <th>Description and tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>(yellow border)	</td>
+                            <td>Indicates the binding source that was expanded.
+
+</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><MadCap:variable name="UI-Labels.Column -  entity binding" />
+                            </td>
+                            <td>Lists the columns and values that are bound to the entity <MadCap:annotation MadCap:createDate="2012-01-12T11:43:28.6404804-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="bug 114989: Database Table/View Column UI label unclear" MadCap:editor="v-padenc" MadCap:editDate="2012-01-12T11:44:01.1017262-08:00">properties</MadCap:annotation> for the selected binding source. </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <img src="../../Images/EMT-icon-constant.png" />
+                            </td>
+                            <td>Indicates that the property can be bound to a specified constant value (after you click <MadCap:variable name="UI-Labels.Edit Binding" /> to activate the editing display). See <MadCap:xref href="../../../DataPlatform1/DP_Task_BindConstant.htm" target="" title="" alt="">Configure binding: constant values</MadCap:xref>. </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <img src="../../Images/EMT-icon-property-column.png" />
+                            </td>
+                            <td>In the Entity Property column, indicates an entity property; in the <MadCap:variable name="UI-Labels.Column -  entity binding" /> column, indicates a column from a table or view. </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <img src="../../Images/EMT-icon-primarykey.png" />
+                            </td>
+                            <td>In the Entity Property column, indicates a primary key entity property; in the <MadCap:variable name="UI-Labels.Column -  entity binding" /> column, indicates a primary key column from a table or view. </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Entity Property</td>
+                            <td>Lists the properties of the current entity. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Expanded entity property in the initial display</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The following image illustrates the AssignedPatientLocationPointofCare property for the Encounter entity after the property is clicked in the initial display of the entity binding pane. As shown here, an expanded property lists the details for the property and the bound database column. In this example, the bound database column is PV1_3_1 from [ClinicalData].MEDORDER].[v_Collapse_PV1_Default], which is joined to this binding source’s anchor table through the column Visit_PV1_ExternalID. This is an informational display. To take any action, click <MadCap:variable name="UI-Labels.Edit Binding"></MadCap:variable>.</p>
+                <p>
+                    <img src="../../Images/EMT-bind-view-prop.png" style="max-width: 675px;max-height: auto;" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" />
+                </p>
+                <table style="width: 95%;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Ref#</th>
+                            <th>Name</th>
+                            <th>Description and tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><MadCap:variable name="UI-Labels.Bound Column Details" /> <![CDATA[	]]></td>
+                            <td>
+                                <p>Lists the following details about the column bound to the entity property:&#160;</p>
+                                <MadCap:snippetBlock src="../../Snippets/vref-EntityBinding-BoundDBColDetails.flsnp" />
+                                <ul>
+                                    <li><span class="UIElementName"><MadCap:annotation MadCap:createDate="2012-02-13T10:44:20.0480060-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="&quot;Join On Anchor Table Column&quot; was in the snippet. Pulled out because it is displayed in the entity binding pane only (not Feed Browser or Joins tab). " MadCap:editor="v-padenc" MadCap:editDate="2012-02-13T10:45:19.2374692-08:00">Join </MadCap:annotation>On <MadCap:annotation MadCap:createDate="2012-01-31T13:20:46.2187251-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I can sort of see why Anchor might be capped, or even Anchor Table, as a column name, but why is column capped?\r\n\r\nPD: &quot;Anchor Table&quot; is not a column name but the table or view containing the primary key column to which the related table or view is joined. &quot;Anchor Table Column&quot; is a column in the anchor table selected for the join. Does that help?" MadCap:editor="v-padenc" MadCap:editDate="2012-02-02T07:24:46.0049534-08:00">Anchor Table Column</MadCap:annotation></span>: The column in the anchor table (for the current binding source on the current entity) that is currently mapped to the primary key column of the related table, from which the column bound to this property is derived.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>(yellow border)</td>
+                            <td>Indicates the entity property that was expanded.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Entity Property Details</td>
+                            <td>
+                                <p>Lists the following details about the selected entity property: </p>
+                                <MadCap:snippetBlock src="../../Snippets/vref-EntityBinding-EntityPropertyDetails.flsnp" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Editing display</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The following image illustrates the entity binding pane for the Encounter entity after <MadCap:variable name="UI-Labels.Edit Binding" /> is clicked (resulting in the editing display of the entity binding pane). In this example, ADT is the first source system in the storage schema as listed in the <MadCap:variable name="UI-Labels.Feed Browser" /> tab and the entity has two binding sources: Contoso Hospital and Eastlake.</p>
+                <p class="note">If <span class="UIElementName">Switch to Assisted Binding</span> is visible, click it before changing entity binding information. <MadCap:snippetText src="../../Snippets/info-SwitchToAssisted.flsnp" /></p>
+                <p>
+                    <img src="../../Images/EMT-bind-edit.png" style="max-width: 675px;max-height: auto;" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" />
+                </p>
+                <table style="width: 95%;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Ref#</th>
+                            <th>Name</th>
+                            <th>Description and tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="../../Images/EMT-icon-deletesource.png" />
+                            </td>
+                            <td>Clears the binding information for the indicated binding source. </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><MadCap:variable name="UI-Labels.Add Binding Source" />
+                            </td>
+                            <td>Adds an empty binding source for the current entity. </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><MadCap:variable name="UI-Labels.Clear Binding" />
+                            </td>
+                            <td>Removes all binding of table and view columns from the entity properties; removes all but the default binding source. </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Save	</td>
+                            <td>Saves changes to binding.
+</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Cancel	</td>
+                            <td>Cancels changes to binding.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><MadCap:variable name="UI-Labels.Joins" />
+                            </td>
+                            <td>See <MadCap:xref href="SERV_VREF_JoinsTab.htm" target="" title="" alt=""> tab</MadCap:xref>.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><MadCap:variable name="UI-Labels.Feed Browser" />
+                            </td>
+                            <td>See <MadCap:xref href="SERV_VREF_FeedBrowser.htm" target="" title="" alt=""> tab</MadCap:xref>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead>
+                <MadCap:dropDownHotspot>Expanded entity property in the editing display</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The following image illustrates the AssignedPatientLocationPointofCare property for the Encounter entity after the property is clicked in the editing display of the entity binding pane.  As in the initial display of the entity binding pane, the expanded property lists the details for the property and the bound database column (these details are described <MadCap:annotation MadCap:createDate="2012-02-16T09:24:08.9770449-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Cindy, I would like to link to &quot;Expanded entity property in the initial display&quot; but it is no longer a bookmark because all content, including the heading, is within a dropdown. Ideas?" MadCap:editor="v-padenc" MadCap:editDate="2012-02-16T09:24:56.7592323-08:00">earlier in this topic</MadCap:annotation>). In the editing display, additional functionality is available for the table join. </p>
+                <p>
+                    <img src="../../Images/EMT-bind-edit-prop.png" style="max-width: 675px;max-height: auto;" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" />
+                </p>
+                <table style="width: 95%;">
+                    <col />
+                    <col />
+                    <col />
+                    <thead>
+                        <tr>
+                            <th>Ref#</th>
+                            <th>Name</th>
+                            <th>Description and tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <MadCap:annotation MadCap:createDate="2012-02-08T12:21:36.1883629-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="bug 122958: misleading label" MadCap:editor="v-padenc" MadCap:editDate="2012-02-08T12:21:43.8031243-08:00">Add</MadCap:annotation>
+                            </td>
+                            <td>Displays the <MadCap:variable name="UI-Labels.Relationship Editor" /> dialog box for editing the existing relationship (table join).</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>(drop-down list)</td>
+                            <td>Drop-down list of columns in the anchor table (for the current binding source on the current entity) that are eligible for mapping to the primary key column of the related table. </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SERV_TASK_OpenEM.htm" target="" title="" alt="">Open the  module</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Task_BindColRec.htm" target="" title="" alt="">Configure binding: recommended column</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Task_ViewBindProp.htm" target="" title="" alt="">View binding for entity properties</MadCap:xref>
+        </p>
+        <p MadCap:conditions="" class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SERV_VREF_FeedBrowser.htm" target="" title="" alt=""> tab</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SERV_VREF_JoinsTab.htm" target="" title="" alt=""> tab</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SERV_VREF_RelationshipEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2012-02-02T06:42:04.8923675-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entity registry (Dennis)" MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:38:59.4038756-08:00">Concepts</MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="../AMC Introduction.htm" target="" title="" alt=""> Overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Other Resources</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm" target="" title="" alt="">Entity binding management</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1627" MadCap:lastWidth="782" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>CollapseConfiguration element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="CollapseConfiguration element" />Declares the characteristics of a collapsed view.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;<b>
+                  &lt;CollapseConfiguration&gt;</b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;
+                     &lt;ResultType&gt;...&lt;/ResultType&gt;
+                     &lt;ResultTypeSortField&gt;...&lt;/ResultTypeSortField&gt;		
+                     &lt;ResultRowsFilter&gt;...&lt;/ResultRowsFilter&gt;<b>
+                  &lt;/CollapseConfiguration&gt;</b>
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;<b>
+                  &lt;CollapseConfiguration&gt;</b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;
+                     &lt;ResultType&gt;...&lt;/ResultType&gt;
+                     &lt;ResultTypeSortField&gt;...&lt;/ResultTypeSortField&gt;				
+                     &lt;ResultRowsFilter&gt;...&lt;/ResultRowsFilter&gt;<b>
+                  &lt;/CollapseConfiguration&gt;</b>
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;<b>
+                  &lt;CollapseConfiguration&gt;</b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;
+                     &lt;ResultType&gt;...&lt;/ResultType&gt;
+                     &lt;ResultTypeSortField&gt;...&lt;/ResultTypeSortField&gt;
+                     &lt;ResultRowsFilter&gt;...&lt;/ResultRowsFilter&gt;<b>
+                 &lt;/CollapseConfiguration&gt;</b>
+              &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Segment.htm">Segment</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_PrimaryKeyColumn.htm">PrimaryKeyColumn</a>, <a href="DI_XML_Manifest_ResultRowsFilter.htm">ResultRowsFilter</a>, <a href="DI_XML_Manifest_ResultType.htm">ResultType</a>, <a href="DI_XML_Manifest_ResultTypeSortField.htm">ResultTypeSortField</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>A context key  specified for one column of a segment table produces a collapsed view of the data by default. In addition to a context key, you can declare the <span class="MarkupLanguageElements">CollapseConfiguration</span> element to refine the default view results for a better assisted-binding experience. First set the ContextKey attribute of the <MadCap:xref href="DI_XML_Manifest_Element.htm" target="" title="" alt="">Element element</MadCap:xref> and then use the element name (column name) as the value to the (child) <MadCap:xref href="DI_XML_Manifest_PrimaryKeyColumn.htm" target="" title="" alt="">PrimaryKeyColumn element</MadCap:xref>.</p>
+        <p>Define both the context key and collapse configuration (one each for a table) in the data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;CollapseConfiguration&gt;
+      &lt;PrimaryKeyColumn&gt;Insurance_IN1_ContextKey&lt;/PrimaryKeyColumn&gt;
+      &lt;ResultRowsFilter&gt;Insurance_IN1_ContextKey is not null and Insurance_IN1_ContextKey &amp;lt;&amp;gt; ''&lt;/ResultRowsFilter&gt;
+&lt;/CollapseConfiguration&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

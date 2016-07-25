@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="952" MadCap:lastWidth="779" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">MsgType element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="MsgType element" />Declares a value that represents the MsgType column in the MSG201 table of the <MadCap:variable name="Databases.MessageQueue" /> database for the feed.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed&gt;
+              <b> &lt;MsgType&gt;...&lt;/MsgType&gt;</b>
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Feed.htm">Feed</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">MsgType </span>element is mandatory in all feed service manifests. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p>The <span class="MarkupLanguageElements">MsgType</span> element value populates the MsgType column in the <MadCap:variable name="Databases.MessageQueue" /> database MSG201 table. The message type must match across all pipeline applications. Use the <MadCap:xref href="DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> in the <MadCap:variable name="Applications.Message Shredder (application)" /> and <MadCap:variable name="Applications.Data Parser (application)" /> applications to match the message type.</p>
+        <p class="Label">Example</p>
+        <p class="code">&lt;msgtype&gt;LAB&lt;/msgtype&gt;</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

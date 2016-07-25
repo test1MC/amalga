@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="3964.667" MadCap:lastWidth="310" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Creating a DCN event type</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the concepts involved in creating a DCN event type  for use with Data Change Notification (DCN) subscriptions.</p>
+        <p class="Figure">
+            <MadCap:keyword term="event types:Data Change Notification platform application;Data Change Notification platform application:event types;Change Data Capture;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventType class:Data Change Notification platform application;Data Change Notification platform application:EventType class;ChangeTrackerService service:Data Change Notification platform application;Data Change Notification platform application:ChangeTrackerService service;EventingDispatcherService service:Data Change Notification platform application;Data Change Notification platform application:EventingDispatcherService service;ResourceState enumeration:Data Change Notification platform application;Data Change Notification platform application:ResourceState enumeration;expiration dates:Data Change Notification platform application;Data Change Notification platform application:expiration dates;filter conditions:Data Change Notification platform application;Data Change Notification platform application:filter conditions;access control framework;EventPriority enumeration:Data Change Notification platform application;Data Change Notification platform application:EventPriority enumeration" />The DCN event type represents a set of <MadCap:annotation MadCap:createDate="2011-11-16T20:37:13.0189001-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="OMG.  Meaning resources which might do something that raises? creates? an event ?\r\nOK if our reader will understand.\r\n\r\n[DWK] Sadly, our reader will understand. This is &quot;resources to which DCN can apply eventing&quot;, and unfortunately that's what they named the object containing those resources." MadCap:editor="v-dennk" MadCap:editDate="2011-11-18T10:01:41.0857876-08:00">eventable resources</MadCap:annotation>, such as application views, to be monitored for data change events. Linked to a DCN subscription, a DCN event type provides the metadata needed by the various services included in the Microsoft.Amalga.Event.Application application to match eventable resources to the underlying data structures to be monitored by Change Data Capture (CDC). When CDC captures a data change event for one of those data structures, ChangeTrackerService can then write a DCN message to the DCN message queue, and EventingDispatcherService can then map the DCN message to the DCN subscriptions for that DCN event type and respond accordingly.</p>
+        <p class="Figure">The EventType object, defined in the WCF client for the IEventManagementService contract, is used to add, update, or delete a DCN event type, along with several supporting objects.</p>
+        <h2>Identifiers</h2>
+        <p class="Figure">DCN event types are uniquely identified by a GUID, called an event identifier, that is used by other operations in the IEventManagementService contract for the EventingManagerService service. The EventId property of the EventType object is used to get or set the event identifier for a DCN event type.</p>
+        <h2>State</h2>
+        <p>The state of a DCN event type determines how it is monitored by the services in the Microsoft.Amalga.Event.Application application. The State property of the EventType object indicates the state of the DCN event type. For more information about the various states, <MadCap:annotation MadCap:createDate="2011-11-16T20:41:24.8530810-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Use a hyperlink for API topics, so you can control the words that name this object.For instance, EventType.State Property. " MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T20:47:18.8724794-08:00">see</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="../../API/Ref/Microsoft.Amalga.Eventing/P_EventType_State.htm" target="" title="" alt="">Examples on page 1</MadCap:xref>.</p>
+        <p>By default, the State property of an EventType object is set to ResourceState.Active when it is created. However, the value of the State property can change for a number of reasons:</p>
+        <ul>
+            <li>The DCN event type has met or exceeded the expiration date specified for it. The State property is set to ResourceState.Expired when this occurs.</li>
+            <li>The OneTimeOnly property of the EventType object was set to True, and the DCN event type has already been processed. The State property is set to ResourceState.Expired when this occurs.</li>
+            <li>The total number of data changes received by ChangeTrackerService per second for the eventable resources specified in the DCN event type exceeds the maximum value specified for the ChangeTrackerService service. The State property is set to ResourceState.Failed when this occurs.</li>
+            <li>CDC was disabled on one or more tables used by eventable resources specified in the DCN event type, and therefore the eventable resources can no longer be tracked. The State property is set to ResourceState.Failed when this occurs.</li>
+            <li>ChangeTrackerService service received too many errors from SQL&#160;Server while attempting to track the eventable resources specified in the DCN event type. Depending on the error, the State property is set to either ResourceState.Suspended or ResourceState.Failed when this occurs.</li>
+            <li>Other issues, such as a change in <MadCap:variable name="TechnicalTerms.Active Directory (adjective)" /> permissions, which prevents tracking the eventable resources specified in the DCN event type. Depending on the error, the State property is set to either ResourceState.Suspended or ResourceState.Failed when this occurs.</li>
+            <li>
+                <p>Various operations directly change the state of a DCN event type:</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>IEventManagementService operation</th>
+                            <th>State property value</th>
+                        </tr>
+                        <tr>
+                            <td>ActivateEventType</td>
+                            <td>ResourceState.Active</td>
+                        </tr>
+                        <tr>
+                            <td>DeactivateEventType</td>
+                            <td>ResourceState.Inactive</td>
+                        </tr>
+                        <tr>
+                            <td>DeleteEventType</td>
+                            <td>ResourceState.Retired</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+        <p>The StateReason property of the EventType object can be used to determine the reason behind the current value of the State property, especially if the DCN event type became inactive due to an error.</p>
+        <h2>Expiration dates</h2>
+        <p class="Figure">The DCN event type also provides an expiration mechanism, so you can either provide an expiration date for the DCN event type, or explicitly indicate that the DCN event type never expires.</p>
+        <p class="Figure">The EventingDispatcherService uses the expiration information in the DCN event type to determine if a DCN message added to the DCN message queue by ChangeTrackerService should be dispatched to the destinations identified by the DCN subscriptions associated with that DCN event type. </p>
+        <p class="Figure">To set an expiration date for a DCN event type, set the ExpireOn property of the EventType object for a DCN subscription to a valid DateTime value. To ensure that a DCN subscription never expires, set the NeverExpire property to True, and also set the ExpireOn property to DateTime.MaxValue.</p>
+        <p class="Figure">In addition, you can set the OneTimeOnly property to True, to process the DCN event type once only. Once processed, the DCN event type becomes inactive. For more information about activating and deactivating a DCN event type, see <MadCap:xref href="SDK_CON_ActivateDeactivate_EventType.htm" target="" title="" alt="">Activating and deactivating a DCN event type on page 1</MadCap:xref>.</p>
+        <h2>Filter condition</h2>
+        <p>The DCN event type can filter data change events based on a specified filter condition. The SqlSyntaxCondition property of the EventType object can contain a Transact-SQL search condition, which is injected into the WHERE clause of the query constructed by the ChangeTrackerService to identify data change events.</p>
+        <h3>Filter conditions and the Access Control Framework</h3>
+        <p>Access Control Framework (ACF) rules take precedence over the filter conditions specified in DCN event rules, and ACF rules are independently defined. This can cause some confusion, particularly if ACF rules are added or changed after DCN event rules with filter conditions are defined.</p>
+        <p>For example, a user creates a DCN event type that contains the following filter condition:</p>
+        <p class="code">PatientAge &gt;59</p>
+        <p> Independently, an <MadCap:variable name="BrandingHSG.Amalga Short" /> administrator later defines an ACF rule for the same user that has a conflicting or restricting filter condition, such as the following filter condition:</p>
+        <p class="code">PatientAge &lt;55</p>
+        <p>Because the ACF rule takes precedence, the previously working DCN event type is no longer providing DCN event messages for that user. The DCN event rule is still being processed, but because the data retrieved for that user is restricted by the filter condition on the ACF rule prior to processing, there is no applicable data, and, therefore, no applicable data change events, to process for the DCN event rule.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-11-16T21:07:30.7886589-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="What is the potential risk to a patient if a change occurs but no DCN is produced? In UIS when we had a similar situation, we put Warning notices in. Brett would remember this problem.\r\n\r\n Is there a workaround to id these conflicts before the ACF and DCN rules are put into effect? " MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T21:12:15.0430815-08:00">When this situation is encountered,</MadCap:annotation> it can be difficult to identify because no error is raised by either Access Control Framework or Data Change Notification functionality. Both the DCN event rule and the ACF rule are properly processed, just independently of each other.</p>
+        <h2>Priority</h2>
+        <p class="Figure">You can apply a priority value to a DCN event type based on filter conditions, by setting the Priority property of the EventType object to a valid EventPriority enumeration value. By default, the Priority property is set to EventPriority.Normal.</p>
+        <p class="Figure">&#160;</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

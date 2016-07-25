@@ -1,0 +1,988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProjectImport
+  AutoSync="false"
+  DeleteStale="false"
+  IncludeLinkedFiles="true"
+  ConditionTagExpression="exclude[Production.doNOTbuild or Production.StyleMaster] "
+  IncludePattern="B*.fltoc"
+  LastImport="2012-01-26T13:30:18.1915393-08:00">
+  <Files>
+    <Url
+      Source="../../../AmalgaV3UG-wking/AmalgaV3UG-wking.flprj"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/AmalgaV3UG-wking.flprj" />
+  </Files>
+  <ExcludedFiles>
+    <Url
+      Source="../../Content/fm-Title.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/fm-Title.htm" />
+    <Url
+      Source="../../Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm" />
+    <Url
+      Source="../../Content/Analytics/AN_LND_report_authors.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/Analytics/AN_LND_report_authors.htm" />
+    <Url
+      Source="../../Content/fm-CopyrightPageWeb.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3-wking/Content/fm-CopyrightPageWeb.htm" />
+  </ExcludedFiles>
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/TOCs/Brussels-Master.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/TOCs/Brussels-Master.fltoc" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/TOCs/BrusselsUG.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/TOCs/BrusselsUG.fltoc" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Con_Patient_Lists_overview.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Con_Patient_Lists_overview.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Con_Patient_lists_scenario.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Con_Patient_lists_scenario.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_Create_list_criteria.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_Create_list_criteria.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_Combine_criteria.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_Combine_criteria.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Images/PL_delete.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Images/PL_delete.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_list.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_list.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_sort_list.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_sort_list.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_edit_criteria.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_edit_criteria.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_properties.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_properties.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Edit_properties.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Edit_properties.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_Analytics.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_view_Analytics.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_View_analytics_pane.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_View_analytics_pane.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_graph_mode.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_graph_mode.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Create_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Create_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_con_prerequisites.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_con_prerequisites.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_create_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_create_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_Open_Analytics_pane.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_Open_Analytics_pane.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_start_report_builder.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_start_report_builder.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Import_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Import_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Manage_reports.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Manage_reports.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_publish_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_publish_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_unpublish_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_unpublish_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_settings.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_settings.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_delete_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_delete_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_republish_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_republish_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_hide_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_hide_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_show_reports.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_show_reports.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_view_properties.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_view_properties.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Con_Analytics_Overview.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Con_Analytics_Overview.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_con_AnalyticsOverview.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_con_AnalyticsOverview.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Con_Analytics_scenario.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Con_Analytics_scenario.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Filter_list_using_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Filter_list_using_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_filters.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_filters.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Con_Patient_Chart_scenario.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Con_Patient_Chart_scenario.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_Launch_PC.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_Launch_PC.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_launchPC.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_launchPC.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_Manage_PC.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_Manage_PC.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_Clinical_summary.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_Clinical_summary.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_view_historical.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_view_historical.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_reorder_tabs.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_reorder_tabs.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_move_widget.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_move_widget.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_resize_widget.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_resize_widget.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_sort_widget.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_sort_widget.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_hide_widget.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_hide_widget.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_show_widget.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_show_widget.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_problem_list.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_problem_list.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_Manage.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_Manage.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_Problem_List.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_Problem_List.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_Open_PC_module.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_Open_PC_module.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_Add_module.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_Add_module.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Con_Patient_Chart_overview.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Con_Patient_Chart_overview.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_group.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_group.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_time.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_time.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_show.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_show.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_vital_signs.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_vital_signs.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_vital_signs.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_vital_signs.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_vital_signs.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_vital_signs.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_vital_signs.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_vital_signs.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_time_VS.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_time_VS.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_adjust_time.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_adjust_time.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_slide_time.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_slide_time.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_Manage_Labs.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_Manage_Labs.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_Laboratory.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_Laboratory.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_lab.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_display_lab.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_labs.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_filter_labs.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_allergies.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_allergies.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_allergies.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_allergies.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_View_Grid.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_View_Grid.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_grid_mode.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_grid_mode.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Delete_list.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Delete_list.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Launch_PC.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_Launch_PC.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Brussels CTP1/BR_Browsers_Supported.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Brussels CTP1/BR_Browsers_Supported.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Hide_show_a_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Hide_show_a_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Con_Roles_Permissions.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Con_Roles_Permissions.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_LND_all_users.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_LND_all_users.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_LND_report_authors.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_LND_report_authors.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Preview_publish_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Preview_publish_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Unpublish_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Unpublish_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_Task_Delete_report.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_Task_Delete_report.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Brussels CTP1/BR_LND_Scenarios.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Brussels CTP1/BR_LND_Scenarios.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Images/PL_handle.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Images/PL_handle.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_group_list.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_group_list.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_change_size.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_change_size.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_edit_columns.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_edit_columns.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_Choose_columns.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_Choose_columns.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_scroll_reports.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_scroll_reports.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_zoom.PNG"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_zoom.PNG" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Images/AN_unzoom.PNG"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Images/AN_unzoom.PNG" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_copy_clipboard.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_copy_clipboard.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_remove_group.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/Snippets/PL_proc_remove_group.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_view_truncated.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_view_truncated.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/TOCs/FrontMatter.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/TOCs/FrontMatter.fltoc" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Title.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Title.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/TopicOwner.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/TopicOwner.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/AmalgaMain.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/AmalgaMain.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/HSGcore.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/HSGcore.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/DRAFT.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/DRAFT.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/copyright.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/copyright.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/appliesto.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/appliesto.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/notes.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/notes.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/notepage.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/notepage.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageInformation_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageInformation_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageTip_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageTip_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageCaution_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageCaution_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageAlert_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageAlert_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/personas.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/personas.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/clear.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/clear.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/code.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/code.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/Microsoft Amalga 2011.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/Microsoft Amalga 2011.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/Production.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/Production.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/ProductSKUs.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/ProductSKUs.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/PageLayouts/Title.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/PageLayouts/Title.flpgl" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-CopyrightPage.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-CopyrightPage.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/Releases.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/Releases.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-CopyrightPageWeb.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-CopyrightPageWeb.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Conventions.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Conventions.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConventions.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConventions.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Contents.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Contents.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/TopicType.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/TopicType.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/Personas.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/Personas.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/ReleaseTarget.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/ReleaseTarget.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/Status.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/Status.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/EditingTags.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/EditingTags.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientLists/PL_Task_Interact_list.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientLists/PL_Task_Interact_list.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/AN_LND_list_editors.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/AN_LND_list_editors.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_zoom_report.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Analytics/Snippets/AN_proc_zoom_report.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_view_next_previous.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_view_next_previous.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_delete_column.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_delete_column.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_document.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PC_Task_manage_document.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_move_column.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_move_column.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_move_column.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_move_column.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_close.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_close.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_resize_column.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_resize_column.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_page.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_page.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/PatientChartConfiguration/PC_Con_configuration.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/PatientChartConfiguration/PC_Con_configuration.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Images/PC_admin_portal.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Images/PC_admin_portal.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_sort_lab.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/PatientChart/Snippets/PC_proc_sort_lab.flsnp" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles>
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/TOCs/FrontMatter.fltoc"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/TOCs/FrontMatter.fltoc" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Title.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Title.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/TopicOwner.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/TopicOwner.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/AmalgaMain.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/AmalgaMain.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/copyright.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/copyright.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/appliesto.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/appliesto.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/notes.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/notes.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/notepage.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/notepage.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageInformation_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageInformation_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageTip_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageTip_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageCaution_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageCaution_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/messageAlert_16x16.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/messageAlert_16x16.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/personas.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/personas.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/clear.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/clear.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/code.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/code.css" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/DRAFT.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/DRAFT.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Images/Microsoft Amalga 2011.png"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Images/Microsoft Amalga 2011.png" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/Production.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/Production.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/ProductSKUs.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/ProductSKUs.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/PageLayouts/Title.flpgl"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/PageLayouts/Title.flpgl" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-CopyrightPage.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-CopyrightPage.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-CopyrightText.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/ConditionTagSets/Releases.flcts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/ConditionTagSets/Releases.flcts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-CopyrightPageWeb.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-CopyrightPageWeb.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Conventions.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Conventions.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConventions.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConventions.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/fm-Contents.htm"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/fm-Contents.htm" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/TopicType.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/TopicType.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/Personas.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/Personas.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/ReleaseTarget.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/ReleaseTarget.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/EditingTags.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/EditingTags.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Project/Advanced/Status.flfts"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Project/Advanced/Status.flfts" />
+    <Url
+      Source="../../../AmalgaV3UG-wking/Content/Resources/Stylesheets/HSGcore.css"
+      AbsoluteSource="file:///C:/Microsoft/AmalgaV3UG-wking/Content/Resources/Stylesheets/HSGcore.css" />
+  </SkippedSourceFiles>
+  <GeneratedFiles>
+    <Url
+      Source="../TOCs/Brussels-Master.fltoc"
+      TimeStamp="12/27/2011 12:07:21 AM" />
+    <Url
+      Source="../TOCs/BrusselsUG.fltoc"
+      TimeStamp="12/27/2011 12:07:22 AM" />
+    <Url
+      Source="../../Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Con_Patient_Lists_overview.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Con_Patient_lists_scenario.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_Create_list_criteria.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_Combine_criteria.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Images/PL_delete.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_view_list.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_sort_list.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_edit_criteria.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_view_properties.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_Edit_properties.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_view_Analytics.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_View_analytics_pane.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_graph_mode.png"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Create_report.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_con_prerequisites.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_create_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_Open_Analytics_pane.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_start_report_builder.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Import_report.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Manage_reports.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_publish_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_unpublish_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_settings.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_delete_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_republish_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_hide_report.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_show_reports.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_view_properties.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Con_Analytics_Overview.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_con_AnalyticsOverview.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Con_Analytics_scenario.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Filter_list_using_report.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_filters.png"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Con_Patient_Chart_scenario.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_Launch_PC.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_launchPC.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_Manage_PC.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_Clinical_summary.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_view_historical.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_reorder_tabs.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_move_widget.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_resize_widget.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_sort_widget.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_hide_widget.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_show_widget.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_manage_problem_list.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_Manage.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_display_Problem_List.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_Open_PC_module.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_Add_module.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Con_Patient_Chart_overview.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_group.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_filter_time.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_show.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_manage_vital_signs.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_vital_signs.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_display_vital_signs.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_vital_signs.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_filter_time_VS.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_adjust_time.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_slide_time.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_Manage_Labs.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_Laboratory.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_display_lab.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_filter_labs.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_manage_allergies.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_allergies.png"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_View_Grid.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_grid_mode.png"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_Delete_list.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_Launch_PC.flsnp"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Brussels CTP1/BR_Browsers_Supported.htm"
+      TimeStamp="12/27/2011 12:07:18 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Hide_show_a_report.htm"
+      TimeStamp="12/27/2011 12:07:17 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Con_Roles_Permissions.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_LND_all_users.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_LND_report_authors.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Preview_publish_report.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Unpublish_report.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_Task_Delete_report.htm"
+      TimeStamp="1/11/2012 12:07:20 AM" />
+    <Url
+      Source="../../Content/Brussels CTP1/BR_LND_Scenarios.htm"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/PatientLists/Images/PL_handle.png"
+      TimeStamp="1/11/2012 12:07:22 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_group_list.flsnp"
+      TimeStamp="1/11/2012 12:07:22 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_change_size.flsnp"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_edit_columns.flsnp"
+      TimeStamp="1/11/2012 12:07:22 AM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_Choose_columns.htm"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_scroll_reports.flsnp"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_zoom.PNG"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/Analytics/Images/AN_unzoom.PNG"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_copy_clipboard.flsnp"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../../Content/PatientLists/Snippets/PL_proc_remove_group.flsnp"
+      TimeStamp="1/11/2012 12:07:22 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_view_truncated.flsnp"
+      TimeStamp="1/11/2012 12:07:21 AM" />
+    <Url
+      Source="../TOCs/FrontMatter.fltoc"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/fm-Title.htm"
+      TimeStamp="1/6/2012 3:42:48 PM" />
+    <Url
+      Source="../Advanced/TopicOwner.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/AmalgaMain.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/HSGcore.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Images/DRAFT.png"
+      TimeStamp="9/30/2011 9:43:31 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/copyright.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/appliesto.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/notes.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Images/notepage.png"
+      TimeStamp="9/30/2011 9:43:32 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageInformation_16x16.png"
+      TimeStamp="9/30/2011 9:43:32 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageTip_16x16.png"
+      TimeStamp="9/30/2011 9:43:32 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageCaution_16x16.png"
+      TimeStamp="9/30/2011 9:43:31 AM" />
+    <Url
+      Source="../../Content/Resources/Images/messageAlert_16x16.png"
+      TimeStamp="9/30/2011 9:43:31 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/personas.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Images/clear.png"
+      TimeStamp="9/30/2011 9:43:31 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/code.css"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Microsoft Amalga 2011.png"
+      TimeStamp="9/30/2011 9:43:32 AM" />
+    <Url
+      Source="../ConditionTagSets/Production.flcts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../ConditionTagSets/ProductSKUs.flcts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Title.flpgl"
+      TimeStamp="1/6/2012 3:42:56 PM" />
+    <Url
+      Source="../../Content/fm-CopyrightPage.htm"
+      TimeStamp="1/6/2012 3:42:48 PM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-CopyrightText.flsnp"
+      TimeStamp="1/6/2012 3:42:56 PM" />
+    <Url
+      Source="../ConditionTagSets/Releases.flcts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/fm-CopyrightPageWeb.htm"
+      TimeStamp="1/6/2012 3:42:48 PM" />
+    <Url
+      Source="../../Content/fm-Conventions.htm"
+      TimeStamp="1/6/2012 3:42:48 PM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-DocConventions.flsnp"
+      TimeStamp="1/6/2012 3:42:56 PM" />
+    <Url
+      Source="../../Content/Resources/Snippets/frontmatter-DocConvention-command-line.flsnp"
+      TimeStamp="1/6/2012 3:42:56 PM" />
+    <Url
+      Source="../../Content/fm-Contents.htm"
+      TimeStamp="1/6/2012 3:42:48 PM" />
+    <Url
+      Source="../Advanced/TopicType.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../Advanced/Personas.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../Advanced/ReleaseTarget.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../Advanced/Status.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../Advanced/EditingTags.flfts"
+      TimeStamp="1/6/2012 3:42:57 PM" />
+    <Url
+      Source="../../Content/PatientLists/PL_Task_Interact_list.htm"
+      TimeStamp="1/23/2012 12:07:52 AM" />
+    <Url
+      Source="../../Content/Analytics/AN_LND_list_editors.htm"
+      TimeStamp="1/23/2012 12:07:51 AM" />
+    <Url
+      Source="../../Content/Analytics/Snippets/AN_proc_zoom_report.flsnp"
+      TimeStamp="1/23/2012 12:07:51 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_view_next_previous.flsnp"
+      TimeStamp="1/23/2012 12:07:52 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_delete_column.png"
+      TimeStamp="1/23/2012 12:07:51 AM" />
+    <Url
+      Source="../../Content/PatientChart/PC_Task_manage_document.htm"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_move_column.flsnp"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_move_column.png"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_close.png"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_resize_column.flsnp"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_page.flsnp"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/PatientChartConfiguration/PC_Con_configuration.htm"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Images/PC_admin_portal.png"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+    <Url
+      Source="../../Content/PatientChart/Snippets/PC_proc_sort_lab.flsnp"
+      TimeStamp="1/25/2012 12:08:09 AM" />
+  </GeneratedFiles>
+</CatapultProjectImport>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Common entity namespace"
+    Link="/Content/DataPlatform1/Entity_Common/DP_Nav_EntiyDefs.htm"
+    ReplaceMergeNode="true">
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Allergy entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Allergy.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Diagnosis entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Diagnosis.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Encounter entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Encounter.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].EncounterAddendum1 entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.EncounterAddendum1.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].File entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.File.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Guarantor entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Guarantor.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].ImagingOrder entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.ImagingOrder.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Immunization entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Immunization.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Insurance entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Insurance.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].MedAdministration entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.MedAdministration.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].MedComponent entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.MedComponent.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].MedDispense entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.MedDispense.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Medication entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Medication.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].MedOrder entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.MedOrder.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].NextOfKin entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.NextOfKin.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Order entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Order.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].OrderAddendum1 entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.OrderAddendum1.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Patient entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Patient.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].PatientAddendum1 entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.PatientAddendum1.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].PatientDemographicHistory entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.PatientDemographicHistory.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].PatientDemographicHistoryAddendum1"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.PatientDemographicHistoryAddendum1.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].PatientIdentifier entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.PatientIdentifier.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Problem entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Problem.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Procedure entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Procedure.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Provider entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Provider.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].ProviderIdentifier entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.ProviderIdentifier.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].ProviderPatientRel entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.ProviderPatientRel.htm" />
+    <TocEntry
+      Title="[%=Namespace.Entity_Common%].Result entity"
+      Link="/Content/DataPlatform1/Entity_Common/DP_GREF_Common.Result.htm" />
+  </TocEntry>
+</CatapultToc>

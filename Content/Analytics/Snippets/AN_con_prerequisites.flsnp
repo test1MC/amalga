@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="688" MadCap:lastWidth="313" MadCap:fileTags="EditingTags.6 - Revised / ready for writer">
+    <head>
+    </head>
+    <body>
+        <p class="note"><MadCap:variable name="BrandingMS.Report Builder second use" /> and the <MadCap:variable name="FeatureName.Amalga ADO.NET Data Provider for OLE DB" /> must be installed on any client computer you use to create reports. If <MadCap:variable name="BrandingMS.Report Builder second use" /> is not installed, the report file will not open, and  you will not see an error message. For more information on preparing the <MadCap:variable name="BrandingHSG.Brussels second use" /> client, see the <MadCap:variable name="BrandingHSG.Brussels second use" /> installation documentation.</p>
+        <p class="note">The <MadCap:annotation MadCap:createDate="2012-02-23T15:52:44.5738907-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="need a variable for this (after CTP2)?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T15:53:00.7285570-08:00">Microsoft Report Viewer 2010 Redistributable Package</MadCap:annotation> must also be installed for the reporting functionality to work. For installation instructions, see the <a href="http://go.microsoft.com/fwlink?LinkId=243483"> Microsoft Report Viewer 2010 Redistributable Package Download Center</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> at <a href="http://go.microsoft.com/fwlink?LinkId=243483">http://go.microsoft.com/fwlink?LinkId=243483</a></MadCap:conditionalText>.</p>
+        <p class="note">Before creating reports, you should be familiar with the functionality of <MadCap:variable name="BrandingMS.Report Builder second use" />. </p>
+        <p>For more information about  using <MadCap:variable name="BrandingMS.Report Builder second use" />, see the instructions in <a href="http://go.microsoft.com/fwlink?LinkId=241312">Getting Started with Report Builder 3.0</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> at <a href="http://go.microsoft.com/fwlink?LinkId=241312">http://go.microsoft.com/fwlink?LinkId=241312</a></MadCap:conditionalText>.</p>
+        <p><MadCap:variable name="BrandingMS.Report Builder second use" /> is a desktop client application and does not require <MadCap:variable name="BrandingMS.SQL Server" /> to be installed on your local computer.</p>
+    </body>
+</html>

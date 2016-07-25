@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "WindowsWorker"
+                    Name="FeedAcquisition"
+                    InstanceName="AcquisitionSvc_ADT_G"
+                    Id="B1BBF8B9-8543-4C31-9E75-A1DBD70388EA"
+                    i:Version ="1.0.0.0"
+                    >
+<WindowsWorkerManifest 
+  LogicalHostName="FabricLogicalHost" 
+  AuthenticationMode ="None" 
+  ClusteringMode="FailOver" 
+  HostAssembly="Microsoft.Amalga.Pipeline.FeedAcquisition.exe" />
+
+
+  <Settings>
+    <!-- Add plug-in configuration detail here, this allows manipulating the message prior to insertion in the messagequeue-->
+    <Setting Name="PluginConfigurationXml" Type="System.String">
+      <DefaultValue>
+        <![CDATA[]]>
+
+      </DefaultValue>
+    </Setting>
+    <Setting Name="FeedConfigurationXml" Type="System.String">
+      <DefaultValue>
+        <![CDATA[<feeds>
+	      <feed name="ADT_G_File">
+		      <receiveadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileAdapter">
+			      <directory>c:\receive_adt_g</directory>
+            <searchpattern>*.*</searchpattern>
+		     </receiveadapter>
+		      <sendadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.SqlStorage"></sendadapter>
+		      <msgtype>ADT.G</msgtype>
+          <KeepOnTemporaryStorage>False</KeepOnTemporaryStorage>
+               </feed>
+            </feeds>
+  ]]>
+      </DefaultValue>
+    </Setting>
+    <Setting Name="IdleConnectionTimeout" Type="System.Int32">
+      <DefaultValue>5000</DefaultValue>
+    </Setting>
+    <Setting Name="ConnectionTimeoutSeconds" Type="System.Int32">
+      <DefaultValue>60</DefaultValue>
+    </Setting>
+  </Settings>
+</DeploymentManifest>

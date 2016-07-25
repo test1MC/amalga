@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="97" MadCap:lastWidth="881" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <p> If a method other than <MadCap:variable name="FeatureName.Amalga Update" /> is used to download client files, see <MadCap:snippetText src="mref-ClientInstall.flsnp" /> for instructions on updating the client. This guide also includes information on selecting the client file download method.</p>
+    </body>
+</html>

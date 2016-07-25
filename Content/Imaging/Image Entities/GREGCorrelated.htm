@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="617.6667" MadCap:lastWidth="611" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 class="ForeignCodeElements">Imaging.Correlation entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p>
+            <MadCap:keyword term="entity definitions:Imaging.Correlation entity" />Contains information for creating a two-way correlation between <MadCap:variable name="Imaging.DICOM" /> studies  to HL-7 concepts and messages.</p>
+        <p><span class="Label">Entity tag</span>: HL-7</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>
+                        <p>Amalga-generated internal identifier for the visit (For more information, see  <MadCap:xref href="../../DataPlatform1/Entity_Common/DP_GREF_Common.Encounter.htm">Encounter entity on page 1</MadCap:xref>.)</p>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ID_PK</td>
+                    <td>ID_PK</td>
+                    <td>Amalga</td>
+                    <td>Primary key for the entity</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier. (OID)</td>
+                </tr>
+                <tr>
+                    <td>RadiologyOrderID</td>
+                    <td>RadiologyOrderID</td>
+                    <td>Amalga</td>
+                    <td>Amalga-generated internal identifier for the filler order
+(For more information, see <MadCap:xref href="../../DataPlatform1/Entity_Common/DP_GREF_Common.Order.htm">Order entity on page 1</MadCap:xref>.)
+</td>
+                </tr>
+                <tr>
+                    <td>ReportIDRadiologyResultID</td>
+                    <td>ReportIDRadiologyResultID</td>
+                    <td>Amalga</td>
+                    <td>Amalga-generated internal identifier for the associated reports (For more information, see <MadCap:xref href="../../DataPlatform1/Entity_Common/DP_GREF_Common.Result.htm">.Result entity on page 1.</MadCap:xref>)</td>
+                </tr>
+                <tr>
+                    <td>StudyUUID</td>
+                    <td>StudyUUID</td>
+                    <td>Amalga</td>
+                    <td>(PK) Amalga-generated internal identifier for the study </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

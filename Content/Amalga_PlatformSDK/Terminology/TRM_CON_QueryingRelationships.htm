@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1810.667" MadCap:lastWidth="728" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying relationships</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:relationships;relationships:Terminology platform application;GetRelationships method:Terminology platform application;ITerminologyQueryService interface:Terminology platform application;SearchFilter class:Terminology platform application;relationship types:Terminology platform application;Relationship class:Terminology platform application;Relationship entity:Microsoft.Terminology entity namespace;Terminology platform application:GetRelationships method;Terminology platform application:ITerminologyQueryService interface;Terminology platform application:SearchFilter class;Terminology platform application:relationship types;Terminology platform application:Relationship class;Microsoft.Terminology entity namespace:Relationship entity;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for relationships stored by the Terminology hosted application.</p>
+        <p>You can use either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.Relationship entity to retrieve information about relationships from the Terminology hosted application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using ITerminologyQueryService on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using Microsoft.Terminology.Beta.Relationship on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using ITerminologyQueryService</h2>
+        <p>You can use the GetRelationships operation, included with the ITerminologyQueryService service contract, to retrieve an array of Relationship objects, filtered by passing an array of SearchFilter objects. The array of SearchFilter objects represent the logical conjunction of all search filters; that is, the set of search filters for the operation are treated as a logical AND. You can set the following properties for each SearchFilter object to filter the relationships returned by the operation.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>PropertyName</td>
+                    <td>The name of the relationship property on which to filter the search.</td>
+                </tr>
+                <tr>
+                    <td>PropertyValue</td>
+                    <td>The value of the relationship property, specified in the PropertyName property, on which to filter the search.</td>
+                </tr>
+                <tr>
+                    <td>SearchType</td>
+                    <td>
+                        <p>The type of search to perform, as determined by one of the following SearchType enumeration values:</p>
+                        <ul>
+                            <li>
+                                <p>ExactMatch</p>
+                                <p>The value specified in PropertyValue must match exactly the value of the property specified in PropertyName.</p>
+                            </li>
+                            <li>
+                                <p>PrefixMatch</p>
+                                <p>The value of the property specified in PropertyName must start with the value specified in PropertyValue.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Example</h3>
+        <p>The following example invokes the GetRelationships operation from the ITerminologyQueryService service contract to return an array of Relationship objects representing the relationships involving the clinical concept in the SNOMED&#160;CT clinical terminology that represents Brevibacillus.</p><pre xml:space="preserve">public Relationship[] GetRelationshipsFromService()
+{
+    // Use GetRelationships from ITerminologyQueryService to retrieve
+    // an array of Relationship objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+    // Open the client channel and instantiate the WCF client.
+    ITerminologyQueryService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Define an array of SearchFilter objects, and add a new SearchFilter 
+    // object that limits the search to only those relationships defined
+    // for the clinical concept in the SNOWMED CT clinical terminology that 
+    // represents Brevibacillus.
+    SearchFilter[] testArray = new SearchFilter[1] {
+        new SearchFilter() {
+            SearchType = SearchType.ExactMatch,
+            PropertyName = SearchPropertyName.SourceConceptCode,
+            PropertyValue = "114114002"
+        }
+    };
+
+    // Invoke the operation from the service, and
+    // return the resulting array of Relationship objects.
+    return (Relationship[])terminologyServiceClient.GetRelationships(testArray);
+}
+</pre>
+        <h2><a name="Using2"></a>Using Microsoft.Terminology.Beta.Relationship</h2>
+        <p>You can also use the Relationship entity, included in the Microsoft.Terminology.Beta entity namespace, to retrieve relationships. Once an application view for the Relationship entity is added to the virtual schema of your hosted application, you can then use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from the application view. For more information about using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from application views, see <MadCap:xref href="../DataConnector/DAT_CON_RetrievingDataDataReader.htm" target="" title="" alt="">Retrieving data using AmalgaDbDataReader
+ on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingConcepts.htm" target="" title="" alt="">Querying concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Relationship.htm" target="" title="" alt="">Microsoft.Terminology.Relationship entity on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Relationships.htm" target="" title="" alt="">Relationships on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

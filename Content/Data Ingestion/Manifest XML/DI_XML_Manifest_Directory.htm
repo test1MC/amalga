@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1353" MadCap:lastWidth="693" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:ignoredWords="ReceiveAdapter" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Directory element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Directory element" />Declares a directory to be monitored for file acquisition or used as temporary storage when the <MadCap:variable name="Databases.MessageQueue" /> database becomes unavailable.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed Name="<i>String</i>"&gt;
+                &lt;ReceiveAdapter&gt; Name="<i>String</i>"<b>
+                     &lt;Directory&gt;...&lt;/Directory&gt; </b>
+                &lt;/ReceiveAdapter&gt;
+ 
+                &lt;TempStorageAdapter; Name="<i>String</i>"<b>
+                    &lt;Directory&gt;...&lt;/Directory&gt;</b>
+                &lt;/TempStorageAdapter;
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>
+                        <p>0-1: Optional element that can occur once and only once.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ReceiveAdapter.htm">ReceiveAdapter</a>, <a href="DI_XML_Manifest_TempStoragedAdapter.htm">TempStorageAdapter</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Directory</span> element is mandatory for the following two distinct purposes:</p>
+        <ul>
+            <li> When nested within the <MadCap:xref href="DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref>, the <span class="MarkupLanguageElements">Directory</span> element value provides a destination directory  for incoming message files. An application instance configured to monitor the directory folder detects and acquires new files as they arrive in the folder.</li>
+            <li>When nested within the <MadCap:xref href="DI_XML_Manifest_TempStoragedAdapter.htm" target="" title="" alt="">TempStorageAdapter element</MadCap:xref>, the <span class="MarkupLanguageElements">Directory</span> element provides a temporary directory folder that stores MLLP-based messages when the <MadCap:variable name="Databases.MessageQueue" /> database is not present. </li>
+        </ul>
+        <p class="note">The application instance requires access permission to the directory folder.</p>
+        <p>Use the <span class="MarkupLanguageElements">Directory</span> element to configure an instance of the <MadCap:variable name="Applications.Feed Acquisition application" /> when the message transport format is file or MLLP. Before applying this element tag, set the <span class="MarkupLanguageElements">Name</span> attribute value of the <MadCap:xref href="DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref> or <MadCap:xref href="DI_XML_Manifest_TempStoragedAdapter.htm" target="" title="" alt="">TempStorageAdapter element</MadCap:xref>, respectively, to the file adapter or MLLP adapter. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Examples</p>
+        <p>File adapter example:</p>
+        <p class="code">&lt;receiveadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileAdapter"&gt;<br />&#160;&#160;&#160;&lt;directory&gt;L:\Temp\FileReceive\LAB&lt;/directory&gt;<br />&#160;&#160;&#160;&lt;searchpattern&gt;*.*&lt;/searchpattern&gt;<br />&lt;/receiveadapter&gt;</p>
+        <p>MLLP adapter example:</p>
+        <p><span class="code">&lt;tempstorageadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.MLLPServer"&gt; <br />&#160;&#160;&#160;&lt;directory&gt;C:\Temp\SecondaryStorage&lt;/directory&gt;
+    		
+            <br />&lt;/tempstorageadapter&gt;</span>
+        </p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

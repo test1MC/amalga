@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="225" MadCap:lastWidth="556">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">Anchor Column Name</span>: The column of the anchor table to which this table is joined. </li>
+            <li><span class="UIElementName">Anchor Column Data Type</span>: The data type of the anchor table column to which this table is joined. </li>
+            <li><span class="UIElementName">Related Source System</span>: Name of the source system of the column. </li>
+            <li><span class="UIElementName">Related Database Name</span>: Name of the database in which the table resides. </li>
+            <li><span class="UIElementName">Related Schema Name</span>: Name of the schema. </li>
+            <li><span class="UIElementName">Related Table Name</span>: Name of the table. </li>
+            <li><span class="UIElementName">Related Column Name</span>: The primary key column of this table to which the anchor table column is joined. </li>
+            <li><span class="UIElementName">Related Column Data Type</span>: The data type of the column to which the anchor table column is joined. </li>
+        </ul>
+    </body>
+</html>

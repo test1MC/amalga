@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="4733.667" MadCap:lastWidth="750" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:UnbindChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="5" MadCap:timestamp="2012-03-12T21:37:04.6496252-07:00"><span class="InputText"></span>
+            </MadCap:UnbindChange>
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Reading diagnostic log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to read diagnostic log entries from the diagnostic log in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>Diagnostic log entries are written to the AmalgaLog database, stored on the data host. You can use Transact-SQL queries to read information from the diagnostic log. Performance log entries are stored in the DiagLogEntry table, included in the Log schema of the AmalgaLog database to store scenario and event marker entries.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the DiagLogEntry table on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Understa" target="" title="" alt="">
+                    <MadCap:annotation MadCap:createDate="2012-03-12T21:59:07.4248623-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Not working. Not needed?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:59:15.4836125-07:00">Understanding the PerfLogEntry table on page 1</MadCap:annotation>
+                </MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Examples" target="" title="" alt="">Examples on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using the DiagLogEntry table</h2>
+        <p>The DiagLogEntry table, in the Log schema of the AmalgaLog database, stores diagnostic log entries. The following table describes the schema of the DiagLogEntry table.</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Column</th>
+                    <th>Data type</th>
+                    <th>Nullable?</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-03-12T21:35:08.5652252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Lower case intended?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:35:14.3876252-07:00">id</MadCap:annotation>
+                    </td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>
+                        <p>A globally unique identifier (GUID) that identifies the diagnostic log entry.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EntryId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>A GUID that uniquely identifies the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>TimeStampUTC</td>
+                    <td>datetimeoffset(7)</td>
+                    <td>No</td>
+                    <td>
+                        <p>The date and time of the diagnostic log entry. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ActivityId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>A GUID that uniquely identifies the activity for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>PId</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the process identifier for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>TId</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the thread identifier for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the logging level for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>ServerName</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>A string that represents the name of the physical host for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>LogicalHostName</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>A string that represents the name of the logical host for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>ParentInstance</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string that represents the name of the application instance for the diagnostic log entry. </p>
+                        <p class="note">If the application instance name cannot be determined, then this column is set to the following value:<br /><MadCap:annotation MadCap:createDate="2012-03-12T21:37:39.8848252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:changes="5" MadCap:comment="You had this set to InputText style, but it is being input by the system, so that dosesn't count.  Do we need a style for this type of thing?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:38:28.8688252-07:00">Application</MadCap:annotation><MadCap:change MadCap:changes="5">InstanceNameNotDetermined</MadCap:change></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ComponentInstance</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>A string that represents the name of the service instance for the diagnostic log entry. </td>
+                </tr>
+                <tr>
+                    <td>Source</td>
+                    <td>nvarchar(256)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string that represents the source for the diagnostic log entry.</p>
+                        <p>If the WriteException method was used to write the diagnostic log entry, this column is set to the name of the executable in which the exception occurred. Otherwise, this column is set to the namespace from which the diagnostic log entry was written.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Context</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string that represents the context for the diagnostic log entry.</p>
+                        <p>If the WriteException method was used to write the diagnostic log entry, this column is set to the service instance in which the exception occurred. Otherwise, this column is set to the name of the hosted application from which the diagnostic log entry was written.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>Optional. A string that contains an optional message for the diagnostic log entry.</td>
+                </tr>
+                <tr>
+                    <td>ExceptionName</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the fully qualified class name of the exception for the diagnostic log entry.</p>
+                        <p>
+                            <MadCap:annotation MadCap:createDate="2012-03-12T21:41:05.3232252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post CTP2: snippet this sentence?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:45:27.2168252-07:00">The</MadCap:annotation> value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AssemblyName</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the fully qualified assembly name in which the exception occurred for the diagnostic log entry.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ClassName</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the class name in which the exception occurred for the diagnostic log entry.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MethodName</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the method name in which the exception occurred for the diagnostic log entry.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>FileName</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the file name in which the exception occurred for the diagnostic log entry, if applicable.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LineNumber</td>
+                    <td>int</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the line number in which the exception occurred for the diagnostic log entry, if applicable.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>StackTrace</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the stack trace of the exception for the diagnostic log entry.</p>
+                        <p>The value of this column is set only if the WriteException method is invoked.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Examples"></a>Examples</h2>
+        <p>The following Transact-SQL query examples demonstrate how to retrieve diagnostic log information from the AmalgaLog database.</p>
+        <h3>Example 1: Diagnostic log entries for a single activity</h3>
+        <p class="Figure">The following Transact-SQL query returns all diagnostic log entries, sorted by timestamp, for a specified activity.</p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryId]
+      ,[TimeStampUTC]
+      ,[ActivityId]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaLog].[Log].[DiagLogEntry]
+  WHERE [ActivityId] = 'EA0438F6-B9AF-44CE-B720-A90A8E3F0B8D'
+  ORDER BY [TimeStampUTC]</pre>
+        <h3>Example 2: Diagnostic log entries for errors and warnings in last 24 hours</h3>
+        <p class="Figure">The following Transact-SQL query returns all diagnostic log entries, sorted by timestamp, that represent errors, including exceptions, and warnings logged in the last 24 hours.</p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE DATEDIFF(HOUR, [TimeStampUTC], SYSDATETIME()) &lt; 24 AND [Level] &lt; 18
+  ORDER BY [TimeStampUTC]
+</pre>
+        <h3>Example 3: Diagnostic log entries for a specified server</h3>
+        <p class="Figure">The following Transact-SQL query returns all diagnostic log entries, sorted by timestamp, for a specified server. Replace <span class="Parameter">ServerName</span> with the name of the server to be diagnosed.</p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE [ServerName] = '<span class="Placeholder">ServerName</span>'
+  ORDER BY [TimeStampUTC]
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog_Writing.htm" target="" title="" alt="">Writing diagnostic log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog.htm" target="" title="" alt="">Diagnostic log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

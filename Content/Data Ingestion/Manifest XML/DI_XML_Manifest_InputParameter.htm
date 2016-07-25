@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1740" MadCap:lastWidth="910" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:ignoredWords="Esdlkjadlfk;InputParameters" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>InputParameters element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="InputParameters element" />Declares a set of parameters for a transform action, lookup function, or condition action.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+					
+             &lt;Transform&gt;
+                &lt;Action&gt;...&lt;/Action&gt;<b>
+                &lt;InputParameters&gt;</b>
+                   &lt;Parameter&gt;...&lt;/Parameter&gt;<b>
+                &lt;/InputParameters&gt;</b>
+             &lt;/Transform&gt;
+					
+             &lt;Lookup&gt;
+                &lt;Function&gt;...&lt;/Function&gt;<b>
+                &lt;InputParameters&gt;</b>
+                   &lt;Parameter&gt;...&lt;/Parameter&gt;<b>
+                &lt;/InputParameters&gt;</b>
+             &lt;/Lookup&gt;
+					
+             &lt;EnterpriseIdAction&gt; Action=<i>String</i> AnchorTable=<i>String</i> &gt;<b>
+                &lt;InputParameters&gt;</b>
+                   &lt;Parameter&gt;...&lt;/Parameter&gt;<b>
+                &lt;/InputParameters&gt;</b>
+					
+                &lt;Condition&gt;
+                   &lt;Action&gt;...&lt;/Action&gt;<b>
+                   &lt;InputParameters&gt;</b>
+                      &lt;Parameter&gt;...&lt;/Parameter&gt;<b>
+                   &lt;/InputParameters&gt;</b>
+                &lt;/Condition&gt;&gt;					
+             &lt;/EnterpriseIdAction&gt;
+
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Condition.htm">Condition</a>, <a href="DI_XML_Manifest_EnterpriseIdAction.htm">EnterpriseIdAction</a>, <a href="DI_XML_Manifest_Lookup.htm">Lookup</a>, <a href="DI_XML_Manifest_Transform.htm">Transform</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Parameter.htm">Parameter</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">InputParameters</span> element provides one or more parameters as input to a transform action, a lookup function, or a condition action. The number and order of parameters depends on the requirements of the specified action or function. For example, because the ToTitleCase transform has only one parameter, the corresponding <span class="MarkupLanguageElements">InputParameters</span> element will have only one child <MadCap:xref href="DI_XML_Manifest_Parameter.htm" target="" title="" alt="">Parameter element</MadCap:xref>.</p>
+        <p>Declare the <span class="MarkupLanguageElements">InputParameters</span> element in the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;Element Name="FamilyName" Type="System.String" MaxLength="100"&gt;
+    &lt;ConceptId&gt;1uJSHAEy5J0eLAWfCsgBAA&lt;/ConceptId&gt;
+    &lt;Transform&gt;
+        &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+        &lt;/InputParameters&gt;
+    &lt;/Transform&gt;
+&lt;/Element&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

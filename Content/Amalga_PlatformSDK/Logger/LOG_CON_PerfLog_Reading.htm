@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3817.667" MadCap:lastWidth="678" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Reading performance log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to read performance log entries from the performance log in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>Performance log entries are written to the AmalgaLog database, stored on the data host. You can use Transact-SQL queries to read information from the performance log. Performance log entries are stored in the PerfLogEntry table, included in the Log schema of the AmalgaLog database to store scenario and event marker entries.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the PerfLogEntry table on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Understa" target="" title="" alt="">Understanding the PerfLogEntry table on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Examples" target="" title="" alt="">Examples on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using the PerfLogEntry table</h2>
+        <p>The PerfLogEntry table, in the Log schema of the AmalgaLog database, stores performance log entries. The following table describes the schema of the PerfLogEntry table.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column</th>
+                    <th>Data type</th>
+                    <th>Nullable?</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>
+                        <p>A globally unique identifier (GUID) that identifies the performance log entry.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EntryId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>A GUID that uniquely identifies the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>TimeStampUTC</td>
+                    <td>datetimeoffset(7)</td>
+                    <td>No</td>
+                    <td>
+                        <p>The date and time of the performance log entry. </p>
+                        <p>This value is not exposed by the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ActivityId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>A GUID that uniquely identifies the activity for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>PId</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the process identifier for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>TId</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the thread identifier for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the logging level for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>ServerName</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>A string that represents the name of the physical host for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>LogicalHostName</td>
+                    <td>nvarchar(256)</td>
+                    <td>No</td>
+                    <td>A string that represents the name of the logical host for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>PerfMarkerId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>A GUID that identifies the scenario marker or event marker for the performance log entry. For more information about scenario and event markers, <MadCap:annotation MadCap:createDate="2012-03-12T22:45:38.0310609-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Invisible Xref?&lt;g&gt;\r\nI see  one below: same one?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T22:50:16.6339237-07:00">see .</MadCap:annotation></td>
+                </tr>
+                <tr>
+                    <td>SequenceNumber</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>An integer that represents the ordinal number for the performance log entry.</td>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td>nvarchar(max)</td>
+                    <td>Yes</td>
+                    <td>Optional. A string that contains an optional message for the performance log entry.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Understa"></a>Understanding the PerfLogEntry table</h2>
+        <p>Each performance log entry in the PerfLogEntry table represents the start or stop of a scenario or event, identified by the value of the PerfMarkerId column, for an activity identified by the value of the ActivityId column. For more information about the PerfMarkerId values used by <MadCap:variable name="BrandingHSG.Amalga Short" /> platform features and platform applications, see <MadCap:xref href="LOG_GREF_ScenarioEventMarkers.htm" target="" title="" alt="">Scenario and event markers for platform services and platform applications on page 1</MadCap:xref>.</p>
+        <p>Unless an error occurs, there are always two rows, representing the start and stop markers, for each scenario or event that occurs within an activity. Performance log entries for events are nested within the performance log entries for the scenario in which the events occurred. Performance log entries for events can also be hierarchically nested within other events. </p>
+        <p>For example, the following diagram lists a single sequence of performance log entries, illustrating the nesting of events within a single scenario, describing a single activity representing the execution of an operation from the DataConnectorService service for the DataConnector platform application. Performance log entries that represent the start of a scenario or event are shown in green, while performance log entries that represent the end of a scenario or event are shown in <MadCap:annotation MadCap:createDate="2012-03-12T22:49:54.8564255-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Cool snake." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T22:49:58.8340955-07:00">red</MadCap:annotation>.</p>
+        <p>
+            <img src="../Images/LOG_CON_PerfLog_Reading01.png" />
+        </p>
+        <h2><a name="Examples"></a>Examples</h2>
+        <p>The following Transact-SQL query examples demonstrate how to retrieve performance log information from the AmalgaLog database.</p>
+        <h3>Example 1: Performance log entries for a single activity</h3>
+        <p class="Figure">The following Transact-SQL query returns all performance log entries, sorted by sequence number, for a specified activity.</p><pre xml:space="preserve">
+SELECT [id]
+      ,[EntryId]
+      ,[TimeStampUTC]
+      ,[ActivityId]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[PerfMarkerId]
+      ,[SequenceNumber]
+      ,[Message]
+  FROM [AmalgaLog].[Log].[PerfLogEntry]
+  WHERE [ActivityId] = 'F8A9E50D-2314-476F-8462-74DD936F5A76'
+  ORDER BY [SequenceNumber]</pre>
+        <h3>Example 2: Performance log entries for a single scenario</h3>
+        <p class="Figure">The following Transact-SQL query returns all performance log entries, sorted by timestamp and sequence number, for a specified scenario marker.</p><pre xml:space="preserve">SELECT [id]
+      ,[EntryId]
+      ,[TimeStampUTC]
+      ,[ActivityId]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[PerfMarkerId]
+      ,[SequenceNumber]
+      ,[Message]
+  FROM [AmalgaLog].[Log].[PerfLogEntry]
+  WHERE [PerfMarkerId] = '78770064-3BE8-4673-A83A-C46777A07C84'
+  ORDER BY [TimeStampUTC], [SequenceNumber]</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerfLog_Writing.htm" target="" title="" alt="">Writing performance log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerformanceLog.htm" target="" title="" alt="">Performance log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

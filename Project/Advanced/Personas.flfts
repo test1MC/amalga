@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet Type="Persona tags" Comment="My set of author tags" conditions="Production.StyleMaster">
+    <FileTag Name="Carlos: IT Admin" Comment="IT Dev" />
+    <FileTag Name="All" Comment="All consumers of the software" />
+    <FileTag Name="Karen Toh: MD" Comment="Health Professional End User" />
+    <FileTag Name="Luis Sousa: Nurse Mgr" Comment="Health Professional End User" />
+    <FileTag Name="Vivian Atlas: QA Mgr" Comment="Health Professional End User" />
+    <FileTag Name="Mahesh: DI Specialist" Comment="IT Dev" />
+    <FileTag Name="Elvis: App Dev" Comment="IT Dev" />
+    <FileTag Name="Debbie Data: DBA" Comment="IT Dev" />
+    <FileTag Name="Arwen: Clinical Informatics" Comment="IT Dev" />
+    <FileTag Name="Mort: Clinical App Analyst" Comment="IT Dev" />
+    <FileTag Name="Bill Bits: IT Mgr" Comment="IT Dev" />
+    <FileTag Name="Einstein: Lead App Architect" Comment="IT Dev" />
+    <FileTag Name="Regulatory" Comment="For use only by regulatory reviewer" />
+</CatapultFileTagSet>

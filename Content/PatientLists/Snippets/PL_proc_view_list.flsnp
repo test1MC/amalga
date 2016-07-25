@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="232" MadCap:lastWidth="318" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To view a patient list</p>
+        <p class="note">You can only view lists that you create or that have been shared with you.</p>
+        <ol>
+            <li>From the <MadCap:variable name="BrandingHSG.Amalga Short" /> portal, click <span class="UIElementAction">Patient Lists</span>.</li>
+            <li>
+                <p>Click the list that you want to view.</p>
+                <p>The list will be displayed and will show the number of patients included in the list.</p>
+            </li>
+        </ol>
+    </body>
+</html>

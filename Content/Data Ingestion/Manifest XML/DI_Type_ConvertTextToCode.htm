@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="973" MadCap:lastWidth="916" MadCap:fileTags="ReleaseTarget.TAP,Status.30 - Development: over 50%,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Lookups.usf_Terminology_ConvertTextToCode function</h1>
+        <p>
+            <MadCap:keyword term="Lookups.usf_Terminology_ConvertTextToCode function" />Returns the first matching HLI concept GUID for the specified text (terminology meaning). </p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[&lt;Lookup&gt;			
+   &lt;Function&gt;<b>Lookups.usf_Terminology_ConvertTextToCode&lt;</b>/Function&gt;
+   &lt;InputParameters&gt;
+      &lt;Parameter&gt;Name="selectedTerminologyId"...&lt;/Parameter&gt;
+      &lt;Parameter&gt;Name="codeTypeId"...&lt;/Parameter&gt;
+      &lt;Parameter&gt;Name="incomingConceptMeaningText"...&lt;/Parameter&gt;
+      &lt;Parameter&gt;Name="prefixSearch"...&lt;/Parameter&gt;
+   &lt;/InputParameters&gt;
+&lt;/Lookup&gt;]</span></p>
+</pre>
+        <h4>Parameters</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td class="Parameter">selectedTerminologyId</td>
+                    <td>
+                        <p>System.String</p>
+                        <p>&#160;</p>
+                    </td>
+                    <td>
+                        <p>HLI-determined GUID for the text string  (terminology meaning) specified. For example, the string for ICD-9 is ABjfrwDwaR0MBAI82I5XRA.</p>
+                        <p>Use the following query to display the complete list of terminology GUIDs:</p><pre xml:space="preserve">SELECT  
+      [ContentSetGuid]
+      ,[ContentSetSearchText]
+FROM [AmalgaSourceData].[Terminology].[ContentSet]</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Parameter">codeTypeId</td>
+                    <td>System.String</td>
+                    <td>
+                        <p>A terminology code-type GUID. For example, the GUID for the ICD-9 CM code is AAE/rADjg0+O7oAH2I5XVw.</p>
+                        <p>Use the following query to display the complete list of terminology code-type GUIDs:</p><pre xml:space="preserve">SELECT distinct 
+      [FacetTypeGuid]
+      ,[FacetTypeSearchText]
+FROM [ClinicalData].[Terminology].[ConceptFacet]
+</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Parameter">incomingConceptMeaningText</td>
+                    <td>System.String</td>
+                    <td>
+                        <p>Text (terminology meaning) from the incoming feed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Parameter">prefixSearch</td>
+                    <td>Boolean</td>
+                    <td> Whether to match by the complete meaning string or to treat the string as a prefix.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Return value</h4>
+        <p>VARCHAR(400)</p>
+        <h4>Remarks</h4>
+        <p>For a list of valid attributes to use with this function, see the <MadCap:xref href="DI_XML_Manifest_Parameter.htm" target="" title="" alt="">Parameter element</MadCap:xref>. Apply this terminology function to any segment element (or column) that you declare in the data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="AAA_NewNAME.htm">Terminology lookup functions</a>
+        </p>
+        <p><a href="DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+    </body>
+</html>

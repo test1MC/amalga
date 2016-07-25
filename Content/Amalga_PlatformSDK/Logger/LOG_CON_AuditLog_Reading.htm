@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="7683.667" MadCap:lastWidth="712.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Reading audit log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to read audit log entries and audit log details from the audit log for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>Audit log entries are written to the <MadCap:variable name="Databases.AmalgaAudit" /> database, stored on the data host. You can use Transact-SQL queries to read information from the audit log. Two tables, named Audit and AuditDetail, are included in the Audit schema of the <MadCap:variable name="Databases.AmalgaAudit" /> database to store, respectively, audit log entries and audit log details.</p>
+        <h2>Using the Audit table</h2>
+        <p>The Audit table, in the Audit schema of the <MadCap:variable name="Databases.AmalgaAudit" /> database, stores audit log entries. The following table describes the schema of the Audit table.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column</th>
+                    <th>Data type</th>
+                    <th>Nullable?</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AuditId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>
+                        <p>A  globally unique identifier (GUID) that uniquely identifies the audit log entry.</p>
+                        <p>This value is used by the AuditId property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>datetimeoffset(7)</td>
+                    <td>No</td>
+                    <td>
+                        <p>The date and time of the audit log entry. </p>
+                        <p>This value is not exposed by the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>UserId</td>
+                    <td>nvarchar(80)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string containing the name of the user account associated with the audit log entry.</p>
+                        <p>This value is used by the UserId property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OperationStatus</td>
+                    <td>nvarchar(20)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string value representing the status of the operation. </p>
+                        <p>This value is used by the OperationStatus property of the AuditEntry object.</p>
+                        <p>The following strings are supported:</p>
+                        <ul>
+                            <li>
+                                <p>Authorized</p>
+                                <p>This value indicates that the operation was authorized.</p>
+                                <p class="note">This value is set only by platform services, and is not available to hosted applications. There is no equivalent value in the OperationStatus enumeration.</p>
+                            </li>
+                            <li>
+                                <p>Failed</p>
+                                <p>This value indicates that the operation failed. This value is equivalent to setting the OperationStatus property of the corresponding AuditEntry object to OperationStatus.Failed.</p>
+                            </li>
+                            <li>
+                                <p>
+                                    <MadCap:annotation MadCap:createDate="2012-02-16T09:11:04.4861680-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="As found in build. Filed TFS bug 124025." MadCap:editor="v-dennk" MadCap:editDate="2012-02-16T09:11:20.4765780-08:00">InvaidRequest</MadCap:annotation>
+                                </p>
+                                <p>This value indicates that the operation performed an invalid request. This value is equivalent to setting the OperationStatus property of the corresponding AuditEntry object to OperationStatus.InvaidRequest.</p>
+                            </li>
+                            <li>
+                                <p>ResourceNotFound</p>
+                                <p>This value indicates that a resource requested by the operation was not found. This value is equivalent to setting the OperationStatus property of the corresponding AuditEntry object to OperationStatus.ResourceNotFound.</p>
+                            </li>
+                            <li>
+                                <p>Success</p>
+                                <p>This value indicates that the operation succeeded. This value is equivalent to setting the OperationStatus property of the corresponding AuditEntry object to OperationStatus.Success.</p>
+                            </li>
+                            <li>
+                                <p>Unauthorized</p>
+                                <p>This value indicates that the operation was unauthorized. This value is equivalent to setting the OperationStatus property of the corresponding AuditEntry object to OperationStatus.Unauthorized.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OperationType</td>
+                    <td>nvarchar(20)</td>
+                    <td>No</td>
+                    <td>
+                        <p>An OperationType enumeration value representing the type of the operation. This property supports the following values:</p>
+                        <ul>
+                            <li>
+                                <p>AddData</p>
+                                <p>Describes an operation involving the addition of new data. This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.AddData.</p>
+                            </li>
+                            <li>
+                                <p>DeleteData</p>
+                                <p>Describes an operation involving the deletion of existing data.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.DeleteData.</p>
+                            </li>
+                            <li>
+                                <p>Download</p>
+                                <p>Describes an operation involving the downloading of data.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Download.</p>
+                            </li>
+                            <li>
+                                <p>Email</p>
+                                <p>Describes an operation involving sending, receiving, or processing an email request.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Email.</p>
+                            </li>
+                            <li>
+                                <p>ExecuteSchedule</p>
+                                <p>Describes an operation involving the execution of a scheduled job or task.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.ExecuteSchedule.</p>
+                            </li>
+                            <li>
+                                <p>Fax</p>
+                                <p>Describes an operation involving sending, receiving, or processing a facsimile transmission.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Fax.</p>
+                            </li>
+                            <li>
+                                <p>Login</p>
+                                <p>Describes an operation involving the authentication of a user account.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Login.</p>
+                            </li>
+                            <li>
+                                <p>Logout</p>
+                                <p>Describes an operation involving the deauthentication of a user account.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Logout.</p>
+                            </li>
+                            <li>
+                                <p>Print</p>
+                                <p>Describes an operation involving sending, receiving, or processing a print request.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Print.</p>
+                            </li>
+                            <li>
+                                <p>Schedule</p>
+                                <p>Describes an operation involving the scheduling of a job or task.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.Schedule.</p>
+                            </li>
+                            <li>
+                                <p>ServiceRequest</p>
+                                <p>Describes an operation involving a request from a service.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.ServiceRequest.</p>
+                            </li>
+                            <li>
+                                <p>UpdateData</p>
+                                <p>Describes an operation involving the update of existing data.  This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.UpdateData.</p>
+                            </li>
+                            <li>
+                                <p>ViewData</p>
+                                <p>Describes an operation involving the retrieval of existing data. This value is equivalent to setting the OperationType property of the corresponding AuditEntry object to OperationType.ViewData.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Operation</td>
+                    <td>nvarchar(150)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string containing the name of the operation represented by the audit log entry. </p>
+                        <p>This value is used by the Operation property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DeviceName</td>
+                    <td>nvarchar(50)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the name of the device writing the audit log entry.</p>
+                        <p>This value is used by the DeviceName property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DeviceIPAddress</td>
+                    <td>nvarchar(50)</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>A string containing the IP address of the device writing the audit log entry.</p>
+                        <p>This value is used by the DeviceIPAddress property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsFromTrustedSource</td>
+                    <td>bit</td>
+                    <td>No</td>
+                    <td>
+                        <p>A Boolean value indicating whether the audit log entry was written by a trusted source.</p>
+                        <p>This value is not exposed by the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsFromPlatformService</td>
+                    <td>bit</td>
+                    <td>No</td>
+                    <td>
+                        <p>A Boolean value indicating whether the audit log entry was written by a platform service.</p>
+                        <p>This value is not exposed by the AuditEntry object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LinkedAuditId</td>
+                    <td>uniqueidentifier</td>
+                    <td>Yes</td>
+                    <td>
+                        <p> A GUID that identifies a linked audit log entry in the Audit.Audit table.</p>
+                        <p>This value is used by the LinkedAuditId property of the AuditEntry object.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Using the AuditDetail table</h2>
+        <p class="Figure">The AuditDetail table, in the Audit schema of the <MadCap:variable name="Databases.AmalgaAudit" /> database, stores audit log details for audit log entries. The following table describes the schema of the AuditDetail table.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column</th>
+                    <th>Data type</th>
+                    <th>Nullable?</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AuditId</td>
+                    <td>uniqueidentifier</td>
+                    <td>No</td>
+                    <td>
+                        <p>The GUID that identifies an audit log entry in the Audit.Audit table.</p>
+                        <p>This value is used by the AuditId property of the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sequence</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>
+                        <p>An integer representing the ordinal position of the audit log detail in the collection of audit log details written for an audit log entry. </p>
+                        <p>This value is not exposed by the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GroupIndex</td>
+                    <td>int</td>
+                    <td>No</td>
+                    <td>
+                        <p>An integer that identifies a group of audit details for a given audit log entry. If no groups are specified, the default value of this column is set to 0.</p>
+                        <p>This value is used by the GroupIndex property of the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PropertyName</td>
+                    <td>nvarchar(150)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string containing the name of the property described by the audit log detail. For example, the value of this column could be set to "QUERY", to describe an audit log detail with a PropertyType column value set to "QU".</p>
+                        <p>This value is used by the PropertyName property of the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>nvarchar(max)</td>
+                    <td>No</td>
+                    <td>
+                        <p>A string containing the value of the property described by the audit log detail. For example, the value of this column could be set to a particular Entity SQL or Transact-SQL&#160;query, to describe an audit log detail with a PropertyType column value set to "QU".</p>
+                        <p>This value is used by the Value property of the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PropertyType</td>
+                    <td>nvarchar(2)</td>
+                    <td>No</td>
+                    <td>
+                        <p> A string representing  the data type of the property specified in the PropertyName property. </p>
+                        <p>This value is used by the PropertyType and PropertyTypeValue properties of the AuditDetail object.</p>
+                        <p>This column contains one of the following values:</p>
+                        <ul>
+                            <li>
+                                <p>CL</p>
+                                <p>The property specified in PropertyName describes the name of a column. </p>
+                            </li>
+                            <li>
+                                <p>CP</p>
+                                <p>The property specified in PropertyName describes the GUID of a concept managed by the Terminology platform application.</p>
+                            </li>
+                            <li>
+                                <p>QU</p>
+                                <p>The property specified in PropertyName describes a query.</p>
+                            </li>
+                            <li>
+                                <p>OT</p>
+                                <p>The property specified in PropertyName describes something other than a column, a concept, or a query.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsFromTrustedSource</td>
+                    <td>bit</td>
+                    <td>No</td>
+                    <td>
+                        <p>A Boolean value indicating whether the audit log entry was written by a trusted source.</p>
+                        <p>This value is not exposed by the AuditDetail object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsFromPlatformService</td>
+                    <td>bit</td>
+                    <td>No</td>
+                    <td>
+                        <p>A Boolean value indicating whether the audit log detail was written by a platform service.</p>
+                        <p>This value is not exposed by the AuditDetail object.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Examples</h2>
+        <p>The following Transact-SQL query examples demonstrate how to retrieve information from the <MadCap:variable name="Databases.AmalgaAudit" /> database.</p>
+        <h3>Example 1: Audit log entries for unsuccessful operations</h3>
+        <p class="Figure">The following Transact-SQL query returns all audit log entries for the past 24 hours that did not succeed or were not authorized, ordered by date and time.</p><pre xml:space="preserve">SELECT [AuditId]
+      ,[Time]
+      ,[UserId]
+      ,[OperationStatus]
+      ,[OperationType]
+      ,[Operation]
+      ,[DeviceName]
+      ,[DeviceIPAddress]
+      ,[IsFromTrustedSource]
+      ,[IsFromPlatformService]
+      ,[LinkedAuditId]
+  FROM [AmalgaAudit].[Audit].[Audit]
+  WHERE 
+  [OperationStatus] NOT IN ('Authorized', 'Success')
+  AND DATEDIFF(HOUR, [Time], SYSDATETIME()) &lt; 24
+  ORDER BY [Time]</pre>
+        <h3>Example 2: Audit log entries for applications</h3>
+        <p>The following Transact-SQL query returns all audit log entries for operations other than those logged by platform services.</p><pre xml:space="preserve">/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT [AuditId]
+      ,[Time]
+      ,[UserId]
+      ,[OperationStatus]
+      ,[OperationType]
+      ,[Operation]
+      ,[DeviceName]
+      ,[DeviceIPAddress]
+      ,[IsFromTrustedSource]
+      ,[IsFromPlatformService]
+      ,[LinkedAuditId]
+  FROM [AmalgaAudit].[Audit].[Audit]
+  WHERE [IsFromPlatformService] = 0
+</pre>
+        <h3>Example 3: Audit details for a specific audit log entry</h3>
+        <p>The following Transact-SQL&#160;query returns all audit log details, ordered by sequence, for a single audit log entry. </p><pre xml:space="preserve">SELECT [AuditId]
+      ,[Sequence]
+      ,[GroupIndex]
+      ,[PropertyName]
+      ,[Value]
+      ,[PropertyType]
+      ,[IsFromTrustedSource]
+      ,[IsFromPlatformService]
+  FROM [AmalgaAudit].[Audit].[AuditDetail]
+  WHERE [AuditId] = '3C5274FD-A98F-4618-B873-8FCF276ED936'
+  ORDER BY [Sequence]</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog_Writing.htm" target="" title="" alt="">Writing to the audit log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog.htm" target="" title="" alt="">Audit log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

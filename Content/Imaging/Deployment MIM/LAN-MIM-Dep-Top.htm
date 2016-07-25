@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.LandingPage,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:variable name="BrandingHSG.Medical Imaging Module" /> topology</h1>
+        <p class="CHANGEME"><![CDATA[ ]]></p>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">This topic explains the topology for the <MadCap:variable name="BrandingHSG.Medical Imaging Module" />.</p>
+        <p>
+            <MadCap:keyword term="Imaging:topology overview" />Typically, a care provider organization has multiple health facilities including hospitals, clinics, and other service delivery points, which may be geographically remote from each other. <MadCap:variable name="BrandingHSG.Amalga Short" /> aggregates medical data from different sites and systems by ingesting the HL-7 feeds and storing the text-based data at a central location. Although the network bandwidth between health facilities is often sufficient to enable a centralized approach for HL-7 messages, it may be far from meeting the performance and scalability demands for <MadCap:variable name="Imaging.DICOM" /> feeds, each of which can involve transferring gigabytes of data every day.</p>
+        <p>To overcome this problem, the <MadCap:variable name="BrandingHSG.Medical Imaging Module" /> supports both centralized and distributed deployment topologies.</p>
+        <ul>
+            <li>
+                <span class="Label">Centralized topology</span>
+                <p>Ingestion of <MadCap:variable name="Imaging.DICOM" /> feeds happen at a central location, which is typically a data center. In addition to single-facility organizations, care providers with multiple facilities can choose this option provided that <MadCap:variable name="Imaging.DICOM" /> feeds are sent from each remote location to the central location.</p>
+            </li>
+            <li>
+                <span class="Label">Distributed topology</span>
+                <p>
+                    <MadCap:variable name="Imaging.DICOM" /> feeds are ingested locally at multiple facilities. While the incoming images are stored only locally, part of the ingested metadata is sent from each remote facility to the central site.</p>
+            </li>
+        </ul>
+        <p>For more information about the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology, see <MadCap:xref href="../../Installation/Install Con Planning and Design Overview.htm">Topology concepts on page 1</MadCap:xref>.</p>
+        <p class="Label">In this section</p>
+        <MadCap:miniTocProxy style="mc-toc-depth: 1;" />
+    </body>
+</html>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="844" MadCap:lastWidth="543" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Validating a virtual schema</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to validate a virtual schema using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can invoke the <span class="codeEntity">Validate</span> operation, from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service, to validate and optionally activate a virtual schema instance. When invoking <span class="codeEntity">Validate</span>, you must provide the instance name of the virtual schema to be activated and a Boolean value indicating whether to optionally activate the virtual schema instance if successfully validated.</p>
+        <p>This operation differs from the ActivateVirtualSchema operation in that this operation returns a Boolean value indicating whether the virtual schema instance was successfully validated, while the ActivateVirtualSchema operation returns a VirtualSchemaInfo object containing information about the virtual schema instance itself. If you need additional information about the virtual schema instance, use the ActivateVirtualSchema operation.</p>
+        <h2>Invoking the operation</h2>
+        <p>When invoked, the Validate operation performs the following actions:</p>
+        <ol>
+            <li>Ensures that the specified virtual schema instance exists; otherwise, an exception is thrown.</li>
+            <li>
+                <p>Validates the specified virtual schema instance,  to ensure that the following conditions are met. If the following conditions are not met, an exception is thrown:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>The virtual schema instance contains at least one entity.</li>
+                    <li>For each entity representing an application view, ensure that all entity bindings have a defining query.</li>
+                </ol>
+            </li>
+            <li>Activates the virtual schema instance.</li>
+            <li>Returns a Boolean value indicating whether the virtual schema instance is valid.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p class="LabelforProcedures">To add a new custom field</p>
+        <ol>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-10-03T16:15:16.8998358-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="should this procedure be a snippet?" MadCap:editor="v-labenn" MadCap:editDate="2011-10-03T16:15:30.1998358-07:00">Add</MadCap:annotation> the new field to the MSHVCC..a_AmalgaPatientMatchesView baseview so that the baseview can access the new column. This column maps to the location of the hospital data that it will be matched against.</li>
+            <li>Add the column in the MHS.SearchPatient Package supplied with <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable>.</li>
+            <li>Upload the package through <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> Script Explorer and restart the Amalga.ScriptEngine.Sync service.
+            <p class="note">MSHVCC.SearchPatient is similar to a  parser package in <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable>. You can customize it to accommodate any new field in patient matching.</p></li>
+            <li>Add the new field name to the .ascx file on the <MadCap:variable name="Applications.patient site"></MadCap:variable>, which contains text boxes with labels (objects). Each label object has its own ID.</li>
+            <li>Add the HealthSolutionKey attribute for the control that manages the data (for example, TextBox).</li>
+            <li>Add all necessary validations to the .ascx page (for example, <MadCap:annotation MadCap:createDate="2011-10-06T00:08:12.9528275-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="are &quot;formatting&quot; and &quot;required&quot; both fields? " MadCap:editor="v-labenn" MadCap:editDate="2011-10-06T00:09:22.7878275-07:00">formatting and required</MadCap:annotation> versus optional fields).</li>
+            <li>To update the field and filter labels shown in the Amalga Administrator view, modify the Patient Match Friendly Name List Item in the Amalga Administrator view.          <p class="note">If a field is not assigned a friendly name, by default the column name from the MSHVCC.SearchPatient parser is displayed (not the SQL column name) - for example, FirstName (without spaces) versus First Name or Patient’s First Name.</p></li>
+        </ol>
+        <p>In the <MadCap:variable name="BrandingHSG.Amalga Short" /> application, an unfiltered query returns all patients, which is not useful in patient matching and linking.You must select at least one filter before clicking Refresh, otherwise no results are displayed.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2011-11-08T14:47:15.2673812-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Optional -- use this section and the items under it only as needed." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-08T14:47:16.3154860-08:00">See also</MadCap:annotation>
+        </p>
+    </body>
+</html>

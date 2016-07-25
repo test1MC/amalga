@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1217" MadCap:lastWidth="318" MadCap:fileTags="TopicType.Concept,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Imaging Registry and Document server" /> application operation</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Imaging Registry and Document Service Application" />This topic describes the availability of the application, process flow, communication, and data access for the <MadCap:variable name="Imaging.Imaging Registry and Document server" /> application (<MadCap:variable name="Imaging.IRDA" />).</p>
+        <h2>Process flow</h2>
+        <p>The <MadCap:variable name="Imaging.IRDA" /> provides patient, study, series, and instance-level metadata information and returns the corresponding <MadCap:variable name="Imaging.Image Delivery server" /> application (IDA) instance name for a given site ID.</p>
+        <p>After the client retrieves the metadata, including the site identifier, the client may communicate with the <MadCap:variable name="Imaging.IRDA" /> again to retrieve the IDA instance name so that it can ask for the BLOB retrieval.</p>
+        <p>The <MadCap:variable name="Imaging.IRDA" /> facilitates the following process flow.</p>
+        <ol>
+            <li>A control  or application sends the <MadCap:variable name="Imaging.Image Registry (service)" /> service (IRS) a unique patient ID.</li>
+            <li>The IRS  requests data from the <MadCap:variable name="BrandingHSG.Amalga Short" /> database through the <MadCap:variable name="Applications.Data Connector (application)" /> application.</li>
+            <li>The IRS returns the available information for the client application.</li>
+        </ol>
+        <h3>Application input and output</h3>
+        <p>The API takes a unique patient ID and returns study information. For more information, see <MadCap:xref href="MIM-REF-IRS Structure.htm"><MadCap:variable name="Imaging.IRDA" /> Structure on page 1</MadCap:xref>.</p>
+        <p>For more information about APIs, see <MadCap:xref href="../../API/V3_LND_API.htm">Reference Library on page 1</MadCap:xref>.</p>
+        <h2>Communication</h2>
+        <p>Controls communicate with the <MadCap:variable name="Imaging.IRDA" /> via web  APIs exposed on the IRS.</p>
+        <p>The IRDA communicates with the <MadCap:variable name="Applications.Data Connector application" /> via web services.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="MIM-LND-Introduction to the IRS.htm">Imaging Registry and Document Service Application on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="MIM-REF-IRS Structure.htm">IRDS Structure on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

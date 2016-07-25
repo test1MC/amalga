@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="823" MadCap:lastWidth="624" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>ErrorHandlingPolicy element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="ErrorHandlingPolicy element" />Declares an error-handling policy for the specified exception.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="ErrorHandlingConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;ErrorHandlingConfiguration&gt;
+             &lt;ErrorHandlingPolicies&gt;<b>
+                &lt;ErrorHandlingPolicy&gt;</b>
+                   &lt;ExceptionType&gt;...&lt;/ExceptionType&gt;
+                   &lt;ErrorCodes/ &gt;
+                   &lt;Action&gt;...&lt;Action&gt;
+                   &lt;RetryInterval&gt;...&lt;/RetryInterval&gt;
+                   &lt;MaximumRetry&gt;...&lt;/MaximumRetry&gt;
+                   &lt;FinalAction&gt;...&lt;FinalAction&gt;
+                   &lt;LogSetting&gt;...&lt;LogSetting&gt;<b>
+                &lt;/ErrorHandlingPolicy&gt;</b>	
+             &lt;/ErrorHandlingPolicies&gt;
+          &lt;/ErrorHandlingConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ErrorHandlingPolicies.htm">ErrorHandlingPolicies</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Action.htm">Action</a>, <a href="DI_XML_Manifest_ErrorCodes.htm">ErrorCodes</a>, <a href="DI_XML_Manifest_ExceptionType.htm">ExceptionType</a>, <a href="DI_XML_Manifest_FinalAction.htm">FinalAction</a>, <a href="DI_XML_Manifest_LogSetting.htm">LogSetting</a>, <a href="DI_XML_Manifest_MaximumRetry.htm">MaximumRetry</a>, <a href="DI_XML_Manifest_RetryInterval.htm">RetryInterval</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">ErrorHandlingPolicy</span> element can overwrite the actions for some predefined errors and can also define a new policy for a private exception.</p>
+        <p>Declare the <span class="MarkupLanguageElements">ErrorHandlingPolicy</span> element only within a service manifest of the <MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Materializer (application)" />, and <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> applications.</p>
+        <p class="Label">Example</p>
+        <p>The following example defines the policy for the System.Data.SqlClient.SqlException exception and defines the format of errors in the log.</p><pre xml:space="preserve">&lt;ErrorHandlingConfiguration&gt;
+  &lt;ErrorHandlingPolicies&gt;    
+    &lt;ErrorHandlingPolicy&gt;
+      &lt;ExceptionType&gt;System.Data.SqlClient.SqlException&lt;/ExceptionType&gt;
+      &lt;ErrorCodes&gt;
+        &lt;ErrorCode&gt;7&lt;/ErrorCode&gt;
+        &lt;ErrorCode&gt;9&lt;/ErrorCode&gt;
+      &lt;/ErrorCodes&gt;     
+      &lt;Action&gt;Stop&lt;/Action&gt;
+      &lt;LogSetting&gt;
+        &lt;EventId&gt;33001&lt;/EventId&gt;
+        &lt;ErrorTitle&gt;DbServerNotResponding&lt;/ErrorTitle&gt;
+        &lt;ErrorDescription&gt;The component has attempted to connect to the Database Server; however, the connection has timed out.&lt;/ErrorDescription&gt;
+      &lt;/LogSetting&gt;
+    &lt;/ErrorHandlingPolicy&gt;
+  &lt;/ErrorHandlingPolicies&gt;    
+&lt;/ErrorHandlingConfiguration&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXml element hierarchy</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

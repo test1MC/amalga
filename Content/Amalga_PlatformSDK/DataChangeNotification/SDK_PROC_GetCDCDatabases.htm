@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1104" MadCap:lastWidth="535" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Get a list of CDC-enabled databases from <MadCap:variable name="BrandingMS.SQL Server 2008" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Change Data Capture;Data Change Notification platform application" />This topic describes how to use a SQL&#160;Server script to retrieve a list of CDC-enabled databases.</p>
+        <p>The following procedure describes how to run a SQL&#160;Server script, included in the procedure, in <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> to retrieve a table containing the names of databases for which Change Data Capture (CDC) is enabled.</p>
+        <p>The SQL&#160;Server script queries the sys.databases object catalog view, returning the name of each database for which the is_cdc_enabled column is set to 1, indicating that the database is enabled for CDC.</p>
+        <p class="LabelforProcedures">To get a list of CDC-enabled databases from <MadCap:variable name="BrandingMS.SQL Server 2008"></MadCap:variable></p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-Start-SSMS-SQL2008R2.flsnp">
+                </MadCap:snippetBlock>
+            </li>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-SSMS-Connect.flsnp">
+                </MadCap:snippetBlock>
+            </li>
+            <li>Click <span class="UIElementAction">New Query</span>.</li>
+            <li>
+                <p>Paste the following SQL&#160;Server script into the query window.</p><pre xml:space="preserve">SELECT [name] FROM sys.databases 
+WHERE 
+	[name] NOT IN (
+		'master',
+		'model', 
+		'msdb',
+		'tempdb',
+		'Eventing',  
+		'ScriptEngine') 
+	AND [is_cdc_enabled] = 1
+ORDER BY [name]
+</pre>
+            </li>
+            <li>Click <span class="UIElementAction">Execute</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_GetCDCTables.htm" target="" title="" alt="">Get a list of CDC-enabled tables from  on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

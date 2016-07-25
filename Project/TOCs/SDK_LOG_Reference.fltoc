@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Logger Reference"
+    Link="/Content/Amalga_PlatformSDK/Logger/LOG_NAV_Reference.htm">
+    <TocEntry
+      Title="Scenario and event markers for platform services and platform applications"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_GREF_ScenarioEventMarkers.htm" />
+  </TocEntry>
+</CatapultToc>

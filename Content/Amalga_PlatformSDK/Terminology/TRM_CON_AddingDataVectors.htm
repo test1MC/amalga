@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1568.667" MadCap:lastWidth="568" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Adding positional data vectors</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:data vectors;data vectors:Terminology platform application;AddPositionalDataVectors method:Terminology platform;PositionalDataVector class:Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;Terminology platform application:AddPositionalDataVectors method;Terminology platform application:PositionalDataVector class;Terminology platform application:ISemanticLabelTaggingService interface;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to add positional data vectors for semantic tagging with the Terminology platform application.</p>
+        <p>Before semantic tags can be applied to data assets in the storage system, a positional data vector must be added for each data asset to be tagged using the Terminology platform application. The positional data vector represents a combination of a source system, a data feed from which data is received, and a data vector, a data asset to which data is stored. </p>
+        <p>You can use the AddPositionalDataVectors operation, included in the ISemanticLabelTaggingService service contract from the TerminologyService service, to add data vectors for semantic tagging. The operation accepts two parameters:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Parameter name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>positionalDataVectors</td>
+                    <td>
+                        <p>An array of PositionalDataVector objects, representing the data vectors to be added. The operation only adds positional data vectors that do not already exist. If a PositionalDataVector object represents an existing positional data vector, the object is ignored by the operation.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>autoAssignSemanticLabel</td>
+                    <td>
+                        <p>A Boolean value that, if set to True, indicate that the Terminology platform application should attempt to automatically assign a semantic tag to the new positional data vectors. If the SemanticLabelConceptId property is set to a value, then the operation does not attempt to automatically assign a semantic tag. If the SemanticLabelConceptId property is empty, the operation attempts to map the value of the PositionalTag property for each PositionalDataVector object to the appropriate concept. If a match is found, the value of the SemanticLabelConceptId property is then set to the identifier for the matching concept, and the appropriate semantic tag is automatically assigned to the new positional data vector by the operation.</p>
+                        <p>If the autoAssignSemanticLabel property is set to False, the value of the PositionalTag is ignored and the value of the SemanticLabelConceptId is instead used to assign the appropriate semantic tag to the positional data vector. If the SemanticLabelConceptId property is empty, no semantic tag is set for the positional data vector.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p> The operation uses the following properties from the PositionaDataVector object to define a new positional data vector.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DataVector</td>
+                    <td>A DataVector object that represents the data vector for which the positional data vector is created. This object, in combination with the source system specified in the SourceSystem property, identifies the positional data vector.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>A human-readable description of the positional data vector.</td>
+                </tr>
+                <tr>
+                    <td>PositionalTag</td>
+                    <td>
+                        <p>A string that represents the concept code of the concept to be applied to the positional data vector.</p>
+                        <p>If the autoAssignSemanticLabel parameter is set to True when invokingthe operation, the value of this property is used to identify an appropriate concept. The value of the SemanticLabelConceptId property is then set to the identifier for that concept by the operation.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SemanticLabelConceptId</td>
+                    <td>
+                        <p>A string that represents the globally unique identifier (GUID) of the concept to be applied to the positional data vector. </p>
+                        <p>If the autoAssignSemanticLabel parameter is set to True when invoking the operation, this property is set by the operation to the value of the concept identifier for the concept that matches the value of the PositionalTag property. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SourceSystem</td>
+                    <td>A SourceSystem object that represents the source system for which the positional data vector is created. This object, in combination with the data vector specified in the DataVector property, identifies the positional data vector.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingDataVectors.htm" target="" title="" alt="">Querying data vectors on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="TRM_CON_UpdatingSemanticTags.htm" target="" title="" alt="">Updating semantic tags on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Data vectors on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

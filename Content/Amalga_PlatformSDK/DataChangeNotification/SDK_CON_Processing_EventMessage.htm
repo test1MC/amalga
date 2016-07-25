@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="4185.333" MadCap:lastWidth="330.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Processing a DCN event message</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event messages:Data Change Notification platform application;Data Change Notification platform application:event messages;EventMessage class:Data Change Notification platform application;Data Change Notification platform application:EventMessage class;HandleEvent method:Data Change Notification platform application;Data Change Notification platform application:HandleEvent method;EventingWcfHandlerService service:Data Change Notification platform application;Data Change Notification platform application:EventingWcfHandlerService service;payloads:Data Change Notification platform application;Data Change Notification platform application:payloads;event message types:Data Change Notification platform application;Data Change Notification platform application:event message types;EventMessageType enumeration:Data Change Notification platform application;Data Change Notification platform application:EventMessageType enumeration;PayloadType enumeration:Data Change Notification platform application;Data Change Notification platform application:PayloadType enumeration;payload types:Data Change Notification platform application;Data Change Notification platform application:payload types" />This topic discusses the various properties of the EventMessage object, which represents a Data Change Notification (DCN) error message, and how to interact with them.</p>
+        <p>When the HandleEvent operation for the hosted WCF service in your hosted application has been called by the EventingWcfHandlerService service, the hosted WCF service receives an EventMessage object that represents a DCN event message. A DCN event message is basically a payload, wrapped with metadata that can be used to identify and classify both the DCN event message and the payload it contains.</p>
+        <h2>Identifying  the DCN event message</h2>
+        <p>The MessageId property of the EventMessage object contains a GUID that uniquely identifies the DCN event message. You can also use the EventTypeId property of the EventMessage object to retrieve the event identifier of the DCN event type for the DCN event message. For example, you can use the event identifier to call the FindEventTypeForID operation in the IEventManagementService contract for the EventingManagerService service to retrieve an EventType object that represents the DCN event type for the DCN event message.</p>
+        <p>For more information about finding DCN event types, see <MadCap:xref href="SDK_CON_Find_EventType.htm" target="" title="" alt="">Finding a DCN event type on page 1</MadCap:xref>.</p>
+        <h2>Event message types</h2>
+        <p>The type of DCN event message is represented by the Type property of the EventMessage object. Not all DCN event messages represent a data change, and the value of the Type property can be used to quickly identify such DCN event messages. Some DCN event messages represent notification messages, to provide information about the state of the DCN event type, or errors encountered while processing the DCN event type, specified for the DCN event message.</p>
+        <p>The following table describes the available event message type values for the Type property.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EventMessageType.Complete</td>
+                    <td>
+                        <p>The DCN event message is a notification, indicating that the DCN event type specified for the DCN event message reached its maximum processing limit. For example, this event message type is sent when a DCN event type with a OneTimeOnly property set to True is processed once and therefore will no longer be processed.</p>
+                        <p>The DCN event message contains no data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.DataChanged</td>
+                    <td>
+                        <p>The DCN event message represents a data change event.</p>
+                        <p>The DCN event message contains data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.Expired</td>
+                    <td>
+                        <p>The DCN event message is a notification indicating that the DCN event type specified for the DCN event message has expired. </p>
+                        <p>The DCN event message contains no data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.None</td>
+                    <td>The DCN event message contains no data.</td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.ServerError</td>
+                    <td>The DCN event message is a notification indicating that the DCN event type specified for the DCN event message experienced an unexpected or unknown error during processing.</td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.SizeExceeded</td>
+                    <td>
+                        <p>The DCN event message represents a data change event, but the message size exceeded the maximum limit. The payload for the DCN event message is stored in the repository, however, and can be retrieved using the Data Change Notification API.</p>
+                        <p>The DCN event message contains no data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.Suspended</td>
+                    <td>
+                        <p>The DCN event message is a notification indicating that the DCN event type specified for the DCN event message has been suspended due to an error.</p>
+                        <p>The DCN event message contains no data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventMessageType.TooManyChanges</td>
+                    <td>
+                        <p>The DCN event message represents a data change event, but not all of the changes were captured because too many changes occurred to eventable resources referenced by the DCN event type.</p>
+                        <p>The DCN event message contains data.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Payloads</h2>
+        <p>Two different payload types are supported in a DCN event message, identified by the PayloadType property of the EventMessage object:</p>
+        <ul>
+            <li>
+                <p>PayloadType.String</p>
+                <p>The byte array in the Payload property of the EventMessage object represents a System.String object.</p>
+            </li>
+            <li>
+                <p>PayloadType.DataTable</p>
+                <p>The byte array in the Payload property of the EventMessage object represents a System.Data.DataTable object.</p>
+            </li>
+        </ul>
+        <p>You can use the PayloadType property to identify the appropriate object into which to convert the value of the Payload property for interaction and processing purposes.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

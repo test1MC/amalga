@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1478.333" MadCap:lastWidth="368" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Status.60 - Revising,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Personas.Elvis: App Dev">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Install the <MadCap:variable name="FeatureName.Amalga SDK" /></h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Amalga SDK;installation" />This topic describes the procedure to install the <MadCap:variable name="FeatureName.Amalga SDK" /> components from the command line, using the Setup utility.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga SDK" /> provides a set of tools, templates, controls, and other features used to develop <MadCap:variable name="BrandingHSG.Amalga Short" /> applications. If not already installed, the following <MadCap:variable name="BrandingHSG.Amalga Short" /> components are installed when installing the      <MadCap:variable name="FeatureName.Amalga SDK" /> feature:</p>
+        <ul>
+            <li>Data Access Runtime</li>
+            <li>Data Access Runtime 32</li>
+            <li>Hosting Runtime</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-11-14T23:34:34.4923277-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is this the Amalga SDK (if so, feels redundant) or some other software?\r\n[DWK] This is the actual name of the component being installed - the combination of all these components is the &quot;Amalga SDK.&quot;" MadCap:editor="v-dennk" MadCap:editDate="2011-11-16T15:15:45.5080262-08:00">SDK</MadCap:annotation>
+            </li>
+        </ul>
+        <p>The following procedure uses the Setup utility included with <MadCap:variable name="BrandingHSG.Amalga Short" /> to check for and, as needed, install those components. The procedure assumes that all other software prerequisites have been installed. For more information about software prerequisites, see <MadCap:xref href="SDK_GREF_SystemReq_Prereqs.htm" target="" title="" alt="">System requirements and prerequisites on page 1</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To install the <MadCap:variable name="FeatureName.Amalga SDK" /> components</p>
+        <ol>
+            <li>
+                <p>Copy the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation media to a folder on the target virtual or physical machine.</p>
+                <p class="note">This folder is referred to in subsequent steps as the installation folder.</p>
+            </li>
+            <li>
+                <p>Open a Command Prompt window with administrative rights on the target virtual or physical machine.</p>
+                <p>On Doors Server 2008, click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, right-click <span class="UIElementAction">Command Prompt</span>, and then select <span class="UIElementAction">Run as administrator</span>.</p>
+                <p>On other operating systems, click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, and then click <span class="UIElementAction">Command Prompt</span>.</p>
+            </li>
+            <li>
+                <p>Run the following command, replacing <span class="Placeholder">InstallationFolder</span> with the path of the installation folder.</p>
+                <p class="InputText">cd <span class="InputTextVariable">InstallationFolder</span>\Platform</p>
+            </li>
+            <li>
+                <p>Run the following command, replacing the following parameters, where needed, with the appropriate values. (See the table after the command for descriptions of parameters.)</p>
+                <p class="InputText">Setup.exe /Feature SDK /Operation Install /Eula Accept [ PlatformClusterName <span class="InputTextVariable">PlatformClusterName</span> ] [ PlatformPort <span class="InputTextVariable">PlatformPort</span> ]</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>PlatformClusterName</td>
+                            <td>
+                                <p>Optional. The cluster name for the platform. If not specified, the default value is set to <span class="InputTextVariable">ComputerName</span>.<span class="InputTextVariable">UserDNSDomain</span>, replacing <span class="Placeholder">ComputerName</span> with the name of the computer and <span class="Placeholder">UserDNSDomain</span> with the fully qualified DNS domain of the currently logged-on user account.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PlatformPort</td>
+                            <td>Optional. The port number used by the platform. If not specified, the default value is set to 8889.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">References </p>
+        <p>
+            <MadCap:xref href="../Installation/Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

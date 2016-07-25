@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2715" MadCap:lastWidth="484.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Updating data with AmalgaDbDataAdapter</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the Update method of the AmalgaDbDataAdapter object in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to update data.</p>
+        <p>The <span class="ForeignCodeElements">Update</span> method of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> is invoked to resolve changes from a <span class="ForeignCodeElements">DataSet</span> object back to an instance of the DataConnector platform application. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the Update method on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using UpdatedRowSource to map values to a DataSet on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Handling" target="" title="" alt="">Handling exceptions on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the Update method</h2>
+        <p>The <span class="ForeignCodeElements">Update</span> method, like the <span class="ForeignCodeElements">Fill</span> method, takes as arguments an instance of a <span class="ForeignCodeElements">DataSet</span> object, and an optional <span class="ForeignCodeElements">DataTable</span> object or name of a <span class="ForeignCodeElements">DataTable</span> object. The <span class="ForeignCodeElements">DataSet</span> object contains the changes that have been made, and the <span class="ForeignCodeElements">DataTable</span> object or name identifies the application view from which to retrieve the changes. If no <span class="ForeignCodeElements">DataTable</span> reference is provided, the first <span class="ForeignCodeElements">DataTable</span> object in the <span class="ForeignCodeElements">DataSet</span> object is used.</p>
+        <p>When you invoke the <span class="ForeignCodeElements">Update</span> method, the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object analyzes the changes that have been made and executes the appropriate command. When the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object encounters a change to a <span class="ForeignCodeElements">DataRow</span> object, it invokes the <span class="ForeignCodeElements">AmalgaDbCommand</span> object specified for the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, and<span class="ForeignCodeElements"> DeleteCommand</span> properties of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object to process, respectively, the insertion, modification, or deletion of that <span class="ForeignCodeElements">DataRow</span> object. This allows you to maximize the performance of your hosted application, by specifying the command syntax at design time. You must explicitly set the commands before invoking the <span class="ForeignCodeElements">Update</span> method. If the <span class="ForeignCodeElements">Update</span> method is invoked and the appropriate command does not exist for a particular action (for example, for deleted rows, if the <span class="ForeignCodeElements">DeleteCommand</span> property has not been set to a valid <span class="ForeignCodeElements">AmalgaDbCommand</span> object), an exception is thrown.</p>
+        <p>Command parameters can be used to specify input and output values for an SQL statement for each modified row in a <span class="ForeignCodeElements">DataSet</span> object. For more information about parameter direction, see <MadCap:xref href="DAT_CON_DataAdapterParameters.htm" target="" title="" alt=""><span class="ForeignCodeElements">AmalgaDbDataAdapter</span> parameters on page 1</MadCap:xref>.</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-03-04T15:11:01.4129893-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Remove condition when AmalgaDbCommandBuilder object becomes available after CTP2." MadCap:editor="v-dennk" MadCap:editDate="2012-03-04T15:11:37.8867245-08:00">If</MadCap:annotation> your <span class="ForeignCodeElements">DataTable</span> object maps to or is generated from a single application view, you can take advantage of the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object to automatically generate the appropriate <span class="ForeignCodeElements">AmalgaDbCommand</span> objects for the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, and <span class="ForeignCodeElements">DeleteCommand</span> properties of your <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object. For more information about using the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object, see <MadCap:xref href="AAAConnectors.htm" target="" title="" alt="">Generating commands with AmalgaDbCommandBuilder on page 1</MadCap:xref>.</p>
+        <h2><a name="Using"></a>Using UpdatedRowSource to map values to a DataSet</h2>
+        <p>You can control how the values returned from an application view are mapped back to the <span class="ForeignCodeElements">DataTable</span> object following the invocation of the <span class="ForeignCodeElements">Update</span> method for an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object, by using the <span class="ForeignCodeElements">UpdatedRowSource</span> property of an <span class="ForeignCodeElements">AmalgaDbCommand</span> object. By setting the <span class="ForeignCodeElements">UpdatedRowSource</span> property to one of the <span class="ForeignCodeElements">UpdateRowSource</span> enumeration values, you can control whether output parameters returned by the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> commands are ignored or applied to the changed row in the <span class="ForeignCodeElements">DataSet</span> object. You can also specify whether the first returned row (if it exists) is applied to the changed row in the <span class="ForeignCodeElements">DataTable</span> object.</p>
+        <p>The following table describes the available values of the <span class="ForeignCodeElements">UpdateRowSource</span> enumeration and how they affect the behavior of an <span class="ForeignCodeElements">AmalgaDbCommand</span> object used with an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Enumeration value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Both</td>
+                    <td>Both the output parameters and the first row of a returned result set may be mapped to the changed row in the <span class="ForeignCodeElements">DataSet</span> object.</td>
+                </tr>
+                <tr>
+                    <td>FirstReturnedRecord</td>
+                    <td>Only the data in the first row of a returned result set may be mapped to the changed row in the <span class="ForeignCodeElements">DataSet</span> object.</td>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>Any output parameters or rows of a returned result set are ignored.</td>
+                </tr>
+                <tr>
+                    <td>OutputParameters</td>
+                    <td>Only the output parameters may be mapped to the changed row in the <span class="ForeignCodeElements">DataSet</span> object.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The <span class="ForeignCodeElements">Update</span> method resolves your changes back to the application view. However, other applications may have modified data in that application view, or the entities to which that application view is bound, since the last time you filled the <span class="ForeignCodeElements">DataSet</span> object. To refresh your <span class="ForeignCodeElements">DataSet</span> object with current data, use the <span class="ForeignCodeElements">Fill</span> method of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object. new rows will be added to the table, and updated information will be incorporated into existing rows. The <span class="ForeignCodeElements">Fill</span> method determines whether a new row will be added or an existing row will be updated by examining the primary key values of the rows in the <span class="ForeignCodeElements">DataSet</span> object and the rows returned by the command in the <span class="ForeignCodeElements">SelectCommand</span> property. If the <span class="ForeignCodeElements">Fill</span> method encounters a primary key value for a row in the <span class="ForeignCodeElements">DataSet</span> object that matches a primary key value from a rwo in the results returned by the command in the <span class="ForeignCodeElements">SelectCommand</span> property, it updates the existing row with the information returned by the command in the <span class="ForeignCodeElements">SelectCommand</span> property and sets the <span class="ForeignCodeElements">RowState</span> property of the <span class="ForeignCodeElements">DataRow</span> object for the existing row to <span class="ForeignCodeElements">DataRowState.Unchanged</span>. If a row returned by the command in the <span class="ForeignCodeElements">SelectCommand</span> property has a primary key value that does not match any of the primary key values of the rows in the <span class="ForeignCodeElements">DataSet</span> object, the <span class="ForeignCodeElements">Fill</span> method adds a new row and sets the <span class="ForeignCodeElements">RowState</span> of the <span class="ForeignCodeElements">DataRow</span> object for that new row to <span class="ForeignCodeElements">DataRowState.Unchanged</span>.</p>
+        <h2><a name="Handling"></a>Handling exceptions</h2>
+        <p>To handle exceptions that may occur when calling the <span class="ForeignCodeElements">Update</span> method, you can use the <span class="ForeignCodeElements">RowUpdated</span> event to respond to row update errors as they occur. For more information about using the <span class="ForeignCodeElements">RowUpdated</span> event, see <MadCap:xref href="DAT_CON_HandlingDataAdapterEvents.htm" target="" title="" alt="">Handling AmalgaDbDataAdapter events on page 1</MadCap:xref>.</p>
+        <p>You can also set the <span class="ForeignCodeElements">ContinueUpdateOnError</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object to true before calling the <span class="ForeignCodeElements">Update</span> method, and then respond to the error information stored in the <span class="ForeignCodeElements">RowError</span> property of the <span class="ForeignCodeElements">DataRow</span> object for a particular row when the update is complete.</p>
+        <p class="note">Calling the <span class="ForeignCodeElements">AcceptChanges</span> method on the <span class="ForeignCodeElements">DataSet</span>, <span class="ForeignCodeElements">DataTable</span>, or <span class="ForeignCodeElements">DataRow</span> objects will cause all original values for a <span class="ForeignCodeElements">DataRow</span> object to be overwritten with the current values for the <span class="ForeignCodeElements">DataRow</span> object. If the field values that identify the row as unique have been modified, after calling the <span class="ForeignCodeElements">AcceptChanges</span> method the original values will no longer match the values in the application view. The <span class="ForeignCodeElements">AcceptChanges</span> method is invoked automatically for each row during the invocation of the <span class="ForeignCodeElements">Update</span> method for the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object. You can preserve the original values during that invocation by first setting the <span class="ForeignCodeElements">AcceptChangesDuringUpdate</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object to false, or by creating an event handler for the <span class="ForeignCodeElements">RowUpdated</span> event and setting the <span class="ForeignCodeElements">Status</span> property of the <span class="ForeignCodeElements">RowUpdatedEventArgs</span> object to <span class="ForeignCodeElements">UpdateStatus.SkipCurrentRow</span>. For more information, see <MadCap:xref href="DAT_CON_HandlingDataAdapterEvents.htm" target="" title="" alt="">Handling AmalgaDbDataAdapter events on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

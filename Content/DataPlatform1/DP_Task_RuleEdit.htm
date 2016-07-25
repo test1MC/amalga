@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="982" MadCap:lastWidth="556" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Edit an access rule</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to edit access rules in access policies for entities.          <![CDATA[ ]]></p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console" />You can edit access rules for a selected <MadCap:variable name="BrandingHSG.Amalga Short" /> role. The following access rule properties are editable:&#160;         <![CDATA[ ]]></p>
+        <ul>
+            <li>Rule access level</li>
+            <li>Rule privilege (read or read-write)</li>
+            <li>SQL&#160;conditions</li>
+            <li>Name of the rule</li>
+        </ul>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To edit an access rule</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-access.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-access.flsnp" />
+                </p>
+            </li>
+            <li>In the <span class="UIElementName">Authorized Roles</span> section, click a role to display its access rules. <br /></li>
+            <li>
+                <p>In the <span class="UIElementName">Rules applying to Role</span> section, expand the group that contains the access rule you want, click the access rule, and then click <span class="UIElementAction">Edit Rule</span>. </p>
+                <p>The <MadCap:variable name="UI-Labels.Rule Editor" /> dialog box appears, listing the current definition of the access rule. </p>
+            </li>
+            <li>
+                <p>In each page of the dialog box, make changes as needed and then click <span class="UIElementAction">Next</span> or <span class="UIElementAction">Finish</span>.</p>
+                <p class="note">To remove a SQL condition from the current rule, clear the check box for <span class="UIElementAction">where custom condition is true</span> in the <span class="UIElementName">Add Custom Condition</span> page. For instructions on adding SQL conditions to access rules, see <MadCap:xref href="DP_Task_RuleCond.htm" target="" title="" alt="">Add a SQL condition to an access rule</MadCap:xref>.</p>
+                <p>When you click <span class="UIElementName">Finish</span> on the last page of the dialog box, the rule is saved and the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane is redisplayed. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_ConfigEntityAccess.htm" target="" title="" alt="">Grant permissions to an entity (add an access rule)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

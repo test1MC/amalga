@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="966" MadCap:lastWidth="804" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>SearchPattern element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="SearchPattern element" />Declares a pattern  used to search a subdirectory  for files to acquire.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed Name="<i>String</i>"&gt;
+                &lt;ReceiveAdapter&gt; Name="<i>String</i>"<b>
+                   &lt;SearchPattern&gt;...&lt;/SearchPattern&gt;</b>
+                &lt;/ReceiveAdapter&gt;
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ReceiveAdapter.htm">ReceiveAdapter</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">SearchPattern</span> element is mandatory when the <MadCap:xref href="DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref> <![CDATA[ ]]><span class="MarkupLanguageElements">Name</span> attribute is "Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileAdapter" and you have provided a valid  <MadCap:xref href="DI_XML_Manifest_Directory.htm" target="" title="" alt="">Directory element</MadCap:xref> value. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="tip">Your search pattern can include wildcard characters. For example, to search for all LAB messages in the folder, specify *.lab as the element value.</p>
+        <p class="Label">Example</p>
+        <p>The following search pattern returns all files from the specified directory folder and its subdirectory folders.</p>
+        <p><span class="code">&lt;searchpattern&gt;*.*&lt;/searchpattern&gt;
+                  </span>
+            <br />
+        </p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

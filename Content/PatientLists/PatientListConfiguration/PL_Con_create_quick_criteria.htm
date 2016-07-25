@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1051" MadCap:lastWidth="568" MadCap:fileTags="TopicType.Concept,TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.70 - Complete,EditingTags.4 - Ready for Writer">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Create new criteria</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-22T16:27:56.3344666-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="There are some tiny changes here as well as the obvious ones, so don't miss them." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-22T16:28:28.3458718-08:00">
+                <MadCap:keyword term="quick criteria, creating;custom criteria;value sets;creating quick criteria" />This</MadCap:annotation> topic describes the general process for creating criteria that will be used for creating patient lists.</p>
+        <p>Quick criteria are predefined queries that will be used to create a list of patients. These criteria take the form of an SQL query against the application schema that returns a set of primary keys for the Patient entity. quick criteria may be defined by a database administrator or programmer using <MadCap:variable name="BrandingMS.SQL Server Management Studio" />. </p>
+        <p>Custom criteria are used to build queries directly against the data model. They can be based on the attributes of any entity possessing a foreign key to the patient entity. All data types supported by the entity model are supported for use as custom criteria except for the Time data <MadCap:annotation MadCap:createDate="2012-02-22T16:08:14.8368404-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="What is a value set? (Your instance of Quick Criteria is helpful.)  Does a value set result from anSQL query?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-22T16:09:41.1544421-08:00">type</MadCap:annotation>.</p>
+        <MadCap:snippetBlock src="Snippets/PL_con_value_sets.flsnp" />
+        <p>Prior to creating criteria or value sets, establish the business requirements for the new criteria and determine the SQL queries that will be needed to obtain the values.</p>
+        <p>Once the requirements are established, you can use the following tasks to create and update criteria:</p>
+        <ul>
+            <li>Create and test a query.  See <MadCap:xref href="PL_Task_create_quick_criteria_query.htm" target="" title="" alt="">Create new quick criteria query on page 1</MadCap:xref>.</li>
+            <li>Store the query in the database for use by others. See <MadCap:xref href="PL_Task_deploy_quick_criteria.htm" target="" title="" alt="">Deploy quick criteria on page 1</MadCap:xref>.</li>
+            <li>Review and modify an existing query. See <MadCap:xref href="PL_Task_view_update_criteria.htm" target="" title="" alt="">View or update quick criteria on page 1</MadCap:xref>.</li>
+            <li>Create custom criteria. See <MadCap:xref href="PL_Task_create_custom criteria.htm" target="" title="" alt="">Create custom criteria on page 1</MadCap:xref></li>
+            <li>Create a value set. See <MadCap:xref href="PL_Task_create_value_set.htm" target="" title="" alt="">Create a value set on page 1</MadCap:xref>.</li>
+            <li>Review and modify a value set. See <MadCap:xref href="PL_Task_view_update_value_set.htm" target="" title="" alt="">View or update a value set on page 1</MadCap:xref>.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="" style="font-weight: normal;">
+            <MadCap:xref href="PL_Task_create_quick_criteria_query.htm" target="" title="" alt="">Write and test a new quick criteria query on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="" style="font-weight: normal;">
+            <MadCap:xref href="PL_Task_create_custom criteria.htm" target="" title="" alt="">Create custom criteria on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="" style="font-weight: normal;">
+            <MadCap:xref href="PL_Task_deploy_quick_criteria.htm" target="" title="" alt="">Deploy quick criteria on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="" style="font-weight: normal;">
+            <MadCap:xref href="PL_Task_view_update_criteria.htm" target="" title="" alt="">View or update quick criteria on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PL_Task_create_value_set.htm" target="" title="" alt="">Create a value set on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PL_Task_view_update_value_set.htm" target="" title="" alt="">View or update a value set on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

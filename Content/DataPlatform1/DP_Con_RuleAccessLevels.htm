@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="1418" MadCap:lastWidth="556" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,ReleaseTarget.TAP,TopicType.Concept,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Access inheritance</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic introduces the concept of access inheritance for entities.  </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rules:access;rules:access levels;rules:SQL conditions;security;permissions:entities;Management Console;parent rules;peer rules;child rules;rules:child;rules:parent;rules:peer" />Configuring access inheritance allows you to reuse access rules configured for an entity. With access inheritance, you can apply an entity's access policy to a child or peer entity, or to an application-private table. </p>
+        <p>For example, if the Contoso.Visit entity is configured to inherit access from the Contoso.Patient entity's access policy “as parent,” then Contoso.Visit is a child entity of Contoso.Patient (and Contoso.Patient is a parent entity of Contoso.Visit). If the Contoso.Visit entity is also configured to inherit access from the Eastlake.Visit entity's access policy, but this time “as peer,” then Contoso.Visit and Eastlake.Visit are peer entities.</p>
+        <p>Every entity has an access policy, which includes role-specific access rules and role-specific permissions for any sensitive labels applied to properties of the entity.  A rule on a parent entity can be specific to children entities only, in which case the rule does not grant access to the parent entity. In addition, rules can be defined for children entities that restrict access beyond any inherited access policies. </p>
+        <p>A parent rule, or rule that is set for a parent entity, dictates the maximum privilege of the role; the child rule further restricts access. For a given role, rules are applied across peers and from parent to child entities with an AND condition. </p>
+        <h2>Parent-child relationships</h2>
+        <p>Rules configured for a given role on a parent entity apply to the child entity as well. You can configure additional rules for that role on the child entity to further restrict access, using an AND condition. </p>
+        <p>For example, if the <MadCap:variable name="BrandingHSG.Amalga Short" /> role Doctors has access to the entity Patient where Patient.VIPFlag != ‘1’, and the entity Visit is configured as a child of Patient, then members of the role Doctors can access visit records of patients whose VIPFlag value is not ‘1’. </p>
+        <p>In addition, you can configure a rule for the role Doctors on the child entity Visit to further restrict access to visit data. For example, you can set a rule for Doctors to limit access to visits where Visit.DischargeDateTime IS NOT NULL. In this case, members of the role Doctors can access visit data that meet the following condition:</p>
+        <p class="InputText">Where Patient.VIPFlag != ‘1’</p>
+        <p class="InputText">AND Visit.DischargeDateTime IS NOT NULL</p>
+        <p>Configuring a parent-child entity relationship involves explicitly defining a primary key-foreign key relationship between the entities. For more information, see <MadCap:xref href="DP_Task_ConfigEntityInheritAccess.htm">Configure access inheritance for an entity</MadCap:xref>. </p>
+        <h2>Peer relationships</h2>
+        <p>Peer entities share their rules. </p>
+        <p>For example, if the <MadCap:variable name="BrandingHSG.Amalga Short" /> role Doctors accesses the entity Contoso.Patient under the read-only rule where VIPFlag != ‘1’, and the entity Eastlake.Patient is configured as a peer to Contoso.Patient, then members of the role Doctors can access patients from Eastlake.Patient whose identifiers correspond to Contoso.Patient.VIPFlag != ‘1’. Note that in this example, Eastlake.Patient does not itself have a VIPFlag rule for the role Doctors. </p>
+        <p>In addition, you can configure rules for the role Doctors on the entity Eastlake.Patient. In this case, the rules for Eastlake.Patient apply to Contoso.Patient. For example, you can configure an additional rule for the role Doctors on Eastlake.Patient where Eastlake.Patient.Consent = ‘1’. In this case, members of the role Doctors accessing data from Eastlake.Patient or Contoso.Patient can read data from any patient whose identifier meets the following condition:</p>
+        <p class="InputText">Where Contoso.Patient.VIPFlag != ‘1’</p>
+        <p class="InputText">AND Eastlake.Patient.Consent = ‘1’</p>
+        <p>Configuring a peer relationship for two entities involves explicitly identifying and matching the primary keys for both entities. For more information, see <MadCap:xref href="DP_Task_ConfigEntityInheritAccess.htm">Configure access inheritance for an entity</MadCap:xref>. </p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_ConfigEntityInheritAccess.htm" target="" title="" alt="">Configure access inheritance for an entity</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_AppTableInherit.htm" target="" title="" alt="">Configure access inheritance for an application's private database tables</MadCap:xref>
+        </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RelatedAccessPolicies.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

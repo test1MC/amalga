@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="839" MadCap:lastWidth="576" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Retrieving data using an AmalgaDataSource control</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="AmalgaDataSource;Data access">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the process for binding a data bound control to an <MadCap:variable name="FeatureName.application view" />using an AmalgaDataSource control.</p>
+        <p>An  <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource</a> control is an <MadCap:variable name="BrandingMS.ASP.NET second use" /> <![CDATA[ ]]><a href="http://go.microsoft.com/fwlink?LinkId=233059">DataSourceControl</a> that allows <MadCap:variable name="BrandingMS.ASP.NET second use" /> data bound controls to bind to the data in an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.application view" />. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Usage" target="" title="" alt="">Usage on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Connecti" target="" title="" alt="">Connection string on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Select" target="" title="" alt="">Select command on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Usage"></a>Usage</h2>
+        <p>Under most conditions, <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a> is the preferred data source for data bound controls in <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications, and <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource</a> is only used as the base class for <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a> controls. <span class="ForeignCodeElements">AmalgaDataSource</span> should only be used on its own when the application identity interface methods are unavailable. </p>
+        <p>In rare cases, you can use the <span class="ForeignCodeElements">AmalgaDataSource</span> control  when the identity interface methods are not available, or return values that identify an application instance that cannot bind to the right <MadCap:variable name="FeatureName.application view" />. However, be aware that while it may be easier to specify a nonstandard connection string than to override the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> methods, any mismatch between the two could indicate a configuration issue that will cause authorization and access control problems later. </p>
+        <h2><a name="Connecti"></a>Connection string</h2>
+        <p> The connection string provides the values that specify the <MadCap:variable name="BrandingHSG.Amalga Short" /> data server and catalog. </p>
+        <p><span class="ForeignCodeElements">AmalgaDataSource </span>uses the same connection string as other <MadCap:variable name="FeatureName.Amalga ADO.NET" /> data access classes. The values depend on the local <MadCap:variable name="BrandingHSG.Amalga Short" /> configuration, but this is a typical connection string:</p>
+        <p class="code">ConnectionString="data source=<span class="InputTextVariable">fully qualified server name</span>;integrated security=True;initial catalog=<span class="InputTextVariable">application instance name</span>"</p>
+        <h3>Helper classes</h3>
+        <p>The <MadCap:variable name="BrandingHSG.Amalga Short" /> APIs include several helper classes that can help establish the correct value of the connection string.</p>
+        <p class="CHANGEME">FIX: the reference topics are not in the current build. They should be available in a day or two.</p>
+        <h4>Example</h4>
+        <p>The following code fragment shows how a server control can use the helper classes to identify the name of its parent application, use the application name to create a connection string, and store the connection string in a local property named <span class="ForeignCodeElements">ConnectionString</span>.</p><pre xml:space="preserve">
+using Microsoft.Amalga.AppFramework.Core.Identity;
+using Microsoft.Amalga.QueueBinding.Core;
+
+...
+
+protected override void OnLoad(EventArgs e)
+{
+    var instanceName = AmalgaInstanceCache.GetInstance(this);
+    base.ConnectionString = GetConnectionString(instanceName);
+}
+		</pre>
+        <h2><a name="Select"></a>Select command</h2>
+        <p>The <MadCap:annotation MadCap:createDate="2012-02-27T15:46:09.0830787-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="is this the same thing as the &quot;SelectCommand&quot; string in first and second bullet point below? If so, should be formatted/styled the same." MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T15:47:33.8707698-08:00">Select command</MadCap:annotation> is an <MadCap:variable name="FeatureName.Amalga ADO.NET" /> query string that determines the data values that will actually populate the data source. Its value is specified with the <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/P_AmalgaDataSource_SelectCommand.htm">SelectCommand</a> property.</p>
+        <p>Remember:</p>
+        <ul>
+            <li>The FROM clause in the <span class="Label">SelectCommand</span> string should refer to a <MadCap:variable name="FeatureName.virtual schema" />, not a <MadCap:variable name="BrandingMS.SQL Server" /> view or table.</li>
+            <li>The <span class="Label">SelectCommand</span>string can  retrieve data only from a single application view.  It is not possible to join data across application instances.</li>
+            <li>The mapping between the <MadCap:variable name="FeatureName.virtual schema" /> and the appropriate application view must be defined explicitly in the <MadCap:variable name="FeatureName.Amalga ADO.NET" /> connection string.</li>
+        </ul>
+        <p>For a more detailed description of using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> queries to address data in an application view, see <a href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm">Amalga ADO.NET library overview</a>. For more general information on retrieving data using <MadCap:variable name="FeatureName.Amalga ADO.NET" /><MadCap:annotation MadCap:createDate="2012-02-27T15:51:46.4273594-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="no &quot;Example&quot; following this paragraph?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T15:51:59.3596382-08:00">queries</MadCap:annotation>, see <a href="http://go.microsoft.com/fwlink?LinkId=233068">Retrieving and Modifying Data in ADO.NET</a>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource Class</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource Class</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm" target="" title="" alt="">Amalga ADO.NET library overview on page 1</MadCap:xref>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=233079">ASP.NET Data-Bound Web Server Controls Overview</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms254937.aspx">Retrieving and Modifying Data in ADO.NET</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

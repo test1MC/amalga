@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:16:28.1852177-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T23:18:11.0391156-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Generating commands with AmalgaDbCommandBuilder</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to generate commands for an <span MadCap:changes="1" class="codeEntity">AmalgaDbDataAdapter</span> object using the <span MadCap:changes="4" class="codeEntity">AmalgaDbCommandBuilder</span> object in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> provides an implementation of the <span class="ForeignCodeElements">DbCommandBuilder</span> object in ADO.NET. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-12T23:17:55.0331052-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make this a Note?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:18:00.0564340-07:00">However, th</MadCap:annotation>e <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object  <MadCap:snippetText src="../../Resources/Snippets/info-Not_for_public_use.flsnp" /></p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-03-04T14:59:09.2214700-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="This entire topic is meant as a &quot;turnkey&quot; topic - the devs have indicated that, for CTP2, the AmalgaDbCommandBuilder object, although public, shouldn't be used yet by anyone as it's fundamentally flawed. Go figure. Once they fix it, the content in this topic will be handy to the next poor soul to work in here - and I hope it's me..." MadCap:editor="v-dennk" MadCap:editDate="2012-03-04T15:00:10.0438478-08:00">When</MadCap:annotation> the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in the <span class="ForeignCodeElements">SelectCommand</span> property of an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object is dynamically specified at run time, such as through a query tool that takes a textual command from the user, you may not be able to specify the appropriate command text for the <span class="ForeignCodeElements">AmalgaDbCommand</span> objects in the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, or <span class="ForeignCodeElements">DeleteCommand</span> properties of that <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object at design time. If your <span class="ForeignCodeElements">DataTable</span> object maps to a single application view, however, you can take advantage of the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object to automatically generate those commands for your <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">In this topic</p>
+        <ul>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with AmalgaDbCommandBuilder on page 1</MadCap:xref>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Rules" target="" title="" alt="">Rules for automatically generated commands on page 1</MadCap:xref>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Limitati" target="" title="" alt="">Limitations of automatic command generation logic on page 1</MadCap:xref>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <a name="Working">
+            </a>Working with AmalgaDbCommandBuilder</h2>
+        <p MadCap:conditions="Production.doNOTbuild">As a minimum requirement, you must first set the <span class="ForeignCodeElements">SelectCommand</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object so that automatic command generation can work. The table schema retrieved by executing the command in the <span class="ForeignCodeElements">SelectCommand</span> property determines the syntax for the command text of the automatically generated commands.</p>
+        <p MadCap:conditions="Production.doNOTbuild">The <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object must first execute the command in the <span class="ForeignCodeElements">SelectCommand</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object to retrieve the metadata necessary to construct the automatically generated commands. As a result, an extra trip to the instance of the DataConnector platform application is required, and this can hinder performance. To achieve optimal performance, specify your commands explicitly rather than using the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object.</p>
+        <p MadCap:conditions="Production.doNOTbuild">The command in the <span class="ForeignCodeElements">SelectCommand</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object must also return at least one primary key or unique column. If none are present, an exception is raised and the other commands are not automatically generated.</p>
+        <p MadCap:conditions="Production.doNOTbuild">When associated with an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span>, the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> automatically generates <span class="ForeignCodeElements">AmalgaDbCommand</span> objects for the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, and <span class="ForeignCodeElements">DeleteCommand</span> properties only if those properties are set to null references. If an <span class="ForeignCodeElements">AmalgaDbCommand</span> object already exists for a property, that object is used instead.</p>
+        <p MadCap:conditions="Production.doNOTbuild">You might want to map output parameters back to the updated row of a dataSet object. One common task would be retrieving the value of an automatically generated identity field or time stamp from the application view. The <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object will not map output parameters to columns in an updated row by default. In this instance you must specify your command explicitly. For an example of mapping an automatically generated identity field back to a column of an inserted row, see <MadCap:xref href="DAT_CON_RetrievingIdentityValues.htm" target="" title="" alt="">Retrieving automatically generated values on page 1</MadCap:xref>.</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <a name="Rules">
+            </a>Rules for automatically generated commands</h2>
+        <p MadCap:conditions="Production.doNOTbuild">The following table shows the rules for how automatically generated commands are generated.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <th MadCap:conditions="Production.doNOTbuild">Command</th>
+                    <th MadCap:conditions="Production.doNOTbuild">Rules</th>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td MadCap:conditions="Production.doNOTbuild">InsertCommand</td>
+                    <td MadCap:conditions="Production.doNOTbuild">Not yet determined.</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td MadCap:conditions="Production.doNOTbuild">UpdateCommand</td>
+                    <td MadCap:conditions="Production.doNOTbuild">Not yet determined.</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td MadCap:conditions="Production.doNOTbuild">DeleteCommand</td>
+                    <td MadCap:conditions="Production.doNOTbuild">Not yet determined.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <a name="Limitati">
+            </a>Limitations of automatic command generation logic</h2>
+        <p MadCap:conditions="Production.doNOTbuild">Not yet determined.</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <a name="Example">
+            </a>Example</h2>
+        <p MadCap:conditions="Production.doNOTbuild">The following example demonstrates how to use the <span class="ForeignCodeElements">AmalgaDbCommandBuilder</span> object with an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</p>
+        <pre xml:space="preserve" MadCap:conditions="Production.doNOTbuild">private AmalgaDbDataAdapter CreatePatientNoteDataAdapterBuilder
+    (AmalgaDbConnection connection)
+{
+    // Create an AmalgaDbDataAdapter object, specifying the command text
+    // to use for AmalgaDbCommand object to be created for the SelectCommand 
+    // property, as well as the AmalgaDbConnection to be used by the
+    // AmalgaDbDataAdapter.
+    AmalgaDbDataAdapter adapter = new AmalgaDbDataAdapter(
+        @"SELECT [NoteID], [NoteText], [PatientPersonID] FROM [PatientNote]",
+        connection);
+
+    // Ensure that primary key constraints are added to any DataSet object
+    // filled by invoking the Fill method of this object.
+    adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+    // Create a new AmalgaDbCommandBuilder object, providing the 
+    // AmalgaDbDataAdapter object.
+    AmalgaDbCommandBuilder builder = new AmalgaDbCommandBuilder(adapter);
+
+    // Return the AmalgaDbDataAdapter object.
+    return adapter;
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

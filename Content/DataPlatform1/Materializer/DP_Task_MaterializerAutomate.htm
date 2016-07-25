@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1612" MadCap:lastWidth="920" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>(Optional) Automate Materializer application configuration</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p>Use the following process and SQL Server script example to look up the configuration values for a specific entity and generate XML output for inclusion within the Materializer service manifest. You must generate new values for each entity.</p>
+        <p class="caution">Consider the script example to be a starting point that you can modify to meet your requirements.  Always verify your results when using the script example.</p>
+        <p class="LabelforProcedures">To extract materializer values into XML format</p>
+        <ol>
+            <li>Start SQL Server Management Studio and connect to the server hosting the ClinicalData database.</li>
+            <li>Open the <MadCap:xref href="DP_XML_MaterializerSqlQueryToAdd.htm" target="" title="" alt="">Materializer: SQL Query to add settings</MadCap:xref> topic and copy the script within the topic to a new query in SQL Server Management Studio.</li>
+            <li>
+                <p>In the query workspace, update the @namespace and @entityname variables with the entity namespace and entity name you intend to materialize.</p>
+                <p class="Figure"> <![CDATA[ ]]><img src="Images/Change_Entity_Namespace.png" /></p>
+            </li>
+            <li>Execute the query.</li>
+            <li>
+                <p>Click the resulting XML value to open the output in a new window.</p>
+                <p class="Figure">
+                    <img src="Images/XMlresults.png" />
+                </p>
+            </li>
+            <li>
+                <p>Copy the XML into the space between the CDATA brackets of the service manifest, as the following example shows. Remove any extra spaces.</p><pre xml:space="preserve" class="code">&lt;DefaultValue&gt;&lt;![CDATA[</pre><pre xml:space="preserve" class="code">	 &lt;MaterializerConfiguration&gt;
+                 &lt;DefiningView&gt;
+                     &lt;Schema&gt;EntityViews&lt;/Schema&gt;
+                     &lt;Name&gt;v_defCommon_BetaPatient&lt;/Name&gt;
+                 &lt;/DefiningView&gt;
+                 &lt;BaseTables&gt;
+                     &lt;BaseTable&gt;
+                         &lt;Schema&gt;ADT_G&lt;/Schema&gt;
+                         &lt;Name&gt;v_collapse_PID_binding&lt;/Name&gt;
+                         &lt;PrimaryContextKeys&gt;
+                             &lt;Key&gt;
+                                 &lt;Name&gt;Patient_PID_ExternalId&lt;/Name&gt;
+    &lt;Alias&gt;[ID_TBL_ClinicalData.ADT_G.v_Collapse_PID_Binding.Patient_PID_ExternalId]&lt;/Alias&gt;
+                             &lt;/Key&gt;
+                         &lt;/PrimaryContextKeys&gt;
+                     &lt;/BaseTable&gt;
+                 &lt;/BaseTables&gt;
+                 &lt;MaterializedTable&gt;
+                     &lt;Schema&gt;EntityViews&lt;/Schema&gt;
+                     &lt;Name&gt;Common_BetaPatientMaterialized&lt;/Name&gt;
+                 &lt;/MaterializedTable&gt;
+           &lt;/MaterializerConfiguration&gt;</pre><pre xml:space="preserve" class="code">]]&gt;&lt;/DefaultValue&gt;</pre>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Ovw_MaterializeView.htm" target="" title="" alt="">Materialize an entity view</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>
+        </p>
+    </body>
+</html>

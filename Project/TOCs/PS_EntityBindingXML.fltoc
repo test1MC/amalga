@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Entity binding XML reference"
+    Link="/Content/PowerShellCmdlets/EntityBindingXML/PS_XML_Reference.htm">
+    <TocEntry
+      Title="Entity binding XML overview"
+      Link="/Content/PowerShellCmdlets/EntityBindingXML/PS_XML_Overview.htm" />
+    <TocEntry
+      Title="Binding element"
+      Link="/Content/PowerShellCmdlets/EntityBindingXML/PS_XML_Binding.htm" />
+    <TocEntry
+      Title="Bindings element"
+      Link="/Content/PowerShellCmdlets/EntityBindingXML/PS_XML_Bindings.htm" />
+  </TocEntry>
+</CatapultToc>

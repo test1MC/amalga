@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Manuals.doNOTbuild,Production.StyleMaster,Production.doNOTbuild,Region.US" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+        <link href="Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Example-ParentChildTable</h1>
+        <p>Use this table format primarily when you are doing reference topic documentation of a <MadCap:variable name="FeatureName.TShow parameter list" />. For snippets that include these tables for use, see:</p>
+        <ul>
+            <li>Table-ChildOnly.flsnp</li>
+            <li>Table-ParentChild.flsnp</li>
+            <li>Table-ParentChildAttributes.flsnp</li>
+        </ul>
+        <h2>Lowest Level Elements</h2>
+        <p>These elements do not have child elements. </p>
+        <p class="h7">Format</p>
+        <table style="caption-side: top;width: 95%;">
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>&lt;<span class="Placeholder">Element Name</span>&gt;</th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <p colspan="3">Optional [or Required].<span class="Placeholder"> Description.</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element:&#160;<span class="MarkupLanguageElements">&lt;<span class="Placeholder">Parent</span>&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">Examples
+        </p>
+        <table style="caption-side: top;width: 95%;">
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>&lt;CellMinHeight&gt;</th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Optional. Sets the minimum height of cells. </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element: &#160;<span class="MarkupLanguageElements">&lt;UIParameters&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="caption-side: top;width: 95%;">
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>&lt;CellMinWidth&gt;</th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Optional. Sets the minimum width of cells. </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element: &#160;<span class="MarkupLanguageElements">&lt;UIParameters&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Elements with Parent and Child Elements</h2>
+        <p class="h7">Example</p>
+        <table style="width: 95%;">
+            <thead>
+                <tr>
+                    <th>&lt;RowTemplates&gt;</th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Required. Contains the elements that configure the organization and appearance of row headers for each panel in the <MadCap:variable name="FeatureName.Flow Sheet Lab Viewer" /><![CDATA[ ]]><span class="MarkupLanguageElements">&lt;TrendPanel&gt;</span> or <span class="MarkupLanguageElements">&lt;DetailPanel&gt;</span>&#160;tabs. </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element: <span class="MarkupLanguageElements">&lt;UIParameters</span>&gt;</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Child elements:&#160;<span class="MarkupLanguageElements">&lt;HeaderCellTemplate&gt;</span>, <span class="MarkupLanguageElements">&lt;Level&gt;</span>, <span class="MarkupLanguageElements">&lt;Snippet&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Elements with Parent and Child Elements and Attributes</h2>
+        <p class="h7">Example</p>
+        <table style="caption-side: top;width: 95%;">
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>&lt;HeaderCellTemplate&gt;</th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Required. Contains configuration information for header cells. </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element:&#160;<span class="MarkupLanguageElements">&lt;RowTemplates&gt;</span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Child elements:&#160;<span class="MarkupLanguageElements">&lt;Level&gt;</span>, <span class="MarkupLanguageElements">&lt;Snippet&gt;</span>, <span class="MarkupLanguageElements">&lt;HoverItems&gt;</span></td>
+                </tr>
+                <tr>
+                    <td class="Label">
+                        <span class="Label">Attribute</span>
+                    </td>
+                    <td class="Label">
+                        <span class="Label">Description</span>
+                    </td>
+                    <td class="Label">
+                        <span class="Label">Values</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>Designates whether the header cell template is for a row or a column. </td>
+                    <td>
+                        <p>Row</p>
+                        <p>Column</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

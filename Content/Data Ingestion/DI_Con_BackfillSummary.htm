@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:ignoredWords="AmalgaApplication" MadCap:conditions="Region.US">
+    <head>
+        <title>Backfill Data-Parser application</title>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="cardtype">
+            <H1 class="service">
+                <MadCap:variable name="Applications.Backfill Data-Parser application" />
+            </H1>
+            <p class="PersonaAll">&#160;</p>
+            <p class="abstract">This topic summarizes the characteristics of the optional <MadCap:variable name="Applications.Backfill Data-Parser application" />.</p>
+            <p class="Label">When to use this application</p>
+            <p>Deploy one instance of the Backfill Data-Parser application to parse some or all historic messages associated with a single feed that would otherwise produce blank records for a newly added derived column. When processing finishes, stop the application instance and remove it from production.</p>
+        </div>
+        <div id="ident">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Identification</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Application name</p>
+                    <p>BackfillDataParserApplication</p>
+                    <p class="Label">DoorsWorker (service) name</p>
+                    <p>BackfillDataParser</p>
+                    <p class="Label">Publisher</p>
+                    <p>Microsoft Corporation	Version 1.0.0.0</p>
+                    <p class="Label">DoorsWorkerManifest values</p>
+                    <p>LogicalHostName="<span class="Placeholder">Insert your local host name</span>" </p>
+                    <p>AuthenticationMode ="None" </p>
+                    <p>ClusteringMode="NLB"</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Dependencies and relationships</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Dependent on the following attribute values of the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency element</MadCap:xref></p>
+                    <p>(You must specify in each application manifest the unique instance name of the dependency.)</p>
+                    <p>Name="TerminologyAppDependency" InstanceName="<span class="Placeholder">TerminologyApplication_Ins1</span>"</p>
+                    <p>Name="DataParserAppDependency" InstanceName="<span class="Placeholder">DataParserApp_Model_ADT_G</span>"</p>
+                    <p class="Label">Related applications</p>
+                    <p>
+                        <MadCap:variable name="Applications.Data Parser application" />. Always run the forward parsing application before you start backfill parsing.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Configuration design</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>Input: shredded columns.</p>
+                    <p>Output: derived columns starting from the specified point and running until forward parsing begins.</p>
+                    <p class="Label">Application manifest settings</p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_IsBackfillDataParserApplication.htm">IsBackfillDataParserApplication setting</a>
+                    </p>
+                    <p class="Label">Service manifest settings</p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_BatchSizeSetting.htm">BatchSize setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm">ConnectionTimeoutSeconds setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_IdleSleepSecondsSetting.htm">IdleSleepSeconds setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_FeedInfoXML.htm">FeedInfoXML setting</a>
+                    </p>
+                    <p>
+                        <a href="DI_XML_List_Parse.htm">FeedConfigurationXML setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXML setting</a>
+                    </p>
+                    <p class="Label">Performance counters</p>
+                    <p>See <MadCap:xref href="DI_GREF_PipelinePerCount.htm" target="" title="" alt="">Pipeline performance counters</MadCap:xref>.</p>
+                    <p class="Label">Error codes</p>
+                    <p>See <MadCap:xref href="DI_Ref_PredefinedErrorCodes.htm" target="" title="" alt="">Default error code for the data pipeline</MadCap:xref>.</p>
+                    <p class="Label">Extensibility</p>
+                    <p>None.</p>
+                    <p class="note">The Backfill <MadCap:variable name="Applications.Backfill Data-Parser application" /> cannot be extended; however, all extensions that apply to the updated columns in the data parser must also appear in the backfill service manifest.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Deployment</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Deployment duration</p>
+                    <p>Operates continuously in production until the message-reparse job is finished and the service logs error with an Event ID of 11001.</p>
+                    <p class="Label">Special instructions</p>
+                    <p>You can deploy a backfill instance to an idle server to reduce the impact of backfill parsing on forward parsing. </p>
+                    <p>Remove the backfill instance when all of the rows are populated. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Remarks</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>When you derive a new column for an existing data parser and redeploy the updated parser service, forward paring begins with the first new message. As the following figure shows, forward parsing begins for derived “Column C” at row 4-C. All of the previous rows are blank.</p>
+                    <p class="Figure">
+                        <img src="Images/Forward parsing.png" />
+                    </p>
+                    <p>Backfilling the new column (shown in the next figure) with past messages is optional. If you decide to populate previous rows, enable backfill parsing to run until the backfill completes, stop the service, and then remove the Backfill Data-Parser instance. For setup instructions, see <MadCap:xref href="DI_Task_EnableBackfill.htm" target="" title="" alt="">Enable backfill parsing</MadCap:xref>.</p>
+                    <p class="Figure">
+                        <img src="Images/Forward-backfill parsing.png" />
+                    </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Restrictions</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <ul>
+                        <li>The backfilled column will be visible to entity binding only when the backfill operation completes.</li>
+                        <li>Only one backfill parser can run for a given data parser.</li>
+                        <li>You must stop the backfill service manually.</li>
+                        <li>If you must amend a deployed backfill parser with another derived column before current backfill parsing is complete, always do the following:<ol><li>Stop the backfill service. </li><li>Remove the backfill application instance.</li><li>Add the new column.</li><li>Rename the backfill instance to ensure that the newest derived column will be fully populated.</li></ol></li>
+                        <li>When changing row expansion definition,  the updated row expansion must be configured with a new row-expansion table name.</li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <p class="SeeAlso">See also</p>
+            <p class="SeeAlsoSubHead">Tasks</p>
+            <p>
+                <a href="DI_Task_EnableBackfill.htm">Enable backfill parsing</a>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>
+            </p>
+            <p class="SeeAlsoSubHead">Reference</p>
+            <p>
+                <a href="DI_Con_ParseSummary.htm">Data Parser application</a>
+            </p>
+        </div>
+    </body>
+</html>

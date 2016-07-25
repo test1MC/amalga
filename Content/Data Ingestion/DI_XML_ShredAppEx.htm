@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-ccole" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Message shredder: application manifest example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration values as needed. For value descriptions, see <MadCap:xref href="DI_Task_ShredApp.htm" target="" title="" alt="">Message shredder application</MadCap:xref>.</p>
+        <pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "Application"
+                    Name="MessageShredderApplication"
+		    InstanceName="MessageShredderApp_ADT_G"
+                    Id ="9cd7c3b1-2a45-4e14-844d-2629d597f554"
+                    Version ="1.0.0.0"&gt;
+
+  &lt;Settings&gt;
+    &lt;!--
+    &lt;Setting Name="SampleSetting" Type="System.String" &gt;
+      &lt;DefaultValue&gt;
+
+      &lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+    --&gt;
+  &lt;/Settings&gt;
+
+
+  &lt;Dependencies&gt;
+    &lt;Dependency Name="TerminologyAppDependency" InstanceName="TerminologyApplication_Ins1" 
+	Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" /&gt;
+  &lt;/Dependencies&gt;
+
+  &lt;ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0" /&gt;
+
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message shredder</MadCap:xref>
+        </p>
+    </body>
+</html>

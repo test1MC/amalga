@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2615.667" MadCap:lastWidth="728" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Adding source systems</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:source systems;source systems:Terminology platform application;AddSourceSystem method:Terminology platform application;SourceSystem class:Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;Terminology platform application:AddSourceSystem method;Terminology platform application:SourceSystem class;Terminology platform application:ISemanticLabelTaggingService interface;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to add a new source system for semantic tagging with the Terminology platform application.</p>
+        <p>Before the <MadCap:variable name="Applications.Message Shredder (application)" /> subsystem can use the Terminology platform application to map semantic tags to a data feed during the data ingestion process, a source system for that data feed must be added to the Terminology platform application. </p>
+        <p>You can use the AddSourceSystem operation, included in the ISemanticLabelTaggingService service contract from the TerminologyService service, to add a new source system. Use the SourceSystem object to first describe the new source system, and then pass the SourceSystem object to the AddSourceSystem operation to define the new source system for semantic tagging purposes.</p>
+        <p>The SourceSystem object uses the following properties to define a new source system.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td>
+                        <p>If set to True, the new source system should be actively included for semantic tagging purposes during data ingestion. Otherwise, the new source system is inactive and therefore ignored during data ingestion.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DataType</td>
+                    <td>
+                        <p>This property accepts the following SourceSystemDataType enumeration values, which indicate whether the new source system allows updates:</p>
+                        <ul>
+                            <li>
+                                <p>InsertOnly</p>
+                                <p>The new source system only allows insert operations.</p>
+                            </li>
+                            <li>
+                                <p>InsertUpdate</p>
+                                <p>The new source system allows both insert and update operations.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DefaultTimeZone</td>
+                    <td>The default time zone used by the new source system, for conversion purposes.</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>The name of the data feed represented by the new source system.</td>
+                </tr>
+                <tr>
+                    <td>PreferenceRanking</td>
+                    <td>The preference ranking of the data feed, compared to other data feeds in the hospital.</td>
+                </tr>
+                <tr>
+                    <td>PreferredCulture</td>
+                    <td>The preferred culture in which to find the semantic tags for the clinical terminology specified in the TerminologyName property.</td>
+                </tr>
+                <tr>
+                    <td>Provider</td>
+                    <td>The provider of the data feed represented by the new source system.</td>
+                </tr>
+                <tr>
+                    <td>TerminologyName</td>
+                    <td>The name of the clinical terminology referenced by the new source system.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>The type of data feed represented by the new source system.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example</h2>
+        <p>The following example adds a new source system, representing an Admissions, Discharges, and Transfers (ADT) data feed, to the Terminology platform application.</p><pre xml:space="preserve">public void AddSourceSystem()
+{
+    // Use the AddSourceSystem operation from ISemanticLabelTaggingService
+    // to define a new source system.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+    // Open the client channel and instantiate the WCF client.
+    ISemanticLabelTaggingService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Define a new SourceSystem object, and configure it to describe
+    // a new ADT data feed.
+    SourceSystem newSourceSystem = new SourceSystem();
+    newSourceSystem.Active = true;
+    newSourceSystem.DataType = SourceSystemDataType.InsertOnly;
+    newSourceSystem.DefaultTimeZone = "DefaultTimeZone";
+    newSourceSystem.Description = "Test ADT data feed";
+    newSourceSystem.Name = "ADT";
+    newSourceSystem.PreferenceRanking = 1;
+    newSourceSystem.PreferredCulture = "en-US";
+    newSourceSystem.Provider = "Provider";
+    newSourceSystem.TerminologyName = "Microsoft Beta HL7 V2.X Code";
+    newSourceSystem.Type = "ADT";
+
+    // Invoke the operation from the service.
+    terminologyServiceClient.AddSourceSystem(newSourceSystem);
+
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DeactivatingSourceSystems.htm" target="" title="" alt="">Deactivating source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

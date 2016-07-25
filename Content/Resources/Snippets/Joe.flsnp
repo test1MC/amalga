@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Production.StyleMaster" MadCap:lastBlockDepth="2" MadCap:lastHeight="74" MadCap:lastWidth="758" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <p>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCSingle">the <span class="BookManualName"><MadCap:variable name="ManualNames.Context Passing" /></span></MadCap:conditionalText>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCsAll">Context Passing (under Supplements and Modules)</MadCap:conditionalText>
+        </p>
+    </body>
+</html>

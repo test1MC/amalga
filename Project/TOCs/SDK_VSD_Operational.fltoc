@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Modeling data in [%=BrandingHSG.Amalga Short%]"
+    Link="/Content/Amalga_PlatformSDK/SDK_CON_About_Data_Models_Access.htm">
+    <TocEntry
+      Title="Data modeling concepts"
+      Link="/Project/TOCs/SDK_VSD_Conceptual.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Data modeling with [%=FeatureName.virtual schema designer%]"
+      Link="/Content/Amalga_PlatformSDK/SDK_NAV_Data_Modeling.htm">
+      <TocEntry
+        Title="Working with virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSD_NAV_VirtualSchema.htm">
+        <TocEntry
+          Title="Add a new data manifest"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_Create_Data_Manifest.htm" />
+        <TocEntry
+          Title="Prepare data manifest for deployment"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_PrepDeploy_DataManifest.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Working with application views"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSD_NAV_AppViews.htm">
+        <TocEntry
+          Title="Add a read-only application view"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_Create_ReadOnly_AppView.htm" />
+        <TocEntry
+          Title="Add a read-write application view"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_Create_ReadWrite_AppView.htm" />
+        <TocEntry
+          Title="Add a scalar property to an application view"
+          Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSD_PROC_AddScalarProperty.htm" />
+        <TocEntry
+          Title="Add an association"
+          Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSD_PROC_AddAssoc.htm" />
+      </TocEntry>
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

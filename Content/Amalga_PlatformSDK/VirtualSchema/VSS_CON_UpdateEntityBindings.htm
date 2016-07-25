@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1116" MadCap:lastWidth="532" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Updating entity bindings</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to update entity bindings using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can update entity bindings for one or more existing entities by invoking the <span class="codeEntity">UpdateEntityBindings</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">UpdateEntityBindings</span>, you must specify an array of <span class="codeEntity">Entity</span> objects that represent the entities to be updated.</p>
+        <p class="note">For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the <span class="codeEntity">UpdateEntityBindings</span> operation can only update entities for which one entity binding per entity instance is specified. If multiple entity bindings are specified for an entity instance, an exception is thrown.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the Entity object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the Entity object</h2>
+        <p>An Entity object must be defined for each entity to be updated, with one EntityBinding object defined and included in the array for the EntityBindings property of each Entity object. For more information about the properties of the Entity object, see <MadCap:xref href="VSS_CON_UpdateEntity.htm" target="" title="" alt="">Updating an entity on page 1</MadCap:xref>.</p>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When invoked, the UpdateEntityBindings operation performs the following steps:</p>
+        <ol>
+            <li>
+                <p>Ensure that the array passed to the operation contains at least one Entity object; otherwise, nothing happens.</p>
+                <p class="note">If this case occurs, the operation stops immediately and no exception is thrown.</p>
+            </li>
+            <li>Ensure that, for each specified Entity object, one and only one EntityBinding object is included in the array for the EntityBindings property of that Entity object; otherwise, an exception is thrown.</li>
+            <li>Start a new transaction.</li>
+            <li>Ensure that all specified entity bindings to be updated exist in the <MadCap:variable name="FeatureName.Amalga entity registry" />; otherwise, an exception is thrown.</li>
+            <li>Update the existing entity bindings with the information from the specified entity bindings.</li>
+            <li>Validate and save the updated entity bindings.</li>
+            <li>Commit the transaction.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying source systems</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:source systems;source systems:Terminology platform application;Terminology platform application:ISemanticLabelTaggingService interface;ISemanticLabelTaggingService interface:Terminology platform application;GetSourceSystems method:Terminology platform application;Terminology platform application:GetSourceSystems method;SourceSystem class:Terminology platform application;Terminology platform application:SourceSystem class;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for source systems stored by the Terminology platform application.</p>
+        <p>You can use the GetSourceSystems operation, included in the ISemanticLabelTaggingService service contract from the TerminologyService service, to retrieve an array of SourceSystem objects that represent the source systems already registered with the Terminology platform application. The SourceSystem object contains the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Active</td>
+                    <td>
+                        <p>If set to True, the source system should be actively included for semantic tagging purposes during data ingestion. Otherwise, the source system is inactive and therefore ignored during data ingestion.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DataType</td>
+                    <td>
+                        <p>This property accepts the following SourceSystemDataType enumeration values, which indicate whether the source system allows updates:</p>
+                        <ul>
+                            <li>
+                                <p>InsertOnly</p>
+                                <p>The new source system only allows insert operations.</p>
+                            </li>
+                            <li>
+                                <p>InsertUpdate</p>
+                                <p>The new source system allows both insert and update operations.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DefaultTimeZone</td>
+                    <td>The default time zone used by the source system, for conversion purposes.</td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>The globally unique identifier (GUID) used to identify the source system.</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>The name of the data feed represented by the source system.</td>
+                </tr>
+                <tr>
+                    <td>PreferenceRanking</td>
+                    <td>The preference ranking of the data feed, compared to other data feeds in the hospital.</td>
+                </tr>
+                <tr>
+                    <td>PreferredCulture</td>
+                    <td>The preferred culture in which to find the semantic tags for the clinical terminology specified in the TerminologyName property.</td>
+                </tr>
+                <tr>
+                    <td>Provider</td>
+                    <td>The provider of the data feed represented by the source system.</td>
+                </tr>
+                <tr>
+                    <td>TerminologyName</td>
+                    <td>The name of the clinical terminology referenced by the source system.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>The type of data feed represented by the source system.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example</h2>
+        <p>The following example uses the GetSourceSystems operation from the ISemanticLabelTaggingService service contract to retrieve an array of SourceSystem objects, representing existing source systems, from the Terminology platform application.</p><pre xml:space="preserve">public SourceSystem[] GetSourceSystems() 
+{
+    // Use the GetSourceSystems operation from ISemanticLabelTaggingService
+    // to retrieve an array of SourceSystem objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+    // Open the client channel and instantiate the WCF client.
+    ISemanticLabelTaggingService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Invoke the operation from the service.
+    return terminologyServiceClient.GetSourceSystems();
+
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingSourceSystems.htm" target="" title="" alt="">Adding source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DeactivatingSourceSystems.htm" target="" title="" alt="">Deactivating source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_SourceSystems.htm" target="" title="" alt="">Source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

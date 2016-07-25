@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1015" MadCap:lastWidth="634" MadCap:fileTags="TopicType.Concept,Status.50 - InTech Review,TopicOwner.v-padenc,ReleaseTarget.TAP,Personas.Elvis: App Dev">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Roles and applications</h1>
+        <p class="abstract">This topic describes how <MadCap:variable name="BrandingHSG.Amalga Short" /> roles interact with applications. </p>
+        <p>
+            <MadCap:keyword term="application permissions;permissions:applications;application access levels;access levels, applications;roles;access control framework;framework:access control;applications:access levels;application instances;applications:instances;instances, application;security" />
+            <MadCap:annotation MadCap:createDate="2012-01-30T16:50:05.4452502-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="TAP: 84572 (manage access across apps); however, UI may not get into ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-01-30T16:50:10.7965304-08:00">In </MadCap:annotation><MadCap:variable name="BrandingHSG.Amalga Short" />, application permissions are managed by granting roles permissions to application access levels. </p>
+        <p>Each <MadCap:variable name="BrandingHSG.Amalga Short" /> application contains one or more access levels in its application manifest for granular control of access to application-specific resources, including services and application views. Access level definitions are immutable; however, you can manage the role assignments to each access level.</p>
+        <p>For example, in the illustration below, the LabApp application provides two access levels. The LabReader access level allows the user to call a service that retrieves outstanding lab orders and to view lab orders. The LabWriter access level allows the user to call all services provided by the application and to create, edit, and view lab orders. Andy and Sam have unique access rights in the LabApp application because their roles are assigned to unique access levels. Through user membership in the LabAdmin role, Andy is able to access the LabApp application at the LabReader access level; Sam’s membership in the Radiologist role allows Sam to access the application at the LabWriter access level. </p>
+        <p>
+            <img src="../Images/AccessLevels-2Users1App.png" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" style="max-width: 675px;max-height: auto;" />
+        </p>
+        <p>To manage application permissions, log on to Doors using an account that belongs to the built-in role <MadCap:annotation MadCap:createDate="2012-01-30T16:50:50.7964920-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="for granting or removing permissions to an access level; more roles allowed for viewing access levels or permissions." MadCap:editor="v-padenc" MadCap:editDate="2012-02-06T09:15:55.2170761-08:00">AmalgaAppAdmin or AmalgaSysAdmin</MadCap:annotation>. </p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SERV_TASK_App-PermAdd.htm" target="" title="" alt="">Grant permissions to an application</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests</MadCap:xref> <![CDATA[ ]]></p>
+        <p>
+            <MadCap:xref href="Secure Data Access Intro.htm" target="" title="" alt="">Data access security</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Management Console/User Management/SERV_CON_RolesUsers.htm" target="" title="" alt="">Roles and users</MadCap:xref>
+        </p>
+    </body>
+</html>

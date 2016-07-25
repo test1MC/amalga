@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1406" MadCap:lastWidth="660" MadCap:fileTags="TopicType.Ref_General,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.All,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Entity binding XML overview</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic provides an overview of the entity binding XML document. </p>
+        <p>The entity binding XML document contains a single <span class="MarkupLanguageElements">Bindings</span> element, which in turn contains an ordered collection of one or more <span class="MarkupLanguageElements">Binding</span> elements. Each <span class="MarkupLanguageElements">Binding</span> element represents a single entity and contains a Transact-SQL SELECT statement, called a binding SQL&#160;statement, used to select data for the entity identified by the <span class="MarkupLanguageElements">Binding</span> element. The <span class="MarkupLanguageElements">Binding</span> elements are processed in the order in which they are included in the <span class="MarkupLanguageElements">Bindings</span> element.</p>
+        <h2>Example</h2>
+        <p>The following example represents an entity binding XML document containing <span class="MarkupLanguageElements">Binding</span> elements for two entities, named Entity1 and Entity2, in the <MadCap:variable name="Namespace.Entity_Common" /> entity namespace. The Entity1 entity binding is configured for materialization.</p><pre xml:space="preserve">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+   &lt;Bindings&gt;  
+      &lt;Binding 
+         EntityName='Entity1' 
+         EntityNamespace='Common.Beta2'
+         Materialize=true&gt;
+      &lt;![CDATA[
+         SELECT [EID]
+            ,[FName]
+            ,[LName]
+            ,[SSN]
+            ,[DOB]
+            ,[DOB_o]
+         FROM [AzADT].[dbo].[HIS601]
+         ]]&gt;
+      &lt;/Binding&gt;
+      &lt;Binding 
+         EntityName='Entity2' 
+         EntityNamespace='Common.Beta2'&gt;
+      &lt;![CDATA[    
+         SELECT [EID]
+            ,[Account]
+            ,[MRN]
+            ,[InstitutionName]
+            ,[SetID]
+            ,[ExternalPatientID]
+            ,[AlternatePatientID]
+            ,[LName]
+            ,[FName]
+            ,[MName]
+            ,[MotherMaidenName]
+            ,[Sex]
+            ,[PatientAlias]
+            ,[Race]
+            ,[Street1]
+            ,[Street2]
+            ,[City]
+            ,[State]
+            ,[ZipCode]
+            ,[CountyCode]
+            ,[CountryCode]
+            ,[HPhone]
+            ,[WPhone]
+            ,[Language]
+            ,[MaritalStatus]
+            ,[Religion]
+            ,[SSN]
+            ,[DriverLicNum]
+            ,[MotherID]
+            ,[EthnicGroup]
+            ,[BirthPlace]
+            ,[MultipleBirthIndicator]
+            ,[BirthOrder]
+            ,[Citizenship]
+            ,[VeteransMilitaryStatus]
+            ,[DistrictCode]
+            ,[DOB]
+            ,[DOB_o]
+         FROM [AzADT].[dbo].[PID601]
+      ]]&gt;
+   &lt;/Binding&gt;  
+&lt;/Bindings&gt;</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PS_XML_Bindings.htm" target="" title="" alt="">Bindings element</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PS_XML_Binding.htm" target="" title="" alt="">Binding element</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/Materializer/DP_Ovw_Materializer CTP2.htm" target="" title="" alt="">Materialized entity view</MadCap:xref>
+        </p>
+    </body>
+</html>

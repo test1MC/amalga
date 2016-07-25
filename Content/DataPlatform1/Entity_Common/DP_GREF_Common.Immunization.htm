@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1115.667" MadCap:lastWidth="1002" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Immunization entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.Immunization.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].Immunization" /><span class="Label">Entity concept code</span>: RXA</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AdministeredAmount</td>
+                    <td>RXA-6</td>
+                    <td>HL7</td>
+                    <td>Amount administered.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredByProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredByProviderName</td>
+                    <td>RXA-10</td>
+                    <td>HL7</td>
+                    <td>Provider identifier of the person administering the pharmaceutical or treatment.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCode</td>
+                    <td>RXA-7-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for simple units that reflect the actual quantity of the substance administered.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCode_UCUM</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Identifier for Unified Code for Units of Measure (UCUM).</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsCodingScheme</td>
+                    <td>RXA-7-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>AdministeredUnitsText</td>
+                    <td>RXA-7-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes administered units.</td>
+                </tr>
+                <tr>
+                    <td>AssociatedObservation</td>
+                    <td>ResultID
+</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Result.htm" target="" title="" alt="">Common.Beta.Result entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>DateStarted</td>
+                    <td>RXA-3</td>
+                    <td>HL7</td>
+                    <td>Date and time start of administration.</td>
+                </tr>
+                <tr>
+                    <td>EffectiveDate</td>
+                    <td>RXA-3</td>
+                    <td>HL7</td>
+                    <td>Date and time start of administration.</td>
+                </tr>
+                <tr>
+                    <td>EffectiveDate_o</td>
+                    <td>RXA-3</td>
+                    <td>HL7</td>
+                    <td>Date and time offset start of administration.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>EnteredByProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>EnteredByProviderName</td>
+                    <td>ORC-10</td>
+                    <td>HL7</td>
+                    <td>Identity of the person who actually keyed the request into the application.</td>
+                </tr>
+                <tr>
+                    <td>ExpirationDate</td>
+                    <td>RXA-16</td>
+                    <td>HL7</td>
+                    <td>Expiration date of the medical substance administered.</td>
+                </tr>
+                <tr>
+                    <td>ImmunizationCode</td>
+                    <td>RXA-5-1</td>
+                    <td>HL7</td>
+                    <td>Pharmacy or treatment administration code. </td>
+                </tr>
+                <tr>
+                    <td>ImmunizationID</td>
+                    <td>ImmunizationID
+</td>
+                    <td>Amalga</td>
+                    <td>
+                        <p>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.Immunization entity and identifier for the medical substance or treatment administered. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ImmunizationName</td>
+                    <td>RXA-5-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the medical substance or treatment administered.</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>RXR-11</td>
+                    <td>HL7</td>
+                    <td>Location where the medical substance or treatment is administered.</td>
+                </tr>
+                <tr>
+                    <td>ManufacturerCode</td>
+                    <td>RXA-17-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for a substance manufacturer.</td>
+                </tr>
+                <tr>
+                    <td>ManufacturerName</td>
+                    <td>RXA-17-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the manufacturer of the medical substance administered.</td>
+                </tr>
+                <tr>
+                    <td>Notes</td>
+                    <td>RXA-9</td>
+                    <td>HL7</td>
+                    <td>Notes from the provider administering the medication or treatment.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>Reaction</td>
+                    <td>OBX-5</td>
+                    <td>HL7</td>
+                    <td>Value observed by the observation producer.</td>
+                </tr>
+                <tr>
+                    <td>ReactionNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized value observed by the observation producer.</td>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td>RXA-13</td>
+                    <td>HL7</td>
+                    <td>Administered strength.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Route codes.</td>
+                </tr>
+                <tr>
+                    <td>TypeNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized route codes.</td>
+                </tr>
+                <tr>
+                    <td>VaccineLotNumber</td>
+                    <td>RXA-15</td>
+                    <td>HL7</td>
+                    <td>Lot number of the medical substance administered.</td>
+                </tr>
+                <tr>
+                    <td>VaccineProvider</td>
+                    <td>RXA-17-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the manufacturer of the medical substance administered.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

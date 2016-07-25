@@ -1,0 +1,43 @@
+/*<meta fileTags="TopicOwner.StyleMasterResource" conditions="Production.StyleMaster" />*/
+
+h1.numbered
+{
+	mc-auto-number-format: 'GH:{n+}  ';
+	mc-hyphenate: never;
+	font-size: 24pt;
+}
+
+h2.numbered
+{
+	mc-auto-number-format: 'GH:{n}.{n+}  ';
+	mc-hyphenate: never;
+	font-size: 20pt;
+}
+
+h3.numbered
+{
+	mc-auto-number-format: 'GH:{n}.{n}.{n+1}  ';
+	mc-hyphenate: never;
+	font-size: 17pt;
+}
+
+h4.numbered
+{
+	mc-auto-number-format: 'GH:{n}.{n}.{n}.{n+1}  ';
+	mc-hyphenate: never;
+}
+
+h1.appendix
+{
+	mc-auto-number-format: 'GA:Appendix {A+}: ';
+	mc-hyphenate: never;
+	font-size: 24pt;
+}
+
+MadCap|xref.DepGuideXRefWithAutoNumbering
+{
+	mc-format: '{paranum}{paratext}';
+	font-weight: normal;
+	color: #0000ff;
+}
+

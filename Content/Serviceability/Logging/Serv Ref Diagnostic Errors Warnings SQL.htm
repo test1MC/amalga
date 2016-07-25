@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="479" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Diagnostic errors and warnings query</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>All logged errors and warnings<MadCap:change MadCap:changes="2"> are</MadCap:change><MadCap:change MadCap:changes="1">, </MadCap:change>sorted by date. </p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE Level &lt; 18
+  ORDER BY TimeStampUTC
+</pre>
+    </body>
+</html>

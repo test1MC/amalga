@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1021" MadCap:lastWidth="552" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Package a hosted application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="package;hosted applications" />This topic describes how to package a hosted application in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> for deployment. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-29T08:05:01.1385503-07:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Topic is in &quot;temporary&quot; TOC location for CTP1. Once &quot;Deploying hosted applications&quot; is introduced post-CTP1, this topic will live under it in TOC." MadCap:editor="v-dennk" MadCap:editDate="2011-10-29T08:05:28.0989468-07:00">Before</MadCap:annotation> a hosted application can be deployed in an Amalga topology for production purposes, it must first be compressed into a Doors cabinet (.cab) file with a specific folder structure, called a package. The package can then be used by the various deployment tools included with the Amalga platform to deploy the hosted application and provide the infrastructure and metadata necessary to <a href="Renamed Me.htm">configure</a>, run, monitor, and manage the hosted application.</p>
+        <p>To make the packaging process easier, <MadCap:variable name="FeatureName.Amalga SDK" /> includes a packaging feature that can be run from within <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> to package a hosted application. The following procedure describes how to use the packaging feature.</p>
+        <p class="note">Before you can use the packaging feature, the hosted application must be built in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</p>
+        <p class="LabelforProcedures">To package a hosted application in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /></p>
+        <ol>
+            <li>Ensure that all projects required for the hosted application, including all projects that have a reference to the project for the hosted application, have been built prior to packaging.</li>
+            <li>
+                <p>In Solution Explorer, right-click the project for the hosted application to be packaged, and then click <span class="UIElementAction">Package Application</span>.</p>
+            </li>
+            <li>Specify the folder in which the package should be saved, and then type the name of the Doors cabinet (.cab) file for the package in <span class="UIElementAction">File name</span>.</li>
+            <li>Click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_Publish_App.htm" target="" title="" alt="">Publish a hosted application for debugging on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_CON_Deploy_Test_Dev.htm" target="" title="" alt="">Debugging a hosted application on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_CON_Deploy_Amalga_Hosted_Apps.htm" target="" title="" alt="">Deploying hosted applications on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

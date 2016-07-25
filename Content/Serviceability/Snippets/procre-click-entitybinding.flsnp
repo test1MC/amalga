@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="44" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>The entity binding pane appears in the details pane, listing the default binding source and any additional binding sources configured for the selected entity.  See <MadCap:xref href="../Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref> for more information. </body>
+</html>

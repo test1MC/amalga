@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="722.3333" MadCap:lastWidth="831" MadCap:fileTags="ReleaseTarget.TAP,Status.30 - Development: over 50%,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Lookups.usf_Terminology_ConvertCodeToCode function</h1>
+        <p>
+            <MadCap:keyword term="Lookups.usf_Terminology_ConvertCodeToCode function" />Maps an incoming terminology code to a destination terminology code.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[&lt;Lookup&gt;			
+   &lt;Function&gt;<b>Lookups.usf_Terminology_ConvertCodeToCode</b>&lt;/Function&gt;
+   &lt;InputParameters&gt;
+      &lt;Parameter&gt;Name="incomingConceptCode"...&lt;/Parameter&gt;
+      &lt;Parameter&gt;Name="conversionTerminologyId"...&lt;/Parameter&gt;
+   &lt;/InputParameters&gt;
+&lt;/Lookup&gt;]</span></p></pre>
+        <h4>Parameters</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td class="Parameter">incomingConceptCode</td>
+                    <td>System.String</td>
+                    <td>
+                        <p>A terminology code string. For example, the ICD code string is 480.1.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Parameter">conversionTerminologyId</td>
+                    <td>System.String</td>
+                    <td>HLI GUID for terminology mapping content set. For example, the ICD9 to SNOMED conversion mapping content-set GUID is ABjfrwDwaR0MBAI62I5XRA.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Return value</h4>
+        <p>VARCHAR(400)</p>
+        <p>If there are multiple matches, only one will be returned.</p>
+        <h4>Remarks</h4>
+        <p>For a list of valid attributes to use with this function, see the <MadCap:xref href="DI_XML_Manifest_Parameter.htm" target="" title="" alt="">Parameter element</MadCap:xref>. Apply this terminology function to any segment element (or column) that you declare in the data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="AAA_NewNAME.htm">Terminology lookup functions</a>
+        </p>
+        <p><a href="DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+    </body>
+</html>

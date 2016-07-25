@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet conditions="Default.StyleMaster,Production.StyleMaster">
+    <Variable Name="Windows cabinet (.cab)" Comment="Filename.Windows cabinet (.cab)" Definition="Some text">Windows cabinet (.cab)</Variable>
+</CatapultVariableSet>

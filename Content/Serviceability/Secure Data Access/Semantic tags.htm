@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:lastBlockDepth="5" MadCap:lastHeight="1287" MadCap:lastWidth="621" MadCap:fileTags="TopicType.Concept,Personas.All,TopicOwner.v-padenc,ReleaseTarget.TAP,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Semantic tags</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="semantic tags;terminology;entity registry;entities;tags:semantic" />
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-12-19T17:08:21.4064085-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Marked as DNB and Not in Use. Dennis wrote a topic on semantic tags so this is redundant. " MadCap:editor="v-padenc" MadCap:editDate="2012-02-16T09:48:38.4353786-08:00">This topic </MadCap:annotation>introduces the concept of semantic tags. </p>
+        <p>A semantic tag is a standard terminology concept that provides definitive meaning to an entity or one of its properties.  When multiple semantic tags are applied to an entity or entity property, the definitive meaning of the entity or property is the logical disjunction of all tags; that is, the tags are treated as a logical OR. </p>
+        <p>Semantic tags  facilitate organization and search, as well as improving performance. The <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" /> uses semantic tags to deterministically establish the relationship between an entity and one to many database tables and views. When a table or view has one or more semantic tags matching those of an entity, the table or view is recommended for access inheritance. When a column from a table or view has one or more <MadCap:annotation MadCap:createDate="2012-01-05T06:24:47.2582549-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="add example of a column and entity property with matching tags (maybe have the property with 2 tags, the column with 1 tag)" MadCap:editor="v-padenc" MadCap:editDate="2012-01-05T06:24:47.7182549-08:00">semantic tags matching </MadCap:annotation>those of a property within an entity, the column is recommended for binding to that property. </p>
+        <p>Tables, views, and columns <MadCap:annotation MadCap:createDate="2011-12-28T09:46:03.7998016-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="xref to Dennis's topic on tagging columns. from 79429 spec: &quot;If a developer builds an additional SQL view to wrap around ingested data, he can assign meaning to each column of SQL view. The meaning for each data vector (a column of an ingested table or a view) is stored inside of data catalog.&quot;" MadCap:editor="v-padenc" MadCap:editDate="2011-12-28T09:46:38.9768668-08:00">typically</MadCap:annotation> receive semantic tags from <MadCap:annotation MadCap:createDate="2011-12-28T09:40:50.4195272-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="need xref for data ingestion topic on tagging" MadCap:editor="v-padenc" MadCap:editDate="2011-12-28T09:40:58.1937416-08:00">parsers during data ingestion</MadCap:annotation>. </p>
+        <p>Entities and entity properties can have semantic tags applied or removed through the <MadCap:variable name="UI-Labels.Entity Management" /> module. For example, if you want additional columns to be recommended for binding to an entity property, you can add the corresponding semantic tags to the property. For more information about applying semantic tags to entities and entity properties, see <MadCap:xref href="../../DataPlatform1/DP_Task_EditEntity.htm" target="" title="" alt="">Edit entities</MadCap:xref>.</p>
+        <MadCap:snippetBlock src="../../DataPlatform1/Snippets/info-EMT-SemanticTagMax.flsnp" />
+        <h2>Semantic tag components </h2>
+        <p>An <MadCap:variable name="BrandingHSG.Amalga Short" /> semantic tag (or "concept") is fully qualified when it contains the components indicated in the following <MadCap:annotation MadCap:createDate="2011-12-28T09:14:00.0478592-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="consider updating image to use &quot;semantic tag&quot; instead of &quot;concept&quot; (this image from 79429 spec)" MadCap:editor="v-padenc" MadCap:editDate="2011-12-28T09:58:12.7114090-08:00">image</MadCap:annotation>. </p>
+        <p>
+            <img src="../../DataPlatform1/Images/SemanticTagExample.png" />
+        </p>
+        <p>Components of fully qualified semantic tags in <MadCap:variable name="BrandingHSG.Amalga Short" />:&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Concept component</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Domain</td>
+                    <td>Source terminology for semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Code</td>
+                    <td>Numerical identifier of semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Meaning</td>
+                    <td>User-friendly description of semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Unique identifier</td>
+                    <td>Globally unique identifier (GUID) assigned to the semantic tag by the terminology vendor to optimize implementation. </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Shipped terminologies</h2>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> is shipped with several terminologies, <MadCap:annotation MadCap:createDate="2011-12-28T09:19:03.6228592-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="2/1 sent query to Chris and Dennis on proper location for list of shipped terminologies. per Dongbai 1/17: &quot;this list is complete and does not belong to this section of the documentation... should go to the terminology documentation concept section.&quot; " MadCap:editor="v-padenc" MadCap:editDate="2012-02-01T07:03:45.6277932-08:00">including the following</MadCap:annotation>:&#160;</p>
+        <ul>
+            <li><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable>:&#160;defines semantic tags specific to <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable></li>
+            <li>CDA:&#160;defines semantic tags related to HL7 CDA/CCD </li>
+            <li><MadCap:variable name="Imaging.DICOM"></MadCap:variable>:&#160;defines semantic tags related to medical imaging communication</li>
+            <li>HL7 V2.6</li>
+            <li>ICD-9</li>
+            <li>ICD-10</li>
+            <li>LOINC</li>
+            <li>RxNorm</li>
+            <li>SNOMED</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p class="CHANGEME">&gt;&gt;add xref to topic discussing data ingestion setup that is related to semantic tags</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/DP_Task_AddEntity.htm" target="" title="" alt="">Create entities</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/DP_Task_EditEntity.htm" target="" title="" alt="">Edit entities</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Reference</p>
+        <p>
+            <MadCap:xref href="../Management Console/Entity Management/SERV_VREF_SemanticTags.htm" target="" title="" alt="">Semantic Tags dialog box</MadCap:xref>
+        </p>
+    </body>
+</html>

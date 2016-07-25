@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1362" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.50 - InTech Review">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Remove-AmRoleFromAccessLevel</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="roles;security;access control framework;framework:access control;permissions;Management Console;users" />The Remove-AmRoleFromAccessLevel cmdlet removes permissions for application access levels from the specified           <![CDATA[ ]]><MadCap:variable name="BrandingHSG.Amalga Short" /> roles.   </p>
+        <p><strong>Amalga built-in role membership required:</strong>  AmalgaAppAdmin or AmalgaSysAdmin  </p>
+        <p>For more information, see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.  </p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Remove-AmRoleFromAccessLevel -ApplicationOrFeatureInstanceName &lt;String&gt; -AccessLevelName &lt;String&gt; -Roles &lt;String&gt; </p>
+        <h2>Parameter descriptions</h2>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-ApplicationorFeatureInstanceName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-AccessLevelName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-Roles.flsnp" />
+        <p class="h8">Example</p>
+        <p class="InputText">Remove-AmRoleFromAccessLevel -ApplicationorFeatureInstanceName LabApp1 -AccessLevelName Writer -Roles DomainName\LabAdmin,DomainName\Manager</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Secure Data Access/SERV_TASK_App-PermAdd.htm" target="" title="" alt="">Grant and remove permissions to an application</MadCap:xref>
+        </p>
+        <p><a href="PowerShellLanding.htm">Load DLL for cmdlet access</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="PS_Ref_Add-AmRoleToAccessLevel.htm" target="" title="" alt="">Add-AmRoleToAccessLevel</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Secure Data Access/SERV_CON_RolesApps.htm" target="" title="" alt="">Roles and applications</MadCap:xref>
+        </p>
+    </body>
+</html>

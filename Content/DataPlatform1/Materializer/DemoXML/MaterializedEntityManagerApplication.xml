@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/application"
+                    Type = "Application"
+                    Name="MaterializedEntityManagerApplication"
+                    InstanceName="MaterializedEntityManagerApplication_Ins1"
+                    Id ="81025360-2396-46c2-97db-9bd27938ee5b"
+                    Version ="1.0.0.0">
+
+    <Settings>
+        <!--
+    <Setting Name="SampleSetting" Type="System.String" >
+      <DefaultValue>
+
+      </DefaultValue>
+    </Setting>
+    -->
+    </Settings>
+
+
+  <Dependencies>
+    <Dependency Name="TerminologyAppDependency" InstanceName="TerminologyApplication_Ins1" Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" />
+  </Dependencies>
+
+    <ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0"/>
+</DeploymentManifest>

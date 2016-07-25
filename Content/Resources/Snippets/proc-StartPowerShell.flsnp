@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="128" MadCap:lastWidth="643" MadCap:conditions="Default.StyleMaster">
+    <head>
+    </head>
+    <body>
+        <p>Start <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" />:&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then click <span class="UIElementAction">Doors PowerShell</span>.</p>
+    </body>
+</html>

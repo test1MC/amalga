@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2629" MadCap:lastWidth="480.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Updating an entity</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to update an entity using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can update an existing entity by invoking the <span class="codeEntity">UpdateEntity</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">UpdateEntity</span>, you must specify an <span class="codeEntity">Entity</span> object that represents the entity to be updated.</p>
+        <p>An entity cannot be updated if any of the following conditions are true:</p>
+        <ul>
+            <li>
+                <p>The entity has already been bound to an instance of a virtual schema.</p>
+                <p>However, you can still use the UpdateEntityBindings operation to update the entity bindings for this entity. For more information about updating entity bindings, see <MadCap:xref href="VSS_CON_UpdateEntityBindings.htm" target="" title="" alt="">Updating entity bindings on page 1</MadCap:xref>.</p>
+            </li>
+            <li>The entity has one or more Access Control Framework (ACF) rules associated with it.</li>
+        </ul>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>Working with Entity</li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2>Working with the Entity object</h2>
+        <p>The Entity object represents an entity to be updated in the <MadCap:variable name="FeatureName.Amalga entity registry" />. The Entity object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AppEntityBindingMaps</td>
+                    <td>An array of AppEntityBindingMap objects representing an ordered collection of entity bindings between the entity and application views.</td>
+                </tr>
+                <tr>
+                    <td>Concepts</td>
+                    <td>An array of ConceptInfo objects representing the bindings between the entity and concepts managed by the Terminology platform application. For more information about concepts, see <MadCap:xref href="../Terminology/TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Optional. A string containing a human-readable description of the entity.</td>
+                </tr>
+                <tr>
+                    <td>EntityBindingMaps</td>
+                    <td>An array of AppEntityBindingMap objects representing an ordered collection of entity bindings between the entity and other entities.</td>
+                </tr>
+                <tr>
+                    <td>EntityBindings</td>
+                    <td>An array of EntityBinding objects representing the entity bindings between the entity and the storage schema.</td>
+                </tr>
+                <tr>
+                    <td>EntityConstraints</td>
+                    <td>An array of EntityConstraint objects representing the constraints on properties for the entity. For more information about entity constraints, see <MadCap:xref href="VSS_CON_CreateEntityAssoc.htm" target="" title="" alt="">Creating an entity association on page 1</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>EntityContainer</td>
+                    <td>An EntityContainer object representing the entity container that holds the entity.</td>
+                </tr>
+                <tr>
+                    <td>EntityProperties</td>
+                    <td>An array of EntityProperty objects representing the properties of the entity.</td>
+                </tr>
+                <tr>
+                    <td>Flags</td>
+                    <td>An integer representing flags for the entity.</td>
+                </tr>
+                <tr>
+                    <td>FriendlyName</td>
+                    <td>A string containing the human-readable name of the entity. For example, the FriendlyName property of the Imaging.Correlation entity is set to "Dicom - HL7 - Correlation".</td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>
+                        <p>A System.Guid object representing the globally unique identifier (GUID) of the entity.</p>
+                        <p class="note">You must specify a value for this property.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsDataPublished</td>
+                    <td>A Boolean indicating whether the data for this entity is published.</td>
+                </tr>
+                <tr>
+                    <td>IsEntityPublished</td>
+                    <td>A Boolean indicating whether the entity is published.</td>
+                </tr>
+                <tr>
+                    <td>IsEventingPublished</td>
+                    <td>A Boolean indicating whether Data Change Notification (DCN) has been enabled for the entity. For more information about Data Change Notification, see <MadCap:xref href="../DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification on page 1</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>IsLocked</td>
+                    <td>A Boolean indicating whether the entity is locked.</td>
+                </tr>
+                <tr>
+                    <td>IsOptional</td>
+                    <td>A Boolean indicating whether the entity is optional.</td>
+                </tr>
+                <tr>
+                    <td>IsPrivate</td>
+                    <td>A Boolean indicating whether the entity is private.</td>
+                </tr>
+                <tr>
+                    <td>IsWritable</td>
+                    <td>A Boolean indicating whether the entity is writeable.</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>A string representing the name of the entity.</td>
+                </tr>
+                <tr>
+                    <td>Schema</td>
+                    <td>A string representing the namespace of the entity.</td>
+                </tr>
+                <tr>
+                    <td>Summary</td>
+                    <td>A string representing a summary of the entity.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>An integer representing the type of the entity.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When invoked, the UpdateEntity operation performs the following steps:</p>
+        <ol>
+            <li>Ensures that the specified entity exists in the <MadCap:variable name="FeatureName.Amalga entity registry" />. Otherwise, an exception is thrown.</li>
+            <li>Ensures that the specified entity has not been bound to an instance of a virtual schema. Otherwise, an exception is thrown.</li>
+            <li>Ensures that the specified entity does not have any ACF rules. Otherwise, an exception is thrown.</li>
+            <li>
+                <p>Validates the specified Entity object,  to ensure that the following conditions are met. If the following conditions are not met, an exception is thrown:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>The Id property is set to a valid GUID.</li>
+                    <li>The Name property is set to a valid entity name.</li>
+                    <li>For each EntityProperty object included in the array for the EntityProperties property, ensure that:<ol style="list-style-type: lower-roman;"><li>The Id property is set to a valid GUID.</li><li>The Name property is set to a valid entity property name.</li><li>The DataType property is set to a valid data type.</li><li>If the IsIdentity property is set to true, then the IsNullable property must be set to false and the DataType property, and, if applicable, Scale property must be set to a data type and scale, respectively, that is valid for entity properties that represent identity columns.</li></ol></li>
+                    <li>Ensure that one and only one EntityConstraint object for which the ConstraintType property is set to EntityConstraintType.PrimaryKey is included in the array for the EntityConstraints property, and that EntityConstraint object represents a valid primary key constraint.</li>
+                </ol>
+            </li>
+            <li>Delete existing concept mappings, if any, associated with the entity.</li>
+            <li>Update the attributes of the entity, using the values of the Schema, Name, FriendlyName, Flags, Description, and Summary properties for the Entity object.</li>
+            <li>Update the entity properties included in the array for the EntityProperties property of the Entity object.</li>
+            <li>Update the primary key constraint included in the array for the EntityConstraints property of the Entity object.</li>
+            <li>Commit the transaction</li>
+            <li>Return an EntityInfo object representing the updated entity.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

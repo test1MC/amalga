@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1"
+  conditions="Production.doNOTbuild">
+  <TocEntry
+    Title="Requesting a virtual machine"
+    Link="/Content/Standards and Style Guides/UA Procedures/UAP_VM_Nav.htm">
+    <TocEntry
+      Title="New entry 1" />
+    <TocEntry
+      Title="New entry 2" />
+  </TocEntry>
+</CatapultToc>

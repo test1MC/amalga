@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2132" MadCap:lastWidth="882" MadCap:fileTags="TopicType.Concept,Personas.Carlos: IT Admin,ReleaseTarget.TAP,TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Logical architecture</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the conceptual software architecture which supports application development.</p>
+        <p>The logical view of <MadCap:variable name="BrandingHSG.Amalga Short" /> architecture contains the main service layers and their key functions. Not all of the layers are required to create a useful system. Taken together, the application services and platform services layers form the foundation for application runtime execution. With those layers in place, the services exist to support an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application.</p>
+        <p>If an enterprise wants to standardize on a <MadCap:variable name="BrandingMS.SharePoint" /> delivery mechanism for its applications, the <MadCap:variable name="BrandingMS.SharePoint" /> layer can be added to provide specialized <MadCap:variable name="BrandingHSG.Amalga Short" /> support in addition to the standard <MadCap:variable name="BrandingMS.SharePoint" /> capabilities.</p>
+        <p class="Figure">
+            <img src="../Images/ArchLogical_1.png" />
+        </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Platform" target="" title="" alt="">Platform services</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Applicat" target="" title="" alt="">Application services</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#service" target="" title="" alt=""> services</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Applicat2" target="" title="" alt="">Application layers</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Manageme" target="" title="" alt="">Management services</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Platform"></a>Platform services</h2>
+        <p>The platform services layer supports all the system, data access, and application management functions. This layer forms the foundation of <MadCap:variable name="BrandingHSG.Amalga Short" /> , and its services are primarily exposed by <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> endpoints. For more information on these endpoints, see <MadCap:xref href="../../Amalga_PlatformSDK/Services/SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt="">Service Endpoint Reference</MadCap:xref>. </p>
+        <p><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> introduces the concept of an <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. A topology is the set of services, applications, features, logical hosts and physical hosts that are registered in the <MadCap:variable name="Databases.AmalgaSystem" /> database (the main topology store). One of the primary functions of platform services is to manage the installation and configuration of all the topology components.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-01-16T15:19:10.3679651-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="List these in the order they are in the image?  Each of the sections that is important enough to put in the diagram should be noted here." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-16T15:20:05.5714219-08:00">Other major functions</MadCap:annotation> of the platform services layer include the following:</p>
+        <ul>
+            <li>Logging of operational, performance, and auditing data</li>
+            <li>Support for the entity registry and virtual schema abstraction layers</li>
+            <li>Authentication and authorization</li>
+            <li>Data access support for ADO.NET, OLE DB, and AmalgaDataSource</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2012-01-18T23:16:45.4325876-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Non-parallel construction starts here.  FYI, no change needed for CTP2." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-18T23:17:24.7665206-08:00">Topology</MadCap:annotation> web service record of  everything that is deployed and managed as part of the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology</li>
+            <li>Registration web service is used to register new features or applications</li>
+            <li>Discovery web service provides service configuration and topology registration information</li>
+            <li>Central configuration service provides a method to store configuration information for any requesting service</li>
+        </ul>
+        <h2><a name="Applicat"></a>Application services</h2>
+        <p>The application services layer provides the runtime environment for an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application. For more information on the definition of an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application, see <MadCap:xref href="../../Amalga_PlatformSDK/SDK_CON_Application_Architecture_Pattern.htm" target="" title="" alt="">Hosted applications</MadCap:xref>. Because application services can be installed on servers independently from platform services, some capabilities such as data access support are in both platform and application services.</p>
+        <p>The application services layer contains an application hosting platform that enables the server to deploy and host services supporting <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications. It includes special .NET libraries, applications and <MadCap:variable name="BrandingMS.Doors PowerShell" /> functionality.</p>
+        <h2><a name="service"></a><MadCap:variable name="BrandingMS.SharePoint" /> services</h2>
+        <p>By including <MadCap:variable name="BrandingMS.SharePoint" /> in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology, an enterprise can take advantage of standard <MadCap:variable name="BrandingMS.SharePoint" /> capabilities such as site collections, list management, and document libraries. In addition, <MadCap:variable name="BrandingHSG.Amalga Short" /> provides additional support for <MadCap:variable name="BrandingHSG.Amalga Short" /> applications authored in <MadCap:variable name="BrandingMS.SharePoint" />.</p>
+        <ul>
+            <li>A collection of <MadCap:variable name="BrandingHSG.Amalga Short" />-specific <MadCap:variable name="BrandingMS.SharePoint" /> controls which enable <MadCap:variable name="BrandingHSG.Amalga Short" /> development. The controls include validators, patient-oriented functions, gridviews, and data sources.</li>
+            <li>Runtime support for extended functions such as context sharing between <MadCap:variable name="BrandingMS.SharePoint" /> controls.</li>
+            <li>A basic portal framework including the following sites:<ul style="list-style-type: circle;"><li><strong>Patient</strong>: Used by the enterprise to communicate to patients, family, and caregivers.</li><li><strong>Internal Provider</strong>: Used by providers inside the institution to view information about their patients.</li><li><strong>Staff</strong>: Used by the institution staff (billing or registration staff) to respond to patient and provider inquiries.</li><li><strong>Public</strong>: Used to provide an <MadCap:variable name="BrandingHSG.Amalga Short" /> experience for an unauthenticated user.</li></ul></li>
+        </ul>
+        <h2><a name="Applicat2"></a>Application layers</h2>
+        <p>The two application layers in the logical architecture diagram correspond to applications that are either running directly on top of the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform (platform and application services layer), or on top of <MadCap:variable name="BrandingMS.SharePoint" />. The applications can include those provided by <MadCap:variable name="BrandingHSG.Amalga Short" />, and also third party or customer developed applications.</p>
+        <p>For more information on application development, see <MadCap:xref href="../../Amalga_PlatformSDK/SDK_LND_Developers_Guide.htm" target="" title="" alt="">Developing an Amalga application</MadCap:xref>.</p>
+        <h2><a name="Manageme"></a>Management services</h2>
+        <p>The platform services layer includes the infrastructure to manage the topology. Layered on top of that infrastructure is an administrative tool called the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. This graphical interface supports administrators in managing the properties of the following <MadCap:variable name="BrandingHSG.Amalga Short" /> components.</p>
+        <ul>
+            <li>System Components<ul style="list-style-type: circle;"><li><MadCap:annotation MadCap:createDate="2012-01-18T23:23:13.1393544-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Does this refer to Brett's Features list?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-18T23:23:40.1430545-08:00">Features</MadCap:annotation></li><li>Logical hosts</li><li>Physical hosts</li><li>Data hosts</li></ul></li>
+            <li>Hosted applications<ul style="list-style-type: circle;"><li>Services supporting hosted applications</li></ul></li>
+            <li>Data entities<ul style="list-style-type: circle;"><li>Bindings</li><li>Access policies</li><li>Sensitive labels</li></ul></li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Arch_Concept_Physical.htm" target="" title="" alt="">Physical architecture</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Arch_Concept_DataPipe.htm" target="" title="" alt="">Data architecture</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

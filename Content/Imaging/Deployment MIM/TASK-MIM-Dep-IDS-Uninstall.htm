@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Uninstall <MadCap:variable name="Imaging.Image Delivery server" /> application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:IDA deployment" />Please refer to the instructions to uninstall <MadCap:variable name="BrandingHSG.Amalga Short" />-hosted applications using <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. After completing the installation steps, remove the remaining <MadCap:variable name="Imaging.Image Delivery server" /><![CDATA[ ]]><MadCap:variable name="TechnicalTerms.REST" /> service bits by running the following command.</p>
+        <p class="InputText">.\SetupImageDeliveryRestService.ps1 -Uninstall -RestServiceInstanceName <span class="InputTextVariable">RestServiceInstanceName</span></p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Placeholder	</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="InputTextVariable">RestServiceInstanceName</td>
+                    <td>The instance name for the respective <MadCap:variable name="Imaging.Image Delivery server" /><![CDATA[ ]]><MadCap:variable name="TechnicalTerms.REST" /> service instance.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>This script must be run on each node of the logical host or hosts that hosted one or more <MadCap:variable name="Imaging.Image Delivery server" /> application instance.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-DEP-IDS.htm">Deploy Image Delivery Application on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep.htm">Installation steps on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

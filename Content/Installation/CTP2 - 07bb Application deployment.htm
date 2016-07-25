@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1749" MadCap:lastWidth="412" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Deploy Application</h1>
+        <p>After you resolve the application manifests, continue the application installation by following the procedures in this section. For more  information about the <MadCap:variable name="BrandingMS.Doors PowerShell 2.0"></MadCap:variable> commands used in this section, see <MadCap:xref href="Install Ref Appendix B PowerShell Ref.htm" target="" title="" alt="">Amalga Doors PowerShell reference</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To install an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> hosted application</p>
+        <ol>
+            <li>Prepare the <MadCap:variable name="BrandingMS.Doors PowerShell"></MadCap:variable> environment.<ol style="list-style-type: lower-alpha;"><li>Log on to the target server. </li><li><MadCap:snippetText src="../Resources/Snippets/proc-StartPowerShell.flsnp"></MadCap:snippetText></li><li>Load Microsoft.Amalga.Deployment.RuntimeLib.dll:<ol style="list-style-type: lower-roman;"><li><p>Navigate to the appropriate directory. </p><p>The default installation directory is: C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell</p></li><li><p>Enter the following cmdlets. </p><p class="InputTextPara">Import-Module .\Microsoft.Amalga.Deployment.RuntimeLib.dll</p><p class="InputTextPara">Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</p></li></ol></li></ol></li>
+            <li>
+                <p>Publish the application to the topology by entering the following cmdlet and replacing the variables with the appropriate values from the following table.</p>
+                <p class="note">There may be one or more service manifests associated with the application. The example shows two, but the same syntax would apply for any number of service manifests.</p>
+                <p class="InputTextPara">Publish-ApplicationInstance -ApplicationCabFile "ApplicationCabPath" -ApplicationAuxiliaryFiles "<span class="Placeholder">AppManifestPath</span>; <span class="Placeholder">ServiceManifestPath1</span>; <span class="Placeholder">ServiceManifestPath2</span>"</p>
+                <table style="width: 95%;">
+                    <col>
+                    </col>
+                    <col>
+                    </col>
+                    <thead>
+                        <tr>
+                            <th>Variables </th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ApplicationCabPath</td>
+                            <td>Local or UNC path to the application CAB file, including the file name. For example, C:\Manifest\Application.cab.</td>
+                        </tr>
+                        <tr>
+                            <td>AppManifestPath</td>
+                            <td>Local or UNC path to the application manifest, including the file name. For example, C:\Manifest\TestApplication1.xml.</td>
+                        </tr>
+                        <tr>
+                            <td>ServiceManifestPath</td>
+                            <td>Local or UNC path to the service manifest, including the file name. For example, C:\Manifest\TestWCFAmalgaService1.xml.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Deploy the application <MadCap:variable name="FeatureName.virtual schema"></MadCap:variable> by entering the following cmdlet and replacing the variables with the appropriate values from the following table.</p>
+                <p class="note">This step is only required if the application CAB file contains an EDMX file.</p>
+                <p class="InputTextPara">New-AmVirtualSchema -ApplicationInstanceName "<span class="Placeholder">AppInstanceName</span>" -DataHostInstanceName "DbServerInstance"</p>
+                <table style="width: 95%;">
+                    <col>
+                    </col>
+                    <col>
+                    </col>
+                    <thead>
+                        <tr>
+                            <th>Variables </th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AppInstanceName</td>
+                            <td>Unique application instance name selected in the application manifest resolution step.</td>
+                        </tr>
+                        <tr>
+                            <td>DataHostInstanceName</td>
+                            <td>
+                                <p>Alias name of the database server instance.</p>
+                                <p class="caution">For <MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable>, this parameter is required in the format <br MadCap:conditions="Production.PrintOnly"></br>"FQDNServer_InstanceName".</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Bind the <MadCap:variable name="FeatureName.virtual schema"></MadCap:variable> entities as required. After deploying the application <MadCap:variable name="FeatureName.virtual schema"></MadCap:variable>, you may receive a warning that you need to bind some of the deployed virtual entities.</p>
+                <p class="code" style="font-size: 10pt;">WARNING: Virtual schema created but there are entities that are not bound to the store. Application queries will not work till these are bound.</p>
+                <p>For information about how to bind the entities, <MadCap:annotation MadCap:createDate="2012-01-04T07:49:28.8901071-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="FYI. Changed xref to point to an overview topic; the previous topic is being retired." MadCap:editor="v-padenc" MadCap:editDate="2012-01-04T07:49:33.8596040-08:00">see</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>. </p>
+            </li>
+            <li>
+                <p>Synchronize the physical host by entering the following cmdlet.</p>
+                <p class="InputText">Sync-PhysicalHost</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="734" MadCap:fileTags="EditingTags.1 - Ready for Edit,Personas.All,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-dennk,TopicType.Concept">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Start Event Viewer.</p>
+        <p>To start Event Viewer by using the Doors interface, click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">Control Panel</span>, click <span class="UIElementAction">System and Maintenance</span>, click <span class="UIElementAction">Administrative Tools</span>, and then double-click <span class="UIElementAction">Event Viewer</span>.</p>
+        <p>To start Event Viewer by using a command line, click <span class="UIElementAction">Start</span>, type eventvwr, and then press Enter.</p>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1173" MadCap:lastWidth="336" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Deleting a DCN event type</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event types:Data Change Notification platform application;Data Change Notification platform application:event types;DeleteEventType method:Data Change Notification platform application;Data Change Notification platform application:DeleteEventType method;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;ResourceState enumeration:Data Change Notification platform application;Data Change Notification platform application:ResourceState enumeration" />This topic describes the process involved in deleting an existing Data Change Notification (DCN) event type by using the DeleteEventType operation.</p>
+        <p>A hosted application can delete a DCN event type, which also deletes the DCN event subscriptions associated with the specified DCN event type, by calling the DeleteEventType operation in the IEventManagementService contract for the EventingManagerService service.</p>
+        <p class="note">Only the user account that created the DCN event type can delete that DCN event type. The user account that calls the DeleteEventType operation must match the value of the Owner property for the EventType object that represents the DCN event type to be deleted. Otherwise, an error occurs.</p>
+        <p>The DCN event type isn't actually deleted, however. Instead, the DCN event type is retired - the EventingManagerService sets the value of the State property for the EventType object that represents the DCN event type to ResourceState.Retired. Retired DCN event types are ignored for the purposes of tracking, queuing, dispatching, or sending DCN event messages. </p>
+        <p class="Figure">The DeleteEventType operation performs the following tasks when deleting a DCN event type:</p>
+        <ul>
+            <li>Deletes existing relationships between the DCN event type and existing DCN subscriptions.</li>
+            <li>Deletes existing DCN subscriptions for the DCN event type.</li>
+            <li>After all dependent objects are deleted, retires the DCN event type.</li>
+        </ul>
+        <p class="caution">DCN event messages in the DCN message queue are not deleted when a DCN event type is retired. The DCN event subscriptions for the retired DCN event type are, however, deleted, so DCN event messages can become orphaned in the DCN message queue.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

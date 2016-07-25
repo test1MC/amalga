@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="906.6666" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.15 - Blocked">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Update-AmSTSTokenSigningCertificate</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>    Updates the non-primary Security Token Service (STS) token signing certificate. </p>
+        <h2 MadCap:conditions="">Syntax</h2>
+        <p class="Syntax">Update-AmSTSTokenSigningCertificate -Identifier &lt;String&gt; -TokenSigningCertificate &lt;String&gt;</p>
+        <h2 MadCap:conditions="">Parameter descriptions</h2>
+        <p class="h7">[-Identifier] &lt;string&gt;</p>
+        <p>Takes the identifier of the non-primary Security Token Service (STS).</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Identifier of the non-primary Security Token Service (STS).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-TokenSigningCertificate] &lt;string&gt;</p>
+        <p>Takes the token signing certificate of the non-primary Security Token Service (STS), encoded as a base64 string. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Token signing certificate encoded as a <MadCap:annotation MadCap:createDate="2012-03-09T13:05:10.9654524-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="sample from Pritvi 3/9 includes example of encoding the certificate into the $cert64 seen in the example below" MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T13:05:46.4289984-08:00">base64 string.</MadCap:annotation> Example: $cert64</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="">Example</p>
+        <p class="InputText">Update-AmSTSTokenSigningCertificate -Identifier Sharepoint -TokenSigningCertificate $cert64</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+    </body>
+</html>

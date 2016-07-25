@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2870" MadCap:lastWidth="790" MadCap:conditions="Production.StyleMaster">
+    <body>
+        <p class="h8">JQuery and JQuery UI Third Party Code Notice</p>
+        <p>This software is based on or incorporates material from the files listed below (collectively, “Third Party Code”).  Please Note:  Microsoft is not the original author of the Third Party Code.  The URL for the original file source, the original copyright notice and the license under which Microsoft received Third Party Code are set forth below together with the full text of such license. Such notices and license are provided solely for your information.  Microsoft, not the third party, licenses this Third Party Code to you under the terms set forth in the license agreement for Microsoft Amalga 3.0 Customer Technology Preview.  Unless applicable law gives you more rights, Microsoft reserves all other rights not expressly granted under this agreement, whether by implication, estoppel or otherwise.</p>
+        <p class="h9">MIT Licensed Files</p>
+        <p class="Label">jQuery 1.5.2</p>
+        <p>The following Files Were Originally Licensed under the MIT License (Reproduced Below):</p>
+        <ul>
+            <li>	jquery-1.5.2-vsdoc.js</li>
+            <li>	jquery-1.5.2.js</li>
+            <li>	jquery-1.5.2.min.js</li>
+        </ul>
+        <p>Original Source:                                https://jquery.com/</p>
+        <p>Original Copyright:           Copyright 2011, John Resig</p>
+        <p>Original License:               MIT</p>
+        <p class="Label">JQuery UI 1.8.5</p>
+        <p>The following Files Were Originally Licensed under the MIT License (Reproduced Below):</p>
+        <ul>
+            <li>	jquery.ui.accordion.js</li>
+            <li>	jquery.ui.button.js</li>
+            <li>	jquery.ui.core.js</li>
+            <li>	jquery.ui.dialog.js</li>
+            <li>	jquery.ui.draggable.js</li>
+            <li>	jquery.ui.mouse.js</li>
+            <li>	jquery.ui.position.js</li>
+            <li>	jquery.ui.resizable.js</li>
+            <li>	jquery.ui.selectable.js</li>
+            <li>	jquery.ui.sortable.js</li>
+            <li>	jquery.ui.widget.js</li>
+            <li>	themes\base\jquery.ui.accordion.css</li>
+            <li>	themes\base\jquery.ui.button.css</li>
+            <li>	themes\base\jquery.ui.core.css</li>
+            <li>	themes\base\jquery.ui.dialog.css</li>
+            <li>	themes\base\jquery.ui.resizable.css</li>
+            <li>	themes\base\jquery.ui.selectable.css</li>
+            <li>	themes\base\jquery.ui.theme.css</li>
+            <li>	themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png</li>
+            <li>	themes\base\images\ui-bg_flat_75_ffffff_40x100.png</li>
+            <li>	themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png</li>
+            <li>	themes\base\images\ui-bg_glass_65_ffffff_1x400.png</li>
+            <li>	themes\base\images\ui-bg_glass_75_dadada_1x400.png</li>
+            <li>	themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png</li>
+            <li>	themes\base\images\ui-bg_glass_95_fef1ec_1x400.png</li>
+            <li>	themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png</li>
+            <li>	themes\base\images\ui-icons_222222_256x240.png</li>
+            <li>	themes\base\images\ui-icons_2e83ff_256x240.png</li>
+            <li>	themes\base\images\ui-icons_454545_256x240.png</li>
+            <li>	themes\base\images\ui-icons_888888_256x240.png</li>
+            <li>	themes\base\images\ui-icons_cd0a0a_256x240.png</li>
+        </ul>
+        <p>Original Source:		 https://jqueryui.com/</p>
+        <p>Original Copyright:	 Copyright (c) 2010 Paul Bakaus</p>
+        <p>Original License:	 MIT</p>
+        <p class="h9">MIT License</p>
+        <blockquote>
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+            <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+        </blockquote>
+        <p class="label">End of JQuery and JQuery UI Third Party Code Notice</p>
+    </body>
+</html>

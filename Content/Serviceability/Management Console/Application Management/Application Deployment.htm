@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,TopicType.Navigation,Status.70 - Complete,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="8" MadCap:lastHeight="1052" MadCap:lastWidth="1014" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Deploy applications through <MadCap:variable name="BrandingMS.Doors PowerShell" /></h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This section contains information about how to deploy applications by using <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets.</p>
+        <h2>Application installation process</h2>
+        <p>Applications are installed on the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology by completing the following steps. This topic contains the outline of the process, details required during execution of the steps are provided in the topics linked from each step.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="../../../Installation/Images/ApplicationFlow3.png" />
+        </p>
+        <p>All the <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets in this procedure must be run from a <MadCap:variable name="BrandingMS.Doors PowerShell" /> command line after the appropriate module is imported. For instructions on opening <MadCap:variable name="BrandingMS.Doors PowerShell" />, importing the module, and links to the syntax and parameter descriptions of the cmdlets in this procedure, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp">
+            </MadCap:snippetText>
+            <br>
+            </br><span class="Label">Required Role:</span> AmalgaSysAdmin</p>
+        <p class="LabelforProcedures">To install an application through <MadCap:variable name="BrandingMS.Doors PowerShell" /></p>
+        <ol>
+            <li>
+                <p>Verify application prerequisites.</p>
+                <p>If the application you are deploying specifies either hardware or software prerequisites, verify that those prerequisites are met.</p>
+            </li>
+            <li>
+                <p>Resolve the application manifests.</p>
+                <p>Every Amalga hosted application has at least an application manifest and generally one or more service manifests that must be resolved prior to deployment. If you are deploying through <MadCap:variable name="BrandingMS.Doors PowerShell" /> rather than <MadCap:variable name="FeatureName.Management Console second use" />, then those manifests must be resolved manually. For information on how to resolve the application manifests, see <span class="CHANGEME">&lt;Deployment Guide Manifest Section&gt;</span>.</p>
+                <p class="note">If multiple instances of an application will be installed, the manifests must be modified for each instance to provide unique instance and dependency names.</p>
+            </li>
+            <li>
+                <p>Publish the application to the topology.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Publish-AmApplicatioinInstance.htm" target="" title="" alt="">Publish-AmApplicationInstance</MadCap:xref> cmdlet to add the application instance to the topology.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Deploy the <MadCap:variable name="FeatureName.virtual schema" />.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_New-AmVirtualSchema.htm" target="" title="" alt="">New-AmVirtualSchema</MadCap:xref> cmdlet to create the virtual schema for the application instance.</p>
+                        <p class="note">After deploying the application virtual schema you may receive a warning similar to the following:<br /><br /><MadCap:annotation MadCap:createDate="2011-10-25T00:16:32.7440023-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I guess we need a message/warning style?  I  remove the &quot;code&quot; style and  the 'style=&quot;font-size: 9pt;&quot;' -- the latter being inline style.  If we are going to use somthing to distinguish t he message, I'd rather everyone use the same style." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-25T00:20:43.8160023-07:00" class="InputText">WARNING</MadCap:annotation><span class="InputText">: Virtual schema created but there are entities that are not bound to the store. Application queries will not work till these are bound.</span><br /><br />For information on how to bind the entities, <MadCap:annotation MadCap:createDate="2012-01-04T07:53:39.0131169-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="FYI. Changed xref to point to an overview topic; the previous topic is being retired." MadCap:editor="v-padenc" MadCap:editDate="2012-01-04T07:53:42.8975053-08:00">see</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="../../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Synchronize the application.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm" target="" title="" alt="">Sync-AmPhysicalHost</MadCap:xref> cmdlet with the appropriate parameters to sync the application to the physical hosts.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Configure the application.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Perform any post-deployment configuration requirements as specified by application documentation. These configuration requirements often include database access, performance parameters, eventing, and logging levels.</li>
+                </ol>
+            </li>
+            <li>
+                <p>Verify the application deployment. </p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Use the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting</MadCap:xref> to retrieve the application instance properties.</li>
+                </ol>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

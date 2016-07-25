@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1616.333" MadCap:lastWidth="778" MadCap:fileTags="TopicOwner.v-ccole,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Dependency element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Dependency element" />Declares a plug-in application dependency on another assembly.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;Plugins&gt;
+               &lt;Plugin&gt;
+                  &lt;Dependencies&gt;<b>
+                     &lt;Dependency&gt;...&lt;Dependency&gt;</b>
+                  &lt;/Dependencies&gt;		
+               &lt;/Plugin&gt;			
+            &lt;/Plugins&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="PluginModelConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;Plugin&gt;
+            &lt;Dependencies&gt;<b>
+               &lt;Dependency&gt;...&lt;/Dependency&gt;</b>
+            &lt;/Dependencies&gt;					
+         &lt;/Plugin&gt;		
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; </span></p></pre><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="ShredderConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;Plugin&gt;
+            &lt;Dependencies&gt;<b>
+               &lt;Dependency&gt;...&lt;/Dependency&gt;</b>
+            &lt;/Dependencies&gt;					
+         &lt;/Plugin&gt;		
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; </span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Dependencies.htm">Dependencies</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Assembly</td>
+                    <td>
+                        <p>(Required string.) Name of the assembly on which the plug-in depends.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>(Required string) Location of the required assembly.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>For information about extending pipeline applications with plug-in code, including examples, see <MadCap:xref href="../DI_Con_ExtendPipeline.htm" target="" title="" alt="">Extend Pipeline applications</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_Intro_ShredderPluginConfigurationXML.htm">ShredderPluginConfigurationXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1019" MadCap:lastWidth="937" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a local notification</h1>
+        <p>
+            <MadCap:keyword term="local notification">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-10T10:57:18.3855009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I caught one more thing:  se the See also section, pls." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:57:33.7353009-08:00">This</MadCap:annotation> topic describes how to add an <MadCap:variable name="BrandingHSG.Amalga Short" /> local notification to a web page.</p>
+        <p>A local notification is a structured message that provides immediate feedback in response to user activity, or alerts the user to application activity. Local notifications are not persistent, are not managed by the Notification web service, and are not available outside the current web page.</p>
+        <h2>Local notification content</h2>
+        <p>A local notification can display any string value. The content may include HTML tags for embedded hyperlinks and formatting.</p>
+        <p>It is a good practice to define the string in a resource (.resx) file. There is no direct support for parameterized values, but any string handling helper method can be used as a preprocessor for the notification content. The example below shows how the parameterized string support in the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Common/T_LocalizationManager.htm">LocalizationManager</a> helper methods can be used to add localized, parameterized string values to a local notification.</p>
+        <p>&#160;</p>
+        <h4>Example</h4>
+        <p>The following C#&#160;snippet uses the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/T_NotificationManager.htm">NotificationManager</a> and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Common/T_LocalizationManager.htm">LocalizationManager</a> to add a parameterized local notification to the current web page.</p><pre xml:space="preserve">
+// NOTE: in this example, a resource string has been added in advance 
+//  to MyApp.resx, a resource file in the App_GlobalResources folder 
+//  of the default SharePoint IIS site.  The resource name is 
+//  "myLocalNotificationResource" and its value is
+//  "&lt;b&gt;Warning:&lt;/b&gt;&lt;br/&gt;{0}".
+
+// Add a local notification to the current page.
+//  Note that local notifications, unlike user notifications, 
+//  do not require type definition or registration.
+AddLocalNotification(
+    this.Page, 				            // target the current page
+    LocalNotificationType.warning,      // severity - warning
+    LocalizationManager.GetResourceValue(
+        "MyApp.resx",                        // resource file name
+        "myLocalNotificationResource",       // resource key name
+        new string[] {"This is a warning message."}  // message text
+    ),
+    true, 				// allow user to close
+    false				// do not add to the top of existing notifications
+);
+	</pre>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Notification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:54:36.3954968-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:54:37.8151150-08:00">JavaScript </MadCap:annotation>API reference: Notification Manager</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

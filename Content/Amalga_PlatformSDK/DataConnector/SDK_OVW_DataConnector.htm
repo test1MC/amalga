@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1475" MadCap:lastWidth="435" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,Personas.All">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">DataConnector</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the DataConnector platform application, which interacts with the data providers included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> to provide data access for other services and applications.</p>
+        <p>The DataConnector platform application provides data access services for platform features, hosted applications, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. The DataConnectorService service, included with the DataConnector platform application, provides service contracts used by the following data providers:</p>
+        <ul>
+            <li>
+                <p>.NET&#160;Framework Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /></p>
+                <p>The .NET&#160;Framework Data Provider for Amalga supports data access for applications using ADO.NET. For more information about the .NET&#160;Framework Data Provider for Amalga, see <MadCap:xref href="DAT_NAV_RetrievingModifyingData.htm" target="" title="" alt="">Retrieving and modifying data with  on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>OLE&#160;DB Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /></p>
+                <p>The OLE&#160;DB&#160;Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> supports data access for older applications using OLE&#160;DB. The OLE DB&#160;Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> uses the .NET Framework Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> to handle communications with the DataConnector platform application.</p>
+            </li>
+        </ul>
+        <p class="note">The DataConnector platform application is not meant to be directly accessed by your application. Use the .NET&#160;Framework Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> for data access within your application.</p>
+        <h2>Architecture</h2>
+        <p>The following diagram describes the architecture and data flow of the data providers included with <MadCap:variable name="BrandingHSG.Amalga Short" /> and the DataConnector platform application.</p>
+        <p>The .NET&#160;Framework Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> primarily interacts with the DataConnector platform application, but also interacts with the Topology platform feature for service URL resolution purposes. The OLE&#160;DB Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" /> serves only as an OLE DB-compliant encapsulation of the .NET&#160;Framework Data Provider for <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="../Images/DataConnectorArchitecture.png" />
+        </p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DAT_NAV_RetrievingModifyingData.htm" target="" title="" alt="">Retrieving and modifying data with  on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

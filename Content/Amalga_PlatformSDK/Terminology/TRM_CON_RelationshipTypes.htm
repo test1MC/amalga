@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="825" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Relationship types</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:relationship types;relationship types:Terminology platform application" />This topic describes relationship types, which describe the relationships between concepts in the Terminology platform application.</p>
+        <p>In the Terminology platform application included with <MadCap:variable name="BrandingHSG.Amalga Short" />, relationships between concepts are described by a relationship type. The relationship type describes the characteristics of the relationship, such as whether the relationship is hierarchical, and provides a display name which can be used when graphing relationships between concepts.</p>
+        <p>Relationship types are specific to a given terminology. For example, the relationship types included with the SNOMED&#160;CT clinical terminology provide defining and qualifying characteristics, which allow concepts to be used as attributes for other concepts, or historical relationships, which allow concepts to be versioned or inactivated. </p>
+        <h2>Relationship type attributes</h2>
+        <p>Relationship type attributes define the characteristics of the relationship type. Multiple relationship type attributes can apply to a single relationship type. For example, the Resolved By relationship type, included with the HLI&#160;Core terminology, describes an immutable, reciprocal, ordered, displayable relationship.</p>
+        <p>The following relationship type attributes can be applied to a single relationship type:</p>
+        <ul>
+            <li>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2012-02-26T16:48:25.8911961-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make a 2-col. table? attribute/description" MadCap:editor="v-labenn" MadCap:editDate="2012-02-26T16:48:59.4527608-08:00">Acyclic</MadCap:annotation>
+                </p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes an acyclic relationship, such as a tree relationship, between two concepts. Otherwise, the relationship type can describe a cyclic relationship.</p>
+                <p>For example, the "Next Version" relationship type, included with the "HLI&#160;Core" terminology, describes a typical acyclic relationship.</p>
+            </li>
+            <li>
+                <p>Displayable</p>
+                <p>If set to True, this relationship type attribute indicates that this relationship type can be displayed. Otherwise, the relationship type should not be displayed.</p>
+                <p>For example, all relationship types included with the "HLI&#160;Core" terminology are displayable.</p>
+            </li>
+            <li>
+                <p>Hierarchical</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes a hierarchical relationship between two concepts. Otherwise, the relationship type describes a non-hierarchical relationship. </p>
+                <p>For example, the "Subsumes" relationship type, included with the "HLI Core" terminology, describes a typical hierarchical relationship.</p>
+            </li>
+            <li>
+                <p>Immutable</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes a relationship that, once referenced, cannot be changed. Otherwise, the relationship can be changed.</p>
+                <p>For example, the "Dependency" relationship type, included with the "HLI&#160;Core" terminology, describes a typical immutable relationship.</p>
+            </li>
+            <li>
+                <p>InheritanceRelation</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes an inheritance relationship.</p>
+                <p>For example, the "RXNORM&#160;Constitutes" relationship type, included with the "HLI&#160;RXNORM" terminology, describes a typical inheritance relationship.</p>
+            </li>
+            <li>
+                <p>Ordered</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes an ordered relationship.</p>
+                <p>For example, the "Resolved By" relationship type, included with the "HLI&#160;Core" terminology, describes a typical ordered relationship.</p>
+            </li>
+            <li>
+                <p>Reciprocal</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes a reciprocal relationship.</p>
+                <p>For example, the "Validated By" relationship type, included with the "HLI&#160;Core" terminology, describes a typical reciprocal relationship.</p>
+            </li>
+            <li>
+                <p>Transitive</p>
+                <p>If set to True, this relationship type attribute indicates that the relationship type describes a transitive relationship between concepts. If concept A has a transitive relationship with concept B, and concept B has a transitive relationship with concept C, then concept A has an implied transitive relationship with concept C. </p>
+                <p>For example, the "Subsumes" relationship type, included with the "HLI Core" terminology, describes a typical transitive relationship.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingRelationshipTypes.htm" target="" title="" alt="">Querying relationship types on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Relationships.htm" target="" title="" alt="">Relationships on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

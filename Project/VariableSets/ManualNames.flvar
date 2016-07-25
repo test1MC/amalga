@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet conditions="Default.StyleMaster,Production.StyleMaster">
+    <Variable Name="Imaging" Comment="Note: Also produced under Life Sciences branding (see variable override in LS target)." Definition="Some text">Amalga UIS Medical Imaging Module Guide</Variable>
+    <Variable Name="TITLE" Comment="Type YOUR manual name into the Definition column." Definition="Some text">Replace with TITLE XXXXXX HERE</Variable>
+    <Variable Name="AmalgaV3 SDK" Comment="SDK. AmalgaV3 SDK. Temporary name: in process of checking with Roberto" Definition="Some text">AmalgaV3 SDK</Variable>
+</CatapultVariableSet>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.60 - Revising,ReleaseTarget.CTP1" MadCap:lastBlockDepth="4" MadCap:lastHeight="733" MadCap:lastWidth="477">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Hosted <MadCap:variable name="BrandingMS.Doors service" />s</h1>
+        <p class="abstract">
+            <MadCap:keyword term="hosted services;Doors services" /> This topic describes how to build your own Amalga Doors service.  </p>
+        <p>Amalga hosted Doors Services (sometimes called Doors Worker Services) allow you to create processes that run in the background on your server, and which take advantage of Amalga features, such as security and management. Examples of these services include automated, scheduled generation of reports and automated sending of email notifications.</p>
+        <p class="note">There can be only one class in a given assembly that inherits from the <span class="ForeignCodeElements">AmalgaDoorsWorker</span> class, and that class must be a direct child of <span class="ForeignCodeElements">AmalgaDoorsWorker</span>.</p>
+        <p class="LabelforProcedures"> To build your own hosted Doors service</p>
+        <ol>
+            <li>Open <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />. From the <span class="UIElementAction">File </span>menu, select <span class="UIElementAction">New</span>, then <span class="UIElementAction">Project</span>.</li>
+            <li>Select the <span class="UIElementAction">Amalga Doors Worker Project</span> <![CDATA[ ]]><a href="SDK_CON_VS_Proj_Templates.htm">template</a>, name your project, and click <span class="UIElementAction">OK</span>.</li>
+            <li>If your service requires a virtual schema, then create one. For instructions, see <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Virtual Schema Designer</MadCap:xref>.</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-09-29T22:31:55.7480600-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Will they know what code to add, and how ADO.NET fits in?\r\n\r\n[PG] It's whatever code they need to build the service, so it doesn't make sense to be more specific. I did make the ADO.NET sentence clearer." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-30T13:36:43.1695370-07:00">Add code</MadCap:annotation> to the Program.cs and Service.cs classes to complete your Doors service. <MadCap:annotation MadCap:createDate="2011-09-29T22:32:58.0970600-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Do you mrsn they are to use ADO.NET or the topic Amalga ADO.NET. In the latter case, use a standard xref format such as the one in step 3 (as edited).\r\n\r\n[PG] I mean the feature, not the topic, so I think a hyperlink is correct." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-30T13:37:12.0005370-07:00">Use</MadCap:annotation> <![CDATA[ ]]><a href="SDK_OVW_ADO.NET_Overview.htm">Amalga ADO.NET</a> to connect to the virtual schema.</li>
+            <li><a href="SDK_Con_Configuration_Model.htm"><MadCap:annotation MadCap:createDate="2011-09-29T22:41:35.6842064-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="The topic referenced Here should be a procedure (IMO) that documents how to access and modify the file. Instead this is a reference topic.\r\n\r\n[PG] Good point. Dennis is going to be writing that reference topic, but it's not created yet. Let's link to that once Dennis is done." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-30T13:37:43.0855370-07:00">Configure</MadCap:annotation></a> the service by modifying the AmalgaService.xml file.</li>
+            <li><a href="SDK_CON_Application_Package_Deploy_Tools.htm">Package</a> and <a href="SDK_CON_Deploy_Amalga_Hosted_Services.htm">deploy</a> the service.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_Advantages_Of_Hosted_Apps.htm" target="" title="" alt="">The Advantages of Amalga Hosted Applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Virtual Schema Designer</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_OVW_ADO.NET_Overview.htm" target="" title="" alt="">Amalga ADO.NET library overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_Con_Configuration_Model.htm" target="" title="" alt="">Application configuration model</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Application_Package_Deploy_Tools.htm" target="" title="" alt="">Application Packaging and Deployment Tools</MadCap:xref>
+        </p>
+    </body>
+</html>

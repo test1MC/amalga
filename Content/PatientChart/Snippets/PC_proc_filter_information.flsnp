@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="868" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To filter information</p>
+        <ul>
+            <li>You can filter information displayed on the <MadCap:variable name="FeatureBrussels.Patient Chart" />. The available filters differ depending on the widget being displayed. For more information, see the  section on managing the widget you are working with.</li>
+        </ul>
+    </body>
+</html>

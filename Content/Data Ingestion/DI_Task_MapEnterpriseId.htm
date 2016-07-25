@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="909" MadCap:lastWidth="880" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Map enterprise identifiers</h1>
+        <p class="abstract">This topic describes how to configure standard mapping of source identifiers.</p>
+        <p>
+            <MadCap:keyword term="configure enterprise identifiers" />For identifier lookups to the <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> to function properly, you must first define the mapping between the SourceTable and SourceName attributes and correlation elements (<a href="Manifest XML/DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a>, <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a>, <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a>, and <a href="Manifest XML/DI_XML_Manifest_EncounterIdentifier.htm">EncounterIdentifier</a>).</p>
+        <p class="LabelforProcedures">To provide standard mapping</p>
+        <ol>
+            <li>Determine which correlation elements require mapping. <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a> and <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a> elements are typical.</li>
+            <li>
+                <p>Verify that you have included all the input columns necessary for mapping. If your identifier needs to reference content from a field that can have repeating values, such as PID_3, you must use a custom transform to extract the correct component into a derived field, such as MRN.</p>
+            </li>
+            <li>
+                <p>Between the <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" target="" title="" alt="">DataParserConfiguration element</MadCap:xref> tags, add the following structure.</p><pre xml:space="preserve" class="code">&lt;EnterpriseId&gt;
+  &lt;EnterpriseIdAction&gt;
+      &lt;InputIdentifiers&gt;
+                
+      &lt;/InputIdentifiers&gt;
+  &lt;/EnterpriseIdAction&gt;
+&lt;/EnterpriseId&gt;
+</pre>
+            </li>
+            <li>
+                <p>Add <span class="code">Action=”StandardMapping” and AnchorTable=”PID”</span> to the <MadCap:xref href="Manifest XML/DI_XML_Manifest_EnterpriseIdAction.htm" target="" title="" alt="">EnterpriseIdAction element</MadCap:xref> <![CDATA[ ]]>to map identifiers in the PID table. </p>
+                <p class="note">The anchor table should reference the lowest-level child segment that is used in the mapping. For example, if the VisitNumber from PV1 is to be mapped, the anchor table would be PV1 and PV1 must list PID as a parent segment in the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Between the <MadCap:xref href="Manifest XML/DI_XML_Manifest_InputIdentifiers.htm" target="" title="" alt="">InputIdentifiers element</MadCap:xref> tags, add the individual correlation elements and values. For example, to map <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a> and <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a> elements, specify the following content:</p><pre xml:space="preserve" class="code">&lt;EnterpriseId&gt;
+    &lt;EnterpriseIdAction Action="StandardMapping" AnchorTable="PID"&gt;
+        &lt;InputIdentifiers&gt;
+            &lt;PatientRecordIdentifier Name="Patient" ConsistencyPolicy="Ignore"&gt;
+                &lt;Id Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="MRN" /&gt;
+                &lt;Domain Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+            &lt;/PatientRecordIdentifier&gt;
+            &lt;EncounterSetIdentifier&gt;
+                &lt;Id Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18_1" /&gt;
+                &lt;Domain Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+            &lt;/EncounterSetIdentifier&gt;
+        &lt;/InputIdentifiers&gt;
+    &lt;/EnterpriseIdAction&gt;
+&lt;/EnterpriseId&gt;
+</pre>
+            </li>
+        </ol>
+        <p>In the previous example, <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a> (parent) includes the ConsistencyPolicy attribute to handle inconsistencies among <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a> (child) identifiers. The ConsistencyPolicy attribute is optional and cannot be applied to the <MadCap:xref href="Manifest XML/DI_XML_Manifest_EncounterIdentifier.htm" target="" title="" alt="">EncounterIdentifier element</MadCap:xref>, which has no child identifiers.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

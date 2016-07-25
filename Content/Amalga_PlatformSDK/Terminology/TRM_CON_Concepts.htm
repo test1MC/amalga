@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="842" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-02-23T22:13:28.0696653-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-02-23T22:13:28.0696653-08:00" />
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="3" MadCap:timestamp="2012-02-23T22:14:07.7221923-08:00" MadCap:attribute="class" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">
+            <MadCap:annotation MadCap:createDate="2012-02-26T16:02:28.7028452-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="You have the AppDev persona in the file tags, but the persona All style for the persona line.  Which is correct?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-26T16:02:29.3584452-08:00">Concepts</MadCap:annotation>
+        </h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:concepts;concepts:Terminology platform application;Terminology platform application:concept codes;Terminology platform application:concept code types;Terminology platform application:root concepts;concept codes:Terminology platform application;concept code types:Terminology platform application;root concepts:Terminology platform application" />This topic describes concepts, which represent clinical concepts within a terminology in the Terminology platform application.</p>
+        <p>A clinical concept is a clinical idea to which a code unique to the clinical terminology that contains the clinical concept, is associated.  In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, each clinical concept is represented by one or more concepts.</p>
+        <p>Each concept has the following <MadCap:annotation MadCap:createDate="2012-02-26T15:48:52.1628351-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make a table? property/decription" MadCap:editor="v-labenn" MadCap:editDate="2012-02-26T15:49:03.5992036-08:00">properties:</MadCap:annotation></p>
+        <ul>
+            <li>
+                <p>Terminology</p>
+                <p>Each concept is contained in a single clinical terminology. For more information about terminologies, see <MadCap:xref href="TRM_CON_Terminologies.htm" target="" title="" alt="">Terminologies on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Concept code</p>
+                <p>Each concept has a concept code that identifies the clinical concept within a given clinical terminology. For example, the concept code PatientID is assigned to the concept that represents a patient identifier in the Microsoft Beta Org CS terminology. For more information about concept codes, see .</p>
+            </li>
+            <li>
+                <p>Concept code type</p>
+                <p>Each concept has a concept code type, which can be used to further classify related concepts within a given clinical terminology. </p>
+            </li>
+            <li>
+                <p>Meaning</p>
+                <p>Each concept has a meaning, a human-readable description of the clinical idea represented by the concept, specific to the language supported by the concept.</p>
+            </li>
+            <li>
+                <p>Supported language</p>
+                <p>A single clinical terminology can support multiple languages. While the concept code for a given clinical concept does not change, the meaning can change depending on the languages supported by the clinical terminology. Multiple concepts, each in a different supported language, can represent the same, single clinical concept within a single clinical terminology. For example, if a single clinical terminology supports three languages, then there are three concepts, one for each supported language, that represent the same clinical concept. All three concepts have the same concept code, but different, language-specific meanings.</p>
+            </li>
+        </ul>
+        <p MadCap:changes="3" class="Label">
+            <MadCap:change MadCap:changes="2">In this topic</MadCap:change>
+            <MadCap:change MadCap:changes="1">This topic contains the following subsections:</MadCap:change>
+        </p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Concept" target="" title="" alt="">Concept codes on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Concept2" target="" title="" alt="">Concept code types on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Root" target="" title="" alt="">Root concepts on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Concept"></a>Concept codes</h2>
+        <p>Within a given clinical terminology, each clinical concept has an associated concept code that uniquely identifies that particular clinical concept. For example, the clinical concept for benign essential hypertension, a diagnosis, is represented in the Systematized Nomenclature of Medicine - Clinical Terms (SNOMED CT) clinical terminology by the concept code, 1201005.</p>
+        <p>Each concept has a unique identifier associated with it that ensures the concept is unique in the terminology database. In turn, each concept also has a concept code associated with it that uniquely identifies the clinical concept within the clinical terminology to which it belongs. If a clinical concept supports multiple languages, there may be multiple concepts in the terminology database that support a single clinical concept for a single clinical terminology.               <![CDATA[ ]]></p>
+        <p>Concept codes may not be unique to a particular terminology. Two different clinical terminologies can use the same concept code value to represent different clinical concepts, depending on the coding system used by the clinical terminology. </p>
+        <h2><a name="Concept2"></a>Concept code types</h2>
+        <p>A concept code type groups related clinical concepts. For example, all concepts for the RxNorm terminology are associated with the RXNORM&#160;Code concept code type. Concept code types are specific to the terminology that contains the concepts for which the concept code type is used.</p>
+        <p class="note">While a single terminology can support multiple concept code types, most clinical terminologies use only a single concept code type. For example, all concepts contained by the SNOMED&#160;CT clinical terminology use the SNOMED&#160;Concept ID concept code type.</p>
+        <h2><a name="Root"></a>Root concepts</h2>
+        <p>In a terminology that contains hierarchical relationships, a root concept is a top-level concept that represents a generalized clinical concept for a terminology hierarchy. For example, the SNOMED&#160;CT&#160;Concept root concept represents the top-level concept to which all other, more specialized concepts are related within the SNOMED&#160;CT terminology. For more information about relationships between concepts, see <MadCap:xref href="TRM_CON_Relationships.htm" target="" title="" alt="">Relationships on page 1</MadCap:xref>.</p>
+        <p>You can quickly query root concepts without negotiating the relationships between concepts for a given terminology, either by using the ITerminologyQueryService service contract or the Microsoft.Terminology.Beta.RootConcept entity. For more information about querying root concepts, see <MadCap:xref href="TRM_CON_QueryingConcepts.htm" target="" title="" alt="">Querying concepts on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingConcepts.htm" target="" title="" alt="">Querying concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Terminologies.htm" target="" title="" alt="">Terminologies on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

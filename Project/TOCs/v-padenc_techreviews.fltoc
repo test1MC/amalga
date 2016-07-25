@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="Contents"
+    Link="/Content/pd-toc.htm" />
+  <TocEntry
+    Title="Security"
+    Link="/Project/TOCs/Security.fltoc" />
+  <TocEntry
+    Title="AMC-VREF"
+    Link="/Project/TOCs/AMC-VREF.fltoc" />
+  <TocEntry
+    Title="AMC_ManageEntityBinding"
+    Link="/Project/TOCs/AMC_ManageEntityBinding.fltoc" />
+  <TocEntry
+    Title="AMC_EntityRegistry"
+    Link="/Project/TOCs/AMC_EntityRegistry.fltoc" />
+  <TocEntry
+    Title="PowerShellReference"
+    Link="/Project/TOCs/PowerShellReference.fltoc" />
+</CatapultToc>

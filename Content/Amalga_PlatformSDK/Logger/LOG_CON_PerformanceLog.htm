@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2100" MadCap:lastWidth="730" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="6" MadCap:timestamp="2012-03-12T14:33:58.3416737-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="7" MadCap:timestamp="2012-03-12T14:34:58.5600737-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Performance logging</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the architecture and overview of performance logging for hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides performance logging support, allowing performance log entries to be written to the data host for hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications. Performance logging uses Event Tracing for Doors (ETW) to buffer performance log entries locally, where the Logger platform service can consume the ETW trace messages and then upload them to the data host for storage.</p>
+        <p>Performance logging is used to identify performance issues in <MadCap:variable name="BrandingMS.WCF service" />s for <MadCap:variable name="BrandingHSG.Amalga Short" />. Each service operation has a performance scenario associated with it at the time the service operation is invoked, which contains one or more performance <MadCap:annotation MadCap:createDate="2012-03-12T14:30:48.5020737-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Where are these defined? Do we have/need a task for that?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T14:31:14.0032737-07:00">events defined by you </MadCap:annotation>within the code for the service operation. Performance events are used to identify and track the start and stop times of specific sections of code within a service operation. Performance events can be nested, so that individual sections of code within a larger code section can be tracked for performance purposes. </p>
+        <p class="Label">In this topic:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Architec" target="" title="" alt="">Architecture on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with performance logging on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Architec"></a>Architecture</h2>
+        <p>The following diagram illustrates the logical architecture and data flow for performance logging in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="../Images/LoggerArchitecturePerf.png" />
+        </p>
+        <p>Hosted applications use the PerfLog class, provided by the hosting runtime in the Microsoft.Amalga.Hosting.WcfService namespace, to write various types of performance log entries to an ETW session. The Logger platform feature then periodically uploads the performance log entries to the <MadCap:variable name="Databases.AmalgaAudit" /> database, maintained by <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p class="note">Performance logging is used only by <MadCap:variable name="BrandingMS.WCF service" />s. Performance logging is not available to hosted <MadCap:variable name="BrandingMS.Doors service" />s.</p>
+        <h2><a name="Working"></a>Working with performance logging</h2>
+        <h3 MadCap:changes="6">Change the performance logging level</h3>
+        <p>Because performance logging can, itself, impact the performance of a <MadCap:variable name="BrandingMS.WCF service" />, instrumentation for performance logging should be added only to those sections of code that can have a measurable and variable impact on performance. By default, performance logging is turned off for hosted <MadCap:variable name="BrandingMS.WCF service" />s included in hosted applications. You can use either the <MadCap:variable name="FeatureName.Management Console second use" /> or the Set-AmConfigurationSetting <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlet to change the performance logging level for a hosted <MadCap:variable name="BrandingMS.WCF service" />. For more information about setting the performance logging level, see <MadCap:xref href="LOG_CON_PerfLog_Writing.htm" target="" title="" alt="">Writing performance log entries on page 1</MadCap:xref>.</p>
+        <h3 MadCap:changes="6">Write performance log entries</h3>
+        <p>The PerfLog static object, in the Microsoft.Amalga.Hosting.WcfService namespace, can be used to write performance log entries to the AmalgaLog database. For more information about writing performance log entries, see <MadCap:xref href="LOG_CON_PerfLog_Writing.htm" target="" title="" alt="">Writing performance log entries on page 1</MadCap:xref>.</p>
+        <h3 MadCap:changes="7">Retrieve and analyze performance log entries</h3>
+        <p>Once performance log entries have been written to the AmalgaLog database, you can then use Transact-SQL queries to retrieve and analyze the entries. For more information about reading performance log entries, see <MadCap:xref href="LOG_CON_PerfLog_Reading.htm" target="" title="" alt="">Reading performance log entries on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerfLog_Reading.htm" target="" title="" alt="">Reading performance log entries on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerfLog_Writing.htm" target="" title="" alt="">Writing performance log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_OVW_Logger.htm" target="" title="" alt="">Logger on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

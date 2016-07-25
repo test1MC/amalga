@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="3038" MadCap:lastWidth="980" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Writing event log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to write event log entries to the Doors event log for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>Doors event logging can be used by hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> to track error, warning, and information events. You can use the EventLog object to write events to the Doors event log. For more information about how <MadCap:variable name="BrandingHSG.Amalga Short" /> uses the Doors event log, see <MadCap:xref href="../LOG_CON_EventLog.htm" target="" title="" alt="">Event log on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the EventLog object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using the EventLog object</h2>
+        <p class="Figure">You can use the EventLog static object, in the Microsoft.Amalga.Hosting.Service namespace, to write Doors event log entries. The EventLog object provides the following methods with which you can write a variety of Doors event log entries:</p>
+        <ul>
+            <li>
+                <p>WriteInformationEntry</p>
+                <p>The WriteInformationEntry method writes an informational message to the Doors event log. The WriteInformationEntry method accepts the following parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>eventId</td>
+                            <td>Required. An integer representing the event identifier to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the informational message to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the informational message to be written to the Doors event log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteWarningEntry</p>
+                <p>The WriteWarningEntry method writes a warning message to the Doors event log. The WriteWarningEntry method accepts the following parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>eventId</td>
+                            <td>Required. An integer representing the event identifier to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the warning message to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the warning message to be written to the Doors event log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteErrorEntry</p>
+                <p>The WriteErrorEntry method writes an error message to the Doors event log. The WriteErrorEntry method accepts the following parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>eventId</td>
+                            <td>Required. An integer representing the event identifier to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the error message to be written to the Doors event log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the error message to be written to the Doors event log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example demonstrates how to use the WriteErrorEntry method of the EventLog static object to write an error message to the Doors event log.</p><pre xml:space="preserve">/// &lt;summary&gt;
+/// A sample method to query the top 100 patients from the deployed virtual schema
+/// of a hosted application and return them as a list of objects.
+/// &lt;/summary&gt;
+public IEnumerable&lt;Patient&gt; GetTop100Patients()
+{
+    // Define a List object that will contain a list of Patient objects.
+    List&lt;Patient&gt; patients = new List&lt;Patient&gt;();
+
+    // Connect to the virtual schema for the application.
+    AmalgaDbConnection connection = 
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString());
+
+    // Read a list of patients from an Amalga ADO.NET connection connected to  
+    // the deployed virtual schema for the hosted application.
+
+    using (connection)
+    {
+        // Create the Command and Parameter objects.
+        // The command queries an application view named Patient, defined in
+        // virtual schema for the hosted application.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+                    @" SELECT TOP 100
+                            Patient.PersonID AS PatientID,
+                            Patient.FullName AS Name,
+                            Patient.DateOfBirth AS DateOfBirth
+                            FROM Patient";
+
+        // Write an entry into the diagnostic log providing information that the hosted service 
+        // is about to execute a query.
+        DiagLog.WriteInformation("Application " + 
+            ApplicationConfiguration.InstanceName.ToString() + 
+            " about to query patients");
+
+        // Open connection and read from deployed virtual schema.
+        try
+        {
+            command.Connection.Open();
+
+            // Using the AmalgaDbDataReader object, read information from the 
+            // application view and add it to the list defined earlier in the method.
+            AmalgaDbDataReader amalgaReader = command.ExecuteReader();
+            while (amalgaReader.Read())
+            {
+                // Instantiate and populate a new Patient object.
+                Patient p = new Patient();
+                p.PatientID = amalgaReader["PatientID"].ToString();
+                p.Name = amalgaReader["Name"].ToString();
+                p.DateOfBirth = ConvertToDate(amalgaReader["DateOfBirth"].ToString());
+
+                // Add the new Patient object to the list.
+                patients.Add(p);
+            }
+
+            // Write an entry into the diagnostic log providing information 
+            // that the hosted service successfully queried patients.
+            DiagLog.WriteInformation("{0} records read", patients.Count);
+
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not read data from the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", 
+                ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+    }
+
+    // Return the list of Patient objects.
+    return patients;
+}</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_EventLog_Reading.htm" target="" title="" alt="">Interacting with the event log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../LOG_CON_EventLog.htm" target="" title="" alt="">Event log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

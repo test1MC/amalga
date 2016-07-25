@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1486.333" MadCap:lastWidth="750" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">TestConfiguration element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the TestConfiguration element.</p>
+        <p>Declares the services used while debugging the hosted application.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;DeploymentManifest&gt;<br />&#160;&#160;&#160;&lt;TestConfiguration</b><b><br />&#160;&#160;&#160;&#160;&#160;&#160;[ VirtualSchemaDataHost="<span class="Parameter">string</span>" ] /&gt;<br />&lt;/DeploymentManifest&gt;</b>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"><b>&#160;&#160;&#160;&#160;&#160;&#160;[ <MadCap:annotation MadCap:createDate="2011-11-14T21:45:23.9502685-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This line should go just after &lt;TestConfiguration  to make the 3rd line." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-14T21:46:16.6649965-08:00">DiscoveryServiceUrl</MadCap:annotation>="<span class="Parameter">string</span>" ]</b>
+            </MadCap:conditionalText>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_DeploymentManifest.htm">DeploymentManifest</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>DiscoveryServiceUrl</td>
+                    <td>
+                        <p>(Optional string.) The Uniform Resource Locator (URL) of the discovery service for the target <MadCap:variable name="BrandingHSG.Amalga Short" /> topology to use when publishing the hosted application for debugging.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VirtualSchemaDataHost</td>
+                    <td>
+                        <p>(Optional string.) The URL of the data host for the target <MadCap:variable name="BrandingHSG.Amalga Short" /> topology to be used when publishing the virtual schema of the hosted application for debugging.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>This element can be included only in a parent <span class="MarkupLanguageElements">DeploymentManifest</span> element that represents an application manifest. The metadata included in this element is required when a hosted application is published from  <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />, providing the <MadCap:conditionalText MadCap:conditions="Production.doNOTbuild">URLs needed for the discovery service and</MadCap:conditionalText> URL of the data host for the target <MadCap:variable name="BrandingHSG.Amalga Short" /> topology to be used for debugging purposes.</p>
+        <p class="note">This element is not included in the application manifest by default. Use the Manifest Editor to add, and then set the attributes for, this element prior to debugging a hosted application in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Deploy_Test_Dev.htm" target="" title="" alt="">Debugging a hosted application on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Manifest_Editor.htm" target="" title="" alt="">Manifest Editor on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

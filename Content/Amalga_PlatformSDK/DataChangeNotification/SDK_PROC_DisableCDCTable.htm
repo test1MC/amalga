@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1834" MadCap:lastWidth="302" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Disable Change Data Capture for a table</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Change Data Capture;Data Change Notification platform application" />This topic describes how to use a SQL&#160;Server script to disable Change Data Capture (CDC) for a table in <MadCap:variable name="BrandingMS.SQL Server 2008" />.</p>
+        <p>The following procedure uses the sp_cdc_disable_table system stored procedure to disable Change Data Capture (CDC) for a table. When this system stored procedure is executed, it attempts to remove data used by CDC to track  the data changes made to the specified table. For more information about the sp_cdc_disable_table system stored procedure, see <a href="http://go.microsoft.com/fwlink?LinkId=241585">sys.sp_cdc_disable_table (Transact-SQL)</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at http://go.microsoft.com/fwlink/?LinkId=241585</MadCap:conditionalText>. </p>
+        <p class="note">You must enable CDC for a database before you can enable or disable CDC on tables contained within that database. If you disable CDC for a database, you cannot disable CDC for the tables contained in that database.</p>
+        <p class="tip">You can disable CDC for a database, as well as for specific tables, within the same SQL&#160;Server script. CDC should be disabled for tables first, before disabling CDC for the database.</p>
+        <p>For more information about disabling CDC for databases, see <MadCap:xref href="SDK_PROC_DisableCDCDatabase.htm" target="" title="" alt="">Disable Change Data Capture for a database on page 1</MadCap:xref>.</p>
+        <p class="note">You must be a member of the fixed server sysadmin role or the fixed database db_owner role to perform the following procedure.</p>
+        <p class="LabelforProcedures">To disable CDC for a table</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-Start-SSMS-SQL2008R2.flsnp">
+                </MadCap:snippetBlock>
+            </li>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-SSMS-Connect.flsnp">
+                </MadCap:snippetBlock>
+            </li>
+            <li>Click <span class="UIElementAction">New Query</span>.</li>
+            <li>
+                <p>Paste the following SQL&#160;Server script into the query window, replacing <span class="Parameter">DatabaseName</span> with the name of the database containing the table, <span class="Parameter">SchemaName</span>, with the name of the schema containing the table, and <span class="Placeholder">TableName</span> with the name of the table to be disabled for CDC.</p><pre xml:space="preserve">USE [<span class="Parameter">DatabaseName</span>]
+GO
+EXEC sys.sp_cdc_disable_table
+	@source_schema = N'<span class="Parameter">SchemaName</span>',
+	@source_name = N'<span class="Parameter">TableName</span>',
+	@capture_instance = 'all'
+GO</pre>
+            </li>
+            <li>Click <span class="UIElementAction">Execute</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_EnableCDCTable.htm" target="" title="" alt="">Enable Change Data Capture for a table on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

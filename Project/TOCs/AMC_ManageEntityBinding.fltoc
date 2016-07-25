@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Entity binding management"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">
+    <TocEntry
+      Title="Entity binding overview"
+      Link="/Content/DataPlatform1/DP_Ovw_ManageEntityBinding.htm" />
+    <TocEntry
+      Title="Open the [%=UI-Labels.Entity Management%] module"
+      Link="/Content/Serviceability/Management Console/Entity Management/SERV_TASK_OpenEM.htm" />
+    <TocEntry
+      Title="View an entity's bound applications and access policy"
+      Link="/Content/DataPlatform1/DP_TASK_ViewEntitySummary.htm" />
+    <TocEntry
+      Title="Binding Indicators"
+      Link="/Content/DataPlatform1/DP_Con_Indicators.htm"
+      conditions="Production.doNOTbuild" />
+    <TocEntry
+      Title="Entity binding views"
+      Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_EntityBindingView.htm">
+      <TocEntry
+        Title="View binding for entity properties"
+        Link="/Content/DataPlatform1/DP_Task_ViewBindProp.htm" />
+      <TocEntry
+        Title="View the binding SQL statement for an entity"
+        Link="/Content/DataPlatform1/DP_Task_ViewBindSQL.htm" />
+      <TocEntry
+        Title="View entities that require administrative action"
+        Link="/Content/DataPlatform1/DP_Task_ViewEntitiesActReqd.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="Entity binding configuration"
+      Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_EntityBinding.htm">
+      <TocEntry
+        Title="Configure binding: recommended column"
+        Link="/Content/DataPlatform1/DP_Task_BindColRec.htm" />
+      <TocEntry
+        Title="Configure binding: NULL values"
+        Link="/Content/DataPlatform1/DP_Task_BindNULL.htm" />
+      <TocEntry
+        Title="Configure binding: constant values"
+        Link="/Content/DataPlatform1/DP_Task_BindConstant.htm" />
+      <TocEntry
+        Title="Configure binding: selected column ([%=UI-Labels.Feed Browser%] tab)"
+        Link="/Content/DataPlatform1/DP_Task_BindColCatalog.htm" />
+      <TocEntry
+        Title="Configure binding: add and edit joins"
+        Link="/Content/DataPlatform1/DP_Task_ColRel.htm" />
+      <TocEntry
+        Title="Configure binding: multiple binding sources per entity"
+        Link="/Content/DataPlatform1/DP_Task_ColMult.htm" />
+      <TocEntry
+        Title="Configure binding: specify applications"
+        Link="/Content/DataPlatform1/DP_Task_BindApp.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="Migrate binding configuration"
+      Link="/Content/DataPlatform1/DP_Task_BindMigrate.htm"
+      conditions="Production.doNOTbuild"
+      ComputeToc="false" />
+    <TocEntry
+      Title="Clear binding for an entity and its properties"
+      Link="/Content/DataPlatform1/DP_Task_BindClear.htm" />
+  </TocEntry>
+</CatapultToc>

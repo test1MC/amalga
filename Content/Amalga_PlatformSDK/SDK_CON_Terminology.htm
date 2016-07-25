@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,Personas.Elvis: App Dev,TopicOwner.v-dennk,EditingTags.7 - Editing issues resolved,Status.40 - Ready for Tech Review,ReleaseTarget.TAP" MadCap:lastBlockDepth="4" MadCap:lastHeight="917" MadCap:lastWidth="721">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Terminology</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application;semantic tags" />This topic describes the terminology platform application, a hosted application included with <MadCap:variable name="BrandingHSG.Amalga Short" /> that provides a flexible mechanism by which relationships between concepts and clinical terminology can be modeled and used to standardize numerical and textual content.</p>
+        <p>Managing terminology is a challenge in any healthcare software system. Many healthcare concepts have more than one clinical term that is used to described them, and they often have a series of related terms that describe related concepts. <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides a platform application, named TerminologyApplication, that gives you a way to access the <MadCap:variable name="BrandingHSG.Amalga Short" /> entities that you need, without the terms employed by your application's user having to exactly match a specific term associated with that entity.</p>
+        <p>The TerminologyApplication application includes the TerminologyService service, which in turn provides two service contracts that can be accessed by hosted applications:</p>
+        <ul>
+            <li>
+                <p>ITerminologyQueryService</p>
+                <p>This service contract allows hosted applications to retrieve terminology content, such as terminologies, concepts, synonyms, relationships, and relationship types from the terminology database. </p>
+                <p>You can also create application views for terminology entities, contained in the Microsoft.Terminology entity namespace, in your hosted application to directly retrieve terminology content. For more information about these terminology entities, see <MadCap:xref href="../DataPlatform1/Entity_MS_Terminology/DP_Nav_EntityDefs.htm" target="" title="" alt="">Microsoft.Terminology entity namespace on page 1</MadCap:xref>.</p>
+                <p>For example, your end user can enter a term, and your hosted application can use the operations provided by the ITerminologyQueryService contract to retrieve and display related terms from which your end user can choose.</p>
+            </li>
+            <li>
+                <p>ISemanticLabelTaggingService</p>
+                <p>This service allows hosted applications to retrieve or add the source systems and data vectors that represent data assets, such as databases, tables, and columns. The service also allows hosted applications to assign a semantic tag to a data vector, tagging the data asset represented by that data vector with a semantic tag for later use in data operations that involve that data asset.</p>
+                <p>This service is also used by Message Shredder and Data Parser parsers during the data ingestion process to register a data vector and, if possible, associate it with a semantic tag.  A data vector contains a positional tag for each feed, its source system, and the physical location of the tag in the database.  The VirtualSchemaService service, part of the Virtual Schema  feature, uses this information to generate entity binding queries.</p>
+                <p>For example, you can use the operations provided by the ISemanticLabelTaggingService to add a source system, data vectors, and semantic tags for the read-only application views of a third-party hosted application whose entity and attribute semantic labels used a different terminology.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="Terminology/SDK_CON_Interacting_Terminology.htm" target="" title="" alt="">Interacting with Terminology on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref target="" title="" alt="">Terminology Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="Terminology/TRM_OVW_Concepts.htm" target="" title="" alt="">Terminology concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

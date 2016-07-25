@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1" conditions="Default.StyleMaster,Production.StyleMaster">
+    <TocEntry Title="[%=FrontMatter.TITLE%]" Link="/Content/fm-Title.htm" conditions="Default.PrintOnly" StartSection="false" StartChapter="true" PageLayout="/Content/Resources/PageLayouts/Title.flpgl" PageType="title" PageNumberReset="reset" PageNumberFormat="lower-roman" PageNumber="1" />
+    <TocEntry Title="Legal Notices" Link="/Content/fm-CopyrightPage-White paper.htm" conditions="Default.WhitePaperOnly,Default.PrintOnly" />
+    <TocEntry Title="Contents" Link="/Content/fm-Contents.htm" conditions="Default.PrintOnly" />
+</CatapultToc>

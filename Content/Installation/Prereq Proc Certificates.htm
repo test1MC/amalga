@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2235" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Ref_General,Status.70 - Complete,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,TopicOwner.v-ssiera">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Certificate prerequisites</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>Many Setup commands require certificate information. The <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference</MadCap:xref> contains tables describing the certificate parameters and their associated Setup commands. All certificates should be created and positioned in certificate stores or filed in directories as appropriate prior to beginning any installation procedures.</p>
+        <p>For certificates that require the exporting the public key of a token-signing certificate, see <a href="http://go.microsoft.com/fwlink?LinkID=231135">export public key certificates</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=231135)</MadCap:conditionalText> for the export procedure.</p>
+        <p>The following certificates are required for installation and are identified by a descriptive name and, in parenthesis, by the parameter name used by the Setup utility. Certificate type and relevant notes are included.</p>
+        <p class="h9">ADFS Certificate</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>Can be the same certificate as the Platform services.</li>
+        </ul>
+        <p class="h9">Platform Services (PlatformSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+        </ul>
+        <p class="h9">Application Services (ApplicationSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+        </ul>
+        <p class="h9">Management Console (AdminWebsiteSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>Can be the same as the Platform services if the console is installed on the same server.</li>
+        </ul>
+        <p class="h9">HealthVault STS Signing (StsSigningCertWithPrivateKey)</p>
+        <ul>
+            <li>Certificate type: Self-signed certificate</li>
+            <li>Generate a self-signed certificate and save the resulting HVSTSCert.pfx and HVSTSCert.cer in a temporary directory for consumption by Setup.</li>
+        </ul>
+        <p class="h9"><MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> STS Application (StsApplicationSSLCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This can be the same certificate as the <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> website.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as SSLSiteCert.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9"><a name="HealthVaultAppCert"></a>HealthVault Application (HealthVaultAppCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This certificate must be registered with <MadCap:variable name="BrandingHSG.HealthVault" /> through the AppConfig center and may be created through the <MadCap:variable name="BrandingHSG.HealthVault" /> application manager. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=231137">generating and managing an ApplicationID</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"><a href="http://go.microsoft.com/fwlink?LinkID=231137"> <![CDATA[ ]]></a>(http://go.microsoft.com/fwlink?LinkID=231137)</MadCap:conditionalText> and <a href="http://go.microsoft.com/fwlink?LinkID=231138">creating a private key-public key pair</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=231138)</MadCap:conditionalText>.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as HVApp.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9">HealthVault Public (HealthVaultPublicCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>The root certificate for GTE</li>
+            <li>Required for <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> to make outbound HTTPS connections the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> server</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as HVPPERoot.cer for consumption by Setup. For export instructions of this specific certificate, see <MadCap:xref href="#Export" target="" title="" alt="">Export the  public certificate</MadCap:xref>.</li>
+        </ul>
+        <p class="h9">SharePoint Application (SharePointApplicationSSLCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This can be the same certificate as the <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> website.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as SSLSiteCert.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9">ADFS Token Signing (AdfsSigningCertPublic)</p>
+        <ul>
+            <li>Certificate type: Self-signed certificate</li>
+            <li>Represents the certificate configured in ADFS to sign tokens</li>
+            <li>Export the certificate .cer file as ADFS.cer  and store it in a temporary directory for consumption by Application Framework Setup. This is only required to configure <MadCap:variable name="BrandingMS.SharePoint" /> to trust <MadCap:variable name="BrandingHSG.Amalga Short" />.</li>
+            <li>By default, this certificate is created during ADFS installation.</li>
+        </ul>
+        <p class="LabelforProcedures">Notes</p>
+        <ul>
+            <li>
+                <p>Many of the certificates listed previously can be the same certificate. For instance, PlatformSSLThumbprint and AdminWebsiteSSLThumbprint (using the Setup parameter names) should be the same certificate if platform services and the management console are installed on the same host. Work with your security specialist to determine the right certificates and locations for your topology. </p>
+                <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, ADFS, Platform, and Management Console must be on the same server and use the same certificate.</p>
+            </li>
+            <li>Every client machine needs to have the root certificate of the platforms services box and the application service box. If there is an enterprise CA, these will get propagated automatically to the client boxes.</li>
+        </ul>
+        <h2>Retrieve a certificate Thumbprint</h2>
+        <p>Once certificates are placed in the appropriate certificate store, they can be accessed to find the thumbprint required by Setup commands. The following procedures describe how to access the thumprint.</p>
+        <p class="LabelforProcedures">To open the <MadCap:variable name="BrandingMS.Microsoft"></MadCap:variable> Management Console (MMC)</p>
+        <ol>
+            <li>From Start, search for and start mmc.exe.</li>
+            <li>Click <span class="UIElementAction">File</span>, and then click <span class="UIElementAction">Add/Remove Snap-in</span>.</li>
+            <li>Select <span class="UIElementAction">Certificates </span>from <span class="UIElementAction">Available snap-ins</span>, and then click <span class="UIElementAction">Add</span>.</li>
+            <li>Select <span class="UIElementAction">Computer account</span>, and then click <span class="UIElementAction">Next</span>.</li>
+            <li>Select <span class="UIElementAction">Local computer</span>, and then click <span class="UIElementAction">Finish</span>.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>In the tree pane, expand <span class="UIElementAction">Certificates (Local Computer)</span>.</li>
+        </ol>
+        <p>Once the MMC is open, you can access the certificates and copy the thumbprint.</p>
+        <p class="LabelforProcedures">To copy a certificate thumbprint</p>
+        <ol>
+            <li>In the MMC tree pane, expand the appropriate container node.</li>
+            <li>Click the <span class="UIElementAction">Certificates </span>child node. This displays the certificates in the content pane of MMC.</li>
+            <li>In the content pane, double-click the appropriate private key (.pfx) file.</li>
+            <li>Click the <span class="UIElementAction">Details </span>tab.</li>
+            <li>In the field grid, select the row in which the Field column is set to Thumbprint (generally at the bottom).</li>
+            <li>Copy the value of the Thumbprint field to the Clipboard. The easiest way to do this is to click in the text box under the field grid, press Ctrl+A to select the entire contents of that text box, and then press Ctrl+C.</li>
+            <li>Open Notepad.</li>
+            <li>Paste the value of the Thumbprint field.</li>
+            <li>Remove all spaces (including the leading space, if it exists) from the value.</li>
+            <li>That should leave you with a hexadecimal value that looks something like ‎e263a35eae2a2a271067bc4fef63058e1807ccde.</li>
+            <li>Save the notepad file with an appropriate name for reference during the Setup process.</li>
+        </ol>
+        <h2><a name="Export"></a>Export the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> public certificate</h2>
+        <p class="LabelforProcedures">To export the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> public certificate</p>
+        <ol>
+            <li>
+                <p>Open a browser and navigate to <a href="https://platform.healthvault-ppe.com/">https://platform.healthvault-ppe.com</a>. You will receive a "403-Access is denied" error.</p>
+            </li>
+            <li>In the browser's address bar, click the lock icon and click <span class="UIElementAction">View Certificates</span>.</li>
+            <li>Click the <span class="UIElementAction">Certification</span> tab.</li>
+            <li>Navigate to the root certificate.</li>
+            <li>Export that certificate.</li>
+        </ol>
+    </body>
+</html>

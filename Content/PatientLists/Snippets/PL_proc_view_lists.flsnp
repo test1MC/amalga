@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="140" MadCap:lastWidth="557">
+    <body>
+        <p class="LabelforProcedures">To view available lists and select one to view</p>
+        <ol>
+            <li>
+                <p>Click <span class="UIElementAction"><MadCap:variable name="UI-Labels.Patient Lists" /></span>.</p>
+                <p>Lists you can access will be displayed.</p>
+            </li>
+            <li>Click the list that you want to view.</li>
+        </ol>
+    </body>
+</html>

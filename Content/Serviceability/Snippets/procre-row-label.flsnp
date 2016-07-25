@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>The sensitive label is now bound to the entity property. For roles to access the data in the entity property, roles must be granted access to the bound sensitive label. </body>
+</html>

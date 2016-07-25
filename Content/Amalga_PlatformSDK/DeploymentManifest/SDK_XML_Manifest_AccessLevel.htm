@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2034" MadCap:lastWidth="286.3333" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">AccessLevel element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the AccessLevel element.</p>
+        <p>Defines or identifies an access level exposed by the hosted application.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;AccessLevels&gt;<br />&#160;&#160;&#160;&lt;AccessLevel Name="<span class="Parameter">string</span>" &gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;[ &lt;Role&gt;...&lt;/Role&gt; ]<br />&#160;&#160;&#160;&lt;/AccessLevel&gt;<br />&lt;/AccessLevels&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>
+                        <p class="MarkupLanguageElements">AccessLevels</p>
+                        <p>1-<i>n</i>:
+Required element that can occur one or more times.</p>
+                        <p class="MarkupLanguageElements">Resource</p>
+                        <p>0-<i>n</i>:
+Optional element that can occur one or more times.<br /></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_AccessLevels.htm">AccessLevels</a>, <a href="SDK_XML_Manifest_Resource.htm">Resource</a> <![CDATA[
+                    ]]></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_Role.htm">Role</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The name of the access level. This value is displayed in <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The usage of this element depends on the parent element.</p>
+        <h5>AccessLevels</h5>
+        <p>When included in a parent <span class="MarkupLanguageElements">AccessLevels</span> element, this element defines an access level exposed by the hosted application. The access level defined by this <span class="MarkupLanguageElements">AccessLevel</span> element is exposed to <MadCap:variable name="FeatureName.Management Console second use" /> for managing access to the hosted application, and is used to specify for a user role the appropriate access level to the hosted application. </p>
+        <p>If one or more <span class="MarkupLanguageElements">Role</span> elements are included in this <span class="MarkupLanguageElements">AccessLevel</span> element, the <MadCap:variable name="BrandingHSG.Amalga Short" /> built-in roles identified by those elements are automatically granted authorization to that access level for the hosted application. This automatic authorization cannot be modified by an administrator.</p>
+        <h5>Resource</h5>
+        <p>When included in a parent <span class="MarkupLanguageElements">Resource</span> element, the <span class="MarkupLanguageElements">AccessLevel</span> element identifies an access level that has been granted access to that resource. The <span class="MarkupLanguageElements">Name</span> attribute of the <span class="MarkupLanguageElements">AccessLevel</span> element for the parent <span class="MarkupLanguageElements">Resource</span> element must match the <span class="MarkupLanguageElements">Name</span> attribute of an existing <span class="MarkupLanguageElements">AccessLevel</span> element included in a parent <span class="MarkupLanguageElements">AccessLevels</span> element.</p>
+        <p><span class="MarkupLanguageElements">Role</span> elements cannot be included in a parent <span class="MarkupLanguageElements">AccessLevel</span> element if the <span class="MarkupLanguageElements">AccessLevel</span> element is included in a parent <span class="MarkupLanguageElements">Resource</span> element.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See Also</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../SDK_CON_Authent_Access_Author.htm" target="" title="" alt="">Access, authentication, and authorization framework on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="130" MadCap:lastWidth="688" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To zoom the time interval</p>
+        <ol>
+            <li>To display a longer time interval, click <span class="UIElementAction">Zoom Out Time Interval</span> or drag the interval for time label to the right.</li>
+            <li>To display a shorter time interval, click <span class="UIElementAction">Zoom In Time Interval</span> or drag the interval for time label to the left.</li>
+        </ol>
+    </body>
+</html>

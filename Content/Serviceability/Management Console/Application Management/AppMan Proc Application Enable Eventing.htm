@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="659" MadCap:lastWidth="1066" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Enable application eventing</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>Data Change Notification (DCN), also known as eventing, provides a way for your applications and services to be notified if data changes. Data Change Notification functionality is provided by the Microsoft.Amalga.Event.Application application, which takes advantage of the Change Data Capture (CDC) functionality in <MadCap:variable name="BrandingMS.SQL Server 2008" /> to provide a data-driven callback mechanism that hosted applications can use to support workflow-driven clinical events.</p>
+        <p>This procedure enables the Change Data Capture (CDC) functionality in <MadCap:variable name="BrandingMS.SQL Server 2008" /> on databases and tables which are bound to this application's views. For more information on eventing, see <MadCap:xref href="../../../Amalga_PlatformSDK/DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification</MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaDataAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To enable application eventing</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>In the module navigation tree, expand the <MadCap:variable name="BrandingHSG.Amalga Short" class="UIElementAction" /><span class="UIElementAction"> Hosted Applications</span> folder and select the application on which you want to enable eventing.</li>
+            <li>In the tasks pane, click <span class="UIElementAction">Enable Eventing</span>.</li>
+            <li>
+                <p>In the Enable Eventing pane, confirm that you want proceed by clicking <span class="UIElementAction">Enable Eventing</span>. The results box will display a message if events have been enabled for the application.</p>
+            </li>
+            <li>After the process is complete, click <span class="UIElementAction">Close</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../Amalga_PlatformSDK/DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

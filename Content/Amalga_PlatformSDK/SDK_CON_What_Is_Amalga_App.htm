@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2719" MadCap:lastWidth="500" MadCap:fileTags="TopicOwner.v-dennk,Status.20 - Development: under 50%,TopicType.Concept,Personas.Elvis: App Dev,ReleaseTarget.CTP1" MadCap:conditions="Production.doNOTbuild">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingHSG.Amalga Short" /> applications</h1>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-29T22:15:36.4450600-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Per MSTP, avoid using a question as a first heading. You could also call this Amalga application structure (instead of overview)" MadCap:editor="v-ciwyco" MadCap:editDate="2011-09-29T22:17:01.6320600-07:00">An</MadCap:annotation> Amalga application is an application that uses the Amalga platform to provide functionality for building hospital applications, including security, data modeling, application configuration management, logging, auditing, and topology/discovery. Amalga applications consist of several components, starting with data and ending with user interfaces. </p>
+        <p>The following diagram illustrates the basic components required to develop an application that uses <MadCap:annotation MadCap:createDate="2011-09-02T15:03:32.2140576-07:00" MadCap:creator="v-pegrue" MadCap:initials="PG" MadCap:comment="Waiting to hear back from Pierre on whether there are any diagrams I can use." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-02T15:03:44.6390576-07:00">the Amalga platform</MadCap:annotation>.</p>
+        <p style="text-align: center;">
+            <img src="Images/AmalgaFabricDiagram.jpg" style="max-width: 500px;" />
+        </p>
+        <h2>Data</h2>
+        <p>TODO:&#160;Not sure how much of Chris's stuff will be here.</p>
+        <p>In addition to data from various hospital systems, an application may have its own data. For example, an application that reads lab reports may also allow users to write and save notes about each lab report. As described below, you can easily use Amalga tools to create a database for your application data only.</p>
+        <h2>Virtual Schema</h2>
+        <p>The Virtual Schema provides a layer of abstraction so that application developers don't need to code to specific databases, but rather can code to the Virtual Schema, which specifies which data entities the application can use. A Virtual Schema tool is available that allows you to specify which entities your application can uses, giving read-only access to data in any number of databases with hospital data. In addition, by specifying writable entities in the Virtual Schema, you can automatically create an application database with data that is accessible through the Virtual Schema tool.</p>
+        <h2>The Amalga Fabric API</h2>
+        <p>The Amalga Fabric API is a collection of .NET libraries that make it easier to create applications for hospital data. Some of the features provided by Amalga Fabric are:</p>
+        <ul>
+            <li>Security</li>
+            <li>Role Management</li>
+            <li>Authorization Management</li>
+            <li>Connection to the Virtual Schema</li>
+            <li>Logging</li>
+            <li>Auditing</li>
+            <li>Topology and Discovery</li>
+            <li>Application Configuration Management</li>
+        </ul>
+        <h2>Amalga Hosted Services and Applications</h2>
+        <p>Amalga Hosted Services and Applications have several advantages over their equivalent services and applications without Amalga. The Amalga platform provides features such as security and logging, as well as management through the Amalga Console.</p>
+        <h3>Doors Communication Foundation Services</h3>
+        <p>By using Visual Studio templates provided by the Amalga SDK, you can easily build WCF&#160;services that can access data through the Virtual Schema. These WCF services can then be used by Amalga hosted applications, or by any application so that end users can interact with your data. Like any other WCF service, your Amalga WCF service can take advantage of technologies such as clustering in order to achieve high performance.</p>
+        <h3>Doors Worker Services</h3>
+        <p>Again, Visual Studio templates provided by the Amalga SDK make it easy to build Doors Worker Services that run on your server. These services are good for running background tasks, such as sending out automated reports at regularly scheduled intervals. </p>
+        <h2>Applications</h2>
+        <h3>Amalga Hosted Applications</h3>
+        <p>Amalga Hosted Applications can take advantage of the hosting features described above, and use WCF to call Amalga Hosted Services in order to interact with data through the Virtual Schema. TODO:&#160;What are the advantages of hosted apps that are not Beijing?</p>
+        <p>In addition to just hosting, you can also build applications using the Amalga Application Framework. This allows you to easily create applications using Sharepoint that take advantage of several Amalga features, such as context passing so that controls can respond to user reactions on other controls, even on separate web pages.</p>
+        <h3> Other Applications</h3>
+        <p>You aren't restricted to creating your applications using Amalga technology, or even Microsoft technology. By calling WCF services using whatever technology you choose, you can still access your Virtual Schema in a secure fashion.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

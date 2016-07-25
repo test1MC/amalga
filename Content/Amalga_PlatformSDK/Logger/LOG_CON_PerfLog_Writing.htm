@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="4489.667" MadCap:lastWidth="990" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Writing performance log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to write scenario and event markers to the performance log in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The performance log tracks performance information related to the events of an application, such as reading data or sending email, and can store performance log entries representing markers for scenarios and events. You can use the PerfLog static class, in the Microsoft.Amalga.Hosting.WcfService namespace, to write performance log entries. The PerfLog static object provides a safe mechanism to start event markers for the scenario marker initiated by the <MadCap:variable name="BrandingHSG.Amalga Short" /> infrastructure.</p>
+        <p class="note">The PerfLog object is available only to hosted <MadCap:variable name="BrandingMS.WCF service" />s. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the PerfLog object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using the EventMarker object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using3" target="" title="" alt="">Using the ScenarioMarker object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Configur" target="" title="" alt="">Configuring logging levels on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using the PerfLog object</h2>
+        <p>The PerfLog static object provides a single overloaded method, StartNewEvent, to which you can pass the logging level, event marker GUID, and optional message to be written to the performance log and receive an EventMarker object representing the current event. For more information about using the EventMarker object, see <MadCap:xref href="#Using2" target="" title="" alt="">Using the EventMarker object on page 1</MadCap:xref>. The PerfLog object also provides some properties you can use to inspect the current scenario and logging level for the hosted service.</p>
+        <p>The PerfLog object provides the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CurrentScenario</td>
+                    <td>
+                        <p>Read-only. A ScenarioMarker object representing the current scenario marker. For more information about the ScenarioMarker object, see <MadCap:xref href="#Using3" target="" title="" alt="">Using the ScenarioMarker object on page 1</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ServicePerfLevel</td>
+                    <td>Read-only. A PerfLevel enumeration value indicating the value of the Performance Log Level configuration setting for the hosted service.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For example, you can use the value of the ServicePerfLevel property to determine whether performance logging is enabled for a hosted service, or to ensure that an event marker is always logged by ensuring that the value of the logging level specified when invoking the StartNewEvent method matches the value of the ServicePerfLevel property.</p>
+        <h2><a name="Using2"></a>Using the EventMarker object</h2>
+        <p class="Figure">The PerfLog object automatically begins a new scenario, using the OperationExecuteScenario scenario marker, whenever a service operation is invoked. You can then use the StartNewEvent overloaded method to start a new event, providing the appropriate logging level, event marker GUID, and an optional message; you will receive an EventMarker object with which you can interact. The EventMarker class is included in the Microsoft.Amalga.Hosting.Service namespace.</p>
+        <p class="Figure">The EventMarker object provides the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EventId</td>
+                    <td>
+                        <p>Read-only. A System.Guid object representing the event marker GUID of the event.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsActive</td>
+                    <td>Read-only. A Boolean value that, if set to True, indicates that the event is still active and that the StopEvent method of the EventMarker object has not yet been invoked for this event.</td>
+                </tr>
+                <tr>
+                    <td>PerfLevel</td>
+                    <td>Read-only. A PerfLevel enumeration value indicating the logging level of the event. For more information about using the PerfLevel property, see <MadCap:xref href="#Configur" target="" title="" alt="">Configuring logging levels on page 1</MadCap:xref>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Once the event for which the EventMarker object was created has been completed, the overloaded StopEvent method of the EventMarker object is invoked to stop the event and update the performance log. When the StopEvent method is invoked, the EventMarker object is no longer active. However, it can be reactivated by invoking the StartEvent method, which starts a new event marker using the values provided for the EventMarker object. If a service operation iteratively performs an event, you can then use the same EventMarker object to start and stop a new event for each iteration.</p>
+        <p class="note">An EventMarker object can track the state of only a single event at any given time. If the StartEvent method is called twice without a call to the StopEvent event in between, the second call to the StartEvent method&#160;will have no effect. Similarly, a call to the StopEvent method will have no effect if the EventMarker object is not already active (in other words, if the IsActive property of the EventMarker object is set to False.)</p>
+        <h2><a name="Using3"></a>Using the ScenarioMarker object</h2>
+        <p>Although the PerfLog object automatically begins a new scenario when a service operation is invoked, you can interact with the current scenario by using the ScenarioMarker object, returned from the CurrentScenario property of the PerfLog object.</p>
+        <p class="Figure">The ScenarioMarker object provides the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ScenarioId</td>
+                    <td>
+                        <p>Read-only. A System.Guid object representing the scenario marker GUID of the scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsActive</td>
+                    <td>Read-only. A Boolean value that, if set to True, indicates that the scenario is still active and that the EndScenario method of the ScenarioMarker object has not been invoked for this scenario.</td>
+                </tr>
+                <tr>
+                    <td>PerfLevel</td>
+                    <td>Read-only. A PerfLevel enumeration value indicating the logging level of the scenario. For more information about using the PerfLevel property, see <MadCap:xref href="#Configur" target="" title="" alt="">Configuring logging levels on page 1</MadCap:xref>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Similar to the EventMarker object, you can use the EndScenario method to stop the current scenario and update the performance log. When the EndScenario method is invoked, the ScenarioMarker object is no longer active. However, it can be reactivated by invoking the BeginScenario method, which starts a new scenario marker using the values provided for the ScenarioMarker object. However, the PerfLog static object typically invokes the EndScenario method after the completion of the service operation.</p>
+        <p class="note">A ScenarioMarker object can  track the state of only a single scenario at any given time. If the BeginScenario method is called twice without a call to the EndScenario event in between, the second call to the BeginScenario method&#160;will have no effect. Similarly, a call to the EndScenario method will have no effect if the ScenarioMarker object is not already active (in other words, if the IsActive property of the ScenarioMarker object is set to False.)</p>
+        <p>You can also use the StartNewEvent overloaded method provided with the ScenarioMarker object to start a new event, providing the appropriate logging level, event marker GUID, and an optional message; you will receive an EventMarker object with which you can interact. However, for performance purposes, you should instead use the StartNewEvent method included with the PerfLog static object.</p>
+        <h2><a name="Configur"></a>Configuring logging levels</h2>
+        <p>When you are using the PerfLog static object to write entries to the performance log, the Performance Log Level configuration setting for the hosted application or hosted service must be set to a logging level equal to or greater than the logging level used by the ScenarioMarker or EventMarker objects representing those performance log entries. The following list  describes what happens when the Performance Log Level is set to one of the following PerfLevel enumeration values:</p>
+        <ul>
+            <li>
+                <p>Off</p>
+                <p>Nothing is written to the performance log.</p>
+            </li>
+            <li>
+                <p>Minimal</p>
+                <p>Only scenario markers and event markers with a PerfLevel value of PerfLevel.Minimal  are  written to the performance log.</p>
+            </li>
+            <li>
+                <p>Detailed</p>
+                <p>All scenario markers and event markers  are  written to the performance log.</p>
+            </li>
+        </ul>
+        <p>By default, the Performance Log Level configuration setting for a hosted <MadCap:variable name="BrandingMS.WCF service" /> is set to PerfLevel.Off when the hosted application for that hosted service is deployed. You can use the <MadCap:variable name="FeatureName.Management Console second use" /> to change the value of the Performance Log Level configuration setting for a hosted application or hosted <MadCap:variable name="BrandingMS.WCF service" />. For more information about using the <MadCap:variable name="FeatureName.Management Console second use" /> to change the logging level for a hosted application or hosted service, see <MadCap:xref href="../../Serviceability/Management Console/Application Management/AppMan Proc ChangeAppLoggingLevel.htm" target="" title="" alt="">Change application service logging levels on page 1</MadCap:xref>.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-12T23:04:59.3837729-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Does this belong here?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T23:05:23.5015275-07:00">Diag</MadCap:annotation>
+        </p><pre xml:space="preserve">Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName <MadCap:annotation MadCap:createDate="2012-03-12T23:06:40.6760398-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Isn't this a placeholder?  If so, should be styled as such, IMO." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T23:07:05.9996230-07:00">TerminologyService_Ins1</MadCap:annotation> 
+&#160;&#160;&#160;&#160;-SettingName PerformanceLogLevel -SettingValue Detailed</pre>
+        <p>For more information about getting and setting configuration values using <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlets, see, respectively, <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting on page 1</MadCap:xref> and <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting on page 1</MadCap:xref>.</p>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following method demonstrates how to use the PerfLog object to write two events, with the second event occurring within the first event, to the performance log.</p><pre xml:space="preserve">        public void PerfLogNestedEventsWithMessages()
+        {
+            // Before running this method, ensure that the Performance Log Level property
+            // of the hosted service containing this method is set to
+            // PerfLevel.Detailed. By default, the Performance Log Level property is
+            // set to PerfLevel.Off, meaning that no performance log entries are logged.
+            // You can check the ServicePerfLevel property of the PerfLog static object
+            // to determine the current setting of the Performance Log Level for the 
+            // hosted service containing this method. However, the property is read-only and
+            // <MadCap:annotation MadCap:createDate="2012-03-12T23:13:01.8981519-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is &quot; how to change the setting&quot; in Change Application service logging level?    If this example is ever detached from the rest of the topic, you'll need to add that here on in an intro to the example. " MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T23:20:05.2388922-07:00">you cannot programmatically change the setting using the PerfLog object</MadCap:annotation>.
+            
+            // Define event marker GUIDs to identify two sample events.
+            System.Guid eventSample1 = new System.Guid("{F9CC4C0E-7FA8-433C-92D6-F244E4AE6C60}");
+            System.Guid eventSample2 = new System.Guid("{3F639069-D0F6-42F8-A159-A526280D3BAB}");
+
+            // Amalga measures performance in terms of scenarios.
+            // Each scenario can have multiple events that measure time taken for portions of code.
+            // Scenarios can span multiple classes and operations.
+            // Events can be nested within other events, as well as within scenarios.
+            // For hosted WCF services, a new scenario using the OperationExecuteScenario
+            // scenario marker is <MadCap:annotation MadCap:createDate="2012-03-12T23:11:50.3863992-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Even if Performance log level is set to PerLevel.Off?  " MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T23:12:48.7949919-07:00">automatically started by the PerfLog object</MadCap:annotation> when a
+            // service operation is invoked. Your hosted service need only provide
+            // event markers.
+                
+            // Start the first sample event.
+            EventMarker perfEventSample1 = PerfLog.StartNewEvent(PerfLevel.Detailed, 
+                eventSample1, "Starting first event");
+
+            // Put the thread to sleep for 50 milliseconds, to simulate a measurable and
+            // predictable time gap between the start and stop performance log entries for
+            // the first sample event.
+            Thread.Sleep(50);
+
+            // Start the second sample event, nesting the event within the first sample event.
+            EventMarker perfEventSample2 = PerfLog.StartNewEvent(PerfLevel.Detailed, 
+                eventSample2, "Starting second event");
+
+            // Put the thread to sleep for 50 milliseconds, to simulate a measurable and
+            // predictable time gap between the start and stop performance log entries for
+            // the second sample event.
+            Thread.Sleep(50);
+
+            // Stop the second sample event.
+            perfEventSample2.StopEvent("Stopping second event");
+            
+            // Stop the first sample event.
+            perfEventSample1.StopEvent("Stopping first event");
+ 
+        }
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerfLog_Reading.htm" target="" title="" alt="">Reading performance log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_PerformanceLog.htm" target="" title="" alt="">Performance log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

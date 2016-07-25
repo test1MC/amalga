@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="174" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-kathen" MadCap:initials="V-" MadCap:id="4" MadCap:timestamp="2012-01-27T15:16:08.4334845-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-kathen" MadCap:initials="V-" MadCap:id="5" MadCap:timestamp="2012-01-27T15:16:27.6624072-08:00" />
+        </MadCap:changeData>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To delete a report</p>
+        <p class="note">You must unpublish a report before you can delete it. For more information, see <MadCap:xref href="../AN_Task_Unpublish_report.htm">Unpublish a report</MadCap:xref><MadCap:change MadCap:changes="5">.</MadCap:change></p>
+        <ol>
+            <li>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the Options icon (<img src="../Images/AN_settings.png" /> ) in the report that you want to unpublish, and then click <span class="UIElementAction">Delete</span>.</li>
+            <li>Click <span class="UIElementAction">Delete</span> to confirm the deletion.</li>
+        </ol>
+    </body>
+</html>

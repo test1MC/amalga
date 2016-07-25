@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1545" MadCap:lastWidth="608" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,ReleaseTarget.TAP,TopicType.Concept,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>SQL conditions</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes SQL conditions in rules defined for entity access policies. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-12-19T12:41:23.5622932-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="TAP: 83863 (lookup enhancements)\r\n\r\nFor one thing, need to warn user that if an entity or property is referenced in a SQL condition (or elsewhere in a rule), then the entity or property won't be able to be edited or deleted. from 83863: &quot;Deleting or updating an entity is not allowed if it is used by an app or if is used in any ACF rule (either directly or via inheritance).&quot; &gt;&gt; what terminology is used in the UI? &quot;bound applications&quot;? plus: entities and entity properties referenced in access rules, whether &quot;local or inherited&quot;?\r\n\r\n85579 access policies on writable app views: does this topic need to mention application private entities? will private entities be available for defining sql conditions on public entities?" MadCap:editor="v-padenc" MadCap:editDate="2012-03-12T15:38:36.2112850-07:00">
+                <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;permissions:data;policies:access;rule SQL conditions;rules:access;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;Management Console" />Use</MadCap:annotation> SQL conditions (also known as “custom SQL filters”) to further refine entity access for the selected role. </p>
+        <p>For example, you can use SQL conditions to filter access to visits admitted in a particular facility, look up data from other entities, or map the current session user to its relationship to a patient record. </p>
+        <p>Dynamic session parameters, such as userid and other claims passed on the user token, can be specified in SQL conditions.</p>
+        <p class="note">While rules are always applied during data access, any rules on a lookup entity are suspended during lookup operations specified in SQL conditions.</p>
+        <h2>Best practices</h2>
+        <p class="caution">Do not hardcode GUIDs of AmalgaID directly in SQL conditions. Instead, look up property-bound column values from other entities.</p>
+        <h2>Parameters</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@user</td>
+                    <td>
+                        <p>Represents the current user. </p>
+                        <p>Example (requires that the current user be the admitting doctor)&#160;</p>
+                        <p class="InputTextPara">AdmitMD = @user</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@role</td>
+                    <td>Represents the current role. </td>
+                </tr>
+                <tr>
+                    <td>@roles</td>
+                    <td>Represents all roles to which the user is a member. </td>
+                </tr>
+                <tr>
+                    <td>GetClaim</td>
+                    <td>
+                        <p>Retrieves the list of values for the specified claims on the user token. </p>
+                        <p>Example ( retrieves the list of values of HVRecordID claims)</p>
+                        <p class="InputTextPara">GetClaim(‘HVRecordID’)</p>
+                        <p class="noteInTable">For more information about using claims in <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS)" />, see <a href="http://go.microsoft.com/fwlink/p?LinkID=232338">AD FS&#160;Overview</a>. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Examples</h2>
+        <h3>Filter access </h3>
+        <p>Let’s say that you want emergency room personnel to access visits that occur in the emergency department only.</p>
+        <p>In this example, all emergency room personnel are members of the <MadCap:variable name="BrandingHSG.Amalga Short" /> role ERStaff and visit data is accessed through the entity Encounter. All emergency department visits are indicated by an “ED” value in the column bound to the AssignedPatientLocationFacility property of this entity.</p>
+        <p>To limit data visibility for emergency room personnel to visits that occur in the emergency department only, you can insert the following custom SQL filter into all access rules defined for the <MadCap:variable name="BrandingHSG.Amalga Short" /> role ERStaff on the entity Encounter (rule access level: the entity, its peers, and its authorized children).</p>
+        <p class="InputTextPara">AssignedPatientLocationFacility = ‘ED’</p>
+        <h3>Dynamic filter based on user identity</h3>
+        <p>Let's say that you want attending physicians to be able to update records for patients whom they are attending, but not records for other patients.</p>
+        <p>All physicians are members of the <MadCap:variable name="BrandingHSG.Amalga Short" /> role Doctors, patient data is accessed through the entity Patient, and physician-patient mapping information is accessed through the entity PatientProviderLookup. Physician relationships to patients are indicated in the entity PatientProviderLookup. The patient identifier is indicated by the entity property PersonID in both entities.</p>
+        <p>To limit data read-write access for attending physicians to the patients for whom they are attending, you can insert the following custom SQL filter into the read-write access rule defined for the <MadCap:variable name="BrandingHSG.Amalga Short" /> role Doctors specific to the entity Patient (rule access level: the entity, its peers, and its authorized children).</p>
+        <p class="InputText">PersonID IN (SELECT PersonID FROM PatientProviderLookup WHERE PatientProviderLookup.AttendingDoctorID = @user)</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_RuleCond.htm" target="" title="" alt="">Add a SQL condition to an access rule</MadCap:xref>
+        </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_InputSQL.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

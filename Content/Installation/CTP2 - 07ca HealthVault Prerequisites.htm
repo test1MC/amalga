@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="604" MadCap:lastWidth="438" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> Connection prerequisites</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>A <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> application ID and a certificate for communication with <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> must be obtained prior to deploying <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> Connection.  The application should be registered in the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> pre-production environment (PPE) for development and test purposes.  If Personally Identifiable Information (PII) is involved, please request a <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> Rapid Deploy (RD) environment.&#160;</p>
+        <p>Similar to HealthVault PPE, Rapid Deploy applications are created and registered through Application Configuration Center (ACC). There is a separate instance of ACC that can be pointed to <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> RD for this purpose.  The steps are the same for both PPE and RD environments.</p>
+        <p class="Label">To prepare for <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> Connection installation</p>
+        <ol>
+            <li>Perform one of the following. PPE in most cases; RD if personally identifiable patient data will be used.<ol style="list-style-type: lower-alpha;"><li><MadCap:xref href="Install Proc HVConnect PPE.htm" target="" title="" alt="">Create a  PPE application</MadCap:xref></li><li><MadCap:xref href="Install PRoc HVConnect RD.htm" target="" title="" alt="">Create a  RD application</MadCap:xref></li></ol></li>
+            <li>
+                <MadCap:xref href="Install Proc HVConnect DataType Auth.htm" target="" title="" alt=""> Connection authorization configuration</MadCap:xref> (optional)</li>
+            <li>
+                <p>If you want to digitally sign the data before pushing it to <MadCap:variable name="BrandingHSG.HealthVault" />, you will need a signing certificate. Obtain a signing certificate from one of the commercial third party certificate providers.</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="127" MadCap:lastWidth="544">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To preview a report</p>
+        <ol>
+            <li>In the placeholder for the report, click <span class="UIElementAction">Preview and Publish</span>.</li>
+            <li>In the Preview dialog box, click <span class="UIElementAction">Close</span>.</li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

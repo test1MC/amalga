@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wpete,EditingTags.7 - Editing issues resolved,ReleaseTarget.TAP,Status.30 - Development: over 50%" MadCap:lastBlockDepth="6" MadCap:lastHeight="1821" MadCap:lastWidth="654.3333" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Creating clinical documents</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="Clinical document;ClinicalDocumentService" />
+        </p>
+        <p class="abstract">This topic describes the Clinical Documents feature of the <MadCap:variable name="FeatureName.Amalga Framework" />.</p>
+        <p>The <span class="Label">ClinicalDocumentService</span> API allows <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications to generate standards-compliant documents from <MadCap:variable name="BrandingHSG.Amalga Short" /> data objects. The Clinical Documents API also allows the application to digitally sign those generated documents.</p>
+        <p>The only document type supported by <MadCap:variable name="BrandingHSG.Amalga Short" /> is the clinical visit summary.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Creating" target="" title="" alt="">Creating visit summaries on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Supporte" target="" title="" alt="">Supported data entities on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Supporte2" target="" title="" alt="">Supported document formats on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Configur" target="" title="" alt="">Configuration on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Creating"></a>Create visit summaries</h2>
+        <p>The CTP&#160;release of the <a href="../API/Ref/Microsoft.Amalga.ClinicalDocument.Service/T_ClinicalDocumentService.htm">ClinicalDocumentService</a> service implements a single API method for generating documents, <a href="../API/Ref/Microsoft.Amalga.ClinicalDocument.Service/M_ClinicalDocumentService_CreateVisitSummary_3_796da602.htm">CreateVisitSummary</a>.</p>
+        <p>To create a visit summary, the application must specify the visit ID of the patient visit, the format code for the required document type (see <a href="#Supporte2">Supported document formats</a>) and a title for the document. The service will return a collection of  <a href="../API/Ref/Microsoft.Amalga.ClinicalDocument/T_ClinicalDocument.htm">ClinicalDocument </a>objects that <MadCap:annotation MadCap:createDate="2011-10-07T23:42:09.9759565-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="More detail would be good.\r\n\r\nLLB: will add content here?:" MadCap:editor="v-labenn" MadCap:editDate="2011-11-29T21:41:13.5564735-08:00">describe the patient visit.</MadCap:annotation></p>
+        <h2><a name="Supporte"></a>Supported data entities</h2>
+        <p>The service will use content from the following <MadCap:variable name="BrandingHSG.Amalga Short" /> data entities to generate the visit summary document:</p>
+        <ul>
+            <li><a href="AF_GREF_MS.Common.Allergy.htm">Microsoft.Common.Allergy</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.ContactInfo.htm">Microsoft.Common.ContactInfo</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Diagnosis.htm">Microsoft.Common.Diagnosis</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Encounter.htm">Microsoft.Common.Encounter</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Insurance.htm">Microsoft.Common.Insurance</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.NextOfKin.htm">Microsoft.Common.NextOfKin</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Order.htm">Microsoft.Common.Order</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Patient.htm">Microsoft.Common.Patient</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.PatientIdentifier.htm">Microsoft.Common.PatientIdentifier</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Provider.htm">Microsoft.Common.Provider</a>
+            </li>
+            <li><a href="AF_GREF_MS.Common.Result.htm">Microsoft.Common.Result</a>
+            </li>
+        </ul>
+        <h2><a name="Supporte2"></a>Supported document formats</h2>
+        <p>The Clinical Document application can generate documents in the following formats:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Description</th>
+                    <th>Format code</th>
+                </tr>
+                <tr>
+                    <td>C-32/CCD document</td>
+                    <td class="InputText">urn:ihe:pcc:xphr:2007</td>
+                </tr>
+                <tr>
+                    <td>CCR document</td>
+                    <td class="InputText">um:astm-org:CCR</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Configur"></a>
+            <MadCap:annotation MadCap:createDate="2011-11-28T16:04:45.3556699-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="&quot;Configuration&quot; what?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T16:04:58.8422639-08:00">Configuration settings</MadCap:annotation>
+        </h2>
+        <p>The behavior of the  <a href="../API/Ref/Microsoft.Amalga.ClinicalDocument.Service/T_ClinicalDocumentService.htm">ClinicalDocumentService </a>is determined by the values of the following configuration settings.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Setting name</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>OrganizationName</td>
+                    <td>String</td>
+                    <td>Microsoft</td>
+                    <td>
+                        <p>The name of the organization where the current instance of Amalga is deployed. Used to generate C-32 and <MadCap:variable name="BrandingHSG.HealthVault" /> CCD documents.</p>
+                        <p>The default value must be changed at the customer site to reflect institution name. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OrganizationOID</td>
+                    <td>String</td>
+                    <td>
+                        <p>1.3.6.1.4.1.311.68.1</p>
+                        <p>(Microsoft Amalga OID)</p>
+                    </td>
+                    <td>
+                        <p>The HL7 issued OID of the organization where the current instance of Amalga is deployed. Used to generate C-32 and <MadCap:variable name="BrandingHSG.HealthVault" /> CCD documents.</p>
+                        <p>The default value must be changed at the customer site to the OID&#160;of their institution .</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SignDocument</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Determines whether or not the generated documents will be signed.</td>
+                </tr>
+                <tr>
+                    <td>SigningCertThumbprint</td>
+                    <td>String</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p>
+                            <MadCap:annotation MadCap:createDate="2011-11-28T20:11:10.7633404-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Default value missing?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T20:11:16.9421404-08:00">The</MadCap:annotation> thumbprint value of a certificate in the Local Machine Personal certificate store.</p>
+                        <p>The certificate must have an exportable private key.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HashAlgorithm</td>
+                    <td>String</td>
+                    <td>SHA256</td>
+                    <td>
+                        <p>The hash algorithm used to sign the certificate. Any SHA-2 algorithm is supported.</p>
+                        <p class="CautionInTable">CNG certificates are not supported.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VerifyCertificate</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Determines whether or not the service will validate the certificate used for document signing. Validation includes verification of the certificate expiration date and revocation status.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information about user settings, see <a href="AF_Con_Configuration1.htm">Application configuration and user settings</a>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_Configuration1.htm">Application configuration and user settings</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

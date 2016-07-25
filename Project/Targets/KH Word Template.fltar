@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="MsWord"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  OutputFile="Published PowerShell Cmdlets Tech Review"
+  ConditionTagExpression="include[&quot;Releases.Investigation Use&quot;] exclude[API.APIRef or Manuals.XRefOtherManual or Production.doNOTbuild or Production.ScreenOnly or Production.StyleMaster or Production.TOCsAll or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "
+  PatchHeadingLevels="false"
+  MasterToc="/Project/TOCs/KH_Remove_Application_Tech_Review.fltoc"
+  EmbedImages="true"
+  MasterPageLayout="/Content/Resources/PageLayouts/WordTemplateGeneric.flpgl"
+  conditions="Production.StyleMaster"
+  OutputFolder="C:\V3 TAP">
+  <Variables>
+    <Variable
+      Name="BrandingHSG/Amalga Long">Microsoft Amalga 3.0 Customer Technology Preview</Variable>
+    <Variable
+      Name="BrandingHSG/Amalga Long TM">Microsoft® Amalga™ 3.0  Customer Technology Preview</Variable>
+    <Variable
+      Name="BrandingHSG/Brussels Long">CTP1 Sample Data Explorer</Variable>
+    <Variable
+      Name="BrandingHSG/Brussels second use">CTP1 SampleData Explorer</Variable>
+    <Variable
+      Name="BrandingHSG/LS Long TM">DO NOT USE --------------------</Variable>
+    <Variable
+      Name="BrandingHSG/LS Short">DO NOT USE --------------------</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Version Number-current">VERSION 3.0 CUSTOMER TECHNOLOGY PREVIEW</Variable>
+    <Variable
+      Name="ManualNames/TITLE">[Insert title here]</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+  </Variables>
+  <PDF
+    ShowUsedBookmarks="false" />
+  <PrintedOutput
+    DisableMasterPageUsage="false" />
+</CatapultTarget>

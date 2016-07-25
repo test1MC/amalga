@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1494" MadCap:lastWidth="286" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.60 - Revising,EditingTags.4 - Ready for Writer">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="3" MadCap:timestamp="2012-02-23T00:50:29.8239390-06:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Write and test a new quick criteria query</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-22T22:42:27.9946295-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Index marker?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-22T22:42:32.5184760-08:00">
+                <MadCap:keyword term="quick criteria;quick criteria query, writing;quick criteria query, testing;testing quick criteria query;writing quick criteria query" />This</MadCap:annotation> topic describes how a system administrator can create new quick criteria for use in creating patient lists.</p>
+        <p>Prior to creating a query, review the business requirements for the new criteria. Review the entity model in the Entity Management section of the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />.</p>
+        <p class="note">The syntax for the script is limited to what is supported by the <MadCap:variable name="Applications.Data Connector application" />. For more information about what is supported, see <span class="CHANGEME">Insert reference to Dennis' information</span>.</p>
+        <p>Create your query and test it using the QuickCriterionTestScript.sql script located in the Samples\DataExplorer folder of the installation<MadCap:annotation MadCap:createDate="2012-02-22T22:46:50.3276631-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Did you find out: Are we having media? LMK via email  if you have time." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-22T22:47:31.1043316-08:00"> media</MadCap:annotation>.</p>
+        <p class="LabelforProcedures">To write and test a query</p>
+        <ol MadCap:continue="true">
+            <li>Write your query in an SQL editor.</li>
+            <li>
+                <p class="note">Table names and aliases in FROM statements must be enclosed by a | – for example, select Patient.PersonID from |Patient|.</p>
+                <p class="note">If the query results depend on the user, embed |CurrentUser| in the query and enter a user name into the @CurrentUser variable in the form of domain\username.</p>
+            </li>
+            <li value="2">In the script, enter the text of your query into the @Query variable.</li>
+        </ol>
+        <p>
+            <ol MadCap:continue="true">
+                <li value="3">
+                    <p>Run the test script and review the results for accuracy.</p>
+                    <p class="note">If you receive an "Incorrect syntax near '|' error message when running the script, it may indicate that the entity you are trying to query is not valid. Verify that the entity exists and that you have spelled the name correctly.</p>
+                    <p class="note">This test script will not reflect security restrictions for the assigned user.</p>
+                </li>
+            </ol>
+        </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">See <MadCap:annotation MadCap:createDate="2011-12-20T19:47:11.1997607-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="By default, mark See also section in your topic as &quot;DnB&quot; (Properties&gt; Conditional Text&gt;Production&gt;DoNOTBuild). You can remove the condition as you add cross-references to your topic." MadCap:editor="v-labenn" MadCap:editDate="2011-12-20T19:47:23.1885617-08:00" MadCap:changes="3">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">References</p>
+        <p MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild" MadCap:changes="3">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

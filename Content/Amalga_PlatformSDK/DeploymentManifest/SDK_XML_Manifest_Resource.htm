@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="1971" MadCap:lastWidth="737" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Resource element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the Resource element.</p>
+        <p>Declares a specific resource, such as an application view from the virtual schema or a service operation from a hosted <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />, exposed by the hosted application to users, computers, and hosted services.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;Resources&gt;<br />&#160;&#160;&#160;&lt;Resource<br />&#160;&#160;&#160;&#160;&#160;&#160;Type = "AppView" | "Service"<br />&#160;&#160;&#160;&#160;&#160;&#160;Name = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;Operation = "ReadOnly" | "ReadWrite" | "*" | "<span class="Parameter">string</span>" /&gt;<br />&lt;/Resources&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_Resources.htm">Resources</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <p>(Required string.) The type of resource being exposed. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>AppView</td>
+                                    <td>An <MadCap:variable name="FeatureName.application view" /> from the virtual schema for the hosted application.</td>
+                                </tr>
+                                <tr>
+                                    <td>Service</td>
+                                    <td>A service operation from a hosted <MadCap:variable name="BrandingMS.WCF service" /> for the hosted application.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The name of the resource being exposed.<br />If AppView is specified for the <span class="MarkupLanguageElements">Type</span> attribute, then the value of this attribute must match the name of an application view specified in the data manifest for the hosted application.<br />If Service is specified for the <span class="MarkupLanguageElements">Type</span> attribute, then the value of this attribute must match the name of a hosted <MadCap:variable name="BrandingMS.WCF service" /> specified in a service manifest for the hosted application. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Operation</td>
+                    <td>
+                        <p>(Required string.) The name of the operation being exposed for the resource.  The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>ReadOnly</td>
+                                    <td>Allowed only if AppView is specified in the <span class="MarkupLanguageElements">Type</span> attribute.<br />Allows read-only access to the <MadCap:variable name="FeatureName.application view" /> specified in the <span class="MarkupLanguageElements">Name</span> attribute.</td>
+                                </tr>
+                                <tr>
+                                    <td>ReadWrite</td>
+                                    <td>
+                                        <p>Allowed only if AppView is specified in the <span class="MarkupLanguageElements">Type</span> attribute.</p>
+                                        <p>Allows read/write access to the <MadCap:variable name="FeatureName.application view" /> specified in the <span class="MarkupLanguageElements">Name</span> attribute.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td>
+                                        <p>Allowed only if Service is specified in the <span class="MarkupLanguageElements">Type</span> attribute.</p>
+                                        <p>Allows access to all public operations exposed by the hosted <MadCap:variable name="BrandingMS.WCF service" /> specified in the <span class="MarkupLanguageElements">Name</span> attribute.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="InputTextVariable">string</td>
+                                    <td>
+                                        <p>Allowed only if Service is specified in the <span class="MarkupLanguageElements">Type</span> attribute.</p>
+                                        <p>If <span class="Placeholder">string</span> is set to the name of a public operation exposed by the hosted <MadCap:variable name="BrandingMS.WCF service" /> specified in the <span class="MarkupLanguageElements">Name</span> attribute, access is allowed to only that specified operation.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Resource</span> element declares the availability of a given resource to other  users, computers, and hosted services from the hosted application. If a <span class="MarkupLanguageElements">Resource</span> element is not specified for a given resource, the resource is unavailable to other users, computers, or hosted services.</p>
+    </body>
+</html>

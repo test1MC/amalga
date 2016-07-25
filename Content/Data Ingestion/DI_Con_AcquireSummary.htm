@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1937" MadCap:lastWidth="736" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Feed Acquisition application</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <div id="cardtype">
+            <p class="abstract">This topic summarizes the characteristics of the <MadCap:variable name="Applications.Feed Acquisition application" />.</p>
+            <p class="Label">
+                <MadCap:keyword term="Feed Acquisition application" />When to use this application</p>
+            <p>Configure and deploy one acquisition application instance for each feed. For configuration instructions, see <a href="DI_Task_AcquireApp.htm">Resolve Feed Acquisition manifests</a>.</p>
+        </div>
+        <div id="ident">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Identification</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Application name</p>
+                    <p>FeedAcquisitionApplication</p>
+                    <p class="Label">DoorsWorker (service) name</p>
+                    <p>FeedAcquisition</p>
+                    <p class="Label">Publisher</p>
+                    <p>Microsoft Corporation	Version 1.0.0.0</p>
+                    <p class="Label">DoorsWorkerManifest values</p>
+                    <p>AuthenticationMode ="None"</p>
+                    <p>ClusteringMode="FailOver"</p>
+                    <p>HostAssembly="Microsoft.Amalga.Pipeline.FeedAcquisition.exe"</p>
+                    <p>LogicalHostName="<span class="Placeholder">Insert local host name</span>"</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Dependencies and relationships</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Dependent on the following attribute values of the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency element</MadCap:xref></p>
+                    <p>No dependencies.</p>
+                    <p class="Label">Related applications</p>
+                    <p><MadCap:variable name="Applications.Message Shredder (application)" /> and <MadCap:variable name="Applications.Data Parser (application)" /> applications depend on the successful operation of the <MadCap:variable name="Applications.Feed Acquisition application" />.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Configuration design</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Input</p>
+                    <p>Acquisition input is the format in which a source system submits messages to the pipeline. A feed can be in MLLP
+                        or file format. </p>
+                    <p><span class="Label">Output</span> <![CDATA[ ]]></p>
+                    <p>Raw messages are inserted into the <MadCap:variable name="Databases.MessageQueue" />.dbo.MSG201 table.</p>
+                    <p class="Label">Application manifest settings</p>
+                    <p>No settings.</p>
+                    <p class="Label">Service manifest settings</p>
+                    <p><a href="Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm">ConnectionTimeoutSeconds setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_IdleConnectionTimeout setting.htm">IdleConnectionTimeout setting</a>
+                    </p>
+                    <p><a href="DI_XML_List_Acquire.htm">FeedConfigurationXML setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+                    </p>
+                    <p class="Label">Performance counters</p>
+                    <p>See <MadCap:xref href="DI_GREF_PipelinePerCount.htm" target="" title="" alt="">Pipeline performance counters</MadCap:xref>.</p>
+                    <p class="Label">Error codes</p>
+                    <p>See <MadCap:xref href="DI_Ref_PredefinedErrorCodes.htm" target="" title="" alt="">Default error code for the data pipeline</MadCap:xref>.</p>
+                    <p class="Label">Extensibility</p>
+                    <p>See <a href="Manifest XML/DI_Con_AcquireExtend.htm">Add an Acquisition plug-in</a>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Deployment</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Deployment duration</p>
+                    <p>This application operates continuously in production. </p>
+                    <p class="Label">Special instructions</p>
+                    <ul>
+                        <li>Deploy the feed-acquisition instance before the related shredder instance. </li>
+                        <li>Supports installation to a fail-over cluster (Active/Passive) mode for disaster recovery and failover.
+                        </li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Remarks</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The <MadCap:variable name="Applications.Feed Acquisition application" /> moves feed data from a source interface to the <MadCap:variable name="Databases.MessageQueue" />.dbo.MSG201 table. Each service instance consists of one configurable receive adapter and an independent send adapter that identifies the destination message queue. You can configure the receive adapter to accept one of the following message-delivery formats:</p>
+                    <ul>
+                        <li>File format to transport file-based messages, such as rows in a comma-separated values (CSV) file. You must specify a feed name, feed type, and the source directory (with a search pattern) of the file.</li>
+                        <li>Minimal Lower Layer Protocol (MLLP) to transport HL7 messages. You must specify a feed name, feed type, and unique port number. The receive adapter returns acknowledgement ACK and NACK messages for the HL7 feed.</li>
+                    </ul>
+                    <p>Feed transport into the pipeline can take place over the Internet, a wide-area network (WAN), or a local-area network (LAN). All modes deliver high reliability, high throughput, and high availability. The following figure shows the ingestion of two distinct feeds (one file format and one MLLP) as the messages enter the pipeline through separate application instances.</p>
+                    <p class="Figure">
+                        <img src="Images/FeedAcquisition_SecondStorage.png" style="width: 627px;height: 177px;" />
+                    </p>
+                    <p>For an MLLP feed, always configure secondary storage to receive data when the connection to the <MadCap:variable name="Databases.MessageQueue" />.dbo.MSG201 table is not available. The service automatically moves data to the MSG201 table when the connection has been restored. </p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Restrictions</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>You cannot substitute the azQueue database (<MadCap:variable name="BrandingHSG.AmalgaV2" />) for the <MadCap:variable name="Databases.MessageQueue" /> database (<MadCap:variable name="BrandingHSG.AmalgaV3 first use" />).</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <p class="SeeAlso">See also</p>
+            <p class="SeeAlsoSubHead">Tasks</p>
+            <p><a href="DI_Task_AcquireApp.htm">Resolve Feed Acquisition manifests</a>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>
+            </p>
+            <p><a href="Manifest XML/DI_Con_AcquireExtend.htm">Add an acquisition plug-in</a>
+            </p>
+        </div>
+    </body>
+</html>

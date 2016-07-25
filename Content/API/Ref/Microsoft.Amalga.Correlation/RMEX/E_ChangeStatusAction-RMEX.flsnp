@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>ChangeStatusAction Enumeration</title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.Correlation" />
+    <meta name="file" content="E_ChangeStatusAction" />
+    <meta name="outDir" content="Microsoft.Amalga.Correlation" />
+  </head>
+  <body>
+    <h1 class="heading">
+      <span onclick="ExpandCollapse(remarksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(remarksToggle, event)" tabindex="0">
+        <img id="remarksToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Remarks</span>
+    </h1>
+    <div id="remarksSection" class="section" name="collapseableSection" style="">Applying the Deprecate member alone does not change the relationships among identifiers. 
+            Instead, the action starts a configurable countdown clock and provides an exception to tell you that a source system is 
+            continuing to use that deprecated identifier after the clock expired. The default deprecation clock provides a 24-hour countdown, 
+            but you can set the time to years.
+            
+            For example, assume MRN1 maps to SOID1 and you set the Deprecate member on MRN1. Any message with MRN1 within the countdown period 
+            returns SOID1. Any message with MRN1 outside the countdown period throws an exception to indicate that the message will not be parsed.
+            
+            In contrast, the DeleteNow member removes the source identifier (MRN1 in this example) immediately. The Amalga ID that was associated 
+            with the source identifier remains, but it now contains a placeholder for the source identifier. If you reuse the source identifier, 
+            it becomes a new Amalga ID.
+            
+            DeprecateAndCleanupLater behaves the same as Deprecate initially. However, it also adds a flag that marks the identifier for cleanup. 
+            You must schedule a separate SQL Server Agent job that calls cleanup_marked_identifiers to purge those marked identifiers regularly. 
+            Once the identifier is purged by the cleanup_marked_identifiers job, it behaves as if the DeleteNow member had been called.</div>
+    <h1 class="heading" MadCap:conditions="Production.doNOTbuild">
+      <span onclick="ExpandCollapse(examplesInfoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(examplesInfoToggle, event)" tabindex="0">
+        <img id="examplesInfoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Examples</span>
+    </h1>
+    <div id="examplesInfoSection" class="section" name="collapseableSection" style="" MadCap:conditions="Production.doNOTbuild">
+      <p>Add examples here.</p>
+    </div>
+  </body>
+</html>

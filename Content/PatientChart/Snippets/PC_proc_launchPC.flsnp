@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="220" MadCap:lastWidth="300" MadCap:fileTags="EditingTags.4 - Ready for Writer" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To start <MadCap:variable name="FeatureBrussels.Patient Chart" /></p>
+        <ol>
+            <li>On the <MadCap:variable name="BrandingHSG.Amalga Short" /> portal, click <span class="UIElementAction">Patient Lists</span>.</li>
+            <li>
+                <p>Click a patient list that contains the name of the patient whose chart you want to view.</p>
+            </li>
+            <li>In the list, click the name of the patient whose chart you want to view.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Retrieving and modifying data with [%=FeatureName.Amalga ADO.NET%]"
+    Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_NAV_RetrievingModifyingData.htm">
+    <TocEntry
+      Title="Connecting to a data source"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_ConnectingDataSource.htm">
+      <TocEntry
+        Title="Building a connection string"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_BuildingConnectionString.htm"></TocEntry>
+      <TocEntry
+        Title="Establishing a connection"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_EstablishingConnection.htm" />
+      <TocEntry
+        Title="Connection events"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_ConnectionEvents.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with commands and parameters"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_OVW_BuildingCommand.htm">
+      <TocEntry
+        Title="Configuring parameters and parameter data types"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_ConfiguringParameters.htm" />
+      <TocEntry
+        Title="Generating commands with AmalgaDbCommandBuilder"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/AAAConnectors.htm" />
+      <TocEntry
+        Title="Executing a command"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_ExecutingCommand.htm">
+        <TocEntry
+          Title="Obtaining a single value from a command"
+          Link="/Content/Amalga_PlatformSDK/DataConnector/Rename.htm" />
+        <TocEntry
+          Title="Updating data with a command"
+          Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_UpdatingDataCommand.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Retrieving data using AmalgaDbDataReader"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_RetrievingDataDataReader.htm"></TocEntry>
+    <TocEntry
+      Title="Retrieving data using AmalgaDbDataAdapter"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_OVW_RetrievingDataDataAdapter.htm">
+      <TocEntry
+        Title="Populating a DataSet from an AmalgaDbDataAdapter"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_PopulatingDataSet.htm" />
+      <TocEntry
+        Title="AmalgaDbDataAdapter parameters"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_DataAdapterParameters.htm" />
+      <TocEntry
+        Title="Adding existing constraints to a DataSet"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_AddingConstraintsDataSet.htm" />
+      <TocEntry
+        Title="DataTable and DataColumn mappings for AmalgaDbDataAdapter"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_DataTableMappings.htm" />
+      <TocEntry
+        Title="Paging through a query result"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_PagingQueryResults.htm" />
+      <TocEntry
+        Title="Updating data with AmalgaDbDataAdapter"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_UpdatingDataDataAdapter.htm" />
+      <TocEntry
+        Title="Handling AmalgaDbDataAdapter events"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_HandlingDataAdapterEvents.htm" />
+      <TocEntry
+        Title="Performing batch operations with AmalgaDbDataAdapter"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_PerformingBatchOps.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Transactions and concurrency"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_TransactionsConcurrency.htm" />
+    <TocEntry
+      Title="Retrieving automatically generated values"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_RetrievingIdentityValues.htm" />
+    <TocEntry
+      Title="Working with restricted data"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_WorkingSecureData.htm"
+      ReplaceMergeNode="false" />
+    <TocEntry
+      Title="Retrieving schema information"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_OVW_RetrievingSchemaInfo.htm">
+      <TocEntry
+        Title="GetSchema and schema collections"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_GetSchema.htm" />
+      <TocEntry
+        Title="Common schema collections"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_CommonSchemaCollections.htm" />
+      <TocEntry
+        Title="[%=FeatureName.Amalga ADO.NET%] schema collections"
+        Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_AmalgaSchemaCollections.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Obtaining an AmalgaDbProviderFactory"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_CON_ObtainingAmalgaDbProviderFactory.htm" />
+  </TocEntry>
+</CatapultToc>

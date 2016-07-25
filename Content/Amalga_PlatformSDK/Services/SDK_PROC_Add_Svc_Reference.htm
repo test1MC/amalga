@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1536" MadCap:lastWidth="364" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Status.30 - Development: over 50%,ReleaseTarget.CTP1,Personas.Elvis: App Dev">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a service reference</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to add a service reference to a hosted service project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</p>
+        <p>You must have a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> client present in your <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application, included in a hosted service project, to use the available features of a WCF service, such as an <MadCap:variable name="BrandingHSG.Amalga Short" /> platform service.</p>
+        <p>You can add a reference for a WCF service to a hosted service project to take advantage of <MadCap:variable name="BrandingHSG.Amalga Short" /> platform services, or to use a hosted service from another hosted application. Once a service reference is added, <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> generates a WCF client and <MadCap:annotation MadCap:createDate="2011-11-17T13:55:57.4449469-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="If it is needed metadata, why is it ok to delete it?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T13:56:19.7311753-08:00">adds any needed metadata</MadCap:annotation> to the application configuration (app.config) file of the hosted service project.</p>
+        <p class="note">The metadata added to the application configuration (app.config) file can be deleted.</p>
+        <p class="note">You can also generate a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> client from a running WCF service, including <MadCap:variable name="BrandingHSG.Amalga Short" /> platform services, by using the ServiceModel Metadata Utility Tool (svcutil.exe). This is the preferred method for generating a WCF client for an <MadCap:variable name="BrandingHSG.Amalga Short" /> platform service. For more information about generating a WCF client, see <MadCap:xref href="SDK_PROC_Generate_WCF_Client.htm" target="" title="" alt="">Generate a WCF client</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To add a service reference in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /></p>
+        <ol>
+            <li>In Solution Explorer, right-click the name of the project that you want to add the service to, and then click <span class="UIElementAction">Add Service Reference</span>.</li>
+            <li>
+                <p>In the <span class="UIElementAction">Address</span> box, enter the URL for the service, and then click <span class="UIElementAction">Go</span> to search for the service. If the service implements user name and password security, you may be prompted for a user name and password.</p>
+                <p class="caution">You should reference services only from a trusted source. Adding references from an untrusted source may compromise security.</p>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2011-11-17T14:01:59.0030991-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This reads like an alternate step but looks like explanation.  Can you branch this step so that it is more obvious?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T14:02:45.9597943-08:00">You</MadCap:annotation> can also select the URL from the Address list, which stores the previous 15 URLs at which valid service metadata was found.</p>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2011-11-17T14:04:12.4004375-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="another bullet -- To stop the search, clik . ..  --- againg to move it out of descriptive mode, and into branched action." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T14:05:09.5341503-08:00">A progress</MadCap:annotation> bar is displayed when the search is being performed. You can stop the search at any time by clicking <span class="UIElementAction">Stop</span>.</p>
+                <p class="note">For more information about relative URLs for Amalga platform services, <MadCap:annotation MadCap:createDate="2011-11-17T14:00:09.3661365-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Oh, yeah? (looked for a likely candidate, but didn't see anythign obvious." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T14:06:45.9587918-08:00">see <MadCap:xref href="SDK_REF_ServiceEndpoints_Features.htm" target="" title="" alt="">Endpoints and contracts for  features on page 1</MadCap:xref>.</MadCap:annotation></p>
+            </li>
+            <li>In the <span class="UIElementAction">Services</span> list, expand the node for the service that you want to use and select an entity set.</li>
+            <li>In the <span class="UIElementAction">Namespace</span> box, enter the namespace that you want to use for the reference.</li>
+            <li>
+                <p>Click <span class="UIElementAction">OK</span>.</p>
+                <p><MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> generates a service client (proxy), and adds metadata that describes the service to the application configuration (app.config) file.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt="">Service Endpoint Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

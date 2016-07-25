@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="848" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.70 - Complete,EditingTags.2 - Edit in process">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="5" MadCap:timestamp="2012-02-23T14:27:45.9402069-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="6" MadCap:timestamp="2012-02-23T14:27:59.9957357-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="7" MadCap:timestamp="2012-03-08T15:41:16.2482135-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2012-03-08T15:41:16.2482135-08:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Deploy quick criteria</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="quick criteria, deploying;deploying quick criteria" />This topic describes how to use the QuickCriterionCreationScript to store criteria in the database for use in creating patient lists.</p>
+        <p>Once a criterion is created, it must be deployed to the database so that is can be used to create a patient list. Use the QuickCriterionCreationScript.sql script located in the Samples\DataExplorer folder of the installation media to deploy the criterion.</p>
+        <p class="LabelforProcedures">To deploy the script</p>
+        <ol>
+            <li>Copy the query definition from the test script over the @Query declaration in this script.</li>
+            <li>In @Categories, enter the category or categories, separated by commas, under which the criterion will be displayed.</li>
+            <li>
+                <p>In @FrequentlyUsed, enter a <span class="InputText">1</span> if this criterion will be included in the Most Common section of the <MadCap:variable name="FeatureBrussels.Population Management" /> criteria.</p>
+                <p class="caution">You <strong>must</strong> specif<MadCap:change MadCap:changes="8">y</MadCap:change><MadCap:change MadCap:changes="7">ic</MadCap:change> at least one category<MadCap:change MadCap:changes="8">,</MadCap:change> or indicate that it will be in the Most Common section<MadCap:change MadCap:changes="8">,</MadCap:change> before it will be displayed in the Patient list criteria.</p>
+            </li>
+            <li>Provide a value for @CriterionName. The name is for internal use only.</li>
+            <li>Provide a value for @CriterionDisplayTitle. This will be the name displayed in the criteria list.</li>
+            <li>Enter the name of your organization in @Organization.</li>
+            <li>Specify a different value for @Locale if desired. The criterion will <MadCap:annotation MadCap:createDate="2012-02-23T14:29:04.8897557-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="replace with &quot;be locale-specific&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T14:29:21.8716108-08:00">not be available to users in other locales</MadCap:annotation>.</li>
+            <li>
+                <p>Run the script.</p>
+                <p class="note">You will receive a message that the criterion was created. <MadCap:change MadCap:changes="5">Changes will take effect once the cache is updated on the </MadCap:change><MadCap:variable name="BrandingMS.SharePoint" MadCap:changes="5" /><MadCap:change MadCap:changes="5"> server.</MadCap:change><MadCap:change MadCap:changes="6">It will be available for use once the cache is refreshed on the </MadCap:change><MadCap:variable name="BrandingMS.SharePoint" MadCap:changes="6" /><MadCap:change MadCap:changes="6"> server.</MadCap:change></p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

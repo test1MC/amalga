@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="AmalgaApplicationDataSource;UpdatePanel" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Retrieving data using an AmalgaApplicationDataSource control</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="AmalgaApplicationDataSource;Data access">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the process for binding a data bound control to an <MadCap:variable name="FeatureName.application view" /> using an AmalgaApplicationDataSource control.</p>
+        <p>An <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a> control  is an <MadCap:variable name="BrandingMS.ASP.NET second use" /><![CDATA[ ]]><a href="http://go.microsoft.com/fwlink?LinkId=233059">DataSourceControl</a> that allows <MadCap:variable name="BrandingMS.ASP.NET second use" /> data bound controls to bind to the data in an <MadCap:variable name="BrandingHSG.Amalga Short" /><![CDATA[ ]]><MadCap:variable name="FeatureName.application view" /> associated with its application instance.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#AmalgaAp" target="" title="" alt="">AmalgaApplicationDataSource control on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Connecti" target="" title="" alt="">Connection string on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Select" target="" title="" alt="">Select command on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <h2>
+            <a name="AmalgaAp">
+            </a>AmalgaApplicationDataSource control</h2>
+        <p>An  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a> control is an <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource</a> control that supports the <a href="AF_Con_InstanceIdResolution.htm">application identity</a> API. </p>
+        <p>The methods of the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> interface allow the control to resolve its own application instance. This allows each       <span class="Label">AmalgaApplicationDataSource</span> control to construct its own <MadCap:variable name="FeatureName.Amalga ADO.NET" /> connection string automatically, as long as the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetApplicationId.htm">GetApplicationId</a> and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetVersion.htm">GetVersion</a> methods of its parent control correctly identify its application instance.</p>
+        <p>The only configuration value required by the <span class="Label">AmalgaApplicationDataSource</span> is an <MadCap:variable name="FeatureName.Amalga ADO.NET" /><![CDATA[ ]]><span class="Label">SelectCommand</span>. It is applied in the same way as with any other <b>AmalgaDataSource</b> control.</p>
+        <p>For more information on application identity and instance discovery, see <a href="AF_Con_ApplicationIdentity.htm">Application identity</a> and <a href="AF_Con_IdentifyControlInstance.htm">Identifying a    [%=FeatureName.Amalga Framework second use%] control instance</a>.</p>
+        <h2>
+            <a name="Connecti">
+            </a>Connection string</h2>
+        <p>The connection string is automatically derived from the values provided by the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> methods implemented by the data source control. </p>
+        <p class="warning">
+            <MadCap:annotation MadCap:createDate="2011-10-28T23:27:56.3911359-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Note to self: it even throws if you try to read it.  Why?" MadCap:editor="v-wipete" MadCap:editDate="2012-02-20T14:03:34.1608883-08:00">Do not get or set </MadCap:annotation>the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_AmalgaApplicationDataSource_ConnectionString.htm">ConnectionString</a> property of an  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a> control. It is not supported and will throw a <a href="http://go.microsoft.com/fwlink?LinkId=233069">NotSupportedException</a>.</p>
+        <h3>Application identity and data binding</h3>
+        <p>The connection established by the <span class="codeEntity">AmalgaApplicationDataSource</span> control, and the application view that is bound to the control, are determined by the <a href="AF_Con_ApplicationIdentity.htm">application identity</a> associated with the control. Any <MadCap:variable name="FeatureName.Amalga Framework second use" /> application whose associated <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application defines its own <MadCap:variable name="FeatureName.virtual schema" /> must make sure that its <span class="codeEntity">AmalgaApplicationDataSource</span> controls use the correct application identity.</p>
+        <p>The identity may be specified in two ways: setting the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_AmalgaApplicationDataSource_ApplicationId.htm">ApplicationId</a>, <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_AmalgaApplicationDataSource_ApplicationVersion.htm">ApplicationVersion</a>, and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_AmalgaApplicationDataSource_ApplicationContext.htm">ApplicationContext</a> property values of the control itself, or with the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> values provided by any of its parent controls.</p>
+        <p class="note">Unless its identity properties are explicitly set, the <span class="codeEntity">AmalgaApplicationDataSource</span> uses the same process of identity discovery as any other <MadCap:variable name="FeatureName.Amalga Framework second use" /> control.</p>
+        <p>It is possible for the parent controls to provide different identity values. In that case, the <span class="codeEntity">AmalgaApplicationDataSource</span> will use the identity of its closest parent. For example, if it is contained within a custom <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_TemplateControl.htm">TemplateControl</a> that implements its own <span class="codeEntity">IAmalgaApplicationIdentity</span> values, and the <span class="codeEntity">TemplateControl</span> is contained in turn within an <a href="http://go.microsoft.com/fwlink?LinkId=234261">UpdatePanel</a> with a default identity, the data source will use the identity values provided by the <span class="codeEntity">TemplateControl</span>.</p>
+        <p>For more information on managing the application identity of an <span class="codeEntity">AmalgaApplicationDataSource</span> control, see  <a href="AF_Con_IdentifyControlInstance.htm">identifying a     [%=FeatureName.Amalga Framework second use%] control instance</a> and <a href="AF_Con_IdentifyCustomControl.htm">identifying a custom control with IAmalgaInstanceIdentifier</a>.</p>
+        <h4> Data binding with the default application identity</h4>
+        <p>The default identity of any page element contained within a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal site is the identity of the FrameworkAHA application itself. The application view associated with the FrameworkAHA application provides access to <MadCap:annotation MadCap:createDate="2012-03-08T20:30:56.0947023-08:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="all?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-08T20:30:58.2787723-08:00">many</MadCap:annotation> of the <a href="../DataPlatform1/Entity_Common/DP_Nav_EntiyDefs.htm">common data entities</a>, but does not include any writeable entities.</p>
+        <h2>
+            <a name="Select">
+            </a>Select command</h2>
+        <p>The Select command is an <MadCap:variable name="FeatureName.Amalga ADO.NET" /> query string that determines the data values that will actually populate the data source. Its value is specified with the <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/P_AmalgaDataSource_SelectCommand.htm">SelectCommand</a> property.</p>
+        <p>Remember:</p>
+        <ul>
+            <li>The FROM clause in the <span class="Label">SelectCommand</span> string should refer to an <MadCap:variable name="FeatureName.application view" />, not a <MadCap:variable name="BrandingMS.SQL Server" /> view or table.</li>
+            <li>The <span class="Label">SelectCommand</span>string can  retrieve data only from a single application view.  It is not possible to join data across application instances.</li>
+        </ul>
+        <p>For a more detailed description of using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> queries to address data in an application view, see <a href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm">Amalga ADO.NET library overview</a>. For more general information on retrieving data using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> queries, see <a href="http://go.microsoft.com/fwlink?LinkId=233068">Retrieving and Modifying Data in ADO.NET</a>.</p>
+        <h4>Example</h4>
+        <p>The following user control markup populates an <span class="ForeignCodeElements">AmalgaFrameworkDataSource</span> control with <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> patient data, then binds a <MadCap:variable name="BrandingMS.SharePoint" /> GridView to the data source control .</p>
+        <pre xml:space="preserve">
+&lt;%@ Register Tagprefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %&gt;
+&lt;%@ Register Tagprefix="spweb" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %&gt;
+&lt;%@ Register Tagprefix="amalga" Namespace="Microsoft.Amalga.AppFramework.Web.ServerControls" Assembly="Microsoft.Amalga.AppFramework.Web, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" Namespace="Microsoft.Amalga.Data.DataSource" TagPrefix="cc1" %&gt;
+
+&lt;!-- Create a data connection to the Amalga database using Amalga ADO.NET. --&gt;
+&lt;amalga:AmalgaApplicationDataSource ID="AmalgaDataSourcePatient" runat="server" 
+SelectCommand="SELECT GivenName, FamilyName, PersonID FROM [Patient]"&gt;
+&lt;/amalga:AmalgaApplicationDataSource&gt;
+
+&lt;!-- Display the patient list --&gt;
+&lt;spweb:SPGridView ID="GridViewPatient" runat="server" DataSourceID="AmalgaDataSourcePatient"
+    AllowPaging="true" PageSize="10"&gt;
+    &lt;Columns&gt;
+        &lt;asp:TemplateField HeaderText="Today's Patients"&gt;
+            &lt;ItemTemplate&gt;
+                &lt;asp:Label ID="linkLastName1" runat="server" Text='&lt;%# Eval("FamilyName") + ", " + Eval("GivenName") %&gt;'&gt;&lt;/asp:Label&gt;
+            &lt;/ItemTemplate&gt;
+        &lt;/asp:TemplateField&gt; 
+        &lt;asp:TemplateField&gt;
+            &lt;ItemTemplate&gt;
+                &lt;asp:Label ID="lblPatientId1" runat="server" Text='&lt;%# Eval("PersonID") %&gt;'&gt;&lt;/asp:Label&gt;
+            &lt;/ItemTemplate&gt;
+        &lt;/asp:TemplateField&gt;
+    &lt;/Columns&gt;
+&lt;/spweb:GridView&gt;
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource Class</a>
+        </p>
+        <p>
+            <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity Interface</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm" target="" title="" alt="">Amalga ADO.NET library overview on page 1</MadCap:xref>
+        </p>
+        <p>
+            <a href="http://go.microsoft.com/fwlink?LinkId=233079">ASP.NET Data-Bound Web Server Controls Overview</a>
+        </p>
+        <p>
+            <a href="http://msdn.microsoft.com/en-us/library/ms254937.aspx">Retrieving and Modifying Data in ADO.NET</a>
+        </p>
+        <p>
+            <a href="AF_Con_ApplicationIdentity.htm">Application identity</a>
+        </p>
+        <p>
+            <a href="AF_Con_IdentifyControlInstance.htm">Identifying a   [%=FeatureName.Amalga Framework second use%] control instance</a>
+        </p>
+        <p>
+            <a href="AF_Con_IdentifyCustomControl.htm">Identifying a custom control with IAmalgaInstanceIdentifier</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

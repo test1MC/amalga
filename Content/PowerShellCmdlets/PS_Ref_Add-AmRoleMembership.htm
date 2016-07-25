@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1292" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.50 - InTech Review">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add-AmRoleMembership</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="roles;security;access control framework;framework:access control;permissions;Management Console;users" />The Add-AmRoleMembership  cmdlet assigns a user, group, or computer account to an <MadCap:variable name="BrandingHSG.Amalga Short" /> role.   </p>
+        <p><strong>Amalga built-in role membership required:</strong>  AmalgaSysAdmin </p>
+        <p>For more information, see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Add-AmRoleMembership -RoleName &lt;String&gt; -UserAccount &lt;String&gt; -DirectoryService &lt;String&gt;        <![CDATA[
+]]></p>
+        <h2>Parameter descriptions</h2>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-UserAccount.flsnp" />
+        <p class="h7">[-DirectoryService] &lt;string&gt;</p>
+        <p>Takes the name of a directory service provider supported by <MadCap:variable name="BrandingHSG.Amalga Short" />. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Master, Local</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td> No </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Example</p>
+        <p class="InputText">Add-AmRoleMembership -RoleName ERStaff -UserAccount DomainName\ERDoctors MASTER </p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_TASK_Roles-AcctAdd.htm" target="" title="" alt="">Assign accounts to a role</MadCap:xref>
+        </p>
+        <p><a href="PowerShellLanding.htm">Load DLL for cmdlet access</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References </p>
+        <p>
+            <MadCap:xref href="PS_Ref_Add-AmMachineServiceAccount.htm" target="" title="" alt="">Add-AmMachineServiceAccount</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_RolesUsers.htm" target="" title="" alt="">Roles and users</MadCap:xref>
+        </p>
+    </body>
+</html>

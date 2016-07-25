@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="525" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete,ReleaseTarget.CTP1" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Parser input</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Parsers require shredded columns as input. Each parser instance receives a batch of messages   as soon as message shredding is completed for the associated message type.</p>
+        <p>You must identify all of the shredded input segments and elements needed by the parser. This group is generally a small subset of the segments in a feed. If a column that you specify as input does not exist, the subsystem throws an exception and the parser stops.</p>
+        <p>Use the following structure to specify message shredder input to the parser:</p><pre xml:space="preserve" class="code">&lt;DataParserConfiguration&gt;
+    &lt;MessageShredderInput&gt;
+        &lt;Segment&gt;
+          &lt;Elements&gt;
+              &lt;Element/&gt;
+              &lt;Element/&gt;
+          &lt;/Elements&gt;
+        &lt;/Segment&gt;
+     &lt;/MessageShredderInput&gt;
+ &lt;/DataParserConfiguration&gt;</pre>
+        <p class="warning"><span class="MarkupLanguageElements">Segment</span> elements within <span class="code">&lt;MessageShredderInput&gt;</span> and <span class="code">&lt;DataParserOutput&gt;</span> element tags do not have the same behavior. Specifically, you must not include transform methods in segments within the <span class="code">&lt;MessageShredderInput&gt;</span> section. You can specify transform methods only in segments within the <span class="code">&lt;DataParserOutput&gt;</span> section.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data parser</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseOutput.htm" target="" title="" alt="">Parser output</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="844" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Acquisition plug-in code example</h1>
+        <p class="PersonaAppDev_Informatics">&#160;</p>
+        <p>The C# example that follows shows custom verification logic that extends an instance of the Feed Acquisition application.  </p>
+        <p>In this example, locate the following line of code:</p>
+        <p class="code">var messageToBeSent = new CustomMessage(msg);</p>
+        <p>The new CustomMessage object enables you to alter the existing message. The <a href="../API/Ref/Microsoft.Amalga.Pipeline.AcquisitionExtensions/I_IAcquisitionExtension.htm">IAcquisitionExtension</a> interface, contained in the Microsoft.Amalga.Pipeline.AcquisitionExtensions.dll assembly, provides the extension entry method for your custom code.</p><pre xml:space="preserve"><span class="code">//Plug-in application name: AcquisitionCustom.
+// Custom code example for the Feed Acquisition application.
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Microsoft.Amalga.Pipeline.AcquisitionCommon;
+using Microsoft.Amalga.Pipeline.AcquisitionExtensions;
+
+namespace Microsoft.Amalga.Acquisition.Extensions
+{
+    // CustomMessage is your custom implementation of the message.
+    internal class CustomMessage : IMessage
+    {
+        byte[] _bytes;
+
+        // Initializes a new instance of the CustomMessage class.
+        public CustomMessage(IMessage msg)
+        {
+            ID = msg.ID;
+            Type = msg.Type;
+        }
+
+        // Get the buffer. The acquisition service calls this method to get the raw bytes.
+        public byte[] GetBuffer(int offset, int length)
+        {
+            if (offset &lt; 0 || length &lt;= 0 || offset + length &gt; this.Length)
+            {
+                throw new ArgumentException();
+            }
+
+            byte[] buffer = new byte[length];
+            Buffer.BlockCopy(_bytes, offset, buffer, 0, length);
+
+            return buffer;
+        }
+
+        public void SetBytes(byte[] byets)
+        {
+            _bytes = byets;
+        }
+
+        #region Properties
+
+        public Guid ID { get; private set; }
+
+        public long Length
+        {
+            get { return _bytes.Length; }
+        }
+
+        public MessageCategory MessageCategory
+        {
+            get { return MessageCategory.SmallMessage; }
+        }
+
+        public string Type { get; set; }
+
+        #endregion Properties
+    }
+
+    // Acquisition extension example.
+    public class AcquisitionExtensionExample : IAcquisitionExtension
+    {
+        // Runs the specified message.
+        public void ProcessMessage(IMessageContext context)
+        {
+            //Use context.Message to access the received message in acquisition.
+            IMessage msg = context.Message;
+
+            //Use msg.GetBuffer(0, (int)msg.Length) to get the whole received message string.
+            string content = ASCIIEncoding.ASCII.GetString(
+                msg.GetBuffer(0, (int)msg.Length)
+            );
+
+            bool valid;
+
+            //SetAcknowledgementReturnBytes, this is the nack or ack bytes returned to the client.
+            context.Results.SetAcknowledgementReturnBytes(CreateAck(content, out valid));
+
+            //If VerificationSuccess is set to true, the message will be stored in MSG201 with the original message type
+            //And Ack returned.
+            //If VerificationSuccess is set to false, the message will be stored in MSG201 with the original message type + ".ERR".
+            context.Results.VerificationSuccess = valid;
+
+            //If you want to modify message content.
+            var messageToBeSent = new CustomMessage(msg);
+
+            //Change the message type to "originalMessageType.ERR", if the verification failed.
+            if (!context.Results.VerificationSuccess)
+                messageToBeSent.Type = messageToBeSent.Type + ".ERR";
+
+            messageToBeSent.SetBytes(msg.GetBuffer(0, (int)msg.Length));
+
+            List&lt;IMessage&gt; list = new List&lt;IMessage&gt;();
+            list.Add(messageToBeSent);
+
+            //Add the newly created message list using SetReturnMessages().
+            context.Results.SetReturnMessages(list);
+        }
+
+        // Initialize when the plug-in is loaded.
+        public void Initialize(IAcquisitionExtensionContext extensionContext)
+        {
+            //The method will only be called once, when the service start.
+        }
+
+        // Clean up when the service stopped.
+        public void CleanUp(IAcquisitionExtensionContext extensionContext)
+        {
+            //The method will only be called once, when the service ends.
+        }
+
+        private byte[] CreateAck(string messageContent, out bool valid)
+        {
+            valid = false;
+
+            string startMarker = string.Empty;
+            string stopMarker = string.Empty;
+
+            string ack = string.Empty;
+
+            string[] segmentList = messageContent.ToString().Split(new Char[] { '\r', '\n' });
+
+            string[] tokenList = null;
+
+            for (int segmentCounter = 0; segmentCounter &lt; segmentList.Length; segmentCounter = segmentCounter + 1)
+            {
+                tokenList = segmentList[segmentCounter].Split(new Char[] { '|' });
+
+                if (tokenList.Length == 0)
+                    return new byte[] { 0x0B, 0x15, 0x1C, 0x0D };
+
+                if (tokenList[0].Trim() == "MSH")
+                {
+                    if (tokenList.Length &gt;= 13) // we got a sequence number to add to message, position 12 exist (zero based array)
+                    {
+                        ack = startMarker + "MSH" + "|" + tokenList[1] + "|" + tokenList[4] + "|" +
+                            tokenList[5] + "|" + tokenList[2] + "|" + tokenList[3] + "|" + "ss" +
+                            "|" + "|" + "ACK^" + tokenList[8] + "|" + tokenList[9] + "|" + tokenList[10] + "|" + "2.1" +
+                            "|" + tokenList[12] + "\r" + "MSA" + "|AA|" + tokenList[9] + "|" + "|" + tokenList[12] +
+                            stopMarker + "\r";
+
+                        valid = true;
+                    }
+                    else
+                    {
+                        //we do a nack here
+                        ack = "MSH|AE|\r";
+
+                        valid = false;
+                    }
+                }
+            }
+
+            return Encoding.ASCII.GetBytes(ack);
+        }
+    }
+}</span>             <![CDATA[ 
+]]></pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="Manifest XML/DI_Con_AcquireExtend.htm"><MadCap:xref href="Manifest XML/DI_Con_AcquireExtend.htm" target="" title="" alt="">Acquisition extension</MadCap:xref></a>
+        </p>
+    </body>
+</html>

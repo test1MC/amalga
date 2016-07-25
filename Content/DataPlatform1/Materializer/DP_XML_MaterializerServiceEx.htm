@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1692" MadCap:lastWidth="1190" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materializer: service manifest example</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p>Modify the configuration values as needed. For value descriptions, see <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>.</p><pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;DeploymentManifest 
+			Name="Materializer" 
+			InstanceName="MaterializerService_Patient" 
+			Id="dad27ff6-3eb3-4f74-9f3e-73ee8b97f1b1" 
+			Type="DoorsWorker" xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"&gt;
+  &lt;DoorsWorkerManifest LogicalHostName="FabricLogicalHost" HostAssembly="Microsoft.Amalga.Pipeline.Materializer.exe" 
+  ClusteringMode="NLB" AuthenticationMode="None" /&gt;
+  &lt;Settings&gt;
+    &lt;Setting Name="BatchSize" Type="Int32"&gt;
+      &lt;DefaultValue&gt;500&lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+    &lt;Setting Name="IdleSleepSeconds" Type="Int32"&gt;
+      &lt;DefaultValue&gt;5&lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+    &lt;Setting Name="MaterializerConfiguration" Type="String"&gt;
+      &lt;DefaultValue&gt;&lt;![CDATA[</pre><pre xml:space="preserve" class="code">
+ 		&lt;MaterializerConfiguration&gt;
+                    &lt;DefiningView&gt;
+                        &lt;Schema&gt;EntityViews&lt;/Schema&gt;
+                        &lt;Name&gt;v_defCommon_BetaPatient&lt;/Name&gt;
+                    &lt;/DefiningView&gt;
+                    &lt;BaseTables&gt;
+                        &lt;BaseTable&gt;
+                            &lt;Schema&gt;ADT_G&lt;/Schema&gt;
+                            &lt;Name&gt;v_collapse_PID_binding&lt;/Name&gt;
+                            &lt;PrimaryContextKeys&gt;
+                                &lt;Key&gt;
+                                    &lt;Name&gt;Patient_PID_ExternalId&lt;/Name&gt;
+		&lt;Alias&gt;[ID_TBL_ClinicalData.ADT_G.v_Collapse_PID_Binding.Patient_PID_ExternalId]&lt;/Alias&gt;
+                                &lt;/Key&gt;
+                            &lt;/PrimaryContextKeys&gt;
+                        &lt;/BaseTable&gt;
+                    &lt;/BaseTables&gt;
+                    &lt;MaterializedTable&gt;
+                        &lt;Schema&gt;EntityViews&lt;/Schema&gt;
+                        &lt;Name&gt;Common_BetaPatientMaterialized&lt;/Name&gt;
+                    &lt;/MaterializedTable&gt;
+                &lt;/MaterializerConfiguration&gt;</pre><pre xml:space="preserve" class="code">  ]]&gt;&lt;/DefaultValue&gt;</pre><pre xml:space="preserve" class="code">&lt;/Setting&gt;
+    &lt;Setting Name="StateConfiguration" Type="String"&gt;
+      &lt;DefaultValue&gt;&lt;![CDATA[</pre><pre xml:space="preserve" class="code">	&lt;StateConfiguration&gt;
+		&lt;BaseTables&gt;
+  			&lt;BaseTable&gt;
+  			   &lt;CanonicalKey&gt;[ADT_G].[v_collapse_PID_binding]&lt;/CanonicalKey&gt;
+  			   &lt;LastProcessed&gt;0&lt;/LastProcessed&gt;
+  			&lt;/BaseTable&gt;
+  		&lt;/BaseTables&gt;
+  	&lt;/StateConfiguration&gt;</pre><pre xml:space="preserve" class="code">
+  ]]&gt;&lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+&lt;/Settings&gt;
+  &lt;PerformanceCategories&gt;
+    &lt;PerformanceCategory 
+		Name="Amalga View Materializer Service Stats" 
+		Version="" 
+		CodeName="ViewMaterialization" 
+		Help="Store the stats for the View Materializer" 
+		MultiInstance="Yes"&gt;
+      &lt;PerformanceCounter 
+		Name="Base table rows processed per second" 
+		CodeName="RowsProcessedPerSec" 
+		Type="RateOfCountsPerSecond32" 
+		Help="Records the number of rows scanned in the base tables per second" /&gt;
+    &lt;/PerformanceCategory&gt;
+  &lt;/PerformanceCategories&gt;
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_XML_MaterializerAppEx.htm" target="" title="" alt="">Materializer: application manifest example</MadCap:xref>
+        </p>
+    </body>
+</html>

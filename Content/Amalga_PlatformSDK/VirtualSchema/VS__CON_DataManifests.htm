@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1915" MadCap:lastWidth="569" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,Personas.All" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Data manifests</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic provides an overview of data manifests in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>A data manifest is an Entity Data Model for Data Services Packaging Format (.edmx) file that represents a virtual schema for a hosted application in <MadCap:variable name="BrandingHSG.Amalga Short" />. The data manifest contains metadata about application views, the underlying storage schema to which the application views are bound, and the mappings between the application views and the storage schema. When the data manifest is deployed for an instance of a hosted application, the information available in the data manifest is used to generate the virtual schema for that hosted application instance, including the bindings and other runtime artifacts stored in the <MadCap:variable name="FeatureName.Amalga entity registry" /> for the virtual schema.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data manifest file structure on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Creating" target="" title="" alt="">Creating and updating a data manifest on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Deployin" target="" title="" alt="">Deploying a data manifest on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Data"></a>Data manifest file structure</h2>
+        <p>The data manifest uses the same file structure used by Entity Data Model for Data Services Packaging Format (.edmx) files for the ADO.NET&#160;Entity Framework. For more information about the structure of an .edmx file, see <a href="http://msdn.microsoft.com/library/cc982042.aspx">.edmx File Overview</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/cc982042.aspx">http://msdn.microsoft.com/library/cc982042.aspx</a></MadCap:conditionalText>.</p>
+        <p>The content of the data manifest file is divided into two sections;</p>
+        <ul>
+            <li>
+                <p>Runtime content</p>
+                <p>The runtime content contains the metadata used to define the virtual schema for a hosted application.</p>
+            </li>
+            <li>
+                <p>Designer content</p>
+                <p>The designer content contains the metadata used to display the virtual schema in <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+            </li>
+        </ul>
+        <p>The runtime content of the data manifest file is further divided into the following three sections:</p>
+        <ul>
+            <li>
+                <p>Conceptual model content</p>
+                <p>This section contains the entities, entity properties, entity associations, and entity constraints that define the application views to be included in the virtual schema.</p>
+            </li>
+            <li>
+                <p>Storage model content</p>
+                <p>This section contains the target storage schema, to which the application views to be included in the virtual schema are mapped.</p>
+            </li>
+            <li>
+                <p>Mapping content</p>
+                <p>This section contains the mappings between the conceptual model and the storage model.</p>
+            </li>
+        </ul>
+        <h2><a name="Creating"></a>Creating and updating a data manifest</h2>
+        <p>Data manifests are created and updated by using the <MadCap:variable name="FeatureName.virtual schema designer" /> in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />, as part of creating a hosted application. For more information about using <MadCap:variable name="FeatureName.virtual schema designer" />, see <MadCap:xref href="../SDK_NAV_Data_Modeling.htm" target="" title="" alt="">Data modeling with  on page 1</MadCap:xref>.</p>
+        <p class="note">Do not make changes to the contents of a data manifest directly. Use <MadCap:variable name="FeatureName.virtual schema designer" /> to create or update a data manifest.</p>
+        <h2><a name="Deployin"></a>Deploying a data manifest</h2>
+        <p>When a data manifest is deployed, the runtime content of the data manifest is used to generate a virtual schema, including the entities, bindings, and other metadata in the <MadCap:variable name="FeatureName.Amalga entity registry" />, for an instance of a hosted application. Data manifests are deployed by using one of the following deployment tools:</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="FeatureName.Management Console second use" />
+                </p>
+                <p>The <MadCap:variable name="FeatureName.Management Console second use" /> is used to configure a virtual schema, by deploying a data manifest and, if needed, provide a Transact-SQL script for generating an associated application private database for a hosted application instance.</p>
+                <p><MadCap:variable name="FeatureName.Management Console second use" />is also used to bind entities to storage schema as needed. For more information about binding entities with <MadCap:variable name="FeatureName.Management Console second use" />, see <MadCap:xref href="../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p><MadCap:variable name="BrandingMS.Doors PowerShell 2.0" />
+                </p>
+                <p>You can use the New-AmVirtualSchema cmdlet to create a new virtual schema by deploying a data manifest. For more information about using the New-AmVirtualSchema cmdlet, see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_New-AmVirtualSchema.htm" target="" title="" alt="">New-AmVirtualSchema on page 1</MadCap:xref>.</p>
+                <p>You can also use the Remove-AmVirtualSchema cmdlet to remove an existing virtual schema. For more information about using the Remove-AmVirtualSchema cmdlet, see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Remove-AmVirtualSchema.htm" target="" title="" alt="">Remove-AmVirtualSchema on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p><MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />
+                </p>
+                <p>You can publish a hosted application for debugging purposes from <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />, which includes creating a virtual schema from the data manifest included with the hosted application. For more information about , see <MadCap:xref href="../SDK_PROC_Publish_App.htm" target="" title="" alt="">Publish a hosted application for debugging on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="VSD_PROC_CreateDM.htm" target="" title="" alt="">Create a data manifest on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="VS__CON_VirtualSchema.htm" target="" title="" alt="">Virtual schemas on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="VS__CON_EntityRegistry.htm" target="" title="" alt=""> on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="VS__CON_AppPrivateDBs.htm" target="" title="" alt="">Application private databases on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="VS__CON_Entities.htm" target="" title="" alt="">Entities on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

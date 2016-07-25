@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="3473.333" MadCap:lastWidth="661" MadCap:fileTags="TopicType.Ref_General,ReleaseTarget.RTM,Status.10 - Not in use,TopicOwner.v-ssiera" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>DNB App Optional Manifest Section</h1>
+        <p><b class="CHANGEME">[<MadCap:annotation MadCap:createDate="2011-09-06T19:18:59.3839279-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="This topic type encompasses a variety of formats. Use your judgment or consult your editor.\r\n\r\nNext paragraph is a color-specific persona line.\r\n   Default style: p.PersonaAll \r\n   Revise to select a specific persona." MadCap:editor="v-labenn" MadCap:editDate="2011-09-06T19:19:06.3914384-07:00">Delete</MadCap:annotation> this line]</b>
+        </p>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">&#160;</p>
+        <h2>Optional Manifest Changes</h2>
+        <h2>ClinicalDocument installation configuration</h2>
+        <h2>CorrelationApplication installation configuration</h2>
+        <h2>DataConnector installation configuration</h2>
+        <h2>EnterpriseIdApplication installation configuration</h2>
+        <h2>EntityViewManager installation configuration</h2>
+        <h2>Terminology installation configuration</h2>
+        <h2>AmalgaTaskServiceApp installation configuration</h2>
+        <h2>DataExplorer installation configuration</h2>
+        <h2>Eventing installation configuration</h2>
+        <p class="note">The eventing service manifest's settings are embedded as a character data string. Make the desired changes to the elements within that string.</p>
+        <p>Eventing has four service files.</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EventingChangeTrackerService</td>
+                    <td>Optional configuration</td>
+                </tr>
+                <tr>
+                    <td>EventingDispatcherService</td>
+                    <td>Optional configuration</td>
+                </tr>
+                <tr>
+                    <td>EventingManagerService</td>
+                    <td>Optional configuration</td>
+                </tr>
+                <tr>
+                    <td>EventingWcfHandlerService</td>
+                    <td>No changes accepted</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>EventingChangeTrackerService manifest</h4>
+        <p>Navigate to the &lt;DefaultValue&gt; node and make the desired changes to the services and properties contained in the character data string and defined in the following tables.</p><pre xml:space="preserve" style="font-family: 'Courier New';font-size: 10pt;">&lt;DeploymentManifest&gt;
+     &lt;DoorsWorkerManifest&gt;
+     &lt;Settings&gt;
+          &lt;Setting&gt;
+               &lt;DefaultValue&gt;</pre>
+        <p class="TableTitle">Repository service</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CommandTimeout</td>
+                    <td>SQL Server Timeout in seconds</td>
+                </tr>
+                <tr>
+                    <td>RetryCount</td>
+                    <td>Number of attempts to read/write data from SQL Server in case of deadlocks/timeouts</td>
+                </tr>
+                <tr>
+                    <td>RetryInterval</td>
+                    <td>Time interval in milliseconds to wait before the next retry</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="TableTitle">Change-tracker service</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PollingInterval</td>
+                    <td>How often change tracker service polling database server for data changes (in seconds)</td>
+                </tr>
+                <tr>
+                    <td>CacheTimeoutInterval</td>
+                    <td>Change tracker service keeps a copy of resolved SQL statement to compute data changes. This statement reflects the current user’s entity binding and authorization on entity.   This parameter keeps track of how long we will keep the resolved SQL statement before refreshing.</td>
+                </tr>
+                <tr>
+                    <td>MaxAvailableEvents</td>
+                    <td>Maximum number of events that can be process by a single eventing application at one time</td>
+                </tr>
+                <tr>
+                    <td>MetadataReaderPollingInterval</td>
+                    <td>How often DCT check for update of Event definition in metadata DB, polling interval in seconds</td>
+                </tr>
+                <tr>
+                    <td>CommandTimeout</td>
+                    <td>SQL Server CDC query and change result query Execution Timeout in seconds</td>
+                </tr>
+                <tr>
+                    <td>MaxChangeProcessorThreads</td>
+                    <td>Sets the number of requests to the change tracker thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available. This setting is multiplied by number of processors to get the actual number of threads</td>
+                </tr>
+                <tr>
+                    <td>MaxConcurrentQueries</td>
+                    <td>Throttling mechanism to limit the number of calls (absolute number) sent to SQL Server</td>
+                </tr>
+                <tr>
+                    <td>MaxExecutionTime</td>
+                    <td>Max allowed execution time that an event processing should take in seconds. The events will get suspended if it exceeds this time for more than MaxTimeoutRetries times</td>
+                </tr>
+                <tr>
+                    <td>MaxTimeoutRetries</td>
+                    <td>If the MaxExcectuionTime is exceeded more than this many times by any event, the event will get suspended</td>
+                </tr>
+                <tr>
+                    <td>StaleEventBuffer</td>
+                    <td>When a DCT service processing an event crash.  The event will be marked being processed and no other DCT service will pick up.  The event become stale.   This parameter decide how long we will wait before DCT will reset a stale event to be active such another DCT service can pick up and process an event</td>
+                </tr>
+                <tr>
+                    <td>MaxChangedRecords</td>
+                    <td>This is appended as TOP N in the query generated to get changed records. If 0 or negative number is specified, this property will be ignored</td>
+                </tr>
+                <tr>
+                    <td>MaxCdcRecords</td>
+                    <td>Maximum number of CDC changes that will be fetched per table per CDC polling</td>
+                </tr>
+                <tr>
+                    <td>BatchSize</td>
+                    <td>The number of notifications that are sent to the data connector for writing event notification logs into data change notification private database </td>
+                </tr>
+                <tr>
+                    <td>BatchTimeout</td>
+                    <td>If the event log batch size does not hit the BatchSize in this amount of milliseconds, the logs will be sent automatically without waiting to reach the required batch size</td>
+                </tr>
+                <tr>
+                    <td>MaxEventMesageSize</td>
+                    <td>Max size of the event data in bytes that can be sent to the event dispatcher in one message. If the size of the message exceeds this limit, then only the LogId is sent to the dispatcher, otherwise the data is also sent</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>EventingDispatcherService manifest</h4>
+        <p>Navigate to the &lt;DefaultValue&gt; node and make the desired changes to the services and properties contained in the character data string and defined in the following tables.</p><pre xml:space="preserve" style="font-family: 'Courier New';font-size: 10pt;">&lt;DeploymentManifest&gt;
+     &lt;WcfServiceManifest&gt;
+          &lt;Contracts&gt;
+     &lt;Settings&gt;
+          &lt;Setting&gt;
+               &lt;DefaultValue&gt;
+</pre>
+        <p class="TableTitle">Event-dispatcher service</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MetadataReaderPollingInterval</td>
+                    <td>How often event dispatcher talk to topology service to refresh configuration</td>
+                </tr>
+                <tr>
+                    <td>MaxDispatcherThreads</td>
+                    <td>Sets the number of requests to the dispatcher thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available. This setting is multiplied by number of processors to get the actual number of threads</td>
+                </tr>
+                <tr>
+                    <td>MaxConcurrentActions</td>
+                    <td>Throttling mechanism to limit the number of action invocations (absolute number)</td>
+                </tr>
+                <tr>
+                    <td>ContinueOnError</td>
+                    <td>If ContinueOnError is true, then if dispatcher fails to call WCF handler for event notification, server will log the information and continue. If this is set to false, then the whole batch of events will be rolled back. Rolling back might lead to duplicates events being sent to the destination</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>EventingManagerService manifest</h4>
+        <p>Navigate to the &lt;DefaultValue&gt; node and make the desired changes to the services and properties listed in the following tables.</p><pre xml:space="preserve" style="font-family: 'Courier New';font-size: 10pt;">&lt;DeploymentManifest&gt;
+     &lt;WcfServiceManifest&gt;
+          &lt;Contracts&gt;
+     &lt;Settings&gt;
+          &lt;Setting&gt;
+               &lt;DefaultValue&gt;
+     &lt;PerformanceCategories&gt;
+</pre>
+        <p class="TableTitle">Event-manager service</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MaxAllowedEventCount</td>
+                    <td>Maximum number of events allowed in the system</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Eventing Configuration</h4>
+        <p>There is no post installation configuration for the Eventing application.</p>
+        <h2>NotificationApplication installation configuration</h2>
+        <h2>HealthVaultConnector installation configuration</h2>
+        <p>&#160;</p>
+        <p class="abstract">[Abstract]</p>
+        <p>[Intro paragraph (optional)]</p>
+        <p class="h8">[Field or element name]</p>
+        <p>[Description]</p>
+        <p class="h8">See also</p>
+        <p>Troubleshooting</p>
+        <p class="Label">Tasks</p>
+        <p>Procedures</p>
+        <p class="Label">References</p>
+        <p>XML&#160;reference</p>
+        <p>Error reference</p>
+        <p>Event messages</p>
+        <p class="Label">Concepts</p>
+        <p>Technology</p>
+        <p>Overview</p>
+        <p>Architecture</p>
+        <p>Scenarios</p>
+        <p>Alternative approaches</p>
+        <p>Security</p>
+        <p class="Label">Other resources</p>
+        <p>Navigation page</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-08-24T19:06:59.7706856-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Links to releveant MSDN topics or books; links to online training" MadCap:editor="v-labenn" MadCap:editDate="2011-08-24T19:07:00.8003186-07:00">External references</MadCap:annotation>
+        </p>
+    </body>
+</html>

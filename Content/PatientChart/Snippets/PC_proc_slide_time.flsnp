@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="128" MadCap:lastWidth="789" MadCap:fileTags="EditingTags.7 - Editing issues resolved" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To move the displayed time frame forward or backward</p>
+        <ul>
+            <li>To view  a different portion of the time frame selected, click either the <span class="UIElementAction">Slide left</span> or <span class="UIElementAction">Slide right</span> arrow or move the date slider to the left or right.</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="278" MadCap:lastWidth="681" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <p>You can find the most recent version of <MadCap:variable name="Branding.Amalga Short" /> documentation on the <a href="http://go.microsoft.com/fwlink?LinkId=187285">Community Portal for Microsoft's health customers</a>.</p>
+        <p class="LabelforProcedures">To open <MadCap:variable name="Branding.Amalga Short" /> documentation</p>
+        <ol>
+            <li>Open the <a href="http://go.microsoft.com/fwlink?LinkId=187285" MadCap:conditions="Production.ScreenOnly">portal</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">portal at <a href="http://go.microsoft.com/fwlink?LinkId=187285">http://customers.mshealthcommunity.com</a></MadCap:conditionalText>.</li>
+            <li>
+                <p>Click <span class="UIElementAction">Sign In</span> and enter your credentials.</p>
+                <p>If you need to acquire credentials to enter the site, <a href="http://go.microsoft.com/fwlink?LinkId=187325" MadCap:conditions="Production.ScreenOnly">request access</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">request access at the following location: <a href="http://go.microsoft.com/fwlink?LinkId=187325">http://customers.mshealthcommunity.com/user/InviteUser.aspx</a></MadCap:conditionalText>.</p>
+            </li>
+            <li>Click <span class="UIElementAction">Documentation</span> under <span class="UIElementName"><MadCap:variable name="Branding.Amalga Short" /> Content Pages</span>.</li>
+        </ol>
+    </body>
+</html>

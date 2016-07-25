@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Imaging"
+    Link="/Content/MasterTOCLandingPages(BZ)/ImagingLanding.htm"
+    conditions="Features.Imaging">
+    <TocEntry
+      Title="[%=BrandingHSG.Medical Imaging Module%] Deployment"
+      Link="/Content/Imaging/Deployment MIM/LAN-MIM-Deployment-Intro.htm"
+      conditions="Features.Imaging">
+      <TocEntry
+        Title="[%=BrandingHSG.Medical Imaging Module%] topology"
+        Link="/Content/Imaging/Deployment MIM/LAN-MIM-Dep-Top.htm"
+        conditions="Features.Imaging">
+        <TocEntry
+          Title="Centralized topology"
+          Link="/Content/Imaging/Deployment MIM/GREF-Central-Top.htm"
+          conditions="Features.Imaging"></TocEntry>
+        <TocEntry
+          Title="Distributed topology"
+          Link="/Content/Imaging/Deployment MIM/GREF-Dist-Top.htm"
+          conditions="Features.Imaging" />
+      </TocEntry>
+      <TocEntry
+        Title="Installation steps"
+        Link="/Content/Imaging/Deployment MIM/LAN-MIM-Dep.htm"
+        conditions="Features.Imaging">
+        <TocEntry
+          Title="Verify prerequisites"
+          Link="/Content/Imaging/Deployment MIM/GREF-MIM-Dep-Prerequisites.htm"
+          conditions="Features.Imaging"></TocEntry>
+        <TocEntry
+          Title="Installing Imaging controls and web parts"
+          Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-Controls-Webparts.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Configure Internet Information Services (IIS)"
+          Link="/Content/Imaging/Deployment MIM/TASK-MIM-DEP-Web-Parts-configure-ISS.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Installing Amalga SDK"
+          Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-Imaging-SDK.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Install and bind Imaging entities"
+          Link="/Content/Imaging/Deployment MIM/LAN-MIM-Dep-IE.htm"
+          conditions="Features.Imaging">
+          <TocEntry
+            Title="Create entity definitions"
+            Link="/Content/Imaging/Deployment MIM/GREG-IRS-DEP-IE-CreateEntityDefs.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Create underlying SQL views"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IE-views.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Bind entities to the underlying SQL view"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IE-bind.htm"
+            conditions="Features.Imaging"></TocEntry>
+          <TocEntry
+            Title="Authorize user roles to access entities"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IE-authorize.htm"
+            conditions="Features.Imaging" />
+        </TocEntry>
+        <TocEntry
+          Title="Deploy Image Registry and Document application (IRDA)"
+          Link="/Content/Imaging/Deployment MIM/LAN-MIM-DEP-IRDS.htm"
+          conditions="Features.Imaging">
+          <TocEntry
+            Title="Deploy IRDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IRDS.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Verify the IRDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IRDS-Verify.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Uninstall the IRDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IRDS-Uninstall.htm"
+            conditions="Features.Imaging" />
+        </TocEntry>
+        <TocEntry
+          Title="Deploy Image Delivery application (IDA)"
+          Link="/Content/Imaging/Deployment MIM/LAN-MIM-DEP-IDS.htm"
+          conditions="Features.Imaging">
+          <TocEntry
+            Title="Deploy IDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IDS.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Verify the IDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IDS-Verify.htm"
+            conditions="Features.Imaging" />
+          <TocEntry
+            Title="Uninstall IDA"
+            Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-IDS-Uninstall.htm"
+            conditions="Features.Imaging" />
+        </TocEntry>
+        <TocEntry
+          Title="Uninstallation"
+          Link="/Content/Imaging/Deployment MIM/TASK-MIM-Dep-Uninstall.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Server configuration file samples"
+          Link="/Content/Imaging/Deployment MIM/TASK-MIM-DEP-Modify-Server-Configuration-File.htm"
+          conditions="Features.Imaging" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Imaging Registry and Document application (IRDA)"
+      Link="/Content/Imaging/Service IRS/MIM-LND-Introduction to the IRS.htm"
+      conditions="Features.Imaging"
+      PageNumber="1"
+      PageNumberReset="continue">
+      <TocEntry
+        Title="IRDA structure"
+        Link="/Content/Imaging/Service IRS/MIM-REF-IRS Structure.htm"
+        conditions="Features.Imaging"
+        PageNumber="1"
+        PageNumberReset="continue"></TocEntry>
+      <TocEntry
+        Title="IRDA operation"
+        Link="/Content/Imaging/Service IRS/MIM-CON-IRS-Operation.htm"
+        conditions="Features.Imaging"
+        PageNumber="1"
+        PageNumberReset="continue" />
+      <TocEntry
+        Title="Get studies for patient"
+        Link="/Content/Imaging/Service IRS/GREG-IRS-GetStudiesforPatient-Op.htm"
+        conditions="Features.Imaging" />
+      <TocEntry
+        Title="IDA instance name resolution operation"
+        Link="/Content/Imaging/Service IRS/GREF-Name-Res-Op.htm"
+        conditions="Features.Imaging" />
+      <TocEntry
+        Title="IRS event logging and performance counters"
+        Link="/Content/Imaging/Service IRS/LND-IRS-Logs.htm"
+        conditions="Features.Imaging">
+        <TocEntry
+          Title="Event logs"
+          Link="/Content/Imaging/Service IRS/GREF-Perf-Count.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Performance counters"
+          Link="/Content/Imaging/Service IRS/GREF-Events.htm"
+          conditions="Features.Imaging" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Image Delivery application (IDA)"
+      Link="/Content/Imaging/Service IDS/LND-IDS.htm"
+      conditions="Features.Imaging">
+      <TocEntry
+        Title="IDA structure"
+        Link="/Content/Imaging/Service IDS/GREF-IDs-Structure.htm"
+        conditions="Features.Imaging"></TocEntry>
+      <TocEntry
+        Title="IDA operation"
+        Link="/Content/Imaging/Service IDS/GREF_ODS-Op-BLOB-Thumb.htm"
+        conditions="Features.Imaging"></TocEntry>
+      <TocEntry
+        Title="IDA event logging and performance counters"
+        Link="/Content/Imaging/Service IDS/LND-IDS-Logs.htm"
+        conditions="Features.Imaging">
+        <TocEntry
+          Title="Performance counters"
+          Link="/Content/Imaging/Service IDS/GREF-Perf-Count.htm"
+          conditions="Features.Imaging" />
+        <TocEntry
+          Title="Event logs"
+          Link="/Content/Imaging/Service IDS/GREF-Events.htm"
+          conditions="Features.Imaging" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Study browser web part"
+      Link="/Content/Imaging/Web Part Study Browser/MIM-LAN-Introduction-Study-Browser-Web-Part.htm"
+      conditions="Features.Imaging"
+      PageNumber="1"
+      PageNumberReset="continue">
+      <TocEntry
+        Title="Study browser web part structure"
+        Link="/Content/Imaging/Web Part Study Browser/MIM-VREF-Study Browser Structure.htm"
+        conditions="Features.Imaging"
+        PageNumber="1"
+        PageNumberReset="continue" />
+      <TocEntry
+        Title="Study browser web part operation"
+        Link="/Content/Imaging/Web Part Study Browser/MIM-CON-Study-Browser-Operation.htm"
+        conditions="Features.Imaging"
+        PageNumber="1"
+        PageNumberReset="continue" />
+      <TocEntry
+        Title="Modify the study web browser web part configuration"
+        Link="/Content/Imaging/Web Part Study Browser/MIM-PRC-Study-Browser-Config-Admin.htm"
+        conditions="Features.Imaging"
+        PageNumber="1"
+        PageNumberReset="continue">
+        <TocEntry
+          Title="Hide a column in the default list"
+          Link="/Content/Imaging/Web Part Study Browser/MIM-PRC-Study-Browser-Config-Admin-hidecolumn.htm"
+          conditions="Features.Imaging"
+          PageNumber="1"
+          PageNumberReset="continue"></TocEntry>
+        <TocEntry
+          Title="Configure the list to sort by the column"
+          Link="/Content/Imaging/Web Part Study Browser/MIM-PRC-Study-Browser-Config-Admin-timestamp.htm"
+          conditions="Features.Imaging"
+          PageNumber="1"
+          PageNumberReset="continue" />
+        <TocEntry
+          Title="Configure the list to set the number of studies to display on each page"
+          Link="/Content/Imaging/Web Part Study Browser/MIM-PRC-Study-Browser-Config-Admin-numberofpages.htm"
+          conditions="Features.Imaging"
+          PageNumber="1"
+          PageNumberReset="continue" />
+        <TocEntry
+          Title="Filter the studies based on modality"
+          Link="/Content/Imaging/Web Part Study Browser/MIM-PRC-Study-Browser-Config-Admin-filterthestudies.htm"
+          conditions="Features.Imaging"
+          PageNumber="1"
+          PageNumberReset="continue" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Imaging entity namespace"
+      Link="/Content/Imaging/Image Entities/ONE MORE IE-Desc.htm"
+      conditions="Features.Imaging">
+      <TocEntry
+        Title="Imaging.DICOMInstance entity"
+        Link="/Content/Imaging/Image Entities/ONEDICOMInstance.htm"
+        conditions="Features.Imaging" />
+      <TocEntry
+        Title="Imaging.DICOMSeries entity"
+        Link="/Content/Imaging/Image Entities/DICOMSeries.htm"
+        conditions="Features.Imaging"></TocEntry>
+      <TocEntry
+        Title="Imaging.DICOMStudy entity"
+        Link="/Content/Imaging/Image Entities/Imaging-DICOMStudy.htm"
+        conditions="Features.Imaging" />
+      <TocEntry
+        Title="Imaging.Correlation entity"
+        Link="/Content/Imaging/Image Entities/GREGCorrelated.htm"
+        conditions="Features.Imaging" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

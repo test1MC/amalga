@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="4" MadCap:lastHeight="2735" MadCap:lastWidth="259" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Terminologies</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:terminologies;terminologies:Terminology platform application;mapping terminologies:Terminology platform application;Terminology platform application:mapping terminologies;clinical terminologies:Terminology platform application;Terminology platform application:clinical terminologies;ITerminologyQueryService interface:Terminology platform application;Terminology platform application:ITerminologyQueryService interface;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service;Terminology entity:Microsoft.Terminology entity namespace;Microsoft.Terminology entity namespace:Terminology entity;Synonym entity:Microsoft.Terminology entity namespace;Microsoft.Terminology entity namespace:Synonym entity;synonyms:Terminology platform application;Terminology platform application:synonyms" />This topic describes a terminology, a single domain of concepts stored and managed by the Terminology platform application.</p>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, a terminology represents either a clinical terminology, which describes a single domain of clinical concepts, or a mapping terminology, which describes a set of mapping relationships between clinical concepts in two or more existing clinical terminologies. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Clinical" target="" title="" alt="">Clinical terminologies on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Mapping" target="" title="" alt="">Mapping terminologies on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Shipped" target="" title="" alt="">Shipped terminologies on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Clinical"></a>Clinical terminologies</h2>
+        <p>A clinical terminology represents a single domain of clinical concepts. For example, the International Classification of Diseases, Clinical Modification (ICD-9-CM) clinical terminology provides clinical concepts focused on diagnoses. A clinical terminology contains one or more clinical concepts, usually related in some way, along with information that describes the relationships.</p>
+        <p>You can discover clinical terminologies by using either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.Terminology entity. For more information about querying terminologies, see <MadCap:xref href="TRM_CON_QueryingTerminologies.htm" target="" title="" alt="">Querying terminologies on page 1</MadCap:xref>.</p>
+        <h2><a name="Mapping"></a>Mapping terminologies</h2>
+        <p>A mapping terminology represents a set of relationships between the clinical concepts contained within two clinical terminologies. The mapping terminology itself does not represent a single domain of clinical concepts, although it does contain concepts, but instead allows you to discover synonyms for a single clinical concept across multiple clinical terminologies. For example, the mapping terminology named HLi SNOMED&#160;CT&#160;ICD9 RELATIONSHIPS maps concepts between the HLi SNOMED&#160;CT clinical terminology and the HLI&#160;ICD9 clinical terminology.</p>
+        <p>As with clinical terminologies, you can use either the ITerminologyQueryService service contract or the Microsoft.Terminology.Beta.Terminology entity. Mapping terminologies can be easily identified by examining the value of the IsMapping property for the Terminology object or the Terminology entity. </p>
+        <p>However, you do not need to manually query and identify mapping relationships between clinical terminologies to identify synonyms. The synonyms identified by mapping terminologies can be discovered and queried either by using the ITerminologyQueryService service contract or the Microsoft.Terminology.Beta.Synonym entity. For more information about synonyms, see <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>.</p>
+        <h2><a name="Shipped"></a>Shipped terminologies</h2>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> is shipped with several supported clinical terminologies, including, but not limited to, the following clinical terminologies:&#160;</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="BrandingHSG.Amalga Short" />
+                </p>
+                <p><MadCap:variable name="BrandingHSG.Amalga Short" /> support. For more information about the Amalga terminology, see <MadCap:xref target="" title="" alt="">Terminology Reference on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>CDA</p>
+                <p>Health Level 7 (HL7) Clinical Document Architecture (CDA) and Continuity of Care Document (CCD) support.</p>
+            </li>
+            <li>
+                <p>HL7 V2.6</p>
+                <p>HL7 v2.6 support.</p>
+            </li>
+            <li>
+                <p>ICD-9</p>
+                <p>International Classification of Diseases, Ninth Edition (ICD-9) support.</p>
+            </li>
+            <li>
+                <p>ICD-10</p>
+                <p>International Classification of Diseases, Tenth Edition (ICD-10) support.</p>
+            </li>
+            <li>
+                <p>LOINC</p>
+                <p>Logical Observation Identifiers, Names and Codes (LOINC) support.</p>
+            </li>
+            <li>
+                <p>RxNorm</p>
+                <p>RxNorm support.</p>
+            </li>
+            <li>
+                <p>SNOMED</p>
+                <p>Standard Nomenclature of Medical Diseases and Operations (SNOMED) support.</p>
+            </li>
+        </ul>
+        <p>In addition, several mapping terminologies are also provided, to provide synonym support for these shipped clinical terminologies.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingTerminologies.htm" target="" title="" alt="">Querying terminologies on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref target="" title="" alt="">Terminology Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

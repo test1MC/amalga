@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="161" MadCap:lastWidth="344" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">First</span>:&#160;Displays the first entity property. </li>
+            <li><span class="UIElementName">Previous</span>:&#160;Displays the previous entity property. </li>
+            <li><span class="UIElementName">Next</span>:&#160;Displays the next entity property. </li>
+            <li><span class="UIElementName">Last</span>:&#160;Displays the last entity property. </li>
+            <li><span class="UIElementName">Add</span>:&#160;Creates a property. </li>
+            <li><span class="UIElementName">Delete</span>:&#160;Removes the selected entity property. </li>
+        </ul>
+    </body>
+</html>

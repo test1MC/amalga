@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1482" MadCap:lastWidth="610" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>PrimaryKeyColumn element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="PrimaryKeyColumn element" />Declares the primary key for the resulting table.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;CollapseConfiguration&gt;<b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;</b>
+                  &lt;/CollapseConfiguration&gt;
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;CollapseConfiguration&gt;<b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;</b>
+                  &lt;/CollapseConfiguration&gt;
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;CollapseConfiguration&gt;<b>
+                     &lt;PrimaryKeyColumn&gt;...&lt;/PrimaryKeyColumn&gt;</b>
+                 &lt;/CollapseConfiguration&gt;
+              &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_CollapseConfiguration.htm">CollapseConfiguration</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">PrimaryKeyColumn</span> element, when set on a column of a segment table, enables you to refine a collapsed view that is established by the ContextKey attribute of the <MadCap:xref href="DI_XML_Manifest_Element.htm" target="" title="" alt="">Element element</MadCap:xref>. Define only one <span class="MarkupLanguageElements">PrimaryKeyColumn</span> element for each segment that you define in a data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="caution">Always set the value of the ContextKey attribute, which is a column, to equal the value of the <span class="MarkupLanguageElements">PrimaryKeyColumn</span> element. For example, if you declare the Insurance_IN1_ContextKey column to be the context key for the table, you must set the same value as the primary key column for the table.</p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;PrimaryKeyColumn&gt;Insurance_IN1_ContextKey&lt;/PrimaryKeyColumn&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

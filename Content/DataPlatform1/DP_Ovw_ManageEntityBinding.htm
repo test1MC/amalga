@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:lastBlockDepth="6" MadCap:lastHeight="2510.667" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Concept,Personas.All,ReleaseTarget.TAP,Status.60 - Revising" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Entity binding overview</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic provides an overview of entity binding. </p>
+        <p>
+            <MadCap:keyword term="entity binding" />
+            <MadCap:annotation MadCap:createDate="2012-02-22T09:16:10.4460808-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic status as complete when Dongbai confirms added content and xrefs are added to Dennis's and Chris's topics as relevant." MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:16:48.5429485-08:00">Binding </MadCap:annotation>of entities to storage schema (columns from tables and views) enables authorized users and applications to access the data in the bound columns. Data flows from the columns to the application views accessing the entities that are bound to the columns. Entity binding to storage is global to the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation. </p>
+        <p class="note">Application-specific binding is not available. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-12-19T15:46:33.0043715-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to coordinate &quot;entity registry&quot; content with Dennis, who is writing a conceptual topic for that item" MadCap:editor="v-padenc" MadCap:editDate="2012-02-01T06:43:08.8622730-08:00">The </MadCap:annotation><MadCap:variable name="FeatureName.entity registry" /> maintains entity binding information as TRANSACT-SQL SELECT statements that return data conforming to each entity's definition.  You can use the <MadCap:variable name="FeatureName.entity registry" /> to browse <MadCap:variable name="BrandingHSG.Amalga Short" /> entities and their properties, storage schema, and entity binding information by property and entity. The <MadCap:variable name="FeatureName.entity registry" /> is available in the <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" />. </p>
+        <p>The <MadCap:variable name="UI-Labels.Entity Management" /> module serves as the single place to view and manage entity binding to storage schema. Application-specific virtual schema, through entity binding, insulates <MadCap:variable name="BrandingHSG.Amalga Short" /> applications from any changes in data feeds. While physical storage may change over time, definitions for entities remain stable across all <MadCap:variable name="BrandingHSG.Amalga Short" /> installations. By bridging the gap between application-specific virtual schema and site-specific storage schema, entities allow application developers and administrators to work with a stable set of entity definitions. </p>
+        <p>Binding an entity involves binding the primary key property of the entity to a primary key column of a table or view and then binding other properties to other table or view columns. Multiple binding sources can be used for each entity. <MadCap:annotation MadCap:createDate="2012-03-01T10:18:59.5058816-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Question: Is materialization always triggered when binding changes are saved? Using PowerShell to bind entities, you can specify no materialization. Not sure if disabling materialization is an option when binding in Management Console. " MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T10:19:54.1358931-08:00">Materialization of entities is triggered when you save changes to entity binding for a binding source. </MadCap:annotation>For example, if you modify the binding of an entity property from the NULL&#160;value to a bound column and save changes for that binding source, then the entity is re-materialized. </p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2012-03-01T10:12:04.0152248-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Question: Do these prerequisites apply to entity binding via PowerShell as well as Management Console?" MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T10:12:24.0577763-08:00">Prerequisites</MadCap:annotation>
+        </h2>
+        <p>The following applications must be deployed before entities can be bound to storage schema. </p>
+        <ul>
+            <li>Terminology application (for more information, see <MadCap:xref href="../Amalga_PlatformSDK/SDK_CON_Terminology.htm" target="" title="" alt="">Terminology</MadCap:xref>)</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2012-01-26T09:45:18.7910282-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xref for Materialized Entity Manager. Chris Cole is developing content regarding the MaterializedEntityManager application, as well as how materialization/seeding affects entity binding and applications. check back later. (1/26)\r\nUPDATE 2/27: added link, DNB until confirmation received that this is the correct topic." MadCap:editor="v-padenc" MadCap:editDate="2012-02-27T15:52:15.8560881-08:00"><MadCap:variable name="Applications.Materialized Entity Manager (application)" />application </MadCap:annotation> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.doNOTbuild">(for more information, see <MadCap:xref href="Materializer/DP_Ovw_Materializer CTP2.htm">Materialized entity view</MadCap:xref>)</MadCap:conditionalText></li>
+        </ul>
+        <h2>Requirements</h2>
+        <p>Entity binding <MadCap:annotation MadCap:createDate="2012-03-01T10:16:52.6679966-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Question: Does this requirement for ingested tables and views apply to the Management Console method of binding only? That is, if using PowerShell, can an admin bind an entity to tables and views not from ingestion? " MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T10:17:35.0996926-08:00">requires ingested </MadCap:annotation>tables and views with single primary keys. For more information about ingested data, <MadCap:annotation MadCap:createDate="2012-02-13T11:20:23.6540630-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Note to Editors: inserted hyperlink instead of xref because topic's first heading is a variable." MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T08:29:52.4574912-08:00">see </MadCap:annotation><a href="../Data Ingestion/DI_Ovw_DataPipeline.htm">data pipeline</a>. Each candidate table and view must contain a single primary key column; each entity must contain a single primary key property. </p>
+        <p class="note">Composite keys are not supported. The primary key property for an entity can be bound to a single column only.</p>
+        <p>Column binding recommendations require semantic tags because recommendations are based on matching semantic tags <MadCap:annotation MadCap:createDate="2012-02-13T15:44:45.7384227-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="New content added post-tech review; added per bug 123405; sent to Dongbai for confirmation 2/13 (he is looking at CTP2 implementation to confirm)" MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T08:43:44.0841515-08:00">(and matching primary key data types)</MadCap:annotation>; however, semantic tagging is optional as binding can be done without recommended columns. In addition, any recommended columns can be overridden by manually selected columns. </p>
+        <p>Entities that are bound to applications must be bound to storage schema. This storage schema binding allows data from the storage schema to flow to the applications as viewed by authorized users. All properties in entities that are bound to applications must be bound to storage schema unless the related application views either mark the properties as optional or don’t reference the properties at all. Properties marked as optional or not referenced can be bound to NULL values or, alternatively, left unbound to storage schema.</p>
+        <h2>Best practices</h2>
+        <p>Plan for possible application down time when changing binding for entities used by the applications. Applications may be impacted by changed property binding and added binding sources (regardless of precedence). Changed property binding interrupts Data Change Notification (DCN); if any bound applications use DCN, then those applications may not run during the interruption. New binding sources potentially introduce new rows to an entity; therefore, all application views will have additional rows, regardless of the columns to which the application has been bound. </p>
+        <p>For more information about DCN, see <MadCap:xref href="../Amalga_PlatformSDK/DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification</MadCap:xref>. </p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2012-03-01T10:13:32.9322178-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Question: Does the admin have more options for storage schema if using PowerShell instead of Management Console? That is, can an admin bind to storage schema not created through data ingestion? " MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T10:14:32.0077219-08:00">Storage schema </MadCap:annotation>browsing</h2>
+        <p>In the <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" />, the <MadCap:variable name="UI-Labels.Feed Browser" /> tab lists all storage schema that are available for binding to entity properties. The storage schema are derived from ingested data and read-write database tables created through publishing of read-write application views. You can browse this list and select a table or view column for binding to an entity property. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Serviceability/Snippets/info-catalogrefresh.flsnp" />
+        </p>
+        <h2>Binding options</h2>
+        <p>In the <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" />, drop-down lists for each entity property include the following binding options:&#160;</p>
+        <ul>
+            <li>Constant value entry</li>
+            <li>NULL&#160;value selection</li>
+            <li>Recommended columns</li>
+        </ul>
+        <h2>Recommended columns </h2>
+        <p>In the <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" />, binding option drop-down lists for each entity property include recommended columns for binding when columns with matching semantic tags exist and the entity's primary key property is bound to a column. Columns are recommended from the anchor table and any related tables and views. </p>
+        <p class="note">If an entity property has been tagged with multiple semantic tags, the tags are treated as a logical OR. A table or view column that matches any one semantic tag is a matching candidate for the entity property.</p>
+        <p>The drop-down list contains all table and view columns that meet the following criteria: </p>
+        <ul>
+            <li>The column’s semantic tags match those of the entity property (or the column’s semantic tags are synonyms of the entity property’s semantic tags)</li>
+            <li>The column resides in the anchor table for the property’s parent entity (or in a table that can join to the anchor table) </li>
+        </ul>
+        <h2>Term definitions</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>anchor table</td>
+                    <td>The table or view containing the column that is bound to the primary key property of the entity for a binding source. Each binding source for an entity can contain a single anchor table. </td>
+                </tr>
+                <tr>
+                    <td>binding information</td>
+                    <td>The mapping relationship between the properties of an entity and a storage schema (may include specified constant values). </td>
+                </tr>
+                <tr>
+                    <td>binding source</td>
+                    <td>A unique set of binding information for an entity that is specific to an anchor table. When an entity has multiple binding sources, the binding information is applied in sequence; a UNION clause combines all binding sources into the entity’s binding SQL statement. </td>
+                </tr>
+                <tr>
+                    <td>binding SQL statement</td>
+                    <td>The TRANSACT-SQL SELECT statement used to select the data for an entity (the storage schema and values bound to the properties of an entity). </td>
+                </tr>
+                <tr>
+                    <td>binding values</td>
+                    <td>Constant and NULL values available for binding to properties of an entity. </td>
+                </tr>
+                <tr>
+                    <td>storage schema</td>
+                    <td>Identifiers for the databases, tables, views, and columns in which data for an <MadCap:variable name="BrandingHSG.Amalga Short" /> installation resides.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">
+            <MadCap:annotation MadCap:createDate="2012-02-22T08:46:52.8597515-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD notes on this topic.\r\n\r\nopen questions:\r\n- if there is such a thing as public entities, then where are private entities visible to admins? recall that read-write entity definitions are not necessarily avialable across all Amalga installations. see 79429 spec, under entity namespaces and registry. \r\n\r\npossible gaps: \r\n- Troubleshooting (error messages and other issues)\r\n- Joins (conceptual topic on joins as related to entity binding)\r\n- Application-required entity properties: how to approach changing the binding information \r\n- Application-specific entities: how they are created (app deploy)\r\n\r\npost-TAP:\r\n- 122729 unified query result for entity binding and ACF\r\n- 123841 &quot;binding guardrail&quot; scenario to detect correct-but-useless binding. examples include left outer join and not FK, get lots of nulls, or left inner join, get lots of nulls. syntactically correct, but may be useless. \r\n- 106505 crossfeed join to not automatically derive join relationships if table or view is from a different source system.\r\n- 106200 visual indicator of additional columns available for binding to entity properties\r\n- 109439 optimize order of recommended columns (need to document logic)\r\n" MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T08:46:53.3901515-08:00">See </MadCap:annotation>also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/EntityBindingXML/PS_XML_Reference.htm" target="" title="" alt="">Entity binding XML&#160;reference</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-02-16T09:36:56.9903080-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1310" MadCap:lastWidth="422" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Edit an application manifest for debugging</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="application manifests" />This topic provides a procedure for editing the elements and attributes in an application manifest that are used when publishing a hosted application for debugging purposes.</p>
+        <p>Before a hosted application can be published for debugging by using the publishing feature in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />, several elements and attributes must be properly set in the application manifest. All of the elements and attributes that must be set prior to debugging are contained in the Test section of the Manifest Editor.</p>
+        <p>To publish your hosted application, the application manifest must have these attributes and elements:</p>
+        <ul>
+            <li>A valid instance name specified for the <span class="MarkupLanguageElements">TestInstanceName</span> attribute of the <span class="MarkupLanguageElements">DeploymentManifest</span> element, to identify the test instance of the hosted application. For more information about the <span class="MarkupLanguageElements">DeploymentManifest</span> element, see <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest Element on page 1</MadCap:xref>. This test instance name is also used to remove any existing test instances that may have been previously published for debugging.</li>
+            <li>
+                <p>If your hosted application contains a data manifest (.edmx) file,  a <span class="MarkupLanguageElements">TestConfiguration</span> element that contains a <span class="MarkupLanguageElements">VirtualSchemaDataHost</span> attribute set to the fully qualified domain name (FQDN) of the data host to which the data manifest will be published. For more information about the <span class="MarkupLanguageElements">TestConfiguration</span> element, see <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_TestConfiguration.htm" target="" title="" alt="">TestConfiguration Element on page 1</MadCap:xref>.</p>
+                <p class="caution">The <span class="MarkupLanguageElements">TestConfiguration</span> element is not included in an application manifest by default. You must use the Manifest Editor, as described in the following procedure, to include it in the application manifest if your hosted application contains a data manifest.</p>
+            </li>
+        </ul>
+        <p class="LabelforProcedures">To edit an application manifest in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> for debugging</p>
+        <ol>
+            <li>In Solution Explorer, right-click the application manifest of the hosted application to be published, and then click <span class="UIElementAction">Edit Manifest</span>.</li>
+            <li>If needed, expand <span class="UIElementAction">Test</span>.</li>
+            <li>In <span class="UIElementAction">TestInstanceName</span>, type the instance name that will be used by this hosted application when published for debugging.</li>
+            <li>
+                <p>Expand <span class="UIElementAction">TestConfiguration</span>, and then type the fully qualified domain name (FQDN) of the data host to which the virtual schema, if any, will be published in  <span class="UIElementAction">VirtualSchemaDataHost</span>.</p>
+                <p class="note">You must perform this step if your hosted application contains a data manifest.</p>
+            </li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

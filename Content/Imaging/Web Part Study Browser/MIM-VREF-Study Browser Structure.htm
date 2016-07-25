@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Features.Imaging,Region.US" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Ref-Visual,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:lastBlockDepth="5" MadCap:lastHeight="2244" MadCap:lastWidth="576">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Study browser web part" />structure</h1>
+        <p class="abstract">
+            <MadCap:keyword term="Web part: study browser" />This topic introduces the structure and controls used in the<MadCap:variable name="Imaging.study browser web part" />.</p>
+        <p>Using the control, you can review the study history for a patient. The control includestwoareas: (1) Titleand(2) Study list.</p>
+        <p class="Figure">
+            <img src="../Images/mim-studybrowserpart.png" MadCap:mediastyle="@media print { width: 6.0in;height: auto; }" style="height: auto;width: 600px;" />
+        </p>
+        <p>The following table describes each area of the control.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 46px;" />
+            <col style="width: 69px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Ref #</th>
+                    <th>Name</th>
+                    <th>Description and tasks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Title</td>
+                    <td>The name of the<MadCap:variable name="Imaging.study browser web part" />.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Study list</td>
+                    <td>This is the data grid for the control. The columns and order are configurable. For more information.see<MadCap:xref href="MIM-PRC-Study-Browser-Config-Admin.htm">Configure the Study Web Browser web part on page 1</MadCap:xref>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Data in the<MadCap:variable name="Imaging.study browser web part" /></h2>
+        <p>The control displays the following data for each study in patient history.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 130px;" />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type or value</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Date/Time</td>
+                    <td>mm/dd/yyy hh:mm</td>
+                    <td>The date and time of the study.</td>
+                </tr>
+                <tr>
+                    <td>No. Series</td>
+                    <td>Number</td>
+                    <td>The count number of the series displayed in the control.</td>
+                </tr>
+                <tr>
+                    <td>Modality</td>
+                    <td><MadCap:variable name="Imaging.DICOM" /> Modality</td>
+                    <td>The abbreviation of each supported <MadCap:variable name="Imaging.DICOM" /> modality.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Text</td>
+                    <td>Descriptive text about the study.</td>
+                </tr>
+                <tr>
+                    <td>Institution</td>
+                    <td>Text</td>
+                    <td>The name of the institution where the study was performed.</td>
+                </tr>
+                <tr>
+                    <td>Account</td>
+                    <td>Number</td>
+                    <td>The patient account number.</td>
+                </tr>
+                <tr>
+                    <td>Accession Number</td>
+                    <td>Number</td>
+                    <td>The accession numbers associated with radiology reports and studies.</td>
+                </tr>
+                <tr>
+                    <td>Referring MD</td>
+                    <td>Text</td>
+                    <td>The name of the referring doctor.</td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>Text</td>
+                    <td>The department name.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">If the<MadCap:variable name="Imaging.IRDS" />&#160;application fails to return data, the<MadCap:variable name="Imaging.study browser web part" />will leave the corresponding cell blank. An error message will display the reason for the failure.</p>
+        <p class="note">Only those users who are authorized to use<MadCap:variable name="Imaging.IRDS" />will see data inside the study browser. An error message will describe the reason for the failure.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="MIM-LAN-Introduction-Study-Browser-Web-Part.htm">Study Browser web part on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="MIM-CON-Study-Browser-Operation.htm">Study Browser Control Operation on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="MIM-PRC-Study-Browser-Config-Admin.htm">Modify the Study Web Browser web part Configuration on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

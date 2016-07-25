@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1756.333" MadCap:lastWidth="570" MadCap:fileTags="TopicType.Ref_General,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,TopicOwner.v-keith">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-01-31T17:10:57.9104280-08:00" MadCap:attribute="style" MadCap:value="width: 125px;" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Publish-AmApplicationInstance</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The Publish-AmApplicationInstance cmdlet uploads the application package to the <MadCap:variable name="Databases.AmalgaSystem" /> database.</p>
+        <p class="note">The Publish-AmApplicationInstance cmdlet does not process manual changes to the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_ApplicationAuthorization.htm" target="" title="" alt="">ApplicationAuthorization element</MadCap:xref> of the deployment manifest. This is by design. Application authorization is hardcoded by the application developer and is not available for adjustment by administrators.</p>
+        <p><strong>Amalga built-in role membership required:</strong>  AmalgaAppAdmin, AmalgaSysAdmin</p>
+        <p>For more information, see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Publish-AmApplicationInstance -ApplicationCabFile &lt;String&gt; -ApplicationAuxiliaryFiles &lt;String&gt;</p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2012-01-17T14:17:42.8998049-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Every parameter should have this information:\r\n---Parameter  from syntax\r\n---Description of the effect of the parameter on the cmdlet\r\n---Table of values" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-30T12:23:01.1068293-08:00">Parameter description<MadCap:annotation MadCap:createDate="2012-01-31T14:39:05.0916030-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Use plural only if there are multiple parameters." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:17:22.3230079-08:00">s</MadCap:annotation></MadCap:annotation>
+        </h2>
+        <p class="h7">[-ApplicationCabFile] &lt;string&gt;</p>
+        <p>Takes the local or Universal Naming Convention (UNC) path for the application .cab file to be uploaded to <MadCap:variable name="Databases.AmalgaSystem" /> database.</p>
+        <table>
+            <col MadCap:changes="1" style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Local or UNC path. Examples:
+ \\sharename\TestApp.cab, <br MadCap:conditions="Production.PrintOnly" />c:\Temp\TestApp.cab, .\TestApp.cab</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-ApplicationAuxiliaryFiles] &lt;string[]&gt;</p>
+        <p>Defines the semicolon-separated UNC paths to all the resolved application and service manifest files.         </p>
+        <table>
+            <col style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Semicolon-separated UNC paths to the resolved application and service manifests. </p>
+                        <ul>
+                            <li>The manifest file names should  be exactly the same as the application and service names.</li>
+                            <li>There should be one resolved manifest file for the application and one resolved manifest file for each service that is part of the application.</li>
+                            <li>
+                                <p>Manifest file names are case-insensitive.</p>
+                            </li>
+                            <li> Examples:
+ C:\Manifest\LabApp.xml, .\LabApp.xml, <br MadCap:conditions="Production.PrintOnly" />\\sharename\LabApp.xml
+</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-01-31T13:04:38.9509938-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="The common parameters implementation will not be documented for CTP2.\r\n\r\nThis section is included for future doc updates as dev takes more advantage of the common parameter base functions.\r\n\r\nThere will be a statement on the PS landing page about common parameter support." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:16:33.6060134-08:00">&lt;</MadCap:annotation>CommonParameters&gt;</p>
+        <p MadCap:conditions="Production.doNOTbuild">This cmdlet supports <MadCap:variable name="BrandingMS.Doors PowerShell" />&#160; common parameters as described in the following table. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <table style="width: 95%;" MadCap:conditions="Production.doNOTbuild">
+            <col style="width: 141px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter </th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-Verbose
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Debug
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td> -ErrorAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-ErrorVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutBuffer   
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WhatIf
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Confirm
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Example</p>
+        <p class="InputText">
+            <MadCap:annotation MadCap:createDate="2012-01-18T16:50:10.5700407-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Replace with an actual example of a PowerShell command using the cmdlet beling documented." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-31T14:51:37.2288092-08:00">Publish-ApplicationInstance -ApplicationCabFile "C:\Manifest\ApplicationWith1WCFService.cab" -ApplicationAuxiliaryFiles "C:\Manifest\TestApplication1.xml; C:\Manifest\TestWCFAmalgaService1.xml; C:\Manifest\TestWCFAmalgaService2.xml"</MadCap:annotation>
+        </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See <MadCap:annotation MadCap:createDate="2012-01-18T16:56:23.9613761-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="If you add a  cross-reference or hyperlink in the See also section, remember to remove the DoNotBuild condition for that paragraph." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:46:25.4519781-08:00">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related tasks that complete operations identical or similar to that of this cmdlet.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related cmdlets.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[(optional)]</p>
+    </body>
+</html>

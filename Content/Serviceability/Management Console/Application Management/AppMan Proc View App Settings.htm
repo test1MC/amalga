@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,TopicType.Procedure,Status.10 - Not in use" MadCap:lastBlockDepth="4" MadCap:lastHeight="349" MadCap:lastWidth="1104" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>View application settings</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>For CTP, you can view application settings by using the Get-AmConfigurationSetting <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet. For more information on the syntax and parameters of this command, see <MadCap:xref href="../../../Installation/Install Ref Appendix B PowerShell Ref.htm#Get-AmCo" target="" title="" alt="">Get-AmConfigurationSetting</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To view application settings</p>
+        <ol>
+            <li>Start Doors PowerShell as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>
+                <p>Run the following commands to prepare <MadCap:variable name="BrandingMS.Doors PowerShell" />.</p>
+                <p class="InputTextPara">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell'</p>
+                <p class="InputTextPara">Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll
+</p>
+                <p class="InputTextPara">Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll
+</p>
+            </li>
+            <li>
+                <p>Run the following command to view application settings. Replace the <span class="Placeholder">placeholders </span>with variables appropriate for your installation.</p>
+                <p>Get-AmConfigurationSetting -InstanceType &lt;<span class="Placeholder">ConfigurationSettingInstanceType</span>&gt; -InstanceName &lt;<span class="Placeholder">InstanceName</span>&gt; [-SettingName &lt;<span class="Placeholder">SettingName</span>&gt;]</p>
+            </li>
+        </ol>
+    </body>
+</html>

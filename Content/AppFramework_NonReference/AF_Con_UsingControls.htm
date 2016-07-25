@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.7 - Editing issues resolved,TopicOwner.v-wfren" MadCap:lastBlockDepth="6" MadCap:lastHeight="3856" MadCap:lastWidth="971" MadCap:ignoredWords="state1;MouseOver;target1;stateRight;state2;PotentialMatchFilters" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingMS.Toolbox second use" /> controls</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Toolbox"></MadCap:keyword></p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-13T14:14:24.4915793-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="\r\nThis topic describes the features and usage of  production controls.\r\nThe  production controls are a subset of the controls that comprise the basic  portal sites. These controls are included in the SDK for reuse or extension, and can be accessed through the . \r\nIn this section\r\nAbout Box\r\n Record Selector\r\nPatient Banner\r\nPatient Portal sign in\r\nPatient Portal sign up\r\nPatient Search\r\nReusable Lightbox\r\nSolution Picker\r\n Ribbon Toggle" MadCap:editor="v-wfren" MadCap:editDate="2012-02-13T14:14:26.1377439-08:00">This </MadCap:annotation>topic describes the <MadCap:variable name="FeatureName.Amalga Framework" /> server controls available in the <MadCap:variable name="BrandingMS.Toolbox first use" /> and provides guidance for adding them to projects.</p>
+        <p>Many of the server controls that are used in the <MadCap:variable name="FeatureName.Amalga Framework" /> foundational portals are also available for reuse as part of the SDK. Most of these controls are available in the <MadCap:variable name="BrandingMS.Toolbox first use" />.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt=""><a href="#Using">Using Toolbox controls</a>
+                </MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#List" target="" title="" alt=""><a href="#List">List of Toolbox controls</a>
+                </MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using <MadCap:variable name="BrandingMS.Toolbox second use" /> controls</h2>
+        <p>The <MadCap:variable name="BrandingMS.Toolbox second use" /> displays icons for controls and other items that you can add to <MadCap:variable name="BrandingMS.Visual Studio second use" /> projects. To open the <MadCap:variable name="BrandingMS.Toolbox second use" />, click Toolbox on the View menu.</p>
+        <p>The <MadCap:variable name="BrandingMS.Toolbox second use" /> organizes the available controls into tabs. The <MadCap:variable name="BrandingMS.Toolbox second use" /> controls provided with the <MadCap:variable name="FeatureName.Amalga Framework" /> are found in the "Amalga Controls Library" tab, which should be available whenever a project created from a <MadCap:variable name="FeatureName.Amalga Framework second use" /> project template is open in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />.</p>
+        <h3>Adding a <MadCap:variable name="BrandingMS.Toolbox second use" /> control to a project</h3>
+        <p>To add a visual control (that is, a control with its own UI) to a <MadCap:variable name="FeatureName.Amalga Framework second use" /> project, click on its icon in the <MadCap:variable name="BrandingMS.Toolbox second use" /> and drag it into place on any design surface within the project.</p>
+        <h3>Setting property values of a <MadCap:variable name="BrandingMS.Toolbox second use" /> control</h3>
+        <p>Selecting the control on the design surface will cause its public properties to appear in the Properties pane in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />. Changes made to those values will persist when the design surface is saved (Ctrl+S).</p>
+        <p>Many of the <MadCap:variable name="BrandingMS.Toolbox second use" /> controls can be customized by changing their settable properties. For instance, the following markup text creates a <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_MessageLightBoxHyperLink.htm">MessageLightBoxHyperLink </a>control that links to a localizable message box. (The display content of the message box is specified in a separate resource file, MyResources.resx.)      </p><pre xml:space="preserve">
+&lt;Amalga:MessageLightBoxHyperLink ID="InfoMsg" runat=<MadCap:annotation MadCap:createDate="2011-11-16T14:52:35.9564791-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This appears in a monospace font in preview mode and in the Web draft build. So no problem." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T14:54:21.9534791-08:00">"server"</MadCap:annotation>
+    LightBoxTitle="&lt;%$Resources:MyResxFile,MyControl_MsgLightBox_Title%&gt;"
+    LightBoxResourceFileName="MyResources" 
+    LightBoxBodyTextResourceKey="MyControl_MsgLightBox_Body_Text" 
+    LightBoxOkButtonTextResourceKey="MyControl_MsgLightBox_Button_Text" 
+    LightBoxOKButtonToolTipTextResourceKey="MyControl_MsgLightBox_Button_ToolTip"
+    LightBoxMode="OkButton"
+    /&gt;		</pre>
+        <h3>Edit the visual appearance of controls</h3>
+        <p>You can edit the visual appearance of the control by overriding the default styles. For more information, see <a href="AF_Con_PagesMasterPageStyles.htm">Base structural styles</a>. To discover which styles are in use in a given control, navigate to \14\TEMPLATE\CONTROLTEMPLATES\<MadCap:variable name="BrandingHSG.Amalga Short" /> and view the ASCX file source code. The following example shows the source code of the main content for the Patient Banner control (PatientBanner.ascx).</p>
+        <p class="code">&lt;div class="patientBanner"&gt;</p>
+        <p class="code">&lt;Amalga:PatientBannerProfileImage id="PatientBannerProfileImage" runat="server" /&gt;</p>
+        <p class="code">&lt;div class="row1"&gt;</p>
+        <p class="code">&lt;Amalga:PatientBannerIdentification id="PatientBannerIdentification" runat="server"  /&gt;</p>
+        <p class="code">&lt;/div&gt;</p>
+        <p class="code">&lt;div class="row2"&gt;</p>
+        <p class="code">&lt;Amalga:PatientBannerClinicalModules id="PatientBannerClinicalModules" runat="server" /&gt;</p>
+        <p class="code">&lt;/div&gt;</p>
+        <p class="code">&lt;div class="clear"&gt;&lt;/div&gt;</p>
+        <p class="code">&lt;/div&gt;</p>
+        <p class="code">&lt;div class="headerFade"&gt;&lt;/div&gt;</p>
+        <p>Once you find the class for the element you want to restyle, you can find the style(s) in Base.css.</p>
+        <h2><a name="List"></a>
+            <MadCap:annotation MadCap:createDate="2011-11-16T19:07:21.1547676-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Shouldn't this table go into a topic named xxx Reference?  POST  refresh, of course.." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T19:08:18.3554871-08:00">List </MadCap:annotation>of <MadCap:variable name="BrandingMS.Toolbox second use" /> controls</h2>
+        <p>The following <MadCap:variable name="BrandingMS.Toolbox second use" /> controls are provided in the Amalga Controls Library.</p>
+        <p>&#160;</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th><MadCap:variable name="BrandingMS.Toolbox second use" /> control</th>
+                    <th>
+                        <MadCap:annotation MadCap:createDate="2011-11-16T15:23:23.7034638-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="For my info, where is this name used?" MadCap:editor="v-wipete" MadCap:editDate="2011-11-17T14:18:52.3748180-08:00">
+                            <MadCap:annotation MadCap:createDate="2011-11-17T14:19:04.4024951-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Right now, mostly internally. A friendly name is a useful thing, though." MadCap:editor="v-wipete" MadCap:editDate="2011-11-17T14:19:30.9226651-08:00">Name</MadCap:annotation>
+                        </MadCap:annotation>
+                    </th>
+                    <th>Description</th>
+                    <th>Portals</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a>
+                    </td>
+                    <td>Amalga Application Data Source</td>
+                    <td>
+                        <p>An <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource </a>control that also supports the application identity API. This allows the control to resolve its own application instance, which uniquely identifies its application view.</p>
+                    </td>
+                    <td>All</td>
+                    <td>
+                        <p><a href="AF_Con_AppViewDataAccess1.htm">More info</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource</a>
+                    </td>
+                    <td>Amalga Data Source</td>
+                    <td>
+                        <p>Allows <MadCap:variable name="BrandingMS.ASP.NET second use" /> data bound controls to bind with data from an <MadCap:variable name="BrandingHSG.Amalga Short" /> application view.</p>
+                    </td>
+                    <td>All</td>
+                    <td><a href="AF_Con_AppViewDataAccess1.htm">More info</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BirthDateValidator.htm">BirthDateValidator</a>
+                    </td>
+                    <td>Custom Validator Controls</td>
+                    <td>Determines whether or not the value of an associated input control matches a specified range of dates.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_CarouselNavigationBar.htm">CarouselNavigationBar</a>
+                    </td>
+                    <td>Carousel Navigation</td>
+                    <td>
+                        <p>Provides page level navigation based on the content of the <a href="http://go.microsoft.com/fwlink?LinkId=234031">SPNavigationNode</a> structure of the current solution. </p>
+                        <p>In the staff and internal provider portals, the carousel works with the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_SolutionPicker.htm">SolutionPicker</a> control, and the default node collection contains the pages of the selected solution. In the patient portal there is only one solution, so the default collection contains all the pages in the site.</p>
+                        <p> A <MadCap:variable name="BrandingMS.SharePoint" /> admin can reorder the pages in the node collection, which automatically reorders the links in the carousel. If the structure contains more pages than can fit in the header, an overflow UI will start to show with left and right arrows allowing the user to navigate to all of the available pages. The control also allows for the first page to be "pinned" to the far left of the navigation area if it should always be visible.</p>
+                    </td>
+                    <td>All</td>
+                    <td><a href="Images/CarouselNavigationBar-state1.PNG">Sample image 1</a>
+                        <p><a href="Images/CarouselNavigationBar-stateRight.png">Sample image 2 - arrow was clicked</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_CustomLightBoxHyperLink.htm">CustomLightBoxHyperLink</a>
+                    </td>
+                    <td>Custom Light Box HyperLink</td>
+                    <td>Displays a link to a custom lightbox.  The URL of the link is constructed from the path of the lightbox page, which is specified by setting the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_CustomLightBoxHyperLink_LightBoxUrl.htm">LightBoxUrl</a> property of the control.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_DateValidator.htm">DateValidator</a>
+                    </td>
+                    <td>Custom Validator Controls</td>
+                    <td>Determines whether or not the value of an associated input control matches a specified range of dates.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_EnterpriseAccountContext.htm">EnterpriseAccountContext</a>
+                    </td>
+                    <td>Logged in Account Context - Enterprise User</td>
+                    <td>Displays the current user’s name and (optional) picture in the page header. It also provides a link to sign out and go to an account management page.</td>
+                    <td>Internal Provider, Staff</td>
+                    <td><a href="Images/EnterpriseAccountContext-state1.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_GenericRegularExpressionValidator.htm">GenericRegularExpressionValidator</a>
+                    </td>
+                    <td>Custom Validator Controls</td>
+                    <td>Determines whether or not the value of an associated input control matches the pattern specified by a regular expression.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_GenericRequiredValidator.htm">GenericRequiredValidator</a>
+                    </td>
+                    <td>Custom Validator Controls</td>
+                    <td>Makes its associated input control into a required field.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_GridView.htm">GridView</a>
+                    </td>
+                    <td>Amalga Grid View</td>
+                    <td>A grid control for representing data in a grid format.  Based on the <a href="http://go.microsoft.com/fwlink?LinkId=234038">SPGridView</a> control.</td>
+                    <td>All</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_HealthVaultAccountRecordPatientMatchForm.htm">HealthVaultAccountRecordPatientMatchForm</a>
+                    </td>
+                    <td>&#160;</td>
+                    <td>Allows a logged-in <MadCap:variable name="BrandingHSG.HealthVault" /> user to request matching to an <MadCap:variable name="BrandingHSG.Amalga Short" /> account.</td>
+                    <td>Patient</td>
+                    <td><a href="Images/HealthVaultAccountRecordPatientMatchForm-state1.png">Sample image - page 1</a>
+                        <p><a href="Images/HealthVaultAccountRecordPatientMatchForm-state2.png">Sample image - page 2</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_HealthVaultRecordSelector.htm">HealthVaultRecordSelector</a>
+                    </td>
+                    <td>HealthVault Record Selector</td>
+                    <td>Allows the user to select from a list of authorized <MadCap:variable name="BrandingHSG.HealthVault" /> patient records.</td>
+                    <td>Patient</td>
+                    <td>
+                        <p><a href="Images/HealthVaultRecordSelector-state1.png">Sample image</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_LocalizableList.htm">LocalizableList</a>
+                    </td>
+                    <td>Localizable List Control</td>
+                    <td>Creates drop-down lists from data in resource (.resx) files.</td>
+                    <td>All</td>
+                    <td><a href="Images/LocalizableList-state1.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_Logo.htm">Logo</a>
+                    </td>
+                    <td>Organization Brand Panel</td>
+                    <td>A rectangle of the screen where the user can place a brand graphic, typically an image.  May be hyperlinked to a home page. Currently used in page headers.</td>
+                    <td>All</td>
+                    <td><a href="Images/Logo-state1.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_MessageLightBoxHyperLink.htm">MessageLightBoxHyperLink</a>
+                    </td>
+                    <td>Message Lightbox Hyperlink</td>
+                    <td>Displays a link to a configurable lightbox.  The control builds the link URL and the lightbox content based on the values of its <MadCap:annotation MadCap:createDate="2011-11-16T15:01:18.3918107-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="If &quot;configurable is the same&quot;, pls use that.  Settable works but configurable is more standard." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T15:02:00.2341775-08:00"><MadCap:annotation MadCap:createDate="2011-11-17T14:21:52.0903863-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="&quot;Settable&quot; has a specific meaning for properties. Some of them aren't." MadCap:editor="v-wipete" MadCap:editDate="2011-11-17T14:22:09.3128967-08:00">settabl</MadCap:annotation>e</MadCap:annotation> properties.  The lightbox is appropriate for simple confirmation lightboxes that have text content, an optional image, and one or two buttons.</td>
+                    <td>All</td>
+                    <td><a href="Images/MessageLightBoxHyperLink-target1.png">Example of a  link target</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">NotificationManager</a>
+                    </td>
+                    <td>Notification Manager</td>
+                    <td>
+                        <p>A non-UI control that initializes a client-side asynchronous broker that manages communication between notification-aware page elements and the   <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationService.htm">NotificationService</a> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-16T15:02:35.7392771-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I asked Dennis the same thing. When the service is named xyzService, can we just use xyzService rather than xyzService service? Can XYZService be anything other than a service?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T15:04:10.8612977-08:00">service</MadCap:annotation>.</p>
+                        <p>This control does not need to be added to any page that uses one of the core Framework master pages. They <MadCap:annotation MadCap:createDate="2011-11-10T17:10:05.9001742-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="except Minimal" MadCap:editor="v-wipete" MadCap:editDate="2011-11-10T17:10:30.9732324-08:00">all</MadCap:annotation> include it by default.</p>
+                    </td>
+                    <td>All</td>
+                    <td><a href="AF_Con_UserNotification.htm">More info</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PageMessagingManager.htm">PageMessagingManager</a>
+                    </td>
+                    <td>Page Messaging Manager</td>
+                    <td>
+                        <p>A non-UI control that initializes a client-side asynchronous broker that manages communication among participants in the page messaging system, and between page messaging participants and the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService</a>.</p>
+                        <p>This control does not need to be added to any page that uses one of the core <MadCap:variable name="FeatureName.Amalga Framework second use" /> master pages. They <MadCap:annotation MadCap:createDate="2011-11-10T17:10:47.3224516-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Except Minimal and Lightbox" MadCap:editor="v-wipete" MadCap:editDate="2011-11-10T17:11:07.2843757-08:00">all</MadCap:annotation> include it by default.</p>
+                    </td>
+                    <td>All</td>
+                    <td>
+                        <p><a href="AF_Con_PageMessagingParts.htm">More info</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PartToPartManager</td>
+                    <td>&#160;</td>
+                    <td>This control has been deprecated in favor of the Page Messaging Manager.</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PatientAccountContext.htm">PatientAccountContext</a>
+                    </td>
+                    <td>Patient Logged in Account Context</td>
+                    <td>Shown on the Patient portal header. Indicates the name of the logged-in user (their <MadCap:variable name="BrandingHSG.HealthVault" /> account name), and provides a link to sign out and account management.</td>
+                    <td>Patient</td>
+                    <td><a href="Images/PatientAccountContext2-email-as-name.png">Sample image - email address as name</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PatientLinkHistory.htm">PatientLinkHistory</a>
+                    </td>
+                    <td>Patient Link History</td>
+                    <td>Shows a history of all of the past links that are associated with a particular patient.</td>
+                    <td>Staff</td>
+                    <td><a href="Images/PatientLinkHistory.png">Sample image 1 - no previous rejection</a>
+                        <p><a href="Images/PatientLinkHistory---state-2.png">Sample image 2 - previous rejection</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PatientLinkRequestAccess.htm">PatientLinkRequestAccess</a>
+                    </td>
+                    <td>&#160;</td>
+                    <td>Displays a link to the patient matching page. It is  displayed only when the current patient has not been matched.</td>
+                    <td>Patient</td>
+                    <td><a href="Images/PatientLinkRequestAccess.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PatientLinkRequestList.htm">PatientLinkRequestList</a>
+                    </td>
+                    <td>Request List</td>
+                    <td>Shows a list of patient link requests. This list is used for the Patient Link Request list in the <MadCap:annotation MadCap:createDate="2011-11-16T15:17:05.4225296-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is this (and Patient Portal above) the same as staff site and patient site?  In which case, use the Applications.xxx site variable as shown in the DNB text.." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T15:19:09.1919053-08:00">Staff portal</MadCap:annotation>.</td>
+                    <td>Staff</td>
+                    <td><a href="Images/PatientLinkRequestList-.png">Sample image 1</a>
+                        <p><a href="Images/PatientLinkRequestList--State--Row-MouseOver-.png">Sample image 2 - row MouseOver</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PersonDataCard.htm">PersonDataCard</a>
+                    </td>
+                    <td>Staff Portal: Viewing Patient Link Request</td>
+                    <td>Shows all of the information entered by the Patient in a Patient Link Request.</td>
+                    <td>Staff</td>
+                    <td><a href="Images/PersonDataCard.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PotentialLinkCard.htm">PotentialLinkCard</a>
+                    </td>
+                    <td>Staff Portal: Potential Amalga Link Card</td>
+                    <td>
+                        <p>Shows relevant information from an <MadCap:variable name="BrandingHSG.Amalga Short" /> account that is a potential match for a Patient Link Request.</p>
+                    </td>
+                    <td>Staff</td>
+                    <td><a href="Images/PotentialLinkCard.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-02-28T15:26:06.4936806-08:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Type doesn't exist. Is there another control we should add in its place?" MadCap:editor="v-wipete" MadCap:editDate="2012-02-28T15:26:40.4080806-08:00">PotentialMatchFilters</MadCap:annotation>
+                    </td>
+                    <td>Staff Portal: Filter Potential Matches</td>
+                    <td>Shows filters which can be used to broaden or limit the search criteria. The filters are shown as nested check box controls.</td>
+                    <td>Staff</td>
+                    <td><a href="Images/PotentialMatchFilters.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PotentialMatchList.htm">PotentialMatchList</a>
+                    </td>
+                    <td>Staff Portal: Potential Matches Found</td>
+                    <td>Shows a list of <MadCap:variable name="BrandingHSG.Amalga Short" /> accounts that are potential matches to a patient link request.</td>
+                    <td>Staff</td>
+                    <td><a href="Images/PotentialMatchList---State---Matches.png">Sample image 1 - matches</a>
+                        <p><a href="Images/PotentialMatchList---State---No-Matches.png">Sample image 2 - no matches</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_SolutionPicker.htm">SolutionPicker</a>
+                    </td>
+                    <td>Solution Picker </td>
+                    <td>Shows the user a list of all of the solutions that they can access, and allows them to select and navigate to another solution.  It also indicates the current solution.</td>
+                    <td>Internal Provider, Staff</td>
+                    <td><a href="Images/SolutionPicker-state1.png">Sample image</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>StudyBrowserServerControl</td>
+                    <td>Imaging Study Browser</td>
+                    <td>Used in end-to-end imaging scenarios.  A configurable grid-based control that displays the list of studies in a patient's history.</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p><a href="../Imaging/Web Part Study Browser/MIM-LAN-Introduction-Study-Browser-Web-Part.htm">More info</a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information about the <MadCap:variable name="BrandingMS.Toolbox second use" />, see <a href="http://msdn.microsoft.com/en-us/library/ms165354.aspx">Using the toolbox</a>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/becyw7bz.aspx">How to: Add Controls Without a User Interface to Doors Forms</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234230">ASP.NET Validation Controls</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms165354.aspx">Using the Toolbox</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1283.667" MadCap:lastWidth="1085" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Assign application services to logical hosts</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>After publishing an application, the notification area of the results pane will generally call out that logical hosts need to be assigned before the application can be synchronized on a physical host for production. For more information on physical and logical hosts, see <MadCap:xref href="../../Architecture/Arch_Concept_Physical.htm" target="" title="" alt="">Physical architecture</MadCap:xref>. The procedure in this topic assigns the services of an application to a logical host and its component physical hosts.</p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application services are assigned a cluster mode in their deployment manifests. The assignment is specified by the ClusterMode attribute of either the WcfServiceManifest or DoorsWorkerManifest element. For more information, see <MadCap:xref href="../../../Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Service_Manifests.htm" target="" title="" alt="">Service manifests</MadCap:xref>. The services must be deployed to logical hosts of a type compatible with their cluster mode assignment as follows.</p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Service ClusterMode</th>
+                    <th>Compatible logical host types</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NLB</td>
+                    <td>NLB, or None.</td>
+                </tr>
+                <tr>
+                    <td>Failover</td>
+                    <td>Failover cluster, or None</td>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Each application service must be assigned to one logical host. <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> services and Doors worker services can both be assigned to logical hosts as follows.</p>
+        <ul>
+            <li>A service must be deployed on at least one logical host.</li>
+            <li>An application's component services can all be deployed to one logical host.</li>
+            <li>An application's component services can all be deployed to separate logical hosts so long as the logical hosts are of the type required by the application service.</li>
+            <li>An application's component services can be deployed in any grouping of logical hosts so long as the logical hosts are of the type required by the application service. For example, an application with four services could have one service deployed to LogicalHost1 of type None, one service deployed to LogicalHost2 of type NLB, and 2 services deployed to LogicalHost3 of type FailOver.</li>
+        </ul>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaAppAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To assign services to logical hosts</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>In the module navigation tree, expand the <MadCap:variable name="BrandingHSG.Amalga Short" class="UIElementAction" /><span class="UIElementAction"> Hosted Applications</span> folder and select the application for logical host assignment.</li>
+            <li>In the tasks pane, click <span class="UIElementAction">Assign Logical Hosts</span>. The application's services and available logical hosts will be displayed in the <MadCap:xref href="AppMan_Vref_AMC-mod-Assign Logical Host Pane.htm" target="" title="" alt="">Assign logical host pane</MadCap:xref>.</li>
+            <li>
+                <p>Assign each service to a logical host by selecting one of the available logical hosts listed at the bottom of the service assignment box. In the case of a Failover cluster, you must also select a cluster group.</p>
+                <p>
+                    <img src="../../Images/AMC_Select_FOC_LH.png" style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;width: 452px;height: 337px;" />
+                </p>
+            </li>
+            <li>After selecting a logical host for each service, click <span class="UIElementAction">Assign</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-Assign Logical Host Pane.htm" target="" title="" alt="">Assign logical host pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

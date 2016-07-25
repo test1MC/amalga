@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="161" MadCap:lastWidth="576" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-02-23T13:08:47.5824511-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-02-23T13:08:47.5824511-08:00" />
+        </MadCap:changeData>
+    </head>
+    <body>
+        <p>Value sets provide a list of options to pick from when users select a custom criterion. They are most useful when there is a discrete list of possible values for an attribute. Gender and discharge disposition are two examples of good candidates for value sets.</p>
+        <p>Value sets can either be a static list or <MadCap:change MadCap:changes="2">created from </MadCap:change><MadCap:change MadCap:changes="1">based on </MadCap:change>an SQL query. They can display either raw values from the database<MadCap:change MadCap:changes="2">,</MadCap:change> or have separate display options<MadCap:change MadCap:changes="2">,</MadCap:change> so that users don't have to memorize codes.</p>
+        <p>If the actual values and display values are not identical, the only choice for the value will be either equal or not. If they are the same, other operators (such as <strong>contains</strong>) will be <MadCap:annotation MadCap:createDate="2012-02-23T13:09:27.5184511-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="for example?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T13:09:33.3216511-08:00">available.</MadCap:annotation></p>
+    </body>
+</html>

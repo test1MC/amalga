@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="259" MadCap:lastWidth="300" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To edit list properties</p>
+        <ol>
+            <li>
+                <p>When viewing the list, click <span class="UIElementAction">Edit list</span>, and then click <span class="UIElementAction">Edit list properties</span>.</p>
+                <p>The list properties are displayed.</p>
+            </li>
+            <li>On the <span class="UIElementAction">Basic Info</span> tab, make any changes, and then click <span class="UIElementAction">Save</span>.</li>
+            <li>On the <span class="UIElementAction">Sharing</span> tab, follow the instructions in <MadCap:xref href="../PL_Task_share_list.htm" target="" title="" alt=""><a href="../PL_Task_share_list.htm">Share a patient list on page 1</a></MadCap:xref> to make any changes, and then click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+    </body>
+</html>

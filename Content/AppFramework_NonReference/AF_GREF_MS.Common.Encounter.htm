@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="6" MadCap:lastHeight="834.6667" MadCap:lastWidth="701.6667" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2011-11-30T01:11:30.7652179-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2011-11-30T01:12:09.1670577-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2011-11-30T01:13:04.6146019-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Common.Encounter entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="../DataPlatform1/Entity_Common/SummarySnippets/C.Encounter.flsnp" />
+        <p><span class="Label"><MadCap:keyword term="entity definitions:Microsoft.Common.Encounter" />Entity tag</span>: PV1, PV2</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ActualLengthofInpatientStay</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCodingSystem</td>
+                    <td>PV2-3.3</td>
+                    <td>HL7</td>
+                    <td>Name <MadCap:annotation MadCap:createDate="2011-11-30T01:13:35.4756877-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="is the information in this tablecomplete?" MadCap:editor="v-labenn" MadCap:editDate="2011-12-07T16:10:26.0670971-08:00">of</MadCap:annotation> the coding system.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonIdentifier</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonText</td>
+                    <td>PV2-3.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the reason for patient admission.</td>
+                </tr>
+                <tr>
+                    <td>AdmittingDoctor</td>
+                    <td>PV1-17</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.Provider.ProviderID. The ID of the admitting physician, usually an out-patient provider.</td>
+                </tr>
+                <tr>
+                    <td>AmbulatoryStatus</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationBed</td>
+                    <td>PV1-3.3</td>
+                    <td>HL7</td>
+                    <td>Patient's bed.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationBuilding</td>
+                    <td>PV1-3.7</td>
+                    <td>HL7</td>
+                    <td>Building.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationDescription</td>
+                    <td>PV1-3.9</td>
+                    <td>HL7</td>
+                    <td>Location description.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationFacility</td>
+                    <td>PV1-3.4</td>
+                    <td>HL7</td>
+                    <td>Facility caring for a patient<MadCap:change MadCap:changes="1">.</MadCap:change></td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationFloor</td>
+                    <td>PV1-3.8</td>
+                    <td>HL7</td>
+                    <td>Floor.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationPointOfCare</td>
+                    <td>PV1-3.1</td>
+                    <td>HL7</td>
+                    <td>Point-of-care location.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationRoom</td>
+                    <td>PV1-3.2</td>
+                    <td>HL7</td>
+                    <td>Patient's room.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationStatus</td>
+                    <td>PV1-3.5</td>
+                    <td>HL7</td>
+                    <td>Location status.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationType</td>
+                    <td>PV1-3.6</td>
+                    <td>HL7</td>
+                    <td>Person location type.</td>
+                </tr>
+                <tr>
+                    <td>AttendingDoctor</td>
+                    <td>PV1-7</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.Provider.ProviderID. The ID of the attending physician, for both in-patient and out patient care</td>
+                </tr>
+                <tr>
+                    <td>DischargeDisposition</td>
+                    <td>PV1-36</td>
+                    <td>HL7</td>
+                    <td>
+                        <p MadCap:changes="3">Disposition of the patient at time of discharge (such as"discharged to home"&#160;or"expired").</p>
+                        <MadCap:change MadCap:changes="2">Disposition of the patient at time of discharge (such as, discharged to home, expired, and so on).</MadCap:change>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the Microsoft.Common.Encounter entity.</td>
+                </tr>
+                <tr>
+                    <td>EncounterType</td>
+                    <td>PV1-4</td>
+                    <td>HL7</td>
+                    <td>Circumstances under which the patient was or will be admitted.</td>
+                </tr>
+                <tr>
+                    <td>EndDateTime</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>EndDateTime_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>EstimatedLengthofInpatientStay</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PatientClass</td>
+                    <td>PV1-2</td>
+                    <td>HL7</td>
+                    <td>Categorizes patients by site. Enumerated value (E = Emergency, I = Inpatient, O = Outpatient, P = Preadmit, R = Recurring, B = Obstetrics, C = Commercial, N = Notapplicable, U = Unknown)</td>
+                </tr>
+                <tr>
+                    <td>PatientID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Foreign key to Microsoft.Common.Patient.PatientID</td>
+                </tr>
+                <tr>
+                    <td>PatientStatusCode</td>
+                    <td>PV2-24</td>
+                    <td>HL7</td>
+                    <td>Status of the episode of care.</td>
+                </tr>
+                <tr>
+                    <td>PatientType</td>
+                    <td>PV1-18</td>
+                    <td>HL7</td>
+                    <td>Site-specific values that identify the patient type (Telemetry, ICU, Day Surgery)</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumber</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningAuthorityID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningAuthorityNamespace</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningAuthorityType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningFacilityID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningFacilityNamespace</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberAssigningFacilityType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberEffectiveDate</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberEffectiveDate_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberExpirationDate</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberExpirationDate_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PreadmitNumberType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ReferringDoctor</td>
+                    <td>PV1-8</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.Provider.ProviderID. The ID of the referring physician.</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCodingSystem</td>
+                    <td>PV2-4.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonIdentifier</td>
+                    <td>PV2-4.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the reason for a patient location change.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonText</td>
+                    <td>PV2-4.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the reason for a patient location change.</td>
+                </tr>
+                <tr>
+                    <td>VIPIndicator</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumber</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityNamespace</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningFacilityID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningFacilityNamespace</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningFacilityType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberEffectiveDate</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberEffectiveDate_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberExpirationDate</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberExpirationDate_o</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberType</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

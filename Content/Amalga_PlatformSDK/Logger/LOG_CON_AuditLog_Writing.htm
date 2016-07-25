@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="4966.333" MadCap:lastWidth="1090" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="5" MadCap:timestamp="2012-03-12T21:33:14.2038252-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="6" MadCap:timestamp="2012-03-12T21:33:14.2194252-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Writing audit log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to write audit log entries and audit log details to the audit log in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The audit log tracks user-specific operations, such as reading data or sending email, and can store detailed information related to a user-specific operation. You can use the AuditLog static object, in the Microsoft.Amalga.Hosting.Service namespace, to write audit log entries and audit log details. The static class provides a single method, Audit, to which you can pass an AuditEntry object containing the audit log entry and audit log details to be written.</p>
+        <h2>Using the AuditEntry object</h2>
+        <p>The AuditEntry object describes a single audit log entry, including audit log details associated with that audit log entry. The AuditEntry object provides the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AuditId</td>
+                    <td>
+                        <p>Required, read-only. A System.Guid object containing the globally unique identifier (GUID) for the audit log entry.</p>
+                        <p class="note">The value of this property is set when the AuditEntry object is instantiated, and cannot be changed once set.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DetailProperties</td>
+                    <td>Required. An AuditDetailCollection object containing a collection of AuditDetail objects. Each AuditDetail object represents an audit log detail for the audit log entry, represented by the AuditEntry object, to be written to the audit log.</td>
+                </tr>
+                <tr>
+                    <td>DeviceIPAddress</td>
+                    <td>Optional. A string containing the IP address of the device writing the audit log entry.</td>
+                </tr>
+                <tr>
+                    <td>DeviceName</td>
+                    <td>Optional. A string containing the name of the device writing the audit log entry.</td>
+                </tr>
+                <tr>
+                    <td>LinkedAuditId</td>
+                    <td>Optional. A System.Guid object containing the GUID for a linked audit log entry. This property can be set to an existing audit log entry, to create associations between audit log entries.</td>
+                </tr>
+                <tr>
+                    <td>Operation</td>
+                    <td>Required. A string containing the name of the operation represented by the audit log entry. </td>
+                </tr>
+                <tr>
+                    <td>OperationStatus</td>
+                    <td>
+                        <p>Required. An OperationStatus enumeration value representing the status of the operation. This property supports the following values:</p>
+                        <ul>
+                            <li>
+                                <p>Failed</p>
+                                <p>
+                                    <MadCap:annotation MadCap:createDate="2012-03-12T21:33:41.4224252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="present tense?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:33:47.3972252-07:00">This</MadCap:annotation> value indicates that the operation failed. For example, if an attempt to enable eventing for a hosted application fail<MadCap:change MadCap:changes="6">s</MadCap:change><MadCap:change MadCap:changes="5">ed</MadCap:change>, this value is applied to the AuditEntry object that represent<MadCap:change MadCap:changes="6">s</MadCap:change><MadCap:change MadCap:changes="5">ed</MadCap:change> the audit log entry for the failed service request.       </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <MadCap:annotation MadCap:createDate="2012-02-16T09:11:04.4861680-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="As found in build. Filed TFS bug 124025." MadCap:editor="v-dennk" MadCap:editDate="2012-02-16T09:11:20.4765780-08:00">InvaidRequest</MadCap:annotation>
+                                </p>
+                                <p>This value indicates that the operation performed an invalid request.</p>
+                            </li>
+                            <li>
+                                <p>ResourceNotFound</p>
+                                <p>This value indicates that a resource requested by the operation was not found.</p>
+                            </li>
+                            <li>
+                                <p>Success</p>
+                                <p>This value indicates that the operation succeeded.</p>
+                            </li>
+                            <li>
+                                <p>Unauthorized</p>
+                                <p>This value indicates that the operation was unauthorized.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OperationType</td>
+                    <td>
+                        <p>Required. An OperationType enumeration value representing the type of the operation. This property supports the following values:</p>
+                        <ul>
+                            <li>
+                                <p>AddData</p>
+                                <p>Describes an operation involving the addition of new data. For example, an attempt to write a new record to an application view in an <MadCap:annotation MadCap:createDate="2012-03-12T21:09:40.9586252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post CTP2 Why only in a private DB? Does a standard DB use different operations?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:11:06.2300252-07:00">application private database</MadCap:annotation> can use this value to describe an audit log entry for which the value of the Operation property is set to "DataConnectorServer.Write".</p>
+                            </li>
+                            <li>
+                                <p>DeleteData</p>
+                                <p>Describes an operation involving the deletion of existing data. For example, an attempt to delete an existing record from an application view in an application private database can use this value to describe an audit log entry for which the value of the Operation property is set to "DataConnectorServer.Write".</p>
+                            </li>
+                            <li>
+                                <p>Download</p>
+                                <p>Describes an operation involving the downloading of data.</p>
+                            </li>
+                            <li>
+                                <p>Email</p>
+                                <p>Describes an operation involving sending, receiving, or processing an email request.</p>
+                            </li>
+                            <li>
+                                <p>ExecuteSchedule</p>
+                                <p>Describes an operation involving the execution of a scheduled job or task.</p>
+                            </li>
+                            <li>
+                                <p>Fax</p>
+                                <p>Describes an operation involving sending, receiving, or processing a facsimile transmission.</p>
+                            </li>
+                            <li>
+                                <p>Login</p>
+                                <p>Describes an operation involving the authentication of a user account.</p>
+                            </li>
+                            <li>
+                                <p>Logout</p>
+                                <p>Describes an operation involving the deauthentication of a user account.</p>
+                            </li>
+                            <li>
+                                <p>Print</p>
+                                <p>Describes an operation involving sending, receiving, or processing a print request.</p>
+                            </li>
+                            <li>
+                                <p>Schedule</p>
+                                <p>Describes an operation involving the scheduling of a job or task.</p>
+                            </li>
+                            <li>
+                                <p>ServiceRequest</p>
+                                <p>Describes an operation involving a request from a service. For example, an attempt to send a query to the DataConnector service, using <MadCap:variable name="FeatureName.Amalga ADO.NET" />, can use this value to describe an audit log entry for which the value of the Operation property is set to "DataConnectorApplication.DataConnectorService.IDataConnectorService.ExecuteQuery".</p>
+                            </li>
+                            <li>
+                                <p>UpdateData</p>
+                                <p>Describes an operation involving the update of existing data. For example, an attempt to update an existing record from an application view in an application private database can use this value to describe an audit log entry for which the value of the Operation property is set to "DataConnectorServer.Write".</p>
+                            </li>
+                            <li>
+                                <p>ViewData</p>
+                                <p>Describes an operation involving the retrieval of existing data. For example, an attempt to query an application view in an application private database can use this value to describe an audit log entry for which the value of the Operation property is set to "DataConnectorServer.Read".</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>UserId</td>
+                    <td>
+                        <p>Required. A string containing the name of the user account associated with the audit log entry. The default value of this property is set to the name of the user account that instantiated the AuditEntry object.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Using the AuditDetail object</h2>
+        <p>Each audit log entry can have one or more audit log details linked to it, which provide additional information about the operation described by the audit log entry. Correspondingly, the DetailProperties property of the AuditEntry object provide a collection of AuditDetail objects, with which you can associate audit log details to an audit log entry.</p>
+        <p>The AuditDetail object provides the following properties:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AuditId</td>
+                    <td>
+                        <p>Read-only. A System.Guid object containing the globally unique identifier (GUID) for the audit log entry. This property is set when the AuditEntry object to which this AuditDetail object is associated is written to the audit log.</p>
+                        <p class="note">This property is set when the AuditEntry object is written, and cannot be changed once set. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GroupIndex</td>
+                    <td>An integer which indicates the user-specified group to which an audit log detail applies. For example, a set of audit log details may <MadCap:annotation MadCap:createDate="2012-03-12T21:18:34.5582252-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Or they may not . . ." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T21:19:51.2670252-07:00">apply to </MadCap:annotation></td>
+                </tr>
+                <tr>
+                    <td>PropertyName</td>
+                    <td>A string containing the name of the property described by the object. For example, the value of this property could be set to "QUERY", to describe an AuditDetail entry with a PropertyType property value set to PropertyType.Query.</td>
+                </tr>
+                <tr>
+                    <td>PropertyType</td>
+                    <td>
+                        <p>A PropertyType enumeration value which indicates the data type of the property specified in the PropertyName property. This property supports the following values:</p>
+                        <ul>
+                            <li>
+                                <p>ColumnName</p>
+                                <p>The property specified in PropertyName describes the name of a column.</p>
+                            </li>
+                            <li>
+                                <p>Concept</p>
+                                <p>The property specified in PropertyName describes the GUID of a concept managed by the Terminology platform application.</p>
+                            </li>
+                            <li>
+                                <p>Other</p>
+                                <p>The property specified in PropertyName describes something other than a column, a concept, or a query.</p>
+                            </li>
+                            <li>
+                                <p>Query</p>
+                                <p>The property specified in PropertyName describes a query.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PropertyTypeValue</td>
+                    <td>
+                        <p>Read-only. A string representing the value of the PropertyType property. The following values are returned by this property when the PropertyType property is set to the values listed for each value:</p>
+                        <ul>
+                            <li>
+                                <p>CL</p>
+                                <p>Returned when the PropertyType property is set to PropertyType.ColumnName.</p>
+                            </li>
+                            <li>
+                                <p>CP</p>
+                                <p>Returned when the PropertyType property is set to PropertyType.Concept.</p>
+                            </li>
+                            <li>
+                                <p>QU</p>
+                                <p>Returned when the PropertyType property is set to PropertyType.Query.</p>
+                            </li>
+                            <li>
+                                <p>OT</p>
+                                <p>Returned when the PropertyType property is set to any other value.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>A string containing the value of the property described by the object. For example, the value of this property could be set to a particular Entity SQL or Transact-SQL&#160;query, to describe an AuditDetail entry with a PropertyType property value set to PropertyType.Query.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example</h2>
+        <p>The following example demonstrates how the audit log can be used to track the success or failure of a service request within a hosted application. The function attempts to call the GetSourceSystems operation from the Terminology service application. The function uses the Audit method of the static AuditLog object to write an audit log entry, represented by an AuditEntry object, with associated audit log details, represented by AuditDetail objects. The function sets the OperationStatus property of the AuditEntry object depending on the success or failure of the operation.</p><pre xml:space="preserve">public SourceSystem[] GetSourceSystems() 
+{
+    // Use the GetSourceSystems operation from ISemanticLabelTaggingService
+    // to retrieve an array of SourceSystem objects.
+
+    // Define the AuditEntry object that represents the audit log entry for
+    // this function.
+    AuditEntry auditLog = new AuditEntry();
+    auditLog.Operation = "GetSourceSystems";
+    auditLog.OperationType = OperationType.ServiceRequest;
+
+    // Declare a variable for the return value.
+    SourceSystem[] returnValue = null;
+
+    try
+    {
+        // Define an AuditDetail entry that represents an audit log detail tracked
+        // by the audit log entry for this function.
+        auditLog.DetailProperties.Add(new AuditDetail());
+        auditLog.DetailProperties[0].PropertyType = PropertyType.Other;
+        auditLog.DetailProperties[0].PropertyName = "ResolveServiceEndPoint";
+
+        // First, resolve the service endpoint and connect to the service.
+        // Resolve the service endpoint.
+        ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+            (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+            new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+            "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+        // Define an AuditDetail entry that represents an audit log detail tracked
+        // by the audit log entry for this function.
+        auditLog.DetailProperties.Add(new AuditDetail());
+        auditLog.DetailProperties[1].PropertyType = PropertyType.Other;
+        auditLog.DetailProperties[1].PropertyName = "CreateChannel";
+
+        // Open the client channel and instantiate the WCF client.
+        ISemanticLabelTaggingService terminologyServiceClient =
+            AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+
+        // Define an AuditDetail entry that represents an audit log detail tracked
+        // by the audit log entry for this function.
+        auditLog.DetailProperties.Add(new AuditDetail());
+        auditLog.DetailProperties[2].PropertyType = PropertyType.Other;
+        auditLog.DetailProperties[2].PropertyName = "GetSourceSystems";
+
+        // Invoke the operation from the service.
+        returnValue = terminologyServiceClient.GetSourceSystems();
+
+        // Success - write the audit log entry.
+        auditLog.OperationStatus = OperationStatus.Success;
+        AuditLog.Audit(auditLog);
+    }
+    catch (Exception ex)
+    {
+        // Failure - write the audit log entry.
+        auditLog.OperationStatus = OperationStatus.Failed;
+        AuditLog.Audit(auditLog);
+    }
+
+    // Return the return value.
+    return returnValue;
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog_Reading.htm" target="" title="" alt="">Reading audit log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog.htm" target="" title="" alt="">Audit log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

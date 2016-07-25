@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-padenc,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:lastBlockDepth="6" MadCap:lastHeight="538" MadCap:lastWidth="608">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Effective user permissions</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="roles;permissions;access control framework;framework:access control" />This topic describes management of <MadCap:variable name="BrandingHSG.Amalga Short" /> roles, lists built-in roles, describes effective user permissions, and discusses computer accounts as related to roles. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-11-08T09:24:43.0651150-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="input from Pierre, 10/24: \r\n- An important value prop that must be mentioned is that the goal is not necessarily to restrict access to data, but to help show the right data to the right user at the right time.\r\n- You should mention that our system gives no access by default. A user role must be explicitly granted permission to access a resource. We do not have deny access rules. Except if one uses the SQL NOT clause in rules, that could be a small topic. " MadCap:editor="v-padenc" MadCap:editDate="2011-11-08T09:26:44.6811150-08:00">The</MadCap:annotation> goal of the <MadCap:variable name="BrandingHSG.Amalga Short" /> access control framework is to show the right data to the right user at the right time. By default, the <MadCap:variable name="BrandingHSG.Amalga Short" /> access control framework grants no access to  <MadCap:variable name="BrandingHSG.Amalga Short" /> data and applications. Permissions are explicitly granted by assigning user or group accounts to <MadCap:variable name="BrandingHSG.Amalga Short" /> roles and authorizing those roles for <MadCap:variable name="BrandingHSG.Amalga Short" /> data and applications. </p>
+        <p>A user can be a member of multiple roles. During a user session, <MadCap:variable name="BrandingHSG.Amalga Short" /> considers the entire collection of roles for a user. <MadCap:annotation MadCap:createDate="2011-11-08T09:26:52.4971150-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="input from Pierre, 10/24: \r\nYou should also mention very explicitely that a user gets the union of all access given to all of his roles, and a role gets access to the union of all resources it was granted permissions to." MadCap:editor="v-padenc" MadCap:editDate="2011-11-08T09:27:00.3237773-08:00">The user receives the union of all access given to his or her roles; each role receives access to the union of all resources (data and applications)&#160;for which it was authorized. </MadCap:annotation></p>
+        <p>For example, if Dr. Smith belongs to both the Physicians role and the Doctors role, her permissions for data and applications are determined by the union of her role memberships; therefore, if access to sensitive data for emergency room patients is limited to the Doctors role, her membership in that role will allow her to view this data. </p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SERV_TASK_Roles-View.htm" target="" title="" alt="">View roles and assigned accounts</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="../../Secure Data Access/Secure Data Access Intro.htm" target="" title="" alt="">Data access security</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SERV_CON_RolesUsers.htm" target="" title="" alt="">Roles and users</MadCap:xref>
+        </p>
+    </body>
+</html>

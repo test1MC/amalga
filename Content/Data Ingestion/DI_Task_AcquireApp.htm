@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:ignoredWords="applic" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve <MadCap:variable name="Applications.Feed Acquisition (application)" /> manifests</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="feed acquisition:configuration" />This topic describes how to resolve application and service manifests.</p>
+        <p>For an application profile, see <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message Shredder application</MadCap:xref>.</p>
+        <h2>Application manifest</h2>
+        <p class="Label">To resolve an application manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an <MadCap:annotation MadCap:createDate="2012-03-09T21:11:09.7978447-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Typically not used as an adjective (and an editor's pet peeve&lt;g&gt;). Can you use sample? or file example?  Same in step 1 below as well as in oither topics." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T21:48:21.0032919-08:00">example</MadCap:annotation> file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the application instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>Save the file.</li>
+        </ol>
+        <h2>Service manifest</h2>
+        <p class="Label">To resolve a service manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an example file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the service instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>
+                <p>Replace the logical host name with the local name. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DoorsWorkerManifest.htm" target="" title="" alt="">DoorsWorkerManifest element</MadCap:xref>.</p>
+                <p class="tip">Get the local logical-host name from the <a href="../Serviceability/Management Console/AMC Introduction.htm">Amalga Management Console</a>.</p>
+            </li>
+            <li>Set the idle connection timeout if the default value is insufficient. For help, see <MadCap:xref href="Manifest XML/DI_Intro_IdleConnectionTimeout setting.htm" target="" title="" alt="">IdleConnectionTimeout setting</MadCap:xref>.</li>
+            <li>Set the connection timeout (in seconds) if the default value is insufficient. For help, see<MadCap:xref href="Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm" target="" title="" alt=""> ConnectionTimeoutSeconds setting.</MadCap:xref></li>
+            <li>
+                <p>In the <a href="DI_XML_List_Acquire.htm">FeedConfigurationXML setting</a> block, configure the following element values for either a file format or an MLLP format feed:</p>
+                <p>
+                    <span class="Label">For file format</span>
+                    <ul>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_Feed.htm" target="" title="" alt="">Feed element</MadCap:xref> (Specify a feed name for the Name attribute.)</li>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref> (Specify the following child elements: <MadCap:xref href="Manifest XML/DI_XML_Manifest_Directory.htm" target="" title="" alt="">Directory element</MadCap:xref> and <MadCap:xref href="Manifest XML/DI_XML_Manifest_SearchPattern.htm" target="" title="" alt="">SearchPattern element</MadCap:xref>.)</li>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref> (Specify a message type value; use the same value for the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> in the related shredder and parser service manifests.)</li>
+                    </ul>
+                </p>
+                <p>
+                    <span class="Label">For MLLP format</span>
+                    <ul>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_Feed.htm" target="" title="" alt="">Feed element</MadCap:xref> (Specify a feed name for the Name attribute.)</li>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref> (Specify child element: <MadCap:xref href="Manifest XML/DI_XML_Manifest_Port.htm" target="" title="" alt="">Port element</MadCap:xref>.)</li>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_TempStoragedAdapter.htm" target="" title="" alt="">TempStorageAdapter element</MadCap:xref> (Specify the child element: <MadCap:xref href="Manifest XML/DI_XML_Manifest_Directory.htm" target="" title="" alt="">Directory element</MadCap:xref>.)</li>
+                        <li>
+                            <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref> (Specify a message type value; use the same value for the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> in the related shredder and parser service manifests.)</li>
+                    </ul>
+                </p>
+            </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>(Optional) Declare a custom plug-in application. For help, see <MadCap:xref href="Manifest XML/DI_Con_AcquireExtend.htm" target="" title="" alt="">Add an Acquisition plug-in</MadCap:xref>.</li>
+            <li>Save the file.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

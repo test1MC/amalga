@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="CHANGEDs"
+    Link="/Content/Amalga_PlatformSDK/SDK_OVW_Amalga_Platform_SDK_Overview.htm">
+    <TocEntry
+      Title="Data pipeline"
+      Link="/Project/TOCs/Data pipeline.fltoc" />
+    <TocEntry
+      Title="Introduction to [%=BrandingHSG.Amalga Short%] development"
+      Link="/Content/Amalga_PlatformSDK/SDK_OVW_Introduction_To_Amalga_Development.htm"
+      conditions="Production.doNOTbuild" />
+    <TocEntry
+      Title="[%=BrandingHSG.Amalga Short%] platform development architecture"
+      Link="/Content/Amalga_PlatformSDK/SDK_OVW_Platform_Arch_For_Developers.htm"
+      conditions="Production.doNOTbuild" />
+    <TocEntry
+      Title="Installing the [%=FeatureName.Amalga SDK%]"
+      Link="/Content/Amalga_PlatformSDK/SDK_NAV_Installing_AmalgaSDK.htm">
+      <TocEntry
+        Title="System requirements and prerequisites"
+        Link="/Content/Amalga_PlatformSDK/SDK_GREF_SystemReq_Prereqs.htm" />
+      <TocEntry
+        Title="Install the [%=FeatureName.Amalga SDK%]"
+        Link="/Content/Amalga_PlatformSDK/SDK_PROC_InstallSDK.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="[%=FeatureName.Amalga SDK%] development resources"
+      Link="/Content/Amalga_PlatformSDK/SDK_GREF_PartsList.htm">
+      <TocEntry
+        Title="Templates and tools"
+        Link="/Content/Amalga_PlatformSDK/SDK_OVW_Development_Environment.htm">
+        <TocEntry
+          Title="[%=BrandingMS.Microsoft Visual Studio%] project templates"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_VS_Proj_Templates.htm" />
+        <TocEntry
+          Title="[%=BrandingMS.Microsoft Visual Studio%] toolbox controls"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_VS_Controls.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Manifest Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Manifest_Editor.htm" />
+        <TocEntry
+          Title="Contract Collection Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Contract_ColEditor.htm" />
+        <TocEntry
+          Title="Dependency Collection Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Dependency_ColEditor.htm" />
+        <TocEntry
+          Title="PerfCounterCategory Collection Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_PerfCounterCategory_ColEditor.htm" />
+        <TocEntry
+          Title="PerfCounter Collection Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_PerfCounter_ColEditor.htm" />
+        <TocEntry
+          Title="Setting Collection Editor"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Setting_ColEditor.htm" />
+        <TocEntry
+          Title="[%=FeatureName.virtual schema designer%]"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Virtual_Schema_Designer.htm" />
+        <TocEntry
+          Title="Update Wizard"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Update_Wizard.htm" />
+        <TocEntry
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Application_Package_Deploy_Tools.htm"
+          Title="Application publishing and packaging tools" />
+      </TocEntry>
+      <TocEntry
+        Title="Sites"
+        Link="/Content/Connected_Health_Portals/AF_Con_Sites.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Portal Templates overview"
+          Link="/Content/Amalga_PlatformSDK/SDK_OVW_Portal_Templates_OVW.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Logon pages"
+          Link="/Content/Amalga_PlatformSDK/SDK_OVW_Portal_Templates_Logon_Pages.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Signed In template"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Portal_Signed_In_Template.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Content Page template"
+          Link="/Content/Amalga_PlatformSDK/SDK_Con_Content_Page_Template.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+      <TocEntry
+        Title="Extensible applications overview"
+        Link="/Content/Amalga_PlatformSDK/SDK_OVW_OOB_Applications.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Patient matching and linking"
+          Link="/Content/Amalga_PlatformSDK/SDK_Con_Patient_Link_Match_App.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+      <TocEntry
+        Title="[%=BrandingHSG.Amalga Short%] platform features and applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_OVW_Amalga_Hosted_Services.htm"
+        ReplaceMergeNode="false">
+        <TocEntry
+          Title="Data Change Notification"
+          Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_OVW_Eventing.htm" />
+        <TocEntry
+          Link="/Content/Amalga_PlatformSDK/DataConnector/SDK_OVW_DataConnector.htm"
+          Title="DataConnector" />
+        <TocEntry
+          Title="Logger"
+          Link="/Content/Amalga_PlatformSDK/Logger/LOG_OVW_Logger.htm" />
+        <TocEntry
+          Title="Terminology"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Terminology.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Overview of APIs"
+        Link="/Content/Amalga_PlatformSDK/SDK_OVW_Amalga_API.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="Getting started with [%=FeatureName.Amalga SDK%]"
+      Link="/Content/Amalga_PlatformSDK/SDK_LND_Get_Started_Amalga_App_Dev.htm">
+      <TocEntry
+        Title="[%=BrandingHSG.Amalga Short%] applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_What_Is_Amalga_App.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Advantages of [%=BrandingHSG.Amalga Short%] hosted applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_Advantages_Of_Hosted_Apps.htm" />
+      <TocEntry
+        Title="Hosted applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_Application_Architecture_Pattern.htm">
+        <TocEntry
+          Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Application_Manifests.htm"
+          Title="Application manifests" />
+        <TocEntry
+          Title="Data manifests"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Data_Manifests.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Hosted services"
+        Link="/Content/Amalga_PlatformSDK/SDK_LND_Amalga_Hosted_Services.htm">
+        <TocEntry
+          Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Service_Manifests.htm"
+          Title="Service manifests" />
+        <TocEntry
+          Title="Hosted [%=BrandingMS.WCF service%]s"
+          Link="/Content/Amalga_PlatformSDK/SDK_LND_Amalga_WCF_Services.htm" />
+        <TocEntry
+          Title="Hosted [%=BrandingMS.Windows service%]s"
+          Link="/Content/Amalga_PlatformSDK/SDK_Con_Amalga_Worker(NT)_Svcs.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Access, authentication, and authorization"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_Authent_Access_Author.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Getting started with [%=BrandingHSG.Amalga Short%] platform features and applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_NAV_GettingStarted_Platform.htm">
+        <TocEntry
+          Title="Logger concepts"
+          Link="/Project/TOCs/SDK_LOG_Conceptual.fltoc"
+          ReplaceMergeNode="true" />
+        <TocEntry
+          Title="Terminology concepts"
+          Link="/Project/TOCs/SDK_TRM_Conceptual.fltoc"
+          ReplaceMergeNode="true" />
+      </TocEntry>
+      <TocEntry
+        Title="Integrating Amalga and SharePoint Services"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_Amalga_SharePoint_Integration.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="Developing an [%=BrandingHSG.Amalga Short%] application"
+      Link="/Content/Amalga_PlatformSDK/SDK_LND_Developers_Guide.htm">
+      <TocEntry
+        Title="Creating and configuring hosted applications"
+        Link="/Content/Amalga_PlatformSDK/SDK_CON_Defining_Amalga_Applications.htm">
+        <TocEntry
+          Title="Application dependencies"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Application_Dependencies.htm" />
+        <TocEntry
+          Title="Configuration settings"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Configuration_Settings.htm"
+          ReplaceMergeNode="false" />
+        <TocEntry
+          Title="Performance counters"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_PerfCounters.htm" />
+        <TocEntry
+          Title="Create a new hosted application project"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_Create_Application_Project.htm" />
+        <TocEntry
+          Link="/Content/AppFramework_NonReference/AF_PROC_Create_SharePoint_Project.htm"
+          Title="Add a new [%=BrandingMS.SharePoint%] application project" />
+        <TocEntry
+          Title="Add a new hosted service project"
+          Link="/Content/Amalga_PlatformSDK/SDK_PROC_Add_WCF_Project.htm" />
+        <TocEntry
+          Title="Edit an application manifest or service manifest"
+          Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_PROC_Edit_AppSvc_Manifest.htm" />
+        <TocEntry
+          Title="Add an application dependency"
+          Link="/Content/Amalga_PlatformSDK/DeploymentManifest/SDK_PROC_Add_Dependency.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Modeling data in [%=BrandingHSG.Amalga Short%]"
+        Link="/Project/TOCs/SDK_VSD_Operational.fltoc" />
+      <TocEntry
+        Title="Retrieving and modifying data in [%=BrandingHSG.Amalga Short%]"
+        Link="/Project/TOCs/SDK_DAT_Conceptual.fltoc" />
+      <TocEntry
+        Title="Interacting with [%=BrandingHSG.Amalga Short%] services and applications"
+        Link="/Content/Amalga_PlatformSDK/Services/SDK_NAV_WorkingWithServicesApps.htm">
+        <TocEntry
+          Title="Interacting with services"
+          Link="/Content/Amalga_PlatformSDK/Services/SDK_CON_UsingWCFClients.htm">
+          <TocEntry
+            Title="Obtaining information about services"
+            Link="/Content/Amalga_PlatformSDK/Services/SDK_CON_Obtaining_Service_Metadata.htm" />
+          <TocEntry
+            Title="Creating a WCF client channel"
+            Link="/Content/Amalga_PlatformSDK/Services/SDK_CON_Connecting_WCF_Clients.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with [%=BrandingHSG.Amalga Short%] platform features"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_WorkingWithPlatformSvcs.htm">
+          <TocEntry
+            Title="Interacting with Logger"
+            Link="/Project/TOCs/SDK_LOG_Operational.fltoc"
+            ReplaceMergeNode="true" />
+          <TocEntry
+            Title="Interacting with VirtualSchema"
+            Link="/Project/TOCs/SDK_VSS_Operational.fltoc"
+            ReplaceMergeNode="true" />
+          <TocEntry
+            Title="Using the Topology Service"
+            Link="/Content/Amalga_PlatformSDK/SDK_CON_Using_Topology_Service.htm"
+            conditions="Production.doNOTbuild" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with [%=BrandingHSG.Amalga Short%] platform applications"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_WorkingWithPlatformApps.htm">
+          <TocEntry
+            Title="Interacting with Data Change Notification"
+            Link="/Project/TOCs/SDK_DCN_Operational.fltoc"
+            ReplaceMergeNode="true" />
+          <TocEntry
+            Title="Interacting with Terminology"
+            Link="/Project/TOCs/SDK_TRM_Operational.fltoc"
+            ReplaceMergeNode="true" />
+          <TocEntry
+            Title="Interacting with the [%=BrandingHSG.HealthVault%] Connector"
+            Link="/Content/AppFramework_NonReference/AF_Nav_HVConnector.htm" />
+          <TocEntry
+            Title="Creating Clinical Documents"
+            Link="/Content/AppFramework_NonReference/AF_Nav_ClinicalDocuments.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Add a service reference"
+          Link="/Content/Amalga_PlatformSDK/Services/SDK_PROC_Add_Svc_Reference.htm" />
+        <TocEntry
+          Title="Generate a WCF client"
+          Link="/Content/Amalga_PlatformSDK/Services/SDK_PROC_Generate_WCF_Client.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="[%=FeatureName.Amalga Framework%] concepts"
+        Link="/Content/AppFramework_NonReference/AF_NAV_AppFrameworkConcepts.htm">
+        <TocEntry
+          Title="Application identity"
+          Link="/Content/AppFramework_NonReference/AF_Con_ApplicationIdentity.htm" />
+        <TocEntry
+          Title="Application instance resolution"
+          Link="/Content/AppFramework_NonReference/AF_Con_InstanceIdResolution.htm" />
+        <TocEntry
+          Title="Clinical document"
+          Link="/Content/AppFramework_NonReference/AF_Con_EC_ClinicalDocument.htm" />
+        <TocEntry
+          Title="Common context and HL7 CCOW"
+          Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingCommonContextHL7CCOW.htm" />
+        <TocEntry
+          Title="Direct to Clinical connection"
+          Link="/Content/AppFramework_NonReference/AF_Con_EC_DirectClinicalConnection.htm" />
+        <TocEntry
+          Title="Local notifications"
+          Link="/Content/AppFramework_NonReference/AF_Con_LocalNotifications.htm" />
+        <TocEntry
+          Title="Page messaging"
+          Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingParts.htm" />
+        <TocEntry
+          Title="User notifications"
+          Link="/Content/AppFramework_NonReference/AF_Con_UserNotification.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Interacting with the [%=FeatureName.Amalga Framework%]"
+        Link="/Content/AppFramework_NonReference/AF_NAV_InteractingWithFramework.htm">
+        <TocEntry
+          Title="Identifying a  [%=FeatureName.Amalga Framework second use%] control instance"
+          Link="/Content/AppFramework_NonReference/AF_Con_IdentifyControlInstance.htm">
+          <TocEntry
+            Title="Application instance resolution"
+            Link="/Content/AppFramework_NonReference/AF_Con_InstanceIdResolution.htm" />
+          <TocEntry
+            Title="Identifying a custom control with IAmalgaInstanceIdentifier"
+            Link="/Content/AppFramework_NonReference/AF_Con_IdentifyCustomControl.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Retrieving data using the [%=FeatureName.Amalga Framework%]"
+          Link="/Content/AppFramework_NonReference/AF_Nav_FrameworkDataAccess.htm">
+          <TocEntry
+            Title="Accessing data using an AmalgaDbConnection"
+            Link="/Content/AppFramework_NonReference/AF_Con_AppViewDataAccess4.htm" />
+          <TocEntry
+            Title="Accessing data with an ASP.NET data-bound control"
+            Link="/Content/AppFramework_NonReference/AF_Con_AppViewDataAccess1.htm">
+            <TocEntry
+              Title="Retrieving data using an AmalgaApplicationDataSource control"
+              Link="/Content/AppFramework_NonReference/AF_Con_AppViewDataAccess3.htm" />
+            <TocEntry
+              Title="Retrieving data using an AmalgaDataSource control"
+              Link="/Content/AppFramework_NonReference/AF_Con_AppViewDataAccess2.htm" />
+          </TocEntry>
+          <TocEntry
+            Title="Accessing data with Javascript and [%=FeatureName.Amalga ADO.NET%]"
+            Link="/Content/AppFramework_NonReference/AF_Con_ClientSideDataAccess1.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with the Page Messaging System"
+          Link="/Content/AppFramework_NonReference/AF_Nav_PageMessaging.htm">
+          <TocEntry
+            Title="Message Conventions"
+            Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingConventions.htm" />
+          <TocEntry
+            Title="Interacting with a message group"
+            Link="/Content/AppFramework_NonReference/AF_Nav_PageMessagingGroups.htm">
+            <TocEntry
+              Title="Create a messaging participant"
+              Link="/Content/AppFramework_NonReference/AF_Task_CreateMessageParticipant.htm" />
+            <TocEntry
+              Link="/Content/AppFramework_NonReference/AF_Task_JoinMessageGroup.htm"
+              Title="Join and leave a messaging group" />
+            <TocEntry
+              Title="Send a message"
+              Link="/Content/AppFramework_NonReference/AF_Task_SendMessage.htm" />
+            <TocEntry
+              Title="Receive a message"
+              Link="/Content/AppFramework_NonReference/AF_Task_ReceiveMessage.htm" />
+          </TocEntry>
+          <TocEntry
+            Title="Interacting with the Common Context message group"
+            Link="/Content/AppFramework_NonReference/AF_Nav_PageMessagingCommonContext.htm">
+            <TocEntry
+              Title="Define a Common Context data item"
+              Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingDefineDataItem.htm" />
+            <TocEntry
+              Title="Join the Common Context message group"
+              Link="/Content/AppFramework_NonReference/AF_Task_JoinCommonContext.htm" />
+            <TocEntry
+              Title="Read and change the common context"
+              Link="/Content/AppFramework_NonReference/AF_Task_UseCommonContext.htm" />
+            <TocEntry
+              Title="Common context helper methods"
+              Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingHelpers.htm" />
+          </TocEntry>
+          <TocEntry
+            Title="Page messaging best practices"
+            Link="/Content/AppFramework_NonReference/AF_Con_PageMessagingBestPractices.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with the Logging system"
+          Link="/Content/AppFramework_NonReference/AF_Nav_FrameworkLogging.htm">
+          <TocEntry
+            Title="Logging activity in .NET controls"
+            Link="/Content/AppFramework_NonReference/AF_Con_Logging1.htm" />
+          <TocEntry
+            Title="Logging activity with JavaScript"
+            Link="/Content/AppFramework_NonReference/AF_Con_Logging2.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with the Notification systems"
+          Link="/Content/AppFramework_NonReference/AF_Nav_Notifications.htm">
+          <TocEntry
+            Title="Notification manager"
+            Link="/Content/AppFramework_NonReference/AF_Con_NotificationManager.htm"
+            conditions="Production.doNOTbuild" />
+          <TocEntry
+            Title="Using User Notifications"
+            Link="/Content/AppFramework_NonReference/AF_Con_UserNotification1.htm"
+            conditions="Production.doNOTbuild" />
+          <TocEntry
+            Title="Create a user notification type definition"
+            Link="/Content/AppFramework_NonReference/AF_Task_CreateNotificationType.htm" />
+          <TocEntry
+            Title="Request a user notification"
+            Link="/Content/AppFramework_NonReference/AF_Task_RequestUserNotification.htm" />
+          <TocEntry
+            Title="Handle a user notification request"
+            Link="/Content/AppFramework_NonReference/AF_Task_HandleUserNotification.htm" />
+          <TocEntry
+            Title="Add a local notification"
+            Link="/Content/AppFramework_NonReference/AF_Task_AddLocalNotification.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Interacting with the Configuration system"
+          Link="/Content/AppFramework_NonReference/AF_Nav_FrameworkConfiguration.htm">
+          <TocEntry
+            Title="Application configuration and user settings"
+            Link="/Content/AppFramework_NonReference/AF_Con_Configuration1.htm" />
+          <TocEntry
+            Title="Retrieve the value of a configuration setting"
+            Link="/Content/AppFramework_NonReference/AF_Con_Configuration2.htm" />
+          <TocEntry
+            Title="Store and retrieve the value of a user setting"
+            Link="/Content/AppFramework_NonReference/AF_Con_Configuration3.htm" />
+        </TocEntry>
+      </TocEntry>
+      <TocEntry
+        Title="Developing a user interface using the [%=FeatureName.Amalga Framework%]"
+        Link="/Project/TOCs/AppFramework(BEJ).fltoc"
+        ReplaceMergeNode="true" />
+      <TocEntry
+        Title="Application development best practices"
+        Link="/Content/Amalga_PlatformSDK/SDK_LND_Best_Practices.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Application Performance"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Best_Practices.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+      <TocEntry
+        Title="Troubleshooting"
+        Link="/Content/Amalga_PlatformSDK/SDK_OVW_Troubleshooting.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Troubleshooting Data Change Notification"
+          Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_NAV_TS_DCN.htm"
+          conditions="Production.doNOTbuild"
+          ReplaceMergeNode="false" />
+      </TocEntry>
+      <TocEntry
+        Title="Debugging and deploying an [%=BrandingHSG.Amalga Short%] application"
+        Link="/Content/Amalga_PlatformSDK/SDK_LND_Application_Deployment.htm">
+        <TocEntry
+          Title="Debugging a hosted application"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Deploy_Test_Dev.htm">
+          <TocEntry
+            Title="Edit an application manifest for debugging"
+            Link="/Content/Amalga_PlatformSDK/SDK_PROC_Edit_AppManifest_Debugging.htm" />
+          <TocEntry
+            Title="Edit a service manifest for debugging"
+            Link="/Content/Amalga_PlatformSDK/SDK_PROC_Edit_SvcManifest_Debugging.htm" />
+          <TocEntry
+            Title="Publish a hosted application"
+            Link="/Content/Amalga_PlatformSDK/SDK_PROC_Publish_App.htm" />
+          <TocEntry
+            Title="Package a hosted application"
+            Link="/Content/Amalga_PlatformSDK/SDK_PROC_Package_Application.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="Deploying hosted applications"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Deploy_Amalga_Hosted_Apps.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Deploying [%=BrandingMS.SharePoint%] solutions"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Deploy_SharePoint_Solutions.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+      <TocEntry
+        Title="Developing management features for your application"
+        Link="/Content/Amalga_PlatformSDK/SDK_LND_Developing_Mgmt_Features.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Extending the Management Console"
+          Link="/Content/Amalga_PlatformSDK/SDK_CON_Extend_Mgmt_Console.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Link="/Content/Amalga_PlatformSDK/SDK_LND_Reference.htm"
+      Title="Application development reference">
+      <TocEntry
+        Link="/Content/Amalga_PlatformSDK/Services/SDK_NAV_ServiceEndpointsContracts.htm"
+        Title="Service endpoint reference">
+        <TocEntry
+          Title="Endpoints and contracts for [%=BrandingHSG.Amalga Short%] features"
+          Link="/Content/Amalga_PlatformSDK/Services/SDK_REF_ServiceEndpoints_Features.htm" />
+        <TocEntry
+          Title="Endpoints and contracts for [%=BrandingHSG.Amalga Short%] platform applications"
+          Link="/Content/Amalga_PlatformSDK/Services/SDK_REF_ServiceEndpoints_Apps.htm" />
+      </TocEntry>
+      <TocEntry
+        Link="/Project/TOCs/SDK_ManifestXML.fltoc"
+        ReplaceMergeNode="true"
+        Title="Deployment manifest XML reference" />
+      <TocEntry
+        Link="/Content/Amalga_PlatformSDK/SDK_REF_ErrorCodes.htm"
+        Title="[%=BrandingHSG.Amalga Short%] event codes">
+        <TocEntry
+          Link="/Content/Amalga_PlatformSDK/SDK_REF_ErrorCodesNotification.htm"
+          Title="Notification service event codes" />
+        <TocEntry
+          Title="Patient linking service event codes"
+          Link="/Content/Amalga_PlatformSDK/SDK_REF_ErrorCodesPatientLinking.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="JavaScript API reference"
+        Link="/Content/AppFramework_NonReference/AF_Con_API_Landing.htm">
+        <TocEntry
+          Title="Alert Manager"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_AlertManager.htm" />
+        <TocEntry
+          Title="Client-side Data Access"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_DataAccess.htm" />
+        <TocEntry
+          Title="GridView"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_GridView.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Local Notification"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_LocalNotification.htm" />
+        <TocEntry
+          Title="Logging"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_Logging.htm" />
+        <TocEntry
+          Title="Notification Banner"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_NotificationBanner.htm" />
+        <TocEntry
+          Title="Notification Manager"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_Notification.htm" />
+        <TocEntry
+          Title="Page Messaging"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_PageMessaging.htm" />
+        <TocEntry
+          Title="Potential Link Card"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_PotentialLinkCard.htm" />
+        <TocEntry
+          Title="Record Selector"
+          Link="/Content/AppFramework_NonReference/AF_Con_API_RecordSelector.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Data Change Notification reference"
+        Link="/Project/TOCs/SDK_DCN_Reference.fltoc"
+        ReplaceMergeNode="true" />
+      <TocEntry
+        Title="Logger reference"
+        Link="/Project/TOCs/SDK_LOG_Reference.fltoc"
+        ReplaceMergeNode="true" />
+      <TocEntry
+        Title="Terminology reference"
+        Link="/Project/TOCs/SDK_TRM_Reference.fltoc"
+        ReplaceMergeNode="true" />
+      <TocEntry
+        Title="Predefined notification type reference"
+        Link="/Content/AppFramework_NonReference/AF_Con_Notifications_Predefined.htm" />
+    </TocEntry>
+    <TocEntry
+      Link="/Project/TOCs/AmV3SDK_Flare.fltoc"
+      ReplaceMergeNode="true"
+      StartSection="false"
+      StartChapter="false"
+      VolumeNumberReset="same"
+      SectionNumberReset="continue"
+      ChapterNumberReset="continue"
+      ComputeToc="false"
+      Title="[%=BrandingHSG.Amalga Short%] reference library" />
+  </TocEntry>
+</CatapultToc>

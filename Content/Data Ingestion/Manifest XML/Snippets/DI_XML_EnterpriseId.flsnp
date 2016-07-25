@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1047" MadCap:lastWidth="1189" MadCap:fileTags="Status.70 - Complete,TopicOwner.v-ccole,EditingTags.1 - Ready for Edit">
+    <head>
+    </head>
+    <body><pre xml:space="preserve"><span style="font-size: 10pt;">
+         <a href="../DI_XML_Manifest_EnterpriseId.htm">&lt;EnterpriseId&gt;</a>
+              <a href="../DI_XML_Manifest_EnterpriseIdAction.htm">&lt;EnterpriseIdAction&gt;</a>
+                 <a href="../DI_XML_Manifest_Condition.htm">&lt;Condition&gt;</a>
+                    <a href="../DI_XML_Manifest_Action.htm">&lt;Action&gt;</a>
+                    <a href="../DI_XML_Manifest_InputParameters.htm">&lt;InputParameters&gt;</a>
+                       <a href="../DI_XML_Manifest_Parameter.htm">&lt;Parameter&gt;</a>
+                          <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                             <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+               <a href="../DI_XML_Manifest_InputIdentifiers.htm">&lt;InputIdentifiers&gt;</a>
+                  <a href="../DI_XML_Manifest_PatientRecordIdentifier.htm">&lt;PatientRecordIdentifier&gt;</a>
+                     <a href="../DI_XML_Manifest_Id.htm">&lt;Id&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Domain.htm">&lt;Domain&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                  <a href="../DI_XML_Manifest_PersonIdentifier.htm">&lt;PersonIdentifier&gt;</a>
+                     <a href="../DI_XML_Manifest_Id.htm">&lt;Id&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Domain.htm">&lt;Domain&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                  <a href="../DI_XML_Manifest_ProviderIdentifier.htm">&lt;ProviderIdentifier&gt;</a>
+                     <a href="../DI_XML_Manifest_Id.htm">&lt;Id&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Domain.htm">&lt;Domain&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                  <a href="../DI_XML_Manifest_EncounterSetIdentifier.htm">&lt;EncounterSetIdentifier&gt;</a>
+                     <a href="../DI_XML_Manifest_Id.htm">&lt;Id&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Domain.htm">&lt;Domain&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                  <a href="../DI_XML_Manifest_EncounterIdentifier.htm">&lt;EncounterIdentifier&gt;</a>
+                     <a href="../DI_XML_Manifest_Id.htm">&lt;Id&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Domain.htm">&lt;Domain&gt;</a>
+                        <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                           <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+               <a href="../DI_XML_Manifest_InputParameters.htm">&lt;InputParameters&gt;</a>
+                  <a href="../DI_XML_Manifest_Parameter.htm">&lt;Parameter&gt;</a>
+                     <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                        <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a></span></pre>
+    </body>
+</html>

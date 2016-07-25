@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1019" MadCap:lastWidth="1072" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-keith,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,Status.70 - Complete,EditingTags.7 - Editing issues resolved,Status.10 - Not in use" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Remove an application with <MadCap:variable name="BrandingMS.Doors PowerShell" /></h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic contains the sequence of <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets required to remove an application instance from the topology.</p>
+        <p>All the <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets in this procedure need to be run from a <MadCap:variable name="BrandingMS.Doors PowerShell" /> command line after the appropriate module is imported. For instructions on opening <MadCap:variable name="BrandingMS.Doors PowerShell" />, importing the module, and links to the cmdlets in this procedure, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To remove an application instance</p>
+        <ol>
+            <li>
+                <p>Unregister the application instance.</p>
+                <p class="note">This step needs to be executed from one of the physical hosts in the logical host that support the application instance to be removed.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Unregister-AmInstanceWithLogicalHostInstance.htm" target="" title="" alt="">Unregister-AmInstanceWithLogicalHostInstance</MadCap:xref> cmdlet using parameters appropriate for your installation.</p>
+                    </li>
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm" target="" title="" alt="">Sync-AmPhysicalHost</MadCap:xref> cmdlet to synchronize the physical host.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Synchronize the remaining physical hosts.</p>
+                <p class="note">This step needs to be executed on any additional physical hosts in the logical host that support the application being unregistered.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm" target="" title="" alt="">Sync-AmPhysicalHost</MadCap:xref> cmdlet to synchronize each physical host.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Remove the <MadCap:variable name="FeatureName.virtual schema" />.</p>
+                <p class="note">This step need only be executed when removing an application which installed with a <MadCap:variable name="FeatureName.virtual schema" /> (.edmx file), and can be executed from any machine on which the application services feature is installed.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Remove the deployed <MadCap:variable name="FeatureName.virtual schema" /> by running the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Remove-AmVirtualSchema.htm" target="" title="" alt="">Remove-AmVirtualSchema</MadCap:xref> cmdlet, using the appropriate parameters. and including a true or false parameter depending on whether you want to drop the application private database.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Remove application instance from the database.</p>
+                <p class="note">This step can be executed from any machine on which the application services feature is installed.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_UnPublish-AmApplicationInstance.htm" target="" title="" alt="">UnPublish-AmApplicationInstance</MadCap:xref> cmdlet to remove the application instance from the database.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Verify the application instance's removal.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Open the Applications module in the <MadCap:variable name="FeatureName.Management Console second use" /> and confirm that the application instance is no longer displayed. For instructions, see <MadCap:xref href="AppMan Proc OpenAppManageModule.htm" target="" title="" alt="">Open the Applications management module</MadCap:xref>.</li>
+                </ol>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="AppMan Proc Remove App through AMC.htm" target="" title="" alt="">Remove an application instance with </MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-App.htm" target="" title="" alt="">Application module primary window</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Unregister-AmInstanceWithLogicalHostInstance.htm" target="" title="" alt="">Unregister-AmInstanceWithLogicalHostInstance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm" target="" title="" alt="">Sync-AmPhysicalHost</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Remove-AmVirtualSchema.htm" target="" title="" alt="">Remove-AmVirtualSchema</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_UnPublish-AmApplicationInstance.htm" target="" title="" alt="">UnPublish-AmApplicationInstance</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

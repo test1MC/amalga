@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="454" MadCap:lastWidth="865" MadCap:fileTags="ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Unpack CAB files</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">This topic describes how to locate and isolate pipeline application manifest files by feed.</p>
+        <p>Each pipeline application is compressed into a Doors CAB file within a specific folder structure called a package. An operational feed consists of the resolved manifest files for all the</p>
+        <p class="LabelforProcedures">To locate and unpack all pipeline manifest XML files</p>
+        <ol>
+            <li>Create a staging folder with a nested temporary folder. For example, create C:\Pipeline Manifest to hold the CAB files and C:\Pipeline Manifest\MasterConfig to hold the extracted XML files.</li>
+            <li>Navigate to <span class="Placeholder">root</span>\v3\Rel\Applications\Release and locate FeedAcquisition.CAB, MessageShredder.CAB, and DataParser.CAB.</li>
+            <li>Copy the set of CAB files to the staging folder.</li>
+            <li>For each CAB file, extract the XML files to the \MasterConfig subfolder. Keep the extracted XML files as master configuration files. </li>
+            <li>Create a subfolder for each new feed. For example, create C:\Pipeline Manifest\ADT for ADT feed.</li>
+            <li>Copy a full set of extracted XML configuration files to the feed folder. For example, copy the XML files from the master folder (C:\Pipeline Manifest\MasterConfig) to the feed folder (C:\Pipeline Manifest\ADT).</li>
+        </ol>
+        <p class="SeeAlso">See Also</p>
+        <p>
+            <MadCap:xref href="DI_Task_AcquireApp.htm" target="" title="" alt="">Acquisition application</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DI_Task_ShredApp.htm" target="" title="" alt="">Shredder application</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Parser application</MadCap:xref>
+        </p>
+    </body>
+</html>

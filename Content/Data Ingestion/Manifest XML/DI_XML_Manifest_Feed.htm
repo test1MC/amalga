@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1125" MadCap:lastWidth="766" MadCap:fileTags="Personas.Mahesh: DI Specialist,Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Feed element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Feed element" />Declares an adapter by which a <MadCap:variable name="Applications.Feed Acquisition application" /> instance acquires data from a source system.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             <b>&lt;Feed Name="<i>String</i>"&gt;</b>
+                   &lt;ReceiveAdapter&gt;...&lt;/ReceiveAdapter&gt;
+                   &lt;SendAdapter&gt;...&lt;/SendAdapter&gt;
+                   &lt;TempStoragedAdapter&gt;...&lt;/TempStoragedAdapter&gt;
+                   &lt;MsgType&gt;...&lt;/MsgType&gt;
+                   &lt;Verifier&gt;...&lt;/Verifier&gt;
+                   &lt;KeepOnTemporaryStorage&gt;...&lt;/KeepOnTemporaryStorage&gt; 
+             <b>&lt;/Feed&gt;</b>	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-1: Required element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Feeds.htm">Feeds</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_KeepOnTemporaryStorage.htm">KeepOnTemporaryStorage</a>, <a href="DI_XML_Manifest_MsgType.htm">MsgType</a>, <a href="DI_XML_Manifest_ReceiveAdapter.htm">ReceiveAdapter</a>, <a href="DI_XML_Manifest_SendAdapter.htm">SendAdapter</a>, <a href="DI_XML_Manifest_TempStoragedAdapter.htm">TempStoragedAdapter</a>, <a href="DI_XML_Manifest_Verifier.htm">Verifier</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The unique name of the feed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Feed</span> element specifies the service configuration of one <MadCap:variable name="Applications.Feed Acquisition application" /> instance. Each message source must have a unique service manifest that declares this element.</p>
+        <p class="Label">Constraints</p>
+        <ul>
+            <li>Use the <span class="MarkupLanguageElements">Feed</span> element to configure an instance of the <MadCap:variable name="Applications.Feed Acquisition application" /> when the message transport format is file or MLLP. The transport format determines the child elements that you declare in a service manifest. </li>
+            <li><a href="DI_XML_Manifest_KeepOnTemporaryStorage.htm">KeepOnTemporaryStorage</a>, <a href="DI_XML_Manifest_TempStoragedAdapter.htm">TempStoragedAdapter</a>, and <a href="DI_XML_Manifest_Verifier.htm">Verifier</a> child elements only apply to MLLP transport format.</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

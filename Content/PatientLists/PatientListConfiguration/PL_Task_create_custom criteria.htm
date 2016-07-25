@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="760" MadCap:lastWidth="516" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.70 - Complete,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create custom criteria</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="custom criteria;custom criteria, hiding;custom criteria, creating;creating custom criteria;hiding custom criteria" />This topic describes how to create a criterion or criteria that will be used to build queries based on the data model.</p>
+        <p>Custom criteria can be based on the attributes of any entity with a foreign key to the Patient entity. All data types supported by the entity model are supported for use as custom criteria except for the Time data type.</p>
+        <p class="LabelforProcedures">To create a custom criterion</p>
+        <ol>
+            <li>Create a definition in the tbl_SchemaConfiguration table. The EntityName and AttributeName columns must correspond to an entity attribute that is part of the application view.</li>
+            <li>Provide a label in the tbl_SchemaConfigurationDisplayName table.</li>
+            <li>
+                <p>For&#160;a new entity, in the tbl_LinkedEntity table, specify how the entity is related to the Patient entity.</p>
+                <p class="note">Changes will take effect once the cache is updated on the <MadCap:variable name="BrandingMS.SharePoint" /> server.</p>
+            </li>
+        </ol>
+        <p class="LabelforProcedures">To hide a custom criterion</p>
+        <ul>
+            <li>In the tbl_SchemaConfiguration table, change the IsVisibleQueryBuilder column to <span class="InputText">0</span>.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="PL_Con_create_quick_criteria.htm">Create new criteria on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="PL_Task_create_quick_criteria_query.htm">Write and test a new quick criteria query on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="PL_Task_create_value_set.htm">Create a value set on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

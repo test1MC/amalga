@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="76" MadCap:lastWidth="833" MadCap:fileTags="TopicOwner.StyleMasterResource" MadCap:conditions="Production.StyleMaster">
+    <head><title></title>
+    </head>
+    <body>
+        <div style="width: 100%;position: relative;">
+            <p>&#160;</p>
+            <p MadCap:conditions="Production.InternalOnly" style="text-align: center;">Internal only, do not distribute.</p>
+            <p style="text-align: center;font-size: 8pt;color: #808080;" align="center">
+                <MadCap:conditionalText MadCap:conditions="Production.ScreenOnly"><a href="../../fm-CopyrightPageWeb.htm">Legal Notices</a> © 
+ 2012 Microsoft Corporation</MadCap:conditionalText>
+                <MadCap:conditionalText MadCap:conditions="Production.PrintOnly"><a href="../../fm-CopyrightPage.htm">Legal Notices</a> © 
+ 2012 Microsoft Corporation</MadCap:conditionalText>
+            </p>
+        </div>
+    </body>
+</html>

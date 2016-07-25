@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="170" MadCap:lastWidth="959">
+    <head>
+    </head>
+    <body><pre xml:space="preserve"><span style="font-size: 10pt;">
+      <a href="../DI_XML_Manifest_FeedInfo.htm">&lt;FeedInfo&gt;</a>
+         <a href="../DI_XML_Manifest_Name.htm">&lt;Name&gt;</a>
+         <a href="../DI_XML_Manifest_Type.htm">&lt;Type&gt;</a>
+         <a href="../DI_XML_Manifest_Provider.htm">&lt;Provider&gt;</a>
+         <a href="../DI_XML_Manifest_TerminologyName.htm">&lt;TerminologyName&gt;</a>
+         <a href="../DI_XML_Manifest_PreferenceRanking.htm">&lt;PreferenceRanking&gt;</a>
+         <a href="DI_XML_Manifest_Preferred.htm">&lt;PreferredCulture&gt;</a>
+         <a href="../DI_XML_Manifest_DefaultTimeZone.htm">&lt;DefaultTimeZone&gt;</a></span></pre>
+    </body>
+</html>

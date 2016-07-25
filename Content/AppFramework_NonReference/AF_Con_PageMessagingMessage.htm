@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="837" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-wpete,Status.60 - Revising,ReleaseTarget.RTM,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Message</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Message"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the structure and usage of a Message object.</p>
+        <p>A <b>Message</b> encapsulates a data item that is sent from one Page Messaging System participant to other participants, or to the common context.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>Source ID</li>
+            <li>Group name</li>
+            <li>Topic</li>
+            <li>Message payload</li>
+        </ul>
+        <h2>Source ID</h2>
+        <p>The <b>SourceId</b> is the <b>Id</b> of the messaging <b>Participant</b> that sent the message. </p>
+        <h2>Group name</h2>
+        <p>The <b>GroupName</b> is the name of the group whose members will receive the message. Messages whose group name is set to <span class="Label">Amalga.Messaging._messageGroupRegistry.commonContext</span> are delivered to the <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>.</p>
+        <h2>Topic</h2>
+        <p>The <b>Topic</b> is an optional <span class="LabelCShrp">String</span> that identifies the topic of the message. Message recipients may use the value of the message topic to determine whether or not to process the message payload.</p>
+        <h2>Message payload</h2>
+        <p>The message payload is a JavaScript <b>Dictionary</b> that contains the data that will either be sent to other messaging participants or merged into the common context.</p>
+        <h3>Non-context message</h3>
+        <p>If the message is delivered to any group other than the <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>, there are no restrictions on the content of the payload beyond those imposed by the <b>Dictionary</b> data type itself.  (The <b>receiveCallback</b> method of the subscribing <b>Participant</b> must be able to parse the message content.)</p>
+        <h3>Context item</h3>
+        <p>If the message will be merged into the common context, its content must correspond to the key/value pairs described in <a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>. However, because the <b>Dictionary</b> used in the JavaScript message supports structured data in its <b>Value</b> field, the data is represented in a different way.</p>
+        <p>The key value of the message payload is simply the name of its subject (e.g. "Patient".) If the subject contains structured data, each child element is stored as a <b>Dictionary</b> of its own.</p>
+        <p>For example, the following JavaScript code describes a patient with a hospital-specific MRN:</p>
+        <p class="code">var patient =</p>
+        <p class="code">{ "Patient":</p>
+        <p class="code"> { "Id":</p>
+        <p class="code"> { "Mrn":</p>
+        <p class="code"> { "HospitalSpecific" : 123}</p>
+        <p class="code"> }</p>
+        <p class="code"> }</p>
+        <p class="code">};</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

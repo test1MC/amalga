@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1163" MadCap:lastWidth="750" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Role element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the Role element.</p>
+        <p>Identifies an <MadCap:variable name="BrandingHSG.Amalga Short" /> built-in role to be automatically granted access to the access level for the hosted application, when the application is deployed.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;AccessLevel&gt;<br />&#160;&#160;&#160;&lt;Role Name="<i>string</i>" /&gt;<br />&lt;/AccessLevel&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_AccessLevel.htm">AccessLevel</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The name of the <MadCap:variable name="BrandingHSG.Amalga Short" /> built-in role which will be automatically granted authorization for the access level. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>BUILTIN\AmalgaSysAdmin</td>
+                                    <td><MadCap:variable name="BrandingHSG.Amalga Short" /> system administrator</td>
+                                </tr>
+                                <tr>
+                                    <td>BUILTIN\AmalgaService</td>
+                                    <td><MadCap:variable name="BrandingHSG.Amalga Short" /> service</td>
+                                </tr>
+                                <tr>
+                                    <td>BUILTIN\AmalgaUsers</td>
+                                    <td><MadCap:variable name="BrandingHSG.Amalga Short" /> users</td>
+                                </tr>
+                                <tr>
+                                    <td>BUILTIN\HVPatient</td>
+                                    <td><MadCap:variable name="BrandingHSG.HealthVault" /> patient</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>If one or more <span class="MarkupLanguageElements">Role</span> elements are included in an <span class="MarkupLanguageElements">AccessLevel</span> element, the <MadCap:variable name="BrandingHSG.Amalga Short" /> built-in roles identified by those elements are automatically granted authorization to that access level for the hosted application. </p>
+        <p class="caution">Once granted, this automatic authorization cannot be modified by an administrator.</p>
+    </body>
+</html>

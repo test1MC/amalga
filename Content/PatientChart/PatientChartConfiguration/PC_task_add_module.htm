@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1606.333" MadCap:lastWidth="671.6667" MadCap:fileTags="TopicType.Procedure,ReleaseTarget.TAP,TopicOwner.v-kathen,Personas.Carlos: IT Admin,Status.50 - InTech Review,EditingTags.6 - Revised / ready for writer" MadCap:conditions="API.APIRef">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a module</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Patient Chart module;Patient Chart configuration" />This topic describes how to add a module to <MadCap:variable name="FeatureBrussels.Patient Chart" /> using the Patient Chart Configuration.</p>
+        <p>Using the Patient Chart Configuration module, you can add and delete modules, add and delete widgets, and change the configuration for modules and widgets.</p>
+        <p class="LabelforProcedures">To add a module</p>
+        <ol>
+            <li>Click <MadCap:variable name="FeatureBrussels.Patient Chart" class="UIElementAction" />.</li>
+            <li>
+                <p>Click <span class="UIElementAction">Add</span>.</p>
+                <p>
+                    <img src="Images/PC_Add_module.png" />
+                </p>
+            </li>
+            <li>&#160;Complete the form using the information in <MadCap:xref href="PC_con_configure_module.htm" target="" title="" alt="">the table below</MadCap:xref>.</li>
+            <li>Click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+        <h2>Configuration information</h2>
+        <table style="width: 100%;">
+            <col style="width: 20%;">
+            </col>
+            <col style="width: 90px;">
+            </col>
+            <col style="width: 474px;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Mandatory?</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ModuleID</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>System-generated unique ID; can be modified in the XML file, but must be unique; should not contain any punctuation included in filtering set (see <MadCap:xref href="#Punctuat" target="" title="" alt="">Punctuation filtering</MadCap:xref>)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DisplayName</td>
+                    <td>Yes</td>
+                    <td>A unique name is recommended; should not contain any punctuation included in filtering set; Resource key is supported (see<MadCap:xref href="#Resource" target="" title="" alt=""> Resource file</MadCap:xref>)</td>
+                </tr>
+                <tr>
+                    <td>LaunchURL</td>
+                    <td>Yes</td>
+                    <td>${Prefix} is required</td>
+                </tr>
+                <tr>
+                    <td>IsRecommended</td>
+                    <td>No</td>
+                    <td>Default = false; If true, module will be displayed in the Recommended group in the module launcher</td>
+                </tr>
+                <tr>
+                    <td>HasChildren</td>
+                    <td>No</td>
+                    <td>Must be true if the module has sub-modules</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 MadCap:conditions="Production.doNOTbuild"><a name="Punctuat"></a>Punctuation filtering</h3>
+        <p>The following punctuation will be replaced with an empty string:</p>
+        <ul>
+            <li>&lt; &gt; \ ^ " ' [ ] { } or a space</li>
+        </ul>
+        <p>Do not include them in IDs or names.</p>
+        <h3><a name="Resource"></a>Resource file</h3>
+        <p>The resource file  prefix is Microsoft.Health.PatientChart.Configuration. It is located in the application global resource folder - for example, C:\inetpub\wwwroot\wss\VirtualDirectories\8080\App_GlobalResources. </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

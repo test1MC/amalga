@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Ref_General,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US" MadCap:lastBlockDepth="10" MadCap:lastHeight="1744" MadCap:lastWidth="337">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.IRDA" /> structure</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Imaging Registry and Document Service Application" />This topic introduces the structure and processes provided by the<MadCap:variable name="Imaging.Imaging Registry and Document server" /> application (<MadCap:variable name="Imaging.IRDA" />). </p>
+        <p>The <MadCap:variable name="Imaging.Image Registry (service)" /> service (IRS) is the only service hosted on the <MadCap:variable name="Imaging.IRDA" />. The IRS provides a list of performed <MadCap:variable name="Imaging.DICOM" /> studies and associated metadata for a given patient, including the location of the corresponding BLOB for each study. A client application can then leverage the APIs provided by the <MadCap:variable name="Imaging.Image Delivery server" /> service (IDS) for further BLOB-related requests, such as thumbnail generation.</p>
+        <h2>APIs for the <MadCap:variable name="Imaging.IRS" /></h2>
+        <p class="h7">GetDicomStudiesForPatient</p>
+        <p><span class="LanguageKey">GetDicomStudiesForPatient</span> represents the query operations that IRS supports. By passing a patient ID to the interface, the IRS returns a list of the study information entries.</p>
+        <p> For more information, see <MadCap:xref href="GREG-IRS-GetStudiesforPatient-Op.htm">Get studies for patient on page 1</MadCap:xref>.</p>
+        <p class="h7">GetImageDeliveryApplicationInstanceName</p>
+        <p>You can use the <MadCap:variable name="Imaging.IRS" /> to retrieve the configuration information of the IDS instance for a given site ID.</p>
+        <p> For more information, see <MadCap:xref href="GREF-Name-Res-Op.htm">Name resolution instance operation on page 1</MadCap:xref>.</p>
+        <h3>Application input and output</h3>
+        <p>The IRS will return the following output for the following unique identifier.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 102px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Input</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Unique patient ID</td>
+                    <td>
+                        <p>Metadata for all  studies in a patient’s imaging history:</p>
+                        <ul>
+                            <li><MadCap:variable name="BrandingHSG.Amalga Short" /> UUID for study</li>
+                            <li>Study instance UID (<MadCap:variable name="Imaging.DICOM" />)</li>
+                            <li>Study date and time</li>
+                            <li>Accession number</li>
+                            <li>Referring physician</li>
+                            <li>Study description</li>
+                            <li>Institution</li>
+                            <li>Series-level metadata<ul style="list-style-type: circle;"><li><p>Institution</p></li><li>SeriesUUID</li><li><p>SeriesInstanceUID</p></li><li><p>StudyUUID</p></li><li><p>Modality Type</p></li><li><p>SeriesDateTime</p></li><li><p>SeriesDescription</p><p>Unique site ID (location information)</p></li></ul></li>
+                            <li>Image-level metadata<ul><li><p>ImageUUID</p></li><li> Imange InstanceUID</li><li><p>NonImageUUID</p></li><li> NonImage instanceUid</li><li><p>RepresentativeImageID</p></li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="MIM-LND-Introduction to the IRS.htm">Imaging Registry and Document Service Application on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="MIM-CON-IRS-Operation.htm">Imaging Registry and Document Service Application Operation on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

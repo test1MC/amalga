@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="806" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Shredder output</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Shredded output is persisted to the ClinicalData database. The output does not modify the raw data from the original message stored in the MessageQueue database.</p>
+        <p class="h7">Generated tables and views</p>
+        <p>By default, the Message Shredder subsystem creates one read-only table and one view for each segment in a feed (and one table and view for each CSV file). The schema of tables and views adheres to the following canonical form:</p>
+        <ul>
+            <li>
+                <p>Tables</p>
+                <p>[<span class="Placeholder">database</span>].[<span class="Placeholder">feedname</span>].[<span class="Placeholder">segmentname</span>]</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p>Views</p>
+                <p>[<span class="Placeholder">database</span>].[<span class="Placeholder">feedname</span>].[V_COLLAPSE_<span class="Placeholder">segmentname</span>]</p>
+                <p>[<span class="Placeholder">database</span>].[<span class="Placeholder">feedname</span>].[V_COLLAPSE_<span class="Placeholder">segmentname</span>_Binding]</p>
+            </li>
+        </ul>
+        <p class="h7">Generated columns</p>
+        <p>Shredded columns are a mechanical representation of an incoming feed data and each field generally yields a column. For repeating fields, only the first repetition appears as a column by default. All repeating values, including the first repetition, are stored as an XML type as the following PID-3 example shows.</p><pre xml:space="preserve" class="code">&lt;Repetitions&gt;
+  &lt;Repetition&gt;
+    &lt;PID-3&gt;567b4894-76de-7ac1-cab4-0d0ba44923e6^^^^PN&lt;/PID-3&gt;
+    &lt;PID-3-1&gt;567b4894-76de-7ac1-cab4-0d0ba44923e6&lt;/PID-3-1&gt;
+    &lt;PID-3-2 /&gt;
+    &lt;PID-3-3 /&gt;
+    &lt;PID-3-4 /&gt;
+    &lt;PID-3-5&gt;PN&lt;/PID-3-5&gt;
+  &lt;/Repetition&gt;
+  &lt;Repetition&gt;
+    &lt;PID-3&gt;d064bb8c-a0f5-5d4b-68ac-5e4fabf2259e^^^^^^^^^^^^&lt;/PID-3&gt;
+    &lt;PID-3-1&gt;d064bb8c-a0f5-5d4b-68ac-5e4fabf2259e&lt;/PID-3-1&gt;
+    &lt;PID-3-2 /&gt;
+    &lt;PID-3-3 /&gt;
+    &lt;PID-3-4 /&gt;
+    &lt;PID-3-5 /&gt;
+    &lt;PID-3-6 /&gt;
+    &lt;PID-3-7 /&gt;
+    &lt;PID-3-8 /&gt;
+    &lt;PID-3-9 /&gt;
+    &lt;PID-3-10 /&gt;
+    &lt;PID-3-11 /&gt;
+    &lt;PID-3-12 /&gt;
+    &lt;PID-3-13 /&gt;
+  &lt;/Repetition&gt;
+&lt;/Repetitions&gt;
+</pre>
+        <p>All tables include the following columns.</p>
+        <table class="informal" style="border-left-style: none;border-left-width: 0px;border-left-color: #ffffff;border-right-style: none;border-right-width: 0px;border-right-color: #ffffff;border-top-style: none;border-top-width: 0px;border-top-color: #ffffff;border-bottom-style: none;border-bottom-width: 0px;border-bottom-color: #ffffff;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <thead>
+                <tr class="informal">
+                    <th class="informal2">Column</th>
+                    <th class="informal2">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="informal">
+                    <td class="informal">RowID</td>
+                    <td class="informal">Uniquely identifies each row (sequential GUID).</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">MessageID</td>
+                    <td class="informal">Corresponds to MsgID from the MSG201 input table.</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">SequenceNumber</td>
+                    <td class="informal">Corresponds to the sequencing identity column from MSG201 input table.</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">RelativeIndex</td>
+                    <td class="informal">Indicates the position of the current segment within a message.</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">NextRelativeIndex</td>
+                    <td class="informal">Shows the values for the relative index of the next occurrence of the same segment. This column is used in queries to find the child of each parent segment.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="sixpointline">&#160;</p>
+        <p class="Label">Column example: MessageShredder.CSV.CsvFile (CSV)</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>RowID</td>
+                    <td>MessageID</td>
+                    <td>SequenceNumber</td>
+                    <td>RelativeIndex</td>
+                    <td>NextRelativeIndex</td>
+                    <td>Item1</td>
+                    <td>Item2</td>
+                    <td>…</td>
+                    <td>Item<span class="Placeholder">X</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="sixpointline">&#160;</p>
+        <p class="Label">Column example: MessageShredder.ADT.PID (HL7)</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>RowID</td>
+                    <td>MessageID</td>
+                    <td>SequenceNumber</td>
+                    <td>RelativeIndex</td>
+                    <td>NextRelativeIndex</td>
+                    <td>PID_1</td>
+                    <td>PID_2</td>
+                    <td>…</td>
+                    <td>PID_18_1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Values in the shredded columns will always be the raw input values with no transformations performed on them. For example, an HL7 element represented as || will be stored as NULL and |””| be stored as an empty string.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message shredder</MadCap:xref>
+        </p>
+    </body>
+</html>

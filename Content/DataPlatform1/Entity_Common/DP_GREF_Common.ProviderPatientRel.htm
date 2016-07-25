@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="483.6667" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.ProviderPatientRel entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.ProviderPatientRel.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].ProviderPatientRel" /><span class="Label">Entity concept code</span>: ROL</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>EndDateTime</td>
+                    <td>ROL-6</td>
+                    <td>HL7</td>
+                    <td>Date and time when the role ended.</td>
+                </tr>
+                <tr>
+                    <td>EndDateTime_o</td>
+                    <td>ROL-6</td>
+                    <td>HL7</td>
+                    <td>Date and time offset when the role ended.</td>
+                </tr>
+                <tr>
+                    <td>PatientProviderRelID</td>
+                    <td>PatientProviderRelID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.ProviderPatientRel entity.
+</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>ProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>ProviderRole</td>
+                    <td>ROL-3</td>
+                    <td>HL7</td>
+                    <td>Functional involvement with the activity being transmitted. For example, case manager, evaluator, transcriber, nurse care practitioner, midwife, physician assistant, and so on.</td>
+                </tr>
+                <tr>
+                    <td>RelationshipStatus</td>
+                    <td>ROL-8</td>
+                    <td>HL7</td>
+                    <td>Reason why the person is assuming (or changing) the role. For example, shift change, new primary nurse, and so on.</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime</td>
+                    <td>ROL-5</td>
+                    <td>HL7</td>
+                    <td>Date and time when the role began.</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime_o</td>
+                    <td>ROL-5</td>
+                    <td>HL7</td>
+                    <td>Date and time offset when the role began.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

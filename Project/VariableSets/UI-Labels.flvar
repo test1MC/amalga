@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment="Tab label. Patient Lists -- (aka Population Mgmt)"
+    Name="Patient Lists">Patient Lists</Variable>
+  <Variable
+    Name="Entity Management"
+    Comment="Management Console &gt; Entity Management. Displayed in title bar."
+    Definition="Some text">Entity Management</Variable>
+  <Variable
+    Comment="Analytics Management"
+    Name="Analytics Administration">Analytics Management</Variable>
+  <Variable
+    Name="Amalga Entity Registry"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane and details pane."
+    Definition="Some text">Amalga Entity Registry</Variable>
+  <Variable
+    Name="Entity Registry"
+    Comment="Entity Registry. As used in Amalga Data Provider in the Connection Properties box as one Repository Type. NOTE: Not in Management Console."
+    Definition="Some text">Entity Registry</Variable>
+  <Variable
+    Name="Create New Entity"
+    Comment="Management Console &gt; Entity Management. Displayed in Actions area of details pane when Amalga Entity Registry folder or namespace is selected."
+    Definition="Some text">Create New Entity</Variable>
+  <Variable
+    Name="Edit Entity action"
+    Comment="Management Console &gt; Entity Management. Displayed in Actions area of details pane when entity is selected."
+    Definition="Some text">Edit Entity</Variable>
+  <Variable
+    Name="Delete Entity"
+    Comment="Management Console &gt; Entity Management. Displayed in Actions area of details pane when entity is selected."
+    Definition="Some text">Delete Entity</Variable>
+  <Variable
+    Name="Entity Binding"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane when entity is expanded."
+    Definition="Some text">Entity Binding</Variable>
+  <Variable
+    Name="Access Policy"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane when entity is expanded."
+    Definition="Some text">Access Policy</Variable>
+  <Variable
+    Name="Related Access Policies"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane when entity is expanded."
+    Definition="Some text">Related Access Policies</Variable>
+  <Variable
+    Name="Sensitive Labels"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane when entity is expanded."
+    Definition="Some text">Sensitive Labels</Variable>
+  <Variable
+    Name="Application"
+    Comment="Management Console. Displayed in module list at bottom of navigation pane."
+    Definition="Some text">Application</Variable>
+  <Variable
+    Name="System"
+    Comment="Management Console. Displayed in module list at bottom of navigation pane."
+    Definition="Some text">System</Variable>
+  <Variable
+    Name="Entity"
+    Comment="Management Console. Displayed in module list at bottom of navigation pane. See UI labeling bug 109064."
+    Definition="Some text">EntityManagement</Variable>
+  <Variable
+    Name="Edit Binding"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. Displayed in details pane in view mode."
+    Definition="Some text">Edit Binding</Variable>
+  <Variable
+    Name="Clear Binding"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. Displayed in details pane in edit mode."
+    Definition="Some text">Clear Binding</Variable>
+  <Variable
+    Name="Relationship Editor"
+    Comment="Management Console &gt; Entity Management &gt; Edit Binding. Dialog box displayed when you bind a property to a column from a different table or view."
+    Definition="Some text">Relationship Editor</Variable>
+  <Variable
+    Name="Related Table"
+    Comment="Management Console &gt; Entity Management &gt; Edit Binding, then either Joins tab or Relationship Editor dialog box. Label."
+    Definition="Some text">Related Table</Variable>
+  <Variable
+    Name="Anchor Table"
+    Comment="Management Console &gt; Entity Management &gt; Edit Binding, then either Joins tab or Relationship Editor dialog box. Label."
+    Definition="Some text">Anchor Table</Variable>
+  <Variable
+    Name="New Entity"
+    Definition="Some text"
+    Comment="Management Console &gt; Entity Management. Dialog box displayed when you click Create New Entity.">New Entity</Variable>
+  <Variable
+    Name="Edit Entity - dialog"
+    Definition="Some text"
+    Comment="Management Console &gt; Entity Management. Dialog box displayed when you click Edit Entity.">Edit Entity</Variable>
+  <Variable
+    Name="Manage Tags"
+    Comment="Management Console &gt; Entity Management &gt; Edit Entity (or New Entity). Button to display Semantic Tags dialog box."
+    Definition="Some text">Manage Tags</Variable>
+  <Variable
+    Name="Semantic Tags"
+    Comment="Management Console &gt; Entity Management &gt; Edit Entity (or New Entity) &gt; Manage Tags&gt; Semantic Tags dialog box."
+    Definition="Some text">Semantic Tags</Variable>
+  <Variable
+    Name="Search Code"
+    Comment="Management Console &gt; Entity Management &gt; Semantic Tags dialog box."
+    Definition="Some text">Search Code</Variable>
+  <Variable
+    Name="Search Meaning"
+    Comment="Management Console &gt; Entity Management &gt; Semantic Tags dialog box."
+    Definition="Some text">Search Meaning</Variable>
+  <Variable
+    Name="Column -  entity binding"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. UI label of column displayed in view and edit modes. Pamela to write bug."
+    Definition="Some text">Database Table/View Column</Variable>
+  <Variable
+    Name="Feed Browser"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. UI label of tab displayed in details pane in edit mode."
+    Definition="Some text">Feed Browser</Variable>
+  <Variable
+    Name="Joins"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. UI label of tab displayed in details pane in edit mode."
+    Definition="Some text">Joins</Variable>
+  <Variable
+    Name="Bound Column Details"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding. UI label for list of details related to bound column for an entity property."
+    Definition="Some text">Bound Database Column Details</Variable>
+  <Variable
+    Name="Authorize Role"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Authorize Role</Variable>
+  <Variable
+    Name="Authorized Roles"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Authorized Roles</Variable>
+  <Variable
+    Name="Remove Role"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Remove Role</Variable>
+  <Variable
+    Name="Edit Rule"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Edit Rule</Variable>
+  <Variable
+    Name="Delete Rule"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Delete Rule</Variable>
+  <Variable
+    Name="Add New Rule"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Add New Rule</Variable>
+  <Variable
+    Name="Copy Rule"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Copy Rule</Variable>
+  <Variable
+    Name="Paste Rule"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Paste Rule</Variable>
+  <Variable
+    Name="Rules applying to Role"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Rules applying to Role</Variable>
+  <Variable
+    Name="Read Only Rules"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Read Only Rules</Variable>
+  <Variable
+    Name="Read Only Rules children"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Read Only Rules applying to children of this Entity only</Variable>
+  <Variable
+    Name="Read/Write Rules"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Read/Write Rules</Variable>
+  <Variable
+    Name="Read/Write Only Rules children"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Read/Write Only Rules applying to children of this Entity only</Variable>
+  <Variable
+    Name="Visible Sensitive Labels for Role"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy."
+    Definition="Some text">Visible Sensitive Labels for Role</Variable>
+  <Variable
+    Name="Rule Editor"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy. Displayed when you create or edit a rule."
+    Definition="Some text">Rule Editor</Variable>
+  <Variable
+    Name="Input custom SQL condition"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy &gt; Rule Editor. Displayed when you click the link to create a custom SQL condition from inside Rule Editor."
+    Definition="Some text">Input custom SQL condition</Variable>
+  <Variable
+    Name="Insert Selected"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy &gt; Rule Editor &gt;Input custom SQL condition dialog box. Action label."
+    Definition="Some text">Insert Selected</Variable>
+  <Variable
+    Name="Add Inheritance"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies."
+    Definition="Some text">Add Inheritance From a Peer or Parent Entity</Variable>
+  <Variable
+    Name="Remove Selected Entity"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies."
+    Definition="Some text">Remove Selected Entity</Variable>
+  <Variable
+    Name="Edit Relationship to Selected Entity"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies."
+    Definition="Some text">Edit Relationship to Selected Entity</Variable>
+  <Variable
+    Name="Parent Access Policies"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies. Note that string is variable depending on selected entity. UI bug to be written by Pamela."
+    Definition="Some text">Parent Access Policies that &lt;entity-name&gt; Inherits Rules From</Variable>
+  <Variable
+    Name="Peer Access Policies"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies. Note that string is variable depending on selected entity. UI bug to be written by Pamela."
+    Definition="Some text">Peer Access Policies that &lt;entity-name&gt; Inherits Rules From</Variable>
+  <Variable
+    Name="Diagnostic"
+    Comment="Management Console &gt; Entity Management. Displayed in navigation pane when entity is expanded."
+    Definition="Some text">Diagnostic</Variable>
+  <Variable
+    Name="Add an Entity relationship"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies &gt; Add Inheritance From a Peer or Parent Entity. Title of dialog box."
+    Definition="Some text">Add an Entity relationship</Variable>
+  <Variable
+    Name="Add Binding Source"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding &gt; Edit Binding. Selection in details pane that ."
+    Definition="Some text">Add Binding Source</Variable>
+  <Variable
+    Name="Anchor Table Column"
+    Comment="Management Console &gt; Entity Management &gt; Edit Binding, then either Joins tab or Relationship Editor dialog box. Label."
+    Definition="Some text">Anchor Table Column</Variable>
+  <Variable
+    Name="Available Attributes"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy &gt; Rule Editor &gt;Input custom SQL condition dialog box. Label. See bug 106382; should read &quot;Available Properties.&quot;"
+    Definition="Some text">Available Attributes</Variable>
+  <Variable
+    Name="Binding SQL"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding &gt; Edit Binding. Label in details pane."
+    Definition="Some text">Binding SQL</Variable>
+  <Variable
+    Name="Bound to Applications"
+    Comment="Management Console &gt; Entity Management &gt; Entity Binding &gt; Edit Binding. Label in details pane."
+    Definition="Some text">Bound to Applications</Variable>
+  <Variable
+    Name="Custom SQL Filter"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy &gt; Rule Editor &gt;Input custom SQL condition dialog box. Label."
+    Definition="Some text">Custom SQL Filter</Variable>
+  <Variable
+    Name="Entire Registry"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies &gt; Add Inheritance From a Peer or Parent Entity &gt; Add an Entity relationship dialog box. Option."
+    Definition="Some text">Entire Registry</Variable>
+  <Variable
+    Name="Parent Entity"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies &gt; Add Inheritance From a Peer or Parent Entity &gt; Add an Entity relationship dialog box. Option"
+    Definition="Some text">Parent Entity</Variable>
+  <Variable
+    Name="Peer Entity"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies &gt; Add Inheritance From a Peer or Parent Entity &gt; Add an Entity relationship dialog box. Option"
+    Definition="Some text">Peer Entity</Variable>
+  <Variable
+    Name="Related Entities Only"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies &gt; Add Inheritance From a Peer or Parent Entity &gt; Add an Entity relationship dialog box. Option"
+    Definition="Some text">Related Entities Only</Variable>
+  <Variable
+    Name="Related Table Column"
+    Comment="Management Console &gt; Entity Management &gt; Edit Binding, then either Joins tab or Relationship Editor dialog box. Label."
+    Definition="Some text">Related Table Column</Variable>
+  <Variable
+    Name="Filtered By"
+    Comment="Management Console &gt; Entity Management. Dropdown box displayed in navigation pane."
+    Definition="Some text">Filter By</Variable>
+  <Variable
+    Name="Access Policy (pane)"
+    Comment="Management Console &gt; Entity Management &gt; Access Policy. Title of middle pane (as opposed to option in navigation pane)."
+    Definition="Some text">Access Policy</Variable>
+  <Variable
+    Name="Diagnostic (pane)"
+    Comment="Management Console &gt; Entity Management &gt; Diagnostic. Ti Title of middle pane (as opposed to option in navigation pane)."
+    Definition="Some text">Diagnostic</Variable>
+  <Variable
+    Name="Sensitive Labels (pane)"
+    Comment="Management Console &gt; Entity Management &gt; Sensitive Labels. Title of middle pane (as opposed to option in navigation pane)."
+    Definition="Some text">Sensitive Labels</Variable>
+  <Variable
+    Name="Related Access Policies (pane)"
+    Comment="Management Console &gt; Entity Management &gt; Related Access Policies. Title of middle pane (as opposed to option in navigation pane)."
+    Definition="Some text">Related Access Policies</Variable>
+</CatapultVariableSet>

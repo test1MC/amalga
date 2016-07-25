@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To filter the status</p>
+        <ul>
+            <li>Click the drop-down arrow next to <span class="UIElementAction">Status</span>, select the status or statuses to display, and then click <span class="UIElementAction">OK</span>.</li>
+        </ul>
+    </body>
+</html>

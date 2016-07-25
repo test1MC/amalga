@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="137" MadCap:lastWidth="521">
+    <head>
+        <link href="../Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <table style="width:100%; border-spacing: 1px 1px; border-left-style: none; border-right-style: none; border-top-style: none; border-bottom-style: none; border-collapse: collapse;border-color: #b0e0e6;">
+            <col style="width: 100%;" />
+            <tbody>
+                <tr>
+                    <th class="AppliesTo"><strong>Topic applies to </strong><MadCap:variable name="BrandingHSG.Amalga Long" style="mc-tag-and-class: strong;" />
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <MadCap:bodyProxy />
+        <MadCap:snippetBlock src="../Snippets/HELLO.flsnp" />
+    </body>
+</html>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="97" MadCap:lastWidth="556">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">Source System</span>: Name of the source system of the column. </li>
+            <li><span class="UIElementName">Database Name</span>: Name of the database in which the table resides. </li>
+            <li><span class="UIElementName">Schema Name</span>: Name of the schema. </li>
+            <li><span class="UIElementName">Table Name</span>: Name of the table. </li>
+        </ul>
+    </body>
+</html>

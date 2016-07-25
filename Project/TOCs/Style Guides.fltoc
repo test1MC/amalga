@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1" sourceDocument="C:\UIS\UA-SRC\Sandbox\Writers Handbook\Amalga UA Style Guide.docx">
+    <TocEntry Title="Scope" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024020">
+        <TocEntry Title="Product and Feature Names" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024021" />
+        <TocEntry Title="Style Sheet Listing and Definitions" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024022">
+            <TocEntry Title="Heading Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024023" />
+            <TocEntry Title="Paragraph Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024024" />
+            <TocEntry Title="Character Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024025" />
+            <TocEntry Title="Other Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024026" />
+            <TocEntry Title="Styles in Projects" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024027" />
+        </TocEntry>
+        <TocEntry Title="Terms and Style for Amalga UIS" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024028" />
+        <TocEntry Title="Terms and Style for the Amalga UIS User Guides" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024029">
+            <TocEntry Title="Summary" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024030" />
+        </TocEntry>
+        <TocEntry Title="Terms and Style for Amalga UIS Home Window Active Areas" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024031" />
+        <TocEntry Title="Miscellaneous Terms" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024032" />
+        <TocEntry Title="Glossary of Internal Terms" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024033" />
+        <TocEntry Title="General Documentation Guidelines" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024034">
+            <TocEntry Title="Unsupported Tools and Procedures" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024035" />
+            <TocEntry Title="InternalOnly: How to Indicate Confidential Material" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024036" />
+            <TocEntry Title="Bulleted Lists" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024037" />
+            <TocEntry Title="XML Listings and Code Samples" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024038" />
+        </TocEntry>
+        <TocEntry Title="Topic Guidelines" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024039">
+            <TocEntry Title="Topics that Show Examples" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024040" />
+            <TocEntry Title="Topics with Procedures" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024041" />
+        </TocEntry>
+        <TocEntry Title="Usage Preferences" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024042" />
+        <TocEntry Title="Cross References" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024043">
+            <TocEntry Title="Standard Cross-Reference Cases and Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024044" />
+        </TocEntry>
+        <TocEntry Title="Conditions to Set in Targets" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024045" />
+        <TocEntry Title="Amalga UIS Registry Keys Format Example" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024046" />
+        <TocEntry Title="Legal Style for Amalga UIS and Related Trademarks" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024047" />
+        <TocEntry Title="Copyrights and Disclaimers" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024048" />
+        <TocEntry Title="Error Message Guidelines" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024049" />
+        <TocEntry Title="Guidelines for Using Images and Diagrams" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024050" />
+        <TocEntry Title="Table Styles" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024051">
+            <TocEntry Title="All Tables" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024052" />
+            <TocEntry Title="Formal Table" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024053" />
+        </TocEntry>
+        <TocEntry Title="Procedures" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024054">
+            <TocEntry Title="Using the &lt;Pre&gt; Tag to Retain Code Spacing" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024055" />
+        </TocEntry>
+        <TocEntry Title="Command-line Syntax Format Conventions" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024056" />
+        <TocEntry Title="Module Schema" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024057" />
+        <TocEntry Title="Disclaimer Text" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024058" />
+    </TocEntry>
+    <TocEntry Title="Useful Information" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024059">
+        <TocEntry Title="White Paper Generic Word Template" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024060" />
+        <TocEntry Title="Link for Customer Portal" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024061" />
+        <TocEntry Title="Path for Released Installation Media" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024062" />
+        <TocEntry Title="Fictitious Names and Data" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024063">
+            <TocEntry Title="Data in Screen Shots" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024064" />
+            <TocEntry Title="Fictitious URLs" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024065" />
+            <TocEntry Title="LCA Approved Fictitious Name Location" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024066" />
+        </TocEntry>
+        <TocEntry Title="Related Screenshots" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024067" />
+        <TocEntry Title="Team Contacts" Link="/Content/Style Guides/Amalga Style Guide/HSG UA Style Guide.htm#_Toc264024068" />
+    </TocEntry>
+</CatapultToc>

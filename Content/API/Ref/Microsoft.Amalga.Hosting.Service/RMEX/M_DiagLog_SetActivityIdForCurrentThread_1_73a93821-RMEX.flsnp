@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>SetActivityIdForCurrentThread Method </title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.Hosting.Service" />
+    <meta name="file" content="M_DiagLog_SetActivityIdForCurrentThread_1_73a93821" />
+    <meta name="outDir" content="Microsoft.Amalga.Hosting.Service" />
+  </head>
+  <body>
+    <h1 class="heading">
+      <span onclick="ExpandCollapse(remarksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(remarksToggle, event)" tabindex="0">
+        <img id="remarksToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Remarks</span>
+    </h1>
+    <div id="remarksSection" class="section" name="collapseableSection" style="">
+      <p>
+            Activity Id is used to correlate all actions logged by the current thread as well
+            as actions logged by hosted Wcf services invoked by this thread. Hosting runtime automatically
+            generates a global Activity Id for the current thread (if one does not already exist) and
+            ensures that the activity id flows across Wcf service calls. Therefore, most of the times,
+            there is no need to invoke this method.
+            </p>
+      <p>
+            This method is, however, useful to "reset" the activity id when needed. A common scenario
+            for that would be poller threads or timers within hosted worker services. Each poll action could
+            set a new acitivity id so that log entries for different poll operations can be distinguished
+            from each other.
+            </p>
+      <p>
+            Hosted Wcf Services typically do not need to reset the activity id as it is set to a new Guid
+            for each incoming service request by the hosting runtime.
+            </p>
+    </div>
+    <h1 class="heading" MadCap:conditions="Production.doNOTbuild">
+      <span onclick="ExpandCollapse(examplesInfoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(examplesInfoToggle, event)" tabindex="0">
+        <img id="examplesInfoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Examples</span>
+    </h1>
+    <div id="examplesInfoSection" class="section" name="collapseableSection" style="" MadCap:conditions="Production.doNOTbuild">
+      <p>Add examples here.</p>
+    </div>
+  </body>
+</html>

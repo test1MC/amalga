@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,ReleaseTarget.CTP1,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.60 - Revising" MadCap:lastBlockDepth="2" MadCap:lastHeight="1385" MadCap:lastWidth="564" MadCap:ignoredWords="AmalgaDbConnection">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Accessing data with <MadCap:variable name="FeatureName.Amalga ADO.NET" /></h1>
+        <p>&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="ADO.NET" />This topic contains source code and information on how to read and write data from virtual schemas using <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>To work with <MadCap:variable name="BrandingHSG.Amalga Short" /> data, use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to access application views contained in virtual schemas, instead of accessing the underlying tables and views in <MadCap:variable name="BrandingMS.SQL Server" />. The <MadCap:variable name="FeatureName.Amalga SDK" /> contains classes that parallel ADO.NET classes. </p>
+        <p>To use <MadCap:variable name="FeatureName.Amalga ADO.NET" />, add the Microsoft.Amalga.Data.DataClient and Microsoft.Health.HostingRuntime references to your project. Note that you will not be adding these to your Amalga hosted application, but rather to another project in the solution. (<MadCap:annotation MadCap:createDate="2011-11-11T12:21:59.1727016-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="These are examples of projects?  They will know that?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-11T12:22:18.6158137-08:00">For example</MadCap:annotation>, to a WCF service, Doors Service, ASP.NET application, Silverlight application, etc.) This project will also reference your Amalga hosted application project.</p>
+        <p class="note">The <span class="InputText">username</span> and <span class="InputText">password</span> keywords are not supported in connection strings for <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The following C# code example uses an SQL&#160;query to obtain patient names beginning with the letter "L" from an application view named VisitObject. The query uses the following<MadCap:variable name="FeatureName.Amalga ADO.NET" /> classes:&#160;AmalgaDbConnection, AmalgaDbCommand, and AmalgaDbDataReader.</p>
+        <p class="h7">Example: C# method that obtains patient names starting with the letter L.</p><pre xml:space="preserve" class="code">static void GetPatientNamesStartingWithL()
+{
+  // Initialize Connection String
+  string connectionString = 
+    "Data Source=(local);Initial Catalog=MyAppVirtualSchema;"
+    + "Integrated Security=true";
+  // Create a SQL query for the virtual schema
+  string queryString =
+    "SELECT VisitID, PatientName from MyApp.DataModel.VisitObject"
+    + "WHERE PatientName = ‘L%’ "
+    + "ORDER BY PatientName DESC;";
+
+  // Make calls like ADO.NET, but using AmalgaDbConnection, AmalgaDBCommand, etc.
+  using (AmalgaDbConnection connection =
+    new AmalgaDbConnection(connectionString))
+  {
+    // Create the Command and Parameter objects.
+    AmalgaDbCommand command = new AmalgaDbCommand(queryString, connection);
+
+    try
+    {
+      connection.Open();
+      AmalgaDbDataReader reader = command.ExecuteReader();
+      while (reader.Read())
+      {
+        Console.WriteLine("\t{0}\t{1}",
+        reader[0], reader[1]);
+      }
+      reader.Close();
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    Console.ReadLine();
+  }
+}</pre>
+        <p>Although the most common scenario for your data is that it will be read-only, you may want your application  to be able to write data as well. For example, an application that displays lab test results can include the ability for users to add and store notes. <MadCap:variable name="BrandingHSG.Amalga Short" /> supports this kind of writability with transactional write operations to the data store. For each application instance that writes data, <MadCap:variable name="BrandingHSG.Amalga Short" /> automatically creates a private database. As with reading data, you'll use T-SQL transactions and <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p class="SeeAlso">See Also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">Microsoft.Health.Data.DataClient Namespace</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_OVW_Virtual_Schema_Overview.htm" target="" title="" alt="">Virtual schemas on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Application_Views.htm" target="" title="" alt="">Application views on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

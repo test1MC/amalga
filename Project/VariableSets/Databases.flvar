@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment="Common name. See definition in Terminology worksheet"
+    Name="aggregate store">aggregate store</Variable>
+  <Variable
+    Name="common data"
+    Comment="Common name.The clinical data store that holds messages that have made it through the data pipeline"
+    Definition="Some text">common data</Variable>
+  <Variable
+    Name="message queue"
+    Comment="Common name: generic reference to any message queuing system and is not restricted to an instance of the MessageQueue database"
+    Definition="Some text">message queue</Variable>
+  <Variable
+    Name="Message queue sentence case"
+    Comment="Common name: generic reference to any message queuing system and is not restricted to an instance of the MessageQueue database"
+    Definition="Some text">Message queue</Variable>
+  <Variable
+    Name="Common data sentence case"
+    Comment="Common name."
+    Definition="Some text">Common data</Variable>
+  <Variable
+    Name="Aggregate store sentence case"
+    Comment="Common name."
+    Definition="Some text">Aggregate store</Variable>
+  <Variable
+    Name="AmalgaAudit"
+    Comment="Database name. AmalgaAudit."
+    Definition="Some text">AmalgaAudit</Variable>
+  <Variable
+    Name="AmalgaSystem"
+    Comment="Database name. AmalgaSystem"
+    Definition="Some text">AmalgaSystem</Variable>
+  <Variable
+    Name="MessageQueue"
+    Comment="Amalga database name;  Proposed new name has Amalga at the beginnning."
+    Definition="Some text">AmalgaMessageQueue</Variable>
+  <Variable
+    Name="ClinicalData"
+    Comment="Database name changed to AmalgaSourceData"
+    Definition="Some text">AmalgaSourceData</Variable>
+  <Variable
+    Name="MaterializedEntity"
+    Comment="Amalga Database name.  Proposed new name has Amalga at the beginnning."
+    Definition="Some text">AmalgaMaterializedEntity</Variable>
+  <Variable
+    Name="Health Language Terminology Data (Terminology Data)"
+    Comment="Common name. Health Language Terminology Data (Terminology Data) database"
+    Definition="Some text">Health Language Terminology Data (Terminology Data)</Variable>
+  <Variable
+    Name="Health Language Terminology Data (second use)"
+    Comment="Common name. Second use. Terminology Data database"
+    Definition="Some text">Terminology Data</Variable>
+</CatapultVariableSet>

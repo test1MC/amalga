@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Data pipeline"
+    Link="/Content/MasterTOCLandingPages(BZ)/DataPipelineLanding.htm">
+    <TocEntry
+      Title="[%=FeatureName.data pipeline%] model"
+      Link="/Content/Data Ingestion/DI_Ovw_DataPipeline.htm" />
+    <TocEntry
+      Title="Pipeline performance counters"
+      Link="/Content/Data Ingestion/DI_GREF_PipelinePerCount.htm"></TocEntry>
+    <TocEntry
+      Title="Predefined error codes for the data pipeline"
+      Link="/Content/Data Ingestion/DI_Ref_PredefinedErrorCodes.htm" />
+    <TocEntry
+      Title="Data pipeline applications"
+      Link="/Content/Data Ingestion/DI_Lnd_DataPipeApps.htm">
+      <TocEntry
+        Title="Feed Acquisition application"
+        Link="/Content/Data Ingestion/DI_Con_AcquireSummary.htm"></TocEntry>
+      <TocEntry
+        Title="Message Shredder application"
+        Link="/Content/Data Ingestion/DI_Con_ShredSummary.htm"></TocEntry>
+      <TocEntry
+        Title="Data Parser application"
+        Link="/Content/Data Ingestion/DI_Con_ParseSummary.htm"></TocEntry>
+      <TocEntry
+        Title="Backfill Data-Parser application"
+        Link="/Content/Data Ingestion/DI_Con_BackfillSummary.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Design a new data pipe"
+      Link="/Content/Data Ingestion/DI_Lnd_DesignNewPipe.htm"
+      ComputeToc="false">
+      <TocEntry
+        Title="Resolve Feed Acquisition manifests"
+        Link="/Content/Data Ingestion/DI_Task_AcquireApp.htm"></TocEntry>
+      <TocEntry
+        Title="Resolve Message Shredder manifests"
+        Link="/Content/Data Ingestion/DI_Task_ShredApp.htm"></TocEntry>
+      <TocEntry
+        Title="Resolve Data Parser manifests"
+        Link="/Content/Data Ingestion/DI_Task_ParseApp.htm"></TocEntry>
+      <TocEntry
+        Title="Map enterprise identifiers"
+        Link="/Content/Data Ingestion/DI_Task_MapEnterpriseId.htm" />
+      <TocEntry
+        Title="Configure merge actions"
+        Link="/Content/Data Ingestion/DI_Task_ConfigureEnterpriseIdMerge.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Extend pipeline applications"
+      Link="/Content/Data Ingestion/DI_Con_ExtendPipeline.htm">
+      <TocEntry
+        Title="Add an acquisition plug-in"
+        Link="/Content/Data Ingestion/Manifest XML/DI_Con_AcquireExtend.htm">
+        <TocEntry
+          Title="Acquisition plug-in code example"
+          Link="/Content/Data Ingestion/DI_Code_AquirePluginEx.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Add a shredder plug-in"
+        Link="/Content/Data Ingestion/DI_Con_ShredExtend.htm">
+        <TocEntry
+          Title="Shredder plug-in code example"
+          Link="/Content/Data Ingestion/DI_Code_ShredPluginEx.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Add parser extensions"
+        Link="/Content/Data Ingestion/DI_Con_ParseExtend.htm">
+        <TocEntry
+          Title="Transform library class extension"
+          Link="/Content/Data Ingestion/DI_Con_ParseExtendClass.htm" />
+        <TocEntry
+          Title="Custom assembly parser extension"
+          Link="/Content/Data Ingestion/DI_Con_ParseExtendAssembly.htm">
+          <TocEntry
+            Title="Parser plug-in code example"
+            Link="/Content/Data Ingestion/DI_Code_ParsePluginEx.htm"></TocEntry>
+        </TocEntry>
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Enable backfill parsing"
+      Link="/Content/Data Ingestion/DI_Task_EnableBackfill.htm" />
+    <TocEntry
+      Title="Pipeline manifest XML"
+      Link="/Content/Data Ingestion/DI_Lnd_PipelineManifestXml.htm">
+      <TocEntry
+        Title="Pipeline configuration settings"
+        Link="/Content/Data Ingestion/Manifest XML/DI_Ovw_PipelineConfigSettings.htm">
+        <TocEntry
+          Title="BatchSize setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_BatchSizeSetting.htm" />
+        <TocEntry
+          Title="ConnectionTimeoutSeconds setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm" />
+        <TocEntry
+          Title="CustomizedConfigurationXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_CustomizedConfigurationXML.htm" />
+        <TocEntry
+          Title="ErrorHandlingConfigurationXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_ErrorHandlingConfigurationXml.htm" />
+        <TocEntry
+          Title="FeedConfigurationXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_FeedConfigurationXML.htm">
+          <TocEntry
+            Title="[%=Applications.Feed Acquisition (application)%] hierarchy"
+            Link="/Content/Data Ingestion/DI_XML_List_Acquire.htm" />
+          <TocEntry
+            Title="[%=Applications.Message Shredder (application)%] hierarchy"
+            Link="/Content/Data Ingestion/DI_XML_List_Shred.htm" />
+          <TocEntry
+            Title="[%=Applications.Data Parser (application)%] hierarchy"
+            Link="/Content/Data Ingestion/DI_XML_List_Parse.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="FeedInfoXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_FeedInfoXML.htm" />
+        <TocEntry
+          Title="IdleConnectionTimeout setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_IdleConnectionTimeout setting.htm" />
+        <TocEntry
+          Title="IdleSleepSeconds setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_IdleSleepSecondsSetting.htm" />
+        <TocEntry
+          Title="IsBackfillDataParserApplication setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_IsBackfillDataParserApplication.htm" />
+        <TocEntry
+          Title="PluginModelConfigurationXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_PluginModelConfigurationXML.htm" />
+        <TocEntry
+          Title="ShredderPluginConfigurationXML setting"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Intro_ShredderPluginConfigurationXML.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Pipeline XML elements"
+        Link="/Content/Data Ingestion/Manifest XML/DI_Ovw_PipelineElements.htm">
+        <TocEntry
+          Title="AckCapture element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_AckCapture.htm" />
+        <TocEntry
+          Title="AckFormular element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_AckFormular.htm" />
+        <TocEntry
+          Title="Action element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Action.htm" />
+        <TocEntry
+          Title="Array element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Array.htm" />
+        <TocEntry
+          Title="ArrayElement element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ArrayElement.htm" />
+        <TocEntry
+          Title="CarriageReturnCharacter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_CarriageReturnCharacter.htm" />
+        <TocEntry
+          Title="CollapseConfiguration element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_CollapseConfiguration.htm" />
+        <TocEntry
+          Title="ConceptId element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ConceptId.htm" />
+        <TocEntry
+          Title="Condition element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Condition.htm" />
+        <TocEntry
+          Title="CSVConfiguration element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_CSVConfiguration.htm" />
+        <TocEntry
+          Title="DataConstants element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DataConstants.htm" />
+        <TocEntry
+          Title="DataParserConfiguration element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" />
+        <TocEntry
+          Title="DataParserOutput element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DataParserOutput.htm" />
+        <TocEntry
+          Title="DefaultAck element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DefaultAck.htm" />
+        <TocEntry
+          Title="DefaultNack element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DefaultNack.htm" />
+        <TocEntry
+          Title="DefaultTimeZone element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_DefaultTimeZone.htm" />
+        <TocEntry
+          Title="Dependencies element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Dependencies.htm" />
+        <TocEntry
+          Title="Dependency element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Dependency.htm" />
+        <TocEntry
+          Title="Directory element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Directory.htm" />
+        <TocEntry
+          Title="Domain element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Domain.htm" />
+        <TocEntry
+          Title="Element element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Element.htm" />
+        <TocEntry
+          Title="Elements element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Elements.htm" />
+        <TocEntry
+          Title="EncounterIdentifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EncounterIdentifier.htm" />
+        <TocEntry
+          Title="EncounterSetIdentifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm" />
+        <TocEntry
+          Title="EndBlockCharacter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EndBlockCharacter.htm" />
+        <TocEntry
+          Title="EnterpriseId element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EnterpriseId.htm" />
+        <TocEntry
+          Title="EnterpriseIdAction element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EnterpriseIdAction.htm" />
+        <TocEntry
+          Title="ErrorCode element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorCode.htm" />
+        <TocEntry
+          Title="ErrorCodes element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorCodes.htm" />
+        <TocEntry
+          Title="ErrorDescription element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorDescription.htm" />
+        <TocEntry
+          Title="ErrorHandlingConfiguration element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorHandlingConfiguration.htm" />
+        <TocEntry
+          Title="ErrorHandlingPolicies element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorHandlingPolicies.htm" />
+        <TocEntry
+          Title="ErrorHandlingPolicy element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorHandlingPolicy.htm" />
+        <TocEntry
+          Title="ErrorTitle element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ErrorTitle.htm" />
+        <TocEntry
+          Title="EventId element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_EventId.htm" />
+        <TocEntry
+          Title="ExceptionType element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ExceptionType.htm" />
+        <TocEntry
+          Title="ExpandableDataParserOutput element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ExpandableDataParserOutput.htm" />
+        <TocEntry
+          Title="ExtensibleDataParserOutput element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ExtensibleDataParserOutput.htm" />
+        <TocEntry
+          Title="Feed element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Feed.htm" />
+        <TocEntry
+          Title="FeedInfo element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_FeedInfo.htm" />
+        <TocEntry
+          Title="Feeds element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Feeds.htm" />
+        <TocEntry
+          Title="FieldDelimiter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_FieldDelimiter.htm" />
+        <TocEntry
+          Title="FinalAction element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_FinalAction.htm" />
+        <TocEntry
+          Title="Function element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Function.htm" />
+        <TocEntry
+          Title="Id element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Id.htm" />
+        <TocEntry
+          Title="InputIdentifiers element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_InputIdentifiers.htm" />
+        <TocEntry
+          Title="InputParameter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_InputParameter.htm" />
+        <TocEntry
+          Title="KeepOnTemporaryStorage element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_KeepOnTemporaryStorage.htm" />
+        <TocEntry
+          Title="LogSetting element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_LogSetting.htm" />
+        <TocEntry
+          Title="Lookup element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Lookup.htm" />
+        <TocEntry
+          Title="MaximumRetry  element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_MaximumRetry.htm" />
+        <TocEntry
+          Title="MessageShredderConfiguration element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_MessageShredderConfiguration.htm" />
+        <TocEntry
+          Title="MessageShredderInput element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_MessageShredderInput.htm" />
+        <TocEntry
+          Title="MsgType element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_MsgType.htm" />
+        <TocEntry
+          Title="NackCapture element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_NackCapture.htm" />
+        <TocEntry
+          Title="NackFormular element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_NackFormular.htm" />
+        <TocEntry
+          Title="Name element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Name.htm" />
+        <TocEntry
+          Title="NameSpace element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_NameSpace.htm" />
+        <TocEntry
+          Title="Parameter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Parameter.htm" />
+        <TocEntry
+          Title="PatientRecordIdentifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm" />
+        <TocEntry
+          Title="PersonIdentifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PersonIdentifier.htm" />
+        <TocEntry
+          Title="Plugin element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Plugin.htm" />
+        <TocEntry
+          Title="PluginData element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PluginData.htm" />
+        <TocEntry
+          Title="Plugins element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Plugins.htm" />
+        <TocEntry
+          Title="Port element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Port.htm" />
+        <TocEntry
+          Title="PreferenceRanking element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PreferenceRanking.htm" />
+        <TocEntry
+          Title="PreferredCulture element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PreferredCulture.htm" />
+        <TocEntry
+          Title="PrimaryKeyColumn element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_PrimaryKeyColumn.htm" />
+        <TocEntry
+          Title="Provider element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Provider.htm" />
+        <TocEntry
+          Title="ProviderIdentifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ProviderIdentifier.htm" />
+        <TocEntry
+          Title="Quote element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Quote.htm" />
+        <TocEntry
+          Title="ReceiveAdapter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ReceiveAdapter.htm" />
+        <TocEntry
+          Title="ResultRowsFilter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ResultRowsFilter.htm" />
+        <TocEntry
+          Title="ResultType element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ResultType.htm" />
+        <TocEntry
+          Title="ResultTypeSortField element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_ResultTypeSortField.htm" />
+        <TocEntry
+          Title="RetryInterval  element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_RetryInterval.htm" />
+        <TocEntry
+          Title="RowDelimiter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_RowDelimiter.htm" />
+        <TocEntry
+          Title="SearchPattern element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_SearchPattern.htm" />
+        <TocEntry
+          Title="Segment element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Segment.htm" />
+        <TocEntry
+          Title="Segments element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Segments.htm" />
+        <TocEntry
+          Title="SendAdapter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_SendAdapter.htm" />
+        <TocEntry
+          Title="SkipFirstRow element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_SkipFirstRow.htm" />
+        <TocEntry
+          Title="SourceType element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_SourceType.htm" />
+        <TocEntry
+          Title="StartBlockCharacter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_StartBlockcharacter.htm" />
+        <TocEntry
+          Title="TempStorageAdapter element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_TempStoragedAdapter.htm" />
+        <TocEntry
+          Title="TerminologyName element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_TerminologyName.htm" />
+        <TocEntry
+          Title="Transform element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Transform.htm" />
+        <TocEntry
+          Title="Type element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Type.htm" />
+        <TocEntry
+          Title="URL element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_URL.htm" />
+        <TocEntry
+          Title="Verifier element"
+          Link="/Content/Data Ingestion/Manifest XML/DI_XML_Manifest_Verifier.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Terminology lookup functions"
+        Link="/Content/Data Ingestion/Manifest XML/AAA_NewNAME.htm">
+        <TocEntry
+          Title="Lookups.usf_Terminology_ConvertCodeToCode function"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Type_ConvertCodeToCode.htm" />
+        <TocEntry
+          Title="Lookups.usf_Terminology_ConvertCodeToText function"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Type_ConvertCodeToText.htm" />
+        <TocEntry
+          Title="Lookups.usf_Terminology_ConvertTextToCode function"
+          Link="/Content/Data Ingestion/Manifest XML/DI_Type_ConvertTextToCode.htm" />
+      </TocEntry>
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

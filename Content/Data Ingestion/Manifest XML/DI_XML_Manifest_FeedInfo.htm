@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="889" MadCap:lastWidth="706" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>FeedInfo element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="FeedInfo element" />Declares a collection element for descriptive feed information.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedInfoXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;<b>
+          &lt;FeedInfo&gt;</b>
+             &lt;Name&gt;...&lt;/Name&gt;
+             &lt;Type&gt;...&lt;/Type&gt;
+             &lt;Provider&gt;...&lt;/Provider&gt;
+             &lt;TerminologyName&gt;...&lt;/TerminologyName&gt;
+             &lt;PreferenceRanking&gt;...&lt;/PreferenceRanking&gt;
+             &lt;Preferred&gt;...&lt;/Preferred&gt;
+             &lt;DefaultTimeZone&gt;...&lt;/DefaultTimeZone&gt;<b>
+          &lt;/FeedInfo&gt;</b>
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_DefaultTimeZone.htm">DefaultTimeZone</a>, <a href="DI_XML_Manifest_Name.htm">Name</a>, <a href="DI_XML_Manifest_PreferenceRanking.htm">PreferenceRanking</a>, <a href="DI_XML_Manifest_PreferenceRanking.htm">PreferenceRanking</a>, <a href="DI_XML_Manifest_Provider.htm">Provider</a>, <a href="DI_XML_Manifest_TerminologyName.htm">TerminologyName</a>, <a href="DI_XML_Manifest_Type.htm">Type</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">FeedInfo</span> element is the root for <MadCap:xref href="DI_Intro_FeedInfoXML.htm" target="" title="" alt="">FeedInfoXML setting</MadCap:xref>. Always declare the <span class="MarkupLanguageElements">FeedInfo</span> element in the service manifest of the <MadCap:variable name="Applications.Message Shredder (application)" /> and <MadCap:variable name="Applications.Data Parser (application)" /> applications. Do not declare this element in the manifests of other pipeline applications.   <![CDATA[  ]]></p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedInfoXML.htm">FeedInfoXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

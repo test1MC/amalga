@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Entity registry"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_Entity_Management.htm">
+    <TocEntry
+      Title="Open the [%=UI-Labels.Entity Management%] module"
+      Link="/Content/Serviceability/Management Console/Entity Management/SERV_TASK_OpenEM.htm" />
+    <TocEntry
+      Title="Find entities in the registry"
+      Link="/Content/DataPlatform1/DP_Task_LocateEntity.htm"></TocEntry>
+    <TocEntry
+      Title="View an entity's bound applications and access policy"
+      Link="/Content/DataPlatform1/DP_TASK_ViewEntitySummary.htm" />
+    <TocEntry
+      Title="Create entities"
+      Link="/Content/DataPlatform1/DP_Task_AddEntity.htm" />
+    <TocEntry
+      Title="Edit entities"
+      Link="/Content/DataPlatform1/DP_Task_EditEntity.htm"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Apply semantic tags to entities"
+      Link="/Content/DataPlatform1/DP_Task_EntityTagsEdit.htm" />
+    <TocEntry
+      Title="Delete entities"
+      Link="/Content/DataPlatform1/DP_Task_DeleteEntity.htm"></TocEntry>
+  </TocEntry>
+</CatapultToc>

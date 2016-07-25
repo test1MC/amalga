@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="3082" MadCap:lastWidth="828" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">DeploymentManifest element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the DeploymentManifest element.</p>
+        <p>Describes the topmost element of a deployment manifest.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;DeploymentManifest<br />&#160;&#160;&#160;xmlns="http://www.microsoft.com/2011/10/amalga/deployment/hosting"<br />&#160;&#160;&#160;Type = "Application" | "WcfService" | "DoorsWorker"<br />&#160;&#160;&#160;[ Name = "<span class="Parameter">string</span>" ]<br />&#160;&#160;&#160;Id = "<span class="Parameter">guid</span>"<br />&#160;&#160;&#160;Version = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;[ TestInstanceName = "<span class="Parameter">string</span>" ]<br />&#160;&#160;&#160;[ InstanceName = "<span class="Parameter">string</span>" ] &gt;<br />&#160;&#160;&#160;[ &lt;Settings&gt;...&lt;/Settings&gt; ]<br />&#160;&#160;&#160;( <br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;ApplicationManifest&gt;...&lt;/ApplicationManifest&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;[ &lt;Dependencies&gt;...&lt;/Dependencies&gt; ]<br />&#160;&#160;&#160;&#160;&#160;&#160;[ &lt;TestConfiguration&gt;...&lt;/TestConfiguration&gt;&#160;] <br />&#160;&#160;&#160;)&#160;|<br />&#160;&#160;&#160;(&#160;<br />&#160;&#160;&#160;&#160;&#160;&#160;( <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;WcfServiceManifest&gt;...&lt;/WcfServiceManifest&gt; |&#160;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;DoorsWorkerManifest&gt;...&lt;/DoorsWorkerManifest&gt; <br />&#160;&#160;&#160;&#160;&#160;&#160;)<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;PerformanceCategories&gt;...&lt;/PerformanceCategories&gt; <br />&#160;&#160;&#160;)<br />&lt;/DeploymentManifest&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-1: Required element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_ApplicationManifest.htm">ApplicationManifest</a>, <a href="SDK_XML_Manifest_Dependencies.htm">Dependencies</a>, <a href="SDK_XML_Manifest_PerformanceCategories.htm">PerformanceCategories</a>, <a href="SDK_XML_Manifest_Settings.htm">Settings</a>, <a href="SDK_XML_Manifest_TestConfiguration.htm">TestConfiguration</a>, <a href="SDK_XML_Manifest_WcfServiceManifest.htm">WcfServiceManifest</a>, <a href="SDK_XML_Manifest_DoorsWorkerManifest.htm">DoorsWorkerManifest</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>xmlns</td>
+                    <td>
+                        <p>(Required string.) The Uniform Resource Locator (URL) of the XML schema that supports the deployment manifest.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Optional string.) The name of the object represented by the deployment manifest. The value of this attribute depends on the value of the <span class="MarkupLanguageElements">Type</span> attribute, as described in the following table:</p>
+                        <table style="width: 100%;">
+                            <col>
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Type Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Application</td>
+                                    <td>The name of the hosted application.</td>
+                                </tr>
+                                <tr>
+                                    <td>WCFService</td>
+                                    <td>The name of the hosted <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />.</td>
+                                </tr>
+                                <tr>
+                                    <td>DoorsWorker</td>
+                                    <td>The name of the hosted <MadCap:variable name="BrandingMS.Doors service" />.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="note">The value specified for this attribute cannot contain spaces.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <p>(Required string.) The type of object represented by the deployment manifest. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Application</td>
+                                    <td>Hosted application</td>
+                                </tr>
+                                <tr>
+                                    <td>WCFService</td>
+                                    <td>Hosted <MadCap:variable name="BrandingMS.WCF service" /></td>
+                                </tr>
+                                <tr>
+                                    <td>DoorsWorker</td>
+                                    <td>Hosted <MadCap:variable name="BrandingMS.Doors service" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>
+                        <p>(Required string.) The GUID used to uniquely identify the object represented by the deployment manifest.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>
+                        <p>(Required string.) The string representation of a <a href="http://msdn.microsoft.com/en-us/library/e31ax1a7.aspx">System.Version</a> object, defining the version of the object represented by the deployment manifest.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TestInstanceName</td>
+                    <td>
+                        <p>(Optional string.) The fully qualified domain name (FQDN) of the instance name to be used when publishing the object represented by the deployment manifest for debugging. The value of this attribute is also used to remove any previously published test instances of the object during the publishing process.</p>
+                        <p class="note">The value specified for this attribute cannot contain spaces.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InstanceName</td>
+                    <td>
+                        <p>(Optional string.) The name of the instance used when resolving the deployment manifest for the specified object. This attribute is used to uniquely identify an instance of the object represented by the deployment manifest while deploying a hosted application. <br />For more information about resolving deployment manifests, see <MadCap:xref href="SDK_XML_Manifest__Overview.htm" target="" title="" alt="">Deployment manifests on page 1</MadCap:xref>.</p>
+                        <p class="note">The value specified for this attribute cannot contain spaces.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">DeploymentManifest</span> element is the root element of a deployment manifest. The type of deployment manifest depends on the value of the <span class="MarkupLanguageElements">Type</span> attribute, and determines the child elements contained by the <span class="MarkupLanguageElements">DeploymentManifest</span> element, as described in the following table.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Type value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Application</td>
+                    <td>
+                        <p>The <span class="MarkupLanguageElements">DeploymentManifest</span> element represents an application manifest. All hosted applications must have an application manifest, which provides the metadata necessary for <MadCap:variable name="BrandingHSG.Amalga Short" /> to host the application. For example, if a hosted application represents a hosted <MadCap:variable name="BrandingMS.WCF service" />, the hosted application must have both an application manifest and a <MadCap:variable name="BrandingMS.WCF service" /> manifest.</p>
+                        <p>For an application manifest, the <span class="MarkupLanguageElements">DeploymentManifest</span> element must contain an <span class="MarkupLanguageElements">ApplicationManifest</span> element.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>WCFService</td>
+                    <td>The <span class="MarkupLanguageElements">DeploymentManifest</span> element represents a service manifest for a hosted <MadCap:variable name="BrandingMS.WCF service" />. The <MadCap:variable name="BrandingMS.WCF service" /> manifest defines the configuration settings and performance counters supported by the hosted <MadCap:variable name="BrandingMS.WCF service" />, and also provides the metadata necessary to expose and grant access to the service operations for a hosted <MadCap:variable name="BrandingMS.WCF service" />.<br />For a <MadCap:variable name="BrandingMS.WCF service" /> manifest, the <span class="MarkupLanguageElements">DeploymentManifest</span> element must contain a <span class="MarkupLanguageElements">WcfServiceManifest</span> element.</td>
+                </tr>
+                <tr>
+                    <td>DoorsWorker</td>
+                    <td>The <span class="MarkupLanguageElements">DeploymentManifest</span> element represents a service manifest for a hosted <MadCap:variable name="BrandingMS.Doors service" />. The <MadCap:variable name="BrandingMS.Doors service" /> manifest defines the configuration settings and performance counters supported by the hosted <MadCap:variable name="BrandingMS.Doors service" />. <br />For a <MadCap:variable name="BrandingMS.Doors service" /> manifest, the <span class="MarkupLanguageElements">DeploymentManifest</span> element must contain a <span class="MarkupLanguageElements">DoorsWorkerManifest</span> element.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

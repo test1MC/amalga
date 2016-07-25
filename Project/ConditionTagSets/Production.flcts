@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet conditions="Default.StyleMaster,Production.StyleMaster">
+    <ConditionTag Comment="" Name="ScreenOnly" BackgroundColor="Blue" />
+    <ConditionTag Comment="" Name="PrintOnly" BackgroundColor="#000000" />
+    <ConditionTag BackgroundColor="#00ff80" Name="QuestionableMaterial" Comment="Currently requires internal review to confirm veracity" />
+    <ConditionTag BackgroundColor="LightBlue" Name="InternalOnly" Comment="&quot;Internal Use Only &quot; tag for pre-release" />
+    <ConditionTag BackgroundColor="LightCoral" Name="Release" Comment="Differentiates release content from pre-release content (use for topics containing both release and pre-release information)" />
+    <ConditionTag BackgroundColor="LightCyan" Name="DateTime" Comment="INTERNAL: Date time denotation for file checking" />
+    <ConditionTag BackgroundColor="#8a2be2" Name="WhitePaperOnly" Comment="" />
+    <ConditionTag BackgroundColor="#8b4513" Name="TOCsAll" Comment="Use when a target includes all manuals" />
+    <ConditionTag BackgroundColor="#008000" Name="TOCSingle" Comment="Use when a target includes only one manual." />
+    <ConditionTag BackgroundColor="LightGreen" Name="StyleMaster" Comment="Used to screen out style master files on non-stylemaster imports" />
+    <ConditionTag BackgroundColor="#ff0080" Name="Pivot" Comment="Pivot control meta-data" />
+    <ConditionTag BackgroundColor="#f0e68c" Name="FrontPages" Comment="Title page, copyright page, preface, document conventions, etc." />
+    <ConditionTag BackgroundColor="#ff0000" Name="doNOTbuild" Comment="" />
+</CatapultConditionTagSet>

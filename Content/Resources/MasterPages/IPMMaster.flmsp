@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="101" MadCap:lastWidth="532">
+    <head>
+        <link href="../Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <MadCap:bodyProxy />
+        <MadCap:snippetBlock src="../Snippets/HELLO.flsnp" />
+    </body>
+</html>

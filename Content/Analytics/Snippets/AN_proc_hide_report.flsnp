@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="128" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <body>
+        <p class="LabelforProcedures">To hide a report</p>
+        <ul>
+            <li>
+                <p>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the Options icon (<img src="../Images/AN_settings.png" /> ) in the report that you want to hide, and then click <span class="UIElementAction">Hide report</span>.</p>
+                <p>The report will be hidden.</p>
+            </li>
+        </ul>
+    </body>
+</html>

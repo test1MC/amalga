@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="526" MadCap:lastWidth="946" MadCap:fileTags="Status.70 - Complete,TopicOwner.v-ccole,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Remove an application</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">This topic describes how to stop and remove instances of the Feed Acquisition, Message Shredder, and Data Parser applications.</p>
+        <p class="LabelforProcedures">To remove an application instance</p>
+        <ol>
+            <li>Stop the application service instance.</li>
+            <li>
+                <p>Unregister the application instance using the following syntax:</p>
+                <p class="Syntax">Unregister-AmInstanceWithLogicalHostInstance -InstanceType ApplicationInstance -InstanceName <span class="Placeholder">ApplicationInstanceName</span>-LogicalHostName <span class="Placeholder">LogicalHostName</span></p>
+                <p>For example, type the following cmdlet to unregister the Shredder_ADT_G instance from the Fabric logical host:</p>
+                <p class="InputText">Unregister-AmInstanceWithLogicalHostInstance -InstanceType ApplicationInstance -InstanceName Shredder_ADT_G -LogicalHostName FabricLogicalHost</p>
+            </li>
+            <li>
+                <p>From the computer, cluster, or Network Load-Balanced (NLB) node where the application was deployed, type the following cmdlet:</p>
+                <p class="InputText">Sync-PhysicalHost</p>
+            </li>
+            <li>
+                <p>Unpublish the application instance using the following syntax:</p>
+                <p class="Syntax">Unpublish-AmApplicationInstance <span class="Placeholder">ApplicationInstanceName</span></p>
+                <p>For example, type the following cmdlet to unpublish the Shredder_ADT_G instance:</p>
+                <p class="InputText">Unpublish-AmApplicationInstance Shredder_ADT_G</p>
+            </li>
+        </ol>
+        <p class="h7">See also</p>
+        <p>
+            <MadCap:xref href="../Installation/Install Ref Appendix B PowerShell Ref.htm" target="" title="" alt="">Amalga Doors PowerShell reference</MadCap:xref>
+        </p>
+    </body>
+</html>

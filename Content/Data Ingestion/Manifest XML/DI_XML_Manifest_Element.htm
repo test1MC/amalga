@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2564.333" MadCap:lastWidth="801" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Element element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Element element" />Declares an element of a segment.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;MessageShredderInput&gt;
+               &lt;Segment&gt;					
+                  &lt;Elements&gt;<b>
+                     &lt;Element&gt;...&lt;/Element&gt;</b>
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/MessageShredderInput&gt;				
+ 
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;					
+                  &lt;Elements /&gt;<b>
+                     &lt;Element&gt;</b>
+                        &lt;ConceptId&gt;...&lt;ConceptId&gt;
+                        &lt;Lookup /&gt;
+                        &lt;Transform /&gt;<b>
+                     &lt;/Element&gt;</b>
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;					
+                  &lt;Elements /&gt;<b>
+                     &lt;Element&gt;</b>
+                        &lt;ConceptId&gt;...&lt;ConceptId&gt;
+                        &lt;Lookup /&gt;
+                        &lt;Transform /&gt;<b>
+                     &lt;/Element&gt;</b>
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;					
+                  &lt;Elements /&gt;<b>
+                     &lt;Element&gt;</b>
+                        &lt;ConceptId&gt;...&lt;ConceptId&gt;
+                        &lt;Lookup /&gt;
+                        &lt;Transform /&gt;<b>
+                     &lt;/Element&gt;</b>
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+					
+            &lt;DataConstants&gt;<b>
+               &lt;Element&gt;...&lt;/Element&gt;</b>					
+            &lt;/DataConstants&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Elements.htm">Elements</a>, <a href="DI_XML_Manifest_DataConstants.htm">DataConstants</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_ConceptId.htm">ConceptId</a>, <a href="DI_XML_Manifest_Lookup.htm">Lookup</a>, <a href="DI_XML_Manifest_Transform.htm">Transform</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) Name of a shredded or derived element.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SourceName</td>
+                    <td>(Optional string) Name of segment and element from which the data for the table derives.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>(Optional string) Data type such as System.String.</td>
+                </tr>
+                <tr>
+                    <td>MaxLength</td>
+                    <td>(Optional string) Maximum length of the derived column.</td>
+                </tr>
+                <tr>
+                    <td>Persisted</td>
+                    <td>
+                        <p>(Optional boolean) True to persist the segment element to the database; otherwise, False. True by default.</p>
+                        <p>Do not set this attribute to False.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ContextKey</td>
+                    <td>
+                        <p>(Optional boolean) True to establish the element as a logical record identifier (collapsing key); otherwise, False. The default value is False.</p>
+                        <p>You can only define one context key for a table.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ReferenceKey</td>
+                    <td>(Optional boolean) True to set a non-clustered index on the column and to specify the column as the context key to another table for use in assisted binding; otherwise, False. The default is False.</td>
+                </tr>
+                <tr>
+                    <td>Reparse</td>
+                    <td>(Optional boolean) True to back fill the column represented by the element; otherwise, False. The default value is False. <p class="caution">Use this attribute only in a Backfill Parser service manifest.</p></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Element</span> element is mandatory in the <MadCap:xref href="DI_Intro_FeedConfigurationXML.htm" target="" title="" alt="">FeedConfigurationXML setting</MadCap:xref> of all data-parser service manifests when one or more table columns are derived, transformed, or are used in a lookup function or plug-in logic. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p>Always declare an element in the <MadCap:xref href="DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref> section of the service manifest if you intend to use it as input to an action, function, or to specify a context key. For an input declaration, you can only specify the Name, SourceName, and Type attributes. The other attributes are invalid. Child elements are also invalid for input declarations. The same restrictions apply to an element when you declare it within the <MadCap:xref href="DI_XML_Manifest_DataConstants.htm" target="" title="" alt="">DataConstants element</MadCap:xref>.</p>
+        <p>In contrast, output declarations (<MadCap:xref href="DI_XML_Manifest_DataParserOutput.htm" target="" title="" alt="">DataParserOutput element</MadCap:xref>, <MadCap:xref href="DI_XML_Manifest_ExtensibleDataParserOutput.htm" target="" title="" alt="">ExtensibleDataParserOutput element</MadCap:xref>, and <MadCap:xref href="DI_XML_Manifest_ExpandableDataParserOutput.htm" target="" title="" alt="">ExpandableDataParserOutput element</MadCap:xref>) accept all attributes and child elements. Never set the Reparse attribute to True in your data-parser service manifest. For more information about the Reparse attribute, see <MadCap:xref href="../DI_Task_EnableBackfill.htm" target="" title="" alt="">Enable backfill parsing</MadCap:xref>.</p>
+        <p class="Label">Example</p>
+        <p>The following example first shows the format to use in the <MadCap:xref href="DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref> section.</p><pre xml:space="preserve">&lt;MessageShredderInput&gt;
+    &lt;Segment Name="PID" SourceName="PID"&gt;
+        &lt;Elements&gt;
+            &lt;Element Name="PID_5_1" /&gt;
+            &lt;Element Name="PID_5_2" /&gt;
+        &lt;/Elements&gt;
+    &lt;/Segment&gt;
+&lt;/MessageShredderInput&gt;
+</pre>
+        <p>Next, the example applies a transform action to segment element PID_5_1 in the <MadCap:xref href="DI_XML_Manifest_DataParserOutput.htm" target="" title="" alt="">DataParserOutput element</MadCap:xref> section. </p><pre xml:space="preserve">&lt;DataParserOutput&gt;
+   &lt;Segment&gt;
+      &lt;Elements&gt;
+         &lt;Element Name="FamilyName" Type="System.String" MaxLength="100"&gt;
+            &lt;ConceptId&gt;1uJSHAEy5J0eLAWfCsgBAA&lt;/ConceptId&gt;
+            &lt;Transform&gt;
+               &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+               &lt;InputParameters&gt;
+                     &lt;Parameter SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+               &lt;/InputParameters&gt;
+            &lt;/Transform&gt;
+         &lt;/Element&gt;
+      &lt;/Elements&gt;
+   &lt;/Segment&gt;
+&lt;DataParserOutput&gt;
+</pre>
+        <p>Use the same format  to specify a transform action or lookup function in the <MadCap:xref href="DI_XML_Manifest_ExtensibleDataParserOutput.htm" target="" title="" alt="">ExtensibleDataParserOutput element</MadCap:xref> and <MadCap:xref href="DI_XML_Manifest_ExpandableDataParserOutput.htm" target="" title="" alt="">ExpandableDataParserOutput element</MadCap:xref> sections. </p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_MessageShredderConfiguration.htm">MessageShredderConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

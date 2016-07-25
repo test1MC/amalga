@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1321" MadCap:lastWidth="778" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>CSVConfiguration element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="CSVConfiguration element" />Declares a collection element to define the characteristics of a comma-separated values (CSV) shredder.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="CustomizedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;<b>
+         &lt;CSVConfiguration&gt;</b>
+            &lt;RowDelimiter /&gt;
+            &lt;FieldDelimiter /&gt;
+            &lt;Quote /&gt;
+            &lt;SkipFirstRow /&gt;<b>
+         &lt;/CSVConfiguration&gt;</b>
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>CSV is a delimited data format with fields (or columns) separated by the comma character and records (or rows) terminated by new lines. Fields that contain a special character, such as a comma, new line, or double quote, must be enclosed in double quotes. </p>
+        <p>The <span class="MarkupLanguageElements">CSVConfiguration</span> element in the message-shredder service manifest redefines the default values used to shred CSV messages. <MadCap:annotation MadCap:createDate="2012-03-11T22:17:30.8445306-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post - CTP2\r\nDoes this kind of limitation need to be put in a more obvious place  -- perhaps as a note at the top of Remarks, to make it easy to find?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-11T22:21:07.8555306-07:00">Do not declare this element in the manifests of other pipeline applications.</MadCap:annotation></p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>CSV shredder characteristic</th>
+                    <th>Default value</th>
+                </tr>
+                <tr>
+                    <td>Row delimiter</td>
+                    <td>New line (\r\n)</td>
+                </tr>
+                <tr>
+                    <td>Field delimiter</td>
+                    <td>Comma (,)</td>
+                </tr>
+                <tr>
+                    <td>Quote</td>
+                    <td>Double quote (")</td>
+                </tr>
+                <tr>
+                    <td>Skip first row</td>
+                    <td>False</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;CSVConfiguration&gt;
+   &lt;RowDelimiter&gt;|&lt;/RowDelimiter&gt;
+   &lt;FieldDelimiter&gt;~&lt;/FieldDelimiter&gt;
+   &lt;Quote&gt;&lt;/Quote&gt;
+   &lt;SkipFirstRow&gt;true&lt;/SkipFirstRow&gt;
+&lt;/CSVConfiguration&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_CustomizedConfigurationXML.htm">CustomizedConfigurationXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

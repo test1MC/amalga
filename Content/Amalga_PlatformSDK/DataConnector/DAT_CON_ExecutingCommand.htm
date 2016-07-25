@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="841.3334" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:19:30.6213727-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-12T23:19:53.6184205-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-03-12T23:19:53.6340209-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T23:20:39.5718030-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Executing a command</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to execute a command using the <span MadCap:changes="1" class="codeEntity">AmalgaDbCommand</span> object in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p><MadCap:variable name="FeatureName.Amalga ADO.NET" /> uses the <span class="ForeignCodeElements">AmalgaDbCommand</span> object to execute commands against an instance of the DataConnector platform application. Depending on the type of command and desired return value, the following methods are available for executing the command in an <span class="ForeignCodeElements">AmalgaDbCommand</span> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-03-12T23:20:03.9614857-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Per MSTP, use periods in sentences that introduce tables." MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:20:22.3231565-07:00">object</MadCap:annotation><MadCap:change MadCap:changes="3">.</MadCap:change><MadCap:change MadCap:changes="2">:</MadCap:change></p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Method</th>
+                    <th>Return value</th>
+                </tr>
+                <tr>
+                    <td>ExecuteReader</td>
+                    <td>Returns an <span MadCap:changes="4" class="codeEntity">AmalgaDbDataReader</span> object.</td>
+                </tr>
+                <tr>
+                    <td>ExecuteScalar</td>
+                    <td>Returns an object for a command that returns a single scalar value.</td>
+                </tr>
+                <tr>
+                    <td>ExecuteNonQuery</td>
+                    <td>Returns an integer for a command that does not return any rows.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Figure">The <span class="ForeignCodeElements">CommandType</span> property of the <span class="ForeignCodeElements">AmalgaDbCommand</span> object specifies how the command in the <span class="ForeignCodeElements">CommandText</span> property of that object is interpreted. The following <span class="ForeignCodeElements">CommandType</span> enumeration values are available to the <span class="ForeignCodeElements">AmalgaDbCommand</span> object<MadCap:change MadCap:changes="3">.</MadCap:change><MadCap:change MadCap:changes="2">:</MadCap:change></p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Enumeration value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>TableDirect</td>
+                    <td>The name of an <MadCap:variable name="FeatureName.application view" />.</td>
+                </tr>
+                <tr>
+                    <td>Text</td>
+                    <td>An SQL statement to be executed by the DataConnector platform application.</td>
+                </tr>
+                <tr>
+                    <td>StoredProcedure</td>
+                    <td>This value is not supported by the <span class="ForeignCodeElements">AmalgaDbCommand</span> object.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example</h2>
+        <p>The following example demonstrates how to create <span class="ForeignCodeElements">AmalgaDbParameter</span> objects for an <span class="ForeignCodeElements">AmalgaDbCommand</span> object containing a SQL INSERT statement with named parameters, and then use the <span class="ForeignCodeElements">ExecuteNonQuery</span> method to execute the <span class="ForeignCodeElements">AmalgaDbCommand</span> object.</p><pre xml:space="preserve">public void InsertPatientNote(string patientID, string noteText) 
+{       
+    // Instantiate a new AmalgaDbConnection object within a using block, with
+    // a connection string returned by the GetVirtualSchemaConnectionString
+    // method.
+
+    using (AmalgaDbConnection connection = 
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString()))
+    {
+        // Create an AmalgaDBCommand object with a parameterized query that
+        // writes a record into the PatientNote read/write application view.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+                    @" INSERT INTO PatientNote (PatientPersonID, NoteText)
+                    VALUES(@PersonID, @NoteText)";
+
+        // Create parameters to safely take input for PersonID and NoteText
+        AmalgaDbParameter personIdParam = new AmalgaDbParameter("@PersonID", patientID);
+        AmalgaDbParameter noteTextParam = new AmalgaDbParameter("@NoteText", noteText);
+
+        // Add parameters to the Parameters collection of the AmalgaDbCommand object.
+        command.Parameters.Add(noteTextParam);
+        command.Parameters.Add(personIdParam);
+
+        // Write an entry into the diagnostic log providing information that the 
+        // hosted service is about to insert a record.
+        DiagLog.WriteInformation("Application {0} about to insert into PatientNote", 
+            ApplicationConfiguration.InstanceName);
+
+        // Open the connection and write to the read/write application view.
+        try
+        {
+            // Open the connection for the AmalgaDbCommand object.
+            command.Connection.Open();
+
+            // Invoke the ExecuteNonQuery method to execute the command, because
+            // the INSERT statement does not return any rows.
+            command.ExecuteNonQuery();
+
+            // Write an entry into the diagnostic log providing information that the 
+            // hosted service has successfully inserted a record.
+            DiagLog.WriteInformation("Note Inserted");
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not write data to the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", 
+                ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+    }
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

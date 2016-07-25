@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="592.6667" MadCap:lastWidth="525" MadCap:fileTags="TopicOwner.v-ccole,Status.20 - Development: under 50%,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>BatchSize setting</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="BatchSize setting" />Sets the number of rows processed during each shredder or parser cycle.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="BatchSize" Type="System.Int32"&gt;
+   &lt;DefaultValue&gt;...&lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Setting characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and maximum value</td>
+                    <td>Integer with a maximum value of 10000 rows.</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>500 rows</td>
+                </tr>
+                <tr>
+                    <td>Target applications</td>
+                    <td>
+                        <p><a href="../DI_Con_ParseSummary.htm">Data Parser</a> (service manifest), <a href="../DI_Con_ShredSummary.htm">Message Shredder</a> (service manifest)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Example</h4>
+        <p>The following example sets the batch size to 50 rows.</p><pre xml:space="preserve">&lt;Setting Name="BatchSize" Type="System.Int32"&gt;
+                &lt;DefaultValue&gt;50&lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+        <p>
+            <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm" target="" title="" alt="">Setting element</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1235" MadCap:lastWidth="878" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>EnterpriseId element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="EnterpriseId element" />Declares a collection element to configure identifiers.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;<b>
+              &lt;EnterpriseId&gt;</b>
+                &lt;EnterpriseIdAction /&gt;<b>
+             &lt;/EnterpriseId&gt; </b>
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>Array</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_EnterpriseIdAction.htm">EnterpriseIdAction</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">EnterpriseId</span> element is one of the root elements for <MadCap:xref href="DI_Intro_FeedConfigurationXML.htm" target="" title="" alt="">FeedConfigurationXML setting</MadCap:xref>. Configure at least one feed for every source identifier that you need to match using the <MadCap:variable name="FeatureName.Amalga Correlation Engine" />. In addition, any feed that requests explicit merge and move operations must engage the Correlation Engine. Typically, that includes all ADT feeds.</p>
+        <p>Declare the <span class="MarkupLanguageElements">EnterpriseId</span> element in the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p>
+        <p>The following example maps two source identifiers (patient-record and encounter level).</p><pre xml:space="preserve">    &lt;EnterpriseId&gt;
+        &lt;EnterpriseIdAction Action="StandardMapping" AnchorTable="PID"&gt;
+            &lt;InputIdentifiers&gt;
+                &lt;PatientRecordIdentifier Name="Patient"&gt;
+                    &lt;Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="MRN" /&gt;
+                    &lt;Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_3_5" /&gt;
+                &lt;/PatientRecordIdentifier&gt;
+                &lt;EncounterIdentifier Name="Encounter"&gt;
+                    &lt;Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18_1" /&gt;
+                    &lt;Domain Name="Domain" Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+                &lt;/EncounterIdentifier&gt;
+            &lt;/InputIdentifiers&gt;
+        &lt;/EnterpriseIdAction&gt;
+    &lt;/EnterpriseId&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

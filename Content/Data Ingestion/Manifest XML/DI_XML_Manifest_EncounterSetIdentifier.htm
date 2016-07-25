@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2155.333" MadCap:lastWidth="1062" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>EncounterSetIdentifier element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="EncounterSetIdentifier element" />Declares an encounter identifier.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+             &lt;EnterpriseId&gt;
+                &lt;EnterpriseIdAction TransformName="<i>String</i>" ArchorTable="<i>String</i>"&gt;
+                   &lt;InputIdentifiers&gt;<b>
+                      &lt;EncounterSetIdentifier Name="<i>String</i>"&gt;</b>
+                         &lt;Id&gt;
+                         &lt;Domain&gt;<b>						
+                      &lt;/EncounterSetIdentifier&gt;</b>
+                   &lt;/InputIdentifiers&gt;
+                &lt;/EnterpriseIdAction&gt;	
+             &lt;/EnterpriseId&gt;
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_InputIdentifiers.htm">InputIdentifiers</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Id.htm">Id</a>, <a href="DI_XML_Manifest_Domain.htm">Domain</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>(Required string) Descriptive name of the identifier, such as "encounter set".</td>
+                </tr>
+                <tr>
+                    <td>ConsistencyPolicy</td>
+                    <td>
+                        <p>(Optional string) Describes how the <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> manages consistency conflict. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>None</td>
+                                    <td>Accepts the default  set by the service.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ignore</td>
+                                    <td>Allows parsing to continue. Ignores the new parent indicated by the message.  The child continues to belong to the parent currently indicated by the database.</td>
+                                </tr>
+                                <tr>
+                                    <td>ThrowException</td>
+                                    <td>Throws an exception when an identifier consistency conflict is detected.</td>
+                                </tr>
+                                <tr>
+                                    <td>ReparentChild</td>
+                                    <td>Moves the child identifier to the parent specified in the new message.</td>
+                                </tr>
+                                <tr>
+                                    <td>	ImplicitMerge</td>
+                                    <td>Implicitly merges the conflicting parent source identifiers of the common child. In addition, merges the parents of the conflicting parents, if necessary.</td>
+                                </tr>
+                                <tr>
+                                    <td>ImplicitMergeExcludeParents</td>
+                                    <td>Implicitly merges the conflicting parent source identifiers of the common child, unless the parents of the conflicting parents are also different.  In the second case, throws an exception.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CustomMatchPolicy</td>
+                    <td>
+                        <p>(Optional string) Specifies how the <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> uses custom lookup identifiers.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>CustomMatchPolicy</td>
+                                    <td>The custom lookup identifier takes precedence.</td>
+                                </tr>
+                                <tr>
+                                    <td>DeterministicMatchPreferred</td>
+                                    <td>The deterministic matched identifier takes precedence.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Options</td>
+                    <td>
+                        <p>(Optional string) Specifies how and when the <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> writes identifiers to the azAEID database.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Default</td>
+                                    <td> Writes any configured compound identifier that does not already exist to the azAEID database.</td>
+                                </tr>
+                                <tr>
+                                    <td>DoNotWriteExternalId </td>
+                                    <td>If specified, the value is used for lookups only. If the external compound identifier is not already in the database, it will not be added. A null enterprise identifier can result.</td>
+                                </tr>
+                                <tr>
+                                    <td>AllowNonTextCharacters</td>
+                                    <td> If not specified, an exception will be thrown when identifiers provided contain non-text characters (line feeds, carriage returns, tabs, and control characters). Non-text characters can cause issues when database writes occur, so this option should only be used as a last resort.</td>
+                                </tr>
+                                <tr>
+                                    <td>CompoundIdDomainFirst</td>
+                                    <td>When generating the compound identifier from the Id and Domain values, puts the domain first.</td>
+                                </tr>
+                                <tr>
+                                    <td>AllowNullDomain</td>
+                                    <td>Allows identifiers with an empty domain, in which case the compound identifier will equal the Id value.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>An encounter set is a collection of events, such as a series of visits to one or more providers. The encounter set tier (GEID) of an enterprise identifier typically has child identifiers at the EID tier. </p>
+        <p class="Label">Use patterns</p>
+        <ul>
+            <li>Use with the <a href="DI_XML_Manifest_EnterpriseIdAction.htm">StandardMapping action</a> to map a value from a feed at the encounter set tier for matching encounter set identifiers in messages at run time.</li>
+            <li>Use with the <a href="DI_XML_Manifest_EnterpriseIdAction.htm">Merge action</a> to combine identifiers.</li>
+            <li>Use with the <a href="DI_XML_Manifest_EnterpriseIdAction.htm">Reparent action</a> to move encounter set identifiers to a new patient record (parent).</li>
+        </ul>
+        <p class="Label">Constraints</p>
+        <ul>
+            <li>Declare the <span class="MarkupLanguageElements">EncounterSetIdentifier</span> element n the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.Do not declare this element in the manifests of other pipeline applications.</li>
+            <li>Specify zero or one <span class="MarkupLanguageElements">EncounterSetIdentifier</span> element for the standard mapping action.</li>
+            <li>Use the strings "oldPatient" and "newPatient" as <span class="MarkupLanguageElements">Name</span> attribute values to configure a <a href="DI_XML_Manifest_EnterpriseIdAction.htm">MergePatient action</a>.</li>
+        </ul>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;EnterpriseIdAction Action="StandardMapping" AnchorTable="PID"&gt;
+   &lt;InputIdentifiers&gt;
+     &lt;EncounterSetIdentifier&gt;
+         &lt;Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18"/&gt;
+         &lt;Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" /&gt;
+       &lt;/EncounterSetIdentifier&gt;
+   &lt;InputIdentifiers&gt;
+&lt;EnterpriseIdAction&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

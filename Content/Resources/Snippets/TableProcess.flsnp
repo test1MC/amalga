@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="141" MadCap:lastWidth="751" MadCap:conditions="Production.StyleMaster,Production.doNOTbuild" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <table class="informal" style="border-left-style: none;border-left-width: 0px;border-left-color: #ffffff;border-right-style: none;border-right-width: 0px;border-right-color: #ffffff;border-top-style: none;border-top-width: 0px;border-top-color: #ffffff;border-bottom-style: none;border-bottom-width: 0px;border-bottom-color: #ffffff;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col MadCap:conditions="Production.PrintOnly" />
+            <thead>
+                <tr class="informal">
+                    <th class="informal2">
+                        <MadCap:annotation MadCap:createDate="2009-09-16T12:51:16.2921788-07:00" MadCap:creator="v-padenc@REDMOND" MadCap:initials="CJW" MadCap:comment="TO USE THIS TABLE TEMPLATE:&#160;\r\n1. Open your topic. \r\n2. Select Insert &gt; Snippet and select this snippet file. \r\n3. In your topic, right-click the inserted snippet and select Convert to text. \r\nThe table is now ready for your updates!&#160;You can enter text, and add rows and columns. \r\n\r\nTo remove the gridlines on inserted columns and rows, select the columns or rows, and apply the td.informal style. " MadCap:editDate="2010-02-23T22:22:46.6458750-08:00" MadCap:editor="v-ciwyco@REDMOND">Process</MadCap:annotation> step</th>
+                    <th class="informal2">Description</th>
+                    <th class="informal2">Page</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="informal">
+                    <td class="informal">1. </td>
+                    <td class="informal">&#160;</td>
+                    <td class="informal">&#160;</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">2. </td>
+                    <td class="informal">&#160;</td>
+                    <td class="informal">&#160;</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">3. </td>
+                    <td class="informal">&#160;</td>
+                    <td class="informal">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

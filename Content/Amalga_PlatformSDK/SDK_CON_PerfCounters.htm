@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="3779" MadCap:lastWidth="800" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.7 - Editing issues resolved,Personas.Elvis: App Dev">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Performance counters</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="performance counter categories;performance counters;service manifests" />This topic describes performance counters, including how to define and write values to single-instance and multi-instance performance counters for hosted services.</p>
+        <p>Performance counters allow you to publish performance-related data and compare that data against acceptance criteria using performance monitoring tools, such as Doors Performance Monitor. For more information about using Doors Performance Monitor, see "<a href="http://go.microsoft.com/fwlink?LinkId=234806">Doors Performance Monitor</a>"<MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft TechNet at http://go.microsoft.com/fwlink/?LinkId=234806</MadCap:conditionalText>.</p>
+        <p>Performance counters are grouped into performance counter categories, allowing performance counters for similar applications or services, or similar functional areas, to be treated as a logical unit. A performance counter can also be instanced, allowing a performance counter to apply to a specific instance of an object, such as a thread or a logical unit.</p>
+        <p class="LabelforProcedures">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Defining" target="" title="" alt="">Defining performance counters on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Writing" target="" title="" alt="">Writing performance counters on page 1</MadCap:xref> <![CDATA[ ]]></li>
+        </ul>
+        <h2><a name="Defining"></a>Defining performance counters</h2>
+        <p>Before you can define a performance counter in the service manifest, you must first define a performance counter category to contain the counter. You can add a performance counter category to a hosted <MadCap:variable name="BrandingMS.WCF service" /> or <MadCap:variable name="BrandingMS.Doors service" /> by adding a <span class="MarkupLanguageElements">PerformanceCategory</span> element to the <span class="MarkupLanguageElements">PerformanceCategories</span> collection element in the service manifest for that hosted service. </p>
+        <p class="note">The recommended way to add performance categories to a service manifest is by using the PerfCounterCategory Collection Editor, accessed from the Manifest Editor. For more information about using the PerfCounterCategory Collection Editor, see <MadCap:xref href="SDK_CON_PerfCounterCategory_ColEditor.htm" target="" title="" alt="">PerfCounterCategory Collection Editor on page 1</MadCap:xref>.</p>
+        <p>After you have added a <span class="MarkupLanguageElements">PerformanceCategory</span> element, you can add a performance counter to that performance counter category by adding a <span class="MarkupLanguageElements">PerformanceCounter</span> element to the <span class="MarkupLanguageElements">PerformanceCategory</span> element in the service manifest.</p>
+        <p class="note">The recommended way to add performance counters to a service manifest is by using the PerfCounter Collection Editor, accessed from the PerfCounterCategory Collection Editor. For more information about using the PerfCounter Collection Editor, see <MadCap:xref href="SDK_CON_PerfCounter_ColEditor.htm" target="" title="" alt="">PerfCounter Collection Editor on page 1</MadCap:xref>.</p>
+        <p>When you add, update, or delete a performance counter category or performance counter, the <span class="MarkupLanguageElements">PerformanceCategory</span> and <span class="MarkupLanguageElements">PerformanceCounter</span> elements in the service manifest are used by <MadCap:variable name="BrandingMS.Visual Studio second use" /> to automatically generate corresponding objects based on, respectively, the System.Diagnostics.PerformanceCounterCategory and System.Diagnostics.PerformanceCounter classes. The <span class="MarkupLanguageElements">CodeName</span> attribute of the      <![CDATA[ ]]><span class="MarkupLanguageElements">PerformanceCategory</span> and <span class="MarkupLanguageElements">PerformanceCounter</span> elements determine the names of the corresponding objects generated from those elements. </p>
+        <p>You can use these automatically generated objects to programmatically read and write performance counter information from within your hosted <MadCap:variable name="BrandingMS.WCF service" /> or <MadCap:variable name="BrandingMS.Doors service" />.</p>
+        <p>The following example illustrates a typical collection of <span class="MarkupLanguageElements">PerformanceCategory</span> and <span class="MarkupLanguageElements">PerformanceCounter</span> elements for a sample hosted WCF service.</p><pre xml:space="preserve">&lt;PerformanceCategories&gt;
+  &lt;PerformanceCategory Name="AmalgaWCFApplicationSample Performance Category" 
+    Version="" 
+    CodeName="AmalgaApplicationWCFSampleCategory" 
+    Help="Performance Category for the sample application AmalgaWCFApplicationSample" 
+    MultiInstance="No"&gt;
+    &lt;PerformanceCounter Name="Number Of Calls to IncrementPerfCounter" 
+      CodeName="NumCalls" 
+      Type="NumberOfItems32" 
+      Help="Count of Processed Calls to IncrementPerfCounter operation" /&gt;
+  &lt;/PerformanceCategory&gt;
+  &lt;PerformanceCategory Name="AmalgaWCFApplicationSample Performance Category 2" 
+    Version="" 
+    CodeName="AmalgaApplicationWCFSampleCategory2" 
+    Help="Performance Category for the sample application AmalgaWCFApplicationSample" 
+    MultiInstance="No"&gt;
+    &lt;PerformanceCounter Name="Number Of Successful Queries" 
+      CodeName="NumSuccessfulQueries" 
+      Type="NumberOfItems32" 
+      Help="Count of successful patient queries using GetTop100Patients" /&gt;
+    &lt;PerformanceCounter Name="Number Of Failed Queries" 
+      CodeName="NumFailedQueries" 
+      Type="NumberOfItems32" 
+      Help="Count of failed patient queries using GetTop100Patients" /&gt;
+  &lt;/PerformanceCategory&gt;
+&lt;/PerformanceCategories&gt;</pre>
+        <h3>Performance counter category instances</h3>
+        <p>The <span class="MarkupLanguageElements">MultiInstance</span> attribute of the <span class="MarkupLanguageElements">PerformanceCounterCategory</span> element specifies whether a performance counter category should be a single-instance or multi-instance category.</p>
+        <p>A single-instance category has only one value for each performance counter contained by that performance counter category, for the entire computer. </p>
+        <p>A multi-instance category, however, allows an unlimited number of different values for each performance counter contained in that performance counter category. Each application instance has its own set of values for the performance counters in a multi-instance category, and <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> generates an object that represents a single instance of the performance counter category, as well as a collection object that contains all instances of the performance counter category.</p>
+        <p>The object generated for a single instance of a multi-instance category is named <span class="Parameter">CodeName</span>Instance, where <span class="Placeholder">CodeName</span> is replaced with the value of the CodeName attribute for the PerformanceCategory element. Similarly, the object generated for a collection of multi-instance category instances is named <span class="Parameter">CodeName</span>Collection, where <span class="Placeholder">CodeName</span> is replaced with the value of the CodeName attribute for the PerformanceCategory element.</p>
+        <p>For example, if you define a <span class="MarkupLanguageElements">PerformanceCategory</span> element with a <span class="MarkupLanguageElements">CodeName</span> attribute value set to SampleCategory and a <span class="MarkupLanguageElements">MultiInstance</span> attribute value set to <span class="LanguageKey">False</span>, a class named SampleCategory that represents the generated global object for the single-instance performance counter category is created. However, if you define a <span class="MarkupLanguageElements">PerformanceCategory</span> element with a <span class="MarkupLanguageElements">CodeName</span> attribute value set to SampleCategory and a <span class="MarkupLanguageElements">MultiInstance</span> attribute value set to <span class="LanguageKey">True</span>, then two classes are generated:</p>
+        <ul>
+            <li>SampleCategoryInstance, representing a single instance of the multi-instance performance counter category</li>
+            <li>SampleCategoryCollection, representing a collection of SampleCategoryInstance objects indexed by the application instance.</li>
+        </ul>
+        <p>When interacting with the performance counters in the single-instance performance counter category, you can refer to the global object provided by the Microsoft.Amalga.Hosting.Service.PerfCounters class for the performance counter category, as demonstrated in the following example.</p><pre xml:space="preserve">Microsoft.Amalga.Hosting.Service.PerfCounters.SampleCategory.NumCalls.Increment();</pre>
+        <p>For multi-instance categories, however, you must instead refer to an instance of the performance counter category, identified by the application instance, contained in the global collection object provided by the Microsoft.Amalga.Hosting.Service.PerfCounters class for the performance counter category, as demonstrated in the following example.</p><pre xml:space="preserve">Microsoft.Amalga.Hosting.Service.PerfCounters.SampleCategoryCollection[this].NumCalls.Increment();
+</pre>
+        <h2><a name="Writing"></a>Writing performance counters</h2>
+        <p>You can either write the value of a performance counter directly, by setting the RawValue property of the PerformanceCounter class that represents the performance counter, or you can use the various increment and decrement methods, as appropriate, provided by the PerformanceCounter class. </p>
+        <p>The following example increments the NumCalls performance counter, in the SampleCategory performance counter category, by using the PerformanceCounterCategory and PerformanceCounter classes automatically generated from the corresponding <span class="MarkupLanguageElements">PerformanceCategory</span> and <span class="MarkupLanguageElements">PerformanceCounter</span> elements in the service manifest for the hosted WCF service.</p><pre xml:space="preserve">public void IncrementPerfCounter() 
+{ 
+    // Increment the performance counter provisioned for the application instance 
+    // from its declaration in the service manifest of a hosted WCF service project.
+    // The PerformanceCounterCategory and PerformanceCounter classes for the performance counter are
+    // automatically generated from the corresponding PerformanceCategory and PerformanceCounter 
+    // elements in the service manifest.
+    // This example attempts to increment the NumCalls performance counter, in the 
+    // SampleCategory single-instance performance counter category.
+    try
+    {
+        Microsoft.Amalga.Hosting.Service.PerfCounters.SampleCategory.NumCalls.Increment();
+    }
+    catch (Exception ex)
+    {
+        // Write the exception in the Amalga diagnostic log.
+        DiagLog.WriteException(ex, "Could not increment performance counter");
+ 
+        // Write an error entry into the event log for the hosted application.
+        // An administrator will be able to see and monitor this error event in Event Viewer.
+        EventLog.WriteErrorEntry(10001, "Error occured in application " + 
+            ApplicationConfiguration.InstanceName.ToString() + 
+            ": {0} {1}", ex.Message, ex.StackTrace);
+    }
+}
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_PerfCounter_ColEditor.htm" target="" title="" alt="">PerfCounter Collection Editor on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_PerfCounterCategory_ColEditor.htm" target="" title="" alt="">PerfCounterCategory Collection Editor on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

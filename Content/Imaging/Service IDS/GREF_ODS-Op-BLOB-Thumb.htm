@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1499" MadCap:lastWidth="642" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Image Delivery server" /> application operation</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the availability of the application, process flow, communication, and data access for the <MadCap:variable name="Imaging.Image Delivery server" /> application (<MadCap:variable name="Imaging.IDA" />).</p>
+        <p>The IDA provides access to the following:</p>
+        <ul>
+            <li><MadCap:variable name="Imaging.DICOM" /> BLOB data</li>
+            <li>Thumbnail images</li>
+        </ul>
+        <h2>Operational overview</h2>
+        <p>An instance of the <MadCap:variable name="Imaging.IDA" /> provides two web services and a Doors service.</p>
+        <ul>
+            <li><MadCap:variable name="Imaging.IDA SOAP WCF service" />
+            </li>
+            <li><MadCap:variable name="Imaging.IDA REST (service)" />
+            </li>
+            <li><MadCap:variable name="Imaging.IDA REST service" />
+            </li>
+        </ul>
+        <h2>Process flow</h2>
+        <p>The <MadCap:variable name="Imaging.IDA" /> accesses <MadCap:variable name="Imaging.DICOM" />&#160;BLOB data. The application facilitates the following process flow.</p>
+        <ol>
+            <li>A web part, such as the <MadCap:variable name="Imaging.Image Viewer" /> viewer web part, gets the identifier for the site where a selected study is stored via <MadCap:variable name="BrandingHSG.Amalga Short" /> part-to-part communication.</li>
+            <li>The web part gets the <MadCap:variable name="Imaging.IDA" /> instance ID for the site where the selected study is stored.</li>
+            <li>The web part resolves the <MadCap:variable name="Imaging.Image Delivery server" /> SOAP service endpoint via <MadCap:variable name="BrandingHSG.Amalga Short" /> topology web services.</li>
+            <li>The web part requests a security reference from the <MadCap:variable name="Imaging.IDA" /> SOAP endpoint for the selected study.</li>
+            <li>The <MadCap:variable name="Imaging.IDA" /> checks user privileges, and if the privileges are sufficient, returns the reference to the web part and the full URL&#160;address of <MadCap:variable name="TechnicalTerms.REST" /> service.<p class="note">The SOAP service will return HTTP error code 500 if a request fails.</p></li>
+            <li>The web part uses the security reference to request BLOB data (including images, non-images, and thumbnails) for the selected study via the <MadCap:variable name="Imaging.Image Delivery server" /> <![CDATA[ ]]><MadCap:variable name="TechnicalTerms.REST" /> service.</li>
+            <li>The <MadCap:variable name="Imaging.IDA" /> returns the requested image in a streaming transfer mode.</li>
+        </ol>
+        <h2>Application input and output</h2>
+        <p>The application takes a unique site ID and returns the following study information.</p>
+        <ul>
+            <li><span class="Label"><MadCap:variable name="Imaging.DICOM" style="mc-tag-and-class: ;" /> blob retrieval</span>
+                <p>The <MadCap:variable name="Imaging.IDA" /> retrieves and streams data files from the BLOB database for a given one internal instance identifier. An instance ID cane be the imageUUID or non-ImageUUID.</p>
+            </li>
+            <li><span class="Label">Thumbnail request</span>
+                <p>The <MadCap:variable name="Imaging.IDA" /> returns thumbnails for a one internal instance identifier.</p>
+            </li>
+        </ul>
+        <h2>Communication</h2>
+        <p>The <MadCap:variable name="Imaging.IDA" /> service communicates to other applications using the following methods:</p>
+        <ul>
+            <li><MadCap:variable name="Imaging.IDA SOAP WCF (service)" class="Label" />
+                <p>The<MadCap:variable name="Imaging.IDA SOAP WCF (service)" /> accesses the Imaging entities through the <MadCap:variable name="Applications.Data Connector (application)" /> service.</p>
+            </li>
+            <li><span class="Label"><MadCap:variable name="Imaging.IDA Core service" /></span>
+                <p>The <MadCap:variable name="Imaging.Image Delivery server" /> application  core service accesses the metadata at the central site using entities; that is the core service access the data through the<MadCap:variable name="Applications.Data Connector (application)" /> service.</p>
+                <p>The <MadCap:variable name="Imaging.IDA Core service" /> will access BLOB data through the <MadCap:variable name="Imaging.DICOM" /> data connector libraries. BLOB data may be stored on an external PACS, in <MadCap:variable name="BrandingMS.Doors Azure" /> storage, or on the <MadCap:variable name="Imaging.DICOM Image Storage server" /> (<MadCap:variable name="BrandingHSG.AmalgaV2" />) server.</p>
+            </li>
+            <li><span class="Label"><MadCap:variable name="Imaging.IDA REST service" /></span>
+                <p><MadCap:variable name="Imaging.IDA REST service" /> returns the appropriate http error codes if a request fails. The <MadCap:variable name="Imaging.IDA REST service" /> interfaces are WADO (Web Access to <MadCap:variable name="Imaging.DICOM" /> Persistent Objects)-style.</p>
+            </li>
+            <li><span class="Label"><MadCap:variable name="Imaging.Image Delivery server" />  application interprocess library</span>
+                <p><MadCap:variable name="Imaging.Image Delivery server" /> application  services also talk to each other via an IDA interprocess library.</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="GREF-IDs-Structure.htm">Application structure on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LND-IDS.htm">Image Delivery Application on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

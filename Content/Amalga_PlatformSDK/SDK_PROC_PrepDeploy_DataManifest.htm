@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1213" MadCap:lastWidth="381" MadCap:fileTags="TopicType.Procedure,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,TopicOwner.v-dennk">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Prepare data manifest for deployment</h1>
+        <p class="abstract">
+            <MadCap:keyword term="data manifests" />This topic describes how to set properties for the virtual schema in a data manifest, as well as properties for the data manifest itself, to prepare the data manifest for deployment.</p>
+        <p>Once all of your views are complete, you must specify the publisher name for the virtual schema contained in the data manifest (.edmx) file, and then set properties on the data manifest file itself, to prepare the data manifest for deployment. </p>
+        <p class="LabelforProcedures">To prepare a data manifest for deployment</p>
+        <ol>
+            <li>In Solution Explorer, right-click the data manifest (.edmx) file for the hosted application, and then click <span class="UIElementAction">Open</span>.</li>
+            <li>Right-click an empty area in the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />, and then click&#160;<span class="UIElementAction">Properties</span>.</li>
+            <li>In the Properties window, set the value of the <span class="UIElementAction">Publisher</span> property to the desired name of the publisher.</li>
+            <li>In Solution Explorer, select the data manifest (.edmx) file.</li>
+            <li>
+                <p>In the Properties window, set the following properties to the appropriate values, as described.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Property name</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>Build Action</td>
+                            <td>Embedded Resource</td>
+                        </tr>
+                        <tr>
+                            <td>Copy to Output</td>
+                            <td>Copy Always</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Tool</td>
+                            <td>Nothing</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Tool Namespace</td>
+                            <td>Nothing</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>The following screenshot shows the Properties window for a typical data manifest.</p>
+                <p class="Figure">
+                    <img src="Images/DataManifestProperties.jpg" />
+                </p>
+            </li>
+            <li>Save the data manifest file.    <![CDATA[ ]]></li>
+        </ol>
+        <p>The virtual schema and supporting objects will be deployed when the application is deployed. </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

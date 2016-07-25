@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="846" MadCap:lastWidth="629" MadCap:fileTags="TopicType.Procedure,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="7" MadCap:timestamp="2011-12-07T21:12:01.9888255-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2011-12-07T21:12:05.2624255-08:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Remove<MadCap:change MadCap:changes="7"> <![CDATA[ ]]></MadCap:change>bad CSS links from template</h1>
+        <p MadCap:changes="8"><b class="CHANGEME" MadCap:changes="8">[Delete <MadCap:annotation MadCap:createDate="2011-09-06T19:18:16.5951987-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Use Imperative verb with sentence case, as in &quot;Develop an Amalga application&quot;.\r\nFor more information, see the entry in the DDUE Style Guide on:How-To topic types.\r\n\r\nNext paragraph is a color-specific persona line.\r\n   Default style: p.PersonaAll \r\n   Revise to select a specific persona." MadCap:editor="v-labenn" MadCap:editDate="2011-09-06T19:18:32.5874243-07:00" MadCap:changes="8">this</MadCap:annotation> line]</b>
+        </p>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to remove bad CSS links from your Amalga templates.</p>
+        <p>You may encounter a path issue when you create new topics with the Amalga templates. That is, your topics may not reflect the correct formatting in the doc builds.</p>
+        <p>The issue is that the style sheet links (for AmalgaMain.css) don’t “self-adjust” when you create a topic in a different folder than where the template resides. Instead of being four folders away from the template, for example, the topic might be two folders away. That’s what makes the link go "bad" when you create topics from the templates.</p>
+        <p>An extra step is required to ensure that the style sheet link stays good. When you create a topic from one of the Amalga templates, remember to re-select the style sheet.</p>
+        <p class="Label">To detect bad CSS paths in topics</p>
+        <ol>
+            <li>Make sure that your primary target does not specify a master style sheet.</li>
+            <li>	In Project Organizer, expand <b>Targets</b>, right-click the desired target, and then select <b>Make Primary</b>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p>The screenshot below shows Hg-Master-Web as the primary target. Now the topic formatting in the default editor (XML Editor) looks “off” if the CSS link is bad. Note: The primary target is a local setting for each Flare project; it’s not stored in Source Control.</p>
+        <p>&#160;</p>
+        <p class="Label">To fix bad CSS paths in topics</p>
+        <p>1.	Make sure your primary target is one without a master stylesheet (such as Hg-Master-Web for the AmalgaV3-wking project; see above).</p>
+        <p>2.	For one or more topics:</p>
+        <p>-	Right-click, select Properties, and then select AmalgaMain as the CSS.</p>
+        <p>3.	For the current topic:</p>
+        <p>a.	Right-click the HTML block on the left of the topic and select Stylesheet Links.</p>
+        <p>&#160;</p>
+        <p>b.	 In the dialog box, remove the current link on the left and add the AmalgaMain.css link listed on the right.</p>
+        <p>&#160;</p>
+        <p>4.	Verify formatting in Flare and in the final build.</p>
+        <p>&#160;</p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2011-08-19T09:32:58.9618607-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="(Optional). \r\nUse one proedcure per topic" MadCap:editor="v-ciwyco" MadCap:editDate="2011-08-31T01:34:18.8645010-07:00">Section heading</MadCap:annotation>
+        </h2>
+        <p class="LabelforProcedures">[<MadCap:annotation MadCap:createDate="2011-09-01T11:41:30.2319366-07:00" MadCap:creator="hgross" MadCap:initials="HG" MadCap:comment="Should indicate that this and the numbered steps should be a snippet in almost all cases" MadCap:editor="hgross" MadCap:editDate="2011-09-01T11:41:54.4443576-07:00">Procedure</MadCap:annotation> heading</p>
+        <ol>
+            <li>Numbered step</li>
+            <li>Numbered step<ol style="list-style-type: lower-alpha;"><li>First  indent</li><li>First indent<ol style="list-style-type: lower-roman;"><li>Second level indent</li><li>Second level indent]</li></ol></li></ol></li>
+        </ol>
+        <p>[More text]</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2011-11-08T14:47:15.2673812-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Optional -- use this section and the items under it only as needed." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-08T14:47:16.3154860-08:00">See also</MadCap:annotation>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

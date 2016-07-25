@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="277" MadCap:lastWidth="692" MadCap:conditions="Production.StyleMaster,Region.US" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <body>
+        <p class="Label">
+            <MadCap:annotation MadCap:createDate="2010-07-23T11:19:35.8709632-07:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="CJW" MadCap:comment="Applies only to Medical Imaging Module.\r\nDonna-Bea wanted this to say: Notice Regarding Use in the United States, but instead, the whole t opic is conditioned for Region.US.  \r\nWhen the fm-copyrightPage.htm is produced with Region.US excluded, this text does not show.  The frontmatter-copyrightText.flsnp is not so smart. " MadCap:editDate="2011-06-13T14:45:02.6658619-07:00" MadCap:editor="v-ciwyco">Notice </MadCap:annotation>
+        </p>
+        <p class="Copyright">Pertaining to <MadCap:variable name="BrandingHSG.Amalga Long TM" />:</p>
+        <p class="Copyright">Caution: Federal law (US) restricts this device to sale by or on the order of a physician.</p>
+        <p class="sixpointline">&#160;</p>
+        <p class="Copyright">Indications for Use:</p>
+        <p class="sixpointline">&#160;</p>
+        <p class="Copyright">The <MadCap:variable name="BrandingHSG.Amalga Long TM" /> is intended for the viewing of medical images acquired from various medical imaging modalities. Images and data can be stored, communicated, and displayed within the system or across computer networks at distributed locations. Images reviewed using the <MadCap:variable name="BrandingHSG.Amalga Long TM" /> should not be used for primary image interpretations. Typical users of this device are trained professionals, including but not limited to physicians, radiologists, nurses, and medical technicians.</p>
+        <p class="Copyright">&#160;</p>
+    </body>
+</html>

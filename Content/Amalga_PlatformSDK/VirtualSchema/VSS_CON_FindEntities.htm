@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1766.667" MadCap:lastWidth="468.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Finding entities</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">[Abstract]This topic describes how to find entities using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can find entities by invoking the <span class="codeEntity">FindEntities</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">FindEntities</span>, you must specify an <span class="codeEntity">EntityQuery</span> object that represents the information that the operation uses to find entities.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the EntityQuery object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the EntityQuery object</h2>
+        <p>  The EntityQuery object represents the information used by the FindEntities operation to find entities.  The EntityQuery object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EntityIds</td>
+                    <td>A collection of System.Guid objects representing the globally unique identifiers (GUIDs) of the entities to find.</td>
+                </tr>
+                <tr>
+                    <td>EntityNames</td>
+                    <td>A collection of EntityName objects representing the names of the entities to find.</td>
+                </tr>
+                <tr>
+                    <td>IncludePrivateEntities</td>
+                    <td>A Boolean indicating whether private entities should be included when finding entities.</td>
+                </tr>
+                <tr>
+                    <td>Includes</td>
+                    <td>
+                        <p>A collection of strings representing additional objects to be included in the results.</p>
+                        <p class="note">The following strings are ignored if included in the collection for this property, because these objects are included by default.
+                        <ul><li>"Concepts"</li><li>"EntityProperties.Concepts"</li></ul></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InstanceName</td>
+                    <td>A string representing the name of the virtual schema instance to use when finding entities.</td>
+                </tr>
+                <tr>
+                    <td>Namespace</td>
+                    <td>A string representing the namespace to use when finding entities.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>The operation uses the logical disjunction of the properties of the EntityQuery object for which a value is specified to determine the criteria by which entities are identified and returned by the operation. In other words, the set of properties for the EntityQuery object are treated as a logical OR operation when FindEntities is invoked.</p>
+        <p>When the operation is invoked,  the following steps are performed to define the filtering for an object query:</p>
+        <ol>
+            <li>If a value is specified for the InstanceName property of the EntityQuery object, then any Entity objects contained by an EntityContainer object for which the value of the Name property matches the specified value are included in the query.</li>
+            <li>If a value is specified for the Namespace property of the EntityQuery object, then any Entity objects for which the value of the Schema property matches the specified value are included in the query.</li>
+            <li>If the EntityIds property of the EntityQuery object contains one or more entity identifiers, then any Entity objects for which the value of the Id property matches the specified value are included in the query.</li>
+            <li>If the EntityNames property of the EntityQuery object contains one or more specified entity names, then any Entity objects for which the value of the Name property matches each specified value are included in the query.</li>
+            <li>If the Includes property of the EntityQuery object contains one or more specified class names, then any objects for which the class name matches each specified value are used to filter the query.</li>
+            <li>If the IncludePrivateEntities property of the EntityQuery object is set to false, then only those Entity objects for which the IsPrivate property is set to false are included in the query.</li>
+        </ol>
+        <p>The operation performs the object query and returns the results as a collection of Entity objects, ordered by the name of the virtual schema, the name of the namespace, and then the name of the entity. For more information about the properties of the Entity object, see <MadCap:xref href="VSS_CON_CreateEntity.htm" target="" title="" alt="">Creating an entity on page 1</MadCap:xref></p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

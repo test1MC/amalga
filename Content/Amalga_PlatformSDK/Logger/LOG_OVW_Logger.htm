@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2387" MadCap:lastWidth="784" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Logger</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the Logger platform feature, which provides logging and auditing functionality for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The Logger platform feature, and its supporting objects, are used to provide high-performance logging, auditing, and performance tracking functionality for <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. Logger integrates with Event Tracing for Doors (ETW), providing several ETW providers to support diagnostic, performance, and audit logging, as well as supporting conventional Doors event logging. </p>
+        <p>The Logger platform feature supports the following logging and auditing functionality:</p>
+        <ul>
+            <li>
+                <p>Event logging</p>
+                <p>A set of Doors event logs, with associated event channels defined by <MadCap:variable name="BrandingHSG.Amalga Short" />, are maintained on each physical host and can be used to store event log entries for  hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications. For more information about event logging, see <MadCap:xref href="../LOG_CON_EventLog.htm" target="" title="" alt="">Event logging on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Diagnostic logging</p>
+                <p>An ETW provider is defined by <MadCap:variable name="BrandingHSG.Amalga Short" /> for each instance of a hosted <MadCap:variable name="BrandingMS.WCF service" /> or <MadCap:variable name="BrandingMS.Doors service" />, which locally stores diagnostic log entries in an ETW session until they can be written to the DiagLogEntry table in the AmalgaLog database. The diagnostic log is used to store informational, warning, error, and exception information, and can be managed through the <MadCap:variable name="FeatureName.Management Console second use" /> for each hosted service. For more information about diagnostic logging, see <MadCap:xref href="LOG_CON_DiagLog.htm" target="" title="" alt="">Diagnostic logging on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Performance logging</p>
+                <p>An ETW provider is defined by <MadCap:variable name="BrandingHSG.Amalga Short" /> for each instance of a hosted <MadCap:variable name="BrandingMS.WCF service" />, which locally stores performance log entries in an ETW session until they can be written to the PerfLogEntry table in the AmalgaLog database. The performance log is used to store start and stop information for performance scenarios and events, and can be managed through the <MadCap:variable name="FeatureName.Management Console second use" /> for each hosted service. For more information about performance logging, see <MadCap:xref href="LOG_CON_PerformanceLog.htm" target="" title="" alt="">Performance logging on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Audit logging</p>
+                <p>An ETW provider is defined by <MadCap:variable name="BrandingHSG.Amalga Short" /> for each instance of a hosted <MadCap:variable name="BrandingMS.WCF service" /> or <MadCap:variable name="BrandingMS.Doors service" />, which locally stores audit log entries and audit details in an ETW session until they can be written to the Audit and AuditDetail tables, respectively, in the <MadCap:variable name="Databases.AmalgaAudit" /> database. The audit log is used to store information about user actions. For more information about audit logging, see <MadCap:xref href="LOG_CON_AuditLog.htm" target="" title="" alt="">Audit logging on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <h2>Architecture</h2>
+        <p>The Logger platform feature includes several distributed components, spread across different services:</p>
+        <ul>
+            <li>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2012-03-13T11:13:52.5094310-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="First use in case this topic gets split in two. Leave as is for CTP2" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-13T11:14:23.2026470-07:00">Event</MadCap:annotation> Tracing for Doors (ETW) providers, which interact with ETW to write trace information for the diagnostic log, performance log, and audit log, included in the shared runtime. </p>
+                <p>An event log provider, which interacts with the Doors event logging API to write event messages to the Doors event logs managed by <MadCap:variable name="BrandingHSG.Amalga Short" />, included in the shared runtime.</p>
+            </li>
+            <li>
+                <p>Helper classes, which interact with the ETW providers to write trace information to ETW sessions and with the event log provider to write event messages to Doors event logs, included in the hosting runtime. </p>
+                <p>Platform features directly interact with the ETW providers and event log provider in the shared runtime, while platform applications and hosted applications use the helper classes included in the hosting runtime.</p>
+            </li>
+            <li>
+                <p>An ETW controller, which interacts with ETW to create ETW sessions and associate ETW providers with those ETW sessions, as part of the physical host service. </p>
+                <p>Buffering and logging take place within ETW sessions, which accept ETW event messages from ETW providers and create a trace file. The Logger platform feature works with the PhysicalHostService service, included on each computer in an <MadCap:variable name="BrandingHSG.Amalga Short" /> installation, to establish ETW sessions into which the ETW providers can write trace information. </p>
+            </li>
+            <li>
+                <p>ETW consumers, which interact with the ETW sessions to consume trace messages and store them in the AmalgaLog and <MadCap:variable name="Databases.AmalgaAudit" /> databases.</p>
+                <p>The ETW consumers take the trace messages from the disk-based buffers for ETW sessions and either write the trace messages directly to the appropriate database or use the LoggerService hosted service to upload the trace messages to a server that can write the trace messages to the appropriate database. Physical hosts that run platform features are expected to have direct access to the data host that contains the AmalgaLog and <MadCap:variable name="Databases.AmalgaAudit" /> databases, while physical hosts that run platform applications and hosted applications are not expected to have such direct access and must instead use the LoggerService hosted service to upload ETW event messages.</p>
+            </li>
+            <li>
+                <p>The Logger platform feature itself, with which the physical host service interacts to upload ETW event messages to the AmalgaLog and <MadCap:variable name="Databases.AmalgaAudit" /> databases from servers in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology that do not have direct access to those databases.</p>
+            </li>
+        </ul>
+        <p>The following <MadCap:annotation MadCap:createDate="2012-03-13T12:36:47.6542027-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post-CTP2:  Consider moving the blocks in this diagram so that they are one over the other.  The text is so small and fuzzy it is hard to read. even with the awkward linkage, I think it would be better." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-13T12:38:28.2212887-07:00">diagram</MadCap:annotation> illustrates the architecture and data flow of logging and auditing in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="../Images/LoggerArchitectureAll.png" style="width: 784px;height: 435px;" />
+        </p>
+        <p>The Logger platform feature provides an architecture in which all logging and auditing entries are stored locally, and then uploaded and written to the <MadCap:variable name="Databases.AmalgaAudit" /> and AmalgaLog databases on a periodic basis. </p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_OVW_InteractingLogger.htm" target="" title="" alt="">Interacting with Logger on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_NAV_Reference.htm" target="" title="" alt="">Logger Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_OVW_Concepts.htm" target="" title="" alt="">Logger concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

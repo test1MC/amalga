@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="EditingTags.4 - Ready for Writer,ReleaseTarget.CTP1,TopicType.Procedure,Status.70 - Complete,Personas.Carlos: IT Admin,TopicOwner.v-ssiera" MadCap:lastBlockDepth="4" MadCap:lastHeight="3645" MadCap:lastWidth="628" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Multiple server platform installation</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="caution"><strong>Interoperation with Amalga UIS 2009</strong>
+            <br />If you plan to implement <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> and interoperate with <MadCap:variable name="BrandingHSG.AmalgaV2" />, there is information available to assist in deploying such a configuration. Go to <a href="http://connect.microsoft.com/">http://connect.microsoft.com</a> and navigate to the  download page. Your sign-in to this site was included in your invitation to participate in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. Download the "SxS" package, which will contain the appropriate resources.</p>
+        <p>The following procedures will install <MadCap:variable name="BrandingHSG.Amalga Short" /> features to replicate the topology in the next section. The commands are organized by logical host. The installation procedures contain only the Setup commands to match the sample topology.</p>
+        <p class="note">For detailed information about the Setup commands and parameters, see the <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference. </MadCap:xref></p>
+        <p>Execute the following procedures and then proceed <MadCap:annotation MadCap:createDate="2011-11-17T16:16:26.2829853-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="post-Refresh, add this link to the See Also section?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-17T16:34:31.0481853-08:00">to</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="Install Con Applications Mini-toc.htm" target="" title="" alt="">Install applications process overview</MadCap:xref> to continue the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation.</p>
+        <ol>
+            <li>
+                <MadCap:xref href="#Install" target="" title="" alt="">Install Platform logical host features</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Install2" target="" title="" alt="">Install Applications logical host 1 features</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Install3" target="" title="" alt="">Install Applications logical host 2 features</MadCap:xref>
+            </li>
+            <li>Continue to <MadCap:xref href="Install Con Applications Mini-toc.htm" target="" title="" alt="">Install applications process overview</MadCap:xref></li>
+        </ol>
+        <p class="h8">Preparation</p>
+        <p>The following preparation must be completed before running Setup commands on the target virtual or physical machine.</p>
+        <p class="LabelforProcedures">To copy the installation media</p>
+        <ol>
+            <li>Copy the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation media to a folder on the target virtual or physical machine.</li>
+        </ol>
+        <p class="LabelforProcedures">To prepare for command execution</p>
+        <ol>
+            <li>Open a Command Prompt window with administrative rights on the target server.<br />On Doors Server 2008, click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, right-click <span class="UIElementAction">Command Prompt</span>, and then select <span class="UIElementAction">Run as administrator</span>.<br />On other operating systems, click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, and then click <span class="UIElementAction">Command Prompt</span>.</li>
+            <li>
+                <p>Run the following command, replacing <span class="placeholder">folder </span>with the path of the folder containing the copy of the installation media created in the previous copy procedure.</p>
+                <p class="code" style="font-size: 10pt;">cd <span class="placeholder">folder</span>\Platform</p>
+            </li>
+            <li>Run Setup commands as specified.</li>
+        </ol>
+        <h2><a name="Example"></a>Example installation Topology</h2>
+        <p>This example installation procedure uses the following topology as the target. The logical hosts in the <MadCap:annotation MadCap:createDate="2011-11-17T16:29:22.1367853-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="post-Refresh, would like to tweak this PNG file:\r\n\r\n&quot;AD FS&quot; (add space)\r\n&quot;DB's&quot; shouldd be &quot;DBs&quot;" MadCap:editor="v-labenn" MadCap:editDate="2011-11-17T16:30:16.2121853-08:00">diagram</MadCap:annotation> are labeled with a descriptive name followed by their designation for the Setup commands in parentheses.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="Images/MultiBoxTopology2.png" style="width: 549px;height: 430px;" />
+        </p>
+        <h2><a name="Install"></a>
+            <MadCap:annotation MadCap:createDate="2011-11-17T15:39:57.1971553-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="post-Refresh, consider breaking these up into separate topics." MadCap:editor="v-labenn" MadCap:editDate="2011-11-17T15:40:34.4027553-08:00">Install</MadCap:annotation> Platform logical host features</h2>
+        <p>The following procedure installs the <MadCap:variable name="BrandingHSG.Amalga Short" /> features on the logical host designated "Platform Logical Host" in the diagram. Each command must be run on each of the virtual or physical machines comprising the Platform Logical Host.</p>
+        <p>Parenthetical entries in the placeholders are the values used for this specific example. In general, the placeholder would be replaced by values from the locally designed topology. For example, in the following command snippet, <span class="Placeholder">LogicalHostName </span>is the generic parameter, and <span class="Placeholder">PlatformLogicalHost </span>is that parameter's value for the sample topology.</p>
+        <p class="InputTextPara">/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(PlatformLogicalHost)</span>&gt;</p>
+        <p class="note">For more descriptions of the values required for the Setup parameters, see <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To install <MadCap:variable name="BrandingHSG.Amalga Short" /> features on the Platform Logical Host</p>
+        <ol>
+            <li>
+                <p>Install the PlatformServices feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=PlatformServices /install /eula accept<br />/PlatformSSLThumbPrint=&lt;<span class="Placeholder">PlatformThumbPrint</span>&gt; <br />/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(PlatformLogicalHost)</span>&gt;<br />/LogicalHostType=NLB <br MadCap:conditions="Production.PrintOnly" />/PlatformClusterName=&lt;<span class="Placeholder">PlatformClusterName</span>&gt;  <br MadCap:conditions="Production.PrintOnly" />/SystemDBServerInstance=&lt;<span class="Placeholder">SystemDBServerInstance (DataServer2)</span>&gt;</p>
+            </li>
+            <li>
+                <p>Install the ManagementConsole feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=ManagementConsole/install /eula accept<br MadCap:conditions="Production.PrintOnly" />/AdminWebsiteClusterName=&lt;<span class="Placeholder">AdminWebsiteClusterName</span>&gt; <br MadCap:conditions="Production.PrintOnly" />/AdminWebsiteSSLThumbprint=&lt;<span class="Placeholder">AdminWebsiteSSLThumbprint</span>&gt; <br MadCap:conditions="Production.PrintOnly" />/PlatformClusterName=&lt;<span class="Placeholder">PlatformClusterName</span>&gt; <br MadCap:conditions="Production.PrintOnly" />/LogicalHostType=NLB <br />/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(PlatformLogicalHost)</span>&gt;</p>
+            </li>
+            <li>
+                <p>Install the DataPipelineStorage feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="note">Run DataPipelineStorage once on one of the machines comprising the Platform logical host.</p>
+                <p class="InputTextPara">Setup.exe /feature=DataPipelineStorage /Install /eula accept <br />/HLIDbName=&lt;<span class="Placeholder">HLIDbName</span>&gt; <br />/MessageQueueDBServer=&lt;<span class="Placeholder">MessageQueueDBServer (DataServer1)</span>&gt;  <br />/ClinicalDataDBServer=&lt;<span class="Placeholder">ClinicalDataDBServer (DataServer2)</span>&gt;</p>
+            </li>
+            <li>
+                <p>Install the ApplicationServices feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=ApplicationServices /install /eula accept <br />/ApplicationSSLThumbPrint=&lt;<span class="Placeholder">ApplicationSSLThumbPrint</span>&gt; <br />/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(PlatformLogicalHost)</span>&gt;  <br />/LogicalHostType=NLB <br />/PlatformClusterName=&lt;<span class="Placeholder">PlatformClusterName</span>&gt; <br />/ApplicationClusterName=&lt;<span class="Placeholder">ApplicationClusterName</span>&gt;</p>
+            </li>
+        </ol>
+        <h2><a name="Install2"></a>Install Applications logical host 1 features</h2>
+        <p>The following procedure installs the <MadCap:variable name="BrandingHSG.Amalga Short" /> features on the logical host designated "Applications Logical Host 1" in the diagram. Each command must be run on each of the virtual or physical machines comprising the logical Host.</p>
+        <p class="LabelforProcedures">To install <MadCap:variable name="BrandingHSG.Amalga Short" /> features on Applications Logical Host 1</p>
+        <ol>
+            <li>
+                <p>Install the ApplicationServices feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=ApplicationServices /install /eula accept <br />/ApplicationSSLThumbPrint=&lt;<span class="Placeholder">ApplicationSSLThumbPrint</span>&gt; <br />/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(AppsLogicalHost1)</span>&gt;  <br />/LogicalHostType=NLB <br />/PlatformClusterName=&lt;<span class="Placeholder">PlatformClusterName</span>&gt; <br />/ApplicationClusterName=&lt;<span class="Placeholder">ApplicationClusterName</span>&gt;</p>
+            </li>
+        </ol>
+        <h2><a name="Install3"></a>Install Applications logical host 2 features</h2>
+        <p>The following procedure installs the <MadCap:variable name="BrandingHSG.Amalga Short" /> features on the logical host designated "Applications Logical Host 2" in the diagram. Each command must be run on each of the virtual or physical machines comprising the logical Host.</p>
+        <p class="LabelforProcedures">To install <MadCap:variable name="BrandingHSG.Amalga Short" /> features on Applications Logical Host 2</p>
+        <ol>
+            <li>
+                <p>Install the ApplicationServices feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=ApplicationServices /install /eula accept <br />/ApplicationSSLThumbPrint=&lt;<span class="Placeholder">ApplicationSSLThumbPrint</span>&gt; <br />/LogicalHostName=&lt;<span class="Placeholder">LogicalHostName(AppsLogicalHost2)</span>&gt;  <br />/LogicalHostType=NLB <br />/PlatformClusterName=&lt;<span class="Placeholder">PlatformClusterName</span>&gt; <br />/ApplicationClusterName=&lt;<span class="Placeholder">ApplicationClusterName</span>&gt;</p>
+            </li>
+            <li>
+                <p>Install the ApplicationFramework feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="caution">If this step fails, there may be no error information in the <MadCap:variable name="BrandingHSG.Amalga Short" /> logs. You should use ULS Viewer or <MadCap:variable name="BrandingMS.SharePoint" /> debugging tools to research the error.</p>
+                <p class="InputTextPara">Setup.exe /feature=ApplicationFramework /install /eula accept <br />/AmalgaAdfsProviderUrl=&lt;<span class="Placeholder">AmalgaAdfsProviderUrl</span>&gt;<br />/AdfsSigningCertPublic=&lt;<span class="Placeholder">AdfsSigningCertPublic</span>&gt;  <br MadCap:conditions="Production.PrintOnly" />/ApplicationId=&lt;<span class="Placeholder">ApplicationId</span>&gt;
+<br MadCap:conditions="Production.PrintOnly" />/ApplicationVersion=&lt;<span class="Placeholder">ApplicationVersion</span>&gt;
+<br MadCap:conditions="Production.PrintOnly" />/HealthVaultPublicCert=&lt;<span class="Placeholder">HealthVaultPublicCert</span>&gt;
+<br MadCap:conditions="Production.PrintOnly" />/HealthVaultStsProviderUrl=&lt;<span class="Placeholder">HealthVaultStsProviderUrl</span>&gt;/login.aspx
+<br MadCap:conditions="Production.PrintOnly" />/PlatformServicesUrl=&lt;<span class="Placeholder">PlatformServicesUrl</span>&gt;
+<br MadCap:conditions="Production.PrintOnly" />/SharePointApplicationPort=&lt;<span class="Placeholder">SharePointApplicationPort</span>&gt;<br MadCap:conditions="Production.PrintOnly" />/SharePointApplicationSSLCert=&lt;<span class="Placeholder">SharePointApplicationSSLCert</span>&gt;
+  
+<br MadCap:conditions="Production.PrintOnly" />/StsSigningCertPublic=&lt;<span class="Placeholder">StsSigningCertPublic</span>&gt;
+<br MadCap:conditions="Production.PrintOnly" /></p>
+            </li>
+            <li>
+                <p>Install the AmalgaSharePointADFS feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=AmalgaSharePointADFS /install /eula accept<br />/ClaimsProviderRootUrl=&lt;<span class="Placeholder">ClaimsProviderRootUrl</span>&gt;
+<br />/RelyingPartyRootUrl=&lt;<span class="Placeholder">RelyingPartyRootUrl</span>&gt;
+<br />/StsSigningCertPasswordSecure=&lt;<span class="Placeholder">StsSigningCertPasswordSecure</span>&gt;
+<br />/StsSigningCertWithPrivateKey=&lt;<span class="Placeholder">StsSigningCertWithPrivateKey</span>&gt;
+<br />/StsSigningCertPublic=&lt;<span class="Placeholder">StsSigningCertPublic</span>&gt;
+</p>
+            </li>
+            <li>
+                <p><a name="HvStsInstallation"></a>Install the HealthVaultSts feature by running the following command and replacing the parameter <span class="Placeholder">placeholders </span>with values specific to the environment.</p>
+                <p class="InputTextPara">Setup.exe /feature=HealthVaultSts /install /eula accept<br />/StsApplicationSSLCert=&lt;<span class="Placeholder">StsApplicationSSLCert</span>&gt;
+<br />/StsApplicationSSLCertPasswordSecure=<br MadCap:conditions="Production.PrintOnly" /> &lt;<span class="Placeholder">StsApplicationSSLCertPasswordSecure</span>&gt;
+<br />/StsPhysicalLocation=&lt;<span class="Placeholder">StsPhysicalLocation</span>&gt;<br />/StsSigningCertWithPrivateKey=&lt;<span class="Placeholder">StsSigningCertWithPrivateKey</span>&gt;<br />/StsSigningCertPasswordSecure=&lt;<span class="Placeholder">StsSigningCertPasswordSecure</span>&gt;
+<br />/HealthVaultAppCert=&lt;HealthVaultAppCert&gt;<br />/HealthVaultAppCertPasswordSecure=<br /> &lt;<span class="Placeholder">HealthVaultAppCertPasswordSecure</span>&gt;<br />/HealthVaultPublicCert=&lt;<span class="Placeholder">HealthVaultPublicCert</span>&gt;<br />/HealthvaultApplicationId =&lt;<span class="Placeholder">HealthvaultApplicationId</span>&gt;</p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="Install Proc SingleBox Installation.htm" target="" title="" alt="">Single server platform installation</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference</MadCap:xref>
+        </p>
+    </body>
+</html>

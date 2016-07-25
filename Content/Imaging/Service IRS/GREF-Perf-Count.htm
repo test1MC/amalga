@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="417.6667" MadCap:lastWidth="629" MadCap:conditions="Features.Imaging,Region.US" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Event log  for the<MadCap:variable name="Imaging.IRS" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Image Repository Service:event log" />This topic describes event logs for the <MadCap:variable name="Imaging.Image Registry (service)" /> Service (<MadCap:variable name="Imaging.IRS" />) Event.</p>
+        <p>The following possible events will be logged in the Doors Event log.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Title	</th>
+                    <th>HTML error code</th>
+                    <th>Event ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Request unauthorized</td>
+                    <td>401	</td>
+                    <td>35002</td>
+                </tr>
+                <tr>
+                    <td>Request timeout	</td>
+                    <td>408	</td>
+                    <td>35008</td>
+                </tr>
+                <tr>
+                    <td>Service unavailable</td>
+                    <td>503	</td>
+                    <td>35021</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>	All these are communication errors that may occur when talking to the data connector, topology, and discovery services.  <MadCap:variable name="BrandingHSG.Amalga Short" /> uses the <span class="LanguageKey">EventLog</span> static class in the hosting runtime for services to log events. The system does not audit the events.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LND-IRS-Logs.htm">Image Repository Service Event Logging and Performance Counters on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../Serviceability/Events/Serv_Nav_SystemEvents.htm">System events on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

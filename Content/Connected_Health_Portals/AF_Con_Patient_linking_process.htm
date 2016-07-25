@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2036" MadCap:lastWidth="694" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Patient signup and linking process</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="patient matching: forms;PatientMatching.ascx;patient matching: default fields;patient matching: supported fields;patient matching: custom fields">
+            </MadCap:keyword>This topic describes the patient signup and linking process.</p>
+        <p>The patient signup feature integrates the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> patient signup and patient linking experience for patients accessing solutions via the patient site. Patients should be able to do patient linking after their initial sign up if they choose to or if the initial linking fails.</p>
+        <p>The patient performs the following tasks:</p>
+        <ul>
+            <li>Signup for an account</li>
+            <li>Add a new <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record</li>
+            <li>Submit a patient link request</li>
+        </ul>
+        <p class="h7">Patient signup process</p>
+        <ol>
+            <li>Patient accesses the <MadCap:variable name="Applications.patient site"></MadCap:variable> home page and clicks signup to go to the patientsignup.aspx page.</li>
+            <li>
+                <p>The patient signup page will use the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record signup control and patient match data controls.</p>
+                <p class="note">The patientsignup.aspx page contains the fields that patients are asked to complete when signing up. Fields can be hidden, but not removed, to customize that page.</p>
+            </li>
+            <li>The patient enters their <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> account and record details and other information that could be used for the patient link process and <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record creation.</li>
+            <li>On click of submit on the patient signup page, the page will post back to patientsignup.aspx</li>
+            <li>
+                <p>During post back event handling, patientsignup.aspx will do the following:</p>
+            </li>
+        </ol>
+        <blockquote>
+            <ol style="list-style-type: lower-alpha;">
+                <li>Store the patient link data in a cookie.</li>
+                <li>Inject a JScript to trigger a POST request to the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> page with CREATEACCOUNT action parameter, a call back URL and along with all data submitted by patient required for <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record creation.</li>
+            </ol>
+        </blockquote>
+        <ol MadCap:continue="true">
+            <li><MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> takes the patient through the rest of the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record creation process.</li>
+            <li>Once the process is completed (or if canceled), <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> redirects the user back to the call back URL with a status of whether the process is completed or canceled.</li>
+            <li>If the process is completed, patient link request data is read from the temporary store and is submitted as a patient link request for further processing. The patient link request submission and link process happens asynchronously behind the scene while patient can view non-hospital data, if any exists.</li>
+            <li>If the process is canceled, patient link data from the temporary store is disposed of and patient gets redirected to another informational page on what can be done. </li>
+        </ol>
+        <p class="h7">Add a <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record</p>
+        <ol>
+            <li>Patient clicks <span class="UIElementAction">Add new person</span> in the record selector.</li>
+            <li>Patient is redirected to addnewperson.aspx where they are asked to complete a form..</li>
+            <li>Patient is asked whether the information is for a current record, for a new <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record, or if they don't know.</li>
+            <li>Depending on the selection, the patient will be prompted to enter other required data for the patient link process.</li>
+            <li>On click of submit, the page will post back to addnewperson.aspx</li>
+            <li>During post back event handling, addnewperson.aspx will do the following</li>
+        </ol>
+        <blockquote>
+            <ol style="list-style-type: lower-alpha;">
+                <li>Store the patient link data  to a temporary store.</li>
+                <li>Inject a JScript to trigger a POST request to a <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> page with CREATEACCOUNT action parameter, a call back URL, and with all data submitted by patient required for <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record creation.</li>
+            </ol>
+        </blockquote>
+        <ol MadCap:continue="true">
+            <li><MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable>  takes the patient through the rest of the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> record creation process.</li>
+            <li>Once the process is completed (or if canceled), <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> redirects the user back to the call back URL with a status indicating whether the process was completed or canceled.</li>
+            <li>The patient will be taken to a list of available <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> records if they answered "I already have a record" or "I don't know" in step 3.</li>
+            <li>If the process is completed, patient link request data is read from the temporary store and is submitted as a patient link request for further processing.</li>
+            <li>If the process is canceled, patient link data from temporary store is disposed and patient gets redirected to referring page for the last selected record.</li>
+        </ol>
+        <p class="h7">Submit a Patient Link Request</p>
+        <p>The Submit a Patient Link Request process is used when the following occurs:</p>
+        <ul>
+            <li>The patient has a <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> account and record and needs to do patient linking</li>
+            <li>The auto-link process was unsuccessful</li>
+            <li>The manual link was denied</li>
+        </ul>
+        <p>&#160;</p>
+        <ol>
+            <li>After successful authentication, the patient will be able to submit a new patient link request from the patient portal, if the following criteria are met:<ol style="list-style-type: lower-alpha;"><li>System is configured for auto-linking and patient has not exceeded the maximum allowed auto link requests</li><li>System is configured for manual linking.</li><li>No patient link request is pending for staff approval.</li></ol></li>
+            <li>Patient navigates to patientmatch.aspx.</li>
+            <li>Patientmatch.aspx will use the patient match data control in non-post back mode.</li>
+            <li>Enters all required data for patient link request submission.</li>
+            <li>On click of submit, if the system is configured for auto-linking and patient has not exceeded the maximum allowed auto link requests, an async xml http request is used to interact with patient link service to submit the request and get the result.</li>
+            <li>If the patient has exceeded the limit or if the system is configured for manual linking, after the patient link request submission, the patient will be redirected to the patient dashboard page.</li>
+        </ol>
+        <p>One key benefit of this patient linking design is that the patient linking fields displayed in the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> application can handle varying amounts of patient linking data coming from the interface For example, if there are five patient linking fields on Monday, five fields show in the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> application. If a new field is available on Tuesday, any requests from Monday show five fields, and requests from Tuesday show six fields. The fields shown in the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> application are driven by the XML in the database.</p>
+        <p class="note">If a field is not in the XML, it won’t be displayed in the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="Applications.staff site" /> application that supports patient linking.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2011-11-08T14:45:59.9798532-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Optional -- use this section and the items under it only as needed." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-08T14:46:01.3589911-08:00">See also</MadCap:annotation>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

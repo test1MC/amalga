@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="879" MadCap:lastWidth="1672" MadCap:fileTags="Personas.Mahesh: DI Specialist,TopicOwner.v-ccole,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head><title>Feed acquisition: service manifest example for file format</title>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Feed acquisition: service manifest example for file format</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration as needed. For value descriptions, see <MadCap:xref href="DI_Task_AcquireApp.htm" target="" title="" alt="">Acquisition application</MadCap:xref>.</p><pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "DoorsWorker"
+                    Name="FeedAcquisition"
+                    InstanceName="AcquisitionService_LAB"
+                    Id="B1BBF8B9-8543-4C31-9E75-A1DBD70388EA"
+                    i:Version ="1.0.0.0"
+                    &gt;
+  &lt;DoorsWorkerManifest LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="NLB" HostAssembly="Microsoft.Amalga.Pipeline.FeedAcquisition.exe" /&gt;
+&lt;PerformanceCategories&gt;
+    &lt;PerformanceCategory Name="Amalga Data Acquisition Service Stats" Version="" CodeName="AcquisitionService" Help="Store the stats for Data Acquisition" MultiInstance="Yes"&gt;
+      &lt;PerformanceCounter Name="Messages Per Second" CodeName="MessagesProcessedPerSec" Type="RateOfCountsPerSecond32" Help="Records the service activity rate as the number of messages processed per second" /&gt;
+      &lt;PerformanceCounter Name="Message Process Time" CodeName="LastMessageProcessTime" Type="NumberOfItems64" Help="Records the time spent to process the last message" /&gt;
+      &lt;PerformanceCounter Name="Number of Invalid Messages" CodeName="InvalidMessageProcessedCount" Type="NumberOfItems64" Help="Records the number of invalid messages processed" /&gt;
+    &lt;/PerformanceCategory&gt;
+  &lt;/PerformanceCategories&gt;
+
+&lt;Settings&gt;
+   &lt;Setting Name="PluginConfigurationXml" Type="System.String"&gt;
+      &lt;DefaultValue&gt;
+         &lt;![CDATA[]]&gt;
+      &lt;/DefaultValue&gt; 
+   &lt;/Setting&gt; 
+   
+   &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+      &lt;DefaultValue&gt;
+         &lt;![CDATA[
+            &lt;feeds&gt;
+               &lt;feed name="LAB"&gt;
+                  &lt;receiveadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileAdapter"&gt;
+                     &lt;directory&gt;L:\Temp\FileReceive\LAB&lt;/directory&gt;
+                     &lt;searchpattern&gt;*.*&lt;/searchpattern&gt;
+                  &lt;/receiveadapter&gt;
+                  
+                  &lt;sendadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.SqlStorage"&gt;&lt;/sendadapter&gt;
+                  
+                  &lt;msgtype&gt;LAB&lt;/msgtype&gt;
+               &lt;/feed&gt;
+            &lt;/feeds&gt;
+         ]]&gt;&lt;/DefaultValue&gt;
+      &lt;/Setting&gt; 
+      
+      &lt;Setting Name="IdleConnectionTimeout" Type="System.Int32"&gt;  
+         &lt;DefaultValue&gt;5000&lt;/DefaultValue&gt;
+      &lt;/Setting&gt;
+   &lt;/Settings&gt; 
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_AcquireSummary.htm" target="" title="" alt="" style="font-weight: normal;">Feed acquisition</MadCap:xref>
+        </p>
+    </body>
+</html>

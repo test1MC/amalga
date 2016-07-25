@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Amalga architecture introduction"
+    Link="/Content/Serviceability/Architecture/Arch_Nav_Architecture_Introduction.htm">
+    <TocEntry
+      Title="Logical architecture"
+      Link="/Content/Serviceability/Architecture/Arch_Concept_Logical.htm" />
+    <TocEntry
+      Title="Data architecture"
+      Link="/Content/Serviceability/Architecture/Arch_Concept_DataPipe.htm"></TocEntry>
+    <TocEntry
+      Title="Physical architecture"
+      Link="/Content/Serviceability/Architecture/Arch_Concept_Physical.htm" />
+  </TocEntry>
+</CatapultToc>

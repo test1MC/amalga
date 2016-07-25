@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles MadCap:conditions="Default.StyleMaster,Production.StyleMaster" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <Page Name="Copy of First" Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="first" PaddingLeft="1.5in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in">
+        <Frame Flow="body" ColumnCount="1" Anchors="Left,Right,Top,Bottom" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" X="-0.2083333in" Y="-0.3125in" Right="-0.25in" Bottom="-0.4791667in" Width="620px" Height="940px">
+        </Frame>
+    </Page>
+    <Page Name="First" Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="normal" PaddingLeft="1.5in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in">
+        <Frame Flow="body" ColumnCount="1" Anchors="Left,Right,Top,Bottom" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" X="-0.2083333in" Y="-0.3125in" Right="-0.25in" Bottom="-0.4791667in" Width="" Height="">
+        </Frame>
+    </Page>
+    <Page Name="Title" Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="title" PaddingLeft="1.5in" PaddingRight="1in" PaddingTop="1.00in" PaddingBottom="1in">
+        <Frame Flow="body" ColumnCount="1" Anchors="Left,Right,Top,Bottom" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" X="-1.041667in" Y="-0.625in" Right="-0.04166667in" Bottom="-0.4791667in" Width="680px" Height="970px" FlowIndex="1">
+        </Frame>
+    </Page>
+    <Page Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="empty" PaddingLeft="1.5in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in" Name="Empty">
+    </Page>
+</PageStyles>

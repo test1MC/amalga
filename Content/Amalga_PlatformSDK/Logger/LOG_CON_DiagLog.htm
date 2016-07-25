@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1717" MadCap:lastWidth="730" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-03-12T13:40:31.2838489-07:00" MadCap:attribute="MadCap:conditions" MadCap:value="Production.doNOTbuild" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Diagnostic logging</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the architecture and overview of diagnostic logging for hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides diagnostic logging support, allowing diagnostic log entries to be written to the data host for hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications. Diagnostic logging uses Event Tracing for Doors (ETW) to buffer diagnostic log entries locally, where the Logger platform service can consume the ETW trace messages and then upload them to the data host for storage.</p>
+        <p>Diagnostic logging is used to track diagnostic information, such as informational messages, non-fatal errors, or exceptions, associated with a hosted <MadCap:variable name="BrandingMS.WCF service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" />. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Architec" target="" title="" alt="">Architecture on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with diagnostic logging on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Architec"></a>Architecture</h2>
+        <p>The following diagram illustrates the logical architecture and data flow for diagnostic logging in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="../Images/LoggerArchitectureDiag.png" />
+        </p>
+        <p>Hosted applications use the DiagLog class, provided by the hosting runtime in the Microsoft.Amalga.Hosting.Service namespace, to write various types of diagnostic log entries to an ETW session. The Logger platform feature then periodically uploads the diagnostic log entries to the AmalgaLog database, maintained by <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <h2><a name="Working"></a>Working with diagnostic logging</h2>
+        <p>By default, diagnostic logging is enabled, and set to capture warnings, errors, and exceptions, while excluding informational and verbose diagnostic log entries. You can use either the <MadCap:variable name="FeatureName.Management Console second use" /> or the Set-AmConfigurationSetting <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlet to change the diagnostic logging level for a hosted <MadCap:variable name="BrandingMS.WCF service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" />. For more information about setting the diagnostic logging level, see <MadCap:xref href="LOG_CON_DiagLog_Writing.htm" target="" title="" alt="">Writing diagnostic log entries on page 1</MadCap:xref>. </p>
+        <p>The DiagLog static object, in the Microsoft.Amalga.Hosting.Service namespace, can be used to write diagnostic log entries to the AmalgaLog database. For more information about writing diagnostic log entries, see <MadCap:xref href="LOG_CON_DiagLog_Writing.htm" target="" title="" alt="">Writing diagnostic log entries on page 1</MadCap:xref>.</p>
+        <p>Once diagnostic log entries have been written to the AmalgaLog database, you can then use Transact-SQL queries to retrieve and analyze the entries. For more information about reading diagnostic log entries, see <MadCap:xref href="LOG_CON_DiagLog_Reading.htm" target="" title="" alt="">Reading diagnostic log entries on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:changes="2">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog_Reading.htm" target="" title="" alt="">Reading diagnostic log entries on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog_Writing.htm" target="" title="" alt="">Writing diagnostic log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_OVW_Logger.htm" target="" title="" alt="">Logger on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

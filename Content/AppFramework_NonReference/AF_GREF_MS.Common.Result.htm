@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="5" MadCap:lastHeight="840.3332" MadCap:lastWidth="649.6667" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2011-11-30T01:21:13.8085164-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Common.Result entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="../DataPlatform1/Entity_Common/SummarySnippets/C.Result.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:Microsoft.Common.Result" /><span class="Label">Entity tag</span>: OBX-1</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AbnormalFlags</td>
+                    <td>OBX-8</td>
+                    <td>HL7</td>
+                    <td>Table lookup indicating the normalcy status of the result.</td>
+                </tr>
+                <tr>
+                    <td>AnalysisDateTime</td>
+                    <td>OBX-19</td>
+                    <td>HL7</td>
+                    <td>Date and time of the analysis.</td>
+                </tr>
+                <tr>
+                    <td>AnalysisDateTime_o</td>
+                    <td>OBX-19</td>
+                    <td>HL7</td>
+                    <td>Date and time offset of the analysis.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to Microsoft.Common.Encounter.EncounterID</td>
+                </tr>
+                <tr>
+                    <td>ObservationDateTime</td>
+                    <td>OBX-14</td>
+                    <td>HL7</td>
+                    <td>Date and time of the observation.</td>
+                </tr>
+                <tr>
+                    <td>ObservationDateTime_o</td>
+                    <td>OBX-14</td>
+                    <td>HL7</td>
+                    <td>Date and time offset of the observation.</td>
+                </tr>
+                <tr>
+                    <td>ObservationIdentifier</td>
+                    <td>OBX-3.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the observation.</td>
+                </tr>
+                <tr>
+                    <td>ObservationIdentifierCodingSystem</td>
+                    <td>OBX-3.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>ObservationIdentifierText</td>
+                    <td>OBX-3.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the observation.</td>
+                </tr>
+                <tr>
+                    <td>ObservationMethodIdentifier</td>
+                    <td>OBX-17.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the method or procedure by which an observation was obtained.</td>
+                </tr>
+                <tr>
+                    <td>ObservationMethodCodingSystem</td>
+                    <td>OBX-17.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system<MadCap:change MadCap:changes="1">.</MadCap:change></td>
+                </tr>
+                <tr>
+                    <td>ObservationMethodText</td>
+                    <td>OBX-17.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the method or procedure.</td>
+                </tr>
+                <tr>
+                    <td>ObservationSubID</td>
+                    <td>OBX-4</td>
+                    <td>HL7</td>
+                    <td>Observation sub-identifier used to distinguish between multiple OBX segments with the same observation identifier organized under one OBR.</td>
+                </tr>
+                <tr>
+                    <td>ObservationValue</td>
+                    <td>OBX-5</td>
+                    <td>HL7</td>
+                    <td>Value observed by the observation producer.</td>
+                </tr>
+                <tr>
+                    <td>OrderID</td>
+                    <td>OrderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to Microsoft.Common.Order.OrderID</td>
+                </tr>
+                <tr>
+                    <td>PatientID</td>
+                    <td>PatientID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to Microsoft.Common.Patient.PatientID</td>
+                </tr>
+                <tr>
+                    <td>ReferenceRange</td>
+                    <td>OBX-7</td>
+                    <td>HL7</td>
+                    <td>Lower limits, upper limits, or both.</td>
+                </tr>
+                <tr>
+                    <td>ResultID</td>
+                    <td>ResultID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the Microsoft.Common.Result entity</td>
+                </tr>
+                <tr>
+                    <td>setID</td>
+                    <td>OBX-1</td>
+                    <td>HL7</td>
+                    <td>Sequence number.</td>
+                </tr>
+                <tr>
+                    <td>UnitsCodingSystem</td>
+                    <td>OBX-6.3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>UnitsIdentifier</td>
+                    <td>OBX-6.1</td>
+                    <td>HL7</td>
+                    <td>Identifier for observation units.</td>
+                </tr>
+                <tr>
+                    <td>UnitsText</td>
+                    <td>OBX-6.2</td>
+                    <td>HL7</td>
+                    <td>Text describing the units.</td>
+                </tr>
+                <tr>
+                    <td>ValueType</td>
+                    <td>OBX-2</td>
+                    <td>HL7</td>
+                    <td>Format of the observation value.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

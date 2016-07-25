@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3471" MadCap:lastWidth="905.3333" MadCap:fileTags="TopicType.Ref_General,ReleaseTarget.CTP1,TopicOwner.v-dennk,Personas.Elvis: App Dev,Status.70 - Complete,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> features</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="service endpoint" />This topic lists the service endpoints, including identifiers and service contracts, available to <MadCap:variable name="FeatureName.Amalga SDK" /> applications from features included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The following tables list the service endpoints and service contracts for the features included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> that can be used from within <MadCap:variable name="FeatureName.Amalga SDK" /> applications.</p>
+        <h2>Services by feature</h2>
+        <p>The following table lists the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short" /> feature.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Feature</th>
+                    <th>Feature GUID</th>
+                    <th>Service</th>
+                </tr>
+                <tr>
+                    <td>Administration</td>
+                    <td>5f4e8ee7-93a7-429b-95b7-76195bebda89
+</td>
+                    <td>ClaimsIdentityService</td>
+                </tr>
+                <tr>
+                    <td>AuthorizationManagement</td>
+                    <td>c15788df-7129-49d6-ab8c-5725b9dabca7
+</td>
+                    <td>AuthorizationManagementService</td>
+                </tr>
+                <tr>
+                    <td>ExternalRegistry</td>
+                    <td>b45b10d5-5234-42ba-a23c-bd3d5d198484
+</td>
+                    <td>ExternalRegistryService</td>
+                </tr>
+                <tr>
+                    <td>Logger</td>
+                    <td>89fc4b21-c534-47dc-8f73-e1c11d516e35
+</td>
+                    <td>LoggingService</td>
+                </tr>
+                <tr>
+                    <td>QueueBinding</td>
+                    <td>2c12c6b2-5733-4a1b-b5b8-902f1dc49d3d
+</td>
+                    <td>QueueBindingService</td>
+                </tr>
+                <tr>
+                    <td>RoleManagement</td>
+                    <td>5fcff528-a2eb-49b8-b3fa-cb787ab8a035
+</td>
+                    <td>RoleManagementService</td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>7f56c879-b735-4ca0-92c9-385b6aa47343
+</td>
+                    <td>SecurityService</td>
+                </tr>
+                <tr>
+                    <td>Topology</td>
+                    <td>f70af68f-4748-4d05-8466-be26f99cf920</td>
+                    <td>TopologyService</td>
+                </tr>
+                <tr>
+                    <td>VirtualSchema</td>
+                    <td>0f5a24b0-90fa-4c89-ae75-41dd1211bf49
+</td>
+                    <td>VirtualSchemaService</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Service endpoints by service</h2>
+        <p>The following table contains the relative Uniform Resource Locator (URL) address for the service endpoints accessible from the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short" /> feature. For more information about service endpoints, see <MadCap:xref href="SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt=""> Service Endpoints and Service Contracts on page 1</MadCap:xref>.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Service</th>
+                    <th>Service GUID</th>
+                    <th>Relative URL</th>
+                </tr>
+                <tr>
+                    <td>AuthorizationManagementService</td>
+                    <td>be7c3f52-1b1a-4cd2-aab1-ae44071d3669
+</td>
+                    <td>Microsoft.Amalga.Security.AuthorizationManagement.Service.AuthorizationManagementService.svc</td>
+                </tr>
+                <tr>
+                    <td>ClaimsIdentityService</td>
+                    <td>712251c5-598c-4ca0-bc26-c789dd782f23
+</td>
+                    <td>Microsoft.Amalga.Administration.WebApplication.Identity.AmalgaClaimsIdentityService.svc
+</td>
+                </tr>
+                <tr>
+                    <td>ExternalRegistryService</td>
+                    <td>4ace3285-aa36-4d6a-bf4c-0c9b343b9e09
+</td>
+                    <td>Microsoft.Amalga.ExternalRegistry.Service.ExternalRegistryRuntime.svc</td>
+                </tr>
+                <tr>
+                    <td>LoggingService</td>
+                    <td>e06e9d17-1b1b-442a-a67f-ad48611465af
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Logging.Service.LoggingService.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QueueBindingService</td>
+                    <td>2c12c6b2-5733-4a1b-b5b8-902f1dc49d3d
+</td>
+                    <td>Microsoft.Amalga.QueueBinding.QueueBindingService.svc
+</td>
+                </tr>
+                <tr>
+                    <td>RoleManagementService</td>
+                    <td>6db84074-d91d-42cd-b1c3-2caddf1503bc
+</td>
+                    <td>Microsoft.Amalga.Security.RoleManagementService.RoleManagement.svc
+</td>
+                </tr>
+                <tr>
+                    <td>SecurityService</td>
+                    <td>ef513fa5-70d7-44ce-83ca-1adcd0963bc5
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Security.Service.SecurityService.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TopologyService</td>
+                    <td>8e5d1005-2b7a-4b3c-b258-61ff06061d39
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Topology.Service.TopologyService.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VirtualSchemaService</td>
+                    <td>51f65fb9-6d41-456b-9999-bb1f9786a669
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Data.VirtualSchema.Service.ManagementService.svc</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Service contracts by service</h2>
+        <p>The following service contracts are available from the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short" /> feature. For more information about service contracts, see <MadCap:xref href="SDK_NAV_WorkingWithServicesApps.htm" target="" title="" alt="">Interacting with  services and applications on page 1</MadCap:xref>.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Service</th>
+                    <th>Service contracts</th>
+                </tr>
+                <tr>
+                    <td>AuthorizationManagementService</td>
+                    <td>Microsoft.Amalga.Security.AuthorizationManagement.Service.IAuthorizationManagementService<br />Microsoft.Amalga.Security.AuthorizationManagement.Service.IAuthorizationRuntimeService</td>
+                </tr>
+                <tr>
+                    <td>ClaimsIdentityService</td>
+                    <td>Microsoft.Amalga.Administration.WebApplication.Identity.IAmalgaClaimsIdentityService
+</td>
+                </tr>
+                <tr>
+                    <td>ExternalRegistryService</td>
+                    <td>Microsoft.Amalga.ExternalRegistry.Service.IExternalRegistryRuntime
+</td>
+                </tr>
+                <tr>
+                    <td>LoggingService</td>
+                    <td>
+                        <p>Microsoft.Amalga.Logging.Service.ILoggingService</p>
+                        <p>Microsoft.Amalga.Logging.Service.IAuditService</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QueueBindingService</td>
+                    <td>Microsoft.Amalga.QueueBinding.Core.IQueueBindingService
+</td>
+                </tr>
+                <tr>
+                    <td>RoleManagementService</td>
+                    <td>Microsoft.Amalga.Security.RoleManagement.IRoleManagement
+</td>
+                </tr>
+                <tr>
+                    <td>SecurityService</td>
+                    <td>
+                        <p>Microsoft.Amalga.Security.Service.ISecurityDiscovery</p>
+                        <p>Microsoft.Amalga.Security.Service.ISecurityConfiguration</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TopologyService</td>
+                    <td>
+                        <p>Microsoft.Amalga.Topology.Service.IDiscoveryService</p>
+                        <p>Microsoft.Amalga.Topology.Core.Service.IDiscoveryService</p>
+                        <p>Microsoft.Amalga.Topology.GeneratedContracts.IDiscoveryService</p>
+                        <p>Microsoft.Amalga.Topology.Service.IRuntimeService</p>
+                        <p>Microsoft.Amalga.Topology.Service.IConfigurationService</p>
+                        <p>Microsoft.Amalga.Topology.Service.IDeploymentService</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VirtualSchemaService</td>
+                    <td>
+                        <p>Microsoft.Amalga.Data.VirtualSchema.Contracts.IVirtualSchemaManagementService</p>
+                        <p>Microsoft.Amalga.Data.VirtualSchema.QueryTranslator.IQueryTranslatorService</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p MadCap:conditions="Production.doNOTbuild">Troubleshooting</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">Procedures</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">XML&#160;reference</p>
+        <p MadCap:conditions="Production.doNOTbuild">Error reference</p>
+        <p MadCap:conditions="Production.doNOTbuild">Event messages</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">Technology</p>
+        <p MadCap:conditions="Production.doNOTbuild">Overview</p>
+        <p MadCap:conditions="Production.doNOTbuild">Architecture</p>
+        <p MadCap:conditions="Production.doNOTbuild">Scenarios</p>
+        <p MadCap:conditions="Production.doNOTbuild">Alternative approaches</p>
+        <p MadCap:conditions="Production.doNOTbuild">Security</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Other resources</p>
+        <p MadCap:conditions="Production.doNOTbuild">Navigation page</p>
+        <p MadCap:conditions="Production.doNOTbuild">External references</p>
+    </body>
+</html>

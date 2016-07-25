@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet conditions="Production.StyleMaster">
+    <Variable Comment="Component" Name="Administration Across Environments (AAE)">Administration Across Environments (AAE)</Variable>
+    <Variable Comment="Component" Name="Application Configuration Center (ACC)">Application Configuration Center (ACC)</Variable>
+    <Variable Name="Configuration Management System (CMS)" Comment="Feature of the Platform Admin tool." Definition="Some text">Configuration Management System (CMS)</Variable>
+    <Variable Name="e-Prep" Comment="Application that comes with Platform. Internal name only?" Definition="Some text">e-Prep</Variable>
+    <Variable Name="partner production environment" Comment="Environment for building applications and implementing HV" Definition="Some text">partner production environment</Variable>
+    <Variable Name="pre-production environment" Comment="Environment state" Definition="Some text">pre-production environment</Variable>
+</CatapultVariableSet>

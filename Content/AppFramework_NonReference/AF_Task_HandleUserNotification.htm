@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1723" MadCap:lastWidth="950" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Display a user notification</h1>
+        <p>
+            <MadCap:keyword term="user notification">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-10T10:57:18.3855009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I caught one more thing:  se the See also section, pls." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:57:33.7353009-08:00">This</MadCap:annotation> topic describes best practices for surfacing <MadCap:variable name="BrandingHSG.Amalga Short" /> user notification requests to a specified user.</p>
+        <p>A user notification is a persistent structured message that is intended to be displayed to a specific user. By default, user notifications are surfaced to the SharePoint status bar using the NotificationBanner control. </p>
+        <p>This topic describes recommended practices for developing a supplemental or replacement UI&#160;for surfacing user notifications.</p>
+        <h2>Retrieve notifications for the current user</h2>
+        <p>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/T_NotificationManager.htm">NotificationManager</a>.<a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/M_NotificationManager_GetNotifications.htm">GetNotifications()</a> method retrieves a list of <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility.NotificationDataTypeUtility/T_WebNotification.htm">WebNotification</a> objects that are intended for the current user. Each notification includes the following information:</p>
+        <ul>
+            <li>The notification message text. The text may include HTML.</li>
+            <li>The ID&#160;of the notification request whose content was used to generate the message text.</li>
+            <li>The severity of the message.</li>
+            <li>A time stamp that indicates when the notification was created in response to the notification request.</li>
+        </ul>
+        <h2>Suppress notifications of selected types</h2>
+        <p>Message suppression is an optional feature that allows individual users to select notification types that they would prefer not to see.</p>
+        <p>To support message suppression, a page element should avoid surfacing user notifications when two conditions are met:</p>
+        <ul>
+            <li>The <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_NotificationType_DisplayOptions.htm">DisplayOptions </a>of their <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a> does not specify that the user notification is <a href="../API/Ref/Microsoft.Amalga.Notification.Service/E_NotificationDisplayOptions.htm">NotSuppressable</a>. (User notifications are suppressible by default. All user notifications that are predefined by the <MadCap:variable name="FeatureName.Amalga Framework second use" /> are suppressible.)</li>
+            <li>The user has explicitly selected the <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a> for suppression.</li>
+        </ul>
+        <p>The list of suppressed notification types must be maintained on a per-user basis. For more information on creating and using user settings, see <a href="AF_Con_Configuration3.htm">Store and retrieve the value of a user setting</a>.</p>
+        <h2>Display according to message severity</h2>
+        <p>The message severity indicates the likely significance of the message for the user. Notif.ications with differences in severity may be displayed to the user in different ways.</p>
+        <p>The following table describes the recommended practices for displaying user notifications according to their severity.   <![CDATA[ ]]></p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Severity</th>
+                    <th>Description</th>
+                    <th>Display recommendation</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Reserved</td>
+                    <td>These messages should be handled by the <MadCap:variable name="FeatureName.Amalga Framework" />.</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Blocking</td>
+                    <td>The UI for blocking notifications should be modal, and should never be auto dismissed.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Important</td>
+                    <td>The UI&#160;for important notifications should not be auto dismissed.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Strong warning</td>
+                    <td>The UI for strong warnings should not be auto dismissed.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lesser warning</td>
+                    <td>No restrictions.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Information</td>
+                    <td>No restrictions.</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Success</td>
+                    <td>No restrictions.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Record notification activity</h2>
+        <p>All interactions with user notifications should be recorded in the notification store.</p>
+        <h3>Update the notification state</h3>
+        <p>Any application that handles user notification requests should use the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/M_NotificationManager_UpdateNotificationStates_1_3cf74a9b.htm">UpdateNotificationStates</a> method to record each interaction with a notification. Each update should record the notification request ID and the state of the notification.</p>
+        <p>The following notification states should be recorded as appropriate:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>NotificationState</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td>Unread</td>
+                    <td>A notification instance has been generated in response to a notification request and is still active.</td>
+                </tr>
+                <tr>
+                    <td>Read</td>
+                    <td>The notification has been displayed to the user. (This state should be accompanied by a new notification occurrence.)</td>
+                </tr>
+                <tr>
+                    <td>DismissedBySuppression</td>
+                    <td>The notification has been dismissed without user interaction.</td>
+                </tr>
+                <tr>
+                    <td>DismissedByUser</td>
+                    <td>The notification has been dismissed, unread, by the user.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Record the notification occurrence</h3>
+        <p>Any user notification that is displayed to the user should be recorded by the Web service. The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/M_NotificationManager_SaveNotifications_1_b282c948.htm">SaveNotifications</a> method sends a list of <span class="ForeignCodeElements">WebNotification</span> objects to be recorded. </p>
+        <p>The saved notifications should record the exact text that was presented to the user. If the notification text was displayed exactly as it was returned by <span class="ForeignCodeElements">GetNotifications</span>, the original <span class="ForeignCodeElements">WebNotification </span>can be passed on to the service unmodified. If the text was changed, the stored notification should reflect the changed content.</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Notification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:54:36.3954968-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:54:37.8151150-08:00">JavaScript </MadCap:annotation>API reference: Notification Manager</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.Notification.Service/E_NotificationDisplayOptions.htm">NotificationDisplayOptions</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_Configuration3.htm">Store and retrieve the value of a user setting</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

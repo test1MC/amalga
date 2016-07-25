@@ -1,0 +1,2069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef,Region.US" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>PatientMatchEditor Fields</title>
+        <link rel="stylesheet" type="text/css" href="../../../Resources/Stylesheets/Presentation.css">
+        </link>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/EventUtilities.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/Dropdown.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/script_manifold.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CheckboxMenu.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CommonUtilities.js">
+        </script>
+        <meta name="container" content="Microsoft.Amalga.AppFramework.Web.UserControls" />
+        <meta name="file" content="Fields_T_PatientMatchEditor" />
+        <meta name="outDir" content="Microsoft.Amalga.AppFramework.Web.UserControls" />
+    </head>
+    <body>
+        <input type="hidden" id="userDataCache" class="userDataStyle" />
+        <input type="hidden" id="hiddenScrollOffset" />
+        <img id="collapseImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" title="Collapse image" />
+        <img id="expandImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" title="Expand Image" />
+        <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />
+        <img id="expandAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" />
+        <img id="dropDownImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdown.gif" />
+        <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdownHover.gif" />
+        <img id="copyImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycode.gif" title="Copy image" />
+        <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycodeHighlight.gif" title="CopyHover image" />
+        <div id="header">
+            <table id="topTable" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />&#160;<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>&#160;</span><span>&#160;&#160;&#160;&#160;</span><span id="memberOptionsDropdown" class="filter" tabindex="0"><img id="memberOptionsDropdownImage" src="../../../Resources/Sandcastle/icons/dropdown.gif" />&#160;<label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All&#160;</nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label></span>
+                    </td>
+                </tr>
+            </table>
+            <div id="devlangsMenu">
+                <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+                <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+                <br />
+            </div>
+            <div id="memberOptionsMenu">
+                <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+                <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+                <br />
+                <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+                <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+                <br />
+            </div>
+            <table id="bottomTable" cellpadding="0" cellspacing="0">
+                <tr id="headerTableRow1">
+                    <td align="left"><span id="runningHeaderText"></span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow2">
+                    <td align="left"><span id="nsrTitle">PatientMatchEditor Fields</span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow3">
+                    <td align="left"><a href="T_PatientMatchEditor.htm">PatientMatchEditor Class</a>&#160; <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See&#160;Also</a>&#160;</td>
+                </tr>
+            </table>
+            <table id="gradientTable">
+                <tr>
+                    <td class="nsrBottom" background="../../../Resources/Sandcastle/icons/gradient.gif" />
+                </tr>
+            </table>
+        </div>
+        <div id="mainSection">
+            <div id="mainBody">
+                <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+                </div><font color="DarkGray"></font>
+                <p />
+                <p>The <a href="T_PatientMatchEditor.htm">PatientMatchEditor</a> type exposes the following members.</p>
+                <h1 class="heading"><span onclick="ExpandCollapse(fieldTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(fieldTableToggle, event)" tabindex="0"><img id="fieldTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Fields</span>
+                </h1>
+                <div id="fieldTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_BirthDateValidator.htm">BirthDateValidator</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            BirthDateValidator control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchHospitalAccountNumber.htm">CustomValidatorMatchHospitalAccountNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchHospitalAccountNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchHospitalAccountNumberError.htm">CustomValidatorMatchHospitalAccountNumberError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchHospitalAccountNumberError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchLast4SocialSecurityNumber.htm">CustomValidatorMatchLast4SocialSecurityNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchLast4SocialSecurityNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchLast4SocialSecurityNumberError.htm">CustomValidatorMatchLast4SocialSecurityNumberError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchLast4SocialSecurityNumberError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchMRN.htm">CustomValidatorMatchMRN</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchMRN control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchMRNError.htm">CustomValidatorMatchMRNError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchMRNError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchSocialSecurityNumber.htm">CustomValidatorMatchSocialSecurityNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchSocialSecurityNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchSocialSecurityNumberError.htm">CustomValidatorMatchSocialSecurityNumberError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchSocialSecurityNumberError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchWorkPhoneNumber.htm">CustomValidatorMatchWorkPhoneNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchWorkPhoneNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMatchWorkPhoneNumberError.htm">CustomValidatorMatchWorkPhoneNumberError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMatchWorkPhoneNumberError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMothersMaidenName.htm">CustomValidatorMothersMaidenName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMothersMaidenName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorMothersMaidenNameError.htm">CustomValidatorMothersMaidenNameError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorMothersMaidenNameError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordEmail.htm">CustomValidatorRecordEmail</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordEmail control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordEmailError.htm">CustomValidatorRecordEmailError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordEmailError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordFirstName.htm">CustomValidatorRecordFirstName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordFirstName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordFirstNameError.htm">CustomValidatorRecordFirstNameError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordFirstNameError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordHomePhoneNumber.htm">CustomValidatorRecordHomePhoneNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordHomePhoneNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordHomePhoneNumberError.htm">CustomValidatorRecordHomePhoneNumberError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordHomePhoneNumberError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordLastName.htm">CustomValidatorRecordLastName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordLastName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_CustomValidatorRecordLastNameError.htm">CustomValidatorRecordLastNameError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            CustomValidatorRecordLastNameError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_DateValidatorAdmitDate.htm">DateValidatorAdmitDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            DateValidatorAdmitDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_DateValidatorDischargeDate.htm">DateValidatorDischargeDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            DateValidatorDischargeDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_DdlMatchEthnicity.htm">DdlMatchEthnicity</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            DdlMatchEthnicity control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_DdlMatchMaritalStatus.htm">DdlMatchMaritalStatus</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            DdlMatchMaritalStatus control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_DdlRecordCountry.htm">DdlRecordCountry</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            DdlRecordCountry control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_EditButton.htm">EditButton</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            EditButton control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_EditView.htm">EditView</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            EditView control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchAdmitDate.htm">LblMatchAdmitDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchAdmitDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchAdmitDateReview.htm">LblMatchAdmitDateReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchAdmitDateReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchAdmitDateTitleReview.htm">LblMatchAdmitDateTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchAdmitDateTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchCity.htm">LblMatchCity</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchCity control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchCityReview.htm">LblMatchCityReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchCityReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchCityTitleReview.htm">LblMatchCityTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchCityTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDischargeDate.htm">LblMatchDischargeDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDischargeDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDischargeDateReview.htm">LblMatchDischargeDateReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDischargeDateReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDischargeDateTitleReview.htm">LblMatchDischargeDateTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDischargeDateTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDriversLicense.htm">LblMatchDriversLicense</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDriversLicense control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDriversLicenseReview.htm">LblMatchDriversLicenseReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDriversLicenseReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchDriversLicenseTitleReview.htm">LblMatchDriversLicenseTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchDriversLicenseTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEmail.htm">LblMatchEmail</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEmail control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEmailReview.htm">LblMatchEmailReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEmailReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEmailTitleReview.htm">LblMatchEmailTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEmailTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEthnicity.htm">LblMatchEthnicity</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEthnicity control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEthnicityReview.htm">LblMatchEthnicityReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEthnicityReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchEthnicityTitleReview.htm">LblMatchEthnicityTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchEthnicityTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHomePhone.htm">LblMatchHomePhone</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHomePhone control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHomePhoneReview.htm">LblMatchHomePhoneReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHomePhoneReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHomePhoneTitleReview.htm">LblMatchHomePhoneTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHomePhoneTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHospitalAccountNumber.htm">LblMatchHospitalAccountNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHospitalAccountNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHospitalAccountNumberReview.htm">LblMatchHospitalAccountNumberReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHospitalAccountNumberReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchHospitalAccountNumberTitleReview.htm">LblMatchHospitalAccountNumberTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchHospitalAccountNumberTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchInstruction.htm">LblMatchInstruction</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchInstruction control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchLast4SSN.htm">LblMatchLast4SSN</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchLast4SSN control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchLast4SSNReview.htm">LblMatchLast4SSNReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchLast4SSNReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchLast4SSNTitleReview.htm">LblMatchLast4SSNTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchLast4SSNTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMaritalStatus.htm">LblMatchMaritalStatus</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMaritalStatus control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMaritalStatusReview.htm">LblMatchMaritalStatusReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMaritalStatusReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMaritalStatusTitleReview.htm">LblMatchMaritalStatusTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMaritalStatusTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMRN.htm">LblMatchMRN</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMRN control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMRNReview.htm">LblMatchMRNReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMRNReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchMRNTitleReview.htm">LblMatchMRNTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchMRNTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPlaceOfBirth.htm">LblMatchPlaceOfBirth</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPlaceOfBirth control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPlaceOfBirthReview.htm">LblMatchPlaceOfBirthReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPlaceOfBirthReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPlaceOfBirthTitleReview.htm">LblMatchPlaceOfBirthTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPlaceOfBirthTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPrimaryInsurance.htm">LblMatchPrimaryInsurance</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPrimaryInsurance control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPrimaryInsuranceReview.htm">LblMatchPrimaryInsuranceReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPrimaryInsuranceReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchPrimaryInsuranceTitleReview.htm">LblMatchPrimaryInsuranceTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchPrimaryInsuranceTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSecondaryInsurance.htm">LblMatchSecondaryInsurance</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSecondaryInsurance control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSecondaryInsuranceReview.htm">LblMatchSecondaryInsuranceReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSecondaryInsuranceReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSecondaryInsuranceTitleReview.htm">LblMatchSecondaryInsuranceTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSecondaryInsuranceTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSocialSecurityNumber.htm">LblMatchSocialSecurityNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSocialSecurityNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSocialSecurityNumberReview.htm">LblMatchSocialSecurityNumberReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSocialSecurityNumberReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchSocialSecurityNumberTitleReview.htm">LblMatchSocialSecurityNumberTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchSocialSecurityNumberTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddress.htm">LblMatchStreetAddress</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddress control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddress2.htm">LblMatchStreetAddress2</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddress2 control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddress2Review.htm">LblMatchStreetAddress2Review</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddress2Review control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddress2TitleReview.htm">LblMatchStreetAddress2TitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddress2TitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddressReview.htm">LblMatchStreetAddressReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddressReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchStreetAddressTitleReview.htm">LblMatchStreetAddressTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchStreetAddressTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchWorkPhone.htm">LblMatchWorkPhone</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchWorkPhone control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchWorkPhoneReview.htm">LblMatchWorkPhoneReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchWorkPhoneReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMatchWorkPhoneTitleReview.htm">LblMatchWorkPhoneTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMatchWorkPhoneTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersIdentifier.htm">LblMothersIdentifier</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersIdentifier control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersIdentifierReview.htm">LblMothersIdentifierReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersIdentifierReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersIdentifierTitleReview.htm">LblMothersIdentifierTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersIdentifierTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersMaidenName.htm">LblMothersMaidenName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersMaidenName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersMaidenNameReview.htm">LblMothersMaidenNameReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersMaidenNameReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblMothersMaidenNameTitleReview.htm">LblMothersMaidenNameTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblMothersMaidenNameTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordCountry.htm">LblRecordCountry</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordCountry control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordCountryReview.htm">LblRecordCountryReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordCountryReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordCountryTitleReview.htm">LblRecordCountryTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordCountryTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordDateOfBirth.htm">LblRecordDateOfBirth</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordDateOfBirth control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordDateOfBirthReview.htm">LblRecordDateOfBirthReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordDateOfBirthReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordDateOfBirthTitleReview.htm">LblRecordDateOfBirthTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordDateOfBirthTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordFirstName.htm">LblRecordFirstName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordFirstName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordFirstNameReview.htm">LblRecordFirstNameReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordFirstNameReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordFirstNameTitleReview.htm">LblRecordFirstNameTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordFirstNameTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordGender.htm">LblRecordGender</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordGender control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordGenderReview.htm">LblRecordGenderReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordGenderReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordGenderTitleReview.htm">LblRecordGenderTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordGenderTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordLastName.htm">LblRecordLastName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordLastName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordLastNameReview.htm">LblRecordLastNameReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordLastNameReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordLastNameTitleReview.htm">LblRecordLastNameTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordLastNameTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordMiddleName.htm">LblRecordMiddleName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordMiddleName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordMiddleNameReview.htm">LblRecordMiddleNameReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordMiddleNameReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordMiddleNameTitleReview.htm">LblRecordMiddleNameTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordMiddleNameTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordPostalCode.htm">LblRecordPostalCode</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordPostalCode control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordPostalCodeReview.htm">LblRecordPostalCodeReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordPostalCodeReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_LblRecordPostalCodeTitleReview.htm">LblRecordPostalCodeTitleReview</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            LblRecordPostalCodeTitleReview control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RadBtnListRecordGender.htm">RadBtnListRecordGender</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RadBtnListRecordGender control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RadBtnRecordFemale.htm">RadBtnRecordFemale</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RadBtnRecordFemale control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RadBtnRecordMale.htm">RadBtnRecordMale</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RadBtnRecordMale control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RadBtnRecordUnknown.htm">RadBtnRecordUnknown</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RadBtnRecordUnknown control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorGender.htm">RequiredValidatorGender</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorGender control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorGenderError.htm">RequiredValidatorGenderError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorGenderError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordCountry.htm">RequiredValidatorRecordCountry</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordCountry control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordCountryError.htm">RequiredValidatorRecordCountryError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordCountryError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordDateOfBirth.htm">RequiredValidatorRecordDateOfBirth</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordDateOfBirth control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordDateOfBirthError.htm">RequiredValidatorRecordDateOfBirthError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordDateOfBirthError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordFirstName.htm">RequiredValidatorRecordFirstName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordFirstName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordFirstNameError.htm">RequiredValidatorRecordFirstNameError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordFirstNameError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordPostalCode.htm">RequiredValidatorRecordPostalCode</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordPostalCode control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_RequiredValidatorRecordPostalCodeError.htm">RequiredValidatorRecordPostalCodeError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            RequiredValidatorRecordPostalCodeError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_ReviewView.htm">ReviewView</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            ReviewView control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_SaveButton.htm">SaveButton</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            SaveButton control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchAdmitDate.htm">TxtMatchAdmitDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchAdmitDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchCity.htm">TxtMatchCity</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchCity control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchDischargeDate.htm">TxtMatchDischargeDate</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchDischargeDate control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchDriversLicense.htm">TxtMatchDriversLicense</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchDriversLicense control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchEmail.htm">TxtMatchEmail</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchEmail control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchHomePhone.htm">TxtMatchHomePhone</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchHomePhone control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchHospitalAccountNumber.htm">TxtMatchHospitalAccountNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchHospitalAccountNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchLast4SSN.htm">TxtMatchLast4SSN</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchLast4SSN control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchMRN.htm">TxtMatchMRN</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchMRN control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchPlaceOfBirth.htm">TxtMatchPlaceOfBirth</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchPlaceOfBirth control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchPrimaryInsurance.htm">TxtMatchPrimaryInsurance</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchPrimaryInsurance control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchSecondaryInsurance.htm">TxtMatchSecondaryInsurance</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchSecondaryInsurance control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchSocialSecurityNumber.htm">TxtMatchSocialSecurityNumber</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchSocialSecurityNumber control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchStreetAddress.htm">TxtMatchStreetAddress</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchStreetAddress control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchStreetAddress2.htm">TxtMatchStreetAddress2</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchStreetAddress2 control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMatchWorkPhone.htm">TxtMatchWorkPhone</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMatchWorkPhone control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMothersIdentifier.htm">TxtMothersIdentifier</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMothersIdentifier control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtMothersMaidenName.htm">TxtMothersMaidenName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtMothersMaidenName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordDateOfBirth.htm">TxtRecordDateOfBirth</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordDateOfBirth control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordFirstName.htm">TxtRecordFirstName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordFirstName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordLastName.htm">TxtRecordLastName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordLastName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordLastNameValidator.htm">TxtRecordLastNameValidator</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordLastNameValidator control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordLastNameValidatorError.htm">TxtRecordLastNameValidatorError</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordLastNameValidatorError control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordMiddleName.htm">TxtRecordMiddleName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordMiddleName control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protfield.gif" title="Protected field" />
+                            </td>
+                            <td><a href="F_PatientMatchEditor_TxtRecordPostalCode.htm">TxtRecordPostalCode</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            TxtRecordPostalCode control.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />See Also</span>
+                </h1>
+                <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                    <div class="seeAlsoStyle"><a href="T_PatientMatchEditor.htm">PatientMatchEditor Class</a>
+                    </div>
+                    <div class="seeAlsoStyle"><a href="N_Microsoft_Amalga_AppFramework_Web_UserControls.htm">Microsoft.Amalga.AppFramework.Web.UserControls Namespace</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footerLine">
+                    <img width="100%" height="3px" src="../../../Resources/Sandcastle/icons/footer.gif" title="Footer image" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="772" MadCap:lastWidth="568" MadCap:fileTags="TopicType.Concept,TopicOwner.v-kathen,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved" MadCap:ignoredWords="listtitle" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Dynamic views</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="dynamic views;OLE DB provider;Report Builder;PowerPivot" />This topic describes how dynamic views allow you to access patient list data using the <MadCap:variable name="FeatureName.data provider for OLE DB second use" />.</p>
+        <p>Patient lists cannot be accessed directly using the <MadCap:variable name="FeatureName.data provider for OLE DB second use" />. Dynamic views are abstractions of patient lists and provide that access. They are created and updated automatically whenever a patient list is created or changed. </p>
+        <p>Using dynamic views, an application can access data contained in a patient list using tools like Excel PowerPivot and <MadCap:variable name="BrandingMS.Report Builder second use" />to create graphical views of the data. For more information on creating reports, see <MadCap:xref href="AN_Task_Create_report.htm" target="" title="" alt="">Create a report from a patient list on page 1</MadCap:xref>.</p>
+        <p>Dynamic views have the following naming convention:</p>
+        <ul>
+            <li>Username_listtitle_listID</li>
+        </ul>
+        <p class="note"> All  characters in the list title that are not alpha-numeric are replaced with an underscore (_). If the overall length of the Username_listtitle_listID exceeds 128 characters, then the listtitle portion of the string will be truncated.</p>
+        <p>To find the name of the dynamic view to use in your application, see <MadCap:xref href="AN_task_find_dynamic_name.htm" target="" title="" alt="">Locate name of dynamic view on page 1</MadCap:xref>.</p>
+        <p>Dynamic views are in the public store. They get erased when you uninstall and reinstall the <MadCap:variable name="BrandingHSG.Brussels second use" /> instance. To rebuild the dynamic views, you can run a command on the platform server. The format of the command is:</p>
+        <p class="code">RebuildListViews.exe <span class="Placeholder">FQDN of platform server</span> <![CDATA[ ]]><span class="Placeholder">DataExplorer instance name</span> <![CDATA[ ]]><span class="Parameter">DataExplorerPrivate instance name</span></p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="" style="font-weight: normal;">
+            <MadCap:xref href="AN_task_find_dynamic_name.htm" target="" title="" alt="">Locate name of dynamic view on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

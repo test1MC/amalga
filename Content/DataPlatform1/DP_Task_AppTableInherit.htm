@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1289" MadCap:lastWidth="634" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Personas.All,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure access to an application's private database tables</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to configure access to application-private database tables. </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console;parent rules;peer rules;child rules;rules:child;rules:parent;rules:peer" /><MadCap:variable name="BrandingHSG.Amalga Short" /> applications can contain application-private databases, which include database tables. You can configure read-write and read-only access for data elements in an application-private database by inheriting access rules from entities in the <MadCap:variable name="UI-Labels.Amalga Entity Registry" />. </p>
+        <p>Access inheritance is suggested in the virtual schema for the application, with zero or one suggested parent entity for each private database table. You can enable or disable suggested access inheritance for each table. </p>
+        <p class="note">Only those entities that a virtual schema suggests for a database table can be selected for access inheritance. This configuration cannot be overwritten by an <MadCap:variable name="BrandingHSG.Amalga Short" /> administrator. </p>
+        <p>When suggested access inheritance is enabled for a table, the access policy from the indicated public entity is applied to the table as a child, which causes <MadCap:variable name="BrandingHSG.Amalga Short" /> roles authorized for the parent entity to automatically receive access to the table at the level indicated by the access rules (read-write or read-only). </p>
+        <p>For example, if a rule gives the role Doctors read-write access to the entity Contoso.Patient where Patient.VIPFlag != ‘1’, and an application containing a private database table Note is configured to inherit access rules from the entity Patient, members of the role Doctors can read and write to the table Notes only for patients where Contoso.Patient.VIPFlag != ‘1’.</p>
+        <p>When suggested access inheritance is disabled for a table, no access policy is applied; all authorized application users are able to access the table according to access level permissions. Users of the application instance who are members of roles authorized to an access level that allows writing data can read and write data from the private table unconditionally. Application access levels are defined in the application manifest for the application; see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests</MadCap:xref>.</p>
+        <p class="note">In the current version of <MadCap:variable name="BrandingHSG.Amalga Short" />, access rules cannot be configured for the private database tables directly. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaAppAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To inherit access rules from a parent entity </p>
+        <ol>
+            <li>
+                <p>Open the <MadCap:variable name="UI-Labels.Application" /> module in <MadCap:variable name="FeatureName.Management Console second use" />. </p>
+                <p>For instructions, see <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc OpenAppManageModule.htm" target="" title="" alt="">Open the Applications management module</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-app.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-app.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>In the <span class="UIElementName">Application Configuration Tasks</span> pane, click <span class="UIElementAction"><MadCap:annotation MadCap:createDate="2012-03-07T06:12:11.9398500-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="UI label variable needed" MadCap:editor="v-padenc" MadCap:editDate="2012-03-07T06:12:20.0796639-08:00">Manage Private Data Access</MadCap:annotation></span>.</p>
+                <p>The <span class="UIElementName"><MadCap:annotation MadCap:createDate="2012-03-07T06:12:40.3326890-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="UI label variable needed" MadCap:editor="v-padenc" MadCap:editDate="2012-03-07T06:12:44.0740631-08:00">Access Inheritance</MadCap:annotation></span> dialog box appears, listing all application-private database tables for the selected application instance along with any public entities suggested for access inheritance. Suggestions are derived from the virtual schema for the selected application instance. </p>
+            </li>
+            <li>To opt out of access inheritance for a private table, clear the check box for that table. </li>
+            <li>To apply suggested access inheritance from the indicated public entity to a private table, select the check box for that table. </li>
+            <li>
+                <p>Click <span class="UIElementAction">Save</span> to save changes and close the dialog box.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Application Management/AppDeploy Nav Application Deployment Header.htm">Deploy applications through the </MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Application Management/SERV_VREF_App-PrivDataAccess.htm">Access Inheritance dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2012-03-12T18:42:43.2571719-07:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="add xrefs:\r\n- virtual schemas (Dennis)" MadCap:editor="v-padenc" MadCap:editDate="2012-03-12T18:42:50.7928735-07:00">Concepts</MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests </MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

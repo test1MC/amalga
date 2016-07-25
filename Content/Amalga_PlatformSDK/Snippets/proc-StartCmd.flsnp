@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="56" MadCap:lastWidth="638" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Concept,Status.70 - Complete,ReleaseTarget.CTP1,Personas.All,EditingTags.1 - Ready for Edit">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Start Command Prompt.</p>
+        <p>Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, and then click <span class="UIElementAction">Command Prompt</span>.</p>
+    </body>
+</html>

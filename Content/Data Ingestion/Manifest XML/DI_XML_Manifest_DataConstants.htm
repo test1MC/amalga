@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1318.667" MadCap:lastWidth="703" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>DataConstants element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="DataConstants element" />Declares a set of global constants for use in data-parser service manifests.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="SettingNameXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;<b>
+            &lt;DataConstants&gt;</b>
+               &lt;Element&gt;...&lt;/Element&gt;<b>
+            &lt;/DataConstants&gt;</b>
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>Array</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Element.htm">Element</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) Name of the constant.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>(Required string) Data type of the constant.</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>(Required string) Value of the constant.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">DataConstants</span> element defines a set of constant values that you can use as the source type in data output declarations. After these have been defined in a data-parser service manifest, you can use the named constant repeatedly throughout the manifest. Do not declare this element in the manifests of other pipeline applications. </p>
+        <p class="Label">Example</p>
+        <p>First  the Pipe constant is defined.</p><pre xml:space="preserve">&lt;DataConstants&gt;
+    &lt;Element Name="Pipe" Type="System.String" Value="|" /&gt;
+&lt;/DataConstants&gt;
+</pre>
+        <p>Next, the Pipe constant is specified as the SourceType and SourceName attributes of the first parameter of the following transform.</p><pre xml:space="preserve">&lt;Element Name="Diagnosis_DG1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true"&gt;
+    &lt;ConceptId&gt;f/xuQgEy71iABYBuCrJmYw&lt;/ConceptId&gt;
+    &lt;Transform&gt;
+        &lt;Action&gt;Concatenate&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" /&gt;
+            &lt;Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" /&gt;
+            &lt;Parameter Name="SetId" SourceType="DerivedField" SourceTable="DG1" SourceName="SetId" /&gt;
+        &lt;/InputParameters&gt;
+    &lt;/Transform&gt;
+&lt;/Element&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

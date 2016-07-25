@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment=""
+  Type="WebHelp"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/BZ_Master_AmalgaV3.fltoc"
+  ConditionTagExpression="include[Region.US] exclude[Production.doNOTbuild or Production.PrintOnly or Production.WhitePaperOnly or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "
+  OutputFile="Amalgav3"
+  MasterPage="/Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp"
+  MoveOutputContentToRoot="true"
+  Skin="/Project/Skins/Default-w-Index.flskn"
+  Medium="DRAFT"
+  GenerateWebSafeImages="true"
+  WebSafeFileExtension="png"
+  DefaultUrl="/Content/MasterTOCLandingPages(BZ)/Welcome_CTP1.htm"
+  ExcludeUnreferencedContent="true">
+  <Variables>
+    <Variable
+      Name="HSGBranding/Amalga Long">Amalga v3</Variable>
+    <Variable
+      Name="BrandingHSG/Amalga Long">Microsoft Amalga 3.0 Community Technology Preview 2 </Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+    <Variable
+      Name="BrandingHSG/Amalga Long TM">Microsoft® Amalga™ 3.0 Community Technology Preview 2 </Variable>
+    <Variable
+      Name="BrandingHSG/AmalgaV3 first use">Amalga 3.0 CTP2</Variable>
+    <Variable
+      Name="BrandingHSG/Brussels first use">Amalga 3.0 CTP2 Sample Data Explorer</Variable>
+  </Variables>
+</CatapultTarget>

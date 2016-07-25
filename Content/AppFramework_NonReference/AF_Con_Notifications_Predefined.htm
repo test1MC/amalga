@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="7131.667" MadCap:lastWidth="937" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Predefined notification type reference</h1>
+        <p>
+            <MadCap:keyword term="notification">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the predefined notification types available for use in <MadCap:variable name="BrandingHSG.Amalga Short" /> applications.</p>
+        <p>The <MadCap:variable name="BrandingHSG.Amalga Short" /> Notification service includes the following predefined notification types. Their names correspond to the key value of their message resource in the Notifications resource file (FrameworkNotifications.resx):</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#PatientM" target="" title="" alt="">PatientMatchAutolinkFailedLastChance on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM2" target="" title="" alt="">PatientMatchAutoLinkFailedMultipleMatches on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM3" target="" title="" alt="">PatientMatchAutoLinkFailedNoMoreChances	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM4" target="" title="" alt="">PatientMatchAutolinkFailedTryAgain on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM5" target="" title="" alt="">PatientMatchAutoLinkProcessing	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM6" target="" title="" alt="">PatientMatchLinkRevokedByStaff	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM7" target="" title="" alt="">PatientMatchManualRequestFailed	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM8" target="" title="" alt="">PatientMatchManualRequestFailedMultipleTimes  on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM9" target="" title="" alt="">PatientMatchManualRequestPending	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM10" target="" title="" alt="">PatientMatchManualRequestRejectedBlockedAccount	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM17" target="" title="" alt="">PatientMatchManualRequestRejectedByStaff on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM11" target="" title="" alt="">PatientMatchNoPendingReuests	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM12" target="" title="" alt="">PatientMatchNotYetAttempted	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM13" target="" title="" alt="">PatientMatchPatientIsLinked	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM14" target="" title="" alt="">PatientMatchPendingReadOnlyHVRecord	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM15" target="" title="" alt="">PatientMatchRequestQueuedForManual	 on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#PatientM16" target="" title="" alt="">PatientMatchSuccessful	 on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <h2><a name="PatientM"></a>PatientMatchAutolinkFailedLastChance</h2>
+        <p>An auto-link attempt failed. The user is trying again using the patient link form. If the next attempt fails, it will exceed the threshold of allowed attempts.</p>
+        <p>The maximum number of chances is determined by the <span class="codeEntity">AutoLinkMaxAttemptedMaxCount</span> setting of the <MadCap:variable name="FeatureName.Amalga Framework" /> hosted application, which can be set using the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. For more information on changing application settings with the <MadCap:variable name="FeatureName.Management Console second use" />, see <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Configure Settings.htm">configure application settings</a>.</p>
+        <h4>NotificationTypeId</h4>
+        <p>f67afea0-41e4-43fd-83d8-d237cbeee51d	</p>
+        <h4>Severity</h4>
+        <p>4 - Warning	</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Hospital name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Record nickname or full name</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Hospital phone number</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>URL or JavaScript for page refresh or redirect</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h2><a name="PatientM2"></a>PatientMatchAutoLinkFailedMultipleMatches</h2>
+        <p>&#160;</p>
+        <p>An auto Link attempt failed with more than one match found. The user is being informed that their request is pending approval; it was transferred to the Staff queue, since there were multiple exact matches found.</p>
+        <h4>NotificationTypeId</h4>
+        <p>6d8b34cf-3c18-41a3-9abf-60eeda5b7b41</p>
+        <h4>Severity</h4>
+        <p>	5 - Info</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Patient first name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Record full name</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM3"></a>PatientMatchAutoLinkFailedNoMoreChances	</h2>
+        <p>There are no more chances in auto-link mode, as the threshold has been reached. The request is automatically switched to manual mode.</p>
+        <p>The maximum number of chances is determined by the <span class="codeEntity">AutoLinkMaxAttemptedMaxCount</span> setting of the <MadCap:variable name="FeatureName.Amalga Framework" /> hosted application, which can be set using the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. For more information on changing application settings with the <MadCap:variable name="FeatureName.Management Console second use" />, see <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Configure Settings.htm">configure application settings</a>.</p>
+        <h4>NotificationTypeId</h4>
+        <p>2cfbe58a-0131-4317-a4a3-7a4eaeea1786</p>
+        <h4>Severity</h4>
+        <p>4 - Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Record nickname or full name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>URL or LightBox script that takesthe user to Edit or Cancel request page</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM4"></a>PatientMatchAutolinkFailedTryAgain</h2>
+        <p>An auto-link attempt failed. The user is trying again using the patient link form.</p>
+        <h4>NotificationTypeId</h4>
+        <p>57e5d064-deb8-4273-8edf-660b617e9c8f</p>
+        <h4>Severity</h4>
+        <p>4 - Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Hospital name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Record nickname or full name</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Hospital phone number</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>URL or JavaScript for page refresh or redirect</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM5"></a>PatientMatchAutoLinkProcessing	</h2>
+        <p>The patient has submitted their auto-link request and they are waiting for the system to process their request.</p>
+        <h4>NotificationTypeId</h4>
+        <p>8683d155-e40e-493e-bb65-0dd0f4c50c2c</p>
+        <h4>Severity</h4>
+        <p>5-Info</p>
+        <h4>Arguments</h4>
+        <p>&lt;none&gt;</p>
+        <p><![CDATA[		]]></p>
+        <h2><a name="PatientM6"></a>PatientMatchLinkRevokedByStaff	</h2>
+        <p>The patient was previously linked and their link has been revoked by the staff.</p>
+        <h4>NotificationTypeId</h4>
+        <p>24c84bf8-98df-4762-94a6-efb08d73b7ec</p>
+        <h4>Severity</h4>
+        <p>3-Strong Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>RecordFullName</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>RecordFirstName </td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>CustomerSupportPhoneNumber</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM7"></a>PatientMatchManualRequestFailed	</h2>
+        <p>		The user’s manual link request was rejected by the hospital staff because a match could not be found. The staff has selected a statement to show to the end user through the <span class="codeEntity">Reject Match</span> UI in the Staff Console.</p>
+        <p><![CDATA[		]]></p>
+        <h4>NotificationTypeId</h4>
+        <p>2d1d3b44-871a-4017-8510-42fb7f80715c</p>
+        <h4>Severity</h4>
+        <p>3- Strong Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Statement from Staff Console selected by the staff to show to the patient</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Hospital name</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Patient Request Details Lightbox URL or JavaScript</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>URL&#160;to try again</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM8"></a>PatientMatchManualRequestFailedMultipleTimes </h2>
+        <p>The user’s manual link request was rejected by the hospital staff because a match could not be found.  It is not their first rejected manual link request.</p>
+        <h4>NotificationTypeId</h4>
+        <p>b871de5a-9e16-4462-8ace-8d6543362de6</p>
+        <h4>Severity</h4>
+        <p>3- Strong Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Statement from Staff Console selected by the staff to show to the patient</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Hospital name</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Patient Request Details Lightbox URL or JavaScript</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>URL&#160;to try again</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM9"></a>PatientMatchManualRequestPending	</h2>
+        <p>		The patient is informed  that there is a pending manual link request already in the system.  The match has been submitted, but requires staff approval.</p>
+        <h4>NotificationTypeId</h4>
+        <p>ac7b2c4d-c13b-48e6-bd47-f6d0442d14e4</p>
+        <h4>Severity</h4>
+        <p>5-Info</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Record nickname or full name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>URL or LightBox script that takes the user to Edit <MadCap:annotation MadCap:createDate="2011-11-28T17:58:23.9579552-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="where are descriptions for the 3 arguments below?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:11:34.6296215-08:00">or</MadCap:annotation> Cancel request page</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>{4}</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><![CDATA[		]]></p>
+        <h2><a name="PatientM10"></a>PatientMatchManualRequestRejectedBlockedAccount	</h2>
+        <p>A manual link has been requested, but was rejected by staff due to a blocked account. The user is not given an opportunity to submit another request; their ability to issue link requests is blocked.</p>
+        <h4>NotificationTypeId</h4>
+        <p>13a5262f-c67f-451d-990d-077503dac47b</p>
+        <h4>Severity</h4>
+        <p>3- Strong Warning</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Statement from Staff Console selected by the staff to show to the patient.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM17"></a>PatientMatchManualRequestRejectedByStaff</h2>
+        <p>The patient is informed that their manual link request was rejected by the staff. The patient can try to submit the request again.</p>
+        <h4>NotificationTypeId</h4>
+        <p>27f96e3b-e2a9-48cb-9930-34f66e6b13c8  	</p>
+        <h4>Severity</h4>
+        <p>3 - Strong Warning	</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Statement from staff to patient (selected by staff from a list displayed in the staff console)</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Hospital name</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM11"></a>PatientMatchNoPendingRequests	</h2>
+        <p>This notification will only appear when there are no pending requests in the queue. If there are escalated or assigned requests, they will still be displayed, as will the notification.</p>
+        <h4>NotificationTypeId</h4>
+        <p>14f65592-dc43-4e76-b800-0c5ded5b25a6</p>
+        <h4>Severity</h4>
+        <p>5-Info</p>
+        <h4>Arguments</h4>
+        <p>		&lt;none&gt;</p>
+        <p>&#160;</p>
+        <h2><a name="PatientM12"></a>PatientMatchNotYetAttempted	</h2>
+        <p>Patient Match has not been attempted, but the patient has already been added with the Record Selector “Add a Person” feature.  This would show on a page that needed to be patient linked to show data.</p>
+        <h4>NotificationTypeId</h4>
+        <p>d7c1996a-856b-44e8-b133-8cfc90782094</p>
+        <h4>Severity</h4>
+        <p>5-Info</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Record full name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Hospital</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Record first name	</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM13"></a>PatientMatchPatientIsLinked	</h2>
+        <p>The patient's <MadCap:variable name="BrandingHSG.Amalga Short" />and <MadCap:variable name="BrandingHSG.HealthVault" /> accounts are successfully linked through manual linking.</p>
+        <h4>NotificationTypeId</h4>
+        <p>6cf70eeb-6eec-479a-8a90-205c574c50b9</p>
+        <h4>Severity</h4>
+        <p>6-Success</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>AmalgaPatientFullName</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><![CDATA[		]]></p>
+        <h2><a name="PatientM14"></a>PatientMatchPendingReadOnlyHVRecord	</h2>
+        <p>		The user is accessing a <MadCap:variable name="BrandingHSG.HealthVault" /> record that has read-only access to <MadCap:variable name="BrandingHSG.HealthVault" /> data and is not yet linked.</p>
+        <h4>	NotificationTypeId</h4>
+        <p>ea966db6-d56e-49c2-a044-43c2b8917204</p>
+        <h4>Severity</h4>
+        <p>5 - Info</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Record full name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>Hospital</td>
+                </tr>
+                <tr>
+                    <td>{2}</td>
+                    <td>Record first name</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM15"></a>PatientMatchRequestQueuedForManual	</h2>
+        <p>The patient is informed that their link request has been queued for manual processing by the organization staff.</p>
+        <h4>NotificationTypeId</h4>
+        <p>099fcc67-eb6f-416c-b945-11ad53d3dcb7</p>
+        <h4>Severity</h4>
+        <p>5-Info</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Record nickname or full name</td>
+                </tr>
+                <tr>
+                    <td>{1}</td>
+                    <td>URL or LightBox script that takes the user to an Edit or Cancel request page</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="PatientM16"></a>PatientMatchSuccessful	</h2>
+        <p>The patient's <MadCap:variable name="BrandingHSG.Amalga Short" /> and <MadCap:variable name="BrandingHSG.HealthVault" /> accounts are successfully linked through auto-linking.</p>
+        <h4>NotificationTypeId</h4>
+        <p>6da81ab7-b1ad-4fd4-af99-c29632a02adf</p>
+        <h4>Severity</h4>
+        <p>6-Success</p>
+        <h4>Arguments</h4>
+        <table style="width: 100%;">
+            <col style="width: 50%;">
+            </col>
+            <col style="width: 50%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{0}</td>
+                    <td>Amalga patient full name</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><![CDATA[		]]></p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

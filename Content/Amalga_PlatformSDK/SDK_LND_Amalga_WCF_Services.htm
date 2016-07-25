@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-dennk,Personas.Elvis: App Dev,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.60 - Revising,ReleaseTarget.CTP1" MadCap:lastBlockDepth="4" MadCap:lastHeight="922" MadCap:lastWidth="420">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Hosted      <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF service" />s</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-10-06T22:22:02.8339807-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="In a sense this is a non-standard landing page:  basic concepts, a high level proc with links to more detailed (we hope) procedures. However, it is not being treated as a landing page in the TOC.  At least, I think of a landing page as the book topic with subtopics beneath it. If you don't agree, lets discuss." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-06T22:25:34.7181670-07:00">
+                <MadCap:keyword term="hosted services;WCF services" />This</MadCap:annotation> topic discusses the advantages of using <MadCap:variable name="BrandingMS.WCF service" />s in an Amalga hosted application, and provides an overview of how to build a <MadCap:variable name="BrandingMS.WCF service" />.</p>
+        <p>Amalga hosted <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />s are an important building block of <MadCap:variable name="BrandingHSG.Amalga Short" /> applications. Build your own <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF service" /> by using a  <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> template, the <MadCap:variable name="FeatureName.virtual schema designer" />, and <MadCap:variable name="FeatureName.Amalga ADO.NET" />. Finally, configure, package, and deploy the service.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-06T21:46:57.0394223-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Here's one of those questionable phrases. Is it correct as is? Or do we want somehow to have &quot;hosted services&quot; in the phrase? " MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-06T22:11:55.7172751-07:00">Amalga </MadCap:annotation>hosted <MadCap:variable name="BrandingMS.WCF service" />s allow you to rapidly build service-oriented applications that communicate across the web and the enterprise, taking advantage of <MadCap:variable name="BrandingHSG.Amalga Short" /> features, such as security and management. Although you can build applications that use <MadCap:annotation MadCap:createDate="2011-10-06T21:48:53.3330505-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="\r\nWhy are these Amalga WCF Services (as in first heading), instead of WCF services employed in Amalga?  Are athey Amalga WCF services if they are not in an Amalga hosted application?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-06T22:12:08.1305163-07:00">Amalga <MadCap:variable name="BrandingMS.WCF service" />s</MadCap:annotation> using a variety of technologies, there are many <a href="SDK_CON_Advantages_Of_Hosted_Apps.htm">advantages</a> to using Amalga hosted applications.</p>
+        <p class="note">The exposed service contracts for a hosted <MadCap:variable name="BrandingMS.WCF service" /> must be contained in a single assembly.</p>
+        <p class="LabelforProcedures">To build your own hosted WCF service</p>
+        <ol>
+            <li>Open <MadCap:variable name="BrandingMS.Visual Studio second use" />. From the <span class="UIElementAction">File </span>menu, select <span class="UIElementAction">New</span>, then <span class="UIElementAction">Project</span>.</li>
+            <li>Select the <span class="UIElementAction">Amalga WCF Service Project</span> <![CDATA[ ]]><a href="SDK_CON_VS_Proj_Templates.htm">template</a>, name your project, and click <span class="UIElementAction">OK</span>.</li>
+            <li>If your service uses a virtual schema, then create one by following the instructions in <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Createing a vVirtual sSchema</MadCap:xref>.</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-10-06T21:53:23.6160761-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Will the user know what code to add?  What happens if they don't use ADO.NET?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-06T21:54:00.0117153-07:00">Add code to the IService.cs and Service.cs classes</MadCap:annotation> to complete your WCF service. Use <a href="SDK_OVW_ADO.NET_Overview.htm">Amalga ADO.NET</a>.</li>
+            <li><a href="SDK_Con_Configuration_Model.htm">Configure</a> the service by modifying the AmalgaService.xml file.</li>
+            <li><a href="SDK_CON_Application_Package_Deploy_Tools.htm">Package</a> and <a href="SDK_CON_Deploy_Amalga_Hosted_Services.htm">deploy</a> the <MadCap:annotation MadCap:createDate="2011-10-06T21:54:14.4981638-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Am I nuts or is this proc leaving out the hard stuff? " MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-06T21:54:31.5868725-07:00">service</MadCap:annotation>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_Advantages_Of_Hosted_Apps.htm" target="" title="" alt="">Advantages of Amalga hosted applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Createing a vVirtual sSchema</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_OVW_ADO.NET_Overview.htm" target="" title="" alt="">Amalga ADO.NET library overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_Con_Configuration_Model.htm" target="" title="" alt="">Application configuration model</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Application_Package_Deploy_Tools.htm" target="" title="" alt="">Application Packaging and Deployment Tools</MadCap:xref>
+        </p>
+    </body>
+</html>

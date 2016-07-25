@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="48" MadCap:lastWidth="576" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To view a <MadCap:variable name="FeatureBrussels.Patient Chart" /> from the patient list</p>
+        <ul>
+            <li>Click the full name of the patient whose chart you want to view.</li>
+        </ul>
+    </body>
+</html>

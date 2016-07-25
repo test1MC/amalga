@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="423" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Shredder input</h1>
+        <p>During every polling interval, a Message Shredder application instance reads a batch of raw messages from MessageQueue.dbo.MSG201. You can specify the number of messages in the batch for each message type. The default batch size is 500.</p>
+        <p class="h7">Format example: Comma-separated value (CSV)</p>
+        <p class="code" style="font-style: italic;">item1, item2, item3, item4</p>
+        <p class="code" style="font-style: italic;">item5, item6, item7, itme8</p>
+        <p class="h7">Format example: HL7 version 2.5</p>
+        <p class="code">MSH|^~\&amp;|GHH LAB|ELAB-3|GHH OE|BLDG4|200202150930||ORU^R01|CNTRL-3456|P|2.4</p>
+        <p class="code">PID|||555-44-4444||EVERYWOMAN^EVE^E^^^^L|JONES|19620320|F|||153 FERNWOOD DR.^</p>
+        <p class="code">^STATESVILLE^OH^35292||(206)3345232|(206)752-121||||AC555444444||67-A4335^OH^20030520</p>
+        <p class="code">OBR|1|845439^GHH OE|1045813^GHH LAB|15545^GLUCOSE|||200202150730|||||||||</p>
+        <p class="code">555-55-5555^PRIMARY^PATRICIA P^^^^MD^^|||||||||F||||||444-44-4444^HIPPOCRATES^HOWARD H^^^^MD</p>
+        <p class="code">OBX|1|SN|1554-5^GLUCOSE^POST 12H CFST:MCNC:PT:SER/PLAS:QN||^182|mg/dl|70_105|H|||F</p>
+        <p class="code">OBX|2|SN|1554-6^GLUCOSE^POST 24H CFST:MCNC:PT:SER/PLAS:QN||^182|mg/dl|70_105|H|||F</p>
+        <p class="h7">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ShredSummary.htm" target="" title="" alt="">Message shredder</MadCap:xref>
+        </p>
+    </body>
+</html>

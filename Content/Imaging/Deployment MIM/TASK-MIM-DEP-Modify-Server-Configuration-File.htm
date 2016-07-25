@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="496" MadCap:lastWidth="654" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Server configuration file samples</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:server configuration file" />Find the following samples for the server configuration files for the two topologies.</p>
+        <p class="h7">Sample Server Configuration File for Centralized Topology</p>
+        <p class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;</p>
+        <p class="code">&lt;ImagingTopology xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" &gt;</p>
+        <p class="code">&lt;!-- Imaging Data Server information (ServerName must be assigned the name of the server hosting DicomMetaData database)--&gt;</p>
+        <p class="code">&lt;ImagingDataServer ServerName ="vm-imaging-db" UserId="az-sa" Password="passw0rd!" /--&gt;</p>
+        <p class="code">&lt;!-- Site Name (choose a name for your centralized setup. This id will be used to find the IDS application.) --&gt;</p>
+        <p class="code">&lt;SiteID Name="SingleSite" /&gt;</p>
+        <p class="code">&lt;/ImagingTopology&gt;</p>
+        <p class="h7">Sample Server Configuration File for Distributed Topology</p>
+        <p class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;</p>
+        <p class="code">&lt;ImagingTopology xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" &gt;</p>
+        <p class="code">&lt;!—IRDD Server information (ServerName should be assigned the name of the server hosting IRDD)--&gt;</p>
+        <p class="code">&lt;ImagingDataServer ServerName ="vm-IRDD" UserId="az-sa" Password="passw0rd!" /--&gt;</p>
+        <p class="code">&lt;/ImagingTopology&gt;</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep.htm">Installation steps on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

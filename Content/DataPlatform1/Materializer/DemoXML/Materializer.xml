@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/windowsworker"
+                    xmlns:i="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type="WindowsWorker"
+                    Name="Materializer"
+		            InstanceName="MaterializerServiceInstance_1"
+                    Id="dad27ff6-3eb3-4f74-9f3e-73ee8b97f1b1"
+                    Version ="1.0.0.0">
+    <WindowsWorkerManifest LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="FailOver" HostAssembly="Microsoft.Amalga.Pipeline.Materializer.exe"/>
+
+
+    <Settings>
+        <Setting Name="ChangeSetWriteBatchSize" Type="System.Int32">
+            <DefaultValue>100</DefaultValue>
+        </Setting>
+        <Setting Name="ChangeSetReadBatchSize" Type="System.Int32">
+            <DefaultValue>1</DefaultValue>
+        </Setting>
+        <Setting Name="MaxWorkerThreads" Type="System.Int32">
+            <DefaultValue>5</DefaultValue>
+        </Setting>
+        <Setting Name="IdleSleepMilliSeconds" Type="System.Int32">
+            <DefaultValue>0</DefaultValue>
+        </Setting>
+        <Setting Name="CleanUpTaskTimeHour" Type="System.Int32">
+            <DefaultValue>0</DefaultValue>
+        </Setting>
+        <Setting Name="ConnectionTimeoutSeconds" Type="System.Int32">
+            <DefaultValue>60</DefaultValue>
+        </Setting>
+    </Settings>
+</DeploymentManifest>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="5" MadCap:lastHeight="2187" MadCap:lastWidth="499" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Semantic tags</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="semantic tags:Terminology platform application;Terminology platform application:semantic tags;concepts:Terminology platform application;Terminology platform application:concepts;source systems:Terminology platform application;Terminology platform application:source systems;data vectors:Terminology platform application;Terminology platform application:data vectors;ISemanticLabelTaggingService interface:Terminology platform application;Terminology platform application:ISemanticLabelTaggingService interface;Management Console;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes semantic tags, string representations of the concepts managed by the Terminology platform application.</p>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, a <span class="newconcept">semantic tag</span> is a fully qualified string representation of a concept in a clinical terminology included with the Terminology platform application. Semantic tags allow you to add concepts as metadata to data assets in Amalga, such as entities or entity properties. Semantic tags facilitate organization and search, as well as to improve performance. You can apply multiple semantic tags to the same data asset, as well.   When multiple semantic tags are applied to a data asset, such as an entity or entity property, the definitive meaning of the data asset is the logical disjunction of all tags; that is, the set of semantic tags for the data asset are treated as a logical OR operation. </p>
+        <p>While semantic tags are not required for entities or entity properties in <MadCap:variable name="BrandingHSG.Amalga Short" />, you can take advantage of some of the more sophisticated functionality, such as merges or access inheritance, by applying the appropriate semantic tags. You can either use the <MadCap:variable name="UI-Labels.Entity Management" /> module included with <MadCap:variable name="FeatureName.Management Console second use" /> to manage semantic tags, or you can programmatically apply semantic tags using the ISemanticLabelTaggingService service contract, included in the TerminologyService service for the Terminology platform application. For more information about programmatically applying semantic tags, see <MadCap:xref href="TRM_CON_UpdatingSemanticTags.htm" target="" title="" alt="">Updating semantic tags on page 1</MadCap:xref>.</p>
+        <h2>Semantic tag components </h2>
+        <p>An <MadCap:variable name="BrandingHSG.Amalga Short" /> semantic tag  is fully qualified when it contains the components indicated in the following image. Each component in a semantic tag is separated by a caret (^) character. </p>
+        <p>
+            <img src="../Images/SemanticTagExample.png" />
+        </p>
+        <p>Components of fully qualified semantic tags in <MadCap:variable name="BrandingHSG.Amalga Short" />:&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Terminology</td>
+                    <td>The human-readable description of the clinical terminology that contains the concept identified by the semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Code</td>
+                    <td>The  code for the concept identified by the semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Meaning</td>
+                    <td>The human-readable description for the concept identified by the semantic tag.</td>
+                </tr>
+                <tr>
+                    <td>Identifier</td>
+                    <td>The globally unique identifier (GUID) for the concept identified by the semantic tag. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>A semantic tag does not identify a clinical concept, but instead identifies a particular concept that represents a clinical concept stored in a clinical terminology. Depending on the number of supported languages in a clinical terminology, a clinical concept can be represented by one concept per supported language. The semantic tag, by extension, identifies a concept that represents a clinical concept in a clinical terminology for a specific supported language.</p>
+        <h2>Applying semantic tags</h2>
+        <p>Semantic tags can be applied to source systems, which allows clinical concepts to be mapped to new columns at the point of data ingestion, or to data vectors, which allows clinical concepts to be mapped to existing columns in the storage system.</p>
+        <p>In data ingestion terms, a source system identifies a specific incoming data feed. The Terminology platform application can map a source system to a clinical terminology for data ingestion purposes, allowing clinical concepts in incoming messages to be consistently and accurately identified when messages from the source system are shredded. For more information about applying semantic tags to source systems, see <MadCap:xref href="TRM_CON_SourceSystems.htm" target="" title="" alt="">Source systems on page 1</MadCap:xref>.</p>
+        <p>Similarly, a data vector identifies a specific table or column in a database. The Terminology platform application can map a data vector to a clinical concept for discoverability and organization purposes, allowing clinical concepts in data assets to be consistently and accurately identified in the storage system. For more information about applying semantic tags to data vectors, see <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Source systems and data vectors on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingDataVectors.htm" target="" title="" alt="">Querying data vectors on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingDataVectors.htm" target="" title="" alt="">Adding data vectors on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingSourceSystems.htm" target="" title="" alt="">Adding source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_UpdatingSemanticTags.htm" target="" title="" alt="">Updating semantic tags on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Data vectors on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Other resources </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/DP_Task_EntityTagsEdit.htm" target="" title="" alt="">Apply semantic tags to entities on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

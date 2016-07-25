@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1431" MadCap:lastWidth="728" MadCap:fileTags="TopicType.Concept,Personas.Elvis: App Dev,ReleaseTarget.TAP,TopicOwner.v-dennk,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Deactivating source systems</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:source systems;source systems:Terminology platform application;DeActivateSourceSystem method:Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;Terminology platform application:DeActivateSourceSystem method;Terminology platform application:ISemanticLabelTaggingService interface;SourceSystem class:Terminology platform application;Terminology platform application:SourceSystem class;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to deactivate a source system for semantic tagging in the Terminology platform application.</p>
+        <p>When the <MadCap:variable name="Applications.Message Shredder (application)" />subsystem shreds a message from a data feed, the subsystem queries the Terminology platform application to identify active source systems from which to attempt to apply semantic tags. If a source system is deactivated, the <MadCap:variable name="Applications.Message Shredder (application)" /> subsystem does not use it during the data ingestion process for semantic tagging purposes. You can use the GetSourceSystems operation, included in the ISemanticLabelTaggingService service contract from the TerminologyService service, to retrieve an array of SourceSystem objects that represent existing source systems in the Terminology platform application, and the Active property of the SourceSystem object can be used to determine whether a source system is active. </p>
+        <p>You can also use the DeActivateSourceSystem operation, included in the ISemanticLabelTaggingService service contract from the TerminologyService service, to deactivate an existing source system for semantic tagging purposes. The globally unique identifier (GUID) that identifies a source system can be retrieved from the Id property of a SourceSystem object that represents an existing source system.</p>
+        <h2>Example</h2>
+        <p>The following example uses the DeActivateSourceSystem operation from the ISemanticLabelTaggingService service contract to deactivate a source system in the Terminology platform application.</p><pre xml:space="preserve">public void DeactivateSourceSystem()
+{
+    // Use the DeActivateSourceSystems operation from ISemanticLabelTaggingService
+    // to deactivate an existing source system.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+    // Open the client channel and instantiate the WCF client.
+    ISemanticLabelTaggingService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+            
+    // Identify the source system to be deactivated, by specifying the GUID for
+    // the source system.
+    System.Guid sourceSystemGuid = new System.Guid("C9464252-24CA-4BE6-81E4-76C34E552673");
+
+    // Invoke the operation from the service.
+    terminologyServiceClient.DeActivateSourceSystem(sourceSystemGuid);
+
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingSourceSystems.htm" target="" title="" alt="">Adding source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_SourceSystems.htm" target="" title="" alt="">Source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Other resources </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../Data Ingestion/DI_Con_ShredSummary.htm" target="" title="" alt="">Message Shredder application on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

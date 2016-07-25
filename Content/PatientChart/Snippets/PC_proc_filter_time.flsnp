@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="76" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To filter by time range</p>
+        <ul>
+            <li>In the <span class="UIElementName">Time Range</span> drop-down list box, select the time range to display.</li>
+        </ul>
+    </body>
+</html>

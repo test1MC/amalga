@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="796" MadCap:lastWidth="900" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data parser: application manifest example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration values as needed. For value descriptions, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Parser application</MadCap:xref>.</p><pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "Application"
+		      Name="DataParserApplication"
+		      InstanceName="DataParserApp_ADT_G"
+                    Id ="576d0ffe-c339-4b15-852f-58d66315b736"
+                    Version ="1.0.0.0"&gt;
+  &lt;Settings&gt;
+    &lt;!--
+    &lt;Setting Name="SampleSetting" Type="System.String" &gt;
+      &lt;DefaultValue&gt;
+
+      &lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+    --&gt;
+  &lt;/Settings&gt;
+  
+  &lt;Dependencies&gt;
+    &lt;Dependency Name="TerminologyAppDependency" InstanceName="TerminologyApplication_Ins1" 
+		 Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" /&gt;
+  &lt;/Dependencies&gt;
+
+  <MadCap:annotation MadCap:createDate="2011-10-28T21:31:37.9026439-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Aha! this one is self-contained -- both open and close tag here." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-28T21:32:11.4710004-07:00">&lt;ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0" /&gt;</MadCap:annotation>
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser</MadCap:xref>
+        </p>
+    </body>
+</html>

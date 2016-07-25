@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1078.666" MadCap:lastWidth="1015" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Medication entity</h1>
+        <p>
+            <MadCap:snippetText src="SummarySnippets/C.Medication.flsnp" />
+        </p>
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].MedOrder" />
+        </p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DoseForm</td>
+                    <td>RXE-6</td>
+                    <td>HL7</td>
+                    <td>Dosage form that indicates the manner in which the medication is aggregated for dispensing, For example, tablets, capsules, or suppositories.</td>
+                </tr>
+                <tr>
+                    <td>DoseFormNormalized</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized form. </td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>Frequency</td>
+                    <td>RXE-1</td>
+                    <td>HL7</td>
+                    <td>Medication timing.</td>
+                </tr>
+                <tr>
+                    <td>FrequencyNormalized</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized frequency.</td>
+                </tr>
+                <tr>
+                    <td>MedCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>MedCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>MedCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>MedCode</td>
+                    <td>RXE-2-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the medication that has been ordered to be given to the patient, as encoded by the supplier.</td>
+                </tr>
+                <tr>
+                    <td>MedCode_NDDF_ActiveIngredient</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>MedCode in NDDF_ActiveIngredient.</td>
+                </tr>
+                <tr>
+                    <td>MedCode_NDFRT_ActiveIngredient</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>MedCode in NDFRT_ActiveIngredient.</td>
+                </tr>
+                <tr>
+                    <td>MedCode_RxNorm_ActiveIngredient</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>MedCode in RxNorm_ActiveIngredient.</td>
+                </tr>
+                <tr>
+                    <td>MedCode_RxNorm_BrandedClinicalDrug</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>MedCode in RxNorm_BrandedClinicalDrug.</td>
+                </tr>
+                <tr>
+                    <td>MedCode_RxNorm_SemanticClinicalDrug</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>MedCode in RxNorm_SemanticClinicalDrug.</td>
+                </tr>
+                <tr>
+                    <td>MedCodingSystem</td>
+                    <td>RXE-2-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>MedText</td>
+                    <td>RXE-2-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the medication.</td>
+                </tr>
+                <tr>
+                    <td>MedicationID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.Medication entity and unique identifier for a medication.</td>
+                </tr>
+                <tr>
+                    <td>MedOrderID</td>
+                    <td>MedOrderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.MedOrder.htm" target="" title="" alt="">Common.Beta.MedOrder entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>RXE-1-1 or RXE-10</td>
+                    <td>HL7</td>
+                    <td>Units for the dispense amount as encoded by the medication supplier.</td>
+                </tr>
+                <tr>
+                    <td>QuantityMaximum</td>
+                    <td>RXE-4</td>
+                    <td>&#160;</td>
+                    <td>Maximum ordered amount, in variable dose order.</td>
+                </tr>
+                <tr>
+                    <td>QuantityMinimum</td>
+                    <td>RXE-3</td>
+                    <td>&#160;</td>
+                    <td>Ordered amount as encoded by the medication supplier.</td>
+                </tr>
+                <tr>
+                    <td>QuantityUnitsCode</td>
+                    <td>RXE-26-1</td>
+                    <td>&#160;</td>
+                    <td>Identifier for the units of strength.</td>
+                </tr>
+                <tr>
+                    <td>QuantityUnitsCode_UCUM</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Units in UCUM.</td>
+                </tr>
+                <tr>
+                    <td>QuantityUnitsCodingSystem</td>
+                    <td>RXE-26-3</td>
+                    <td>&#160;</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>QuantityUnitsText</td>
+                    <td>RXE-26-2</td>
+                    <td>&#160;</td>
+                    <td>Text that describes the units of strength.</td>
+                </tr>
+                <tr>
+                    <td>Rate</td>
+                    <td>RXE-22</td>
+                    <td>HL7</td>
+                    <td>Normalized quantity.</td>
+                </tr>
+                <tr>
+                    <td>RateQuantity</td>
+                    <td>RXE-23</td>
+                    <td>&#160;</td>
+                    <td>Rate at which the substance should be administered.</td>
+                </tr>
+                <tr>
+                    <td>RateQuantityMax</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Maximum rate.</td>
+                </tr>
+                <tr>
+                    <td>RateQuantityMin</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Minimum rate.</td>
+                </tr>
+                <tr>
+                    <td>Refill</td>
+                    <td>RXE-12</td>
+                    <td>HL7</td>
+                    <td>Total original number of refills.</td>
+                </tr>
+                <tr>
+                    <td>Route</td>
+                    <td>RXR-1</td>
+                    <td>HL7</td>
+                    <td>Route of administration.</td>
+                </tr>
+                <tr>
+                    <td>RouteNormalized</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized route.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

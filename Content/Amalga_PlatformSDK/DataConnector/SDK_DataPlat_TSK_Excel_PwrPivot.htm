@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,Status.20 - Development: under 50%,TopicOwner.v-dennk,ReleaseTarget.CTP1,TopicType.Procedure" MadCap:lastBlockDepth="6" MadCap:lastHeight="2317" MadCap:lastWidth="204">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Retrieving data with <MadCap:variable name="BrandingMS.Microsoft Excel 2010" /> and <MadCap:variable name="BrandingMS.PowerPivot for Excel" /></h1>
+        <p class="abstract">
+            <MadCap:keyword term="Excel;PowerPivot" />This topic describes how to use <MadCap:variable name="BrandingMS.Microsoft Excel 2010" /> and Microsoft PowerPivot for <MadCap:variable name="BrandingMS.Microsoft Excel 2010" /> to access data.</p>
+        <p>You can connect to Amalga data through Microsoft Excel 2010, using Microsoft PowerPivot for Microsoft Excel 2010, with the same security and access control as other Amalga applications. This topic describes the procedure for connecting to <MadCap:annotation MadCap:createDate="2011-09-02T12:03:34.3074000-07:00" MadCap:creator="v-pegrue" MadCap:initials="PG" MadCap:comment="Still need PowerPivot." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-02T12:03:37.8447537-07:00">Excel</MadCap:annotation>.</p>
+        <p>Amalga allows connectivity with Microsoft  Excel and PowerPivot so that you can access data from virtual schemas to create reports and analyze data. All data access will  be subject to security and access control for the authenticated Amalga.</p>
+        <p>Use the following procedure to access data from Excel.</p>
+        <p class="LabelforProcedures">
+            <MadCap:annotation MadCap:createDate="2011-09-02T12:02:05.8635565-07:00" MadCap:creator="v-pegrue" MadCap:initials="PG" MadCap:comment="This isn't working yet, so hasn't been tested." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-02T12:02:16.6226323-07:00">How To Access Amalga Data from Excel</MadCap:annotation>
+        </p>
+        <ol>
+            <li>Open a new, blank worksheet in Excel.</li>
+            <li>Click the <span class="UIElementAction">Data </span>tab.</li>
+            <li>Click the <span class="UIElementAction">From Other Data Source</span>s dropdown and select <span class="UIElementAction">From Data Connection Wizard</span>.</li>
+            <li>Choose <span class="UIElementAction">Other/Advanced</span> and click <span class="UIElementAction">Next</span>.</li>
+            <li>
+                <p>In the Data Link Properties dialog box, make sure the <span class="UIElementAction">Properties </span>tab is selected. Select <span class="UIElementAction">Microsoft OLE DB Provider for Amalga UIS</span> from the list and click <span class="UIElementAction">Next</span>.</p>
+            </li>
+            <li>In the Data Link Properties dialog box, make sure the <span class="UIElementAction">Connection</span>tab is selected. Then:<ol style="list-style-type: lower-alpha;"><li>Enter your data source name. For example:&#160;<span class="code">http://&lt;yourServerName&gt;</span></li><li><p>Type the information for the data location. For example:&#160;<span class="code">.\</span></p></li><li>Enter login and password (if applicable). Check<span class="UIElementAction"> Allow saving password</span> checkbox.</li><li>For the <span class="UIElementAction">Enter the initial catalog</span> to use dropdown, choose the virtual schema you will use.</li><li>Click the <span class="UIElementAction">Test Connection</span> button and verify that the connection works.</li><li>Click <span class="UIElementAction">OK</span>.</li></ol></li>
+            <li>Select the application view to use and click <span class="UIElementAction">Next</span>.</li>
+            <li>Select <span class="UIElementAction">Save Password</span>. </li>
+            <li>
+                <p>Add any additional criteria and click <span class="UIElementAction">Finish</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Yes </span>in the message about password security.</p>
+            </li>
+            <li>In the Import Data dialog box, make selections for how you want to view data and where it should go, and then click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+    </body>
+</html>

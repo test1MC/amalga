@@ -1,0 +1,81 @@
+﻿
+
+p.PersonaAll
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #000000;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaEndUser
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #00528C;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaAppDev
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #008066;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaAppDev_Analyst
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #00635E;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaAppDev_Informatics
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #728000;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaDBA
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #8C1A00;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaDISpecialist
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #804300;
+	background-image: url('../Images/clear.png');
+}
+
+p.PersonaITAdmin
+{
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+	margin-right: 20px;
+	padding-left: 30px;
+	border-top: solid 2px #8A002A;
+	background-image: url('../Images/clear.png');
+}

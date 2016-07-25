@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="774" MadCap:lastWidth="629" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Page messaging best practices</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;best practices"></MadCap:keyword></p>
+        <p class="abstract">This topic describes best practices for working with the <MadCap:variable name="FeatureName.Amalga Framework" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-15T19:22:23.7545731-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Why is this a system, vs just page messageing, vs an application, etc.?  System is such a vague word -- what does it mean here, and will each writer use it for the same meaning?  \r\n(Not that I am biased)  If you can get rid of system that would be great. \r\nYou have it lower case here, so I am going to assume that is correct." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-15T19:26:40.7922743-08:00">page messaging system</MadCap:annotation>.</p>
+        <p MadCap:conditions="Production.doNOTbuild">[do the right thing]</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using multiple instances of the CommonContext message group on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using iFrames with the page messaging system on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>
+            <MadCap:annotation MadCap:createDate="2012-02-20T22:47:09.6977038-08:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Is there a way to find out how many concurrent pages share a session ID?" MadCap:editor="v-wipete" MadCap:editDate="2012-02-20T22:47:34.4784472-08:00">Using multiple instances of the CommonContext message group</MadCap:annotation>
+        </h2>
+        <p>Applications that use the CommonContext message group should support <a href="AF_Con_PageMessagingParts.htm#Supporte">Level 2 context passing</a>. Level 2 support implies the following:</p>
+        <ul>
+            <li>Page elements within a single page should share the same common context.</li>
+            <li>The content of the common context should persist as the user navigates from page to page within a browser window.</li>
+            <li>Changes to the common context in one application should not affect the common context in another.</li>
+        </ul>
+        <p>However, the page messaging service uses the browser session ID&#160;to identify messages in the CommonContext message group. That means that, if there are two concurrent <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications with the same session ID, changes made to the common context in one application will affect the content of the common context group in the other, with the most recent changes to the common context persisting across all applications that share a session ID. </p>
+        <p>This shared effect is not consistent with the expected behavior of Level 2 context passing, in which the clinical context within two concurrent applications should be independent of each other. </p>
+        <p class="note">The persistence of session ID&#160;values is browser dependent.</p>
+        <h3>Recommendations</h3>
+        <ul>
+            <li>When a <MadCap:variable name="FeatureName.Amalga Framework second use" /> application programmatically opens a page in a new window, force the window to open in a new session as well.</li>
+            <li>If your application depends on the CommonContext message group, make sure that your user documentation and training materials include instructions for manually opening new web pages into a new session.</li>
+        </ul>
+        <h2><a name="Using2"></a>Using iFrames with the page messaging system</h2>
+        <p>A web page with  <a href="http://msdn.microsoft.com/en-us/library/ms535258(v=VS.85).aspx">iFrame</a> page elements presents a special case for the page messaging system. At the DOM level, each iFrame is an independent page, with its own <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PageMessagingManager.htm">PageMessagingManager</a> instance and service client participant.</p>
+        <p> The solution developer must set the behavior of these <span class="Label">iFrame</span> messaging systems with respect to the primary <span class="Label">PageMessagingManager</span> on the page.  There are two options.</p>
+        <h3>Disconnected iFrame</h3>
+        <p>In a disconnected <span class="Label">iFrame</span>, the <span class="Label">PageMessagingManager</span> serves as an independent message scope from its parent page.  In this mode, messages are not passed up to the <span class="Label">PageMessagingManager</span> of the parent page or to other <span class="Label">iFrame</span> elements in the page.  This is the default behavior.</p>
+        <p class="caution">With default security settings in <MadCap:variable name="BrandingMS.Internet Explorer 7.0" /> and above, the <span class="ForeignCodeElements">iFrame</span> and its parent will use the same session ID (unless their target URLs refer to different domains), and will therefore participate in the same CommonContext message group. To ensure that an iFrame remains disconnected from its parent page, set its SECURITY attribute to "restricted".<br /></p>
+        <h4>Example</h4><pre xml:space="preserve">&lt;IFRAME id="disconnectedFrame1" SECURITY="restricted" src="framepage.aspx"&gt;</pre>
+        <h3>Connected iFrame</h3>
+        <p>The <span class="Label">iFrame</span> <![CDATA[ ]]><span class="Label">PageMessagingManager</span> can pass messages through to the <span class="Label">PageMessagingManager</span> on its parent page.  In this case, the <span class="Label">iFrame</span> <![CDATA[ ]]><span class="Label">PageMessagingManager</span> serves as a proxy for the primary <span class="Label">PageMessagingManager</span> and is therefore functionally invisible.  This method is invoked by setting the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_PageMessagingManager_ConnectWithTopLevelWindow.htm">ConnectWithTopWindow</a> property on   <![CDATA[ ]]><span class="Label">PageMessagingManager</span> to <span class="Label">true</span>.</p>
+        <h4>
+            <MadCap:annotation MadCap:createDate="2012-02-21T00:25:30.4588284-08:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="expand" MadCap:editor="v-wipete" MadCap:editDate="2012-02-21T00:25:45.7993061-08:00">Example</MadCap:annotation>
+        </h4><pre xml:space="preserve">&lt;PageMessagingManager runat="server" ConnectWithTopLevelWindow="true"&gt;</pre>
+        <p>&#160;</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">Common context, subject dependency, and UI&#160;delay</h2>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingCommonContext.htm">Common Context</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms537627(v=vs.85).aspx">Using IFRAME Elements</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms178581.aspx">ASP.NET Session State Overview</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

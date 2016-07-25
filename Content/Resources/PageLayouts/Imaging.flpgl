@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles MadCap:conditions="Features.Imaging,Editing.ReadyForEdit,Default.StyleMaster,Production.StyleMaster" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <Page Name="Copy of Normal" Width="800" Height="800" Padding="20pt" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="0.75in" PaddingBottom="0.75in">
+        <Frame Flow="header" Height="40pt" Anchors="Left,Right,Top" Right="24pt" X="24pt" Y="10pt" ColumnCount="1">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p><MadCap:variable xhtml:name="Heading.Level1" />
+                        </xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="footer" Height="55.5pt" Anchors="Left,Right,Bottom" Right="24pt" Bottom="1.5pt" X="24pt" Y="627pt" Width="">
+            <Content>
+                <xhtml:html MadCap:lastBlockDepth="2" MadCap:lastHeight="85" MadCap:lastWidth="508" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align: center;">- <MadCap:variable xhtml:name="System.PageNumber" />- </xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;">Microsoft Proprietary and Confidential</xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;font-size: 8pt;color: #808080;" xhtml:align="center">Copyright © 
+ 2012 Microsoft Corporation</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" Y="62pt" Bottom="69pt" X="24pt" Right="24pt" ColumnCount="1" ColumnGap="30pt" ColumnDivider="Solid 1pt Red" Anchors="Left,Right,Top,Bottom">
+        </Frame>
+    </Page>
+    <Page Width="800" Height="800" Padding="20pt" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="0.75in" PaddingBottom="0.75in">
+    </Page>
+    <Page Name="Normal" Width="800" Height="800" Padding="20pt" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="0.75in" PaddingBottom="0.75in" PageType="left">
+        <Frame Flow="header" Height="40pt" Anchors="Left,Right,Top" Right="24pt" X="24pt" Y="10pt" ColumnCount="1">
+            <Content>
+                <xhtml:html MadCap:lastBlockDepth="2" MadCap:lastHeight="46" MadCap:lastWidth="508" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align: left;"><MadCap:variable xhtml:name="Branding.Amalga Short" /> Imaging System Guide</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="footer" Height="48pt" Anchors="Left,Right,Bottom" Right="24pt" Bottom="9pt" X="24pt" Y="627pt" Width="">
+            <Content>
+                <xhtml:html MadCap:lastBlockDepth="2" MadCap:lastHeight="85" MadCap:lastWidth="508" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align: center;">- <MadCap:variable xhtml:name="System.PageNumber" />- </xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;">Microsoft Proprietary and Confidential</xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;font-size: 8pt;color: #808080;" xhtml:align="center">Copyright © 
+ 2012 Microsoft Corporation</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" Y="62pt" Bottom="69pt" X="24pt" Right="24pt" ColumnCount="1" ColumnGap="30pt" ColumnDivider="Solid 1pt Red" Anchors="Left,Right,Top,Bottom">
+        </Frame>
+    </Page>
+    <Page Name="R" Width="800" Height="800" Padding="20pt" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="0.75in" PaddingBottom="0.75in" PageType="right">
+        <Frame Flow="header" Height="40pt" Anchors="Left,Right,Top" Right="24pt" X="24pt" Y="10pt" ColumnCount="1">
+            <Content>
+                <xhtml:html MadCap:lastBlockDepth="2" MadCap:lastHeight="46" MadCap:lastWidth="508" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align: right;"><MadCap:variable xhtml:name="Branding.Amalga Short" /> Imaging System Guide</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="footer" Height="52.5pt" Anchors="Left,Right,Bottom" Right="25.5pt" Bottom="1.5pt" X="22.5pt" Y="630pt" Width="">
+            <Content>
+                <xhtml:html MadCap:lastBlockDepth="2" MadCap:lastHeight="85" MadCap:lastWidth="508" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align: center;">- <MadCap:variable xhtml:name="System.PageNumber" />- </xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;">Microsoft Proprietary and Confidential</xhtml:p>
+                        <xhtml:p xhtml:style="text-align: center;font-size: 8pt;color: #808080;" xhtml:align="center">Copyright © 
+ 2012 Microsoft Corporation</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" Y="62pt" Bottom="69pt" X="24pt" Right="24pt" ColumnCount="1" ColumnGap="30pt" ColumnDivider="Solid 1pt Red" Anchors="Left,Right,Top,Bottom">
+        </Frame>
+    </Page>
+    <Page Name="Front Matter" Width="800" Height="800" Padding="20pt" PageSize="Letter" PaddingLeft="1in" PaddingRight="1in" PaddingTop="0.75in" PaddingBottom="0.75in" PageType="normal">
+        <Frame Flow="header" Height="40pt" Anchors="Left,Right,Top" Right="24pt" X="24pt" Y="10pt" ColumnCount="1" TextAlign="right" PaddingLeft="0px" PaddingRight="0px">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p><MadCap:variable xhtml:name="Heading.Level1" />
+                        </xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="footer" Height="40pt" Anchors="Left,Right,Bottom" Right="24pt" Bottom="17pt" X="24pt" Y="959pt" TextAlign="center" PaddingLeft="0px" PaddingRight="0px">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="text-align:center;">- <MadCap:variable xhtml:name="System.PageNumber" /> -</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" Y="62pt" Bottom="69pt" X="24pt" Right="24pt" ColumnCount="1" ColumnGap="30pt" ColumnDivider="Solid 1pt Red" Anchors="Left,Right,Top,Bottom" PaddingLeft="0px" PaddingRight="0px">
+        </Frame>
+    </Page>
+</PageStyles>

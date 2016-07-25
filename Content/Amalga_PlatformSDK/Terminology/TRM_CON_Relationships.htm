@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1768" MadCap:lastWidth="363" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Relationships</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="relationships:Terminology platform application;Terminology platform application:relationships;concepts:Terminology platform application;Terminology platform application:concepts;Terminology platform application:relationship types;relationship types:Terminology platform application" />This topic describes relationships, which represents associations between two concepts in the Terminology platform application.</p>
+        <p>In a single terminology, concepts can be related to each other in a variety of ways. For example, the following diagram illustrates a typical acyclic hierarchical relationship structure between clinical concepts in the International Classification of Diseases, Ninth Edition (ICD-9) clinical terminology. </p>
+        <p>For more information about the ICD-9 clinical terminology, see <a href="http://www.cdc.gov/nchs/icd/icd9.htm">International Classification of Diseases, Ninth Revision (ICD-9)</a>, on the Centers for Disease Control and Prevention site<MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> at http://www.cdc.gov/nchs/icd/icd9.htm</MadCap:conditionalText>.</p>
+        <p>
+            <img src="../Images/TerminologyConcepts01.png" />
+        </p>
+        <p class="Figure">While concepts are important to a terminology, the relationships between concepts provide the real power and flexibility to allow a clinical terminology to consistently and accurately describe a vast range of clinical concepts. Typically, relationships either describe a hierarchical relationship between concepts, as shown in the previous diagram, or describe attributes related to a given concept.</p>
+        <p>Each relationship contains the following properties:</p>
+        <ul>
+            <li>
+                <p>Source concept</p>
+                <p>The source concept typically represents the starting or parent endpoint of a relationship, depending on the relationship type.</p>
+            </li>
+            <li>
+                <p>Relationship type</p>
+                <p>The relationship type describes the characteristics of the relationship itself. For more information about relationship types, see <MadCap:xref href="TRM_CON_RelationshipTypes.htm" target="" title="" alt="">Relationship types on page 1</MadCap:xref>. Relationship types are specific to a given terminology.</p>
+            </li>
+            <li>
+                <p>Target concept</p>
+                <p>The target concept typically represents the ending or child endpoint of a relationship, depending on the relationship type.</p>
+            </li>
+            <li>
+                <p>Terminology</p>
+                <p>This property indicates the terminology that contains the relationship. If a relationship is contained by a clinical terminology, it typically describes a relationship between two concepts contained by that clinical terminology. If a relationship is contained by a mapping terminology, it typically describes a relationship between two concepts contained in two different clinical terminologies. For more information about clinical and mapping terminologies, see <MadCap:xref href="TRM_CON_Terminologies.htm" target="" title="" alt="">Terminologies on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Supported language</p>
+                <p>Similar to concepts, relationships support multiple languages. One or more relationships, each in a different language, can describe the same relationship between two concepts.</p>
+                <p class="caution"><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> does not support relationships in multiple languages at this time.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingRelationships.htm" target="" title="" alt="">Querying relationships on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

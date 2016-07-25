@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2005" MadCap:lastWidth="1410" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-03-11T23:23:22.9103565-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Lookup element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Lookup element" />Declares a lookup function and the associated parameters for the specified segment element.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Lookup&gt;</b>
+                           &lt;Function&gt;...&lt;/Function&gt;
+                           &lt;InputParameters /&gt;<b>						
+                        &lt;/Lookup&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Lookup&gt;</b>
+                           &lt;Function&gt;...&lt;/Function&gt;
+                           &lt;InputParameters /&gt;<b>	
+                        &lt;/Lookup&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Lookup&gt;</b>
+                           &lt;Function&gt;...&lt;/Function&gt;
+                           &lt;InputParameters /&gt;<b>					
+                        &lt;/Lookup&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+              &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once<MadCap:change MadCap:changes="1">.</MadCap:change><br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Element.htm">Element</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Function.htm">Function</a>, <a href="DI_XML_Manifest_InputParameter.htm">InputParameters</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Lookup</span> element is mandatory in the data-parser service manifest to look up data that is external to message. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="MarkupLanguageElements">Example</p>
+        <p>The following example converts a terminology concept code to descriptive text for the DiagnosisCleansedText column.</p><pre xml:space="preserve">&lt;Segment Name="DG1" SourceName="DG1"&gt;
+   &lt;Elements&gt;
+     &lt;Element Name="DiagnosisCleansedText" Type="System.String" MaxLength="400"&gt;
+        &lt;ConceptId /&gt;
+        &lt;Lookup&gt;
+           &lt;Function&gt;Lookups.usf_Terminology_ConvertCodeToText&lt;/Function&gt;
+           &lt;InputParameters&gt;
+              &lt;Parameter Name="selectedTerminologyId" Type="System.String" SourceType="Constant" SourceName="ICD9ContentSetId" /&gt;
+              &lt;Parameter Name="codeTypeId" Type="System.String" SourceType="Constant" SourceName="ICD9CodingSystemTypeId" /&gt;
+              &lt;Parameter Name="incomingConceptCode" Type="System.String" SourceType="ShreddedInput" SourceTable="DG1" SourceName="DG1_3_1" /&gt;
+           &lt;/InputParameters&gt;
+        &lt;/Lookup&gt;
+      &lt;/Element&gt;
+   &lt;/Elements&gt;
+&lt;/Segment&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

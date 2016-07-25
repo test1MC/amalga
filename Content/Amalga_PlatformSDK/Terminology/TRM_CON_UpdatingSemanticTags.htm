@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="4" MadCap:lastHeight="2224" MadCap:lastWidth="217" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Updating semantic tags</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;TerminologyService service:Terminology platform application;Terminology platform application:ISemanticLabelTaggingService interface;Terminology platform application:TerminologyService service" />This topic describes how to update semantic tags for an existing positional data vector in the Terminology platform application.</p>
+        <p>You can use the UpdateSemanticLabel operation, included in the ISemanticLabelTaggingService service contract, to add a semantic tag to an existing positional data vector. The operation accepts two parameters:</p>
+        <ul>
+            <li>
+                <p>positionalDataVectorId</p>
+                <p>A System.Guid object representing the globally unique identifier (GUID) that identifies an existing positional data vector. </p>
+                <p>This identifier can be discovered by using the GetPositionalDataVectors operation from the ISemanticLabelTaggingService service contract. For more information about querying positional data vectors, see <MadCap:xref href="TRM_CON_QueryingDataVectors.htm" target="" title="" alt="">Querying positional data vectors on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>semanticConceptGuid</p>
+                <p>A string value representing the GUID that identifies an existing concept.</p>
+                <p>This identifier can be discovered by using the GetConcepts operation from the ITerminologyQueryService service contract, or by querying the Microsoft.Terminology.Beta.Concept entity. For more information about querying concepts, see <MadCap:xref href="TRM_CON_QueryingConcepts.htm" target="" title="" alt="">Querying concepts on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p class="note">No more than 64 semantic tags can be applied to a single positional data vector.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingDataVectors.htm" target="" title="" alt="">Querying positional data vectors on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingConcepts.htm" target="" title="" alt="">Querying concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Data vectors on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

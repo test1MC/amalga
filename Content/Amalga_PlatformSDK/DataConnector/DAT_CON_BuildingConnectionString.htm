@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="843" MadCap:lastWidth="624.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T10:16:14.9784660-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-12T15:31:39.4480213-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-03-12T16:25:10.8208728-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T16:25:10.8364729-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Building a connection string</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to build a connection string for a DataConnector instance in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>In <MadCap:variable name="FeatureName.Amalga ADO.NET" />, a connection string is used by an <span class="ForeignCodeElements">AmalgaDbConnection</span> object to connect to an instance of the DataConnector platform application. For more information about connection strings in ADO.NET, see <a href="http://msdn.microsoft.com/library/ms254978.aspx">Connection Strings</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/ms254978.aspx">http://msdn.microsoft.com/library/ms254978.aspx</a></MadCap:conditionalText>.</p>
+        <p><MadCap:variable name="FeatureName.Amalga ADO.NET" /> does not include a provider-specific implementation of the <span class="ForeignCodeElements">DbConnectionStringBuilder</span> class from ADO.NET. However, you can use the <span class="ForeignCodeElements">GetVirtualSchemaConnectionString</span> method, included in the <span class="ForeignCodeElements">AmalgaService</span> class and available to hosted <MadCap:variable name="BrandingMS.WCF service" /> and <MadCap:variable name="BrandingMS.Doors service" /> instances, to provide an appropriate connection string for the hosted application.</p>
+        <p>The following <MadCap:change MadCap:changes="2">example </MadCap:change><MadCap:change MadCap:changes="1">connection string</MadCap:change> illustrates a typical connection string for a hosted application:</p>
+        <p class="code">"Data Source=https://computer.domain.com:8889;Initial Catalog=HostedApplication.TestInstance;Integrated Security=True"</p>
+        <h2>Connection string properties</h2>
+        <p>The <span class="ForeignCodeElements">AmalgaDbConnection</span> object recognizes the following connection string properties: </p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>User ID</td>
+                    <td>
+                        <p>Optional string. The user ID to be used when connecting to the instance.</p>
+                        <p class="caution">The User ID connection string property is not supported.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <p>Optional string. The password to be used when connecting to the instance.</p>
+                        <p class="caution">The Password connection string property is not supported.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Connection TimeOut</td>
+                    <td>
+                        <p>Optional integer. The time, in seconds, </p>
+                        <p>The default value for this property is set to 30.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Connect TimeOut</td>
+                    <td>See Connection TimeOut<MadCap:change MadCap:changes="4">.-</MadCap:change><MadCap:change MadCap:changes="3">, above</MadCap:change>.</td>
+                </tr>
+                <tr>
+                    <td>Data Source</td>
+                    <td>Required string. The fully qualified domain name (FQDN) of the physical host for the Topology platform feature.</td>
+                </tr>
+                <tr>
+                    <td>Integrated Security</td>
+                    <td>
+                        <p>Required Boolean. If set to True, Yes, or SSPI, indicates that the current Doors account credentials are used for authentication. Otherwise, the values provided in the User ID and Password connection string properties are used for authentication.</p>
+                        <p>The default value for this property is set to True.</p>
+                        <p>The User ID and Password connection string properties are not supported. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-03-12T15:35:02.4767592-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="content missing for AllowInputPrompt?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T15:35:27.3280724-07:00">AllowInputPrompt</MadCap:annotation>
+                    </td>
+                    <td>&#160;</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-03-01T18:46:39.6652029-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Deprecated.\r\n\r\nLLB: what needs to be done here?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T16:24:47.2290670-07:00">AuthToken</MadCap:annotation>
+                    </td>
+                    <td>Optional string. This connection string property is deprecated.</td>
+                </tr>
+                <tr>
+                    <td>Initial Catalog</td>
+                    <td>Required string. The full name of the application instance.</td>
+                </tr>
+                <tr>
+                    <td>Persist Security Info</td>
+                    <td>Optional Boolean. Indicates whether security-sensitive information, such as the password, is returned as part of the connection if the connection is open or has ever been in an open state.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

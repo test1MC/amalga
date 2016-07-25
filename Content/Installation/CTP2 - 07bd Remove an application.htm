@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2136" MadCap:lastWidth="464" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Removal of an application from the <MadCap:variable name="BrandingHSG.Amalga Short" /> environment</h1>
+        <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, uninstallation of <MadCap:variable name="BrandingHSG.Amalga Short" /> features is not supported. To uninstall an application instance, see <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Remove App Instance.htm" target="" title="" alt="">Remove an application instance</MadCap:xref>.</p>
+        <h2>To remove an application instance</h2>
+        <h3>Unregister the application instance.</h3>
+        <p class="note">This step needs to be executed from one of the physical hosts in the logical host that support the application instance to be removed.</p>
+        <ol>
+            <li>Start Doors PowerShell as an adminstrator. Click <span class="Label">Start</span>, click<span class="Label"> All Programs</span>, click <span class="Label">Accessories</span>, click <span class="Label">Doors PowerShell</span>, and then <span class="Label">right-click Doors PowerShell</span> and click <span class="Label">Run as Administrator</span>.</li>
+            <li>Run the following commands to prepare Doors PowerShell.<br /><span class="InputText">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell' Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</span></li>
+            <li>
+                <p>Run the following command to unregister the application instance replacing the placeholders with variables appropriate for your installation.<br /><span class="InputText">Unregister-AmInstanceWithLogicalHostInstance -InstanceType ApplicationInstance -InstanceName &lt;ApplicationInstanceName&gt; -LogicalHostName &lt;LogicalHostName&gt;</span></p>
+            </li>
+            <li>
+                <p>Run the following command to synchronize this physical host.<br /><span class="InputText">Sync-PhysicalHost</span><br /></p>
+            </li>
+        </ol>
+        <h3>Synchronize the remaining physical hosts</h3>
+        <p class="note">This step needs to be executed on any additional physical hosts in the logical host that support the application being unregistered.</p>
+        <ol>
+            <li>Start Doors PowerShell as an adminstrator. Click <span class="Label">Start</span>, click<span class="Label"> All Programs</span>, click <span class="Label">Accessories</span>, click <span class="Label">Doors PowerShell</span>, and then <span class="Label">right-click Doors PowerShell</span> and click <span class="Label">Run as Administrator</span></li>
+            <li>Run the following commands to prepare Doors PowerShell.<br /><span class="InputText">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell' Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</span></li>
+            <li>Run the following command to synchronize the physical host<br /><span class="InputText">Sync-PhysicalHost</span></li>
+        </ol>
+        <h3>Remove the <MadCap:variable name="FeatureName.virtual schema" /></h3>
+        <p class="note">This step need only be executed when removing an application which installed with a virtual schema (.edmx file), and can be executed from any maching on which the application services feature is installed.</p>
+        <ol>
+            <li>Start Doors PowerShell as an adminstrator. Click <span class="Label">Start</span>, click<span class="Label"> All Programs</span>, click <span class="Label">Accessories</span>, click <span class="Label">Doors PowerShell</span>, and then <span class="Label">right-click Doors PowerShell</span> and click <span class="Label">Run as Administrator</span>.</li>
+            <li>Run the following commands to prepare Doors PowerShell.<br /><span class="InputText">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell' Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</span></li>
+            <li>Remove the deployed virtual schema by running the following command, replacing the placeholder and including a true or false parameter depending on whether you want to drop the application private database.<br /><span class="InputText">Remove-AmVirtualSchema -ApplicationInstanceName &lt;ApplicationInstanceName&gt; -DropPrivateDatabase $true|$false</span></li>
+        </ol>
+        <h3>Remove application instance from the database</h3>
+        <p class="note">This step can be executed from any machine on which the application services feature is installed</p>
+        <ol>
+            <li>Start Doors PowerShell as an adminstrator. Click <span class="Label">Start</span>, click<span class="Label"> All Programs</span>, click <span class="Label">Accessories</span>, click <span class="Label">Doors PowerShell</span>, and then <span class="Label">right-click Doors PowerShell</span> and click <span class="Label">Run as Administrator</span>.</li>
+            <li>Run the following commands to prepare Doors PowerShell.<br /><span class="InputText">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell' Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll Import-Module .\Microsoft.Amalga.Deployment.TopologyLib.dll</span></li>
+            <li>Run the following command to remove the application instance from the database<br /><span class="InputText">Unpublish-AmApplicationInstance -Name &lt;ApplicationInstanceName&gt;</span></li>
+        </ol>
+        <h3>Verify the application instance has been removed</h3>
+        <ol>
+            <li>Open Internet Information Services (IIS) Manager and verify that the application's service instances are removed from the site "Microsoft Health Hosted Services 3.0".</li>
+            <li>Verify that the corresponding files are removed from the C:\Program Files\Microsoft Amalga\System 3.0\Application Web Services directory.</li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

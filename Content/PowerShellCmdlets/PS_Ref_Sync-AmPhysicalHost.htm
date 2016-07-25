@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1485.333" MadCap:lastWidth="895" MadCap:fileTags="TopicType.Ref_General,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,TopicOwner.v-keith">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-01-31T17:10:57.9104280-08:00" MadCap:attribute="style" MadCap:value="width: 125px;" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-01-31T17:12:51.1387497-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Sync-AmPhysicalHost</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The Sync-AmPhysicalHost cmdlet queries the topology service, downloads all the new changes to the physical host and applies them. These changes include the following actions.</p>
+        <ul>
+            <li>Downloading new services and hosting them</li>
+            <li>Uninstalling services from the physical host</li>
+        </ul>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-28T21:57:05.4569254-07:00" MadCap:creator="v-keith" MadCap:initials="V-" MadCap:comment="Check this statement after CTP1." MadCap:editor="v-keith" MadCap:editDate="2011-09-28T21:57:25.1308926-07:00">For </MadCap:annotation>Doors Worker services, if Sync-AmPhysical Host has new changes for the service, the service needs to be in a Stopped state before running Sync-AmPhysicalHost.</p>
+        <p><strong>Amalga built-in role membership required:</strong>  AmalgaSysAdmin <br MadCap:changes="2" /></p>
+        <p>For more information, <MadCap:annotation MadCap:createDate="2012-01-31T17:13:23.2159571-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This cross ref will build correctly only in AmalgaV3 project." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-31T17:14:20.0036353-08:00">see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</MadCap:annotation></p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Sync-AmPhysicalHost [-ServiceInstanceName &lt;String&gt;] [-Force]</p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2012-01-17T14:17:42.8998049-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Every parameter should have this information:\r\n---Parameter  from syntax\r\n---Description of the effect of the parameter on the cmdlet\r\n---Table of values" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-30T12:23:01.1068293-08:00">Parameter descriptions</MadCap:annotation>
+        </h2>
+        <p class="h7">[-ServiceInstanceName] &lt;string&gt;</p>
+        <p>Takes the unique instance name as recorded in the topology database and included in the resolved application or service manifest used during the Publish-AmApplicationInstance process.</p>
+        <table>
+            <col MadCap:changes="1" style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Instance name as recorded in the AmalgaSystem database                   
+</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-force]</p>
+        <p>This parameter takes no values. When this parameter is specified, services are forced to synchronize on the physical host, regardless of the requirement.</p>
+        <table>
+            <col style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-01-31T13:04:38.9509938-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="The common parameters implementation will not be documented for CTP2.\r\n\r\nThis section is included for future doc updates as dev takes more advantage of the common parameter base functions.\r\n\r\nThere will be a statement on the PS landing page about common parameter support." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:16:33.6060134-08:00">&lt;</MadCap:annotation>CommonParameters&gt;</p>
+        <p MadCap:conditions="Production.doNOTbuild">This cmdlet supports <MadCap:variable name="BrandingMS.Doors PowerShell" />&#160; common parameters as described in the following table. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <table style="width: 95%;" MadCap:conditions="Production.doNOTbuild">
+            <col style="width: 141px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter </th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-Verbose
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Debug
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td> -ErrorAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-ErrorVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutBuffer   
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WhatIf
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Confirm
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Example</p>
+        <p class="InputTextPara">Sync-AmPhysicalHost</p>
+        <p class="InputTextPara">Sync-AmPhysicalHost -ServiceInstanceName TestApp1 –force </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See <MadCap:annotation MadCap:createDate="2012-01-18T16:56:23.9613761-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="If you add a  cross-reference or hyperlink in the See also section, remember to remove the DoNotBuild condition for that paragraph." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:46:25.4519781-08:00">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related tasks that complete operations identical or similar to that of this cmdlet.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related cmdlets.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[(optional)]</p>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="995" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,Personas.All,ReleaseTarget.TAP,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure binding: constant values</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to bind entity properties to constant values.   </p>
+        <p>
+            <MadCap:keyword term="entity binding" />
+            <MadCap:annotation MadCap:createDate="2012-02-22T09:43:16.4526195-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic complete when relevant xrefs are inserted / terminology confirmed." MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:54:14.4768756-08:00">You </MadCap:annotation>can bind entity properties to constant values. Binding properties to constant values allows you to meet mandatory binding requirements when NULL&#160;values are not allowed. For example, binding is mandatory for all properties of an entity if the entity is bound to an application and the corresponding <MadCap:annotation MadCap:createDate="2011-12-28T08:30:13.4545704-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to confirm terminology and add xref, pending content from Dennis. &quot;application view columns&quot;? correct term? is there a conceptual topic I can reference for more info? reviewed Dennis's TOC 2/21 but didn't see anything specifically for app views and marking entity properties optional...yet. " MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:43:05.3448499-08:00">application view columns are not explicitly declared as optional</MadCap:annotation>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To bind a property to a constant value</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp">
+                </MadCap:snippetText>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-entitybinding.flsnp">
+                    </MadCap:snippetText> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-entitybinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-SwitchToAssisted.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-SwitchToAssisted.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-bindsource.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-bindsource.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>For the desired entity property, select the constant value entry option (<img src="../Serviceability/Images/EMT-icon-constant.png" />) from the drop-down list of binding options and then enter the <MadCap:annotation MadCap:createDate="2011-12-28T08:31:41.7063947-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="possible gap: \r\n- admin may need to save binding for the entity after each specified constant value (per column). from 79429 spec: &quot;Note that previous defined constant values are not saved in binding UI.  If Arwen defines a constant, then switches to another table/view column before switching back to constant value binding, he will not see previously entered constant values&quot; - attempted to confirm this behavior on 2/21 build, but cannot go through contact value workflow due to UX layout issues." MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:40:26.2905037-08:00">constant value that you want</MadCap:annotation>. </p>
+                <p class="note">
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-BindingOptions.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-click-save.flsnp" />
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- application views (Dennis)\r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:54:32.4388756-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:lastBlockDepth="6" MadCap:lastHeight="515" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,Personas.All,ReleaseTarget.RTM,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Migrate binding configuration</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="entity binding" />
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-12-28T16:53:52.6819126-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="1/17: Dongbai confirms that binding configuration migration is punted out of CTP2. metadata updated for this topic.\r\n\r\nold info below..................\r\n\r\nTAP: 90181 import/export entity binding (migrate)\r\n\r\n&quot;What we have at source site.\r\nS.1)  a list of application views and their properties\r\nS.2)  all registy entities the application views bound to\r\nS.3) binding of registry entities to storage\r\nS.4) Application private views (without binding, at destination, DBA has to provision private store)\r\n \r\n&quot;At destination site, admin will need to install an application, after installation.  We will get what is equivalent to\r\nS.1), S.2) S.4)&quot;\r\n\r\nThe UI for migrating entity binding achieves S.3) above." MadCap:editor="v-padenc" MadCap:editDate="2012-01-17T08:09:29.1131094-08:00">This topic </MadCap:annotation>describes how to migrate entity binding information across <MadCap:variable name="BrandingHSG.Amalga Short" /> installations.       </p>
+        <p>You can migrate entity binding information from one <MadCap:variable name="BrandingHSG.Amalga Short" /> installation to another. This procedure is useful when migrating applications. </p>
+        <p>Exporting binding information results in a file with a .bnd extension. Importing binding information involves loading the .bnd file to the <MadCap:variable name="FeatureName.entity registry" /> in the destination site. At the time of import, the system validates that all referenced storage schema (databases, schemas, tables, views, and columns) exist in the destination environment (although the server name can differ) and that source system definitions and semantic tags (<MadCap:annotation MadCap:createDate="2011-12-28T16:47:21.8479126-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="terminology: &quot;concept GUID&quot; or &quot;semantic tag unique identifier&quot;?" MadCap:editor="v-padenc" MadCap:editDate="2011-12-28T16:51:42.6169126-08:00">concept GUIDs</MadCap:annotation>) are the same as the source environment. </p>
+        <p class="note">Before beginning this procedure, ensure that the source and destination environments match exactly:&#160;tables, views, data catalog, and <MadCap:variable name="FeatureName.entity registry" /> must be the same. </p>
+        <p class="LabelforProcedures">To <MadCap:annotation MadCap:createDate="2011-12-28T16:47:54.4379126-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="from 79429 spec: &quot;Note that the installation order of the applications must match as well.  Consider two applications appA and appB that each has packaged its own modified version of an entity Contoso.Encounter.  If we install appA first, appA’s definition of Encounter entity will be Contoso.Encounter0000 and appB’s will be Contoso.Encounter0001. If we switch installation order, appA’s definition of Encounter entity will be Contoso.Encounter0001 and appB’s will be Contoso.Encounter0000.&quot;" MadCap:editor="v-padenc" MadCap:editDate="2011-12-28T16:48:02.3079126-08:00">migrate </MadCap:annotation>binding information</p>
+        <p class="CHANGEME">&gt;&gt;TBD BLOCKED due to binding migration not in build yet</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2011-12-19T14:18:23.6030920-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="add conceptual topic about entity binding" MadCap:editor="v-padenc" MadCap:editDate="2011-12-19T14:18:34.6266780-08:00">Concepts</MadCap:annotation> <![CDATA[ ]]></p>
+        <p class="SeeAlsoSubHead">Reference</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding window</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>If a sensitive label by this name exists on related entities (parent, child, or peer entities), ensure that the role is granted access to the sensitive label on those entities as well. For example, if you want to grant the Physicians role access to the “Private” sensitive label on the Contoso.Patient entity, and Contoso.Patient has a peer entity Eastlake.Patient with a sensitive label named “Private,” then you must grant the Physicians role access to “Private” on both entities. </body>
+</html>

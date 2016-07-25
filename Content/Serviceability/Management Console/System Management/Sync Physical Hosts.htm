@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Debbie Data: DBA,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,Personas.Bill Bits: IT Mgr,Personas.Mort: Clinical App Analyst,Status.70 - Complete,TopicType.Procedure" MadCap:lastBlockDepth="6" MadCap:lastHeight="402" MadCap:lastWidth="726">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Synchronize physical hosts</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>Synchronizing physical hosts aligns the state of the hosted services on a physical host with their definition in the Amalga topology (AmalgaSystem) database. You can synchronize physical hosts using the Sync-AmPhysicalHost <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet. For more information on this cmdlet, see <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm#Sync-Phy" target="" title="" alt="">Sync-AmPhysicalHost</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To synchronize a physical host.</p>
+        <ol>
+            <li>
+                <p>Log on to the physical host you want to synchronize.</p>
+            </li>
+            <li>Start Doors PowerShell as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>Load Microsoft.Amalga.Powershell.dll.<ol style="list-style-type: lower-alpha;"><li><p>Navigate to the appropriate folder. </p><p>The default installation folder is: C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell.</p></li><li><p>Enter the following cmdlet. </p><p class="InputText">Import-Module .\Microsoft.Amalga.Powershell.dll</p></li></ol></li>
+            <li>
+                <p>Enter the following cmdlet. </p>
+                <p class="InputTextPara">Sync-PhysicalHost</p>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1267" MadCap:lastWidth="243.3333" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">DefaultValue element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the DefaultValue element.</p>
+        <p>Declares the default value for the configuration setting. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;Setting&gt;<br /> <![CDATA[   ]]><MadCap:annotation MadCap:createDate="2011-10-12T04:52:12.5758720-07:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="CDATA support not included for CTP1." MadCap:editor="v-dennk" MadCap:editDate="2011-10-12T04:52:24.4428720-07:00">&lt;DefaultValue&gt;</MadCap:annotation><br /> <![CDATA[      ]]><i>string</i></b>
+            <MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"><b> | &lt;CDATA&gt;</b>
+            </MadCap:conditionalText><b><br />&#160;&#160;&#160;&lt;/DefaultValue&gt;<br />&lt;/Setting&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_Setting.htm">Setting</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>When the hosted application is first deployed, the value specified in this element is used as the default value for the configuration setting represented by the Setting parent element. This value is also used by default while debugging the hosted application. After deployment, the value specified for the configuration setting can be changed with a variety of methods. For more information about modifying the value of a configuration setting after deployment, see <MadCap:xref href="SDK_XML_Manifest_Setting.htm" target="" title="" alt="">Setting Element on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso">See Also</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_Validation.htm" target="" title="" alt="">Validation Element on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

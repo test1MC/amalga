@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1119" MadCap:lastWidth="818" MadCap:fileTags="Status.70 - Complete,TopicOwner.v-ccole,ReleaseTarget.TAP" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure merge actions</h1>
+        <p class="abstract">This topic describes how to configure a merge action.</p>
+        <p>
+            <MadCap:keyword term="configure merge actions" />Define operations to correct identifier conflicts explicitly for specified conditions. With this technique, you can define a variety of conditions and then specify the corrective actions to take when each condition occurs. You must define the identifiers with standard mapping (see the previous procedure) before they can be merged.</p>
+        <p class="LabelforProcedures">To configure an explicit merge</p>
+        <ol>
+            <li>Between the <MadCap:xref href="Manifest XML/DI_XML_Manifest_EnterpriseId.htm" target="" title="" alt="">EnterpriseId element</MadCap:xref> tags and after the standard mapping block, add a new set of <MadCap:xref href="Manifest XML/DI_XML_Manifest_EnterpriseIdAction.htm" target="" title="" alt="">EnterpriseIdAction element</MadCap:xref> tags.</li>
+            <li>
+                <p>Set the Action attribute to “Merge” and the AnchorTable attribute to “PID” to apply this action to the PID segment.</p><pre xml:space="preserve" class="code">&lt;EnterpriseIdAction Action="Merge" AnchorTable="PID"&gt;</pre>
+            </li>
+            <li>
+                <p>Add the condition that you want to test. If the condition is true, the <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> will process the action. The following condition determines whether the specified strings are equal.</p>
+                <p class="note">To reference MSH, MSH must be an ancestor table of the anchor table used for the transform.</p><pre xml:space="preserve" class="code">&lt;Condition&gt;
+  &lt;Action&gt;StringEqualsIgnoreCase&lt;/Action&gt;
+  &lt;InputParameters&gt;
+    &lt;Parameter Name="left" Type="System.String" SourceTable="MSH" 
+		SourceType="ShreddedInput" SourceName="MSH_9_2"/&gt;
+    &lt;Parameter Name="right" Type="System.String" SourceType="Inline" Value="A40" /&gt;
+  &lt;/InputParameters&gt;
+&lt;/Condition&gt;
+</pre>
+            </li>
+            <li>
+                <p>Add the input parameters for the action. This example specifies a patient-level merge, but other values can be Person, EncounterSet, or Encounter.</p><pre xml:space="preserve">            <![CDATA[  ]]><span class="code">&lt;InputParameters&gt;
+        &lt;Parameter Name="MergeType" Type="System.String" SourceType="Inline" Value="Patient"/&gt;
+        &lt;Parameter Name="MergeParents" Type="System.String" SourceType="Inline" Value="Reparent"/&gt; 
+    &lt;/InputParameters</span>                             <![CDATA[ ]]></pre>
+                <p>The MergeParents attribute handles situations when the merge causes one child identifier to have multiple parent identifiers. You can specify the following actions:</p>
+                <ul>
+                    <li>Reparent – perform reparent before the merge.</li>
+                    <li>Automerge – merge the parent.</li>
+                    <li>Abort – skip the merge, continue with the rest of parsing, and do not throw an error.</li>
+                    <li>Throw exception - when a merge creates multiple parent identifiers, throw an exception.</li>
+                </ul>
+            </li>
+            <li>
+                <p>Specify the two identifiers to be merged. The new identifier is the “Target” value and the old identifier is the name “Source” value. It is possible to use child identifier tiers to identify the source and the target for the merge. For example, a MergeType "Person" can infer the precise person identifiers to be merged by the source and target <MadCap:xref href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm" target="" title="" alt="">PatientRecordIdentifier element</MadCap:xref> values.The source and target identifiers can be any tier equal to or lower than what you specified for the MergeType attribute.    </p><pre xml:space="preserve" class="code">&lt;EnterpriseIdAction&gt;
+   &lt;InputIdentifiers&gt;
+      &lt;PatientRecordIdentifier Name="Source"&gt;
+         &lt;Id Type="System.String" SourceType="ShreddedInput" SourceTable="MRG" SourceName="MRG_1_1" /&gt;
+         &lt;Domain Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+      &lt;/PatientRecordIdentifier&gt;
+      &lt;PatientRecordIdentifier Name="Target"&gt;
+         &lt;Id Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="MRN" /&gt;
+         &lt;Domain Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+      &lt;/PatientRecordIdentifier&gt;
+   &lt;/InputIdentifiers&gt;
+&lt;/EnterpriseIdAction&gt;
+</pre>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

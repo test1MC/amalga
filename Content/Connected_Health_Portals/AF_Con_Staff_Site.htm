@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Staff Site</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="sites: staff;staff site;patient list" />This topic describes the pages that make up the staff site and the primary controls that exist on the page.</p>
+        <p>A basic <MadCap:variable name="Applications.staff site" /> and set of control is provided with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. A set of controls is available through the <MadCap:variable name="BrandingMS.Toolbox first use" />, which can be used to add new pages and features to the site.</p>
+        <h2>Staff site header</h2>
+        <p>For the authenticated staff user, the <MadCap:variable name="Applications.staff site" /> header is the first control layer visible.</p>
+        <p class="Figure">
+            <img src="Images/StaffHeader.png" />
+        </p>
+        <p>As shipped with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the header includes the institution brand, the staff account context, search, and navigational elements:</p>
+        <p>1 - SolutionPicker - allows the user to navigate through the top-level <MadCap:variable name="BrandingMS.SharePoint" /> sites</p>
+        <p> 2 - EnterpriseAccountContext - displays the authenticated user’s <MadCap:variable name="BrandingHSG.HealthVault" /> identity, and provides a link for signing off.</p>
+        <p>3 - CarouselNavigationBar - allows the user to navigate the pages, depending on the solution chosen.</p>
+        <p>4 - PatientSearch - <MadCap:annotation MadCap:createDate="2011-11-16T15:21:43.1587099-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="need a verb here to be parallel." MadCap:editor="v-labenn" MadCap:editDate="2011-11-16T15:21:50.7155657-08:00">potential</MadCap:annotation> future functionality.</p>
+        <p>The <MadCap:variable name="Applications.staff site" /> contains the following pages:</p>
+        <ul>
+            <li>Patient Link Request (PatientMatchStaffPage.aspx) - displays the information about the patient requesting the link and the possible candidates that match the entered data. The main controls on this page are:</li>
+        </ul>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li>PersonDataCard (red in the following image) - displays the patient demographics data as entered by the user in the input form. The list of fields displayed is read from the <MadCap:annotation MadCap:createDate="2011-11-16T15:29:56.7235938-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="will the reader of this topic know what &quot;XML payload&quot; means?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-16T15:30:46.3963755-08:00">XML payload</MadCap:annotation> that is part of the link request task.  If the fields in the payload change, the control will automatically adjust. If the number of fields is more than can be displayed inside the pane, scrollbars are added to allow the user to scroll to any content outsidethe view. The displayed labels are read from a resource file.</li>
+                <li>PotentialLinkCard (blue in the following image) - displays the patient demographics data from the <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> database. Once a user selects a patient from the PotentialMatchList, the data for that patient is displayed  in this section of the screen. The staff user can decide whether the information entered by the patient (on the left) matches the information in the <MadCap:variable name="BrandingHSG.Amalga Short" /> system ( on the right). If yes, they can click <span class="UIElementAction">Link to this patient file</span>.</li>
+                <li>PotentialMatchList (green in the following image) - displays a list of candidates that partially match the entered patient data. The control is data bound in code to the result of a search performed by the patient linking service.</li>
+            </ul>
+        </blockquote>
+        <p class="Figure">
+            <img src="Images/StaffSite.png" />
+        </p>
+        <ul>
+            <li>Link request list (Linkrequestlist.aspx) - lists the link-requests. This is the only page that is displayed under the Patient Portal Management solution in the CarouselNavigationBar control. The main component on the page is:</li>
+        </ul>
+        <blockquote>
+            <ul style="list-style-type: circle;">
+                <li>PatientLinkRequestList - lists the requests in the queue. It can indicate which items are marked for escalation and which are currently assigned to other users.</li>
+            </ul>
+        </blockquote>
+        <p class="Figure">
+            <img src="Images/PatientLinkList.png" />
+        </p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking.htm" target="" title="" alt="">Patient linking on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_staff.htm" target="" title="" alt="">Staff handles link requests</MadCap:xref>
+        </p>
+    </body>
+</html>

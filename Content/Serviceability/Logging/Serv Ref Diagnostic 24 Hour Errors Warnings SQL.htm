@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="534" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Diagnostic 24 hour errors and warnings query</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-23T15:22:08.9396962-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="This phrasing is different than the other &quot;query&quot; topics." MadCap:editor="v-labenn" MadCap:editDate="2011-09-23T15:26:25.6703722-07:00">Displays all of the error and warning messages that have been logged within the past 24 hours.</MadCap:annotation>
+        </p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE DATEDIFF(HOUR, TimeStampUTC, SYSDATETIME()) &lt; 24
+  AND Level &lt; 18
+  ORDER BY TimeStampUTC
+</pre>
+    </body>
+</html>

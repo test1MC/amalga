@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2750" MadCap:lastWidth="815" MadCap:fileTags="TopicOwner.v-dennk,Personas.Elvis: App Dev,TopicType.Overview/Introduction,EditingTags.7 - Editing issues resolved,ReleaseTarget.TAP,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Deployment manifest overview</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">An overview of deployment manifests, the deployment manifest resolution process, and additional information.</p>
+        <p>An integral part of the <MadCap:variable name="BrandingHSG.Amalga Short" /> application configuration model, deployment manifests are <MadCap:variable name="LegalAnd3rdParty.Extensible Markup Language (XML)" /> files included with hosted applications and hosted services that declare the design-time and run-time metadata required to host an application or service in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p MadCap:conditions="Production.doNOTbuild">This topic contains the following subsections:</p>
+        <ul>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#Deployme">Deployment manifest types</a>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#Defining">Defining a deployment manifest</a>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#Resolvin">Resolving a deployment manifest</a>
+            </li>
+        </ul>
+        <h2 MadCap:conditions="Production.doNOTbuild"><a name="Deployme"></a>Deployment manifest types</h2>
+        <p MadCap:conditions="Production.doNOTbuild">The following types of deployment manifests are supported in hosted applications:</p>
+        <ul>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#Applicat">Application manifests</a>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#WCF">WCF service manifests</a>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild"><a href="#Doors">Doors service manifests</a>
+            </li>
+        </ul>
+        <p MadCap:conditions="Production.doNOTbuild">All hosted applications must contain an application manifest, and may contain one or more of the other types of deployment manifests, depending on the features and functionality of the hosted application.</p>
+        <p MadCap:conditions="Production.doNOTbuild">Regardless of type, all deployment manifests provide the following general information:</p>
+        <ul>
+            <li>
+                <p MadCap:conditions="Production.doNOTbuild">Identifiers</p>
+                <p MadCap:conditions="Production.doNOTbuild">The deployment manifest contains the name, version, and unique identifier of the object declared by the deployment manifest. </p>
+                <p MadCap:conditions="Production.doNOTbuild">Once resolved, the deployment manifest also contains the unique name of a specific deployed instance of an object, such as a hosted application or a hosted service. Multiple instances of the same hosted application or hosted service can be supported on an Amalga topology.</p>
+            </li>
+            <li>
+                <p MadCap:conditions="Production.doNOTbuild">Configuration settings</p>
+                <p MadCap:conditions="Production.doNOTbuild">The deployment manifest declares the configuration settings, including default values and validation rules, used by the hosted application. Configuration settings allow instances of hosted applications or hosted services to be customized as needed. For example, configuration settings could be used to define include a “Welcome text” specific to an application instance, the default size of queries returned by an application instance, and the background color of an application, configurable by an <MadCap:variable name="BrandingHSG.Amalga Short" /> administrator.</p>
+                <p MadCap:conditions="Production.doNOTbuild">Once resolved,  <MadCap:variable name="FeatureName.Amalga fabric first use" />&#160;uses this metadata to automatically create a configuration store for an administrator to manage the configuration settings for each instance of the object declared by the deployment manifest, and automatically create a page in <MadCap:variable name="FeatureName.Management Console second use" /> to manage these configuration settings.</p>
+            </li>
+        </ul>
+        <h3 MadCap:conditions="Production.doNOTbuild"><a name="Applicat"></a>Application manifests</h3>
+        <p MadCap:conditions="Production.doNOTbuild">Application manifests provide the design-time and run-time metadata used to identify and configure a hosted application. Typically, application manifests contain the following additional metadata:</p>
+        <ul>
+            <li>
+                <p MadCap:conditions="Production.doNOTbuild">Application dependencies</p>
+                <p MadCap:conditions="Production.doNOTbuild">If the hosted application depends on the features and functionality of one or more other hosted applications, that application dependency can be explicitly declared in the application manifest. This allows <MadCap:variable name="FeatureName.Management Console second use" /> to be aware of and manage these application dependencies.</p>
+                <p MadCap:conditions="Production.doNOTbuild">Once resolved, the application manifest contains a reference to the unique name of a specific deployed instance of a dependent hosted application. When a hosted application is deployed, <MadCap:variable name="FeatureName.Management Console second use" /> provides mapping functionality to ensure that the hosted application can be linked to a specific deployed instance of a dependent hosted application, and ensures that the dependent hosted application cannot be inadvertently removed. For more information about application dependencies, see <MadCap:xref href="../SDK_CON_Application_Dependencies.htm" target="" title="" alt="">Application dependencies on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p MadCap:conditions="Production.doNOTbuild">Test configuration</p>
+                <p MadCap:conditions="Production.doNOTbuild">A test configuration allows you to provide metdata, such as the location of the data host on your test Amalga topology to which you can publish the virtual schema of your hosted application, that can be used by the publishing feature in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</p>
+            </li>
+        </ul>
+        <h3 MadCap:conditions="Production.doNOTbuild"><a name="WCF"></a>WCF service manifests</h3>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <h3 MadCap:conditions="Production.doNOTbuild"><a name="Doors"></a>Doors service manifests</h3>
+        <h2 MadCap:conditions="Production.doNOTbuild"><a name="Defining"></a>Defining a deployment manifest</h2>
+        <p MadCap:conditions="Production.doNOTbuild">Defining a deployment manifest describes and declares a hosted application or hosted service. </p>
+        <h2 MadCap:conditions="Production.doNOTbuild"><a name="Resolvin"></a>Resolving a deployment manifest</h2>
+        <p MadCap:conditions="Production.doNOTbuild">When deploying a hosted application, the deployment manifests for that hosted application must be updated to contain instance-specific metadata about that particular instance of the hosted application. For example, multiple instances of the same hosted application can be run on an Amalga topology, and so a unique instance name must be provided for each instance.</p>
+        <p MadCap:conditions="Production.doNOTbuild">The metadata needed to resolve a deployment manifest depends on the type of deployment manifest.</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">Resolving application manifests</h3>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">Resolving WCF service manifests</h3>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">Resolving Doors service manifests</h3>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="SDK_XML_Manifest__Hierarchy.htm" target="" title="" alt="">Deployment Manifest XML Hierarchy on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../SDK_Con_Configuration_Model.htm" target="" title="" alt="">Application configuration model on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1741" MadCap:lastWidth="571" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Virtual schemas</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">[Abstract]This topic provides an overview of <MadCap:variable name="FeatureName.virtual schema" />s in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>Hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> express their data requirements by using a virtual schema. A virtual schema describes a map of concepts and their relationships, with additional information such as semantic tags, terminology encoding, and bindings, represented as an entity-based conceptual data model for the hosted application. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>[Section heading ]</li>
+            <li>&#160;</li>
+        </ul>
+        <h2>Data manifests</h2>
+        <p>In a hosted application, a virtual schema is described with a data manifest, an Entity Data Model for Data Services Packaging Format (.edmx) packaged with the hosted application. The data manifest provides an entity-based data model used to generate the virtual schema for a hosted application. When the data manifest is deployed in an Amalga installation, the information available in the data manifest is used to generate the bindings and other runtime artifacts in the <MadCap:variable name="FeatureName.Amalga entity registry" /> for an instance of the hosted application, binding the virtual schema to the hosted application instance. For more information about data manifests, see <MadCap:xref href="VS__CON_DataManifests.htm" target="" title="" alt="">Data manifests on page 1</MadCap:xref>.</p>
+        <h2>Application views</h2>
+        <p>A virtual schema contains one or more application views, described in the conceptual model of a data manifest, that represent the entities used by the hosted application when retrieving and manipulating data. Each application view in the virtual schema is bound to an entity in the <MadCap:variable name="FeatureName.Amalga entity registry" />, which in turn is bound to the storage schema of either a clinical database or the application private database for the hosted application instance bound to that virtual schema. For more information about application views, see <MadCap:xref href="VS__CON_Entities.htm" target="" title="" alt="">Entities on page 1</MadCap:xref>.</p>
+        <h2>Public and internal virtual schemas</h2>
+        <p>The visibility of a virtual schema determines whether other hosted applications and <MadCap:variable name="FeatureName.Amalga Framework" /> applications can discover the virtual schema using discovery tools or see the application views and dynamic views contained in the virtual schema.</p>
+        <p>A public virtual schema, including application views and dynamic views, is visible to other applications and can be discovered using discovery tools. Depending on the access rights specified by the application, the application views and dynamic views contained by a public virtual schema can be discovered and accessed by other applications.</p>
+        <p>An internal virtual schema, including application views and dynamic views, is not visible to other applications. An internal virtual schema cannot be discovered using discovery tools, and the application views and dynamic views contained by an internal virtual schema can be discovered and accessed only by the application to which they are assigned. By default, virtual schemas are internal in terms of visibility.</p>
+        <p> You can determine whether a virtual schema is public or internal by using <MadCap:variable name="FeatureName.virtual schema designer" /> to set the Visibility property of the Model object in the data manifest that represents the virtual schema. For more information about setting the visibility of a virtual schema by using <MadCap:variable name="FeatureName.virtual schema designer" />, see <MadCap:xref href="VSD_PROC_SetDMVisibility.htm" target="" title="" alt="">Set the visibility of a virtual schema on page 1</MadCap:xref>.</p>
+        <h2>Creating a virtual schema</h2>
+        <p>Once you have created a data manifest for a virtual schema, you can create a virtual schema from the data manifest using one of the following methods:</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable>
+                </p>
+                <p>You can create the virtual schema for a hosted application by using <MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable>. For more information about configuring the virtual schema in <MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable>, see <MadCap:xref href="../../Serviceability/Management Console/Application Management/AppMan Proc Application Configure Virtual Schema.htm" target="" title="" alt="">Configure application virtual schema on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p><MadCap:variable name="BrandingMS.Doors PowerShell 2.0"></MadCap:variable>
+                </p>
+                <p>You can use the New-AmVirtualSchema cmdlet to create a virtual schema for a hosted application instance. For more information about the New-AmVirtualSchema cmdlet, see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_New-AmVirtualSchema.htm" target="" title="" alt="">New-AmVirtualSchema on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p><MadCap:variable name="BrandingMS.Visual Studio 2010 second use"></MadCap:variable>
+                </p>
+                <p>You can use the publishing feature included by <MadCap:variable name="BrandingHSG.Amalga Short" /> in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> to publish a hosted application and create a virtual schema for debugging purposes. For more information about publishing a hosted application for debugging purposes, see <MadCap:xref href="../SDK_CON_Deploy_Test_Dev.htm" target="" title="" alt="">Debugging a hosted application on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

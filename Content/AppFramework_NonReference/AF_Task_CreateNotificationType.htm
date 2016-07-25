@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2276" MadCap:lastWidth="937" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a user notification type definition</h1>
+        <p>
+            <MadCap:keyword term="user notification;user notification type">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-10T10:57:18.3855009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I caught one more thing:  se the See also section, pls." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:57:33.7353009-08:00">This</MadCap:annotation> topic describes how to create an <MadCap:variable name="BrandingHSG.Amalga Short" /> user notification type definition.</p>
+        <p>A notification type definition provides the information needed to create a new user notification request, including its name, its severity, and a template for its content. The template must include any arguments needed to complete the patient name at run time (such as the patient name) and associated text resources.</p>
+        <h2>Creating notification type definitions</h2>
+        <h3>Create the message resources</h3>
+        <p>The content of a notification message must  be defined in a resource (.resx) file.</p>
+        <table style="width: 100%;">
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>Resource string</th>
+                    <th>Usage</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Message template</td>
+                    <td>Required, one per notification type.</td>
+                    <td>
+                        <p>The template that will be filled in at run time to create the notification message. </p>
+                        <p>Template strings can include <span class="MarkupLanguageElements">&lt;a&gt;</span> and <span class="MarkupLanguageElements">&lt;br&gt;</span> HTML tags for embedded hyperlinks and formatting. </p>
+                        <p>Templates can also specify run time arguments, where "{0}" is the first argument, "{1}" is the second, and so on. Numbered arguments can be used more than once within the template string.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category name</td>
+                    <td>Required, one per group of related notification types.</td>
+                    <td>A string value that will be used to group related notification types together.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>"ConsolidatedMessageSeparator"</p>
+                    </td>
+                    <td>Defined once in FrameworkNotifications.resx. Default value is ".".</td>
+                    <td>Used to separate elements of a consolidated message.</td>
+                </tr>
+                <tr>
+                    <td>"ConsolidatedMessageTrailingSeparator"</td>
+                    <td>Defined once in FrameworkNotifications.resx. Default value is " and ".</td>
+                    <td>Used to separate the final element of a consolidated message from the preceding elements.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>Every notification type definition begins with an empty <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a> object.</p>
+        <p>The following <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a> properties should be set:</p>
+        <table>
+            <col>
+            </col>
+            <col style="width: 714px;">
+            </col>
+            <tbody>
+                <tr>
+                    <th><a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType</a> property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>ActionOptions</td>
+                    <td>A <a href="../API/Ref/Microsoft.Amalga.Notification.Service/E_NotificationActionOptions.htm">NotificationActionOptions </a>value that determines the medium in which the notification will be presented to the user.</td>
+                </tr>
+                <tr>
+                    <td>ApplicationId</td>
+                    <td>The ID&#160;of the application associated with the notification type.</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>The key value of the category name resource in the resource file.</td>
+                </tr>
+                <tr>
+                    <td>ConsolidatedMessageResourceId</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>CreationTime</td>
+                    <td>The time the notification type was defined. The recommended value is <span class="codeEntity">DateTimeOffset.Now</span>.</td>
+                </tr>
+                <tr>
+                    <td>DisplayOptions</td>
+                    <td>A <a href="../API/Ref/Microsoft.Amalga.Notification.Service/E_NotificationDisplayOptions.htm">NotificationDisplayOptions </a>value that determines how the notification will be handled before it is presented to the user.</td>
+                </tr>
+                <tr>
+                    <td>MessageArgumentNumber</td>
+                    <td>The number of parameters in the message resource string.</td>
+                </tr>
+                <tr>
+                    <td>MessageResourceId</td>
+                    <td>The key value of the message template resource in the resource file.</td>
+                </tr>
+                <tr>
+                    <td>MessageResourcePath</td>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2011-11-10T23:10:54.8442572-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="note - typically in the app_GlobalResources folder under IIS" MadCap:editor="v-wipete" MadCap:editDate="2011-11-10T23:11:59.3920572-08:00">The path to the resource file</MadCap:annotation>, including the file name but not its extension.</td>
+                </tr>
+                <tr>
+                    <td>NotificationTypeId</td>
+                    <td>A new GUID.</td>
+                </tr>
+                <tr>
+                    <td>QualifiedNameAndVersion</td>
+                    <td>The full name and version of the notification type, for example,  "MyServiceNotifications.GeneralAnnouncement.1.0".</td>
+                </tr>
+                <tr>
+                    <td>Severity</td>
+                    <td>The default severity for notifications of this type.</td>
+                </tr>
+                <tr>
+                    <td>SeverityReason</td>
+                    <td>A friendly reason explaining why the severity is appropriate for notifications of this type. The severity reason is provided for the convenience of IT&#160;administrators, and is not displayed to users.</td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>The <a href="../API/Ref/Microsoft.Amalga.Notification.Service/E_NotificationTypeState.htm">NotificationTypeState </a>of a new notification type definition should be <span class="codeEntity">Active</span>.</td>
+                </tr>
+                <tr>
+                    <td>TimeToExpireMilliseconds</td>
+                    <td>The length of time after which notification requests are no longer returned by the notification service, even if they have not been seen or dismissed by the user.</td>
+                </tr>
+                <tr>
+                    <td>TypeDescription</td>
+                    <td>A friendly description of the notification type. The type description is provided for the convenience of IT&#160;administrators, and is not displayed to users.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 MadCap:conditions="Production.doNOTbuild">Example</h4><pre xml:space="preserve" MadCap:conditions="Production.doNOTbuild">
+// NOTE: in this example, a resource string has been added in advance 
+//  to MyApp.resx, a resource file in the App_GlobalResources folder 
+//  of the default SharePoint IIS site.  The resource name is 
+//  "myNotificationResourceKey" and its value is
+//  "This message is so useful, we will display it twice:&lt;br/&gt;{0}&lt;br/&gt;{0}".
+
+// The notification type ID has been generated in advance
+Guid myNotificationTypeID = new Guid("{5BBEAFD7-406E-49E5-A121-612C0E1D59BF}");
+
+// Create a new notification type.  "proxy" is a NotificationService proxy.
+proxy.NotificationType myDef = new proxy.NotificationType();
+
+// Define the new notification type
+myDef.ActionOptions = proxy.NotificationActionOptions.Display;
+myDef.ApplicationId = this.ApplicationId;
+myDef.CreationTime = DateTime.Now;
+myDef.DisplayOptions = proxy.NotificationDisplayOptions.ShowInOrganizer;
+myDef.MessageArgumentNumber = 1;
+myDef.MessageResourceId = "myNotificationResourceKey";
+myDef.MessageResourcePath = "MyApp.resx";
+myDef.NotificationTypeId = myNotificationTypeID;
+myDef.QualifiedTypeAndVersion = 
+    "MyNamespace.myNotificationResourceKey.1.0";
+myDef.Severity = proxy.NotificationSeverity.Info;
+myDef.SeverityReason = "This is a test.";
+myDef.State = proxy.NotificationTypeState.Active;
+myDef.TimeToExpireMilliseconds = 8640000;
+myDef.TypeDescription = 
+    "This is an example of an informative notification type.";
+            
+// Create a notification service instance
+using (proxy.NotificationServiceClient 
+    notificationInstance = new proxy.NotificationServiceClient())
+{
+    try {
+        // Register the notification type
+        notificationInstance.AddNotificationTypes(
+            new proxy.NotificationType[] { myDef }
+            );
+    }
+    catch (FaultException ex) {
+        // If the notification type is already registered, continue.  
+        //  For any other error case, rethrow.
+        if (!String.Equals(ex.Code, "NotificationDefinitionAlreadyExists"))
+            throw ex;
+    }
+}		</pre>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_Notifications_Predefined.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:55:08.1349009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is there a reason that the link and the topic heading are not the same?  If not, use an xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:55:51.3335009-08:00">Predefined </MadCap:annotation>notification types</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_UserNotification.htm">User notifications</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

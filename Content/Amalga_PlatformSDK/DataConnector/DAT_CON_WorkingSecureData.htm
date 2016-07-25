@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2492" MadCap:lastWidth="644" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Working with restricted data</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to handle secure data in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p><MadCap:variable name="FeatureName.Amalga ADO.NET" /> provides support for handling sensitive data in columns that are bound to entity properties.</p>
+        <p>In <MadCap:variable name="BrandingHSG.Amalga Short" />, data in the columns bound to properties in an entity are accessible to all roles that are granted permissions to that entity. For example, if roles for physicians, nurses, and administrators are granted access to the Patient entity, then these roles can access the data corresponding to all properties in the Patient entity.</p>
+        <p>You can restrict the visibility of data corresponding to entity properties by applying sensitive labels to the properties. For example, you can apply a sensitive label to an entity property that is bound to a column containing confidential information. You can then grant access for that sensitive label to the physicians role only. In this example, the nurses and administrators roles would not have access to the confidential information. Using sensitive labels allows you to secure sensitive data, such as personally identifiable information (PII), that corresponds to properties within an entity.</p>
+        <p>Data in the columns that are bound to entity properties with applied sensitive labels are visible to roles that are authorized for the sensitive labels only. Roles that are authorized for the parent entity but not for the applied sensitive label  receive schema for the entity property when the entity is queried, but the data for that entity property is redacted.</p>
+        <p>For more information about applying sensitive labels to an entity property, see <MadCap:xref href="../../DataPlatform1/DP_Task_ConfigEntitySensitiveCol.htm" target="" title="" alt="">Restrict access to an entity property (sensitive labels) on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with redacted values on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Identify" target="" title="" alt="">Identifying columns that may contain secure data on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Handling" target="" title="" alt="">Handling redacted exceptions on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with redacted values</h2>
+        <p>When <MadCap:variable name="FeatureName.Amalga ADO.NET" /> receives and deserializes columns from an instance of the DataConnector hosted application which correspond to entity properties that have a sensitive label applied to them, a <span class="ForeignCodeElements">RedactedValue</span> object is used to represent the value within that column.</p>
+        <p>You can use the <span class="ForeignCodeElements">IsRedacted</span> property of the <span class="ForeignCodeElements">RedactedValue</span> object to determine whether the value represented by that class is redacted. If the <span class="ForeignCodeElements">IsRedacted</span> property is set to false, the value for the column is not redacted for that particular row, and you can use the <span class="ForeignCodeElements">Value</span> property of that class, as well as the explicit and implicit operators for that class, to retrieve the actual value for that column.</p>
+        <p>If the <span class="ForeignCodeElements">IsRedacted</span> property is set to true, the value for that column is redacted for that particular row. If a <span class="ForeignCodeElements">RedactedValue</span> object represents a redacted value, a null reference is returned by the implicit operators, the explicit operator for the string type, and the <span class="ForeignCodeElements">Value</span> property. Any attempt to interact with the explicit operators for any other data type raises a <span class="ForeignCodeElements">RedactedException</span> exception.</p>
+        <h2><a name="Identify"></a>Identifying columns that may contain redacted values</h2>
+        <p>The <span class="ForeignCodeElements">DataColumn</span> object in ADO.NET does not directly provide metadata that can identify a column which contains redacted values, so you cannot use the <span class="ForeignCodeElements">DataColumn</span> object to determine whether a column contains redacted values prior to reading that column. However, you can use the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object or the <span class="ForeignCodeElements">GetSchemaTable</span> method of the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object to retrieve a <span class="ForeignCodeElements">DataTable</span> object containing the schema metadata for a particular application view. The IsRedacted column in the returned <span class="ForeignCodeElements">DataTable</span> object indicates whether a column contains <span class="ForeignCodeElements">RedactedValue</span> objects.</p>
+        <p>The following example demonstrates how to use the <span class="ForeignCodeElements">GetSchemaTable</span> method of the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object to obtain and iterate through a <span class="ForeignCodeElements">DataTable</span> object containing schema metadata. The example then examines the IsRedacted column for each row in the <span class="ForeignCodeElements">DataTable</span> object to determine if a column in the result set for the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object may contain redacted values.</p><pre xml:space="preserve">// Using the AmalgaDbDataReader object, read information from the 
+// application view.
+AmalgaDbDataReader amalgaReader = command.ExecuteReader();
+
+// Check for any columns that may contain redacted values.
+DataTable schemaTable = amalgaReader.GetSchemaTable();
+for (int i = 0; i &lt; schemaTable.Rows.Count; i++)
+{
+    if ((bool)schemaTable.Rows[i]["IsRedacted"] == true)
+    {
+        // The column may contain redacted values.
+    }
+    else
+    {
+        // The column does not contain redacted values.
+    }
+}
+</pre>
+        <h2><a name="Handling"></a>Handling RedactedException exceptions</h2>
+        <p>The <span class="ForeignCodeElements">RedactedException</span> exception occurs when an explicit operator from a <span class="ForeignCodeElements">RedactedValue</span> object representing a redacted value is invoked. For the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object, this exception typically occurs while invoking the <span class="ForeignCodeElements">Fill</span> method to retrieve data. In such cases, the <span class="ForeignCodeElements">FillError</span> event can be used to substitute a display value indicating that the value for a column was redacted for a particular row.</p>
+        <p>The following example demonstrates a basic <span class="ForeignCodeElements">FillError</span> event handler implementation for handling redacted values. The event handler iterates through the array in the <span class="ForeignCodeElements">Values</span> property of the <span class="ForeignCodeElements">FillErrorEventArgs</span> object and, if a <span class="ForeignCodeElements">RedactedValue</span> object with an <span class="ForeignCodeElements">IsRedacted</span> property value set to true exists, replaces the <span class="ForeignCodeElements">RedactedValue</span> object with a null reference. After iteration, a new <span class="ForeignCodeElements">DataRow</span> is created and populated with the updated array, and the <span class="ForeignCodeElements">RowError</span> property is set to a string indicating that the row contains redacted values. Finally, the <span class="ForeignCodeElements">Continue</span> property of the <span class="ForeignCodeElements">FillErrorEventArgs</span> object is set to true, so the operation can continue without throwing an exception.</p><pre xml:space="preserve">protected static void FillError(object sender, FillErrorEventArgs args)
+{
+    if (args.Errors.GetType() == typeof(Microsoft.Amalga.Data.DataClient.RedactedException))
+    {
+        // Code to handle redacted values.
+        // Iterate through each object in the Values array, substituting
+        // a null reference for any RedactedValue object. 
+        for (int i=args.Values.GetLowerBound(0);i&lt;=args.Values.GetUpperBound(0);i++)
+        {
+            if (args.Values[i] is RedactedValue &amp;&amp; 
+                ((RedactedValue)args.Values[i]).IsRedacted == true)
+            {
+                args.Values[i] = null;
+            }
+        }
+        // Add the new DataRow object, using the updated Values array.
+        DataRow newRow = args.DataTable.Rows.Add(args.Values);
+
+        // Set the RowError property to identify that the new row 
+        // contains one or more redacted values.
+        newRow.RowError = "One or more values in row are redacted.";
+
+        // Continue the operation without raising an exception.
+        args.Continue = true;
+    }
+}
+</pre>
+        <p>For the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object, this exception typically occurs while invoking the <span class="ForeignCodeElements">Read</span> method to retrieve data. The <span class="ForeignCodeElements">Read</span> method retrieves a single row, and is typically invoked iteratively while reading the results of the <span class="ForeignCodeElements">AmalgaDbDataReader</span> object. In such cases, the code used to iterate through the results should explicitly check the type of a value for a given column and, if the <span class="ForeignCodeElements">RedactedValue</span> type is present, check the <span class="ForeignCodeElements">IsRedacted</span> property before attempting to explicitly cast the value. </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

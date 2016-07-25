@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="79" MadCap:lastWidth="634">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">Property</span>:&#160;Name of the entity property.</li>
+            <li><span class="UIElementName">Data Type</span>:&#160;<MadCap:variable name="BrandingMS.SQL Server" /> data type for the entity property. </li>
+            <li><span class="UIElementName">Description</span>: User-friendly description of the entity property.</li>
+        </ul>
+    </body>
+</html>

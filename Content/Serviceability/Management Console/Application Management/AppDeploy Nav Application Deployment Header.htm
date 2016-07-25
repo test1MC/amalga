@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="913" MadCap:lastWidth="1124" MadCap:fileTags="TopicType.Navigation,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Deploy applications through the <MadCap:variable name="FeatureName.Management Console second use" /></h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This section introduces the topics necessary to install an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application through the <MadCap:variable name="FeatureName.Management Console second use" />.</p>
+        <p>Deploying an application through the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.Management Console second use" /> requires that the application go through three stages before it can be used in production.</p>
+        <h4>Publish the application</h4>
+        <p>The application is published through the management console <MadCap:xref href="AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref> task. The publishing task parses the application package (cab file) and copies the information to the appropriate <MadCap:variable name="BrandingHSG.Amalga Short" /> databases. During the publishing process, verification routines also determine what additional configuration needs to occur before the application can be moved to production.</p>
+        <p>After publishing, you can check see the status of the application and the required configuration steps in the <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref> screen of the Applications module.</p>
+        <h4>Configure the application</h4>
+        <p>The status of the application is now listed as published, but in a larger context it is in a transient state of being in deployment. The application will remain in deployment until all the required configurations are completed and the application is synchronized to a physical host. Depending on the application's requirements, the required configurations could include some or all of the following configuration tasks.</p>
+        <ul>
+            <li>
+                <MadCap:xref href="AppMan Proc Application Configure Settings.htm" target="" title="" alt="">Configure application settings</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="AppMan Proc Application Resolve Dependencies.htm" target="" title="" alt="">Resolve application dependencies</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="AppMan Proc Application Assign Logical Hosts.htm" target="" title="" alt="">Assign application logical hosts</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="AppMan Proc Application Configure Virtual Schema.htm" target="" title="" alt="">Configure application virtual schema</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="AppMan Proc Application Bind Entities.htm" target="" title="" alt="">Bind application entities</MadCap:xref>
+            </li>
+        </ul>
+        <p>These configuration steps can be completed in any order, but all the configuration requirements must be satisfied before proceeding to Sync. After each configuration task is completed, the <MadCap:variable name="FeatureName.Management Console second use" /> validation routines will refresh the notification area of the <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application status</MadCap:xref> page. When the notification area turns green and says that there are no further validation errors, the application can be synchronized.</p>
+        <h4>Synchronize the application</h4>
+        <p>To move the configured application to production, the services must be synchronized to the physical hosts comprising the logical host that is the target environment for the application. This is accomplished through the <MadCap:xref href="AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref> task of the <MadCap:variable name="FeatureName.Management Console second use" />. Once this task is complete, the applications status is changed to deployed and it is available for production.</p>
+        <p class="Label">In this section</p>
+        <MadCap:miniTocProxy style="mc-toc-depth: 2;" />
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    xmlns:i ="http://www.microsoft.com/2011/03/health/deployment/internal"
+                    Type = "Application"
+                    Name="FeedAcquisitionApplication"
+		                InstanceName="AcquisitionApp_ADT_G"
+                    Id ="17dd8829-5b50-46d0-b3a6-4dcda4f28742"
+                    Version ="1.0.0.0">
+
+  <Settings>
+    <!--
+    <Setting Name="SampleSetting" Type="System.String" >
+      <DefaultValue>
+
+      </DefaultValue>
+    </Setting>
+    -->
+  </Settings>
+
+
+  <Dependencies>
+    <!-- Dependency Name="SomeDependencyApplication" Type="ApplicationDependency" Id="1d12ded1-c1f6-4d7e-9bdf-c687d67e0a45" MinVersion="1.0.0.0" /-->
+  </Dependencies>
+
+  <ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0" />
+
+</DeploymentManifest>

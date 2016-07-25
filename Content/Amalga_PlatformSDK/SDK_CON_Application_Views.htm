@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2174" MadCap:lastWidth="808" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.30 - Development: over 50%,ReleaseTarget.CTP1,Personas.Elvis: App Dev">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Application views</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="application views" />This topic describes the <MadCap:variable name="FeatureName.application view" />, the entity defined in the conceptual model of a data manifest and used by hosted applications to access data.</p>
+        <p>An application view is an entity, included in the virtual schema and defined in the conceptual model of the data manifest, that a hosted application can query to access data from the underlying data structures, such as Amalga entities, mapped to that application view. A hosted application can use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to query an applicatio<a href="Renamed Me.htm">MyNewTopic</a>n view in much the same way that other applications can use ADO.NET&#160;Entity Framework to query a conceptual model.</p>
+        <p>For more information about working with the virtual schema in a hosted application, see <MadCap:xref href="SDK_OVW_Virtual_Schema_Overview.htm" target="" title="" alt="">Data manifests and virtual schemas on page 1</MadCap:xref>.</p>
+        <p>Application views, as part of the virtual schema, provide an abstraction layer between the hosted application and the underlying data source, allowing the data model for a hosted application to be both dynamic and portable. The data structures, as well as the mappings between those data structures and the application views, can be changed without changing the application views themselves, allowing a hosted application to be adapted to a target Amalga topology. Developers can work with the application views, representing such things as providers and patients, without worrying about the schema and relationships of the underlying database tables, views, and stored procedures that store data for providers and patients.</p>
+        <p>Application views can be either read-only or read-write, depending on how the application view is created and to what underlying data structure the application view is mapped.</p>
+        <h2>Read-only application views</h2>
+        <p>Typically, any application view defined by using the Update Wizard to import Amalga entites from the Entity Registry into the data manifest of a hosted application is defined as a read-only application view. In other words, the CanWrite property of the EntityType object for that application view is set to False.</p>
+        <h3>Properties</h3>
+        <p>Because an application view for a read-only application view is typically based on an existing Amalga entity, there are some limitations when working with the properties of such an application view.</p>
+        <ul>
+            <li>You can change the name of a read-only application view or its properties. Renaming an application view or property does not affect the mapping of that application view or property to an underlying data structure, such as an Amalga entity. </li>
+            <li>You cannot delete primary key properties in read-only application views.</li>
+            <li>You cannot add new properties to read-only application views. If you add a property to a read-only application view, an error occurs when the data manifest is validated or saved.</li>
+            <li>You cannot change the data type of a property. Changing the data type can cause unexpected results or errors.</li>
+            <li>You do not have to define a mapping for an optional property. However, you cannot read from an optional property that is not mapped to a corresponding property in an Amalga entity.</li>
+        </ul>
+        <h3>Associations</h3>
+        <ul>
+            <li>You can add associations for read-only application views without limitation with regards to multiplicity. </li>
+            <li>When adding an association for a read-only application view, you cannot add foreign key properties to the read-only application view because you cannot add properties to read-only application views.</li>
+        </ul>
+        <h3>Mappings</h3>
+        <ul>
+            <li>Any application view can be bound to multiple Amalga entities in the Entity Registry.</li>
+        </ul>
+        <h2>Read-write application views</h2>
+        <p>Typically, any application view added to the data manifest of a hosted application by adding a new entity to the visual design surface of the <MadCap:variable name="FeatureName.virtual schema designer" /> is defined as a read-write application view. In other words, the CanWrite property of the EntityType object for that application view is set to True.</p>
+        <p>To support a read-write application view, a table is added to the storage model of the data manifest, and the read-write application view is mapped to that table. When the application is published or deployed, the publishing or deployment generates and executes a Transact-SQL script that creates the database, tables, types, and other database objects as needed to support the read-write application view.</p>
+        <p class="caution">The database name, table names, and column names in the generated Transact-SQL script should not be edited by the user. Otherwise, the mappings for those objects will no longer be valid.</p>
+        <h3>Properties</h3>
+        <ul>
+            <li>You can change the name of a read-write application view or its properties. Renaming an application view or property does not affect the mapping of that application view or property to an underlying data structure, such as a database table. </li>
+            <li>You can freely define properties in read-write application views as needed.</li>
+            <li>If the underlying column for a scalar property must be defined as an IDENTITY column in the provisioned table created for the read-write application view containing that scalar property, you must set the the StoreGeneratedPattern property of the scalar property to Identity and the Type property of the scalar property to a valid integer data type, such as Int32. If any other data type is selected, an error occurs when the data manifest is validated or saved.</li>
+        </ul>
+        <h3>Associations</h3>
+        <p>You can define associations for read-write application views, but there are some limitations to such associations:</p>
+        <ul>
+            <li>
+                <p>If you add an association from a read-write application view to another read-write application view, you can do so freely without regards for multiplicity. Foreign key properties can be added to either entity, as needed for the association.</p>
+            </li>
+            <li>
+                <p>If you add an association from a read-write application view to a read-only application view, you must ensure that the multiplicity for the read-only application view does not require that foreign key properties be added to that read-only application view. Foreign key properties can be added only to the read-write application view in that association.</p>
+            </li>
+        </ul>
+        <h3>Mappings</h3>
+        <ul>
+            <li>Any read-write application view can be bound to multiple underlying tables.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

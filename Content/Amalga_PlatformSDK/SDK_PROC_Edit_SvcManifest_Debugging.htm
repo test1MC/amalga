@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1421" MadCap:lastWidth="344" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Edit a service manifest for debugging</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="service manifests" />This topic provides a procedure for editing the elements and attributes in a service manifest that are used when publishing a hosted application for debugging purposes.</p>
+        <p>Before a hosted application that contains one or more hosted services can be published for debugging by using the publishing feature in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />, several elements and attributes must be properly set in the service manifest for each hosted service in the hosted application. All of the elements and attributes that must be set prior to debugging are contained in the Test section of the Manifest Editor.</p>
+        <p>To publish your hosted application, each service manifest must have these names:</p>
+        <ul>
+            <li>A valid instance name specified for the <span class="MarkupLanguageElements">TestInstanceName</span> attribute of the <span class="MarkupLanguageElements">DeploymentManifest</span> element, to identify the test instance of the hosted service. For more information about the <span class="MarkupLanguageElements">DeploymentManifest</span> element, see <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest Element on page 1</MadCap:xref>. This test instance name is also used to remove any existing test instances that may have been previously published for debugging.</li>
+            <li>A valid logical host name specified for the <span class="MarkupLanguageElements">TestLogicalHostName</span> attribute of the <span class="MarkupLanguageElements">WcfServiceManifest</span> element (for a <MadCap:variable name="BrandingMS.WCF service" />) or <span class="MarkupLanguageElements">DoorsWorkerManifest</span> element (for a <MadCap:variable name="BrandingMS.Doors service" />), to identify the logical host which will host and expose the hosted service for debugging purposes. For more information about the <span class="MarkupLanguageElements">WcfServiceManifest</span> or <span class="MarkupLanguageElements">DoorsWorkerManifest</span> elements, see, respectively, <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_WcfServiceManifest.htm" target="" title="" alt="">WcfServiceManifest Element on page 1</MadCap:xref> or <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_DoorsWorkerManifest.htm" target="" title="" alt="">DoorsWorkerManifest Element on page 1</MadCap:xref>.</li>
+        </ul>
+        <p class="LabelforProcedures">To edit a service manifest in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> for debugging</p>
+        <ol>
+            <li>In Solution Explorer, right-click the service manifest of a hosted service in the hosted application to be published, and then click <span class="UIElementAction">Edit Manifest</span>.</li>
+            <li>If needed, expand <span class="UIElementAction">Test</span>.</li>
+            <li>In <span class="UIElementAction">TestInstanceName</span>, type the instance name that will be used by this hosted service when the hosted application is published for debugging.</li>
+            <li>
+                <p>In <span class="UIElementAction">TestLogicalHostName</span>, type the name of the logical host that will host and expose the hosted service when the hosted application is published for debugging.</p>
+            </li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

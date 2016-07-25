@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="8619" MadCap:lastWidth="1131" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Preparing a Single Host environment</h1>
+        <h2>Copy installation files</h2>
+        <ol>
+            <li>Log in to the server</li>
+            <li>Create a folder on the desktop called 'AmalgaInstallationFiles'</li>
+            <li>Copy the contents of your distribution CD into the new folder</li>
+        </ol>
+        <h2>Activate IIS </h2>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Click 'Roles'</li>
+            <li>Click 'Add Roles'</li>
+            <li>Click 'Web Server (IIS)'</li>
+            <li>Click 'Install'</li>
+            <li>Follow the wizard selecting the default options</li>
+        </ol>
+        <h2>  Ensure ASP.NET is registered to <MadCap:variable name="BrandingMS.IIS 6,0 second"></MadCap:variable></h2>
+        <ol>
+            <li>Open a command prompt with Administrator privileges</li>
+            <li>Navigate to c:\Doors\Microsoft.NET\Framework64\v4.0.30319\</li>
+            <li>Type 'aspnet_regiss.exe -i 'and press Enter</li>
+        </ol>
+        <h2>Download and install Doors Installer 4.5</h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=8483</li>
+            <li>Select the file from the list appropriate for your operating environment.</li>
+            <li>Save the file to the server</li>
+            <li>Double-click the installer setup file click 'Run'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Native Client</h2>
+        <p class="note">Your system may already have the latest version of the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Native Client installed. If so, ignore this step and continue to the Command Line Utilities installation step.</p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/search.aspx?q=sql%20server%20native%20client</li>
+            <li>Scroll down to the Microsoft SQL Server 2008 Native Client</li>
+            <li>Click on the file appropriate for your environment and download it to your server</li>
+            <li>Double-click the downloaded file</li>
+            <li>Click 'Run'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities</h2>
+        <p class="note">Your system may already have the latest version of the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities installed. If so, ignore this step and continue to the<MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> installation step.</p>
+        <ol>
+            <li>If you have not already done so, navigate to http://www.microsoft.com/download/en/search.aspx?q=sql%20server%20native%20client</li>
+            <li>Scroll down to the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> Command Line Utilities</li>
+            <li>Click on the file appropriate for your environment and download it to your server</li>
+            <li>Double-click the downloaded file</li>
+            <li>Click 'Run'</li>
+        </ol>
+        <h2>Activate the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable></h2>
+        <p class="note">Both <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable> and <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> must be installed on all Amalga machines for full functionality.</p>
+        <p class="note">Your system must already have the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable> installed. To enable further functionality, <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> must also be installed. </p>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Right click 'Features'</li>
+            <li>Click 'Add feature'</li>
+            <li>Select '.NET Framework 3.5.1 Features' and click 'Install'</li>
+        </ol>
+        <h2>Download and install the <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable></h2>
+        <p class="note">Both <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable> and <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> must be installed on all Amalga machines for full functionality.</p>
+        <p class="note">Your system must already have the <MadCap:variable name="BrandingMS..NET 3.5 SP1 hot"></MadCap:variable> installed. To enable further functionality, <MadCap:variable name="BrandingMS..NET4.0"></MadCap:variable> must also be installed.        </p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=17851</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the wizard accepting the default options as they are presented</li>
+        </ol>
+        <h2>Register <MadCap:variable name="BrandingMS.ASP.NET second use"></MadCap:variable></h2>
+        <ol>
+            <li>Click Start</li>
+            <li>Locate the Command Prompt</li>
+            <li>Right click Command Prompt and click 'Run as administrator'</li>
+            <li>Navigate to c:\Doors\microsoft.net\framework\v4.0.30319</li>
+            <li>Enter the following command and press enter<ol><li class="InputText">aspnet_regiis.exe -i</li></ol></li>
+            <li>Type 'Exit' to close the command prompt</li>
+        </ol>
+        <h2>Install and enable Microsoft Distributed Transaction Coordinator (DTC)</h2>
+        <ol>
+            <li>Open the Start menu</li>
+            <li>In the search box type DCOMCNFG and press enter</li>
+            <li style="font-weight: normal;">In the console tree, click to expand 'Component Services', then expand 'Computers', then 'My Computer', and then 'Distributed Transaction Coordinator'</li>
+            <li>Right click 'Local DTC' and select 'Properties'</li>
+            <li>Click the 'Security' tab</li>
+            <li>Ensure only the following values are selected (note that these are not necessarily the default values)<ul><li>Network DTC Access</li><li>Allow Inbound</li><li>Allow Outbound</li><li>Mutual Authentication Required</li><li>Enable SNA LU 6.2 Transactions</li></ul></li>
+            <li>Click 'Ok'</li>
+            <li>Allow the service to be stopped and restarted when prompted. Click 'Ok' when a window shows that the service has been restarted.</li>
+        </ol>
+        <h2>Install Doors Identity Foundation </h2>
+        <p class="warning">Be sure to restart the logical host before beginning this procedure!</p>
+        <p class="warning">Be sure to choose one of the two Doors6.1 versions available. Version 6.0 is not suitable for an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> installation.</p>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=17331</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the instructions on the screen</li>
+        </ol>
+        <h2>Install <MadCap:variable name="BrandingMS.Visual C++ 2010 Redistributable Package"></MadCap:variable></h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=5555</li>
+            <li>Select your language and click 'Download'</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the installation wizard selecting the default values</li>
+        </ol>
+        <h2>Disable Internet Explorer Enhanced Security</h2>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Click 'Server Manager'</li>
+            <li>Click 'Configure IE ESC' on the right-hand side of the screen</li>
+            <li>Select 'Off' under both Administrators and Users</li>
+            <li>Click OK</li>
+        </ol>
+        <h2>Add the certificate snap-in to MMC</h2>
+        <ol>
+            <li>Click Start. &#160;In the search box, type 'MMC' and press Enter</li>
+            <li>Click 'File' then 'Add/Remove Snap-in..'</li>
+            <li>Select 'Certificates from the Available snap-ins list and click 'Add'</li>
+            <li>Select 'Computer Account' and click 'Next'</li>
+            <li>Make sure 'Local computer' is selected</li>
+            <li>Click 'Finish' and then click 'OK'</li>
+        </ol>
+        <h2>Add SSL certificate to your platform host</h2>
+        <p class="CHANGEME">Is SSL the certficate being added here?</p>
+        <ol>
+            <li>Expand the certificates node</li>
+            <li>Right click 'Personal'</li>
+            <li>Click 'All Tasks'</li>
+            <li>Click 'Import'</li>
+            <li>Click 'Next'</li>
+            <li>Browse to your certificate (.pfx file) <span class="CHANGEME">HOW&#160;DOES&#160;THE&#160;CUSTOMER&#160;KNOW&#160;THIS???</span></li>
+            <li>Highlight your certificate and click 'Open'     </li>
+            <li>Click 'Next'</li>
+            <li>Do not enter a password. Click 'Next'</li>
+            <li>Ensure 'Place all certificates in the following store is selected'</li>
+            <li>Ensure Certificate store is set to 'Personal'</li>
+            <li>Click 'Next'</li>
+            <li>Click 'Finish'</li>
+            <li>Right click on the newly imported certificate <span class="CHANGEME">How does the customer know this???</span></li>
+            <li>Click 'All tasks'</li>
+            <li>Click 'Manage Private Keys'</li>
+            <li>Click 'Add'</li>
+            <li>Type 'Network Service' in the text box</li>
+            <li>Click 'OK'</li>
+            <li>Highlight Network Service</li>
+            <li>Ensure 'Full control' is selected</li>
+            <li>Highlight the administrator account under which you are currently logged in</li>
+            <li>Ensure 'Full control' is selected</li>
+            <li>Click 'OK'</li>
+        </ol>
+        <h2>Ensure the Network Service has access to the certificate</h2>
+        <ol>
+            <li>Click Start. In the search box, type 'MMC' and press Enter</li>
+            <li>If the Certificates node is not visible, repeat steps 2-6 in the 'Add the certificate snap-in to MMC' above</li>
+            <li>Expand the 'Certificates (Local Computer)' node</li>
+            <li>Expand 'Personal'</li>
+            <li>Click 'Certificates'</li>
+            <li>Right click the certificate you added in the 'Add certificate to your platform host' section</li>
+            <li>Click 'All Tasks'</li>
+            <li>Click 'Manage Private Keys'</li>
+            <li>Click 'Add'</li>
+            <li>Type 'NETWORK&#160;SERVICE' in the 'Enter the object names to select' box</li>
+            <li>Click 'OK'</li>
+            <li>Highlight 'NETWORK&#160;SERVICE' and ensure 'Full control' and 'Read' are selected in the 'Permission for NETWORK&#160;SERVICE' dialogue</li>
+            <li>Click 'OK'</li>
+        </ol>
+        <p class="CHANGEME">Test WIKI has two certificates. This one for a *.pfx called '*.redmond.corp.microsoft.com' and a second step for a *.cer called 'AmalgaTestCA'. How will customers know which certificates to use? Where will they get these certificates from? Without this information the rest of the installation will FAIL!</p>
+        <h2>Configure the default web site in IIS for SSL communication</h2>
+        <ol>
+            <li>Click Start</li>
+            <li>Type 'InetMgr' in the search box</li>
+            <li>Press 'Enter'</li>
+            <li>In the left pane, highlight the name of Platform logical host</li>
+            <li>Scroll down and double-click on 'Server Certificates</li>
+            <li>Click on 'Create Self-Signed Certficate...' in the right pane</li>
+            <li>Specify a friendly name for the certificate of 'AmalgaInstall'</li>
+            <li>Click OK</li>
+            <li>Expand the 'Sites' node in the left pane</li>
+            <li>Click on 'Default Web Site (If the default web site is not listed, create one using the 'Add Web Site...' link in the right pane.)</li>
+            <li>Click 'Bindings' in the right pane</li>
+            <li>From the 'Type' column, click on 'https'</li>
+            <li>Click 'Edit'</li>
+            <li>From the 'SSL certificate' drop-down, select the 'AmalgaInstall' certificate you created above</li>
+            <li>Click OK</li>
+            <li>Click Close</li>
+        </ol>
+        <h2>Install ADFS</h2>
+        <ol>
+            <li>Navigate to the <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS)"></MadCap:variable> download at http://www.microsoft.com/download/en/details.aspx?hash=HlzHbXGjwoeRiBz86fKQH7tsmt9cxxyUVn2SmqpiumlBkd%2f7fIXo%2bo4MR50Qy2HeixcKSYatp03bvdQHaNfCVA%3d%3d&amp;id=10909</li>
+            <li>Download the appropriate version for your environment</li>
+            <li>Double-click the downloaded file</li>
+            <li>Follow the installation wizard selecting defaults. Be sure to set the 'Server Role' to 'Federation Server' when prompted</li>
+            <li>Restart the host if prompted</li>
+        </ol>
+        <h2>Configure ADFS</h2>
+        <ol>
+            <li>Click Start, All Programs, Adminstrative Tools</li>
+            <li>Click AD&#160;FS 2.0 Management</li>
+            <li>Click 'AD FS 2.0 Federation Server Configuration Wizard'</li>
+            <li>Select 'Create a new Federation Service' and click Next</li>
+            <li>Select 'Stand-alone federation server' and click Next</li>
+            <li>On the 'Specify the Federation Service Name' window, click Next</li>
+            <li>On the 'Ready to Apply Settings' window, click Next</li>
+        </ol>
+        <h2><MadCap:variable name="BrandingMS.IIS Manager second use"></MadCap:variable> Configuration </h2>
+        <ol>
+            <li>Click Start</li>
+            <li>Type 'InetMgr' in the search box</li>
+            <li>Press 'Enter'</li>
+            <li>In the left pane, expand the name of the Platform logical host</li>
+            <li>Expand 'Sites'</li>
+            <li>Right click 'Edit Bindings'</li>
+            <li>Click 'http' and click 'Remove'</li>
+            <li>Click 'Close'</li>
+            <li>Right click 'Default Web Site'</li>
+            <li>Click 'Manage Web Site'</li>
+            <li>If it is not grayed out, click 'Start'</li>
+        </ol>
+        <h2>Install <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable></h2>
+        <p class="note">This is the only logical host on which <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> must be installed.</p>
+        <ol>
+            <li>Follow the instructions associated with <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> to complete this step.</li>
+            <li>Ensure SQL Server is using Doors Authentication</li>
+            <li>Both the administrator and 'Network Service' must have administrative rights</li>
+        </ol>
+        <h2>Attach the HLI database </h2>
+        <ol>
+            <li>Navigate to http://connect.microsoft.com and navigate to the Amalga download page.</li>
+            <li>Download the Health Language International (HLI) database .zip file</li>
+            <li>Extract the zip file</li>
+            <li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio"></MadCap:variable></li>
+            <li>Log in to the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> Database logical host <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable></li>
+            <li>Right click 'Databases'</li>
+            <li>Click 'Attach</li>
+            <li>Click 'Add'</li>
+            <li>Navigate to the folder in which you have copied the HLI <MadCap:variable name="UI-Labels.Column -  entity binding"></MadCap:variable></li>
+            <li>Highlight the HLI.mdf file and click 'OK'</li>
+            <li>Delete the log file entry (*.ldf) </li>
+            <li>Click OK</li>
+        </ol>
+        <h2>Index the HLI database</h2>
+        <p class="CHANGEME">THIS&#160;IS&#160;AN&#160;INTERNAL&#160;SCRIPT. HOW&#160;WILL&#160;THE&#160;CUSTOMER&#160;GET&#160;A&#160;COPY&#160;OF&#160;IT?</p>
+        <ol>
+            <li>Click Start, All Programs, Microsoft SQL Server 2008 R2</li>
+            <li>Click <MadCap:variable name="BrandingMS.SQL Server Management Studio"></MadCap:variable></li>
+            <li>Enter the <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> name on which the HLI&#160;database is attached, or enter '.' </li>
+            <li>Click File, Open, File...</li>
+            <li>Browse to the location of the HLIDatabaseIndexes.sql file</li>
+            <li>Click Open</li>
+            <li>In the first line of the script, replace 'HLIData' with the name of your HLI database (<span class="Label">NOTE</span>: by default this will be 'HLI')</li>
+            <li>Click 'Execute'</li>
+        </ol>
+        <h2>Add certificate to your application host</h2>
+        <p class="CHANGEME">What kind of certificate is this?&#160;&#160;During installation in our test environment we have the name, but what will it be for the customer?</p>
+        <ol>
+            <li>Click Start. &#160;In the search box, type 'MMC' and press Enter</li>
+            <li>Click 'File' then 'Add/Remove Snap-in..'</li>
+            <li>Select 'Certificates from the Available snap-ins list and click 'Add'</li>
+            <li>Select 'Computer Account' and click 'Next'</li>
+            <li>Make sure 'Local computer' is selected</li>
+            <li>Click 'Finish' and then click 'OK'</li>
+            <li>Expand the certificates node</li>
+            <li>Right click 'Personal'</li>
+            <li>Click 'All Tasks'</li>
+            <li>Click 'Import'</li>
+            <li>Click 'Next'</li>
+            <li>Browse to your certificate (.pfx file) <span class="CHANGEME">HOW&#160;DOES&#160;THE&#160;CUSTOMER&#160;KNOW&#160;THIS???</span></li>
+            <li>Highlight your certificate and click 'Open'     </li>
+            <li>Click 'Next'</li>
+            <li>Do not enter a password. Click 'Next'</li>
+            <li>Ensure 'Place all certificates in the following store is selected'</li>
+            <li>Ensure Certificate store is set to 'Personal'</li>
+            <li>Click 'Next'</li>
+            <li>Click 'Finish'</li>
+            <li>Right click on the newly imported certificate <span class="CHANGEME">How does the customer know this???</span></li>
+            <li>Click 'All tasks'</li>
+            <li>Click 'Manage Private Keys'</li>
+            <li>Click 'Add'</li>
+            <li>Type 'Network Service' in the text box</li>
+            <li>Click 'OK'</li>
+            <li>Highlight Network Service</li>
+            <li>Ensure 'Full control' is selected</li>
+            <li>Highlight the administrator account under which you are currently logged in</li>
+            <li>Ensure 'Full control' is selected</li>
+            <li>Click 'OK'</li>
+        </ol>
+        <h2>Install Microsoft Sync Framework </h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=15391</li>
+            <li>Download the appropriate version of the Microsoft Sync Framework for your environment</li>
+            <li>Unzip the Sync Framework download</li>
+            <li>Open each folder and double-click the file found there</li>
+            <li>Follow the wizard</li>
+        </ol>
+        <h2>Install Microsoft 2010 Filter Packs</h2>
+        <ol>
+            <li>Navigate to http://www.microsoft.com/download/en/details.aspx?id=17062</li>
+            <li>Download the appropriate version of the Microsoft 2010 Filter Packs for your environment</li>
+            <li>Double-click the downloaded file</li>
+        </ol>
+        <h2>Install <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable></h2>
+        <p class="note">The following are just a few requirements for an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> SharePoint installation. This installation guide does not provide full instructions on the implementation of SharePoint.</p>
+        <ol>
+            <li><MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable> will operate with either <MadCap:variable name="BrandingMS.SharePoint Foundation 2010"></MadCap:variable> or <MadCap:variable name="BrandingMS.SharePoint Server 2010 - short"></MadCap:variable></li>
+            <li>The SharePoint database name in these instructions will be referred to as 'v3Database' </li>
+        </ol>
+        <h2>Import ADFS Public Certificate</h2>
+        <ol>
+            <li>Click Start, Administrative Tools, AD&#160;FS 2.0 <MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable></li>
+            <li>Expand 'Service'</li>
+            <li>Click 'Certificates'</li>
+            <li>Locate the ADFS Signing certificate under 'Token-signing' and double click on it</li>
+            <li>Click 'Details'</li>
+            <li>Click 'Copy to file'</li>
+            <li>Click 'Next'</li>
+            <li>Leave the default values and click 'Next'</li>
+            <li>Browse to a shared folder</li>
+            <li>Name the file 'AmalgaSigning' and click 'Save'</li>
+            <li>Click 'Next'</li>
+            <li>Click 'Finish'</li>
+            <li>Close the Certificate window</li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

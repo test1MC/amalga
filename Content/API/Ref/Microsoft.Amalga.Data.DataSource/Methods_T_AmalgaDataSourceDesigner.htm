@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef,Region.US" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>AmalgaDataSourceDesigner Methods</title>
+        <link rel="stylesheet" type="text/css" href="../../../Resources/Stylesheets/Presentation.css">
+        </link>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/EventUtilities.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/Dropdown.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/script_manifold.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CheckboxMenu.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CommonUtilities.js">
+        </script>
+        <meta name="container" content="Microsoft.Amalga.Data.DataSource" />
+        <meta name="file" content="Methods_T_AmalgaDataSourceDesigner" />
+        <meta name="outDir" content="Microsoft.Amalga.Data.DataSource" />
+    </head>
+    <body>
+        <input type="hidden" id="userDataCache" class="userDataStyle" />
+        <input type="hidden" id="hiddenScrollOffset" />
+        <img id="collapseImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" title="Collapse image" />
+        <img id="expandImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" title="Expand Image" />
+        <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />
+        <img id="expandAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" />
+        <img id="dropDownImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdown.gif" />
+        <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdownHover.gif" />
+        <img id="copyImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycode.gif" title="Copy image" />
+        <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycodeHighlight.gif" title="CopyHover image" />
+        <div id="header">
+            <table id="topTable" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />&#160;<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>&#160;</span><span>&#160;&#160;&#160;&#160;</span><span id="memberOptionsDropdown" class="filter" tabindex="0"><img id="memberOptionsDropdownImage" src="../../../Resources/Sandcastle/icons/dropdown.gif" />&#160;<label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All&#160;</nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label></span>
+                    </td>
+                </tr>
+            </table>
+            <div id="devlangsMenu">
+                <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+                <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+                <br />
+            </div>
+            <div id="memberOptionsMenu">
+                <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+                <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+                <br />
+                <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+                <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+                <br />
+            </div>
+            <table id="bottomTable" cellpadding="0" cellspacing="0">
+                <tr id="headerTableRow1">
+                    <td align="left"><span id="runningHeaderText"></span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow2">
+                    <td align="left"><span id="nsrTitle">AmalgaDataSourceDesigner Methods</span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow3">
+                    <td align="left"><a href="T_AmalgaDataSourceDesigner.htm">AmalgaDataSourceDesigner Class</a>&#160; <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See&#160;Also</a>&#160;</td>
+                </tr>
+            </table>
+            <table id="gradientTable">
+                <tr>
+                    <td class="nsrBottom" background="../../../Resources/Sandcastle/icons/gradient.gif" />
+                </tr>
+            </table>
+        </div>
+        <div id="mainSection">
+            <div id="mainBody">
+                <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+                </div><font color="DarkGray"></font>
+                <p />
+                <p>The <a href="T_AmalgaDataSourceDesigner.htm">AmalgaDataSourceDesigner</a> type exposes the following members.</p>
+                <h1 class="heading"><span onclick="ExpandCollapse(methodTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(methodTableToggle, event)" tabindex="0"><img id="methodTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Methods</span>
+                </h1>
+                <div id="methodTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zft24943" target="_blank">Configure</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDataSourceDesigner_CreateErrorDesignTimeHtml.htm">CreateErrorDesignTimeHtml</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDataSourceDesigner_CreatePlaceHolderDesignTimeHtml.htm">CreatePlaceHolderDesignTimeHtml</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ms153749" target="_blank">CreateViewControl</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDataSourceDesigner_Dispose.htm">Dispose</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ba9af7tx" target="_blank">DoDefaultAction</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/wad9h9z7" target="_blank">Finalize</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zsbxw4fy" target="_blank">GetBounds</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDataSourceDesigner_GetDesignTimeHtml.htm">GetDesignTimeHtml</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/b4ab1d0h" target="_blank">GetEditableDesignerRegionContent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ddyct9bh" target="_blank">GetEmptyDesignTimeHtml</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/st42dfz9" target="_blank">GetErrorDesignTimeHtml</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/c2sy3x06" target="_blank">GetPersistenceContent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/h0ss1btb" target="_blank">GetPersistInnerHtml</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/txzwfxb4" target="_blank">GetService</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/wwc3ays5" target="_blank">GetView</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/t2hz27sy" target="_blank">GetViewNames</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/z904dwh7" target="_blank">GetViewRendering</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDataSourceDesigner_Initialize_1_28aca891.htm">Initialize</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Initialize the Amalga data source designer.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/599dew4w" target="_blank">ControlDesigner<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Initialize(IComponent)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bs5h878c" target="_blank">InitializeExistingComponent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/s6675238" target="_blank">InitializeNewComponent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/d3ysw4z3" target="_blank">InitializeNonDefault</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDataSourceDesigner_Invalidate.htm">Invalidate</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/z5y86zbx" target="_blank">InvokeGetInheritanceAttribute</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zhy3xxtb" target="_blank">IsPropertyBound</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/801373t9" target="_blank">Localize</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/57ctke0a" target="_blank">MemberwiseClone</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/3a6sk0k3" target="_blank">OnAutoFormatApplied</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bk5efecw" target="_blank">OnBehaviorAttached</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/44kkada7" target="_blank">HtmlControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/82ztdkeh" target="_blank">OnBehaviorDetaching</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/44kkada7" target="_blank">HtmlControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/y3kzdy0c" target="_blank">OnBindingsCollectionChanged</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ms153754" target="_blank">OnClick</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/5saes109" target="_blank">OnComponentChanged</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/70yk4htf" target="_blank">OnComponentChanging</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/swccff44" target="_blank">OnControlResize</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/t49z863y" target="_blank">OnDataSourceChanged</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/w4xsfa71" target="_blank">OnPaint</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/7sbch4kx" target="_blank">OnSchemaRefreshed</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/1ytazsb2" target="_blank">OnSetComponentDefaults</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/55dksah7" target="_blank">OnSetParent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/44kkada7" target="_blank">HtmlControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/z0d6et85" target="_blank">PostFilterAttributes</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/c9668hd7" target="_blank">PostFilterEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/t5yksf5k" target="_blank">PostFilterProperties</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/72a9btsc" target="_blank">PreFilterAttributes</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ythtft9y" target="_blank">PreFilterEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/44kkada7" target="_blank">HtmlControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/a3zd76bc" target="_blank">PreFilterProperties</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/72sy5h7z" target="_blank">RaiseComponentChanged</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/a1kfh2dh" target="_blank">RaiseComponentChanging</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/09we5k3s" target="_blank">RaiseResizeEvent</a>
+                            </td>
+                            <td><font color="red"><b>Deprecated. </b></font> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/3811d2b6" target="_blank">RefreshSchema</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ms153755" target="_blank">RegisterClone</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/6259639a" target="_blank">ResumeDataSourceEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/3y655tak" target="_blank">SetEditableDesignerRegionContent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/ms153756" target="_blank">SetRegionContent</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/07kdyydd" target="_blank">SetViewFlags</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/tt2h6zw4" target="_blank">SuppressDataSourceEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w7aed71x" target="_blank">DataSourceDesigner</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/7bxwbwt2" target="_blank">ToString</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/0ab56xh0" target="_blank">UpdateDesignTimeHtml</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/ff1w4swf" target="_blank">ControlDesigner</a>.)</td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(ExplicitInterfaceImplementationTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(ExplicitInterfaceImplementationTableToggle, event)" tabindex="0"><img id="ExplicitInterfaceImplementationTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Explicit&#160;Interface&#160;Implementations</span>
+                </h1>
+                <div id="ExplicitInterfaceImplementationTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb340264" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PostFilterAttributes</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb156116" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PostFilterEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb292359" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PostFilterProperties</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb350989" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PreFilterAttributes</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb299387" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PreFilterEvents</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb340614" target="_blank">IDesignerFilter<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>PreFilterProperties</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/72ea7ss5" target="_blank">ComponentDesigner</a>.)</td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />See Also</span>
+                </h1>
+                <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                    <div class="seeAlsoStyle"><a href="T_AmalgaDataSourceDesigner.htm">AmalgaDataSourceDesigner Class</a>
+                    </div>
+                    <div class="seeAlsoStyle"><a href="N_Microsoft_Amalga_Data_DataSource.htm">Microsoft.Amalga.Data.DataSource Namespace</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footerLine">
+                    <img width="100%" height="3px" src="../../../Resources/Sandcastle/icons/footer.gif" title="Footer image" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

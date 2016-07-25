@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="4" MadCap:lastHeight="1566" MadCap:lastWidth="728" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying relationship types</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:relationship types;relationship types:Terminology platform application;ITerminologyQueryService interface:Terminology platform application;Terminology platform application:ITerminologyQueryService interface;GetRelationshipTypes method:Terminology platform application;Terminology platform application:GetRelationshipTypes method;RelationshipType class:Terminology platform application;Terminology platform application:RelationshipType class;RelationshipType entity:Microsoft.Terminology entity namespace;Microsoft.Terminology entity namespace:RelationshipType entity;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for relationship types stored by the Terminology hosted application.</p>
+        <p>You can use either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.RelationshipType entity to retrieve information about relationship types from the Terminology hosted application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using ITerminologyQueryService on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using Microsoft.Terminology.Beta.RelationshipType on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using ITerminologyQueryService</h2>
+        <p>You can use the GetRelationshipTypes operation, included with the ITerminologyQueryService service contract, to retrieve an array of RelationshipType objects representing the relationship types managed by the Terminology platform application.</p>
+        <h3>Example</h3>
+        <p>The following example uses the GetRelationshipTypes operation from the ITerminologyQueryService to retrieve relationship types associated with the clinical concept for hypertensive disease in the ICD-9 clinical terminology.</p><pre xml:space="preserve">
+public RelationshipType[] GetRelationshipTypesFromService()
+{
+    // Use GetRelationshipTypes from ITerminologyQueryService to retrieve
+    // an array of RelationshipType objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+    // Open the client channel and instantiate the WCF client.
+    ITerminologyQueryService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Invoke the operation from the service, and
+    // return the resulting array of RelationshipType objects.
+    return (RelationshipType[])terminologyServiceClient.GetRelationshipTypes();
+}</pre>
+        <h2><a name="Using2"></a>Using Microsoft.Terminology.Beta.RelationshipType</h2>
+        <p>You can also use the RelationshipType entity, included in the Microsoft.Terminology.Beta entity namespace, to retrieve relationship types.  Once an application view for the RelationshipType entity is added to the <MadCap:variable name="FeatureName.virtual schema" /> of your hosted application, you can then use  <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from the application view. For more information about using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from application views, see <MadCap:xref href="../DataConnector/DAT_CON_RetrievingDataDataReader.htm" target="" title="" alt="">Retrieving data using AmalgaDbDataReader
+ on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="TRM_CON_RelationshipTypes.htm" target="" title="" alt="">Relationship types on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

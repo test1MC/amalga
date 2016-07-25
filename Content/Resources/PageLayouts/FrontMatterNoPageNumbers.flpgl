@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles MadCap:conditions="Default.StyleMaster,Production.StyleMaster" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <Page Name="Normal" Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="normal" PaddingLeft="1in" PaddingRight="1.5in" PaddingTop="1in" PaddingBottom="1in">
+        <Frame Flow="header" Anchors="Left,Right,Top" Right="0in" Bottom="0in" X="0in" Y="-0.75in" ColumnCount="1" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" Height="0.5in" VerticalAlign="bottom" TextAlign="left">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:body>
+                        <xhtml:p xhtml:style="margin-right: 0px;margin-left: 0px;">&#160;</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+        <Frame Flow="body" ColumnCount="1" Anchors="Left,Right,Top,Bottom" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" X="0in" Y="0in" Right="0in" Bottom="0in">
+        </Frame>
+        <Frame Flow="footer" Anchors="Left,Right,Bottom" Right="0in" Bottom="-0.75in" X="0in" Y="9.25in" ColumnCount="1" PaddingLeft="0in" PaddingRight="0in" PaddingTop="0in" PaddingBottom="0in" FlowIndex="1" Height="0.5in" TextAlign="center" VerticalAlign="middle">
+            <Content>
+                <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                    <xhtml:head>
+                    </xhtml:head>
+                    <xhtml:body>
+                        <xhtml:p>&#160;</xhtml:p>
+                    </xhtml:body>
+                </xhtml:html>
+            </Content>
+        </Frame>
+    </Page>
+</PageStyles>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="1378" MadCap:lastWidth="963" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Join and leave a message group</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes how to join and leave a message group.</p>
+        <p>A message group is a label used by the messaging manager to group, address and deliver messages.</p>
+        <p>not necessary to join a message group in order to send messages to that group. </p>
+        <h2>Join a message group</h2>
+        <p>Membership in a message group identifies a page element as a recipient of messages sent to that group. Group participants indicate that they are able to  receive and deserialize messages that were serialized according to a common convention. In most cases, the convention is informal and is not enforced, but it is still required in order to interoperate with other participants in the messaging group.</p>
+        <p>Group membership does not restrict the ability to send messages to the group. </p>
+        <p class="note">It is possible to create and send messages without joining any message groups at all. Conversely, sending a message to a message group does not guarantee that there are any recipients to receive the message.</p>
+        <p>To join a message group, any <span class="Label">Participant</span> can call its <span class="Label">join()</span>&#160;function with the name of the group, a callback function for handling received messages, and (optionally, and only when joining the <b>CommonContext</b> group) a callback function for handling participant survey requests.</p>
+        <p>The receiver callback function will be called with every message sent to the group, and must handle each message according to the message handling convention that has been defined for that group.</p>
+        <p>For more information about the participant survey and the role of the survey callback method, see <a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a> and <a href="AF_Task_JoinParticipantSurvey.htm">Join and respond to the participant survey</a>.</p>
+        <h2>Leave a message group</h2>
+        <p>To leave a message group, any <span class="Label">Participant</span> can call its <span class="Label">leave()</span> function with the name of the group it is leaving. When a page element leaves a message group, its callback function no longer receives messages sent to the group.</p>
+        <p>To leave all subscribed groups at once (such as when the control is being unloaded,) it should call <span class="Label">leaveAll()</span> instead.</p>
+        <p class="caution">Any participant in a message group should explicitly use the <a href="AF_Con_API_PageMessaging.htm#Participant">Leave()</a> function to leave the group if it stops participating before its host page is closed.</p>
+        <h2>Example</h2>
+        <p>The following Javascript snippet joins the "AlertString" message group with a simple callback function, then leaves the group.</p><pre xml:space="preserve">
+// Create a Participant object
+var this.participant = new Amalga.Messaging.Participant("MyParticipant");
+
+// Define options for local notification
+var this.options = new Microsoft.Amalga.AppFramework.Web.Common.LocalNotificationOptions();
+this.options.showClose = true;
+this.options.type = Microsoft.Amalga.AppFramework.Web.Common.LocalNotificationType.notSpecified;
+
+// Join the "AlertAsString" message group
+//  (Note: the group message convention is that an alert message is sent as a string)
+this.participant.join(
+    "AlertAsString",        // Message group name
+    <MadCap:annotation MadCap:createDate="2012-03-13T05:14:26.6908562-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="delegate.create()?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-13T05:14:32.2036119-07:00">function(message)</MadCap:annotation> {     // Callback function
+
+        // Extract message content
+        this.options.messageHtml = message.get_payload();
+
+        // Raise message text as a local notification
+        Amalga.AppFramework.Controls.NotificationManager.addLocalNotification(this.options);
+    }
+);		</pre>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="AF_Task_JoinCommonContext.htm">Join the CommonContext message group</a>
+        </p>
+        <p><a href="AF_Task_JoinParticipantSurvey.htm">Join and respond to the participant survey</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_PageMessaging.htm">JavaScript API reference: Page Messaging</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingParts.htm">Page messaging</a>
+        </p>
+        <p><a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

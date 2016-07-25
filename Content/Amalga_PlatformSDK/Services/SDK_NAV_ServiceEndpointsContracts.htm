@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="2733" MadCap:lastWidth="865" MadCap:fileTags="TopicType.Navigation,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Service Endpoint Reference</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic provides an overview of service endpoints and service contracts for the features and applications included with <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>To interact with the <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> services provided by <MadCap:variable name="BrandingHSG.Amalga Short" /> features and hosted applications, you must use a service endpoint. You must have the following information to use a service endpoint:</p>
+        <ul>
+            <li>An address that indicates where the endpoint can be found</li>
+            <li>A binding that specifies how a client can communicate with the service endpoint</li>
+            <li>A contract that identifies the operations available</li>
+        </ul>
+        <p class="Label">In this section</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Addresse" target="" title="" alt="">Addresses on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Bindings" target="" title="" alt="">Bindings on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Contract" target="" title="" alt="">Contracts on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Endpoint" target="" title="" alt="">Endpoints and contracts for  features on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Endpoint2" target="" title="" alt="">Endpoints and contracts for  platform applications on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Addresse"></a>Addresses</h2>
+        <p>The address of an endpoint for the services provided by <MadCap:variable name="BrandingHSG.Amalga Short" /> features and hosted applications conforms to the following template:</p>
+        <p class="InputText">https://<span class="InputTextVariable">ServerFQDN</span>:<span class="InputTextVariable">ServicePort</span>/<span class="InputTextVariable">ServiceInstanceName</span>/<span class="InputTextVariable">ServiceRelativeURL</span></p>
+        <h3>Parts of an endpoint address</h3>
+        <p>The address of an endpoint for a service exposed by <MadCap:variable name="BrandingHSG.Amalga Short" /> features and hosted applications has the following parts:</p>
+        <ul>
+            <li>
+                <p><span class="Placeholder">ServerFQDN</span> - the fully qualified domain name of the server that hosts the WCL service.</p>
+            </li>
+            <li>
+                <p><span class="Parameter">ServicePort</span> - the TCP port assigned to the site hosting the WCL service. The following table lists the default service ports for the sites used by <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> to host features and applications.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Site</th>
+                            <th>Service port</th>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Amalga Central Administration 3.0<br /></td>
+                            <td>9999</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Health Hosted Services 3.0</td>
+                            <td>8801</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Health Physical Host Services 3.0</td>
+                            <td>8900</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Health Platform Services 3.0</td>
+                            <td>8889</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>By default, <MadCap:variable name="BrandingHSG.Amalga Short" /> features are hosted on the Microsoft Health Platform Services 3.0 site, while hosted applications and hosted services, including <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications and <MadCap:variable name="FeatureName.Amalga Framework second use" /> services, are hosted on the Microsoft Health Hosted Services 3.0 site.</p>
+            </li>
+            <li>
+                <p><span class="Parameter">ServiceInstanceName</span> - The instance name assigned to the web service when it was deployed. Instance names are site-specific and are usually specified in the service manifest. In practice, many instance names are constructed by adding a standard postfix (such as "_Ins1") to each service name.</p>
+            </li>
+            <li>
+                <p><span class="Parameter">ServiceRelativeURL</span> -The path to the .svc WCF implementation file for each service. The structure of the relative URL varies depending on the service.     </p>
+            </li>
+        </ul>
+        <h3>Example</h3>
+        <p>For example, if the <MadCap:annotation MadCap:createDate="2011-11-17T12:23:32.1767712-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I lower cased. In the past, we havne't capped descriptive service names." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T12:24:06.1085562-08:00">task flow</MadCap:annotation> service were deployed to Webserver.Example.com and its instance name was derived from its service name as described above, its default service endpoint would be:</p>
+        <p class="InputTextPara">https://Webserver.Example.com:8801/TaskFlowService_Ins1/<MadCap:annotation MadCap:createDate="2011-11-17T12:24:39.3932118-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="OMG" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T12:24:41.5686468-08:00">Microsoft.Amalga.TaskFlow.Service.TaskFlowService.svc</MadCap:annotation></p>
+        <h2><a name="Bindings"></a>Bindings</h2>
+        <p>Bindings describe how to communicate with an endpoint for a service. For example, bindings can indicate the transport protocol used by the endpoint, or the encoding to be used for messages sent to and from the service endpoint.</p>
+        <p>Several binding options are supported for service endpoints exposed by <MadCap:variable name="BrandingHSG.Amalga Short" /> features and hosted applications. For more information about available binding options for services exposed by hosted applications, see <MadCap:xref href="../DeploymentManifest/SDK_XML_Manifest_Bindings.htm" target="" title="" alt="">Bindings Element on page 1</MadCap:xref>.</p>
+        <h2><a name="Contract"></a>Contracts</h2>
+        <p>Contracts describe the functionality exposed to a client by an endpoint for a service. This includes the operations that can be performed, the form of the message used to perform an operation, as well as the input parameters or output responses expected by the endpoint.</p>
+        <h2><a name="Endpoint"></a>Endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> features</h2>
+        <p>The endpoints and contracts for the services exposed by <MadCap:variable name="BrandingHSG.Amalga Short" /> features, such as the <MadCap:annotation MadCap:createDate="2011-11-17T12:26:08.4780252-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Logger, not Logging? " MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T12:26:17.4788250-08:00">Logger</MadCap:annotation> and Topology features, allow access to integral components of the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform.</p>
+        <p>For more information about the endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> features, see <MadCap:xref href="SDK_REF_ServiceEndpoints_Features.htm" target="" title="" alt="">Endpoints and contracts for  features on page 1</MadCap:xref>.</p>
+        <h2><a name="Endpoint2"></a>Endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications</h2>
+        <p>The endpoints and contracts for the hosted applications included with <MadCap:variable name="BrandingHSG.Amalga Short" />, such as the DataConnector and Terminology applications, allow access to applications that expand the capabilities of the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform.</p>
+        <p>For more information about the endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications, see <MadCap:xref href="SDK_REF_ServiceEndpoints_Apps.htm" target="" title="" alt="">Endpoints and contracts for  platform applications on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

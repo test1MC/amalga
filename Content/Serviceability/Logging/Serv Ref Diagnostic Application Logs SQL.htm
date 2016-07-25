@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="776" MadCap:lastWidth="740" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Diagnostic application logs query</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>All log entries, for all time, for a given application, are sorted by date. Replace <span class="Placeholder">AuthorizationManagement </span>with the name of the application desired. </p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE ComponentInstance = 'AuthorizationManagement'
+  ORDER BY TimeStampUTC
+</pre>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="MsWord"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Installation - CTP2new.fltoc"
+  ConditionTagExpression="include[Production.PrintOnly or Region.US] exclude[Production.doNOTbuild or Production.InternalOnly or Production.QuestionableMaterial or Production.ScreenOnly or Production.WhitePaperOnly or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "></CatapultTarget>

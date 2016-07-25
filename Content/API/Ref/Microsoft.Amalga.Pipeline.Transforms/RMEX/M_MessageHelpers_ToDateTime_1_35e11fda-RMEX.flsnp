@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>ToDateTime Method (String)</title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.Pipeline.Transforms" />
+    <meta name="file" content="M_MessageHelpers_ToDateTime_1_35e11fda" />
+    <meta name="outDir" content="Microsoft.Amalga.Pipeline.Transforms" />
+  </head>
+  <body>
+    <h1 class="heading">
+      <span onclick="ExpandCollapse(remarksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(remarksToggle, event)" tabindex="0">
+        <img id="remarksToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Remarks</span>
+    </h1>
+    <div id="remarksSection" class="section" name="collapseableSection" style="">
+            This method will convert the input datetime using the current thread culture. If you need to work with a
+            datetime format in a specific culture, use ToDateTime(String dateTimeString, String cultureName).
+            </div>
+    <h1 class="heading" MadCap:conditions="Production.doNOTbuild">
+      <span onclick="ExpandCollapse(examplesInfoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(examplesInfoToggle, event)" tabindex="0">
+        <img id="examplesInfoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Examples</span>
+    </h1>
+    <div id="examplesInfoSection" class="section" name="collapseableSection" style="" MadCap:conditions="Production.doNOTbuild">
+      <p>Add examples here.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2093.333" MadCap:lastWidth="730" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">ReceiveAdapter element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="ReceiveAdapter element" />Declares an adapter that identifies the port or URL used by a <MadCap:variable name="Applications.Feed Acquisition application" /> instance to acquire data and to acknowledge the delivery to the source system.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed Name="<i>String</i>"&gt;<b>
+                &lt;ReceiveAdapter Name="<i>String</i>"&gt;</b>
+                   &lt;Port&gt;...&lt;/Port&gt;
+                   &lt;StartBlockCharacter&gt;...&lt;/StartBlockCharacter&gt;
+                   &lt;EndBlockCharacter&gt;...&lt;/EndBlockCharacter&gt; 
+                   &lt;CarriageReturnCharacter&gt;...&lt;/CarriageReturnCharacter&gt;
+                   &lt;AckCapture&gt;...&lt;/AckCapture&gt; 
+                   &lt;AckFormular&gt;...&lt;/AckFormular&gt; 
+                   &lt;NackCapture&gt;...&lt;/NackCapture&gt; 
+                   &lt;NackFormular&gt;...&lt;/NackFormular&gt; 
+                   &lt;DefaultAck&gt;...&lt;/DefaultAck&gt; 
+                   &lt;DefaultNack&gt;...&lt;/DefaultNack&gt; 
+                   &lt;Directory&gt;...&lt;/Directory&gt; 
+                   &lt;SearchPattern&gt;...&lt;/SearchPattern&gt;<b>
+                &lt;/ReceiveAdapter&gt;</b>
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-1: Required element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Feed.htm">Feed</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_AckCapture.htm">AckCapture</a>, <a href="DI_XML_Manifest_AckFormular.htm">AckFormular</a>, <a href="DI_XML_Manifest_CarriageReturnCharacter.htm">CarriageReturnCharacter</a>, <a href="DI_XML_Manifest_DefaultAck.htm">DefaultAck</a>, <a href="DI_XML_Manifest_DefaultNack.htm">DefaultNack</a>, <a href="DI_XML_Manifest_Directory.htm">Directory</a>, <a href="DI_XML_Manifest_EndBlockCharacter.htm">EndBlockCharacter</a>, <a href="DI_XML_Manifest_NackCapture.htm">NackCapture</a>, <a href="DI_XML_Manifest_NackFormular.htm">NackFormular</a>, <a href="DI_XML_Manifest_Port.htm">Port</a>, <a href="DI_XML_Manifest_SearchPattern.htm">SearchPattern</a>, <a href="DI_XML_Manifest_StartBlockcharacter.htm">StartBlockCharacter</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 66px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft.Health.Acquisition.Adapters.MLLPServer</td>
+                                    <td>
+                                        <p>Minimal Lower Layer Protocol (MLLP) to transport HL7 messages.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft.Health.Acquisition.Adapters.FileAdapter</td>
+                                    <td>
+                                        <p>File format to transport file-based messages, such as comma-separated values (CSV) format.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">ReceiveAdapter</span> element is mandatory in the service manifest of the <MadCap:variable name="Applications.Feed Acquisition application" />. Do not declare this element in the manifests of other pipeline applications. </p>
+        <p>Required and optional child elements are scoped by the adapter name as follows:</p>
+        <ul>
+            <li>
+                <p>Microsoft.Amalga.Pipeline.AcquisitionAdapters.MLLPServer</p>
+                <ul style="list-style-type: circle;">
+                    <li><a href="DI_XML_Manifest_Port.htm">Port</a> (required)</li>
+                    <li><a href="DI_XML_Manifest_StartBlockcharacter.htm">StartBlockCharacter</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_EndBlockCharacter.htm">EndBlockCharacter</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_CarriageReturnCharacter.htm">CarriageReturnCharacter</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_AckCapture.htm">AckCapture</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_AckFormular.htm">AckFormular</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_NackCapture.htm">NackCapture</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_NackFormular.htm">NackFormular</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_DefaultAck.htm">DefaultAck</a>
+                    </li>
+                    <li><a href="DI_XML_Manifest_DefaultNack.htm">DefaultNack</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileAdapter</p>
+                <ul style="list-style-type: circle;">
+                    <li><a href="DI_XML_Manifest_Directory.htm">Directory</a> (required)</li>
+                    <li><a href="DI_XML_Manifest_SearchPattern.htm">SearchPattern</a> (required)</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

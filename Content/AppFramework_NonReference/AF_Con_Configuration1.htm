@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="837" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="GetApplicationConfiguration;GetUserConfiguration;FrameworkException" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Application configuration and user settings</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="configuration;settings" />
+        </p>
+        <p class="abstract">This topic describes the configuration and user settings  available to <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls.</p>
+        <p> The configuration system allows <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls to store and retrieve strongly typed values on a per-application basis. The system also allows per-user changes to those values to persist across multiple sessions.</p>
+        <p><span class="Label">In this topic</span> :</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Configur" target="" title="" alt="">Configuration manager on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Defining" target="" title="" alt="">Defining the default value of a configuration setting on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Configur"></a>Configuration manager</h2>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework" /> does not maintain an independent store for configuration information. Instead, the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/T_AmalgaConfigurationManager.htm">AmalgaConfigurationManager </a>class serves as a rich wrapper for  the <MadCap:variable name="BrandingHSG.Amalga Short" /> Topology service.</p>
+        <p>An instance of the <MadCap:variable name="FeatureName.Amalga Framework" /> configuration manager is available as a static property of the <b>AmalgaConfigurationManager</b> class. To access the configuration manager from within any <MadCap:variable name="FeatureName.Amalga Framework second use" /> control, call <b>AmalgaConfigurationManager.Current</b>.</p>
+        <p>The configuration manager provides two setting stores: the application store and the user store.</p>
+        <ul>
+            <li>The application setting store provides per-application values that are available to all users.  It is provided by the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/M_AmalgaConfigurationManager_GetApplicationConfiguration_1_81a6ef41.htm">GetApplicationConfiguration</a> method.</li>
+            <li>The user setting store provides values that are specific to the application and to the current user.  It is provided by the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/M_AmalgaConfigurationManager_GetUserConfiguration_1_b26b2b8e.htm">GetUserConfiguration</a> method.</li>
+        </ul>
+        <p class="caution">The configuration manager depends on the <MadCap:variable name="BrandingHSG.Amalga Short" /> Topology service  to establish its connection to the Configuration service. If the Topology service is not available, or if its location is missing from the <MadCap:variable name="BrandingMS.SharePoint" /> configuration, then the Framework configuration system will fail to connect.</p>
+        <h2><a name="Defining"></a>Defining the default value of a configuration setting</h2>
+        <p>The default value of an application configuration setting must be specified in the application deployment manifest. It cannot be changed at run time.</p>
+        <p>For example, the following <code><a href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Settings.htm">&lt;Settings&gt;</a></code> element creates a <span class="Label">NumberOfTabs</span> setting for a tabbed control, and sets its default value to 4:</p><pre xml:space="preserve">
+&lt;Settings&gt;
+    &lt;Setting Name="NumberOfTabs" Type="Int32" Description="The number of tabs in the control UI"&gt;
+        &lt;DefaultValue&gt;4&lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+&lt;/Settings&gt;
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/T_AmalgaConfigurationManager.htm">AmalgaConfigurationManager Class</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Overview.htm">Deployment manifest overview</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Settings.htm">Settings element</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/SDK_CON_Setting_ColEditor.htm">Setting Collection Editor</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p>&#160;</p>
+    </body>
+</html>

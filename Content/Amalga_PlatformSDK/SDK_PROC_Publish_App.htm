@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1102" MadCap:lastWidth="852" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Publish a hosted application for debugging</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to publish a hosted application from <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> for debugging purposes, using the publishing feature included in <MadCap:variable name="FeatureName.Amalga SDK" />.</p>
+        <p>The publishing feature included with <MadCap:variable name="FeatureName.Amalga SDK" /> allows you to use test configuration and instance information included in the application manifest and service manifests of a hosted application to quickly publish a hosted application from within <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> to a target Amalga topology for debugging purposes.</p>
+        <p>Before you can use the publishing feature, however, you must ensure that the appropriate elements and attributes are added to the application manifest and service manifests, and then set to the values appropriate to your target Amalga topology and debugging requirements. </p>
+        <p class="caution">You must also successfully build the hosted application in <MadCap:variable name="BrandingMS.Visual Studio second use" /> before you can publish it, to ensure that the appropriate files are present prior to publication. The publishing feature will rebuild all of the projects required for the hosted application in <MadCap:variable name="BrandingMS.Visual Studio second use" /> during the publishing process.</p>
+        <p class="LabelforProcedures">To publish a hosted application in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> for debugging</p>
+        <ol>
+            <li>
+                <p>Edit the application manifest for debugging.</p>
+                <p>For more information about editing an application manifest for debugging, see <MadCap:xref href="SDK_PROC_Edit_AppManifest_Debugging.htm" target="" title="" alt="">Edit an application manifest for debugging on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Edit each service manifest for debugging.</p>
+                <p>You must edit the service manifest for each hosted service that contains a reference to the hosted application to be published. For more information about editing a service manifest for debugging, see <MadCap:xref href="SDK_PROC_Edit_SvcManifest_Debugging.htm" target="" title="" alt="">Edit a service manifest for debugging on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Ensure that all projects required for the hosted application have been built in <MadCap:variable name="BrandingMS.Visual Studio second use" /> prior to publication.</p>
+            </li>
+            <li>In Solution Explorer, right-click the project for the hosted application to be published, and then click <span class="UIElementAction">Publish Application</span>.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

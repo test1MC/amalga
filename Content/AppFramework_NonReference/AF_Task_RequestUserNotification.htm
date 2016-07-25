@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="930" MadCap:lastWidth="989" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a user notification request</h1>
+        <p>
+            <MadCap:keyword term="user notification">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-10T10:57:18.3855009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I caught one more thing:  se the See also section, pls." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:57:33.7353009-08:00">This</MadCap:annotation> topic describes how to request an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> user notification.</p>
+        <p>A  <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationRequest.htm">NotificationRequest</a> is a persistent description of a message that is ready to be surfaced to a user. The request must include the ID of the notification type definition, the identity of the targeted user,  and any strings or <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationArgument.htm">NotificationArgument</a> instances necessary to fill in the message text. </p>
+        <p>Each request must specify the type of the notification, the ID of the user who will receive the message, and a list of strings. The list must include one string for each numbered parameter in the message template resource string.</p>
+        <p>The <a href="../API/Ref/Microsoft.Amalga.Notification.Service/M_NotificationService_NotifyUserWithResourceReferences_3_38633e8e.htm">NotifyUserWithResourceReferences</a> method does the same thing, but instead of strings, each member of the parameter list is a <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationArgument.htm">NotificationArgument</a>. This allows a message template to be populated with both strings generated at run time (<a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationStringArgument.htm">NotificationStringArgument</a>) and localizable static resources (<a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationResourceReference.htm">NotificationResourceReference</a>).</p>
+        <h4>Example</h4>
+        <p>The following example shows how to create a new user notification request, using the notification type definition created in <a href="AF_Task_CreateNotificationType.htm">Create a user notification type definition</a>.</p><pre xml:space="preserve">
+// The notification type ID has been generated in advance
+Guid myNotificationTypeID = new Guid("{5BBEAFD7-406E-49E5-A121-612C0E1D59BF}");
+// Placeholder for a real user ID
+Guid someUserID = Guid.Empty;
+		
+// Create a notification service instance
+using (proxy.NotificationServiceClient
+notificationInstance = new proxy.NotificationServiceClient())
+{
+    // Send a notification request. The string array provides the single argument
+    //  that is required by the content template in the notification type definition.
+    notificationInstance.NotifyUser(
+    myNotificationTypeID,
+    someUserID.ToString(),
+    new string[] { "This is a test." }
+    );
+}
+	</pre>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="AF_Task_CreateNotificationType.htm">Create a user notification type definition</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Notification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:54:36.3954968-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:54:37.8151150-08:00">JavaScript </MadCap:annotation>API reference: Notification Manager</a>
+        </p>
+        <p><a href="AF_Con_Notifications_Predefined.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:55:08.1349009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is there a reason that the link and the topic heading are not the same?  If not, use an xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:55:51.3335009-08:00">Predefined </MadCap:annotation>notification types</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

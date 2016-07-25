@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="165" MadCap:lastWidth="556">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">Column Name</span>:&#160;Name of the column.</li>
+            <li><span class="UIElementName">Concept Code</span>:&#160;Identifiers for the semantic tags applied to the column.</li>
+            <li><span class="UIElementName">Data Type</span>:&#160;SQL Server data type for the column. </li>
+            <li><span class="UIElementName">Message Type</span>:&#160;Type of message. </li>
+            <li><span class="UIElementName">Primary Key</span>:&#160;Indicator of the column's primary key status. "True" indicates that the column is a primary key of the table or view. </li>
+            <li><span class="UIElementName">Source System</span>: Name of the source system of the column. </li>
+            <li><span class="UIElementName">Table Name</span>: Name of the table in which the column resides. </li>
+        </ul>
+    </body>
+</html>

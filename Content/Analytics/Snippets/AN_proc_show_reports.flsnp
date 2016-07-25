@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="123" MadCap:lastWidth="557" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To show a hidden report</p>
+        <ol>
+            <li>Click<span class="UIElementAction"> Show hidden reports</span>.</li>
+            <li>Click the name of the report you want to show.</li>
+            <li>The hidden report will be displayed as  the active report.</li>
+        </ol>
+    </body>
+</html>

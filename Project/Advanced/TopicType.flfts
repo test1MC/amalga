@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet Type="TopicType" Comment="My set of author tags" conditions="Production.StyleMaster">
+    <FileTag Name="Navigation" Comment="NAV - Topic that is used as a portal to a small subject collection (one level of the TOC below) and uses a Mini-TOC" />
+    <FileTag Name="Concept" Comment="CON - Context-setting topics about larger topics such as how to do security or scale out a system. From Hg: topics that discuss ideas about features as opposed to how to use or configure them." />
+    <FileTag Name="Procedure" Comment="PROC - set of steps that accomplishes a single task" />
+    <FileTag Name="Ref-Visual" Comment="VREF - Orientation topic that documents the UI of a window with callouts that are described in an accompanying table." />
+    <FileTag Name="Overview/Introduction" Comment="OVW - Topic Template TBD: Similar to Navigation but with more substantial description of what is in the section and how it ties together" />
+    <FileTag Name="LinktoResource" Comment="LNK - Topic Template TBD: Topics that only hold a PDF (or CHM or other resource) link, such as the topic for DICOM Conformance Statement." />
+    <FileTag Name="Regulatory" Comment="REG - Topic Template TBD: For UG and other Regulatory Only builds" />
+    <FileTag Name="Ref_API" Comment="-------- -  API reference topics such as methods, classes, etc. Topic template, naming  determined in Sandcastle" />
+    <FileTag Name="Ref_General" Comment="GREF - Non-API reference topics such as XML parameter lists, etc." />
+    <FileTag Name="LandingPage" Comment="LND - Topic Template TBD: Portal page for larger topic surface--not intended to include text, meant to include mostly links to deeper subject matter" />
+    <FileTag Name="ProcessSequence" Comment="PSEQ - Use only if absolutely needed. Similar to Navigation, only it links to multiple sequential procedures that comprise a process. A table with a column of sequence numbers replaces the miniTOC." />
+    <FileTag Name="Ref_Error" Comment="EREF - Listing of errors with codes, no resolution provided." />
+    <FileTag Name="Ref_ErrRes" Comment="ERES - Information about errors and how to resolve them" />
+    <FileTag Name="Troubleshooting" Comment="TBS - Problem situations and resolutions not directly related to an error message" />
+</CatapultFileTagSet>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2274" MadCap:lastWidth="338" MadCap:fileTags="TopicType.Concept,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicOwner.v-dennk,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Enabling Change Data Capture</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-12-08T18:22:33.2485512-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Suggested text for abstract;  use a full sentence." MadCap:editor="v-labenn" MadCap:editDate="2011-12-08T18:24:35.4373388-08:00">
+                <MadCap:keyword term="Change Data Capture;Data Change Notification platform application;Virtual Schema Designer" />This topic describes how to enable Data Change Notification and Change Data Capture on databases, tables, and views in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</MadCap:annotation>
+        </p>
+        <p>Before you can use Data Change Notification (DCN) in your hosted application, you must first ensure that Change Data Capture (CDC), the <MadCap:variable name="BrandingMS.SQL Server 2008" /> feature used by DCN, is enabled on the databases and underlying data structures that will be referenced by DCN event types to be created by your hosted application. </p>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, you can enable Change Data Capture in two different ways, depending on the needs of your hosted application. You can either use <MadCap:variable name="FeatureName.virtual schema designer" /> to automatically enable CDC on application views in the virtual schema for your hosted application, or you can use SQL&#160;Server 2008 to programmatically enable CDC on databases and underlying data structures.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-08-30T16:31:24.7853210-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Suggested intro text; make a snippet." MadCap:editor="v-labenn" MadCap:editDate="2011-12-20T20:18:17.3313819-08:00">This topic contains the following subsections:</MadCap:annotation>
+        </p>
+        <ul>
+            <li>
+                <p><a href="#Automati">Using Virtual Schema Designer to automatically enable CDC on an application view</a>
+                </p>
+            </li>
+            <li>
+                <p>U<a href="#Using">Using SQL Server 2008 to programmatically enable CDC on a database and underlying data structures.</a></p>
+            </li>
+        </ul>
+        <h2><a name="Automati"></a>Using <MadCap:variable name="FeatureName.virtual schema designer" /> to automatically enable CDC on an <MadCap:variable name="FeatureName.application view" /></h2>
+        <p>If you want to enable DCN functionality for an <MadCap:variable name="FeatureName.application view" /> in the <MadCap:variable name="FeatureName.virtual schema" /> for your hosted application, you can set the <span class="UIElementAction">Enable for Eventing</span> property for that application view to True in <MadCap:variable name="FeatureName.virtual schema designer" />. Setting this property to True indicates that, when the data manifest is deployed, the application deployment tool should attempt to automatically enable CDC for the database and underlying data structures referenced by that application view.</p>
+        <p>When a data manifest containing CDC-enabled application views  is deployed, the application deployment tool first resolves the view definitions for the CDC-enabled application views, to identify the databases and underlying data structures referenced by those application views.</p>
+        <p>Once the databases and underlying data structures referenced by CDC-enabled application views are resolved and identified, the tool then attempts to automatically enable CDC on all databases and underlying data structures that are not already enabled for CDC. </p>
+        <p>If, for any reason, the application deployment tool cannot automatically enable CDC on some or all of the referenced databases or underlying data structures, the tool generates a SQL&#160;Server script that can be used to programmatically enable CDC on the databases and underlying data structures that could not be automatically enabled for CDC.  </p>
+        <h2><a name="Using"></a>Using <MadCap:variable name="BrandingMS.SQL Server 2008" /> to programmatically enable CDC on a database and underlying data structures</h2>
+        <p>If you want to manually enable DCN functionality for a hosted application - for example, if your hosted application provides clinical notifications, but does not use an application view to access clinical data - you can use SQL&#160;Server scripts to manually enable CDC on databases and tables as needed. The scripts call several system stored procedures used by CDC to generate the data structures and data needed to track data changes.</p>
+        <p>Once the appropriate databases and tables are manually enabled for CDC, you can then define a DCN event type that references those resources, allowing your hosted application to receive DCN event messages whenever data changes occur in the CDC-enabled databases and tables.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_EnableDCNAppView.htm" target="" title="" alt="">Enable or disable DCN on an  on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_PROC_EnableCDCDatabase.htm" target="" title="" alt="">Enable Change Data Capture for a database on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_EnableCDCTable.htm" target="" title="" alt="">Enable Change Data Capture for a table on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_DisableCDCDatabase.htm" target="" title="" alt="">Disable Change Data Capture for a database on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_DisableCDCTable.htm" target="" title="" alt="">Disable Change Data Capture for a table on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

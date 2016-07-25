@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,Status.70 - Complete,TopicType.Overview/Introduction,Personas.Carlos: IT Admin,TopicOwner.v-ssiera" MadCap:lastBlockDepth="6" MadCap:lastHeight="1554" MadCap:lastWidth="602" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Installation overview</h1>
+        <p class="PersonaAll"> <![CDATA[ ]]></p>
+        <p>This section summarizes the <MadCap:variable name="BrandingHSG.Amalga Long" /> installation tools, the installation procedures required, and their sequence.</p>
+        <p>The <MadCap:variable name="BrandingHSG.Amalga Short" /> installation process was designed with the goals of serviceability and simplicity.  Because the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation is enabled by the <MadCap:variable name="BrandingHSG.Amalga Short" /> architecture and uses the same terminology to describe key installation concepts, we recommend that you thoroughly review <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_Platform_Arch_For_Developers.htm" target="" title="" alt="">Amalga Platform Development Architecture</MadCap:xref> before planning for installation. For short descriptions of key terms, see <MadCap:xref href="Install Ref Terminology.htm" target="" title="" alt="">Terminology on page 1</MadCap:xref>.  Serviceability capabilities include the following features.</p>
+        <p class="h9">Self-Describing System</p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> is self-describing, meaning that all components of an <MadCap:variable name="BrandingHSG.Amalga Short" /> implementation are catalogued in the system database. Features, services, databases, logical configuration and physical configuration are all tracked, not only during installation but also during subsequent management and upgrade activities. This self-describing capability enables administrators to focus on managing generic pools of services, applications and features rather than maintaining detailed records about the environment. It also facilitates a much simpler installation process as the system can provide many of the required parameters from its own repository rather than being dependent on detailed input from the administrator.</p>
+        <p class="h9">Automated Prerequisite Management</p>
+        <p>Prerequisite software and system settings can now be checked, and in some cases configured, by the Setup utility. During Setup execution, if a prerequisite is missing, a plain language error is displayed calling out the required action. Because the Setup utility is based on a roll-forward recovery model, the prerequisite can be provided and the Setup command run again. It will begin processing at the point of the prerequisite error and complete the installation process without starting over.</p>
+        <p class="h9">Platform and Application Installation Separation</p>
+        <p>Once the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform is in place, additional applications can be installed through the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />, which provides installation variable selections and a guided path through the application installation by referencing the topology database. Application deployment can also be automated through Doors PowerShell.</p>
+        <h2>Installation process</h2>
+        <p>The following procedures performed in sequence will install the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform.</p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <col MadCap:conditions="Production.PrintOnly" />
+            <thead>
+                <tr>
+                    <th>Procedure</th>
+                    <th>Optional</th>
+                    <th>Description</th>
+                    <th>Page</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2011-08-30T13:46:25.9218186-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="For web purposes these cells should be a crossreference, or a hyperlink if you want to use this specific text rather than a topic name." MadCap:editor="v-ciwyco" MadCap:editDate="2011-08-30T13:47:41.8835764-07:00">Design the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology</MadCap:annotation>
+                    </td>
+                    <td>No</td>
+                    <td>Create an <MadCap:variable name="BrandingHSG.Amalga Short" /> topology that will support enterprise response times and availability goals.</td>
+                    <td>
+                        <MadCap:xref href="Install Con Planning and Design Overview.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confirm <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> installation prerequisites</td>
+                    <td>No</td>
+                    <td>Install and configure the physical machines and virtual machines to meet the requirements of the topology design, hardware and software prerequisites.</td>
+                    <td>
+                        <MadCap:xref href="Install Ref Prerequisites II.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Install the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform</td>
+                    <td>No</td>
+                    <td>Run Setup with appropriate operations and parameters appropriate for the target topology to install the core platform and application services.</td>
+                    <td>
+                        <MadCap:xref href="Install Proc MultiBox Installation.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> applications</td>
+                    <td>No</td>
+                    <td>Run Doors PowerShell commands to install <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications on top of the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform.</td>
+                    <td>
+                        <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Uninstallation</h2>
+        <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, uninstallation of <MadCap:variable name="BrandingHSG.Amalga Short" /> features is not supported. To uninstall an application instance, see <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Remove App Instance.htm" target="" title="" alt="">Remove an application instance</MadCap:xref>.</p>
+        <h2><MadCap:variable name="BrandingHSG.Amalga Short" /> Setup utility</h2>
+        <p>The <MadCap:variable name="BrandingHSG.Amalga Short" /> platform is installed by using the Setup utility. The Setup utility is run from a command prompt and requires three types of input. </p>
+        <ol>
+            <li>Arguments: Primarily the features on which the operations will be performed. Also includes options to receive help and indicate silent acceptance of the end user license agreement.</li>
+            <li>Operations: The actions taken for the specified feature.</li>
+            <li>Parameters: Feature specific input required to perform the operations.</li>
+        </ol>
+        <p>For detailed information on the Setup utility and the required input, see <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup Command Reference on page 1</MadCap:xref>.</p>
+        <p>Setup is fault-tolerant and provides roll-forward recovery for a given feature or operation.
+If an error occurs while running Setup, you can resolve the cause of the error and run
+the same Setup command again to continue deployment. For more information about fault tolerance and roll-forward
+recovery, see the <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup Command Reference on page 1</MadCap:xref>.</p>
+        <h2>Doors PowerShell usage</h2>
+        <p>Once the platform is installed, <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications must be installed using Doors PowerShell<MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-18T10:52:12.3623780-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="DNB'd until the application installation GUI is available." MadCap:editor="v-keith" MadCap:editDate="2011-11-18T10:52:39.4840899-08:00">or</MadCap:annotation> the <MadCap:variable name="BrandingHSG.Amalga Short" /> Management Console Application Deployment Wizard</MadCap:conditionalText>. The process for installing the application follows.</p>
+        <ol>
+            <li>Resolve the manifests<ol style="list-style-type: lower-alpha;"><li>Application</li><li>Service (can be one or more)</li></ol></li>
+            <li>Publish the application</li>
+            <li>Deploy the <MadCap:variable name="FeatureName.virtual schema" /></li>
+            <li>Bind data entities to the database if required</li>
+            <li>Synchronize the physical host</li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

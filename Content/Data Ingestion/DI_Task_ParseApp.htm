@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1431" MadCap:lastWidth="637" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:ignoredWords="MessageHelpers" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve <MadCap:variable name="Applications.Data Parser (application)" /> manifests</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="data parser:configuration" />This topic describes how to resolve application and service manifests.</p>
+        <p>Pipeline data parsing is an activity that selectively gets shredded columns with which it can derive a new column, collapse a view, transform data, apply a lookup function, or map enterprise identifiers. For a functional profile, see <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser application</MadCap:xref>.</p>
+        <h2>Application manifest</h2>
+        <p class="Label">To resolve an application manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an example file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the application instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>
+                <p>Replace the dependency instance name with the instance name of the local Terminology application. </p><pre xml:space="preserve">&lt;Dependencies&gt;
+        &lt;Dependency Name="TerminologyAppDependency" InstanceName="<span class="Placeholder">TerminologyApplication_Ins1</span>" 
+                    Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" /&gt;
+&lt;/Dependencies&gt;</pre>
+                <p class="tip">Get the local terminology instance name from the <a href="../Serviceability/Management Console/AMC Introduction.htm">Amalga Management Console</a>.</p>
+            </li>
+            <li>Save the file.</li>
+        </ol>
+        <h2>Service manifest</h2>
+        <p class="Label">To resolve a service manifest</p>
+        <ol>
+            <li>Copy, rename, and edit an example file.</li>
+            <li> Replace the deployment-manifest instance name with a new name that uniquely identifies the service instance. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest element</MadCap:xref>.</li>
+            <li>
+                <p>Replace the logical host name with the local name. For help, see <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DoorsWorkerManifest.htm" target="" title="" alt="">DoorsWorkerManifest element</MadCap:xref>.</p>
+                <p class="tip">Get the local logical-host name from the <a href="../Serviceability/Management Console/AMC Introduction.htm">Amalga Management Console</a>.</p>
+            </li>
+            <li>Replace the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> value with the value used in the related feed-acquisition service manifest to define the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref>. For example, if the feed's message-type value is ABC, then the parser's feed-information type must be ABC. For more feed-related options, see <MadCap:xref href="Manifest XML/DI_Intro_FeedInfoXML.htm" target="" title="" alt="">FeedInfoXML setting</MadCap:xref>.</li>
+            <li>Assign message shredder input values for all segment elements that you want to parse. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_Segment.htm" target="" title="" alt="">Segment element</MadCap:xref>, and <MadCap:xref href="Manifest XML/DI_XML_Manifest_Elements.htm" target="" title="" alt="">Elements element</MadCap:xref>.</li>
+            <li>
+                <p>Assign data-parser output values for each new derived column, collapsed view, transformed data, or lookup function. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserOutput.htm" target="" title="" alt="">DataParserOutput element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_Segment.htm" target="" title="" alt="">Segment element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_Elements.htm" target="" title="" alt="">Elements element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_CollapseConfiguration.htm" target="" title="" alt="">CollapseConfiguration element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_Plugins.htm" target="" title="" alt="">Plugins element</MadCap:xref>, <MadCap:xref href="Manifest XML/DI_XML_Manifest_Transform.htm" target="" title="" alt="">Transform element</MadCap:xref>, and <MadCap:xref href="Manifest XML/DI_XML_Manifest_Lookup.htm" target="" title="" alt="">Lookup element</MadCap:xref>.</p>
+                <p class="warning">
+                    <MadCap:xref href="Manifest XML/DI_XML_Manifest_Segment.htm" target="" title="" alt="">Segment elements</MadCap:xref> within <span class="code">&lt;MessageShredderInput&gt;</span> and <span class="code">&lt;DataParserOutput&gt;</span> element tags do not have the same behavior. Specifically, you must never include transform actions in segments in the <span class="code">&lt;MessageShredderInput&gt;</span> section. You can only specify transform actions in segments in the <span class="code">&lt;DataParserOutput&gt;</span> section.</p>
+            </li>
+            <li>(Optional) Define one or more data constants to use in the declaration of other segment elements. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataConstants.htm" target="" title="" alt="">DataConstants element</MadCap:xref>.</li>
+            <li>(Optional) Configure enterprise identifiers. For help, see <MadCap:xref href="DI_Task_MapEnterpriseId.htm" target="" title="" alt="">Map enterprise identifiers</MadCap:xref> and <MadCap:xref href="DI_Task_ConfigureEnterpriseIdMerge.htm" target="" title="" alt="">Configure merge actions</MadCap:xref>.</li>
+            <li>(Optional) Update the attributes of an existing error policy. For help, see <MadCap:xref href="Manifest XML/DI_XML_Manifest_ErrorHandlingConfiguration.htm" target="" title="" alt="">ErrorHandlingConfiguration element</MadCap:xref>.</li>
+            <li>(Optional) Declare a custom plug-in application. For help, see <MadCap:xref href="DI_Con_ParseExtend.htm" target="" title="" alt="">Add parser extensions</MadCap:xref>.</li>
+            <li>Save the file.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

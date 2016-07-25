@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="160" MadCap:lastWidth="300" MadCap:fileTags="EditingTags.7 - Editing issues resolved" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To display <MadCap:variable name="FeatureBrussels.Vital Signs" /></p>
+        <ul>
+            <li>
+                <p>Click the <MadCap:variable name="FeatureBrussels.Vital Signs" /> title in the Clinical Summary.</p>
+                <p>or</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <p> For  instructions, see <MadCap:xref href="../PC_Task_Open_PC_module.htm" target="" title="" alt=""><a href="../PC_Task_Open_PC_module.htm">"Open a  module"</a></MadCap:xref>.</p>
+            </li>
+        </ul>
+    </body>
+</html>

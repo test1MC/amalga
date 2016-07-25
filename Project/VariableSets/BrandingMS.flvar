@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment=""
+    Name="Microsoft">Microsoft</Variable>
+  <Variable
+    Name=".NET4.0"
+    Comment="Requires .NET 3.5 SP1 hot also.as of 5/9/11"
+    Definition="Some text">.NET Framework 4.0</Variable>
+  <Variable
+    Name=".NET 3.5 SP1 hot"
+    Comment=".NET. Supported. .NET 3.5 SP1"
+    Definition="Some text">.NET Framework 3.5 SP1 (and all hot fixes)</Variable>
+  <Variable
+    Name=".NET 3.5 SP1"
+    Comment="DO NOT USE! Use .NET 3.5 SP1 hot"
+    Definition="Some text">DO NOT USE! Use .NET 3.5 SP1 hot</Variable>
+  <Variable
+    Name="Internet Information Services (IIS)"
+    Comment="Web server application. Internet Information Services (IIS)"
+    Definition="Some text">Internet Information Services (IIS)</Variable>
+  <Variable
+    Name="Internet Explorer 8.0"
+    Comment="Browser. Supported. Internet Explorer 8.0"
+    Definition="Some text">Internet Explorer 8.0</Variable>
+  <Variable
+    Name="Internet Explorer 7.0"
+    Comment="Browser. Supported. Internet Explorer 7.0"
+    Definition="Some text">Internet Explorer 7.0</Variable>
+  <Variable
+    Name="Internet Explorer 6.0"
+    Comment="Browser. Supported. Internet Explorer 6.0"
+    Definition="Some text">Internet Explorer 6.0</Variable>
+  <Variable
+    Name="IIS Manager second use"
+    Comment="Tool. IIS Manager. Second use."
+    Definition="Some text">IIS Manager</Variable>
+  <Variable
+    Name="IIS Manager first use"
+    Comment="Tool. Internet Information Services (IIS) Manager."
+    Definition="Some text">Internet Information Services (IIS) Manager</Variable>
+  <Variable
+    Name="IIS 7.5 second"
+    Comment=""
+    Definition="Some text">IIS 7.5</Variable>
+  <Variable
+    Name="IIS 7.5"
+    Comment="Service, First Reference"
+    Definition="Some text">Internet Information Services (IIS) 7.5</Variable>
+  <Variable
+    Name="IIS 7.0 second"
+    Comment=""
+    Definition="Some text">IIS 7.0</Variable>
+  <Variable
+    Name="IIS 7,0"
+    Comment="Service, First Reference"
+    Definition="Some text">Internet Information Services (IIS) 7.0</Variable>
+  <Variable
+    Name="IIS 6.0"
+    Comment="Service, First Reference"
+    Definition="Some text">Internet Information Services (IIS) 6.0</Variable>
+  <Variable
+    Name="IIS 6,0 second"
+    Comment=""
+    Definition="Some text">IIS 6.0</Variable>
+  <Variable
+    Name="Hyper-V"
+    Comment="Server Virtualization. Supported. Hyper-V   (Included in Server 2008)"
+    Definition="Some text">Hyper-V</Variable>
+  <Variable
+    Name="Primary Interoperability Assemblies 2005"
+    Comment=""
+    Definition="Some text">Microsoft Primary Interoperability Assemblies 2005</Variable>
+  <Variable
+    Name="Office 2007 Professional SP2"
+    Comment="Office. Supported. Office 2007 Professional SP2"
+    Definition="Some text">Office 2007 Professional SP2</Variable>
+  <Variable
+    Name="Microsoft Visual Studio 2008 SP1"
+    Comment="Microsoft Visual Studio 2008 SP1 --- 5/2/11 - Required with SQL Server 2008; Does not require Microsoft per DevDiv product naming conventions"
+    Definition="Some text">Microsoft  Visual Studio 2008 SP1</Variable>
+  <Variable
+    Name="Microsoft Visual Studio 2008"
+    Comment="Tool. Microsoft Visual Studio 2008.   Does not work with SQL Server 2008; Does not require Microsoft per DevDiv product naming conventions"
+    Definition="Some text">Microsoft Visual Studio 2008</Variable>
+  <Variable
+    Name="Microsoft Visual Studio"
+    Comment="Tool. Visual Studio.  addition of Microsoft per https://brandtools.partners.extranet.microsoft.com/Visual/Guidelines/Copy_and_trademarks/Referring_to_Visual_Studio_2010/Pages/default.aspx"
+    Definition="Some text">Microsoft Visual Studio</Variable>
+  <Variable
+    Name="Microsoft SharePoint"
+    Comment="Microsoft SharePoint. First use."
+    Definition="Some text">Microsoft SharePoint</Variable>
+  <Variable
+    Name="Microsoft Message Queuing"
+    Comment="Protocol. Microsoft Message Queuing. Microsoft Message Queuing is a messaging protocol that allows applications running on different servers to have failsafe communications. Also known as MSMQ"
+    Definition="Some text">Microsoft Message Queuing</Variable>
+  <Variable
+    Name="Microsoft Forefront Client Security"
+    Comment="Antivirus. Supported. Microsoft Forefront Client Security"
+    Definition="Some text">Microsoft Forefront Client Security</Variable>
+  <Variable
+    Name="SharePoint Server 2010 - short"
+    Comment="Server product. SharePoint Server 2010"
+    Definition="Some text">SharePoint Server 2010</Variable>
+  <Variable
+    Name="SharePoint Server 2010 - long"
+    Comment="Server product. Microsoft SharePoint Server 2010"
+    Definition="Some text">Microsoft SharePoint Server 2010</Variable>
+  <Variable
+    Name="SharePoint Server 2007 - short"
+    Comment="Server product. SharePoint Server 2007."
+    Definition="Some text">SharePoint Server 2007</Variable>
+  <Variable
+    Name="SharePoint Server 2007 - long"
+    Comment="Server product. Microsoft Office SharePoint Server 2007. Initially for Community Connect"
+    Definition="Some text">Microsoft Office SharePoint Server 2007</Variable>
+  <Variable
+    Name="SharePoint Management Shell"
+    Comment="Shell. SharePoint Management Shell."
+    Definition="Some text">SharePoint Management Shell</Variable>
+  <Variable
+    Name="SharePoint Configuration Wizard"
+    Comment="Wizard. SharePoint Configuration Wizard"
+    Definition="Some text">SharePoint Configuration Wizard</Variable>
+  <Variable
+    Name="SharePoint Central Administration"
+    Comment="Tool? SharePoint Central Administration"
+    Definition="Some text">SharePoint Central Administration</Variable>
+  <Variable
+    Name="SharePoint"
+    Comment="Server product? SharePoint"
+    Definition="Some text">SharePoint</Variable>
+  <Variable
+    Name="SQL Server Reporting Services"
+    Comment="Tool. SQL Server Reporting Services."
+    Definition="Some text">SQL Server Reporting Services</Variable>
+  <Variable
+    Name="SQL Server Native Client 2008"
+    Comment=""
+    Definition="Some text">SQL Server Native Client 2008</Variable>
+  <Variable
+    Name="SQL Server Management Studio"
+    Comment=""
+    Definition="Some text">SQL Server Management Studio</Variable>
+  <Variable
+    Name="SQL Server Management Objects"
+    Comment="SQL. SQL Server Management Objects"
+    Definition="Some text">SQL Server Management Objects</Variable>
+  <Variable
+    Name="SQL Server 2008 Standard SP1"
+    Comment="Server. SQL Server 2008 Standard SP1. HVCC Sharepoint server"
+    Definition="Some text">DO NOT USE!</Variable>
+  <Variable
+    Name="SQL Server 2008 R2 Management Objects (x86)"
+    Comment=""
+    Definition="Some text">SQL Server 2008 R2 Management Objects (x86)</Variable>
+  <Variable
+    Name="SQL Server 2008 R2 Enterprise"
+    Comment="SQL. SQL Server 2008 R2 Enterprise; per Book of Amalga 11/15/2010 with minor change in placement of hte R2"
+    Definition="Some text">SQL Server 2008 R2 Enterprise</Variable>
+  <Variable
+    Name="SQL Server 2008 Management Objects (x86)"
+    Comment=""
+    Definition="Some text">SQL Server 2008 Management Objects (x86)</Variable>
+  <Variable
+    Name="SQL Server 2008 Enterprise SP2"
+    Comment="SQL. Supported. SQL Server 2008 Enterprise SP1"
+    Definition="Some text">SQL Server 2008 Enterprise with SP2</Variable>
+  <Variable
+    Name="SQL Server 2008 Enterprise SP1"
+    Comment="SQL. Supported. SQL Server 2008 Enterprise SP1"
+    Definition="Some text">SQL Server 2008 Enterprise with SP1</Variable>
+  <Variable
+    Name="SQL Server 2008"
+    Comment="SQL. Supported. SQL Server 2008"
+    Definition="Some text">SQL Server 2008</Variable>
+  <Variable
+    Name="SQL Server 2005 Enterprise SP3"
+    Comment="SQL. Supported. SQL Server 2005 Enterprise SP3"
+    Definition="Some text">DO NOT USE!</Variable>
+  <Variable
+    Name="SQL Server"
+    Comment="Server product. SQL Server"
+    Definition="Some text">SQL Server</Variable>
+  <Variable
+    Name="Visual Studio second use"
+    Comment="Tool. Visual Studio. First or subsequent mentions. Does not require Microsoft per DevDiv product naming convention"
+    Definition="Some text">Visual Studio</Variable>
+  <Variable
+    Name="Visual Studio 2008 SP1 second use"
+    Comment="Tool. Microsoft Visual Studio 2008 with SP1. First or subsequent mentions. Does not require Microsoft per DevDiv product naming convention. Required if installin VS with SQL Server 2008"
+    Definition="Some text">Visual Studio 2008 with SP1</Variable>
+  <Variable
+    Name="Visual Studio 2008 second use"
+    Comment="Tool. Microsoft Visual Studio 2008. First or subsequent mentions. Does not require Microsoft per DevDiv product naming convention. Does not work with SQL Server 2008"
+    Definition="Some text">Visual Studio 2008</Variable>
+  <Variable
+    Name="Visual Studio 2008"
+    Comment=""
+    Definition="Some text">DUPLICATE! use Visual Studio 2008 second use</Variable>
+  <Variable
+    Name="Visual C++ 2008 SP1 Redistributable Package (x86)"
+    Comment=""
+    Definition="Some text">Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)</Variable>
+  <Variable
+    Name="Visual C++ 2008 Redistributable Package (x64)"
+    Comment=""
+    Definition="Some text">Microsoft Visual C++ 2008 Redistributable Package (x64)</Variable>
+  <Variable
+    Name="Visual C++ 2008 Redistributable (x86)"
+    Comment=""
+    Definition="Some text">Microsoft Visual C++ 2008 Redistributable Package (x86)</Variable>
+  <Variable
+    Name="Visual C++ 2005 SP1 Redistributable (x86)"
+    Comment=""
+    Definition="Some text">Microsoft Visual C++ 2005 SP1 Redistributable Package (x86)</Variable>
+  <Variable
+    Name="WSE 3.0 second"
+    Comment="Per MS Download site"
+    Definition="Some text">WSE 3.0</Variable>
+  <Variable
+    Name="WSE 3.0 first"
+    Comment=""
+    Definition="Some text">Web Services Enhancements (WSE) 3.0 for Microsoft .NET</Variable>
+  <Variable
+    Name="Windows XP Professional SP3 x86"
+    Comment="Client OS. Supported. Windows XP Professional SP3 x86"
+    Definition="Some text">Windows XP Professional SP3 x86</Variable>
+  <Variable
+    Name="Windows Vista Enterprise SP2 x86"
+    Comment=""
+    Definition="Some text">Windows Vista Enterprise SP2 x86</Variable>
+  <Variable
+    Name="Windows Vista Enterprise SP2 x64"
+    Comment=""
+    Definition="Some text">Windows Vista Enterprise SP2 x64</Variable>
+  <Variable
+    Name="Windows Vista Enterprise SP1 x86"
+    Comment=""
+    Definition="Some text">Windows Vista Enterprise SP1 x86</Variable>
+  <Variable
+    Name="Windows Vista Enterprise SP1 x64"
+    Comment=""
+    Definition="Some text">Windows Vista Enterprise SP1 x64</Variable>
+  <Variable
+    Name="Windows Vista Business SP2 x86"
+    Comment="Client OS. Supported. Windows Vista Business SP2 x86"
+    Definition="Some text">Windows Vista Business SP2 x86</Variable>
+  <Variable
+    Name="Windows Vista Business SP2 x64"
+    Comment="Client OS. Supported. Windows Vista Business SP2 x64"
+    Definition="Some text">Windows Vista Business SP2 x64</Variable>
+  <Variable
+    Name="Windows Vista Business SP1 x86"
+    Comment=""
+    Definition="Some text">Windows Vista Business SP1 x86</Variable>
+  <Variable
+    Name="Windows Vista Business SP1 x64"
+    Comment=""
+    Definition="Some text">Windows Vista Business SP1 x64</Variable>
+  <Variable
+    Name="Windows Server 2008 R2 Enterprise with SP1"
+    Comment=""
+    Definition="Some text">Windows Server 2008 R2 Enterprise with SP1</Variable>
+  <Variable
+    Name="Windows Server 2008 R2 Enterprise"
+    Comment=""
+    Definition="Some text">Windows Server 2008 R2 Enterprise</Variable>
+  <Variable
+    Name="Windows Server 2008 Hyper-V"
+    Comment=""
+    Definition="Some text">Windows Server 2008 Hyper-V</Variable>
+  <Variable
+    Name="Windows Server 2008 Enterprise SP2 x64"
+    Comment="Server OS. Supported. Windows Server 2008 Enterprise SP2 x64"
+    Definition="Some text">Windows Server 2008 Enterprise x64 with SP2</Variable>
+  <Variable
+    Name="Windows Server 2008 Enterprise SP1 x64"
+    Comment="Server OS. Supported. Windows Server 2008 Enterprise SP1 x64"
+    Definition="Some text">Windows Server 2008 Enterprise x64 with SP1</Variable>
+  <Variable
+    Name="Windows Server 2008 Enterprise R2 x64"
+    Comment="Server OS. Supported. Windows Server 2008 Enterprise R2 x64 -- NOTE: this OS is produced only in the 64 bit version"
+    Definition="Some text">Windows Server 2008 R2 Enterprise x64</Variable>
+  <Variable
+    Comment="Server OS. Supported. Windows Server 2003 Enterprise SP2 x64"
+    Name="Windows Server 2003 Enterprise SP2 x64">Windows Server 2003 Enterprise x64 with SP2</Variable>
+  <Variable
+    Comment="Server OS. Supported. Windows Server 2003 Enterprise R2 SP2 x64"
+    Name="Windows Server 2003 Enterprise R2 SP2 x64">Windows Server 2003 R2 Enterprise x64 with SP2</Variable>
+  <Variable
+    Name="Windows Live ID"
+    Comment=""
+    Definition="Some text">Windows Live ID</Variable>
+  <Variable
+    Name="Windows 7 Professional x86"
+    Comment="Client OS. Supported. Windows 7 Professional x86"
+    Definition="Some text">Windows 7 Professional x86</Variable>
+  <Variable
+    Name="Windows 7 Professional x64"
+    Comment="Client OS. Supported. Windows 7 Professional x64"
+    Definition="Some text">Windows 7 Professional x64</Variable>
+  <Variable
+    Name="Windows 7 Professional SP1 x86"
+    Comment=""
+    Definition="Some text">Windows 7 Professional SP1 x86</Variable>
+  <Variable
+    Name="Windows 7 Professional SP1 x64"
+    Comment=""
+    Definition="Some text">Windows 7 Professional SP1 x64</Variable>
+  <Variable
+    Name="Windows 7 Enterprise x86"
+    Comment=""
+    Definition="Some text">Windows 7 Enterprise x86</Variable>
+  <Variable
+    Name="Windows 7 Enterprise x64"
+    Comment=""
+    Definition="Some text">Windows 7 Enterprise x64</Variable>
+  <Variable
+    Name="Windows 7 Enterprise SP1 x86"
+    Comment=""
+    Definition="Some text">Windows 7 Enterprise SP1 x86</Variable>
+  <Variable
+    Name="Windows 7 Enterprise SP1 x64"
+    Comment=""
+    Definition="Some text">Windows 7 Enterprise SP1 x64</Variable>
+  <Variable
+    Name="Microsoft Visual Studio 2010"
+    Comment="Tool. Microsoft Visual Studio 2010.  Does not require Microsoft per DevDiv product naming conventions"
+    Definition="Some text">Microsoft Visual Studio 2010</Variable>
+  <Variable
+    Name="Visual Studio 2010 second use"
+    Comment="Tool. Visual Studio 2010 First or subsequent mentions. Does not require Microsoft per DevDiv product naming conventions"
+    Definition="Some text">Visual Studio 2010</Variable>
+  <Variable
+    Name="Windows PowerShell 2.0"
+    Comment="Tool. Windows PowerShell 2.0 -- always use full name."
+    Definition="Some text">Windows PowerShell 2.0</Variable>
+  <Variable
+    Name="Terminology Management Service (TMS)"
+    Comment="Service? vendor product? Terminology Management Services (TMS);  first use"
+    Definition="Some text">Terminology Management Service (TMS)</Variable>
+  <Variable
+    Name="TMS second use"
+    Definition="Some text"
+    Comment="Terminology Management Services second use.">TMS</Variable>
+  <Variable
+    Name="Terminology Query Service (TQS)"
+    Comment="Service? vendor product?"
+    Definition="Some text">Terminology Query Service (TQS)</Variable>
+  <Variable
+    Name="TQS second use"
+    Comment="Terminology Query Service (TQS) second use"
+    Definition="Some text">TQS</Variable>
+  <Variable
+    Name="Windows Communication Foundation (WCF) service"
+    Comment=""
+    Definition="Some text">Windows Communication Foundation (WCF) service</Variable>
+  <Variable
+    Name="WCF service"
+    Comment="second use."
+    Definition="Some text">WCF service</Variable>
+  <Variable
+    Name="Windows service"
+    Comment=""
+    Definition="Some text">Windows service</Variable>
+  <Variable
+    Name="Report Builder second use"
+    Comment="SharePoint application. Report Builder second use."
+    Definition="Some text">Report Builder</Variable>
+  <Variable
+    Name="Report Builder"
+    Comment="Sharepoint SQL application. Microsoft SQL Server Reporting Services Report Builder.  First use for Report Builder."
+    Definition="Some text">Microsoft SQL Server Reporting Services Report Builder</Variable>
+  <Variable
+    Name="SharePoint Designer"
+    Comment="SharePoint tool. Microsoft SharePoint Designer"
+    Definition="Some text">Microsoft SharePoint Designer</Variable>
+  <Variable
+    Name="SharePoint Designer second use"
+    Comment="SharePoint tool. SharePoint Designer second use."
+    Definition="Some text">SharePoint Designer</Variable>
+  <Variable
+    Name="Toolbox first use"
+    Comment="Tool.  Visual Studio Toolbox. From Will P."
+    Definition="Some text">Visual Studio Toolbox</Variable>
+  <Variable
+    Name="Toolbox second use"
+    Comment="Tool. Toolbox (in Visual Studio)"
+    Definition="Some text">Toolbox</Variable>
+  <Variable
+    Name="Microsoft SharePoint Foundation 2010"
+    Comment="SharePoint developer edition. Microsoft SharePoint Foundation 2010.  first use."
+    Definition="Some text">Microsoft SharePoint Foundation 2010</Variable>
+  <Variable
+    Name="SharePoint Foundation 2010"
+    Comment="SharePoint developer edition. Microsoft SharePoint Foundation 2010. Second use."
+    Definition="Some text">SharePoint Foundation 2010</Variable>
+  <Variable
+    Name="Windows PowerShell"
+    Comment="Tool.  Use only when referring to the product in general, not where a specific version matters"
+    Definition="Some text">Windows PowerShell</Variable>
+  <Variable
+    Name="Microsoft Excel 2010"
+    Comment="Tool, Spreadsheet. • Microsoft Excel 2010. First use, except in a heading, where you should use the second use variable.."
+    Definition="Some text">Microsoft Excel 2010</Variable>
+  <Variable
+    Name="Microsoft Excel 2010 second use"
+    Comment=""
+    Definition="Some text">Excel 2010</Variable>
+  <Variable
+    Name="PowerPivot for Excel"
+    Comment="Tool, Spreadsheet. PowerPivot for Excel  first use"
+    Definition="Some text">Microsoft PowerPivot for Microsoft Excel 2010</Variable>
+  <Variable
+    Name="PowerPivot for Excel"
+    Comment="Tool, spreadsheet. PowerPivot. Subsequent use."
+    Definition="Some text">PowerPivot</Variable>
+  <Variable
+    Name="Windows Communication Foundation (WCF)"
+    Comment="Tool"
+    Definition="Some text">Windows Communication Foundation (WCF)</Variable>
+  <Variable
+    Name="WCF"
+    Comment="Tool. WCF. Windows Communication Foundation"
+    Definition="Some text">WCF</Variable>
+  <Variable
+    Name="ASP.NET second use"
+    Comment="Web Dev product??? ASP.NET"
+    Definition="Some text">ASP.NET</Variable>
+  <Variable
+    Name="Microsoft ASP.NET"
+    Comment="Web Dev product??? ASP.NET"
+    Definition="Some text">Microsoft ASP.NET</Variable>
+  <Variable
+    Name="Visual C++ 2010 Redistributable Package"
+    Definition="Some text"
+    Comment="Prog Language update. Microsoft Visual C++ 2010 Redistributable Package. There are two versions of this package,  (x86) and (x64).">Microsoft Visual C++ 2010 Redistributable Package</Variable>
+  <Variable
+    Name="Microsoft XML Core Services (MSXML) 6.0"
+    Definition="Some text">Microsoft XML Core Services (MSXML) 6.0</Variable>
+  <Variable
+    Name="IIS 7.0 SP2"
+    Comment=""
+    Definition="Some text">IIS 7.0 SP2</Variable>
+  <Variable
+    Name=".NET Framework 3.0 SP1 first use"
+    Comment="HV only? .NET Framework 3.0 SP1"
+    Definition="Some text">.NET Framework 3.0 Service Pack 1</Variable>
+  <Variable
+    Name=".NET 3.0 SP1 Second use"
+    Comment="HV only?"
+    Definition="Some text">.NET 3.0 SP1</Variable>
+  <Variable
+    Name="SQL Server 2008 x64 SP1"
+    Comment=""
+    Definition="Some text">SQL Server 2008 Enterprise x64 with SP1</Variable>
+  <Variable
+    Name="Windows Azure"
+    Comment="Product. Windows Azure"
+    Definition="Some text">Windows Azure</Variable>
+</CatapultVariableSet>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="52" MadCap:lastWidth="624" MadCap:conditions="Production.StyleMaster">
+    <head>
+    </head>
+    <body>
+        <p><![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-02-07T13:43:48.8539795-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Snippet is to be combined with an Internal_Boilerplate snippet in API/snippets;  This snippet should eventually orriginate from Stylemaster.\r\n\r\nThis snippet is also to be combined with the Internal_Boilerplate_Cmdlet snippet in PowerShellCmdlets/Snippets." MadCap:editor="v-labenn" MadCap:editDate="2012-02-11T13:52:41.6422885-08:00">supports </MadCap:annotation>the infrastructure of <MadCap:variable name="BrandingHSG.Amalga Short" /> and is not intended to be used directly from your code.</p>
+    </body>
+</html>

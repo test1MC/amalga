@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fileProperties fileTags="TopicOwner.StyleMasterResource" conditions="Production.StyleMaster">
+    <ImageOverlay>
+        <OriginalImage EnableCropRectangle="true" CropRectangle="0,0,70,25" ExportFormat="png" ColorDepth="24" OutputScaleFactor="1.538" ComputedWidth="70" ComputedHeight="25" Format="png">iVBORw0KGgoAAAANSUhEUgAAAEgAAAAaCAYAAAAUqxq7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE6SURBVFhH7dkhSwNQFMXxNYNgGCwMFgaGgWFgEBYGhoFBWBAWBgsDg2AYLAwMgmEgLAiCQVgYLAgLg4WBYbAwWBAMgwXBYBAMwoJgGBiEn/gB/ATeB+8LHN6795z/SXx/8/XFes3nJx8frFa8v/P2xusrLy88P/P0xHLJYsHjIw8PzOfMZkynTCbc3zMeMxoxHDIYcHdHv0+vR7fL7S03N1xfc3VFp8PlJe02Fxecn3N2RqtFs0mjwekpJyccH1OvU6tRrVKpcHREuczhIQcHlErs71MsUiiwt8fuLvk8Ozvkcmxvk82SyZBOk0qRTLK1xeYmGxt+TyIRAoVA8YLii8UMiiEdWyzWfPigMIphFMNJR9SILBZhNdJ84I7gQQHMApgFUQzkGkw6oH20GlH7/Ide7Lcci/u3Bj/EVfT7hJVEXQAAAABJRU5ErkJggg==</OriginalImage>
+        <Shapes />
+        <Shapes IsResourceLayer="true" Name="Resources" />
+        <Variables />
+        <ConditionTagSet />
+    </ImageOverlay>
+</fileProperties>

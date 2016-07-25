@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment="Feature. Population Management. Patient Lists."
+    Name="Population Management">Patient Lists</Variable>
+  <Variable
+    Comment="Formerly Data Insight"
+    Name="Analytics">Analytics</Variable>
+  <Variable
+    Name="Patient Chart"
+    Comment=""
+    Definition="Some text">Patient Chart</Variable>
+  <Variable
+    Name="Notifications"
+    Definition="Some text"
+    Comment="Feature not yet defined as of 9/30/11">Notifications</Variable>
+  <Variable
+    Name="Reports"
+    Comment="Feature. Reports."
+    Definition="Some text">Reports</Variable>
+  <Variable
+    Name="Vital Signs"
+    Comment="Widget. Vital Signs"
+    Definition="Some text">Vital Signs</Variable>
+  <Variable
+    Name="Allergies"
+    Comment="Widget. Allergies"
+    Definition="Some text">Allergies</Variable>
+  <Variable
+    Name="Problem List"
+    Comment="Widget. Problem List"
+    Definition="Some text">Problem List</Variable>
+  <Variable
+    Name="Documents"
+    Comment="Widget. Document (bug to change to Documents)"
+    Definition="Some text">Document</Variable>
+  <Variable
+    Name="Laboratory"
+    Comment="Widget. Laboratory"
+    Definition="Some text">Laboratory</Variable>
+  <Variable
+    Name="Clinical Care Flowsheet"
+    Comment="Feature. Clinical Care Flowsheet"
+    Definition="Some text">Clinical Care Flowsheet</Variable>
+  <Variable
+    Name="Universal Data Navigator"
+    Comment="Feature. Universal Data Navigator. Currently in UI as UDN-X but this is the most like permanent name"
+    Definition="Some text">Universal Data Navigator</Variable>
+</CatapultVariableSet>

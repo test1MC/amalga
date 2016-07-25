@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="407" MadCap:lastWidth="833">
+    <head>
+    </head>
+    <body><pre xml:space="preserve"><span style="font-size: 10pt;">
+      <a href="../DI_XML_Manifest_Feeds.htm">&lt;Feeds&gt;</a>
+         <a href="../DI_XML_Manifest_Feed.htm">&lt;Feed&gt;</a>
+            <a href="../DI_XML_Manifest_ReceiveAdapter.htm">&lt;ReceiveAdapter&gt;</a>
+               <a href="../DI_XML_Manifest_Port.htm">&lt;Port&gt;</a>
+               <a href="../DI_XML_Manifest_StartBlockcharacter.htm">&lt;StartBlockCharacter&gt;</a>
+               <a href="../DI_XML_Manifest_EndBlockCharacter.htm">&lt;EndBlockCharacter&gt;</a>
+               <a href="../DI_XML_Manifest_CarriageReturnCharacter.htm">&lt;CarriageReturnCharacter&gt;</a>
+               <a href="../DI_XML_Manifest_AckCapture.htm">&lt;AckCapture&gt;</a>
+               <a href="../DI_XML_Manifest_AckFormular.htm">&lt;AckFormular&gt;</a>
+               <a href="../DI_XML_Manifest_NackCapture.htm">&lt;NackCapture&gt;</a>
+               <a href="../DI_XML_Manifest_NackFormular.htm">&lt;NackFormular&gt;</a>
+               <a href="../DI_XML_Manifest_DefaultAck.htm">&lt;DefaultAck&gt;</a>
+               <a href="../DI_XML_Manifest_DefaultNack.htm">&lt;DefaultNack&gt;</a>
+               <a href="../DI_XML_Manifest_Directory.htm">&lt;Directory&gt;</a>
+               <a href="../DI_XML_Manifest_SearchPattern.htm">&lt;SearchPattern&gt;</a>
+            <a href="../DI_XML_Manifest_SendAdapter.htm">&lt;SendAdapter&gt;</a>
+            <a href="../DI_XML_Manifest_TempStoragedAdapter.htm">&lt;TempStorageAdapter&gt;</a>
+               <a href="../DI_XML_Manifest_Directory.htm">&lt;Directory&gt;</a>
+            <a href="../DI_XML_Manifest_MsgType.htm">&lt;MsgType&gt;</a>
+            <a href="../DI_XML_Manifest_Verifier.htm">&lt;Verifier&gt;</a>
+            <a href="../DI_XML_Manifest_KeepOnTemporaryStorage.htm">&lt;KeepOnTemporaryStorage&gt;</a>
+</span></pre>
+    </body>
+</html>

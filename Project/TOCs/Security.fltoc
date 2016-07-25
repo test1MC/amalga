@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="Platform and application security"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_Security.htm"
+    ReplaceMergeNode="true">
+    <TocEntry
+      Title="Data access security"
+      Link="/Content/Serviceability/Secure Data Access/Secure Data Access Intro.htm"></TocEntry>
+    <TocEntry
+      Title="Role management"
+      Link="/Content/Serviceability/SERV_LND_Roles.htm">
+      <TocEntry
+        Title="Roles and users"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_CON_RolesUsers.htm">
+        <TocEntry
+          Title="Built-in [%=BrandingHSG.Amalga Short%] roles"
+          Link="/Content/Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" />
+        <TocEntry
+          Title="Effective user permissions"
+          Link="/Content/Serviceability/Management Console/User Management/SERV_CON_EffectiveUserPerm.htm" />
+        <TocEntry
+          Title="Computer accounts"
+          Link="/Content/Serviceability/Management Console/User Management/SERV_CON_ComputerAccts.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="View roles and assigned accounts"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-View.htm" />
+      <TocEntry
+        Title="Add a role"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-Add.htm" />
+      <TocEntry
+        Title="Edit the display name of a role"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-Edit.htm" />
+      <TocEntry
+        Title="Remove a role"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-Del.htm" />
+      <TocEntry
+        Title="Assign accounts to a role"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-AcctAdd.htm" />
+      <TocEntry
+        Title="Remove accounts from a role"
+        Link="/Content/Serviceability/Management Console/User Management/SERV_TASK_Roles-AcctDel.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Data permissions management"
+      Link="/Content/Serviceability/SERV_LND_DataPerm.htm">
+      <TocEntry
+        Title="Roles and data (entities)"
+        Link="/Content/DataPlatform1/DP_Con_RolesData.htm">
+        <TocEntry
+          Title="Supported interfaces"
+          Link="/Content/DataPlatform1/DP_Con_SupportedInterfaces.htm" />
+        <TocEntry
+          Title="Access inheritance"
+          Link="/Content/DataPlatform1/DP_Con_RuleAccessLevels.htm" />
+        <TocEntry
+          Title="SQL conditions"
+          Link="/Content/DataPlatform1/DP_Con_SQLConditions.htm" />
+        <TocEntry
+          Title="Data access performance"
+          Link="/Content/Serviceability/Secure Data Access/Data Access Performance.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Grant permissions to an entity (add an access rule)"
+        Link="/Content/DataPlatform1/DP_Task_ConfigEntityAccess.htm" />
+      <TocEntry
+        Title="Edit an access rule"
+        Link="/Content/DataPlatform1/DP_Task_RuleEdit.htm" />
+      <TocEntry
+        Title="Add a SQL condition to an access rule"
+        Link="/Content/DataPlatform1/DP_Task_RuleCond.htm" />
+      <TocEntry
+        Title="Copy an access rule"
+        Link="/Content/DataPlatform1/DP_Task_RuleCopy.htm" />
+      <TocEntry
+        Title="Debug access rules"
+        Link="/Content/DataPlatform1/DP_Task_DebugRules.htm" />
+      <TocEntry
+        Title="Delete an access rule"
+        Link="/Content/DataPlatform1/DP_Task_RuleDel.htm" />
+      <TocEntry
+        Title="Restrict access to an entity property (sensitive labels)"
+        Link="/Content/DataPlatform1/DP_Task_ConfigEntitySensitiveCol.htm" />
+      <TocEntry
+        Title="Grant permissions for sensitive data"
+        Link="/Content/DataPlatform1/DP_Task_PolicyLabel.htm" />
+      <TocEntry
+        Title="Configure access inheritance for an entity"
+        Link="/Content/DataPlatform1/DP_Task_ConfigEntityInheritAccess.htm" />
+      <TocEntry
+        Title="Configure access to an application's private database tables"
+        Link="/Content/DataPlatform1/DP_Task_AppTableInherit.htm" />
+      <TocEntry
+        Title="Edit an entity relationship (access inheritance)"
+        Link="/Content/DataPlatform1/DP_Task_InheritEdit.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Application permissions management"
+      Link="/Content/Serviceability/SERV_LND_AppPerm.htm">
+      <TocEntry
+        Title="Roles and applications"
+        Link="/Content/Serviceability/Secure Data Access/SERV_CON_RolesApps.htm" />
+      <TocEntry
+        Title="View permissions for an application"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-PermView.htm" />
+      <TocEntry
+        Title="Grant and remove permissions to an application"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-PermAdd.htm" />
+      <TocEntry
+        Title="View application permission dependencies"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-DepView.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="View permission warnings for an application"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-WarnView.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Troubleshoot permission warnings for applications"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-WarnTrb.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Reset application permissions"
+        Link="/Content/Serviceability/Secure Data Access/SERV_TASK_App-PermReset.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.RTM,TopicType.Overview/Introduction,TopicOwner.v-keith,Personas.All,Status.10 - Not in use" MadCap:lastBlockDepth="5" MadCap:lastHeight="836.3333" MadCap:lastWidth="576" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Functional Architecture</h1>
+        <p>Generic Paragraph</p>
+        <h2>Design Objectives</h2>
+        <ul>
+            <li>Lower Total Cost of Ownership</li>
+            <li>Make it easy to build and maintain the data asset</li>
+            <li>Make it easy to build, deploy and share use cases (“apps”)</li>
+            <li>Integrate seamlessly with other Microsoft tools</li>
+            <li>Enhance connected health experiences, cohort creation and management, reporting and dashboards, unified patient chart visualization</li>
+            <li>Provide an incremental upgrade path that retains the value of existing investments and transformations</li>
+        </ul>
+        <h2>Topology and Application Hosting Enhancements</h2>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Amalga V2</th>
+                    <th>Amalga V3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Topology “forensics”
+</td>
+                    <td>Central topology registry
+</td>
+                </tr>
+                <tr>
+                    <td>Physical services
+</td>
+                    <td>Logical services
+</td>
+                </tr>
+                <tr>
+                    <td>Implicit dependencies
+</td>
+                    <td>Explicit dependencies
+</td>
+                </tr>
+                <tr>
+                    <td>Scattered Config &amp; Mgmt
+</td>
+                    <td>Centralized Config &amp; Mgmt
+</td>
+                </tr>
+                <tr>
+                    <td>Monolithic server stack
+</td>
+                    <td>Modular server stack
+</td>
+                </tr>
+                <tr>
+                    <td>Border-level server security
+</td>
+                    <td>Integrated server security
+</td>
+                </tr>
+                <tr>
+                    <td>Hit-and-miss monitoring
+</td>
+                    <td>Inherited monitoring
+</td>
+                </tr>
+                <tr>
+                    <td>In-the-field high availability
+</td>
+                    <td>Native high availability
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Data Pipeline Enhancements</h2>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Amalga V2</th>
+                    <th>Amalga V3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dozens of DADE services, millions of message files
+</td>
+                    <td>Acquisition apps; reliable submission to queue
+</td>
+                </tr>
+                <tr>
+                    <td>Difficult to integrate other acquisition channels
+</td>
+                    <td>Easy to integrate other acquisition channels
+</td>
+                </tr>
+                <tr>
+                    <td>Configuration by code
+</td>
+                    <td>Configuration by config
+</td>
+                </tr>
+                <tr>
+                    <td>Monolithic Pipeline
+</td>
+                    <td>Componentized pipeline
+</td>
+                </tr>
+                <tr>
+                    <td>Tightly-bound AmalgaID
+</td>
+                    <td>Loosely-bound AmalgaID
+</td>
+                </tr>
+                <tr>
+                    <td>“N+1” message failure
+</td>
+                    <td>Self-healing automated DDL
+</td>
+                </tr>
+                <tr>
+                    <td>Long time-to-data
+</td>
+                    <td>Optimized time-to-data
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Platform Services</h2>
+        <ul>
+            <li>Topology Web Service - Records everything that is deployed and managed as part of the Amalga Topology</li>
+            <li>Registration Web Service - Used when new Features or Applications are deployed into the environment to record enough data about the feature or app to allow the system to manage it.</li>
+            <li>Discovery Web Service - Provides service configuration and topology registration information.</li>
+            <li>Central Configuration Service - Provides a standardized method to store configuration information for any requesting service.</li>
+            <li>Logging</li>
+        </ul>
+    </body>
+</html>

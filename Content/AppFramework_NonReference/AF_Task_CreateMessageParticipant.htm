@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="2" MadCap:lastHeight="888" MadCap:lastWidth="989" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a messaging participant</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes how to create a <MadCap:variable name="FeatureName.Amalga Framework second use" /> page messaging participant.</p>
+        <p>A Page Messaging System participant is a JavaScript object that allows a <MadCap:variable name="FeatureName.Amalga Framework second use" /> application to join, send messages to, and listen to a message group. </p>
+        <h2>Select an event handler</h2>
+        <p>The primary design consideration for a new <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> object is its place in the ASP.NET life cycle. If a Participant is created too soon, the page messaging API may not be available. If it is created too late, other page elements may begin sending messages to message groups before the Participant is ready to join them.</p>
+        <p>The point at which it is safe to create a Participant object depends on its page environment. In a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal page, the page messaging API&#160;is loaded into the browser DOM by the master page before its page elements are loaded. In a site that does not use a <MadCap:variable name="FeatureName.Amalga Framework second use" /> master page, the API is loaded by the first <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a> control whose <span class="codeEntity">OnPreRender</span> event handler is called. </p>
+        <p>Since ASP.NET raises  events in container controls before raising the equivalent events in their child controls, it is safe to create a <span class="codeEntity">Participant</span> in the <span class="codeEntity">OnPreRender</span> event handler of any child of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal page or server control. </p>
+        <h2>Name the participant</h2>
+        <p>The participant name is used to identify messages that are sent using the <span class="codeEntity">Participant.Send()</span> function. Every messaging participant has a name, but specifying the name is optional. If no name is specified when the  <span class="Label">Participant</span> is created,  the messaging manager will create and assign a new name. </p>
+        <p class="note">Messages sent using the <span class="codeEntity">MessagingManager.Send()</span> function are anonymous.</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">Example</h2>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_PageMessaging.htm">JavaScript API reference: Page Messaging</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingParts.htm">Page messaging</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms178472.aspx">ASP.NET Page Life Cycle Overview</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

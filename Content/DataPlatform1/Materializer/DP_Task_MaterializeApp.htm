@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2806.667" MadCap:lastWidth="704" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head><title>Materializer application</title>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materializer application</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p>
+            <MadCap:keyword term="materialized entity view:configuration" />Use the procedures that follow to create an instance of the Materializer application. Repeat this task for each entity you intend to materialize.</p>
+        <p class="Label">Materializer application input</p>
+        <p>The input to the Materializer application is a bound entity. Use Microsoft Amalga Management Console to bind the entity to data assets in the ClinicalData database.</p>
+        <p class="Label">Materializer application output</p>
+        <p>The output to the Materializer application is a SQL Server table for the entity. Note that the generated table does not have any indexes and does not have partitions set up. You must apply the appropriate index and set up partitions based on your specific use case.</p>
+        <p class="Label">Procedures in this topic</p>
+        <p>•	Configure Materializer application and service instance names</p>
+        <p>•	Configure Materializer service settings</p>
+        <p class="h7">Configure Materializer application and service instance names</p>
+        <p>Establish one application instance name and one service instance name for each entity that you expect Amalga hosted applications to use.</p>
+        <p class="LabelforProcedures">To configure Materializer instance names</p>
+        <ol>
+            <li>From the feed folder, locate the application manifest (MaterializerApplication.xml). To obtain pipeline manifest masters, see  <MadCap:xref href="DP_Task_MaterializerCAB.htm" target="" title="" alt="">Unpack Materializer CAB files</MadCap:xref>.<ol style="list-style-type: upper-alpha;"><li>Open the file with Notepad, or an equivalent text editor, and save it using the entity name. For example, save as MaterializerApplication_Patient.xml to create an application instance for the <MadCap:xref href="../Entity_Common/DP_GREF_Common.Patient.htm" target="" title="" alt="">Common.Beta.Patient entity</MadCap:xref>.</li><li>Locate the <span class="MarkupLanguageElements">DeploymentManifest</span> element.</li><li><p>Locate the Name attribute and insert the InstanceName attribute and a value immediately after the Name attribute.</p><table><col /><col /><col /><col /><tbody><tr><th>Element</th><th>Attribute</th><th>Unique</th><th>Description</th></tr><tr><td>&lt;DeploymentManifest&gt;</td><td>InstanceName</td><td>Yes</td><td><p>The instance name and the file name must match each other. Appending the name of the feed to the instance name can help you identify the application.</p><p>&#160;</p><p class="Label">Application instance example (Step 1)</p><p class="code">InstanceName =”MaterializerApplication_Patient”</p><p class="Label">Service instance example (Step 3)</p><p class="code">InstanceName =”MaterializerService_Patient”</p></td></tr></tbody></table></li></ol></li>
+            <li>
+                <p>Save and then close the application manifest. For a configuration example, see  <MadCap:xref href="DP_XML_MaterializerAppEx.htm" target="" title="" alt="">Materializer: application manifest example</MadCap:xref></p>
+            </li>
+            <li>
+                <p>Locate the service manifest (MaterializerService.xml). Name the instance as described in Step 1 (A, B, and C) and then save the file using the feed name. For example, insert <span class="code">InstanceName =”MaterializerService_Patient”</span> and save the file as MaterializerService_Patient.xml.</p>
+            </li>
+            <li>
+                <p>Without closing the service manifest, go to the next procedure.</p>
+            </li>
+        </ol>
+        <p class="h7">Configure Materializer service settings</p>
+        <p>Define the view, base table, and the primary context key of the base table as input to materialize an entity view for a particular entity. You must have administrative rights to the ClinicalData database and access to SQL Server Management Studio to complete this procedure.</p>
+        <p class="LabelforProcedures">To configure a Materializer service instance</p>
+        <p>For a configuration example, see <MadCap:xref href="DP_XML_MaterializerServiceEx.htm" target="" title="" alt="">Materializer: service manifest example</MadCap:xref>.</p>
+        <ol>
+            <li>In the service manifest, locate the <span class="MarkupLanguageElements">Settings</span> element.</li>
+            <li>
+                <p>Review and update the the following series of <span class="MarkupLanguageElements">Setting</span> element attributes, as needed.</p>
+                <table>
+                    <col />
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Setting attribute name</th>
+                            <th>Default value</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>BatchSize</td>
+                            <td>500</td>
+                            <td>Number of rows processed during each materializer cycle.</td>
+                        </tr>
+                        <tr>
+                            <td>IdleSleepSeconds</td>
+                            <td>5</td>
+                            <td>Number of seconds for materialization to pause when there is no data to be processed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Locate the <span class="code">&lt;Setting Name="MaterializerConfiguration" Type="String"&gt;</span> entry and insert the following structure between the <span class="MarkupLanguageElements">DefaultValue</span> element tags.</p><pre xml:space="preserve" class="code">&lt;/DefaultValue&gt;
+		&lt;![CDATA[
+	&lt;MaterializerConfiguration&gt;
+                    &lt;DefiningView&gt;
+                        &lt;Schema&gt;&lt;/Schema&gt;
+                        &lt;Name&gt;&lt;/Name&gt;
+                    &lt;/DefiningView&gt;
+                    &lt;BaseTables&gt;
+                        &lt;BaseTable&gt;
+                            &lt;Schema&gt;&lt;/Schema&gt;
+                            &lt;Name&gt;&lt;/Name&gt;
+                            &lt;PrimaryContextKeys&gt;
+                                &lt;Key&gt;
+                                    	&lt;Name&gt;&lt;/Name&gt;
+			    		&lt;Alias&lt;/Alias&gt;
+                                &lt;/Key&gt;
+                            &lt;/PrimaryContextKeys&gt;
+                        &lt;/BaseTable&gt;
+                    &lt;/BaseTables&gt;
+                    &lt;MaterializedTable&gt;
+                        &lt;Schema&gt; &lt;/Schema&gt;
+                        &lt;Name&gt; &lt;/Name&gt;
+                    &lt;/MaterializedTable&gt;
+ 	&lt;/MaterializerConfiguration&gt;
+		]]&gt;
+&lt;/DefaultValue&gt;</pre>
+            </li>
+            <li>
+                <p>Populate the materializer-configuration settings with the values described in the following table.</p>
+                <p class="tip">To extract the values from the database, see <MadCap:xref href="DP_Task_MaterializerAutomate.htm" target="" title="" alt="">(Optional) Automate Materializer application configuration</MadCap:xref>.</p>
+                <table>
+                    <col />
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parent element</th>
+                            <th>Element</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>&lt;Defining View&gt;</td>
+                            <td>&lt;Schema&gt;</td>
+                            <td>Specify the name of schema for the defining view that contains the binding query of the entity. The default schema name is EntityViews.</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;Defining View&gt;</td>
+                            <td>&lt;Name&gt;</td>
+                            <td>
+                                <p>Specify the name of the defining view containing the binding query for the entity. The defining view has the following naming convention: v_def<span class="Placeholder">NamespaceEntityname</span>. If your entity namespace contains a period (.), you need to replace it with an underscore (_).</p>
+                                <p class="Label">Example</p>
+                                <p>v_defCommon_BetaPatient</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;BaseTable&gt;</td>
+                            <td>&lt;Schema&gt;</td>
+                            <td>
+                                <p>Specify the name of the database schema of the underlying base table. Typically, the schema is based on the feed name.</p>
+                                <p class="Label">Example</p>
+                                <p>ADT_G</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;BaseTable&gt;</td>
+                            <td>&lt;Name&gt;</td>
+                            <td>
+                                <p>Specify the name of the underlying base view or table for your defining view. When available, use the v_collapse_<span class="Placeholder">Segmentname</span>_binding view.</p>
+                                <p class="Label">Example</p>
+                                <p>v_collapse_PID_binding</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;PrimaryContextKeys&gt;</td>
+                            <td>&lt;Name&gt;</td>
+                            <td>Specify the name of the primary context key columns for the base view or table. You can obtain the context key column from the associated Message Shredder service manifest.</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;PrimaryContextKeys&gt;</td>
+                            <td>&lt;Alias&gt;</td>
+                            <td>
+                                <p>Specify the name of column in the binding entity query that corresponds to the primary key column of the base view or table. The naming convention for the primary context key alias is [ID_TBL_<span class="Placeholder">Databasename</span>.<span class="Placeholder">Databaseschemaname</span>.<span class="Parameter">Tableorviewname</span>.<span class="Parameter">Primarycontextkeycolumnname</span>].</p>
+                                <p class="Label">Example</p>
+                                <p>  [ID_TBL_ClinicalData.ADT_G.v_Collapse_PID_Binding.Patient_PID_ExternalId]</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&lt;MaterializedTable&gt;</td>
+                            <td>&lt;Schema&gt;</td>
+                            <td>Specify the name of schema for the SQL Server table. The default schema name is EntityViews.</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;MaterializedTable&gt;</td>
+                            <td>&lt;Name&gt;</td>
+                            <td>
+                                <p>Specify the name of the SQL Server table to be populated. The naming convention for the materialized table is NamespaceEntitynameMaterialized. If your entity namespace contains a period (.), you need to replace it with an underscore (_).</p>
+                                <p class="Label">Example</p>
+                                <p>Common_BetaPatientMaterialized</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>Save the service manifest.</p>
+            </li>
+            <li>
+                <p>Go to the next procedure: <MadCap:xref href="DP_Task_MaterializerPublish.htm" target="" title="" alt="">Publish an application instance</MadCap:xref>.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Ovw_MaterializeView.htm" target="" title="" alt="">Materialize an entity view</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="825" MadCap:lastWidth="943" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;"><MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">The <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control adds the ability to turn the standard <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon on and off.</p>
+        <p>The <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control exposes standard <MadCap:variable name="BrandingMS.SharePoint" /> functionality, by enabling users to turn on the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon. You can use the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon to configure and manage your site. To toggle the <MadCap:variable name="BrandingMS.SharePoint" /> ribbon on any of the default portal pages, click the caret ("^") symbol in the upper-right corner of the page.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>Adding the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control to a page</li>
+            <li>Controlling access to the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</li>
+        </ul>
+        <h2>Adding the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control to a page</h2>
+        <p>You can add a <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>. </p>
+        <h2>Controlling access to the <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</h2>
+        <p> The <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control is only visible to users who have the appropriate permissions. The control uses the <MadCap:variable name="BrandingMS.SharePoint" /> <![CDATA[ ]]><a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.webcontrols.spsecuritytrimmedcontrol.aspx">SPSecurityTrimmedControl</a> to determine if the toggle  link should be displayed. An example of this is shown in the following example.</p>
+        <p class="code">&lt;Sharepoint:SPSecurityTrimmedControl ID="SPSecurityTrimmedControlForRibbon" runat="server" PermissionsString="AddAndCustomizePages"&gt;</p>
+        <p>In the preceding example, the ribbon will be hidden from all users that do not have "AddAndCustomizePages" privileges.  The default permissions are defined as follows:</p>
+        <p>Users with <MadCap:variable name="BrandingMS.SharePoint" /> "Design" or greater permissions can access the following <MadCap:variable name="BrandingMS.SharePoint" /> features:</p>
+        <ul>
+            <li>Change Privileges</li>
+            <li>Add users</li>
+            <li>Modify site navigation configuration</li>
+            <li>Modify site or page properties</li>
+        </ul>
+        <p>Users with <MadCap:variable name="BrandingMS.SharePoint" /> "Contribute" or greater permissions can access the following <MadCap:variable name="BrandingMS.SharePoint" /> features:</p>
+        <ul>
+            <li>Upload document</li>
+            <li>Add a folder (to a doc library)</li>
+            <li>Add a wiki page</li>
+            <li>Modify document metadata/properties</li>
+        </ul>
+        <p> Although <MadCap:variable name="BrandingHSG.Amalga Short" /> uses only the default ribbon functionality, you can further extend the ribbon by using the <MadCap:variable name="BrandingMS.SharePoint" /> API. For more information, see <a href="http://msdn.microsoft.com/en-us/library/ee540027.aspx" target="_blank">Server Ribbon in <MadCap:variable name="BrandingMS.SharePoint" /> Foundation</a>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-02-09T13:36:24.2886628-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Can't locate the API ref topic for this control." MadCap:editor="v-wfren" MadCap:editDate="2012-02-09T13:36:32.6865025-08:00">[Cross reference or hyperlink if external resource]</MadCap:annotation>
+        </p>
+    </body>
+</html>

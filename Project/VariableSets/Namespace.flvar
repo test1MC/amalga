@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment="Namespace for CTP2 (complete rewriter from CTP1, so does not apply to CTP1)"
+    Name="Entity_Common">Common.Beta2</Variable>
+</CatapultVariableSet>

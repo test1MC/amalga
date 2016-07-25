@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet Type="Status" Comment="My set of status tags" conditions="Production.StyleMaster">
+    <FileTag Name="70 - Complete" Comment="" />
+    <FileTag Name="50 - InTech Review" Comment="" />
+    <FileTag Name="20 - Development: under 50%" Comment="Not sure how this would work in practice, but would give a more exact  idea of status of unfinished work." />
+    <FileTag Name="30 - Development: over 50%" Comment="" />
+    <FileTag Name="10 - Not in use" Comment="Not in TOC, not linked to anything -- but not deleted for a (no doubt) excellent reason." />
+    <FileTag Name="00 - Not started" Comment="" />
+    <FileTag Name="60 - Revising" Comment="" />
+    <FileTag Name="40 - Ready for Tech Review" Comment="" />
+    <FileTag Name="15 - Blocked" Comment="Topic intended for release but blocked by lack of information or environment or resources" />
+</CatapultFileTagSet>

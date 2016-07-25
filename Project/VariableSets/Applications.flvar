@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment=""
+    Name="internal provider site">internal provider site</Variable>
+  <Variable
+    Name="Internal provider site sentence case"
+    Comment=""
+    Definition="Some text">Internal provider site</Variable>
+  <Variable
+    Name="community provider site"
+    Comment="Not in CTP1 but may be added later"
+    Definition="Some text">Deferred DO NOT USE</Variable>
+  <Variable
+    Name="Community provider site sentence case"
+    Comment="Not in CTP1 but may be added later"
+    Definition="Some text">Deferred DO NOT USE</Variable>
+  <Variable
+    Name="patient site"
+    Comment=""
+    Definition="Some text">patient site</Variable>
+  <Variable
+    Name="Patient site sentence case"
+    Comment=""
+    Definition="Some text">Patient site</Variable>
+  <Variable
+    Name="public site"
+    Comment=""
+    Definition="Some text">public site</Variable>
+  <Variable
+    Name="Public site sentence case"
+    Comment=""
+    Definition="Some text">Public site</Variable>
+  <Variable
+    Name="staff site"
+    Comment=""
+    Definition="Some text">staff site</Variable>
+  <Variable
+    Name="Staff site sentence case"
+    Comment=""
+    Definition="Some text">Staff site</Variable>
+  <Variable
+    Name="Feed Acquisition application"
+    Comment="Feed Acquisition application. Per Chris Cole"
+    Definition="Some text">Feed Acquisition application</Variable>
+  <Variable
+    Name="Data Parser application"
+    Comment="Data Parser application per Chris Cole"
+    Definition="Some text">Data Parser application</Variable>
+  <Variable
+    Name="Message Shredder application"
+    Comment="Message Shredder application"
+    Definition="Some text">Message Shredder application</Variable>
+  <Variable
+    Name="Data Connector application"
+    Comment=""
+    Definition="Some text">Data Connector application</Variable>
+  <Variable
+    Name="Data Connector (application)"
+    Comment="Use in lists of apps."
+    Definition="Some text">Data Connector</Variable>
+  <Variable
+    Name="Data Parser (application)"
+    Comment="Use in lists of apps."
+    Definition="Some text">Data Parser</Variable>
+  <Variable
+    Name="Feed Acquisition (application)"
+    Comment="Use in lists of apps."
+    Definition="Some text">Feed Acquisition</Variable>
+  <Variable
+    Name="Message Shredder (application)"
+    Comment="Use in lists of apps."
+    Definition="Some text">Message Shredder</Variable>
+  <Variable
+    Name="Materializer (application)"
+    Comment="Platform app"
+    Definition="Some text">Materializer</Variable>
+  <Variable
+    Name="Materialized Entity Manager (application)"
+    Comment="Platform app"
+    Definition="Some text">Materialized Entity Manager</Variable>
+  <Variable
+    Name="Backfill Data-Parser application"
+    Comment=""
+    Definition="Some text">Backfill Data-Parser application</Variable>
+  <Variable
+    Name="Backfill Data-Parser (application)"
+    Comment=""
+    Definition="Some text">Backfill Data-Parser</Variable>
+</CatapultVariableSet>

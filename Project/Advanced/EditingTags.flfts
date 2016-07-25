@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet Type="Editing" Comment="My set of author tags" conditions="Production.StyleMaster">
+    <FileTag Name="1 - Ready for Edit" Comment="Writer sets flag: Topic or snippet is ready for editing." />
+    <FileTag Name="2 - Edit in process" Comment="Editor sets flag: Edit has started on the topic but is not complete." />
+    <FileTag Name="3 - Edited / hold for related topics" Comment="Editor sets flag: Edit is complete, but may be revisited after related topics are edited." />
+    <FileTag Name="4 - Ready for Writer" Comment="Editor sets flag: Topic or snippet is ready for the writer to review the edit comments and changes." />
+    <FileTag Name="5 - Revised / ready for editor" Comment="Writer sets flag: Topic has been revised after one or more edit passes and is ready for the editor again." />
+    <FileTag Name="6 - Revised / ready for writer" Comment="Editor sets flag: Topic has been edited again after one or more edit passes and is ready for the writer." />
+    <FileTag Name="7 - Editing issues resolved" Comment="Writer or editor sets flag (but usually the writer): All issues for from editing for this topic or snippet have been resolved to the mutual satisfaction of both writer and editor." />
+</CatapultFileTagSet>

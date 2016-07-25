@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1167" MadCap:lastWidth="1124" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Rollback applications</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>An application rollback installs a previous version of an already installed application. The rollback package is the same as any other application and can be installed as a new instance of the application. The benefit of using the rollback function of the <MadCap:variable name="FeatureName.Management Console second use" /> is that all the application parameters required for a new installation, such as dependency resolution, virtual schema configuration and entity binding are already defined. The rollback task changes only the application binaries and leaves all operational parameters intact. Only the administrative versioning parameters are rolled back to reflect the lower version numbers.</p>
+        <p>An application cab file must meet the following requirements to be used as the source for an application rollback.</p>
+        <ul>
+            <li>Only non-manifest changes</li>
+            <li>No dependency changes or new configuration settings</li>
+            <li>No virtual schema changes</li>
+            <li>No new services, or removal of previous services</li>
+        </ul>
+        <p>To rollback an application through <MadCap:variable name="BrandingMS.Doors PowerShell" />, use the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Update-AmApplicationInstance.htm" target="" title="" alt="">Update-AmApplicationInstance</MadCap:xref> cmdlet with the -Rollback parameter. For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short" /> PowerShell cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaAppAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To update an application</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>In the module navigation tree, expand the <MadCap:variable name="BrandingHSG.Amalga Short" class="UIElementAction" /><span class="UIElementAction"> Hosted Applications</span> folder and select the application to rollback.</li>
+            <li>Click <span class="UIElementAction">Rollback</span> in the tasks pane.</li>
+            <li>
+                <p>In the Rollback Application pane, click <span class="UIElementAction">Browse</span> to specify the location of the application's rollback cab file. Once selected, the Rollback Application pane will display the application's specifications and ask for confirmation of the rollback. If there are changes in the cab file that are disallowed by rollback, you will receive an error.</p>
+                <p>
+                    <p>
+                        <img src="../../Images/AMC_AppRollbackConfirmation.png" style="border-left-style: solid;border-left-width: 1px;border-left-color: #000000;border-right-style: solid;border-right-width: 1px;border-right-color: #000000;border-top-style: solid;border-top-width: 1px;border-top-color: #000000;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;width: 567px;height: 290px;" />
+                    </p>
+                </p>
+                <p>&#160;</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Rollback</span>. After the rollback and validation operations have been completed, you will return to a screen similar to the one shown in <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>. The application status displayed in the results pane should be <span class="UIElementAction">UpdateReadyForDeployment</span>.</p>
+            </li>
+            <li>To complete the update, perform an application sync as described in <MadCap:xref href="AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Update-AmApplicationInstance.htm" target="" title="" alt="">Update-AmApplicationInstance</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

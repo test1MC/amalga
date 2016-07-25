@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Installation V3.fltoc"
+  OutputFile="Amalga 3 0 CTP Installation Guide"
+  ConditionTagExpression="include[Region.US] exclude[Features.Imaging or Manuals.XRefOtherManual or Production.doNOTbuild or Production.InternalOnly or Production.QuestionableMaterial or Production.ScreenOnly or Production.StyleMaster or Production.TOCsAll or Production.WhitePaperOnly or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "
+  PatchHeadingLevels="true"
+  DisableAutoSync="true"
+  InjectBookHeadings="false"
+  MasterStylesheet="/Content/Resources/Stylesheets/AmalgaMain.css">
+  <PDF
+    ShowUsedBookmarks="false" />
+  <Variables>
+    <Variable
+      Name="FrontMatter/TITLE">Deployment Guide</Variable>
+    <Variable
+      Name="Branding/Version Number-current">R2 Service Pack 3</Variable>
+    <Variable
+      Name="Branding/Amalga Long">Microsoft Amalga UIS 2009 R2 SP3</Variable>
+    <Variable
+      Name="Branding/Amalga Long TM">Microsoft® Amalga™ Unified Intelligence System 2009 R2 Service Pack 3 (SP3)</Variable>
+    <Variable
+      Name="Branding/Software Publication Date">April 2011</Variable>
+    <Variable
+      Name="ManualNames/TITLE">Amalga 3.0 CTP Installation Guide</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Version Number-current">VERSION 3.0 Customer Technology Preview</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+  </Variables>
+  <DocumentProperties
+    Title="Amalga 3 0 Installation Guide"
+    Author="Amalga User Assistance Team" />
+</CatapultTarget>

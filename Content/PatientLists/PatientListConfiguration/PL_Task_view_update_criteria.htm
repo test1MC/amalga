@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1834" MadCap:lastWidth="274" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.70 - Complete,EditingTags.4 - Ready for Writer">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">View or update quick criteria</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-23T14:30:47.1410168-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="add index marker" MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T14:30:50.8830707-08:00">
+                <MadCap:keyword term="viewing quick criteria;updating quick criteria;quick criteria, updating;quick criteria, viewing;retiring quick criteria;restoring quick criteria;quick criteria, restoring;quick criteria, retiring" />This</MadCap:annotation> topic describes how to use the QuickCriterionUpdateScript  to view or update a quick criterion or criteria.</p>
+        <p>After a quick criterion is created, you can view its properties including the categories associated with it and update any of the properties using the QuickCriterionUpdateScript.sql script located in the Samples\DataExplorer folder of the installation media.</p>
+        <p class="LabelforProcedures">To view a criterion</p>
+        <ol>
+            <li>
+                <p>Provide a value for @CriterionID or @CriterionName or both. Leave all other variables as empty strings.</p>
+                <p class="note">You can use standard SQL matching wildcards to select multiple criteria.</p>
+            </li>
+            <li class="note">Run the script to retrieve and display data associated with the criterion or criteria.</li>
+        </ol>
+        <p class="LabelforProcedures">To modify a criterion</p>
+        <ol>
+            <li>
+                <p>Provide a value for  @CriterionID or @CriterionName or both.</p>
+                <p class="note">You can use standard SQL <MadCap:annotation MadCap:createDate="2012-02-23T14:31:04.9152691-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="indent Notes to match proc.\r\nIs it OK to stack notes?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T14:31:30.2271619-08:00">pattern</MadCap:annotation> matching wildcards to select multiple criteria.</p>
+                <p class="note">If both a name and ID pattern are supplied, criteria must match both for the update to occur.</p>
+            </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li class="note"> In @UpdateCriterion, enter any single character - for example, <span class="InputText">1</span>.</li>
+            <li class="note">Enter values for any variables that you want to change, including the query itself.</li>
+            <li class="note">
+                <p>Run the script.</p>
+                <p class="note">Basic information about the criteria and properties modified will be displayed.</p>
+            </li>
+        </ol>
+        <p class="LabelforProcedures">To retire a criterion</p>
+        <ul>
+            <li>
+                <p>Follow the steps for modifying a criterion and set the value for @CriterionStatus to <span class="InputText">2</span>.</p>
+                <p class="caution">Setting the @CriterionStatus to <span class="InputText">2</span> will cause any lists using this criterion 
+				to stop functioning. As an alternative, you can remove the criterion from all categories and from the Commonly Used section. It will not appear in the criteria list, but the lists using it will continue to function.</p>
+                <p class="note">Retiring a criterion is preferable to deleting it,  since it can be restored if needed again.</p>
+            </li>
+        </ul>
+        <p class="LabelforProcedures">To restore a criterion</p>
+        <ul>
+            <li>Follow the steps for modifying a criterion and set the value for @CriterionStatus to <span class="InputText">1</span>.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,ReleaseTarget.CTP1,TopicType.Concept,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="4" MadCap:lastHeight="934" MadCap:lastWidth="421">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Application dependencies</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="application dependencies;application manifests" />This topic describes application dependencies and  requirements related to application dependencies.</p>
+        <p>The application manifest for Amalga hosted applications requires that all application dependencies are declared so that required applications are installed during deployment and are discoverable by the dependent application at runtime.</p>
+        <p>Your Amalga hosted application may be dependent on other applications. Examples of dependencies include:</p>
+        <ul>
+            <li>Responding to events raised by another application</li>
+            <li>Requiring a library from another application</li>
+            <li>Requiring a user interface component from another application</li>
+            <li>Requiring specific data that is created by another application</li>
+        </ul>
+        <p>Application dependencies are declared in hosted applications by adding <span class="MarkupLanguageElements">Dependency</span> elements to the <span class="MarkupLanguageElements">Dependencies</span> element in the application manifest for a hosted application. </p>
+        <p>If one or more application dependencies are declared, then :</p>
+        <ul>
+            <li>During deployment of the dependent application, the deployment tools included with <MadCap:variable name="BrandingHSG.Amalga Short" /> verify whether all required applications were previously installed. If the required applications are not deployed, an error occurs during deployment.</li>
+            <li>During runtime, the required applications are discoverable by the dependent application, so it can make use of the  hosted services, settings, etc., of the dependent application.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DeploymentManifest/SDK_PROC_Add_Dependency.htm" target="" title="" alt="">Add an application dependency on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_Dependencies.htm" target="" title="" alt="">Dependencies Element on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency Element on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DeploymentManifest/SDK_CON_Application_Manifests.htm" target="" title="" alt="">Application manifests on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_CON_Dependency_ColEditor.htm" target="" title="" alt="">Dependency Collection Editor on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

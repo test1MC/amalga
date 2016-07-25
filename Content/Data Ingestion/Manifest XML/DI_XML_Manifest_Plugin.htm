@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2097.333" MadCap:lastWidth="783" MadCap:fileTags="Status.70 - Complete,TopicOwner.v-ccole,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Plugin element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Plugin element" />Declares the characteristics of plug-in code.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;Plugins&gt;<b>
+               &lt;Plugin&gt;</b>
+                  &lt;PluginData&gt;...&lt;/PluginData&gt;
+                  &lt;URL&gt;...&lt;/URL&gt;
+                  &lt;SourceType&gt;...&lt;/SourceType&gt;
+                  &lt;NameSpace&gt;...&lt;/NameSpace&gt;
+                  &lt;Dependencies /&gt;<b>				
+               &lt;/Plugin&gt;</b>			
+            &lt;/Plugins&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="PluginModelConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;<b>
+         &lt;Plugin&gt;</b>
+            &lt;PluginData&gt;...&lt;/PluginData&gt;
+            &lt;URL&gt;...&lt;/URL&gt;
+            &lt;SourceType&gt;...&lt;/SourceType&gt;
+            &lt;NameSpace&gt;...&lt;/NameSpace&gt;
+            &lt;Dependencies /&gt;<b>				
+         &lt;/Plugin&gt;</b>		
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; </span></p></pre><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="ShredderPluginConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;<b>
+         &lt;Plugin&gt;</b>
+            &lt;PluginData&gt;...&lt;/PluginData&gt;
+            &lt;URL&gt;...&lt;/URL&gt;
+            &lt;SourceType&gt;...&lt;/SourceType&gt;
+            &lt;NameSpace&gt;...&lt;/NameSpace&gt;
+            &lt;Dependencies /&gt;<b>				
+         &lt;/Plugin&gt;</b>		
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+		</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>, <a href="DI_XML_Manifest_Plugins.htm">Plugins</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Dependencies.htm">Dependencies</a>, <a href="DI_XML_Manifest_NameSpace.htm">NameSpace</a>, <a href="DI_XML_Manifest_PluginData.htm">PluginData</a>, <a href="DI_XML_Manifest_SourceType.htm">SourceType</a>, <a href="DI_XML_Manifest_URL.htm">URL</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) Unique name of the plug-in.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Assembly</td>
+                    <td>(Required string) Name of the assembly (include the version, culture, and a 
+                    PublicKeyToken if needed).</td>
+                </tr>
+                <tr>
+                    <td>ClassName</td>
+                    <td>(Required string) Name of the class that contains the member or members of interest.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Plugin</span> element extends a pipeline application instance by defining a mechanism to plug  custom code into a service manifest. The following table shows the ways you can declare this element within a setting.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Setting</th>
+                    <th>Description of use</th>
+                    <th>Parent element</th>
+                </tr>
+                <tr>
+                    <td>FeedConfigurationXML</td>
+                    <td>Add a transform library for use with  derived columns. Declare within the <MadCap:xref href="DI_XML_Manifest_DataParserOutput.htm" target="" title="" alt="">DataParserOutput element</MadCap:xref> of a data-parser service manifest only.</td>
+                    <td><a href="DI_XML_Manifest_Plugins.htm">Plugins</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PluginModelConfigurationXML</td>
+                    <td>Add a custom assembly to the service manifest of a <MadCap:variable name="Applications.Feed Acquisition (application)" /> or <MadCap:variable name="Applications.Data Parser (application)" /> application.</td>
+                    <td><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ShredderPluginConfigurationXML</td>
+                    <td>Add a custom assembly to the service manifest of a <MadCap:variable name="Applications.Message Shredder application" />.</td>
+                    <td><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information about plug-ins, including examples, see <MadCap:xref href="../DI_Con_ExtendPipeline.htm" target="" title="" alt="">Extend Pipeline applications</MadCap:xref>.</p>
+        <p class="SeeAlso">See also </p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_Intro_ShredderPluginConfigurationXML.htm">ShredderPluginConfigurationXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

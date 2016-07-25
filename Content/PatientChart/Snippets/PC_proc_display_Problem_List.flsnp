@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="140" MadCap:lastWidth="530" MadCap:fileTags="EditingTags.7 - Editing issues resolved" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To display the <MadCap:variable name="FeatureBrussels.Problem List" /></p>
+        <ul>
+            <li>
+                <p>Click the <MadCap:variable name="FeatureBrussels.Problem List" /> title in the Clinical Summary.</p>
+                <p>or</p>
+            </li>
+            <li> See <MadCap:xref href="../PC_Task_Open_PC_module.htm" target="" title="" alt=""><a href="../PatientChartConfiguration/PC_task_add_module.htm">Add  module</a> for instructions</MadCap:xref>.</li>
+        </ul>
+    </body>
+</html>

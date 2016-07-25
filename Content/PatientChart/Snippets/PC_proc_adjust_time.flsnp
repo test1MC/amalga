@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="113" MadCap:lastWidth="863" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To adjust the displayed time interval</p>
+        <ul>
+            <li>To display a longer time interval, click the minus sign (-) or drag the time interval label to the right.</li>
+            <li>To display a shorter time interval, click the plus sign (+) or drag the time interval label to the left.</li>
+            <li>Alternatively, click a time interval label to move to that time interval.</li>
+        </ul>
+    </body>
+</html>

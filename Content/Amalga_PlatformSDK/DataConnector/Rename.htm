@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1747" MadCap:lastWidth="834" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.1 - Ready for Edit">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Obtaining a single value from a command</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the ExecuteScalar method of the AmalgaDbCommand object in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to return a single value.</p>
+        <p>You may need to return information that is represented by a single scalar value, instead of in the form of a table, from an application view. For example, you may want to return the result of an aggregate function, such as COUNT() or AVG(). The <span class="ForeignCodeElements">AmalgaDbCommand</span> object provides the capability to return scalar values using the <span class="ForeignCodeElements">ExecuteScalar</span> method. The <span class="ForeignCodeElements">ExecuteScalar</span> method returns, as a scalar value, the value of the first column of the first row of a result set.</p>
+        <h2>Example</h2>
+        <h2>Another Heading Two here</h2>
+        <p>The following example demonstrates how to use the <span class="ForeignCodeElements">ExecuteScalar</span> method to return the count of rows for an application view named Patient. </p><pre xml:space="preserve">public int GetCountPatients()
+{
+    // Define the return value.
+    int returnValue = 0;
+
+    // Instantiate a new AmalgaDbConnection object within a using block, with
+    // a connection string returned by the GetVirtualSchemaConnectionString
+    // method.
+
+    using (AmalgaDbConnection connection =
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString()))
+    {
+        // First, instantiate a new AmalgaDbCommand object.
+        // The object queries an application view named Patient, defined in
+        // virtual schema for the hosted application, and returns the number
+        // of rows contained in the application view.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+            @" SELECT COUNT(*) FROM Patient";
+
+        // Write an entry into the diagnostic log providing information that the 
+        // hosted service is about to execute a query.
+        DiagLog.WriteInformation("Application " +
+            ApplicationConfiguration.InstanceName.ToString() +
+            " about to query patients");
+
+        // Open the connection and read from deployed virtual schema.
+        try
+        {
+            // Open the connection for the AmalgaDbCommand object.
+            command.Connection.Open();
+
+            // Invoke the ExecuteScalar method to obtain the results of the
+            // query.
+            returnValue = (System.Int32)command.ExecuteScalar();
+
+            // Write an entry into the diagnostic log providing information 
+            // that the hosted service successfully queried patients.
+            DiagLog.WriteInformation("{0} records read", returnValue);
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not read data from the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", 
+                ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+    }
+
+    // Return the scalar value.
+    return returnValue;
+}</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

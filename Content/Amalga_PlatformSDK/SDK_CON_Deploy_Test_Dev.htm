@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,ReleaseTarget.CTP1,TopicType.Concept,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="8" MadCap:lastHeight="2365" MadCap:lastWidth="868">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-02-03T19:36:58.3853391-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-03-09T21:56:43.0333199-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="3" MadCap:timestamp="2012-03-09T21:57:00.4489558-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Debugging a hosted application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-10-02T20:22:38.9276486-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="The procs in this conceptual topic should be in topics of their own. Of course, at that time the abstract needs to be revised." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:25:41.6889229-07:00">This</MadCap:annotation> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-02-03T19:38:58.6150892-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="File tag said all edits resolved, but given the annotations, that seems incorrect, so tagged as Ready for Writer." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T19:39:39.3480155-08:00">topic</MadCap:annotation> covers prerequisites for deployment and debugging, and related procedures. </p>
+        <p>
+            <MadCap:keyword term="deployment" />You can deploy your application for development and testing by publishing within <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />. Just as in  a production deployment, certain actions need to be taken for the application to perform properly:</p>
+        <ul>
+            <li>Dependencies on other applications need to be resolved</li>
+            <li>The virtual schema needs to be deployed</li>
+            <li>Users need to be assigned to roles with appropriate access</li>
+        </ul>
+        <p>In order to debug, make sure that your user has authorization to your data and then set the appropriate start up project in Visual Studio.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Publish" target="" title="" alt="">Publish from Visual Studio</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Debug" target="" title="" alt="">Debug a hosted application</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Publish"></a>Publish from <MadCap:variable name="BrandingMS.Visual Studio second use" /></h2>
+        <p>You can publish your development project to a target topology at debug time. Note that when you publish through <MadCap:variable name="BrandingMS.Visual Studio second use" />, the following conditions will be true:</p>
+        <ul>
+            <li>Your published application services will be hosted on your development system using local <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" />, r<MadCap:annotation MadCap:createDate="2011-10-02T20:35:23.4540936-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="So when  you publish, you are not on an Amalga box? I guess that makes sense, but then the debug is not useing the same conditions as production will use?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:36:08.9476425-07:00">ather than in <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga</MadCap:annotation>. Security will not be applied on your application endpoints at debug time. In order to test your application service security, you will need to package and deploy your application.</li>
+            <li> Your application dependencies will be resolved by application instances that are hosted in <MadCap:annotation MadCap:createDate="2011-10-02T20:38:35.2412704-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="If the app is not being hosted on a machine that is part of or linked to the target topology, how will this work?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:38:37.0044467-07:00">the Amalga topology <MadCap:change MadCap:changes="2">on which you have chosen to </MadCap:change><MadCap:annotation MadCap:createDate="2012-03-09T21:57:06.2368155-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Changed because I had to re-read to figure out the meaning. " MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T21:57:30.1526886-08:00">publish</MadCap:annotation><MadCap:change MadCap:changes="3">that you have selected to publish on</MadCap:change></MadCap:annotation>. You will need to be authorized to use the application instances which resolve your application dependencies.</li>
+            <li>	Your setting values are the ones specified in the default values of your application manifest. You do not need to republish your application to change a setting at debug time.</li>
+            <li>The virtual schema will be deployed on the target topology. As a result, access checks to the virtual schema will be applied and you will need to authorize your user roles to the right access levels of your published debug application in order to successfully debug your application. </li>
+        </ul>
+        <p class="LabelforProcedures">To publish your application from <MadCap:variable name="BrandingMS.Visual Studio second use" /></p>
+        <ol>
+            <li>
+                <p>Make sure your user is <MadCap:annotation MadCap:createDate="2011-10-02T20:42:39.5637002-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="does this need to be capped? Note, Manage roles topic does not mention Members." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:43:10.9968432-07:00">Member </MadCap:annotation>of the BUILTIN\AmalgaSysAdmin role. See <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2011-10-02T20:45:07.0664490-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Do you resolve a manifest? or the values in a manifest?  Put that way, it sounds like one action -- is it?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:45:51.4058825-07:00">Resolve your application manifest </MadCap:annotation>with <MadCap:annotation MadCap:createDate="2011-10-02T20:46:30.0787494-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="debug hasn't happened yet, so this should be &quot;values to be used . . . &quot;?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T20:47:03.1910603-07:00">values used at debug time</MadCap:annotation>.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>In the <MadCap:variable name="BrandingMS.Visual Studio second use" /> Solution Explorer, right-click on the application manifest .xml file and select <span class="UIElementAction">Edit Manifest</span>.</p>
+                    </li>
+                    <li>
+                        <p>Expand the <span class="UIElementAction">TestConfiguration </span>node, and add the following values:</p>
+                        <ol style="list-style-type: lower-roman;">
+                            <li>
+                                <p>For DiscoveryServiceUrl, enter the URL of the topology service that you will use to publish your applications. It must be fully qualified <MadCap:annotation MadCap:createDate="2011-10-02T21:45:46.0240269-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Does the port number have anything to do with it being fully qualified? If not, replace &quot;with&quot;  with &quot;and use&quot;" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T21:46:28.3217967-07:00">with</MadCap:annotation> the 8889 port number. For instance: <MadCap:annotation MadCap:createDate="2011-10-02T21:41:36.5145034-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="If this is going to be published as PDF, this URL line needs to be broken just after Microsoft.Amalga.Topology, or it weill go off the page." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T21:44:04.4412946-07:00">https:</MadCap:annotation>//myserver.mydomain.contoso.com:8889/TopologyService/Microsoft.Amalga.Topology.Service.TopologyService.svc</p>
+                            </li>
+                            <li>
+                                <p>For VirtualSchemaDataHost, enter the URL of the server that is hosting the virtual schema and private databases for the topology target you entered above.</p>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>For Dependencies, click the browse button (<span class="UIElementAction">...</span>). Add or remove dependencies using the dialog box, filling in dependency properties.</p>
+                        <p class="note"> If your application has a virtual schema, it must have a dependency on a data connector application.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2011-10-02T21:49:47.9458323-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Do you resolve a manifest? or the values in a manifest?  Put that way, it sounds like one action -- is it?\r\ndebug hasn't happened yet, so this should be &quot;values to be used . . . &quot;?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T21:50:06.7419525-07:00">Resolve your service manifests with values used at debug time</MadCap:annotation>.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li> Right-click the application manifest .xml file and select <span class="UIElementAction">Edit Manifest</span>.</li>
+                    <li>
+                        <p>
+                            <MadCap:annotation MadCap:createDate="2011-09-21T15:42:11.0903310-07:00" MadCap:creator="v-pegrue" MadCap:initials="PG" MadCap:comment="In the current version of the SDK, I am not seeing this node. Instead, TestLogicalHost is visible." MadCap:editor="v-pegrue" MadCap:editDate="2011-09-21T15:42:24.9367155-07:00">Expand the WcfManifest node.</MadCap:annotation> For <span class="UIElementAction">TestLogicalHost</span>, enter the name of the logical host on which the service will be published on the selected topology URL above.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Create your application authorization section in the application manifest.</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>
+                        <p>Double-click the application manifest to open the XML file.</p>
+                    </li>
+                    <li>
+                        <p>Add authorization, as described in <MadCap:xref href="SDK_CON_Authent_Access_Author.htm" target="" title="" alt="">Access, Authentication, and Authorization Framework</MadCap:xref>. </p>
+                        <p class="note">You must enter the service contract names in the authorization section exactly as they appear in the contract section of the service manifests.</p>
+                    </li>
+                </ol>
+            </li>
+            <li>Build your application. (Type F6 or CTRL +&#160;SHIFT +&#160;B).</li>
+            <li>Publish your application by right- clicking the hosted application project and selecting <span class="UIElementAction">Publish</span>.<ol style="list-style-type: lower-alpha;"><li><p><MadCap:annotation MadCap:createDate="2012-02-03T19:35:46.5512741-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="???" MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T19:35:53.5657651-08:00">R</MadCap:annotation></p></li></ol></li>
+        </ol>
+        <p>The application is now published to the topology URL you provided and the virtual schema is published to the virtual schema server you provided.</p>
+        <h2><a name="Debug"></a>Debug a hosted application</h2>
+        <p class="LabelforProcedures">To debug a hosted application</p>
+        <ol>
+            <li>Build and publish the application, as described in <MadCap:xref href="#Publish" target="" title="" alt="">Publish from Visual Studio.</MadCap:xref></li>
+            <li>
+                <p>On the target topology where you published your application, authorize your user roles to the access levels of your applications. This is required for the application to have access to your virtual schema. See <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>On the target topology, <MadCap:annotation MadCap:createDate="2011-10-02T21:58:05.2042286-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Can this be made clearer and more concise?  The example is clear." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T21:58:30.0077087-07:00">assign roles to the users that have access level permission to the entities map for the application views corresponding to the access levels.</MadCap:annotation> For example, if BUILTIN\AmalgaUsers is authorized to the Patient application view through an access level, then BUILTIN\AmalgaUsers must be authorized to the Patient entity that is mapped to the application view. See <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+            </li>
+            <li>Choose an appropriate start-up application in <MadCap:variable name="BrandingMS.Visual Studio second use" />. Note that an Amalga application project cannot be used as a start up project.</li>
+            <li>From the Debug menu, select <span class="UIElementAction">Start debugging</span>. (Alternatively, hit the <span class="UIElementAction">F5</span> key or click the green "run" arrow.) If you are debugging a hosted <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />, <MadCap:variable name="BrandingMS.Visual Studio second use" /><MadCap:change MadCap:changes="1"> <![CDATA[ ]]></MadCap:change>will bring up <MadCap:annotation MadCap:createDate="2011-10-02T22:01:15.6532716-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is it correct to use WCF service here insetead of just WCF?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T22:01:32.4949556-07:00">the <MadCap:variable name="BrandingMS.WCF service" /> debug</MadCap:annotation> console.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-10-02T22:03:47.3324380-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Concept topics should not use imperatives or gerunds -- misleads user to thing they are proc topics.  The first in the list is correctly named.\r\n\r\nAlso, a number of these links (the first 4) are DNB. Check draft docs to make sure they don't show as broken links." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T19:43:16.0458113-08:00">Concepts</MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Application_Deployment_Model.htm" target="" title="" alt="">Application Deployment Model </MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Deploy_Amalga_Hosted_Apps.htm" target="" title="" alt="">Deploy Amalga Hosted Applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Deploy_Amalga_Hosted_Services.htm" target="" title="" alt="">
+                <MadCap:annotation MadCap:createDate="2011-10-02T22:03:06.8983950-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This topic is covered in the previous one, I think." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T22:03:17.7644815-07:00">Deploying Amalga Hosted Services</MadCap:annotation>
+            </MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_CON_Deploy_SharePoint_Solutions.htm" target="" title="" alt="">
+                <MadCap:annotation MadCap:createDate="2011-10-02T22:03:26.6433693-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Still a stub" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T22:03:31.3968446-07:00">Deploying SharePoint Solutions</MadCap:annotation>
+            </MadCap:xref>
+        </p>
+    </body>
+</html>

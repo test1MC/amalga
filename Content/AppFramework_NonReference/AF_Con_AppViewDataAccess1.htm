@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,Personas.Elvis: App Dev,EditingTags.6 - Revised / ready for writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="839" MadCap:lastWidth="576" MadCap:ignoredWords="AmalgaApplicationDataSource;SelectCommand" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Accessing data with an ASP.NET data-bound control</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="Framework;Data access;ASP.NET">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the process for binding an <MadCap:variable name="BrandingMS.ASP.NET second use" /> data-bound server control to an <MadCap:variable name="BrandingHSG.Amalga Short" /> application view.</p>
+        <p>An <MadCap:variable name="BrandingMS.ASP.NET second use" /> data-bound control is a server control that can bind to another control as a data source, making it easy for a web application to display and modify the underlying data. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data binding with  on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Data2" target="" title="" alt="">Data source controls on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Data-bou" target="" title="" alt="">Data-bound controls on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Data"></a>Data binding with <MadCap:variable name="BrandingMS.ASP.NET second use" /></h2>
+        <p>ASP.NET supports a data binding architecture that enables web server controls to bind to data in a consistent way. Server controls that bind to data and either process or present that data are referred to as data-bound controls. Server controls that facilitate that binding are called data source controls. </p>
+        <h2><a name="Data2"></a>Data source controls</h2>
+        <p>Data source controls can represent any kind of data, subject only to the limits imposed by the <span class="ForeignCodeElements">IDataSource</span> and <span class="ForeignCodeElements">IListSource</span> interfaces. In the <MadCap:variable name="FeatureName.Amalga Framework" />, data sources represent <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.application view" />s. Most <MadCap:variable name="FeatureName.Amalga Framework second use" /> data sources represent clinical data and are therefore read-only. However, data sources that are bound to read-write application views are read-write themselves.</p>
+        <h3><MadCap:variable name="FeatureName.Amalga Framework second use" /> data sources</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework" /> includes two data source controls: <a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource</a> and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource</a>. Both use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> commands to interact with an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.application view" />.</p>
+        <p>For more information, see <a href="AF_Con_AppViewDataAccess2.htm">Retrieving data using an AmalgaDataSource control</a> and <a href="AF_Con_AppViewDataAccess3.htm">Retrieving data using an AmalgaApplicationDataSource control</a>.</p>
+        <h2><a name="Data-bou"></a>Data-bound controls</h2>
+        <p>In the standard <MadCap:variable name="BrandingMS.ASP.NET second use" /> data binding model, the complement to the data source is the data-bound control. A data-bound control can automatically read the data provided by the data source, and make it easy to display that data in a webpage.</p>
+        <p>A data-bound control must meet two requirements:</p>
+        <ul>
+            <li>It must implement a settable <span class="ForeignCodeElements">DataSource </span>or <span class="ForeignCodeElements">DataSourceID </span>property, so that it can be assigned a data source.</li>
+            <li>It must be able to query an <span class="ForeignCodeElements">IDataSource </span>or <span class="ForeignCodeElements">IListSource </span>instance to identify and extract any data that it requires.</li>
+        </ul>
+        <p>For more information on data access with <MadCap:variable name="BrandingMS.ASP.NET second use" />, including a list of ASP.NET data-bound controls, see <a href="http://go.microsoft.com/fwlink?LinkId=233079">ASP.NET Data-Bound Web Server Controls Overview</a>.</p>
+        <h3><MadCap:variable name="FeatureName.Amalga Framework second use" /> data bound controls</h3>
+        <p>Any <MadCap:variable name="BrandingMS.ASP.NET second use" /> data-bound control can consume the data sources provided by  <span class="Label">AmalgaDataSource</span> and  <span class="Label">AmalgaApplicationDataSource</span>. However, most of the server controls included in the <MadCap:variable name="FeatureName.Amalga Framework" /> are <strong>not</strong> data-bound controls: they do not provide <a href="http://go.microsoft.com/fwlink?LinkId=233075">DataSourceID</a> or other data source properties that are required to identify a bound data source, and they cannot automatically consume data that is represented as an <span class="ForeignCodeElements">IDataSource</span> or <span class="ForeignCodeElements">IListSource</span> instance.</p>
+        <p>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PersonDataCard.htm">PersonDataCard</a> control is data-bound. Any control that implements <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/I_IPersonDataCard.htm">IPersonDataCard</a> should populate itself automatically when bound to a data source whose <MadCap:variable name="FeatureName.application view" /> represents patient data.</p>
+        <h3>Implementation</h3>
+        <p>Server controls that are not data-bound controls can still display <MadCap:variable name="BrandingHSG.Amalga Short" /> data by hosting data-bound child controls. A custom server control based on <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> can easily be modified to become a data-bound control by implementing the <span class="ForeignCodeElements">DataSourceID </span>property, hosting one or more data-bound child controls, and simply passing the value of its <span class="ForeignCodeElements">DataSourceID </span>property through to the <span class="ForeignCodeElements">DataSourceID </span>properties of its child controls.</p>
+        <p>To complete the data binding, set the <span class="Label">DataSourceID</span> property of the data-bound control to point to a new <span class="Label">AmalgaApplicationDataSource</span> control. The result set of the <span class="Label">SelectCommand</span> will automatically populate the data properties of the web control.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.Data.DataSource/T_AmalgaDataSource.htm">AmalgaDataSource Class</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_AmalgaApplicationDataSource.htm">AmalgaApplicationDataSource Class</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_PersonDataCard.htm">PersonDataCard Class</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="../Amalga_PlatformSDK/SDK_CON_Application_Views.htm">Application views</a>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_ADO.NET_Overview.htm" target="" title="" alt="">Amalga ADO.NET library overview on page 1</MadCap:xref>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=233079">ASP.NET Data-Bound Web Server Controls Overview</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms254937.aspx">Retrieving and Modifying Data in ADO.NET</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

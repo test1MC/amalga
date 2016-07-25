@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="854" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:12:04.3669905-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-12T23:12:42.6594735-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-03-12T23:13:15.4989470-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">GetSchema and schema collections</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the <span MadCap:changes="1" class="codeEntity">GetSchema</span> method of the <span MadCap:changes="1" class="codeEntity">AmalgaDbConnection</span> class in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve schema collections.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbConnection</span> class in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> implements the <span class="ForeignCodeElements">GetSchema</span> method, which is used to retrieve schema information in the form of a <span class="ForeignCodeElements">DataTable</span> object. The <span class="ForeignCodeElements">GetSchema</span> method is an overloaded method that provides optional parameters for specifying the schema collection to return, and restricting the amount of information returned.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Specifyi" target="" title="" alt="">Specifying the schema collections on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Specifyi2" target="" title="" alt="">Specifying schema restrictions on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Specifyi"></a>Specifying <MadCap:change MadCap:changes="3">the </MadCap:change>schema collection<MadCap:change MadCap:changes="2">s</MadCap:change></h2>
+        <p>The first optional parameter of the <span class="ForeignCodeElements">GetSchema</span> method is the collection name, which is specified as a string. There are two types of schema collections: common schema collections that are common to all data providers, and specific schema collections for <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>You can query the .NET&#160;Framework Data Provider for Amalga, the .NET&#160;Framework managed provider included with <MadCap:variable name="FeatureName.Amalga ADO.NET" />, to determine the list of supported schema collections by calling the <span class="ForeignCodeElements">GetSchema</span> method with no arguments, or with the schema collection name "MetaDataCollections". This will return a <span class="ForeignCodeElements">DataTable</span> object containing a list of the supported schema collections, the number of restrictions that they each support, and the number of identifier parts that they use. For more information about the MetaDataCollections schema collection, see <MadCap:xref href="DAT_CON_CommonSchemaCollections.htm" target="" title="" alt="">Common schema collections on page 1</MadCap:xref>.</p>
+        <h2><a name="Specifyi2"></a>Specifying schema restrictions</h2>
+        <p>The second optional parameter of the <span class="ForeignCodeElements">GetSchema</span> method is the array of strings representing the restrictions that are used to limit the amount of schema information returned. For more information about using schema restrictions, see <a href="http://msdn.microsoft.com/library/cc716722.aspx">Schema Restrictions (ADO.NET)</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/cc716722.aspx">http://msdn.microsoft.com/library/cc716722.aspx</a></MadCap:conditionalText>.</p>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example demonstrates how to use the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object to retrieve schema information about all of the application views and dynamic views available to the connection. For more information about the specific schema collections provided by <MadCap:variable name="FeatureName.Amalga ADO.NET" />, see <MadCap:xref href="DAT_CON_AmalgaSchemaCollections.htm" target="" title="" alt=""> schema collections on page 1</MadCap:xref>.</p><pre xml:space="preserve">private DataTable GetTableSchema(AmalgaDbConnection connection)
+{
+    if (connection.State == ConnectionState.Open)
+    {
+        DataTable schemaTable = connection.GetSchema("Tables");
+        return schemaTable;
+    }
+    else
+    {
+        return null;
+    }
+}</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

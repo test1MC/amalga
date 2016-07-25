@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet Comment="My set of condition tags" conditions="Default.StyleMaster,Production.StyleMaster">
+    <ConditionTag BackgroundColor="#006400" Name="XRefOtherManual" Comment="Use when cross-ref'ing a topic in a  manual other than the one you are working in." />
+    <ConditionTag BackgroundColor="LightYellow" Name="QFEs-Mandatory" Comment="" />
+    <ConditionTag BackgroundColor="Green" Name="QFEs" Comment="" />
+</CatapultConditionTagSet>

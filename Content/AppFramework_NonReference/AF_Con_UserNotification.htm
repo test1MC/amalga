@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3214" MadCap:lastWidth="937" MadCap:fileTags="TopicType.Concept,ReleaseTarget.CTP1,TopicOwner.v-wpete,EditingTags.4 - Ready for Writer,Status.50 - InTech Review" MadCap:ignoredWords="NotificationManager;NotificationOccurence" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">User notifications</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="user notification" />
+        </p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-10T10:57:18.3855009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I caught one more thing:  se the See also section, pls." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:57:33.7353009-08:00">This</MadCap:annotation> topic describes the <MadCap:variable name="BrandingHSG.Amalga Short" /> user notification feature.</p>
+        <p>The notification system allows <MadCap:variable name="BrandingHSG.Amalga Short" /> applications to deliver messages to a specified user.  Because user notifications are managed by a WCF service, they allow each user to respond to actions that take place outside of the scope of their current user session. Once created, a notification is automatically surfaced to the specified user. If that user is not logged in when the notification first becomes available, it is surfaced the next time that user logs in. </p>
+        <p> User notifications should be used when a message needs to be delivered to someone other than the current user, or when a message needs to persist beyond the end of the current user session. They should not be used to provide direct feedback to the current user. (To provide immediate, page-level feedback to the current user, use      <a href="AF_Con_LocalNotifications.htm">local notifications</a> instead.)</p>
+        <p>For example, user notifications are used to inform a staff member that a patient has requested that their <MadCap:variable name="BrandingHSG.Amalga Short" /> account be linked to a preexisting <MadCap:variable name="BrandingHSG.HealthVault" /> account. They are also used to keep the patient informed about the status of their linking request.</p>
+        <p class="Label">In this topic:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Anatomy" target="" title="" alt="">Anatomy of a user notification on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#User" target="" title="" alt="">User notification system on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Predefin" target="" title="" alt="">Predefined user notification types on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Life" target="" title="" alt="">Life cycle of a user notification on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Anatomy"></a>Anatomy of a user notification</h2>
+        <p>A notification is a structured message from an application to a user.</p>
+        <p>More specifically, a <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_Notification.htm">Notification</a> is a message of a predefined type (its          <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_Notification_NotificationTypeId.htm">NotificationTypeId</a>), sent to a single user recipient (its <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_Notification_UserId.htm">UserId</a>.) Each notification has a display <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_Notification_Message.htm">Message</a>, which contains the text that will be shown to the user, and a <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_Notification_Severity.htm">Severity</a>, whose default value is determined by its notification type and whose value determines how it will be surfaced in the UI. </p>
+        <h3>Notification type</h3>
+        <p>A  <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationDefinition.htm">NotificationDefinition</a> provides the information needed to create a new user notification request, including its name, its severity, and a template for its content. The template must include any arguments needed to complete the patient name at run time (such as the patient name) and references to any associated text resources.</p>
+        <p>For more information on defining notification types, see <a href="AF_Task_CreateNotificationType.htm">Create a user notification type definition</a>.</p>
+        <h3>Notification request</h3>
+        <p>A  <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationRequest.htm">NotificationRequest</a> is a persistent description of a message that is ready to be surfaced to a user. The request must include the ID of the notification type definition, the identity of the targeted user,  and any strings or <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationArgument.htm">NotificationArgument</a> instances necessary to fill in the message text. </p>
+        <p class="note">If the content template specified in the notification type definition includes parameterized data, the message content of the notification request will also be parameterized. The final text of the user message is not rendered until the notification request is surfaced to the user.</p>
+        <p>For more information on notification requests, see <a href="AF_Task_RequestUserNotification.htm">Request a user notification</a>.</p>
+        <h3>Notification occurrence</h3>
+        <p>A <a href="../API/Ref/Microsoft.Amalga.Notification.Service/Properties_T_NotificationOccurrence.htm">NotificationOccurrence</a> is a permanent record of a user notification that has been presented to the specified user. It includes the ID of the notification type definition, the targeted user, a time stamp, and the literal, localized text of the user notification as it was displayed to the user. The occurrence data should not include any information that is available only by reference, such as the ID&#160;of a resource string, in order avoid the possibility that the referenced content might change after the occurrence is saved.</p>
+        <p>&#160;</p>
+        <h2><a name="User"></a>User notification system</h2>
+        <p>The notification system consists of three parts: </p>
+        <ul>
+            <li>A service that stores and manages all notifications raised by <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> applications.</li>
+            <li>A server-side manager that allows .NET controls to send and receive user notifications.</li>
+            <li>A client-side manager that allows client-side code to send and receive user notifications.</li>
+            <li>UI elements to surface the notifications to the appropriate user.</li>
+        </ul>
+        <h3>Notification service</h3>
+        <p>The notification service stores and manages all notifications raised by <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> applications.</p>
+        <p>The service can do the following:</p>
+        <ul>
+            <li>Create, update, and delete <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationType.htm">NotificationType </a>definitions. A notification type definition provides the information needed to create a new definition, including its name, its severity, and a template for its content.</li>
+            <li>Create and retrieve <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationRequest.htm">NotificationRequest</a>s. A notification request is the initial state of a notification. It must include the type of the notification, the identity of the user to whom the message is intended to be delivered, and any argument values specified in its type definition.</li>
+            <li>Create and save <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationOccurrence.htm">NotificationOccurrence</a>s. Each time a notification request is fulfilled, a new notification occurrence is prepared for presentation to the user. Its content includes the type, recipient and arguments specified in the notification request, plus additional information (such as <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_NotificationOccurrence_Severity.htm">Severity</a>) that may be required in order to determine how to surface the notification to the user.</li>
+            <li>Update the state of one or more notification occurrences to reflect user activity.</li>
+        </ul>
+        <h3>Notification Manager</h3>
+        <p>The phrase "NotificationManager" can refer to one of three things: </p>
+        <ol>
+            <li>The on-page <a href="AF_Con_API_Notification.htm">NotificationManager</a> JavaScript object, which is an asynchronous broker that manages communication between notification-aware page elements and the   <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationService.htm">NotificationService.</a></li>
+            <li>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/T_NotificationManager.htm">Microsoft.Amalga.AppFramework.Web.Utility.NotificationManager</a> static class, which manages communication between <MadCap:variable name="FeatureName.Amalga Framework second use" /> server controls and the   <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationService.htm">NotificationService.</a></li>
+            <li>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">Microsoft.Amalga.AppFramework.Web.ServerControls.NotificationManager</a> non-UI server control, which loads and initializes the Javascript object into Web pages that do not contain other <MadCap:variable name="FeatureName.Amalga Framework second use" /> server controls.</li>
+        </ol>
+        <p class="note">Any server control derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a> will automatically load the Notification client side API. The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">NotificationManager</a> server control is only necessary when no other <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls are present in the page.</p>
+        <p>The Notification Manager API allows client side code to do the following:</p>
+        <ul>
+            <li>Query the notification service for a list of notifications that are available to the current user.</li>
+            <li>Update the state of a stored notification occurrence to reflect user interaction with a notification, using a JSON-encoded <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_NotificationUpdate.htm">NotificationUpdate</a>.</li>
+            <li>Save a new notification occurrence, using a JSON-encoded <a href="../API/Ref/Microsoft.Amalga.Notification.Service/T_Notification.htm">Notification</a>.</li>
+        </ul>
+        <p>The Notification Manager cannot request new notifications or create a new notification type.</p>
+        <h3>Notification UI</h3>
+        <p>By default, user notifications are presented to the logged-in user with the Notification Banner. The notification banner queries the Notification service for active notification requests addressed to the current user, then displays them using the <MadCap:variable name="BrandingMS.SharePoint" /> <![CDATA[ ]]><span class="LabelCShrp">UI.Status</span> bar control. The user can click on the notification element in the status bar to see a list of available notifications, and can click on each individual notification to take additional action. </p>
+        <p>The notification system supports the following features for managing the way that user notifications are presented to users:</p>
+        <ul>
+            <li>Message merging allows the content of multiple user notifications of a single type to be combined into a single, more readable message.</li>
+            <li>Message suppression allows individual users to choose not to see notifications of selected types.</li>
+        </ul>
+        <p>The notification banner provides a simplified UI&#160;that does not support all features of the Notification system. For more information on developing a custom UI&#160;for handling user notifications, see <a href="AF_Task_HandleUserNotification.htm">Display a user notification</a>.</p>
+        <h2><a name="Predefin"></a>Predefined user notification types</h2>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> includes a number of predefined user notification types that support the <a href="../Connected_Health_Portals/AF_Con_Patient_linking.htm">patient linking</a> workflow. In addition to their role in the default <MadCap:variable name="FeatureName.Amalga Framework second use" /> Connected Portals UI, they can also be used to support several customization scenarios.</p>
+        <ul>
+            <li>The text resources for the predefined user notifications can be modified in order to customize the content of the patient linking UI.<br />To change the content of the predefined notification types, edit the resource values in the FrameworkNotifications.resx resource file.<br /></li>
+            <li>The predefined notification types can also be used directly by custom controls that extend or replace the default patient linking workflow.</li>
+        </ul>
+        <p class="warning">Do not modify the key values associated with the predefined notification types. Changes to the key values may disable elements in the default patient linking UI.</p>
+        <p>For more information on the predefined user notification types, see the <a href="AF_Con_Notifications_Predefined.htm">predefined notification type reference</a>.</p>
+        <h2><a name="Life"></a>Life cycle of a user notification</h2>
+        <p>The life cycle of a user notification goes through the following steps:</p>
+        <h3>Development</h3>
+        <ul>
+            <li>An application developer identifies an event (or other application condition) that is meaningful to a specific user. This can be a change in data, the completion of a task, a or even the action of another user.</li>
+            <li>The developer identifies the users that need to know about the event, and the information that they need to know in order to respond appropriately.</li>
+            <li>The developer defines one or more notification types that correspond to the event. Each notification type includes a template that defines the message to be displayed. For example, if the event is the availability of a new lab result, the developer may define different notification types for the patient and the attending physician.</li>
+            <li>The developer places any necessary text resources into a resource file.</li>
+            <li>The developer creates (registers) the new notification types with the notification service.</li>
+            <li>The developer writes application code that handles the identified event or other application condition.</li>
+        </ul>
+        <h3>Run time</h3>
+        <ul>
+            <li>The application code requests one or more notifications using the <a href="AF_Con_API_Notification.htm">NotificationManager</a>, or directly from the Notification service. Each request is addressed to a specific user. The request also contains any argument values that may be required, according to the notification type.</li>
+            <li>If the request is valid, it is stored by the notification service.</li>
+            <li>Each time a user loads a page that includes the Notification Manager, any notification-sensitive page UI elements query the Notification Manager for notification requests addressed to that user.</li>
+            <li>A notification requests will expire if it is not viewed or dismissed during the <a href="../API/Ref/Microsoft.Amalga.Notification.Service/P_NotificationDefinition_TimeToExpireMilliseconds.htm">TimeToExpireMilliseconds</a> interval defined by its notification type. Expired requests are not included in any results returned by the notification service. </li>
+            <li>If possible, the Notification Manager merges similar user notifications into a single notification.</li>
+            <li>The notification service provides the Notification Manager with all the information needed to display the notification. This includes the notification type and any arguments required by the notification request.</li>
+            <li>The Notification Manager passes the notification information on to the UI element, which presents the notification in a manner consistent with its display severity.</li>
+            <li>If the notification is viewed or dismissed, the active application component uses the Notification Manager to update the state of the notification.</li>
+            <li>If the notification is viewed, the active application component uses the Notification Manager to save a notification occurrence (a record of the actual text of the notification, along with its notification ID.)</li>
+            <li>The notification remains in the occurrence store, which provides a permanent record of notification activity.</li>
+        </ul>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="AF_Task_CreateNotificationType.htm">Create a user notification type definition</a>
+        </p>
+        <p><a href="AF_Task_RequestUserNotification.htm">Create a user notification request</a>
+        </p>
+        <p><a href="AF_Task_HandleUserNotification.htm">Display a user notification</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Notification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:54:36.3954968-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:54:37.8151150-08:00">JavaScript </MadCap:annotation>API reference: Notification Manager</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">NotificationManager Class</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/SDK_REF_ErrorCodesNotification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:52:06.6318852-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:53:28.4059973-08:00">Notification </MadCap:annotation>service event codes</a>
+        </p>
+        <p><a href="AF_Con_Notifications_Predefined.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:55:08.1349009-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is there a reason that the link and the topic heading are not the same?  If not, use an xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:55:51.3335009-08:00">Predefined </MadCap:annotation>notification types</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_LocalNotifications.htm">Local notifications</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

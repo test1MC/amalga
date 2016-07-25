@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Data modeling concepts"
+    Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__OVW_Concepts.htm">
+    <TocEntry
+      Title="[%=FeatureName.Amalga entity registry%]"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__CON_EntityRegistry.htm" />
+    <TocEntry
+      Title="Virtual schemas"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__CON_VirtualSchema.htm" />
+    <TocEntry
+      Title="Data manifests"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__CON_DataManifests.htm" />
+    <TocEntry
+      Title="Entities"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__CON_Entities.htm" />
+    <TocEntry
+      Title="Entity associations"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VS__CON_Associations.htm" />
+  </TocEntry>
+</CatapultToc>

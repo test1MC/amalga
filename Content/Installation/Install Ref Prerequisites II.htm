@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="3068" MadCap:lastWidth="576" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Status.70 - Complete,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-ssiera" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Platform installation prerequisites</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The following prerequisites are required to install <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p class="caution">After the hardware and software prerequisites in this topic have been completed, be sure to complete the required operations in the following sections.</p>
+        <ul>
+            <li>
+                <MadCap:xref href="Prereq Proc Certificates.htm" target="" title="" alt="">Certificate prerequisites</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="Prereq Proc ADFS.htm" target="" title="" alt="">ADFS installation and configuration</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="Prereq Proc DTC Config.htm" target="" title="" alt="">DTC configuration</MadCap:xref>
+            </li>
+        </ul>
+        <h2>Hardware prerequisites</h2>
+        <p>Following are the hardware requirements for <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Hardware category</th>
+                    <th>Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CPU</td>
+                    <td>8-core, 3Ghz, 64-bit</td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td>16GB</td>
+                </tr>
+                <tr>
+                    <td>Internal storage</td>
+                    <td>2 x 72GB</td>
+                </tr>
+                <tr>
+                    <td>Network bandwidth to <MadCap:variable name="BrandingMS.SharePoint" /> farm</td>
+                    <td>Switched 750Mbps</td>
+                </tr>
+                <tr>
+                    <td>Client to server network bandwidth</td>
+                    <td>1Mbps and 4Mbps if <MadCap:variable name="BrandingHSG.Amalga Medical Imaging Module" /> is installed.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Software prerequisites</h2>
+        <p>Following are the software requirements for <MadCap:variable name="BrandingHSG.Amalga Short" />. Software required on all <MadCap:variable name="BrandingHSG.Amalga Short" /> servers is specified and then additional requirements are listed by the server type.</p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Server type</th>
+                    <th>Prerequisites</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2011-11-17T16:37:44.1318273-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="This table was originally set up with the &quot;All Servers&quot; (and other multi-line sections) cells merged to provide a visual reference that all the lines on the right belonged to the big merged &quot;All Servers&quot; cell. Unfortunately, that causes the table to break incorrectly. Reverted to standard formatting as no solution was forthcoming from Flare support." MadCap:editor="v-keith" MadCap:editDate="2011-11-17T16:41:01.9556228-08:00">All</MadCap:annotation> servers</td>
+                    <td><MadCap:variable name="BrandingMS.Doors Server 2008 Enterprise SP1 x64" />, or Doors Server 2008 Data Center x64 with SP1<ul><li>Fail-over clustering must be enabled on Physical Hosts in a Logical Host of type "failover".</li></ul></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS.IIS 7.5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>SQL Command Utility, download from <a href="http://go.microsoft.com/fwlink?LinkID=198503">SQL Server 2008 Feature Pack</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> <![CDATA[ ]]><br />(http://go.microsoft.com/fwlink?LinkID=198503)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS..NET4.0" />, download from <a href="http://go.microsoft.com/fwlink?LinkId=232680">.NET Framework 4.0</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> <![CDATA[ ]]><br />(http://go.microsoft.com/fwlink/?LinkId=232680)</MadCap:conditionalText>.</td>
+                </tr>
+                <tr MadCap:conditions="Production.InternalOnly,Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>System Center Operations Manager (SCOM) 2007 V2 Agent (optional)</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Doors PowerShell 2.0, download from <a href="http://go.microsoft.com/fwlink?LinkId=232681">Doors Management Framework</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232681)</MadCap:conditionalText>.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Distributed Transaction Coordinator (DTC) must be installed and enabled. For more information, see <MadCap:xref href="Prereq Proc DTC Config.htm" target="" title="" alt="">Prereq Proc DTC Config</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>Doors Identity Foundations (WIF), download the Doors6.1-KB974405 version from the <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=EB9C345F-E830-40B8-A5FE-AE7A864C4D76">WIF download page</a><br MadCap:conditions="Production.PrintOnly" /><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232826)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>
+                        <p>Visual C++ 2010 Runtime. For download, see the <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=14632">C++ download page</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232827)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Platform servers</td>
+                    <td>
+                        <p>Active Directory Federation Services ADFS V2.0</p>
+                        <p class="caution">For critical information on how to install and configure ADFS, see <MadCap:xref href="Prereq Proc ADFS.htm" target="" title="" alt="">Appendix C: ADFS</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Application servers</td>
+                    <td>None additional.</td>
+                </tr>
+                <tr>
+                    <td>Data servers</td>
+                    <td><MadCap:variable name="BrandingMS.SQL Server 2008 R2 Enterprise"></MadCap:variable>, Data Center, or Developer editions.<p class="note">After <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the minimum requirement will be <MadCap:variable name="BrandingMS.SQL Server 2008 Enterprise SP1" />, Data Center, or Developer.</p></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>Health Language International (HLI) database must be installed. To download and install the HLI database, go to <a href="http://connect.microsoft.com/">http://connect.microsoft.com</a> and navigate to the <MadCap:variable name="BrandingHSG.Amalga Short" /> download page. Download the HLI zip file, which contains both the database and the instructions. Your sign-in to this site is part of the invitation to participate in <MadCap:variable name="BrandingHSG.Amalga Short" /> CTP program.</td>
+                </tr>
+                <tr>
+                    <td>Application Framework</td>
+                    <td>
+                        <p><MadCap:variable name="BrandingMS.SharePoint" /> 2010 Foundation. For installation information see <a href="http://go.microsoft.com/fwlink?LinkID=229491">SharePoint deployment</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=229491)</MadCap:conditionalText>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS..NET 3.5 SP1 hot" />, download from <a href="http://go.microsoft.com/fwlink?LinkId=232682">.NET Framework 3.5 Service Pack 1</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=232682)</MadCap:conditionalText>.</td>
+                </tr>
+                <tr>
+                    <td>Development servers (SDK)</td>
+                    <td>Either <MadCap:variable name="BrandingMS.Doors Server 2008 Enterprise SP1 x64" />, or <MadCap:variable name="BrandingMS.Doors 7 Enterprise SP1 x64" /></td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td><MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> Professional</td>
+                </tr>
+                <tr>
+                    <td>Non-specific Requirements</td>
+                    <td>Any enterprise level firewall<br />Any enterprise level antivirus program<br />Any virtualization program supported by the <a href="http://go.microsoft.com/fwlink?LinkID=227289">Server Virtualization Validation Program</a> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">(http://go.microsoft.com/fwlink?LinkID=227289)</MadCap:conditionalText>.  </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Required"></a>Required configuration steps</h2>
+        <p>The following configuration steps are required.</p>
+        <p class="LabelforProcedures">To disable Interet Explorer Enhanced Security Configuration (ESC) in order to access <MadCap:variable name="BrandingHSG.Amalga Short" /> portals</p>
+        <ol>
+            <li>Open Server Manager.</li>
+            <li>In the details pane, expand the <span class="UIElementAction">Security Information</span> section.</li>
+            <li>In the Security Information task pane (right side), click <span class="UIElementAction">Configure IE ESC</span>.</li>
+            <li>In the IE ESC window, turn ESC off for Administrators and Users.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="LabelforProcedures">To provide Network Service access to the AmalgaSystem database</p>
+        <ol>
+            <li>Open SQL Server Management Studio (SSMS)</li>
+            <li>In the Object Explorer pane, expand <span class="UIElementAction">Security </span>.</li>
+            <li>Right-click <span class="UIElementAction">Logins</span> and select <span class="UIElementAction">New Login</span>.</li>
+            <li>In the Login - New window, enter <span class="InputText">Network Service</span>, or search for it using the <span class="UIElementAction">Search</span> button.</li>
+            <li>
+                <p>Click <span class="UIElementAction">OK </span> to finish.</p>
+            </li>
+        </ol>
+        <h2>Required port exceptions</h2>
+        <p>Open the following ports using the procedure at <a href="http://Doors.microsoft.com/en-US/Doors-vista/Open-a-port-in-Doors-Firewall" MadCap:conditions="Production.ScreenOnly">Open a port in Doors Firewall</a> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">http://Doors.microsoft.com/en-US/Doors-vista/Open-a-port-in-Doors-Firewall</MadCap:conditionalText>. The server names correspond to the <MadCap:xref href="Install Proc MultiBox Installation.htm#Example" target="" title="" alt="">Example installation Topology</MadCap:xref>.</p>
+        <p class="caution">All of the port numbers shown are the defaults. If you choose another port number during the installation process, then you need to open that port number.</p>
+        <p>The following ports need to be opened.</p>
+        <ul>
+            <li>Port 1433 on DataServer1 and DataServer2</li>
+            <li>Port 8889 on PlatformLogicalHost.</li>
+            <li>Port 8801 on AppsLogicalHost1, and AppsLogicalHost2.</li>
+            <li>Port 8900 on AppsLogicalHost1, and AppsLogicalHost2.</li>
+            <li>Port 443 on AppsLogicalHost2 (supports secure binding for default web site if the ADFS in configured to use this port)</li>
+            <li>Port 9999 on PlatformLogicalHost</li>
+            <li>Port 7000 on AppsLogicalHost2 (HealthVault Connector support)</li>
+        </ul>
+        <h2>Required permissions and access</h2>
+        <p>The user executing the Setup utility requires the following permissions on the target servers.</p>
+        <ul>
+            <li><MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> must be enabled for Doors authentication on the server supporting the <MadCap:variable name="FeatureName.Management Console second use" />.</li>
+            <li>All operations require administrative permissions on the physical hosts.</li>
+            <li>Application Framework installation requires <MadCap:variable name="BrandingMS.SharePoint" /> Farm administrative permissions.</li>
+            <li>Platform Services, Application Services, and Datapipeline Storage installation require the SYSADMIN role in <MadCap:variable name="BrandingMS.SQL Server" />.</li>
+            <li>Doors Authentication must be enabled in <MadCap:variable name="BrandingMS.SQL Server" />.</li>
+        </ul>
+        <h2>Supported browsers and issues</h2>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> supports the same set of browsers as <MadCap:variable name="BrandingMS.SharePoint Server 2010 - short" />. For more information, see <a href="http://go.microsoft.com/fwlink?LinkId=234069">Plan browser support - SharePoint Server 2010</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink/?LinkId=234069)</MadCap:conditionalText>.</p>
+        <p class="note">Review the following browser issues.</p>
+        <ul>
+            <li>If Internet Explorer Enhanced Security Configuration is enabled, users will not be able to access <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> portals.</li>
+            <li>If you intend to support Firefox browsers, turn off "Extended Protection for Authentication" in ADFS.</li>
+            <li>Only 32 bit browsers can access the Amalga Management Console.</li>
+        </ul>
+        <h2>Setup configurable items</h2>
+        <p>Items and settings in the following table are required by the system but can be installed or configured by the Setup utility. No action is required by the administrator. They are listed here so that administrators are aware of the changes made by setup and can avoid reversing required settings.</p>
+        <table style="caption-side: top;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Server type</th>
+                    <th>Configurable items</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Platform servers</td>
+                    <td><MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> is enabled<p><MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> Doors Authorization is enabled</p><p><MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> Version 6 Compatibility is enabled</p></td>
+                </tr>
+                <tr>
+                    <td>Application servers</td>
+                    <td>Same as Platform Servers</td>
+                </tr>
+                <tr>
+                    <td>Data pipeline servers</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Application Framework</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Install Nav HVConnect Prereqs.htm" target="" title="" alt=""> Connector prerequisites</MadCap:xref>
+        </p>
+    </body>
+</html>

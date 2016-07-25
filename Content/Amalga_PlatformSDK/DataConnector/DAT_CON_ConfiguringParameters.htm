@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="853" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Configuring parameters and parameter data types</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the AmalgaDbParameter object to configure parameters for SQL statements used in AmalgaDbCommand objects in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p><MadCap:variable name="FeatureName.Amalga ADO.NET" /> supports parameterized queries, SQL&#160;statements that contain parameters, in <span class="ForeignCodeElements">AmalgaDbCommand</span> objects. <span class="ForeignCodeElements">AmalgaDbCommand</span> objects use <span class="ForeignCodeElements">AmalgaDbParameter</span> objects to pass values to parameterized queries, providing type checking and validation. Unlike command text, represented by the <span class="ForeignCodeElements">CommandText</span> property of an <span class="ForeignCodeElements">AmalgaDbCommand</span> object, parameter text, represented by the <span class="ForeignCodeElements">Value</span> property of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object, is treated as a literal value, not as executable code. This provides some protection against SQL injection attacks, in which an attacker inserts a command that compromises security on the server into a SQL statement.</p>
+        <p>An <span class="ForeignCodeElements">AmalgaDbParameter</span> object can be created by using its constructor, or by adding it to an <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object with the <span class="ForeignCodeElements">Add</span> method. The <span class="ForeignCodeElements">Add</span> method will take as input either constructor arguments or an existing <span class="ForeignCodeElements">AmalgaDbParameter</span> object.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Supplyin" target="" title="" alt="">Supplying the Direction property on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with parameter placeholders on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Supplyin"></a>Supplying the Direction property</h2>
+        <p>When creating <span class="ForeignCodeElements">AmalgaDbParameter</span> objects, you must supply a value for the <span class="ForeignCodeElements">Direction</span> property for parameters other than input parameters. The following table shows the <span class="ForeignCodeElements">ParameterDirection</span> enumeration values that you can use with the <span class="ForeignCodeElements">Direction</span> property.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Enumeration value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Input</td>
+                    <td>
+                        <p>The parameter is an input parameter.</p>
+                        <p>This is the default value for the ParameterDirection property.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InputOutput</td>
+                    <td>The parameter performs as both an input parameter and an output parameter.</td>
+                </tr>
+                <tr>
+                    <td>Output</td>
+                    <td>The parameter is an output parameter.</td>
+                </tr>
+                <tr>
+                    <td>ReturnValue</td>
+                    <td>The parameter is a return value from an operation, such as a function.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Working"></a>Working with parameter placeholders</h2>
+        <p class="Figure">Parameter placeholders identify where parameter values should be used in a SQL statement. Depending on the value of the  <span class="ForeignCodeElements">UseOleDbSequentialParameter</span> property for the <span class="ForeignCodeElements">AmalgaDbConnection</span> object, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> can support either named parameter placeholders or sequential parameter placeholders.</p>
+        <p class="Figure">If the value of the <span class="ForeignCodeElements">UseOleDbSequentialParameter</span> property is set to false, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> uses the named parameter placeholder syntax used by the System.Data.SqlClient data provider, in which parameters are identified by names prefaced with the at sign (@)&#160;character. The <span class="ForeignCodeElements">ParameterName</span> property of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object is used to match the parameter value to a named parameter placeholder, and the ordinal position of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object within the <span class="ForeignCodeElements">Parameters</span> collection of the <span class="ForeignCodeElements">AmalgaDbCommand</span> object is ignored.</p>
+        <p class="Figure">The following example demonstrates a parameterized SQL statement that uses named parameter placeholders.</p>
+        <p class="code">INSERT INTO PatientNote (PatientPersonID, NoteText) VALUES(@PersonID, @NoteText)</p>
+        <p class="Figure">If the value of the <span class="ForeignCodeElements">UseOleDbSequentialParameter</span> property is set to true, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> uses the sequential parameter placeholder syntax used by the System.Data.OleDb data provider, in which parameters are identified by the question mark (?) character. The ordinal position of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object within the <span class="ForeignCodeElements">Parameters</span> collection of the <span class="ForeignCodeElements">AmalgaDbCommand</span> object is used to match the parameter value to a sequential parameter placeholder, and the <span class="ForeignCodeElements">ParameterName</span> property of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object is ignored.</p>
+        <p class="Figure">The following example demonstrates a parameterized SQL statement that uses sequential parameter placeholders.</p>
+        <p class="code">INSERT INTO PatientNote (PatientPersonID, NoteText) VALUES(?, ?)</p>
+        <p class="note"><span class="ForeignCodeElements">AmalgaDbParameter</span> objects with empty <span class="ForeignCodeElements">ParameterName</span> property values are allowed in an <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object. Similarly, multiple <span class="ForeignCodeElements">AmalgaDbParameter</span> objects with the same <span class="ForeignCodeElements">ParameterName</span> property value are allowed in the same <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

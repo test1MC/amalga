@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1202.667" MadCap:lastWidth="946" MadCap:fileTags="EditingTags.7 - Editing issues resolved,Status.70 - Complete,TopicOwner.v-wpete,ReleaseTarget.CTP1" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Microsoft.Common.Provider entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="../DataPlatform1/Entity_Common/SummarySnippets/C.Provider.flsnp">
+        </MadCap:snippetBlock>
+        <p>
+            <MadCap:keyword term="entity definitions:Microsoft.Common.Provider" /><span class="Label">Entity tag</span>: STF</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Attribute name</th>
+                    <th>Tag</th>
+                    <th>Terminology</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AffiliatedHospitals</td>
+                    <td>PRA-7</td>
+                    <td>HL7</td>
+                    <td>Institutional privileges which this provider may exercise.</td>
+                </tr>
+                <tr>
+                    <td>ContactInformation</td>
+                    <td>ContactInfoID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to Microsoft.Common.ContactInfo entity. Describes a business contact with email, phone, website, etc.</td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>STF-8</td>
+                    <td>HL7</td>
+                    <td>Institution department to which this person reports or belongs.</td>
+                </tr>
+                <tr>
+                    <td>FamilyName</td>
+                    <td>PV1-(7,8,9,17).2</td>
+                    <td>HL7</td>
+                    <td>Family name of the staff person.</td>
+                </tr>
+                <tr>
+                    <td>GivenName</td>
+                    <td>PV1-(7,8,9,17).3</td>
+                    <td>HL7</td>
+                    <td>Given name of the staff person.</td>
+                </tr>
+                <tr>
+                    <td>MiddleName</td>
+                    <td>PV1-(7,8,9,17).4</td>
+                    <td>HL7</td>
+                    <td>Second and further given names or initials thereof.</td>
+                </tr>
+                <tr>
+                    <td>NameDegree</td>
+                    <td>PV1-(7,8,9,17).7</td>
+                    <td>HL7</td>
+                    <td>Degree, such as MD.</td>
+                </tr>
+                <tr>
+                    <td>NamePrefix</td>
+                    <td>PV1-(7,8,9,17).6</td>
+                    <td>HL7</td>
+                    <td>Prefix, such as Dr.</td>
+                </tr>
+                <tr>
+                    <td>NameSuffix</td>
+                    <td>PV1-(7,8,9,17).5</td>
+                    <td>HL7</td>
+                    <td>Suffix, such as Jr. or III.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressCity</td>
+                    <td>STF-11.3</td>
+                    <td>HL7</td>
+                    <td>City of the staff person's office.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressCountry</td>
+                    <td>STF-11.6</td>
+                    <td>HL7</td>
+                    <td>Country of the staff person's office.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressOtherDesignation</td>
+                    <td>STF-11.2</td>
+                    <td>HL7</td>
+                    <td>Other designation for address.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressPostalCode</td>
+                    <td>STF-11.5</td>
+                    <td>HL7</td>
+                    <td>Zip or postal code of the staff person's office.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressStateOrProvince</td>
+                    <td>STF-11.4</td>
+                    <td>HL7</td>
+                    <td>State or province of the staff person's office.</td>
+                </tr>
+                <tr>
+                    <td>OfficeAddressStreet</td>
+                    <td>STF-11.1</td>
+                    <td>HL7</td>
+                    <td>Street address of the staff person's office.</td>
+                </tr>
+                <tr>
+                    <td>OfficeContact</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>OfficePhone</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>PrimaryLanguage</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the Microsoft.Common.Provider entity.</td>
+                </tr>
+                <tr>
+                    <td>ProviderType</td>
+                    <td>PV1-(7,8,9,17).1</td>
+                    <td>HL7</td>
+                    <td>Foreign key to Microsoft.Common.PatientIdentifier entity.</td>
+                </tr>
+                <tr>
+                    <td>Specialty</td>
+                    <td>PRA-5</td>
+                    <td>HL7</td>
+                    <td>Record of the practitioner's specialties.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="147" MadCap:lastWidth="626" MadCap:fileTags="EditingTags.1 - Ready for Edit,Personas.All,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-dennk,TopicType.Concept">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Connect to the server and instance using these steps:</p>
+        <p>
+            <ol style="list-style-type: lower-alpha;">
+                <li>Select <span class="UIElementAction">Database Engine</span> in Server type.</li>
+                <li>Select the server and instance containing the <MadCap:variable name="BrandingHSG.Amalga Short" /> databases in Server name.</li>
+                <li>Select the appropriate authentication method in Authentication.</li>
+                <li>If necessary, enter the appropriate credentials in User name and Password.</li>
+                <li>Click <span class="UIElementAction">Connect</span>.</li>
+            </ol>
+        </p>
+    </body>
+</html>

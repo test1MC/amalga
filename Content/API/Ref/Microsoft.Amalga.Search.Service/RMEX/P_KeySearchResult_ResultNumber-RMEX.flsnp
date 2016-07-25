@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>ResultNumber Property </title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.Search.Service" />
+    <meta name="file" content="P_KeySearchResult_ResultNumber" />
+    <meta name="outDir" content="Microsoft.Amalga.Search.Service" />
+  </head>
+  <body>
+    <h1 class="heading">
+      <span onclick="ExpandCollapse(remarksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(remarksToggle, event)" tabindex="0">
+        <img id="remarksToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Remarks</span>
+    </h1>
+    <div id="remarksSection" class="section" name="collapseableSection" style="">
+            For large result sets it may be necessary to page through the results by 
+            making multiple requests to the search service. The search method accepts 
+            a <b>StartingResultNumber</b> parameter which specifies the starting result 
+            number of the returned results. When invoking the search service this parameter
+            can be set to one greater than the <b>ResultNumber</b> from the current 
+            results in order to get the next page of results. Similarly, to get the previous
+            page of results, the search service is invoked and <b>StartingResultNumber</b> 
+            is set to the first desired <b>ResultNumber</b>. 
+            <br /><br />
+            The result number for a particular result may change between invocations 
+            of the search service if the app view being queried is modified. For instance, 
+            if there is new data added such that the app view is modified, this may cause 
+            the result number for a result to change. If a fixed set of results is desired, 
+            the search service can be invoked to retrieve unique IDs for the fixed result set
+            using a large <b>maxResults</b> value. As paging occurs, the results for the
+            page can be retrieved using the unique IDs. 
+            </div>
+    <h1 class="heading" MadCap:conditions="Production.doNOTbuild">
+      <span onclick="ExpandCollapse(examplesInfoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(examplesInfoToggle, event)" tabindex="0">
+        <img id="examplesInfoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Examples</span>
+    </h1>
+    <div id="examplesInfoSection" class="section" name="collapseableSection" style="" MadCap:conditions="Production.doNOTbuild">
+      <p>Add examples here.</p>
+    </div>
+  </body>
+</html>

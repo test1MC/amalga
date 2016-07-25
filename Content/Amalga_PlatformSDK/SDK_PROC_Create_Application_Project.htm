@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1235" MadCap:lastWidth="394" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a new hosted application project</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="hosted applications" />This topic describes how to create a new Amalga application project in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</p>
+        <p>All hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> must contain an application manifest, and any hosted application that accesses data from <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> also typically contains a data manifest. In <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />, this metadata is contained within a Visual Studio project, created from a project template named Amalga Application Project. This template provides an application manifest, which contains the metadata for a hosted application. </p>
+        <p>A <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution that contains hosted applications, including hosted services, must contain at least one <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> project created from this template. Other projects, such as an Amalga WCF&#160;service project, must contain a reference to a project created from this template. Multiple Amalga application projects can be contained in the same <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution.</p>
+        <p>When creating a new hosted application, the best practice is to first create a new <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution that contains a project based from the Amalga Application Project template, and then add a data manifest or other projects to the new solution. The following procedure describes how to create a new <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution containing such a project.</p>
+        <p class="LabelforProcedures">To create a new <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> solution containing an Amalga application project</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="Snippets/proc-Start-VS2010.flsnp" />
+            </li>
+            <li>From the <span class="UIElementAction">File</span> menu, click <span class="UIElementAction">New</span>, and then click <span class="UIElementAction">Project</span>.</li>
+            <li>In the <MadCap:annotation MadCap:createDate="2011-11-17T19:11:45.8845434-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post Refresh---Pane is not named? (The rats.)  left and right don't translate weill into Arabic. " MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T19:12:54.8325434-08:00">left</MadCap:annotation> pane, select <span class="UIElementAction">Installed Templates</span>, and then select <span class="UIElementAction">Visual C#</span>.</li>
+            <li>In the middle pane, select <span class="UIElementAction">Amalga Application Project</span>.</li>
+            <li>In the <span class="UIElementAction">Name</span> box, type a name for the new Amalga application project.</li>
+            <li>In the <span class="UIElementAction">Location</span> dropdown, type or select a location in which to save the new solution and project, or click <span class="UIElementAction">Browse</span> to select a location.</li>
+            <li>
+                <p>Select <span class="UIElementAction">Create directory for solution</span> if you want to create a new folder in the location specified in the Location dropdown, using the name specified in the Solution name box, for solution files.</p>
+            </li>
+            <li>
+                <p>If <span class="UIElementAction">Create directory for solution</span> is selected, type a name for the new solution, if needed, in the <span class="UIElementAction">Solution name</span> box.</p>
+                <p class="note">If <span class="UIElementAction">Create directory for solution</span> is not selected, skip this step.</p>
+            </li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Add_WCF_Project.htm" target="" title="" alt="">Add a new service project on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Data_Manifest.htm" target="" title="" alt="">Create a data manifest on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

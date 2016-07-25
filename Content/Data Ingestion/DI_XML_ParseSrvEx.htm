@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data parser: service manifest example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration values as needed. For value descriptions, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Parser application</MadCap:xref>.</p>
+        <pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    Type = "DoorsWorker"
+                    Name="DataParser"
+		      InstanceName="DataParserSvc_ADT_G"
+                    Id="44162965-1f39-4f81-94b4-63002da90b90"
+                    Version ="1.0.0.0"
+                    &gt;
+
+    &lt;DoorsWorkerManifest LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="NLB" HostAssembly="Microsoft.Amalga.Pipeline.DataParser.exe"/&gt;
+
+    &lt;PerformanceCategories&gt;
+      &lt;PerformanceCategory Name="Amalga Data Parser Service Stats" Version="" CodeName="DataParser" Help="Store the stats for the Data Parser" MultiInstance="Yes"&gt;
+        &lt;PerformanceCounter Name="Messages Received" CodeName="MessagesReceived" Type="NumberOfItems64" Help="Records the the total number of messages received by the Data Parser" /&gt;
+        &lt;PerformanceCounter Name="Messages Per Second" CodeName="MessagesReceivedSec" Type="RateOfCountsPerSecond32" Help="Records the number of messages received per second" /&gt;
+        &lt;PerformanceCounter Name="Messages Successful" CodeName="MessagesProcessedSuccessful" Type="NumberOfItems64" Help="Records the total number of messages processed successfully" /&gt;
+        &lt;PerformanceCounter Name="Messages Unsuccessful" CodeName="MessagesProcessedUnSuccessful" Type="NumberOfItems64" Help="Records the number of messages that failed during processing" /&gt;
+      &lt;/PerformanceCategory&gt;
+      &lt;PerformanceCategory Name="Amalga Enterprise ID"  Version="" CodeName="AmalgaIdPerfCounters" Help="Amalga Enterprise Id Processor Counters" MultiInstance="Yes"&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Messages Total" CodeName="MessagesTotal" Type="numberOfItems64" Help="The total # of messages run through AmalgaID"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Lookup Total" CodeName="LookupTotal" Type="numberOfItems64" Help="The total # of matching lookups performed"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Deadlock Total" CodeName="DeadlockTotal" Type="numberOfItems64" Help="The total # of submissions that were SQL deadlocked"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Matches EID" CodeName="MatchesEID" Type="numberOfItems64" Help="The # of lookups that result in an EID match"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Matches GEID" CodeName="MatchesGEID" Type="numberOfItems64" Help="The # of lookups that result in an GEID match"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Matches SOID" CodeName="MatchesSOID" Type="numberOfItems64" Help="The # of lookups that result in an SOID match"/&gt;
+        &lt;PerformanceCounter Name="AmalgaEnterpriseId Matches OID" CodeName="MatchesOID" Type="numberOfItems64" Help="The # of lookups that result in an OID match"/&gt;
+      &lt;/PerformanceCategory&gt;
+  &lt;/PerformanceCategories&gt;
+
+    &lt;Settings&gt;
+      
+        &lt;Setting Name="LastProcessedSequenceNumber" Type="System.Int32"&gt;
+            &lt;DefaultValue&gt;0&lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="BatchSize" Type="System.Int32"&gt;
+            &lt;DefaultValue&gt;250&lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="FeedInfoXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA[
+&lt;FeedInfo&gt;
+    &lt;Name&gt;ADT.G Feed&lt;/Name&gt;
+    &lt;Type&gt;ADT.G&lt;/Type&gt;
+    &lt;Provider&gt;MS Internal&lt;/Provider&gt;
+    &lt;TerminologyName&gt;Microsoft Beta HL7 V2.X Code&lt;/TerminologyName&gt;
+    &lt;PreferenceRanking&gt;0&lt;/PreferenceRanking&gt;
+    &lt;PreferredCulture&gt;en-US&lt;/PreferredCulture&gt;
+    &lt;DefaultTimeZone&gt;Pacific Standard Time&lt;/DefaultTimeZone&gt;
+&lt;/FeedInfo&gt;]]&gt;
+             &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA[
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DataParserConfiguration&gt;
+    &lt;!--Section I, define the input message structure. --&gt;
+    &lt;MessageShredderInput&gt;
+        &lt;Segment Name="PID" SourceName="PID"&gt;
+            &lt;Elements&gt;
+                &lt;Element Name="PID_5_1" /&gt;
+                &lt;Element Name="PID_5_2" /&gt;
+                &lt;Element Name="PID_3_1" /&gt;
+                &lt;Element Name="PID_3_5" /&gt;
+                &lt;Element Name="PID_18_1" /&gt;
+                &lt;Element Name="PID_7"/&gt;
+                &lt;Element Name="PID_8"/&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;
+        &lt;Segment Name="PV1" SourceName="PV1"&gt;
+            &lt;Elements&gt;
+              &lt;Element Name="PV1_7"/&gt;
+              &lt;Element Name="PV1_44"/&gt;
+              &lt;Element Name="PV1_45"/&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;
+        &lt;Segment Name="PV2" SourceName="PV2"&gt;
+            &lt;Elements&gt;
+              &lt;Element Name="PV2_3"/&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;
+    &lt;/MessageShredderInput&gt;
+    
+    &lt;!-- Section II, define the output message structure--&gt;
+    &lt;DataParserOutput&gt;
+        &lt;Segment Name="PID" SourceName="PID"&gt;
+            &lt;Elements&gt;
+                &lt;Element Name="FName" Type="System.String" MaxLength="50"&gt;
+                    &lt;ConceptId&gt;11627229-A030-41C4-B323-9C5B8DAE0384&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter Name="LowCaseString" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+                &lt;Element Name="LName" Type="System.String" MaxLength="50"&gt;
+                    &lt;ConceptId&gt;762F8617-40E0-4590-85F0-589AA98D6016&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter Name="LowCaseString" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_2" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+                &lt;Element Name="FullName" Type="System.String" MaxLength="150"&gt;
+                    &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E7441&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;Concatenate&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter Name="Separator" SourceType="Constant" SourceName="Space" /&gt;
+                            &lt;Parameter Name="FirstName" SourceType="DerivedField" SourceTable="PID" SourceName="FName" /&gt;
+                            &lt;Parameter Name="LastName" SourceType="DerivedField" SourceTable="PID" SourceName="LName" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+                &lt;Element Name="PatientMRN" Type="System.String" MaxLength="150"&gt;
+                    &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E7354&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;Trim&lt;/Action&gt;
+                        &lt;InputParameters&gt;                            
+                            &lt;Parameter Name="MRN" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_3_1" /&gt;
+                            &lt;Parameter Name="Switch" SourceType="Constant" SourceName="TreatLeadingZeroAsBlank" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+                &lt;Element Name="Account" Type="System.String" MaxLength="150"&gt;
+                    &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E7987&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;Trim&lt;/Action&gt;
+                        &lt;InputParameters&gt;                            
+                            &lt;Parameter Name="Account" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18_1" /&gt;
+                            &lt;Parameter Name="Switch" SourceType="Constant" SourceName="TreatLeadingZeroAsBlank" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+                &lt;Element Name="Sex" Type="System.String" MaxLength="150"&gt;
+                    &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E7656&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;Trim&lt;/Action&gt;
+                        &lt;InputParameters&gt;                            
+                            &lt;Parameter Name="Sex" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_8" /&gt;
+                            &lt;Parameter Name="Switch" SourceType="Constant" SourceName="TreatLeadingZeroAsBlank" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+            &lt;/Elements&gt;
+            
+        &lt;/Segment&gt;
+        &lt;Segment Name="PV1" SourceName="PV1"&gt;
+            &lt;Elements&gt;              
+               &lt;Element Name="AttendingMDName" Type="System.String" MaxLength="150"&gt;
+                    &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E876&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;Trim&lt;/Action&gt;
+                        &lt;InputParameters&gt;                            
+                            &lt;Parameter Name="AttendingMDName" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_7" /&gt;
+                            &lt;Parameter Name="Switch" SourceType="Constant" SourceName="TreatLeadingZeroAsBlank" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;                
+            &lt;/Elements&gt;            
+        &lt;/Segment&gt;
+        &lt;Segment Name="PV2" SourceName="PV2"&gt;
+            &lt;Elements&gt;
+                &lt;Element Name="AdmitComplaint" Type="System.String" MaxLength="150"&gt;
+                      &lt;ConceptId&gt;4CF03880-FCA7-49DE-A396-345B480E7656&lt;/ConceptId&gt;
+                      &lt;Transform&gt;
+                          &lt;Action&gt;Trim&lt;/Action&gt;
+                          &lt;InputParameters&gt;                            
+                              &lt;Parameter Name="AdmitComplaint" SourceType="ShreddedInput" SourceTable="PV2" SourceName="PV2_3" /&gt;
+                              &lt;Parameter Name="Switch" SourceType="Constant" SourceName="TreatLeadingZeroAsBlank" /&gt;
+                          &lt;/InputParameters&gt;
+                      &lt;/Transform&gt;
+                  &lt;/Element&gt;
+            &lt;/Elements&gt;            
+        &lt;/Segment&gt;
+    &lt;/DataParserOutput&gt;
+    
+    &lt;ExtensibleDataParserOutput&gt;
+         &lt;Segment Name="PV1" SourceName="PV1"&gt;            
+            &lt;Elements&gt;
+              &lt;Element Name="DIschargeDateTime" Type="System.DateTime"/&gt;
+               &lt;Element Name="AdmitDateTime" Type="System.DateTime" /&gt; 
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;      
+    &lt;/ExtensibleDataParserOutput&gt;
+    
+    &lt;!--Section III, define the constants, which will be used in parsing.--&gt;
+    &lt;DataConstants&gt;
+        &lt;Element Name="Space" Type="System.String" Value=" " /&gt;
+        &lt;Element Name="Domain" Type="System.String" Value="ReadmitManagerTest" /&gt;
+        &lt;Element Name="TreatLeadingZeroAsBlank" Type="System.Boolean" Value="false" /&gt;
+    &lt;/DataConstants&gt;
+    &lt;!--Section IV, define the data transform for each elements in Section II. --&gt;
+    &lt;!-- Section VI, Plug-in Configuration. --&gt;
+    &lt;Plugins&gt;
+        &lt;!-- You can define multiple transform libraries and import your own library as a plug-in. --&gt;
+        &lt;Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Transforms, 
+		Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396"&gt;
+            &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Transforms&lt;/NameSpace&gt;
+            &lt;URL&gt;E:/V3DataParserDemo/Microsoft.Amalga.Pipeline.Transforms.dll&lt;/URL&gt;
+            &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+    &lt;/Plugins&gt;
+    &lt;EnterpriseId&gt;
+        &lt;EnterpriseIdAction Action="StandardMapping" AnchorTable="PID"&gt;
+            &lt;InputIdentifiers&gt;
+                &lt;PatientRecordIdentifier Name="Patient"&gt;
+                    &lt;Id Name="Id" Type="System.String" SourceType="DerivedField" SourceTable="PID" SourceName="PatientMRN" /&gt;
+                    &lt;Domain Name="Domain" Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+                &lt;/PatientRecordIdentifier&gt;
+                &lt;EncounterIdentifier Name="Encounter"&gt;
+                    &lt;Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18_1" /&gt;
+                    &lt;Domain Name="Domain" Type="System.String" SourceType="Constant" SourceName="Domain" /&gt;
+                &lt;/EncounterIdentifier&gt;
+            &lt;/InputIdentifiers&gt;
+        &lt;/EnterpriseIdAction&gt;
+    &lt;/EnterpriseId&gt;
+&lt;/DataParserConfiguration&gt;
+			]]&gt;
+             &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+        &lt;Setting Name="PluginConfigurationXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+			&lt;![CDATA[
+&lt;Plugin Name="G2ExtensionSample" Assembly="G2SampleExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ClassName ="G2CodeDrivenExtension"&gt;
+          &lt;NameSpace&gt;G2SampleExtension&lt;/NameSpace&gt;
+          &lt;URL&gt;E:/V3DataParserDemo/G2SampleExtension.dll&lt;/URL&gt;
+          &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;]]&gt;
+            &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+    &lt;/Settings&gt;
+&lt;/DeploymentManifest&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser</MadCap:xref>
+        </p>
+    </body>
+</html>

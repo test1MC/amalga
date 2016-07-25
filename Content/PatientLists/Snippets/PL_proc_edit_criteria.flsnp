@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="136" MadCap:lastWidth="300" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To edit list criteria</p>
+        <ul>
+            <li>When viewing the list, click <span class="UIElementAction">Edit list</span>, click <span class="UIElementAction">Edit list criteria</span>, and then follow the instructions in <a href="../PL_Task_Edit_criteria.htm">Edit patient list criteria</a> to make changes.</li>
+        </ul>
+    </body>
+</html>

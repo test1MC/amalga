@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="76" MadCap:lastWidth="868" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To show a hidden widget</p>
+        <ul>
+            <li>Click the Options icon ( <img src="../../Analytics/Images/AN_settings.png" />) in the hidden widget, and then click <span class="UIElementAction">Show</span>.</li>
+        </ul>
+    </body>
+</html>

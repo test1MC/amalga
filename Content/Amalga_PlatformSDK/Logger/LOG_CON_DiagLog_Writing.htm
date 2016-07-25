@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="4430.667" MadCap:lastWidth="980" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Writing diagnostic log entries</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to write diagnostic log entries to the diagnostic log in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The diagnostic log tracks exceptions, errors, and information for a hosted application. If the Diagnostics Log Level configuration setting for the hosted application or hosted service allows it, you can use the DiagLog object to write diagnostic log entries to the diagnostic log. For more information about the Diagnostics Log Level setting, see <MadCap:xref href="LOG_CON_DiagLog.htm" target="" title="" alt="">Diagnostic log on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic </p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the DiagLog object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Configur" target="" title="" alt="">Configuring logging levels on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using the DiagLog object</h2>
+        <p class="Figure">You can use the DiagLog static object, in the Microsoft.Amalga.Hosting.Service namespace, to write diagnostic log entries. The DiagLog object provides the following methods with which you can write a variety of diagnostic log entries:</p>
+        <ul>
+            <li>
+                <p>WriteError</p>
+                <p>
+                    <MadCap:annotation MadCap:createDate="2012-03-12T22:08:26.1789733-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post CTP2: \r\nIMO this sentence (and its brethren below)  flows better with the clauses moved: &quot; The WriteError method writes an error message to the diagnostic log, with a logging level set to LogLevel.Error.&quot;   If it has to be the other way, why?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T22:10:49.7345733-07:00">The WriteError method writes an error message, with a logging level set to LogLevel.Error, to the diagnostic log. </MadCap:annotation>The WriteError method accepts the following two <MadCap:annotation MadCap:createDate="2012-03-12T22:16:35.3031733-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="FYI, from MSTP (AKA MMS): Do not use a colon following a procedure heading or to introduce art, tables, code, or sections.\r\nI'm changeing them as I go, but for future reference.  \r\nFirst sentence gets a prize for fewest actual words in a phrase." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T22:18:39.0229733-07:00">parameters</MadCap:annotation>.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the error message to be written to the diagnostic log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the error message to be written to the diagnostic log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteException</p>
+                <p>The WriteException method writes an exception, with a logging level set to LogLevel.Error, to the diagnostic log. The WriteException method accepts the following parameter.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>exception</td>
+                            <td>Required. A System.Exception object, representing the exception to be written to the diagnostic log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>The WriteException method also provides an overloaded method that allows you to include an optional message. The overloaded WriteException method accepts the following two parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>exception</td>
+                            <td>Required. A System.Exception object, representing the exception to be written to the diagnostic log.</td>
+                        </tr>
+                        <tr>
+                            <td>optionalMessage</td>
+                            <td>
+                                <p>Optional. A string, representing the message to be written.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteInformation</p>
+                <p>The WriteInformation method writes an informational message, with a logging level set to LogLevel.Information, to the diagnostic log. The WriteInformation method accepts the following two parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the informational message to be written to the diagnostic log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the informational message to be written to the diagnostic log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteVerbose</p>
+                <p>The WriteVerbose method writes a message, with a logging level set to LogLevel.Verbose, to the diagnostic log. The WriteVerbose method accepts the following two parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the message to be written to the diagnostic log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the message to be written to the diagnostic log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p>WriteWarning</p>
+                <p>The WriteWarning method writes an error message, with a logging level set to LogLevel.Warning, to the diagnostic log. The WriteWarning method accepts the following two parameters.</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>format</td>
+                            <td>Required. A composite format string, representing the warning message to be written to the diagnostic log.</td>
+                        </tr>
+                        <tr>
+                            <td>args</td>
+                            <td>Optional. An array of objects, representing zero or more objects to format for the warning message to be written to the diagnostic log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+        <h2><a name="Configur"></a>Configuring logging levels</h2>
+        <p>When using any of the methods included with the DiagLog static object to write entries to the diagnostic log, the Diagnostics Log Level configuration setting for the hosted application or hosted service must be set to a logging level equal to or greater than the logging level used by the method. The following list  describes what happens when the Diagnostics Log Level is set to one of the following LogLevel enumeration values:</p>
+        <ul>
+            <li>
+                <p>None</p>
+                <p>Nothing is written to the diagnostic log.</p>
+            </li>
+            <li>
+                <p>Error</p>
+                <p>Only diagnostic log entries from the WriteError or WriteException methods are  written to the diagnostic log.</p>
+            </li>
+            <li>
+                <p>Warning</p>
+                <p>Only diagnostic log entries from the WriteError, WriteException, or WriteWarning methods are written to the diagnostic log.</p>
+            </li>
+            <li>
+                <p>Information</p>
+                <p>Only diagnostic log entries from methods other than the WriteVerbose method are written to the diagnostic log.</p>
+            </li>
+            <li>
+                <p>Verbose</p>
+                <p>All diagnostic log entries are written to the diagnostic log.</p>
+            </li>
+        </ul>
+        <p>By default, the Diagnostics Log Level configuration setting for a hosted application and its hosted services is set to LogLevel.Warning when the hosted application is deployed. You can use the <MadCap:variable name="FeatureName.Management Console second use" /> to change the value of the Diagnostics Log Level configuration setting for a hosted application or hosted service. For more information about using the <MadCap:variable name="FeatureName.Management Console second use" /> to change the logging level for a hosted application or hosted service, see <MadCap:xref href="../../Serviceability/Management Console/Application Management/AppMan Proc ChangeAppLoggingLevel.htm" target="" title="" alt="">Change application service logging levels on page 1</MadCap:xref>.</p>
+        <p>You can also use two <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlets, Get-AmConfigurationSetting and Set-AmConfigurationSetting, to get and set, respectively, the Diagnostics Log Level configuration setting. The following example demonstrates how to set the Diagnostics Log Level configuration setting for an instance of the TerminologyService service, part of the Terminology platform application, to LogLevel.Error by using the Set-AmConfigurationSetting cmdlet.</p><pre xml:space="preserve">Set-AmConfigurationSetting -InstanceType ServiceInstance -InstanceName TerminologyService_Ins1 
+&#160;&#160;&#160;&#160;-SettingName DiagnosticsLogLevel -SettingValue Error</pre>
+        <p>For more information about getting and setting configuration values using <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlets, see, respectively, <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting on page 1</MadCap:xref> and <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting on page 1</MadCap:xref>.</p>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example demonstrates how to use the WriteInformation and WriteException methods of the DiagLog static object to write diagnostic log entries.</p><pre xml:space="preserve">/// &lt;summary&gt;
+/// A sample method to query the top 100 patients from the deployed virtual schema
+/// of a hosted application and return them as a list of objects.
+/// &lt;/summary&gt;
+public IEnumerable&lt;Patient&gt; GetTop100Patients()
+{
+    // Define a List object that will contain a list of Patient objects.
+    List&lt;Patient&gt; patients = new List&lt;Patient&gt;();
+
+    // Connect to the virtual schema for the application.
+    AmalgaDbConnection connection = 
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString());
+
+    // Read a list of patients from an Amalga ADO.NET connection connected to  
+    // the deployed virtual schema for the hosted application.
+
+    using (connection)
+    {
+        // Create the Command and Parameter objects.
+        // The command queries an application view named Patient, defined in
+        // virtual schema for the hosted application.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+                    @" SELECT TOP 100
+                            Patient.PersonID AS PatientID,
+                            Patient.FullName AS Name,
+                            Patient.DateOfBirth AS DateOfBirth
+                            FROM Patient";
+
+        // Write an entry into the diagnostic log providing information that the hosted service 
+        // is about to execute a query.
+        DiagLog.WriteInformation("Application " + 
+            ApplicationConfiguration.InstanceName.ToString() + 
+            " about to query patients");
+
+        // Open connection and read from deployed virtual schema.
+        try
+        {
+            command.Connection.Open();
+
+            // Using the AmalgaDbDataReader object, read information from the 
+            // application view and add it to the list defined earlier in the method.
+            AmalgaDbDataReader amalgaReader = command.ExecuteReader();
+            while (amalgaReader.Read())
+            {
+                // Instantiate and populate a new Patient object.
+                Patient p = new Patient();
+                p.PatientID = amalgaReader["PatientID"].ToString();
+                p.Name = amalgaReader["Name"].ToString();
+                p.DateOfBirth = ConvertToDate(amalgaReader["DateOfBirth"].ToString());
+
+                // Add the new Patient object to the list.
+                patients.Add(p);
+            }
+
+            // Write an entry into the diagnostic log providing information 
+            // that the hosted service successfully queried patients.
+            DiagLog.WriteInformation("{0} records read", patients.Count);
+
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not read data from the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", 
+                ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+    }
+
+    // Return the list of Patient objects.
+    return patients;
+}
+
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog_Reading.htm" target="" title="" alt="">Interacting with the diagnostic log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_DiagLog.htm" target="" title="" alt="">Diagnostic log on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

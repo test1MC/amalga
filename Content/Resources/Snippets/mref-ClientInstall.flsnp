@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="41" MadCap:lastWidth="862" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <body>
+        <p>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCSingle">the <span class="BookManualName"><MadCap:variable name="ManualNames.Client Install" /></span></MadCap:conditionalText>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCsAll">Client Installation</MadCap:conditionalText>
+        </p>
+    </body>
+</html>

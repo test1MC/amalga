@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="107" MadCap:lastWidth="707" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <p class="warning">System database schema should not be altered. Changes to these schema will cause upgrades to fail and will also cause other unintended consequences throughout your <MadCap:variable name="Branding.Amalga Short" /> installation.</p>
+    </body>
+</html>

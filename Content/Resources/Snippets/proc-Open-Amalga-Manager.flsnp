@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="162" MadCap:lastWidth="706" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <li>From <strong>Start</strong>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction"><MadCap:variable name="UserInterface.Microsoft Amalga" /></span>, click <span class="UIElementAction"><MadCap:variable name="UserInterface.Admin Tools" /></span>, and then click <span class="UIElementAction"><MadCap:variable name="FeatureName.Amalga Manager" /></span>.</li>
+        <li>Type the required login information in the <MadCap:variable name="FeatureName.Amalga Manager" /> Login dialog box and click <span class="UIElementAction"><MadCap:variable name="UserInterface.OK" /></span>.</li>
+    </body>
+</html>

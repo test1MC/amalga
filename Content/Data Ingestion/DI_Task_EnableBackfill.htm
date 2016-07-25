@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1080" MadCap:lastWidth="847" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="DI_Con_BackfillSummary" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Enable backfill parsing</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">This topics describes how to enable backfill parsing for a specified derived column or columns.</p>
+        <p>Enabling backfill parsing is a secondary activity that you  perform after you have already derived one or more new columns for a deployed data parser. You must have the replacement data parser tested and ready to deploy before you edit the backfill manifests.</p>
+        <p class="Label">To enable backfill parsing</p>
+        <ol>
+            <li>Stop and <a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">remove</a> the current parser application instance.</li>
+            <li>
+                <p>Update the parser service manifest with a new entry for the derived column. Mark the column with Reparse=true. For example:
+<pre>&lt;Element Name="FullName" Type="System.String" MaxLength="150" Reparse="true"&gt;</pre></p>
+            </li>
+            <li><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish</a> and <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">synchronize</a> the updated parser.</li>
+            <li>Copy the service manifest for the updated parser and make the following changes in the new manifest:	<ol style="list-style-type: upper-alpha;"><li>Rename the instance name to a different name.</li><li>Remove all derived column definitions, except the newly added derived column that you want to backfill.</li></ol></li>
+            <li>Copy the application manifest for the updated parser and make the following changes in the manifest:
+            <ol style="list-style-type: upper-alpha;"><li>Rename the instance name to a different name.</li><li><p>Add the IsBackfillDataParserApplication setting and set the default value to true, as shown in the following example. <pre xml:space="preserve">
+&lt;Settings&gt;
+   &lt;Setting Name="IsBackfillDataParserApplication" AmalgaDisplayName="DataParser Application Setting" Type="System.Boolean" &gt;
+      &lt;DefaultValue&gt;true&lt;/DefaultValue&gt;   
+   &lt;/Setting&gt;
+&lt;/Settings&gt;</pre></p></li></ol></li>
+            <li>
+                <p>Add a dependency to the related (forward) parser. For example, update the highlighted attribute based on the actual values of your related forward parser.
+            <pre xml:space="preserve">&lt;Dependency Name="DataParserAppDependency" InstanceName="<span style="background-color: #dcdcdc;">DataParserApp_Model_ADT_G</span>" 
+                              Type="Application" Id="576d0ffe-c339-4b15-852f-58d66315b736" MinVersion="1.0.0.0" /&gt;
+&lt;/Dependencies&gt;</pre></p>
+            </li>
+            <li>
+                <p><a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish</a> and <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">synchronize</a> the backfill parser application. The forward parser must be running already.</p>
+                <p>When the backfill data parser finishes updating the parsed record, it  writes the following event to the Doors event log:          </p><pre>Event ID: 11001
+Event Name : "Backfill DataParser <span class="Placeholder">Backfill Data Parser Instance Name</span> completed."</pre>
+            </li>
+            <li>After backfill parsing completes, you can <a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">remove</a> the backfill <MadCap:variable name="Applications.Data Parser application" /></li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Con_BackfillSummary.htm"><MadCap:variable name="Applications.Backfill Data-Parser application" /></a>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm" target="" title="" alt="">Remove applications</MadCap:xref>
+        </p>
+    </body>
+</html>

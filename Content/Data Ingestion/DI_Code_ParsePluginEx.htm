@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="841" MadCap:lastWidth="576" MadCap:fileTags="ReleaseTarget.CTP1,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Parser plug-in code example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>The C# example that follows performs strong type conversion to <b>DateTime</b> from two DateTime fields in the PV1 segment. After compiling the G2ExtensionSample.dll, you must add references to the associated service manifest. For instructions, see <MadCap:xref href="DI_Con_ParseExtendAssembly.htm" target="" title="" alt="">Custom assembly parser extension</MadCap:xref>.</p><pre xml:space="preserve"><span class="code">using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using Microsoft.Amalga.Pipeline.Model;
+using Microsoft.Amalga.Pipeline.Transforms;
+
+namespace G2SampleExtension
+{
+    public class G2CodeDrivenExtension : IDataParserExtension
+    {
+        // Processes the message.
+        public void ProcessMessage(IDataParserContext context)
+        {
+
+            MessageShredderMessage g1Message = context.ShredderMessage;
+
+            DataParserMessage g2Message = context.CodeBasedOutputMessage;
+
+            var g1PV1Tables = g1Message.Tables.Where(x =&gt; x.Name == "PV1").ToList();
+
+            var g2PV1Tables = g2Message.Tables.Where(x =&gt; x.Name == "PV1").ToList();
+
+            
+            for (int i = 0; i &lt; g2PV1Tables.Count(); i++ )
+            {
+                DataConvert(g1PV1Tables[i].Columns, "PV1_45", g2PV1Tables[i].Columns, "DIschargeDateTime");
+                DataConvert(g1PV1Tables[i].Columns, "PV1_44", g2PV1Tables[i].Columns, "AdmitDateTime");
+            }
+        }
+        
+        private static void DataConvert(IEnumerable&lt;IColumn&gt; source, string sourceTag, IEnumerable&lt;IColumn&gt; destination, string destTag)
+        {
+            const string dateTimePatten = "yyyyMMddHHmm";
+            string pv145 = source.First(x =&gt; x.Name == sourceTag).Value;
+
+            if (string.IsNullOrEmpty(pv145)) return;
+
+            DateTime parsedDate;
+            var isSuccess = DateTime.TryParseExact(pv145, dateTimePatten, CultureInfo.InvariantCulture,
+                                                    DateTimeStyles.None, out parsedDate);
+            if (isSuccess)
+                (destination.First(x =&gt; x.Name == destTag) as DataParserColumn).RawValue = parsedDate;
+        }
+
+        // Configures the Correlation Engine.
+        public void ConfigureCorrelation(IDataParserContext context)
+        {
+         DataParserTable g2Pv1Table = context.CodeBasedOutputMessage.Tables.Where(x =&gt; x.Name
+	    == "PV1").FirstOrDefault&lt;DataParserTable&gt;();  
+            IEnterpriseIdGroup group = context.IdConfiguration.ConfigureSourceGroup(); 
+            group.MapSourceIdentifier(new Amalga.Correlation.EncounterSetIdentifier( 
+                (g2Pv1Table.Columns.First(x =&gt; x.Name == "DIschargeDateTime") as DataParserColumn).Value, 
+                "Institution"));   
+        }        
+    }
+}</span>     
+</pre>
+        <p class="h7">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseExtendAssembly.htm" target="" title="" alt="">Custom assembly parser extension</MadCap:xref>
+        </p>
+    </body>
+</html>

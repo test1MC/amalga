@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1239.333" MadCap:lastWidth="855" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Pipeline manifest XML</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p class="abstract">This topic introduces the settings, elements, functions, and transforms available to pipeline applications.</p>
+        <p>
+            <MadCap:keyword term="Pipeline manifest XML" />Use the items in this section to declare the runtime metadata required to run an application or service instance in the <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> data pipeline.</p>
+        <h2>Configuration settings</h2>
+        <p>Pipeline settings accept either simple values or complex configurations. A setting that accepts a complex configuration also supports a hierarchy of child elements and the setting name is appended with XML. You can declare zero or more settings in the service manifest. The  <MadCap:variable name="Applications.Backfill Data-Parser application" /> is unusual, because it requires a setting in the application manifest. For instructions, see <MadCap:xref href="DI_Task_EnableBackfill.htm" target="" title="" alt="">Enable backfill parsing</MadCap:xref>.</p>
+        <p>All settings do not apply to all pipeline applications. Use the following table to determine where to declare each setting. For application profiles, see <MadCap:xref href="DI_Lnd_DataPipeApps.htm" target="" title="" alt="">Data pipeline applications</MadCap:xref>.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Setting</th>
+                    <th>Pipeline application</th>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_BatchSizeSetting.htm">BatchSize</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm">ConnectionTimeoutSeconds</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Feed Acquisition (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_CustomizedConfigurationXML.htm">CustomizedConfigurationXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Feed Acquisition (application)" />, <MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_FeedInfoXML.htm">FeedInfoXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_IdleConnectionTimeout setting.htm">IdleConnectionTimeout</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Feed Acquisition (application)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_IdleSleepSecondsSetting.htm">IdleSleepSeconds</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_IsBackfillDataParserApplication.htm">IsBackfillDataParserApplication</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Backfill Data-Parser (application)" /> (Declare in the application manifest.)</td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Feed Acquisition (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Backfill Data-Parser (application)" /></td>
+                </tr>
+                <tr>
+                    <td><a href="Manifest XML/DI_Intro_ShredderPluginConfigurationXML.htm">ShredderPluginConfigurationXML</a>
+                    </td>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>XML elements</h2>
+        <p>Each complex setting contains a hierarchy of Extensible Markup Language (XML) elements that combine to produce a valid configuration for each pipeline application instance. To determine whether to include an element, use one or both of the following approaches to locate an element topic:</p>
+        <ul>
+            <li>Open a setting hierarchy (see the previous table).</li>
+            <li>Display an alphabetic list of elements (see <MadCap:xref href="Manifest XML/DI_Ovw_PipelineElements.htm" target="" title="" alt="">Pipeline XML elements</MadCap:xref>).</li>
+        </ul>
+        <h2>Lookup functions</h2>
+        <p>Lookup functions are restricted to data-parser service manifests. <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> provides three terminology functions that help you convert terminology codes into strings, strings into codes, or convert one code to another code. For an overview, see <a href="Manifest XML/AAA_NewNAME.htm">Terminology lookup functions</a>.</p>
+        <h2>MessageHelper transform library</h2>
+        <p>The <a href="../API/Ref/Microsoft.Amalga.Pipeline.Transforms/T_MessageHelpers.htm">MessageHelpers class</a> provides a library of data transformations that can be declared as transform actions in data-parser service manifests to improve the usability of ingested messages. Each method of this class represents a transform action. </p>
+        <p>For help to declare and use a transform, see <MadCap:xref href="DI_Con_ParseExtendClass.htm" target="" title="" alt="">Transform library class extension</MadCap:xref>. </p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="Manifest XML/DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+        <p><a href="Manifest XML/DI_Ovw_PipelineElements.htm">Pipeline XML elements</a>
+        </p>
+        <p><a href="Manifest XML/AAA_NewNAME.htm">Terminology lookup functions</a>
+        </p>
+        <p><a href="Manifest XML/DI_XML_Manifest_Transform.htm">Transform element</a>
+        </p>
+    </body>
+</html>

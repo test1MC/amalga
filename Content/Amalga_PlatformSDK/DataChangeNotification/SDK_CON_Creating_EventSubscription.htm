@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1102" MadCap:lastWidth="725" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Defining a DCN event subscription</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event subscriptions:Data Change Notification platform application;Data Change Notification platform application:event subscriptions;IEventHandler interface:Data Change Notification platform application;Data Change Notification platform application:IEventHandler interface;EventSubscription class:Data Change Notification platform application;Data Change Notification platform application:EventSubscription class;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;expiration dates:Data Change Notification platform application;Data Change Notification platform application:expiration dates;DeliveryChannel class;ChangeTrackerService service:Data Change Notification platform application;Data Change Notification platform application:ChangeTrackerService service;EventingDispatcherService service:Data Change Notification platform application;Data Change Notification platform application:EventingDispatcherService service" />This topic describes the concepts involved in defining a Data Change Notification (DCN) event subscription  for use with DCN definitions.</p>
+        <p class="abstract">&#160;</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>asdf asdf</td>
+                    <td>asdf asdf</td>
+                </tr>
+                <tr>
+                    <td>asd fasdf</td>
+                    <td>asdf asdf</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="abstract">&#160;</p>
+        <p class="abstract">&#160;</p>
+        <p class="Figure">A DCN event subscription links your hosted application with a DCN definition. You can subscribe to existing DCN definitions, or create and subscribe to new DCN definitions as needed for your hosted application. Multiple DCN event subscriptions can be defined for a single DCN definition.</p>
+        <p class="Figure">The EventSubscription object, defined in the WCF client for the IEventManagementService service contract included with the EventingManagerService service, is used to define and interact with a DCN event subscription.</p>
+        <h2>Delivery channels</h2>
+        <p class="Figure">You must define the delivery channel, which contains the metadata that identifies the destination of the DCN messages to be sent to your hosted application, when you define DCN event subscriptions for your hosted application. Typically, DCN event messages are handled by a separate WCF service that implements the IEventHandler interface, and the delivery channel identifies the service endpoint for that WCF service.</p>
+        <p class="Figure">The DeliveryChannel object, defined in the WCF client for the IEventManagementService service contract, is used to define the delivery channel for a DCN event subscription. The Delivery property of an EventSubscription object represents the delivery channel for a DCN event subscription.</p>
+        <p>Typically, you define a delivery channel first, before creating DCN event subscriptions, because you can use the same DeliveryChannel object to define multiple DCN event subscriptions.</p>
+        <h2>Expiration dates</h2>
+        <p class="Figure">The DCN event subscription provides an expiration mechanism, so you can either provide an expiration date for the DCN event subscription, or explicitly indicate that the DCN event subscription never expires.</p>
+        <p class="Figure">The EventingDispatcherService uses the expiration information in the DCN event subscription to determine if a DCN message added to the DCN message queue by ChangeTrackerService should be dispatched to a particular destination. </p>
+        <p class="Figure">To set an expiration date for a DCN event subscription, set the ExpireOn property of the EventSubscription object for a DCN event subscription to a valid DateTime value. To ensure that a DCN event subscription never expires, set the NeverExpire property to True, and also set the ExpireOn property to DateTime.MaxValue.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

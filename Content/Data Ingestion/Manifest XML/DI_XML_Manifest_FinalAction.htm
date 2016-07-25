@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1051" MadCap:lastWidth="698" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.70 - Complete" MadCap:ignoredWords="ErrorHandlingPolicy" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>FinalAction element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="FinalAction element" />Declares the action that an application executes after reaching the maximum retry time.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="ErrorHandlingConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;ErrorHandlingConfiguration&gt;
+             &lt;ErrorHandlingPolicies&gt;
+                &lt;ErrorHandlingPolicy&gt;<b>
+                   &lt;FinalAction&gt;...&lt;/FinalAction&gt;</b>
+                &lt;/ErrorHandlingPolicy&gt;	
+             &lt;/ErrorHandlingPolicies&gt;
+          &lt;/ErrorHandlingConfiguration&gt; 
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ErrorHandlingPolicy.htm">ErrorHandlingPolicy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>You can configure the <span class="Label">FinalAction</span> element to stop or continue. In the former, the process stops entirely. In the latter, continue ignores the error and continues processing the same message. You can declare a <span class="MarkupLanguageElements">FinalAction</span> element only when the <MadCap:xref href="DI_XML_Manifest_Action.htm" target="" title="" alt="">Action element</MadCap:xref> value equals Retry for the specified exception. </p>
+        <p>Declare the <span class="MarkupLanguageElements">FinalAction</span> element only within a service manifest of the <MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Materializer (application)" />, and <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> applications. </p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;Action&gt;Retry&lt;/Action&gt;
+&lt;MaximumRetry&gt;10&lt;/MaximumRetry&gt;
+&lt;FinalAction&gt;Continue&lt;/FinalAction&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXml element hierarchy</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

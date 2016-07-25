@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-kathen,TopicType.Concept,EditingTags.4 - Ready for Writer,Status.10 - Not in use,ReleaseTarget.RTM,Personas.All" MadCap:conditions="Production.doNOTbuild,API.APIRef">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Add legal content</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="legal content;legal: footers;terms of use;footers: legal" />This topic describes the types of legal content that can be presented on the site and the form that it can take.</p>
+        <p>
+            <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides legal content in the form of footer links, in-page links, and a pop-up template. The <MadCap:variable name="Applications.patient site" /> and <MadCap:variable name="Applications.internal provider site" /> each have their own set of links, which you must configure. Each link opens a new browser window using the supplied generic pop-up template. Alternatively, you can link to an external URL.</p>
+        <p>The following table describes the types of legal content that you can customize.</p>
+        <table>
+            <col />
+            <col />
+            <col style="width: 338px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="Label">Type</td>
+                    <td class="Label">Content</td>
+                    <td class="Label">Description</td>
+                    <td class="Label">Resources</td>
+                </tr>
+                <tr>
+                    <td>Footer link</td>
+                    <td>Privacy policy</td>
+                    <td>
+                        <strong>Required.</strong><![CDATA[ ]]>Policy on collecting and releasing information about website visitors. This policy usually declares what information is collected and whether it is kept confidential or shared with or sold to other firms, researchers, or sellers.</td>
+                    <td>
+                        <p>
+                            <MadCap:variable name="Applications.patient site" />
+                        </p>
+                        <p>Footer link</p>
+                        <p>resource files file: MhsPatientPortal.resx</p>
+                        <p>Key: Footer_PrivacyPolicyUrl_Link</p>
+                        <p>Privacy Policy page - for <MadCap:variable name="Applications.patient site" /> only</p>
+                        <p>Resx file: MhsPatientPortal.resx</p>
+                        <p>Keys: PrivacyPolicy_Header_Text</p>
+                        <p>PrivacyPolicy_Body_Html</p>
+                        <p>Provider site</p>
+                        <p>Footer link</p>
+                        <p>Resx file: MhsProviderPortal.resx</p>
+                        <p>Key: Footer_PrivacyPolicyUrl_Link</p>
+                        <p>Privacy Policy page</p>
+                        <p>Resx file: MhsProviderPortal.resx</p>
+                        <p>Keys: PrivacyPolicy_Header_Text</p>
+                        <p>PrivacyPolicy_Body_Html</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Footer link</td>
+                    <td>Terms of use</td>
+                    <td>
+                        <strong>Required.</strong> Rules for using the service, including acceptable online user behavior, a company’s marketing policies, and copyright notices. These terms are usually legally binding.</td>
+                    <td>
+                        <p>
+                            <MadCap:variable name="Applications.patient site" />
+                        </p>
+                        <p>Footer link</p>
+                        <p>Resx file: MhsPatientPortal.resx</p>
+                        <p>Key: Footer_TermsOfService_Link - for Patient Portal only
+                        </p>
+                        <p>Terms of Use page</p>
+                        <p>Resx file: MhsPatientPortal.resx</p>
+                        <p>Keys: TermsOfService_Header_Text</p>
+                        <p>TermsOfService_Body_Html</p>
+                        <p>
+                            <MadCap:variable name="Applications.internal provider site" />
+                        </p>
+                        <p>Footer link</p>
+                        <p>Resx file: MhsProviderPortal.resx</p>
+                        <p>Key: Footer_TermsOfService_Link</p>
+                        <p>Terms of Use page</p>
+                        <p>Resx file: MhsProviderPortal.resx</p>
+                        <p>Keys: TermsOfService_Header_Text</p>
+                        <p>TermsOfService_Body_Html</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Footer link</td>
+                    <td>Consent terms</td>
+                    <td>
+                        <p>
+                            <strong>Optional.</strong> Rules that lead a user through an "I agree" step (the Agreements page). Typically, this is the same as the Terms of Use, and only the Terms of Use and Privacy Policy links appear in the site footer. This link supports organizations that have different Consent and Terms of Use text.</p>
+                    </td>
+                    <td>
+                        <p>
+                            <MadCap:variable name="Applications.patient site" />
+                        </p>
+                        <p>footer link
+</p>
+                        <p>Resx file: MhsPatientPortal.resx
+Key: Footer_ConsentTerms_Link</p>
+                        <p>Consent Terms page
+</p>
+                        <p>Resx file: MhsPatientPortal.resx</p>
+                        <p>Keys: Footer_ConsentTerms_Link
+ConsentTerms_Body_Html
+
+</p>
+                        <p>
+                            <MadCap:variable name="Applications.internal provider site" />
+                        </p>
+                        <p>footer link
+</p>
+                        <p>Resx file: MhsProviderPortal.resx
+</p>
+                        <p>Key: Footer_ConsentTerms_Link
+</p>
+                        <p>Consent Terms page
+</p>
+                        <p>Resx file: MhsProviderPortal.resx
+Keys: ConsentTerms_Header_Text
+ConsentTerms_Body_Html
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>In-page link</td>
+                    <td>Another Agreement</td>
+                    <td>
+                        <p>
+                            <strong>Optional.</strong> You can have multiple links of this type on the agreements page near the user's signature field. For some organizations, this link </p>
+                        <p> ensures that users agree to a privacy policy along with the other consent language. </p>
+                    </td>
+                    <td>
+                        <p>
+                            <MadCap:variable name="Applications.patient site" />
+                        </p>
+                        <p>In-page link
+Resx file: MhsPatientPortal.resx</p>
+                        <p>Key: PatientConsent_PrivacyAgreement_Link_Text
+
+Another agreement page
+</p>
+                        <p>Resx file: MhsPatientPortal.resx
+Keys: AnotherAgreement_Header_Text
+AnotherAgreement_Body_Html</p>
+                        <p>
+                            <MadCap:variable name="HVCCFeature.Provider site" />
+                        </p>
+                        <p>In-page link 
+
+Resx file: MhsProviderPortal.resx</p>
+                        <p>Key: ProviderConsent_PrivaryAgreement_Link_Text
+
+Another agreement page</p>
+                        <p>Resx file: MhsProviderPortal.resx
+
+</p>
+                        <p class="noteInTable">The provider's Another Agreement page links to the Privacy Policy page (which is the first item in this chart).  If you require a separate agreement for this page, create a new pop-up page derived from the pop-up master page and link to this new page.
+</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2011-10-28T11:02:40.7578485-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="add xrefs or delete." MadCap:editor="v-labenn" MadCap:editDate="2011-10-28T11:02:53.3471511-07:00">Tasks</MadCap:annotation><![CDATA[ ]]></p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

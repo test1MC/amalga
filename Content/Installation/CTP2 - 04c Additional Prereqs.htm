@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="5693" MadCap:lastWidth="486" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Additional prerequisites</h1>
+        <p>Beyond hardware and software prerequisites, <MadCap:variable name="BrandingHSG.Amalga Short" /> requires several environmental configurations to function correctly.</p>
+        <h2>Required permissions and access</h2>
+        <p>The user executing the Setup utility requires the following permissions on the target servers.</p>
+        <ul>
+            <li><MadCap:variable name="BrandingMS.Internet Information Services (IIS)"></MadCap:variable> must be enabled for Doors authentication on the server supporting the <MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable>.</li>
+            <li>All operations require administrative permissions on the physical hosts.</li>
+            <li>Application Framework installation requires <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> Farm administrative permissions.</li>
+            <li>Platform Services, Application Services, and Datapipeline Storage installation require the SYSADMIN role in <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable>.</li>
+            <li>Doors Authentication must be enabled in <MadCap:variable name="BrandingMS.SQL Server" />.</li>
+        </ul>
+        <h2>Setup configurable items</h2>
+        <p>Items and settings in the following table are required by the system but can be installed or configured by the Setup utility. No action is required by the administrator. They are listed here so that administrators are aware of the changes made by setup and can avoid reversing required settings.</p>
+        <table style="caption-side: top;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <thead>
+                <tr>
+                    <th>Server type</th>
+                    <th>Configurable items</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Platform servers</td>
+                    <td><MadCap:variable name="BrandingMS.Internet Information Services (IIS)"></MadCap:variable> is enabled<p><MadCap:variable name="BrandingMS.Internet Information Services (IIS)"></MadCap:variable> Doors Authorization is enabled</p><p><MadCap:variable name="BrandingMS.Internet Information Services (IIS)"></MadCap:variable> Version 6 Compatibility is enabled</p></td>
+                </tr>
+                <tr>
+                    <td>Application servers</td>
+                    <td>Same as Platform Servers</td>
+                </tr>
+                <tr>
+                    <td>Data pipeline servers</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Application Framework</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Certificate prerequisites</h2>
+        <p>Many Setup commands require certificate information. The <MadCap:xref href="Install Ref App A Setup Command Reference.htm" target="" title="" alt="">Setup  utility reference</MadCap:xref> contains tables describing the certificate parameters and their associated Setup commands. All certificates should be created and positioned in certificate stores or filed in directories as appropriate prior to beginning any installation procedures.</p>
+        <p>For certificates that require the exporting the public key of a token-signing certificate, see <a href="http://go.microsoft.com/fwlink?LinkID=231135">export public key certificates</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=231135)</MadCap:conditionalText> for the export procedure.</p>
+        <p>The following certificates are required for installation and are identified by a descriptive name and, in parenthesis, by the parameter name used by the Setup utility. Certificate type and relevant notes are included.</p>
+        <p class="h9">ADFS Certificate</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>Can be the same certificate as the Platform services.</li>
+        </ul>
+        <p class="h9">Platform Services (PlatformSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+        </ul>
+        <p class="h9">Application Services (ApplicationSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+        </ul>
+        <p class="h9">Management Console (AdminWebsiteSSLThumbprint)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>Can be the same as the Platform services if the console is installed on the same server.</li>
+        </ul>
+        <p class="h9">HealthVault STS Signing (StsSigningCertWithPrivateKey)</p>
+        <ul>
+            <li>Certificate type: Self-signed certificate</li>
+            <li>Generate a self-signed certificate and save the resulting HVSTSCert.pfx and HVSTSCert.cer in a temporary directory for consumption by Setup.</li>
+        </ul>
+        <p class="h9"><MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> STS Application (StsApplicationSSLCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This can be the same certificate as the <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> website.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as SSLSiteCert.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9"><a name="HealthVaultAppCert"></a>HealthVault Application (HealthVaultAppCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This certificate must be registered with <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> through the AppConfig center and may be created through the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> application manager. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=231137">generating and managing an ApplicationID</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"><a href="http://go.microsoft.com/fwlink?LinkID=231137"> <![CDATA[ ]]></a>(http://go.microsoft.com/fwlink?LinkID=231137)</MadCap:conditionalText> and <a href="http://go.microsoft.com/fwlink?LinkID=231138">creating a private key-public key pair</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=231138)</MadCap:conditionalText>.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as HVApp.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9">HealthVault Public (HealthVaultPublicCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>The root certificate for GTE</li>
+            <li>Required for <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> to make outbound HTTPS connections the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> server</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as HVPPERoot.cer for consumption by Setup. For export instructions of this specific certificate, see <MadCap:xref href="#Export" target="" title="" alt="">Export the  public certificate</MadCap:xref>.</li>
+        </ul>
+        <p class="h9">SharePoint Application (SharePointApplicationSSLCert)</p>
+        <ul>
+            <li>Certificate type: TLS / SSL certificate</li>
+            <li>This can be the same certificate as the <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> website.</li>
+            <li>Export the certificate .pfx file and store it in a temporary directory as SSLSiteCert.pfx for consumption by Setup.</li>
+        </ul>
+        <p class="h9">ADFS Token Signing (AdfsSigningCertPublic)</p>
+        <ul>
+            <li>Certificate type: Self-signed certificate</li>
+            <li>Represents the certificate configured in ADFS to sign tokens</li>
+            <li>Export the certificate .cer file as ADFS.cer  and store it in a temporary directory for consumption by Application Framework Setup. This is only required to configure <MadCap:variable name="BrandingMS.SharePoint"></MadCap:variable> to trust <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable>.</li>
+            <li>By default, this certificate is created during ADFS installation.</li>
+        </ul>
+        <p class="LabelforProcedures">Notes</p>
+        <ul>
+            <li>
+                <p>Many of the certificates listed previously can be the same certificate. For instance, PlatformSSLThumbprint and AdminWebsiteSSLThumbprint (using the Setup parameter names) should be the same certificate if platform services and the management console are installed on the same host. Work with your security specialist to determine the right certificates and locations for your topology. </p>
+                <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable>, ADFS, Platform, and Management Console must be on the same server and use the same certificate.</p>
+            </li>
+            <li>Every client machine needs to have the root certificate of the platforms services box and the application service box. If there is an enterprise CA, these will get propagated automatically to the client boxes.</li>
+        </ul>
+        <h3>Retrieve a certificate Thumbprint</h3>
+        <p>Once certificates are placed in the appropriate certificate store, they can be accessed to find the thumbprint required by Setup commands. The following procedures describe how to access the thumprint.</p>
+        <p class="LabelforProcedures">To open the <MadCap:variable name="BrandingMS.Microsoft"></MadCap:variable> Management Console (MMC)</p>
+        <ol>
+            <li>From Start, search for and start mmc.exe.</li>
+            <li>Click <span class="UIElementAction">File</span>, and then click <span class="UIElementAction">Add/Remove Snap-in</span>.</li>
+            <li>Select <span class="UIElementAction">Certificates </span>from <span class="UIElementAction">Available snap-ins</span>, and then click <span class="UIElementAction">Add</span>.</li>
+            <li>Select <span class="UIElementAction">Computer account</span>, and then click <span class="UIElementAction">Next</span>.</li>
+            <li>Select <span class="UIElementAction">Local computer</span>, and then click <span class="UIElementAction">Finish</span>.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>In the tree pane, expand <span class="UIElementAction">Certificates (Local Computer)</span>.</li>
+        </ol>
+        <p>Once the MMC is open, you can access the certificates and copy the thumbprint.</p>
+        <p class="LabelforProcedures">To copy a certificate thumbprint</p>
+        <ol>
+            <li>In the MMC tree pane, expand the appropriate container node.</li>
+            <li>Click the <span class="UIElementAction">Certificates </span>child node. This displays the certificates in the content pane of MMC.</li>
+            <li>In the content pane, double-click the appropriate private key (.pfx) file.</li>
+            <li>Click the <span class="UIElementAction">Details </span>tab.</li>
+            <li>In the field grid, select the row in which the Field column is set to Thumbprint (generally at the bottom).</li>
+            <li>Copy the value of the Thumbprint field to the Clipboard. The easiest way to do this is to click in the text box under the field grid, press Ctrl+A to select the entire contents of that text box, and then press Ctrl+C.</li>
+            <li>Open Notepad.</li>
+            <li>Paste the value of the Thumbprint field.</li>
+            <li>Remove all spaces (including the leading space, if it exists) from the value.</li>
+            <li>That should leave you with a hexadecimal value that looks something like ‎e263a35eae2a2a271067bc4fef63058e1807ccde.</li>
+            <li>Save the notepad file with an appropriate name for reference during the Setup process.</li>
+        </ol>
+        <h3><a name="Export"></a>Export the <MadCap:variable name="BrandingHSG.HealthVault" /> public certificate</h3>
+        <p class="LabelforProcedures">To export the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> public certificate</p>
+        <ol>
+            <li>
+                <p>Open a browser and navigate to <a href="https://platform.healthvault-ppe.com/">https://platform.healthvault-ppe.com</a>. You will receive a "403-Access is denied" error.</p>
+            </li>
+            <li>In the browser's address bar, click the lock icon and click <span class="UIElementAction">View Certificates</span>.</li>
+            <li>Click the <span class="UIElementAction">Certification</span> tab.</li>
+            <li>Navigate to the root certificate.</li>
+            <li>Export that certificate.</li>
+        </ol>
+        <h2><MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS installation and configuration</h2>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-03T20:49:20.0736699-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I know Keith wrote this and you inherited.   So you get to check the edits &lt;g&gt;.\r\nAlso, this line is set to Persona All but the file tag is set to Carlos. Which is correct?\r\n\r\nAnd the release tag is set to CTP1. Is this topic valid for CTP2? ( It is still in a TOC.) If so, pls change the tag.\r\n\r\nJust so you know, I set the status to Revising and the topic type to Procedure.\r\n\r\nAlso, pls add an index keyword. I''ll shut up now. &lt;g&gt;  For the time being." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T20:56:48.8275408-08:00">This</MadCap:annotation> section contains <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS)" />Active Directory Federation Service (<MadCap:annotation MadCap:createDate="2012-02-03T20:20:08.9312082-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment=" Just in case it is not confusing enough, the old version is AFDS, the recent version (2.0) is AF DS. \r\nI went ahead and changed these since you mention AFDS 2.0 below, and because it is referenced as AF DS 2.0 in MSDN." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T20:33:15.1421864-08:00">ADFS</MadCap:annotation>) installation and configuration information.</p>
+        <p class="caution">Read these important notes before installing or configuring <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS.</p>
+        <ul>
+            <li>An instance of <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS must be present on the server where Platform services will be installed. This instance of must be dedicated to one topology of <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga, It cannot be shared with other <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga topologies, or any other applications such as <MadCap:variable name="BrandingMS.SharePoint" /> sites outside the <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga topology, Exchange, or any other system.</li>
+            <li><MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS must be installed as a federation server.</li>
+            <li>The server where <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS and Platform services are installed must be joined to the <MadCap:variable name="TechnicalTerms.Active Directory (adjective)" /> domain where <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga machine accounts will be maintained.</li>
+        </ul>
+        <p>The following three procedures will install and configure <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS.</p>
+        <p class="LabelforProcedures">To install <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS</p>
+        <ol>
+            <li>Download the <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS from the <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=10909">AD FS download center</a><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=10909">ADFS download center</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=10909)</MadCap:conditionalText>.</li>
+            <li>Install the software using the procedures described in <MadCap:annotation MadCap:createDate="2012-02-03T20:21:33.2582082-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Possibly due to the problems caused by the garage fire, I coudn't access this site. Pls double check." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T20:22:05.3422082-08:00">the </MadCap:annotation><a href="http://technet.microsoft.com/en-us/library/adfs2-deployment-guide(WS.10).aspx">AD FS 2.0 Deployment Guide</a><a href="http://technet.microsoft.com/en-us/library/adfs2-deployment-guide(WS.10).aspx">ADFS 2.0 Deployment Guide</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://technet.microsoft.com/en-us/library/adfs2-deployment-guide(WS.10).aspx)</MadCap:conditionalText> with special attention to the following requirement.<ul><li><MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS <MadCap:annotation MadCap:createDate="2012-02-03T20:42:10.8467515-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This was originally an alpha, lower case, but since there is only a single item in the list, it should be a bullet.\r\nSame with the To prepare IIS proc, which I also changed." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-03T20:48:25.4772108-08:00">must be </MadCap:annotation> installed as a federation server according to the procedures in the guide to <a href="http://technet.microsoft.com/en-us/library/dd807089(WS.10).aspx">Deploying Federation Servers</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://technet.microsoft.com/en-us/library/dd807089(WS.10).aspx)</MadCap:conditionalText>.</li></ul></li>
+            <li>Join the <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS server to the <MadCap:variable name="TechnicalTerms.Active Directory (adjective)" /> domain where <MadCap:variable name="BrandingHSG.Amalga Short" />Amalga machine accounts will be maintained. For more information, see <a href="http://technet.microsoft.com/en-us/library/dd807102(WS.10).aspx">Join a Computer to a Domain</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://technet.microsoft.com/en-us/library/dd807102(WS.10).aspx)</MadCap:conditionalText>.</li>
+        </ol>
+        <p class="caution">It is critical that <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> be configured for <MadCap:variable name="TechnicalTerms.Secure Sockets Layer (SSL)" /> communication before <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" /> configuration.</p>
+        <p class="LabelforProcedures">To prepare <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> for <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS configuration</p>
+        <p class="caution">It is critical that <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> be configured for <MadCap:variable name="TechnicalTerms.Secure Sockets Layer (SSL)" /> communication before ADFS configuration.</p>
+        <ul>
+            <li>
+                <p>A proper SSL certificate must be bound to the <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" /> <![CDATA[ ]]><strong>default </strong>website before configuring <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS. This certificate must have read access for Network Service. For the procedure, see <a href="http://go.microsoft.com/fwlink?LinkID=231414">Import a Server Authentication Certificate to the Default Web Site</a> <![CDATA[ ]]><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">(http://go.microsoft.com/fwlink?LinkID=231414)</MadCap:conditionalText>.</p>
+                <p>You can use an enterprise certificate, or a self-signed certificate. For more information on self-signed certificates, see <a href="http://go.microsoft.com/fwlink?LinkID=231415">Create a Self-Signed Server Certificate</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://go.microsoft.com/fwlink?LinkID=231415)</MadCap:conditionalText>.</p>
+                <p class="note">A corresponding trusted root certificate must be present.</p>
+            </li>
+        </ul>
+        <p class="LabelforProcedures">To configure <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS</p>
+        <ol>
+            <li>Configure <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS using either the Federation Server Configuration Wizard or through the fsconfig.exe command line utility. For the instructions on either method, see <a href="http://technet.microsoft.com/en-us/library/adfs2-help-how-to-configure-a-new-federation-server(WS.10).aspx">Configure a New Federation Server</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (http://technet.microsoft.com/en-us/library/adfs2-help-how-to-configure-a-new-federation-server(WS.10).aspx)</MadCap:conditionalText>.</li>
+            <li>If you intend to support Firefox browsers, turn off "Extended Protection for Authentication" in <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />ADFS.</li>
+        </ol>
+        <p class="h8">See also</p>
+        <p class="Label"><a href="http://social.technet.microsoft.com/wiki/contents/articles/2735.aspx">AD FS 2.0 Content Map</a><a href="http://social.technet.microsoft.com/wiki/contents/articles/2735.aspx">ADFS V2.0 Content Map</a> <![CDATA[ ]]><br MadCap:conditions="Production.PrintOnly" /><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">(http://social.technet.microsoft.com/wiki/contents/articles/2735.aspx)</MadCap:conditionalText></p>
+        <p class="Label">&#160;</p>
+        <p class="Label">&#160;</p>
+        <p class="Label">&#160;</p>
+    </body>
+</html>

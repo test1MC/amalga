@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3484" MadCap:lastWidth="1045" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:23:47.0730276-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T23:25:00.7068696-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="5" MadCap:timestamp="2012-03-12T23:27:45.8965668-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="6" MadCap:timestamp="2012-03-12T23:28:29.7848749-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="7" MadCap:timestamp="2012-03-12T23:28:29.8472753-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2012-03-12T23:32:25.3450709-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Establishing a connection</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the <span MadCap:changes="1" class="codeEntity">AmalgaDbConnection</span> class to establish a connection to a DataConnector instance in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>To connect to <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, instantiate an <span class="ForeignCodeElements">AmalgaDbConnection</span> object, included in <MadCap:variable name="FeatureName.Amalga ADO.NET" />, specifying a valid connection string, and then invoke the <span class="ForeignCodeElements">Open</span> method to establish a connection with an instance of the DataConnector platform application. For more information <a href="../Renamed Me.htm">MyNewTopic</a>about connection strings in <MadCap:variable name="FeatureName.Amalga ADO.NET" />, see <MadCap:xref href="DAT_CON_BuildingConnectionString.htm" target="" title="" alt="">Building a connection string on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Opening" target="" title="" alt="">Opening a connection on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Closing" target="" title="" alt="">Closing a connection on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Integrat" target="" title="" alt="">Integrated security and  on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Opening"></a>Opening a connection</h2>
+        <p>The process of opening a connection in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> differs from that of other data providers. When opening a connection, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> interacts with not just the <span class="ForeignCodeElements">DataConnector</span> platform application, but also with the Topology platform feature. The <span class="ForeignCodeElements">Open</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object performs the following steps when invoked:</p>
+        <ol>
+            <li>
+                <p>Checks for the following states in the <span class="ForeignCodeElements">AmalgaDbConnection</span> object and, if any of them are present, throws an exception:</p>
+                <ul>
+                    <li>The <span class="ForeignCodeElements">ConnectionState</span> property is set to anything other than <span class="ForeignCodeElements">ConnectionState.Closed</span>.</li>
+                    <li>The value of the <span class="ForeignCodeElements">ConnectionString</span> property is set to a null reference or an empty string.</li>
+                    <li>The value of the <span MadCap:changes="4" class="codeEntity">DataSource </span>property is set to a null reference or an empty string.</li>
+                    <li>The value of the <span MadCap:changes="4" class="codeEntity">UserName</span> property is set to a null reference or an empty string.</li>
+                </ul>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:annotation MadCap:createDate="2012-03-04T12:17:59.6475905-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="For some odd reason, this is not yet active. Left in as a reminder, but not included in build just yet. Apparently, you can also use the HTTP protocol, which scares the bejeezus out of me from a security standpoint." MadCap:editor="v-dennk" MadCap:editDate="2012-03-04T12:18:41.4418658-08:00">Confirms that the <MadCap:change MadCap:changes="7">u</MadCap:change><MadCap:change MadCap:changes="6">U</MadCap:change>niform <MadCap:change MadCap:changes="7">r</MadCap:change><MadCap:change MadCap:changes="6">R</MadCap:change>esource <MadCap:change MadCap:changes="7">l</MadCap:change><MadCap:change MadCap:changes="6">L</MadCap:change>ocator (URL) specified for the <span MadCap:changes="5" class="codeEntity">DataSource</span> property uses the HTTPS protocol.</MadCap:annotation>
+            </li>
+            <li>Uses the Topology platform feature to retrieve the Uniform Resource Locator (URL) for the appropriate instance of the DataConnector platform application associated with the value of the <span class="ForeignCodeElements">DataSource</span> property for the <span class="ForeignCodeElements">AmalgaDbConnection</span> object.</li>
+            <li>Creates a new <span class="ForeignCodeElements">DataConnectorClientDataProvider</span> object, which internally manages the <MadCap:variable name="BrandingMS.WCF" MadCap:changes="7" /><MadCap:change MadCap:changes="6">WCF </MadCap:change>client channel for the connection with the DataConnector platform application.</li>
+            <li>Sets the <span class="ForeignCodeElements">ConnectionState</span> property of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object to <span class="ForeignCodeElements">ConnectionState.Connecting</span>.</li>
+            <li>Initializes the <span class="ForeignCodeElements">DataConnectorClientDataProvider</span> object, establishing a connection with the appropriate instance of the DataConnector platform application.</li>
+            <li>If successful, sets the value of the <span class="ForeignCodeElements">ConnectionState</span> property to <span class="ForeignCodeElements">ConnectionState.Open</span> and raises the <span class="ForeignCodeElements">StateChange</span> event. Otherwise, sets the value of the <span class="ForeignCodeElements">ConnectionState</span> property to <span class="ForeignCodeElements">ConnectionState.Closed</span> and throws an exception.</li>
+        </ol>
+        <h2><a name="Closing"></a>Closing a connection</h2>
+        <p>We recommend that you always close a connection when you are finished using it. The <span class="ForeignCodeElements">using</span> block in C# automatically disposes of the connection when the code exits the block, even in the case of an unhandled exception. For more information about the <span class="ForeignCodeElements">using</span> block, see <a href="http://msdn.microsoft.com/library/yh598w02.aspx">using Statement (C# Reference)</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/yh598w02.aspx">http://msdn.microsoft.com/library/yh598w02.aspx</a></MadCap:conditionalText>. You can also use the <span class="ForeignCodeElements">Close</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object to explicitly close the connection. </p>
+        <p class="note">Do not call the <span class="ForeignCodeElements">Close</span> or <span class="ForeignCodeElements">Dispose</span> methods on an <span class="ForeignCodeElements">AmalgaDbConnection</span> object, <span class="ForeignCodeElements">AmalgaDbDataReader</span> object, or any other managed object in the <span class="ForeignCodeElements">Finalize</span> method of your class. In a <MadCap:annotation MadCap:createDate="2012-03-12T23:31:14.4207748-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="is there a more formal term than &quot;finalizer&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:31:31.4307019-07:00">finalizer,</MadCap:annotation> only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a <span class="ForeignCodeElements">Finalize</span> method in your class definition. For more information about finalizers, see <a href="http://msdn.microsoft.com/library/0xy59wtx.aspx">Garbage Collection</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/0xy59wtx.aspx">http://msdn.microsoft.com/library/0xy59wtx.aspx</a></MadCap:conditionalText>.</p>
+        <h2><a name="Integrat"></a>Integrated security and <MadCap:variable name="BrandingHSG.Amalga Short" /></h2>
+        <p><MadCap:variable name="FeatureName.Amalga ADO.NET" /> uses integrated security to provide protection when connecting to <MadCap:variable name="BrandingHSG.Amalga Short" />, as it does not expose a user ID&#160;or password in the connection string. The current security identity, or token, of the executing process is used to provide credentials to <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example demonstrates how to instantiate, open, and dispose of an <span class="ForeignCodeElements">AmalgaDbConnection</span> object. The method retrieves the top 100 records from an application view named Patient and returns a list of <span class="ForeignCodeElements">Patient</span> objects based on those records.</p><pre xml:space="preserve">public IEnumerable&lt;Patient&gt; GetTop100Patients()
+{
+    // Define a List object that will contain a list of Patient objects.
+    List&lt;Patient&gt; patients = new List&lt;Patient&gt;();
+
+    // Instantiate a new AmalgaDbConnection object within a using block, with
+    // a connection string returned by the GetVirtualSchemaConnectionString
+    // method.
+
+    using (AmalgaDbConnection connection = 
+        new AmalgaDbConnection(this.GetVirtualSchemaConnectionString()))
+    {
+        // Read a list of patients from an Amalga ADO.NET connection connected to  
+        // the deployed virtual schema for the hosted application.
+
+        // First, instantiate a new AmalgaDbCommand object.
+        // The object queries an application view named Patient, defined in
+        // virtual schema for the hosted application, and returns the <MadCap:annotation MadCap:createDate="2012-03-12T23:32:46.0070347-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="normally I don't touch the code comments, but here I am." MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:32:59.4615406-07:00">top</MadCap:annotation><MadCap:change MadCap:changes="8">most</MadCap:change>
+        // 100 rows in the application view.
+        AmalgaDbCommand command = new AmalgaDbCommand();
+        command.Connection = connection;
+        command.CommandText =
+                    @" SELECT TOP 100
+                            Patient.PersonID AS PatientID,
+                            Patient.FullName AS Name,
+                            Patient.DateOfBirth AS DateOfBirth
+                            FROM Patient";
+
+        // Write an entry into the diagnostic log providing information that the 
+        // hosted service is about to execute a query.
+        DiagLog.WriteInformation("Application " + 
+            ApplicationConfiguration.InstanceName.ToString() + 
+            " about to query patients");
+
+        // Open the connection and read from deployed virtual schema.
+        try
+        {
+            // Open the connection for the AmalgaDbCommand object.
+            command.Connection.Open();
+
+            // Using the AmalgaDbDataReader object, read information from the 
+            // application view and add it to the list defined earlier in the method.
+            AmalgaDbDataReader amalgaReader = command.ExecuteReader();
+            while (amalgaReader.Read())
+            {
+                // For each row returned by the ExecuteReader method, 
+                // instantiate and populate a new Patient object.
+                Patient p = new Patient();
+                p.PatientID = amalgaReader["PatientID"].ToString();
+                p.Name = amalgaReader["Name"].ToString();
+                p.DateOfBirth = ConvertToDate(amalgaReader["DateOfBirth"].ToString());
+
+                // Add the new Patient object to the list.
+                patients.Add(p);
+            }
+
+            // Write an entry into the diagnostic log providing information 
+            // that the hosted service successfully queried patients.
+            DiagLog.WriteInformation("{0} records read", patients.Count);
+
+        }
+        catch (Exception ex)
+        {
+            // Write an entry into the diagnostic log indicating that an exception
+            // occurred while querying patients, including the exception in the 
+            // diagnostic log entry.
+            DiagLog.WriteException(ex, "Could not read data from the application virtual schema");
+
+            // Write an entry into the Doors event log indicating that an exception
+            // occurred. An administrator can see and monitor this error event in the 
+            // Doors event viewer.
+            EventLog.WriteErrorEntry(10001, "Error occured in application {0}: {1} {2}", ApplicationConfiguration.InstanceName.ToString(), ex.Message, ex.StackTrace);
+        }
+
+    }
+
+    // Return the list of Patient objects.
+    return patients;
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

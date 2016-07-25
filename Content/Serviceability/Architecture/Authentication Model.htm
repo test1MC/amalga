@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.RTM,TopicType.Overview/Introduction,TopicOwner.v-keith,Personas.All,Status.10 - Not in use" MadCap:lastBlockDepth="4" MadCap:lastHeight="826" MadCap:lastWidth="576" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Authentication Model</h1>
+        <p>Authentication Design Objectives</p>
+        <p class="CHANGEME">See SH_AccessControlFramework_UIS_FeatureSpecification_V1</p>
+        <h2>Data Access Objects</h2>
+        <p>The Amalga platform provides two objects that empower administrators to manage access to published data in their organization and developers to build portable applications.</p>
+        <ol>
+            <li>Amalga Entities: managed by Amalga Administrators</li>
+            <li>Application Virtual Schema: Defined by Application Developers</li>
+        </ol>
+        <h3>Entities</h3>
+        <p>An entity is an object that groups ontology elements (concepts) into meaningful structures (for e.g. Patient, LabResults, etc.) uniquely identified by a set of primary keys. Entities and their associations are stored and managed in an Entity Registry. Entities are bound to physical SQL structures (views and tables) in the Amalga database (such as azLABS, azADT, …), from which they publish sets of attributes (or columns), and apply data access for different roles in the organization. Administrators of the system manage role access to Entities based on values of the attributes of these Entities.</p>
+        <p>Entities are grouped together in containers that are uniquely identified by a namespace. Out-of-box, Amalga will ship entities published by Microsoft under “Microsoft.Health” namespace. Per site (in other words, per Amalga installation), the registry can be extended to include entities published by other parties using their own namespace. Microsoft may expand the out-of-box registry over time – new entities can be added and versioned over time in newer versions of the product. The entities published in the registry for a site are visible to all application instances that get installed at that site. An entity in the registry can be uniquely identified using a fully qualified name and its version number. For e.g. Patient entity (with version 1.0) in Microsoft.Health namespace, can be identified uniquely using “Microsoft.Health.Patient.1.0”. The entity containers allow multiple versions to live side by side. Amalga will treat them as two completely different entities.</p>
+        <h3>Virtual Schemas</h3>
+        <p>The goal of the virtual schema is to empower application writers to create portable applications, which will be able to leverage Amalga’s semantic tools to assist the deployment of applications across customer sites using different data schemas.</p>
+        <p>Application’s virtual schema is a map of concepts and their relationships to describe the data model of a specific application. An application virtual schema is defined by a developer as a set of Application Views and their associations, describing the data needed for the application to function.</p>
+        <p>Application views can be of two types.</p>
+        <ol>
+            <li>Read-only application views, allowing read-only access to data from published entities in the entity registry.</li>
+            <li>Read-write applications that provide read-write access to data contained in a private store for a deployed application instance.</li>
+        </ol>
+        <p>Deployed application views must always be bound to a primary entity, whose primary keys contain the set of primary keys of the application view.</p>
+        <p>An application describes its data model using a data manifest, which is an XML document that contains a collection of object definitions and relationships. The properties of these objects are semantically annotated with ontology elements and they will always have a primary key.</p>
+        <p>When a virtual schema is deployed at a given site, the Application Views are bound to the Entities using the semantic information available on each set of objects. An administrator of Amalga will not be able to change a virtual schema, however, he will be able to change the binding of an application’s virtual schema to the entity registry.</p>
+    </body>
+</html>

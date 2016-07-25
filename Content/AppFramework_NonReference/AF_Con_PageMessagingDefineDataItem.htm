@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3069.667" MadCap:lastWidth="938" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-02-27T21:02:47.5000852-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Common context message data</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Message convention"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the structure of data items in the <MadCap:variable name="FeatureName.Amalga Framework" /> common context and their relationship to the HL7 CCOW standard.</p>
+        <p>The common context is a named message group created by each page instance of the Page Messaging System. It is used to communicate persistent information about the clinical context of a user's interaction with a <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> application as the user interacts with page elements and navigates from page to page.</p>
+        <p>In order for an application to participate in the <MadCap:annotation MadCap:createDate="2012-02-27T21:03:10.2264334-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="is it &quot;CommonContext&quot; or &quot;Common Context&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:03:23.3088202-08:00">CommonContext</MadCap:annotation> message group, it must be able to parse the content of the common context. If the application needs to update the common context, it needs to format new messages so that they can be merged <MadCap:change MadCap:changes="3">into </MadCap:change>back into the common context as well.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#HL7" target="" title="" alt="">HL7 CCOW message format on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#CommonCo" target="" title="" alt="">CommonContext message format on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data Item Reference on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="HL7"></a>HL7 CCOW message format</h2>
+        <p>An HL7 CCOW clinical context consists of one or more key-value pairs, each on a separate line.</p>
+        <p>Each line in the shared text of the common context corresponds to a single data item.</p>
+        <p class="note">This section describes the structure of a CCOW clinical context message. As specified in the HL7 CCOW standard, the common context contains key-value pairs in plain text. However, a Page Messaging message payload is stored as a JavaScript     object. The <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.SerializeToCcow</a> and <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.DeserializeFromCcow</a> functions are provided to serialize a Common Context message payload in to CCOW format and back again.</p>
+        <h3>Data item name</h3>
+        <p>The HL7 item name consists of the following parts:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Subject</td>
+                    <td>Identifies the general kind of record to which the data item belongs.</td>
+                    <td>Patient, Encounter</td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td>Specifies how the data item may be used.</td>
+                    <td>
+                        <p>"ID" indicates that the data item uniquely identifies the subject. When a data item with an ID role is merged into the common context, it replaces the existing context, and all dependent contexts are invalidated. Parent contexts are not affected.</p>
+                        <p>"CO" indicates that the data item is corroborative. Corroborative data improves the description of the subject but is not required to identify it.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prefix</td>
+                    <td>Identifies the data item.</td>
+                    <td>"MRN", "Name"</td>
+                </tr>
+                <tr>
+                    <td>Suffix</td>
+                    <td>Optional. The suffix is used when it is possible to have multiple data items with the same name (such as a MRN from more than one institution.)</td>
+                    <td>"Contoso"</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="caution">The HL7 message standard specifies that item names must be case insensitive. However, the Javascript dictionary and JSON parsers used in the page messaging system are case sensitive, so that "Patient.ID"&#160;and "Patient.Id" are treated as different keys. The <span class="codeEntity">getTopic()</span> and <span class="codeEntity">setTopic()</span> helper functions allow common context messages to be sent and received using case insensitive names.</p>
+        <h3>Key syntax</h3>
+        <p>This is the formal syntax for the name of a  CommonContext data item, expressed in BNF format:</p>
+        <p class="code">&lt;Item&gt; : &lt;Subject&gt;”.”&lt;Role&gt;”.”&lt;ItemName&gt;[“.”&lt;OptionalSuffix&gt;]</p>
+        <p class="code">&lt;Subject&gt; : [“[“&lt;W3Cname&gt;”]”]&lt;Name&gt;</p>
+        <p class="code">&lt;ItemName&gt; : [“[“W3Cname”]”]&lt;Name&gt;</p>
+        <p class="code">&lt;OptionalSuffix&gt; : &lt;Name&gt;</p>
+        <p class="code">&lt;Name&gt; : {0-9, A-Z, a-z,_}1[&lt;Name&gt;]</p>
+        <p class="code">&lt;W3Cname&gt; : &lt;Name&gt; [“.”&lt;W3Cname&gt;]</p>
+        <p class="code">&lt;Role&gt; : “ID” | “Id” | “id” | “iD” | “IN” | “In” | “in” | “iN” | “CO” | “Co” | “co” | “cO” | “AN” | “An” | “an” | “aN” | “OU” | “Ou” | “ou” | “oU” | “TO” | “To” | “to” | “tO”</p>
+        <h3>Data item value</h3>
+        <p>The value of each data item is a case-sensitive string.</p>
+        <h3>Example</h3>
+        <p>The following text shows a patient context with three data items. The data items specify the patient name and two institution-specific MRN values:</p><pre xml:space="preserve">Patient.Id.Mrn.Contoso=12-34567</pre><pre xml:space="preserve">Patient.Id.Mrn.Fabrikam=98-76543</pre><pre xml:space="preserve">Patient.Co.Name=John Smith</pre>
+        <h2><a name="CommonCo"></a>CommonContext message format</h2>
+        <p>The content of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> CommonContext message must correspond to the key-value pairs specified <MadCap:annotation MadCap:createDate="2012-02-27T21:05:44.1996443-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="link to section (don't use &quot;above&quot; per MSTP)" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:08:17.1576449-08:00">above</MadCap:annotation>. However, because the object notation used in the JavaScript message supports structured data in the form of nested key-value pairs, the data representing a context message in the payload of a Page Messaging message is stored in a different way.</p>
+        <p>Rather than concatenating the key, item, and subject values into a single dictionary key, the key value of the message payload is simply the name of its subject (for example,  "Patient"). If the subject contains structured data, each child element is stored as an object of its own.</p>
+        <h3>Example</h3>
+        <p>The following JavaScript code describes the same patient as the HL7 data items <MadCap:annotation MadCap:createDate="2012-02-27T21:08:27.8557290-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="link to section" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:08:36.2238060-08:00">above</MadCap:annotation>:</p><pre xml:space="preserve">
+var patientContext =
+    { Patient:
+        { Id:
+            { Mrn:
+                { Contoso: 12-34567 }
+                { Fabrikam: 98-76543 }
+            }
+        }
+        { Co:
+            { Name: John Smith }
+        }
+    };			</pre>
+        <h2><a name="Serializ"></a>Serializing and deserializing CommonContext <MadCap:annotation MadCap:createDate="2012-02-27T21:09:20.2143916-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="MISSING CONTENT?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:09:41.2336323-08:00">messages</MadCap:annotation></h2>
+        <p>&#160;</p>
+        <p>CCOW - case sensitivity</p>
+        <p>[helper functions]</p>
+        <p>8K size limit</p>
+        <p>strings only</p>
+        <p>merging / precedence / the nonpersistence of ID</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h2><a name="Data"></a>Data Item <MadCap:annotation MadCap:createDate="2012-02-27T21:09:03.7393849-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="MISSING CONTENT?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:09:35.1763928-08:00">Reference</MadCap:annotation></h2>
+        <p>Any <MadCap:annotation MadCap:createDate="2012-03-12T21:46:31.3963215-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Ref standard" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T21:46:36.9500639-07:00">HL7 CCOW data item </MadCap:annotation>can be used in the <MadCap:variable name="FeatureName.Amalga Framework second use" /> common context. The following tables provide a partial list of the data items that are used within the <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal pages.</p>
+        <h3>Patient</h3>
+        <p>The Patient clinical context describes a single patient.</p>
+        <table style="width: 100%;caption-side: top;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Role</th>
+                    <th>Prefix</th>
+                    <th>Suffix</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>MRN</td>
+                    <td>AmalgaPersonID</td>
+                    <td>The unique value used to identify the patient within the <MadCap:variable name="BrandingHSG.Amalga Short" /> environment.</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>MRN</td>
+                    <td>(Optional) Institution name or ID</td>
+                    <td>The unique medical record number used to identify the patient within a single institution.</td>
+                </tr>
+                <tr>
+                    <td>CO</td>
+                    <td>Name</td>
+                    <td>none</td>
+                    <td>The name of the patient.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2012-02-27T21:10:20.0054044-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="table MISSING CONTENT?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:10:47.9864000-08:00">Encounter</MadCap:annotation>
+        </h3>
+        <p>The Encounter clinical context describes a single incident of care, such as a patient visit. The Encounter context is dependent upon the Patient context: when the Patient context changes, all data items with an Encounter subject become invalid.</p>
+        <table style="width: 100%;caption-side: top;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Role</th>
+                    <th>Prefix</th>
+                    <th>Suffix [optional]</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>EncounterID</td>
+                    <td>none</td>
+                    <td>The unique value used to identify the encounter within the <MadCap:variable name="BrandingHSG.Amalga Short" /> environment.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Observation</h3>
+        <p>The Observation clinical context describes a single clinical event, such as a laboratory order. The Observation context is dependent upon the Patient context: when the Patient context changes, all data items with an Observation subject become <MadCap:annotation MadCap:createDate="2012-02-27T21:11:00.4852000-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="table MISSING CONTENT?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:11:06.6248000-08:00">invalid.</MadCap:annotation></p>
+        <table style="width: 100%;caption-side: top;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Role</th>
+                    <th>Prefix</th>
+                    <th>Suffix [optional]</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-03-12T21:08:19.9413162-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T21:08:23.8570166-07:00">EncounterID</MadCap:annotation>
+                    </td>
+                    <td>none</td>
+                    <td>The unique value used to identify the observation within the <MadCap:variable name="BrandingHSG.Amalga Short" /> environment.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2012-02-27T21:11:26.7802000-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="table MISSING CONTENT?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T21:11:32.5741000-08:00">User</MadCap:annotation>
+        </h3>
+        <p>The User clinical context describes the current user of the application</p>
+        <table style="width: 100%;caption-side: top;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Role</th>
+                    <th>Prefix</th>
+                    <th>Suffix [optional]</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-03-12T21:22:47.8607130-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="really?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T21:22:51.4800058-07:00">UserID</MadCap:annotation>
+                    </td>
+                    <td>none</td>
+                    <td>The unique value used to identify the user within the <MadCap:variable name="BrandingHSG.Amalga Short" /> environment.</td>
+                </tr>
+                <tr>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingCommonContextHL7CCOW.htm">Common context and HL7 CCOW</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

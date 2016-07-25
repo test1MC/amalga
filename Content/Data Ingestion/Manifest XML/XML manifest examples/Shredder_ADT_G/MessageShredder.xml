@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/windowsworker" Type="WindowsWorker" Name="MessageShredder" InstanceName="MessageShredder_Model_ADT_G" Id="2684661F-AAE0-40C1-9AC9-2D8061CEA8C6" Version="1.0.0.0">
+    <WindowsWorkerManifest HostAssembly="Microsoft.Amalga.Pipeline.MessageShredder.exe" LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="FailOver" />
+    <Settings>
+        <Setting Name="BatchSize" Type="System.Int32">
+            <DefaultValue>250</DefaultValue>
+        </Setting>
+        <Setting Name="IdleSleepSeconds" Type="System.Int32">
+            <DefaultValue>5</DefaultValue>
+        </Setting>
+        <Setting Name="FeedInfoXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<FeedInfo>
+    <Name>ADT.G Feed</Name>
+    <Type>ADT.G</Type>
+    <Provider>MS Internal</Provider>
+    <TerminologyName>Microsoft Beta HL7 V2.X Code</TerminologyName>
+    <PreferenceRanking>100</PreferenceRanking>
+    <PreferredCulture>en-US</PreferredCulture>
+    <DefaultTimeZone>Pacific Standard Time</DefaultTimeZone>
+</FeedInfo>
+                ]]>
+            </DefaultValue>
+        </Setting>
+        <Setting Name="FeedConfigurationXml" Type="System.String">
+            <DefaultValue>
+               <![CDATA[
+<MessageShredderConfiguration>
+    <Segments>
+        <Segment Name="MSH" SourceName="MSH" Description="Message Header" />
+        <Segment Name="PID" SourceName="PID" ParentName="MSH" Description="Person Identification" />
+        <Segment Name="NK1" SourceName="NK1" ParentName="PID" Description="Next of Kin" />
+        <Segment Name="PV1" SourceName="PV1" ParentName="PID" Description="Patient Visit" />
+        <Segment Name="PV2" SourceName="PV2" ParentName="PV1" Description="Patient Visit" />
+        <Segment Name="IN1" SourceName="IN1" ParentName="PV1" Description="Insurance Information" />
+        <Segment Name="GT1" SourceName="GT1" ParentName="PV1" Description="Guarantor" />
+        <Segment Name="DG1" SourceName="DG1" ParentName="PV1" Description="Diagnosis" />
+    </Segments>
+</MessageShredderConfiguration>
+                ]]>
+            </DefaultValue>
+        </Setting>
+        <Setting Name="ShredderPluginConfigurationXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Shredders, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" ClassName ="HL7Shredder">
+    <NameSpace>Microsoft.Amalga.Pipeline.Shredders</NameSpace>
+    <URL>./Microsoft.Amalga.Pipeline.Shredders.dll</URL>
+    <SourceType>FileSystem</SourceType>
+</Plugin>
+                ]]>
+            </DefaultValue>
+        </Setting>
+         <Setting Name="ErrorHandlingConfigurationXml" Type="System.String">
+            <DefaultValue />
+        </Setting>
+        <Setting Name="CustomizedConfigurationXml" Type="System.String">
+            <DefaultValue />
+        </Setting>
+    </Settings>
+</DeploymentManifest>

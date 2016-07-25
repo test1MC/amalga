@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Interacting with VirtualSchema"
+    Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_OVW_Interacting.htm">
+    <TocEntry
+      Title="Working with virtual schemas"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_NAV_VirtualSchemas.htm">
+      <TocEntry
+        Title="Finding a virtual schema instance"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_FindVS.htm" />
+      <TocEntry
+        Title="Finding virtual schema information"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_FindVSInfo.htm" />
+      <TocEntry
+        Title="Creating a virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_CreateVS.htm" />
+      <TocEntry
+        Title="Validating a virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_Validate.htm" />
+      <TocEntry
+        Title="Activating a virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_ActivateVS.htm" />
+      <TocEntry
+        Title="Deleting a virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_DeleteVS.htm" />
+      <TocEntry
+        Title="Confirm the existence of a virtual schema"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_VSExists.htm" />
+      <TocEntry
+        Title="Comparing data manifests"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_ComparingDMs.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with entities"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_NAV_Entities.htm">
+      <TocEntry
+        Title="Finding entities"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_FindEntities.htm" />
+      <TocEntry
+        Title="Creating an entity"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_CreateEntity.htm" />
+      <TocEntry
+        Title="Deleting an entity"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_DeleteEntity.htm" />
+      <TocEntry
+        Title="Updating an entity"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_UpdateEntity.htm" />
+      <TocEntry
+        Title="Getting entity namespaces"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_GetNamespaces.htm" />
+      <TocEntry
+        Title="Setting the defining query table source for an entity"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_SetDefiningQueryTableSource.htm" />
+      <TocEntry
+        Title="Saving a dynamic view"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_SaveDV.htm" />
+      <TocEntry
+        Title="Deleting a dynamic view"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_DeleteDV.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with entity associations"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_NAV_EntityAssoc.htm">
+      <TocEntry
+        Title="Creating an entity association"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_CreateEntityAssoc.htm" />
+      <TocEntry
+        Title="Deleting an entity association"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_DeleteEntityAssoc.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with entity bindings"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_NAV_EntityBindings.htm">
+      <TocEntry
+        Title="Validating a defining query"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_ParseDefiningQuery.htm" />
+      <TocEntry
+        Title="Updating entity bindings"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_UpdateEntityBindings.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with semantic tags"
+      Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_NAV_SemanticTags.htm">
+      <TocEntry
+        Title="Find concepts assigned to entities"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_FindConcepts.htm" />
+      <TocEntry
+        Title="Finding entity association hints using concepts"
+        Link="/Content/Amalga_PlatformSDK/VirtualSchema/VSS_CON_FindAssocHints.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1676" MadCap:lastWidth="730" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-03-12T13:31:01.4655831-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-03-12T13:31:01.4811831-07:00" />
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="3" MadCap:timestamp="2012-03-12T13:31:14.3765831-07:00" MadCap:attribute="class" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="4" MadCap:timestamp="2012-03-12T13:33:06.1643567-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="5" MadCap:timestamp="2012-03-12T13:33:06.1799574-07:00" />
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="7" MadCap:timestamp="2012-03-12T13:34:58.5178434-07:00" MadCap:attribute="MadCap:conditions" MadCap:value="Production.doNOTbuild" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Audit logging</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the architecture and overview of audit <MadCap:annotation MadCap:createDate="2012-03-12T12:18:02.1509382-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Logging is an activity and logger is the software that does the activity?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-12T12:18:28.8197382-07:00">logging</MadCap:annotation> for hosted applications in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides audit logging support, allowing audit log entries to be written to the data host for hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications. Audit logging uses Event Tracing for Doors (ETW) to buffer audit log entries locally, where the Logger platform service can consume the ETW trace messages and then upload them to the data host for storage.</p>
+        <p>Audit logging tracks user actions, such as logging into or out of <MadCap:variable name="BrandingHSG.Amalga Short" />, invoking a service operation from a hosted <MadCap:variable name="BrandingMS.WCF service" />, or updating data. Because audit logging tracks user actions, rather than application actions, audit log entries can have associated audit details to map user actions to application actions, such as running a query.</p>
+        <p MadCap:changes="3" class="Label">
+            <MadCap:change MadCap:changes="2">In this topic</MadCap:change>
+            <MadCap:change MadCap:changes="1">This topic contains the following subsections:</MadCap:change>
+        </p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Architec" target="" title="" alt="">Architecture on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with audit logging on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Architec"></a>Architecture</h2>
+        <p>The following diagram illustrates the logical architecture and data flow for audit logging in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="../Images/LoggerArchitectureAudit.png" />
+        </p>
+        <p>Hosted applications use the AuditLog class, provided by the hosting runtime in the Microsoft.Amalga.Hosting.Service namespace, to write various types of audit log entries to an ETW session. The Logger platform feature then periodically uploads the audit log entries to the <MadCap:variable name="Databases.AmalgaAudit" MadCap:changes="5" /><MadCap:change MadCap:changes="4">AmalgaAudit</MadCap:change> database, maintained by <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <h2><a name="Working"></a>Working with audit logging</h2>
+        <p>Unlike diagnostic logging or performance logging, audit logging is always enabled, to ensure that user actions can be captured and stored in the <MadCap:variable name="Databases.AmalgaAudit" MadCap:changes="5" /><MadCap:change MadCap:changes="4">AmalgaAudit</MadCap:change> database at all times.</p>
+        <p>The AuditLog static object, in the Microsoft.Amalga.Hosting.Service namespace, can be used to write audit log entries to the AmalgaLog database. For more information about writing audit log entries, see <MadCap:xref href="LOG_CON_AuditLog_Writing.htm" target="" title="" alt="">Writing audit log entries on page 1</MadCap:xref>.</p>
+        <p>Once audit log entries have been written to the AmalgaLog database, you can then use Transact-SQL queries to retrieve and analyze the entries. For more information about reading audit log entries, see <MadCap:xref href="LOG_CON_AuditLog_Reading.htm" target="" title="" alt="">Reading audit log entries on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:changes="7">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog_Reading.htm" target="" title="" alt="">Reading audit log entries on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_CON_AuditLog_Writing.htm" target="" title="" alt="">Writing audit log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LOG_OVW_Logger.htm" target="" title="" alt="">Logger on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

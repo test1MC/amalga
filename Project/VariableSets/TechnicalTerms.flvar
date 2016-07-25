@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Default.StyleMaster,Production.StyleMaster">
+  <Variable
+    Name="SMS"
+    Comment="Distribution Manager. SMS. System Management Server.  Client VirtualizationDelivery."
+    Definition="Some text">SMS</Variable>
+  <Variable
+    Name="Secure Sockets Layer (SSL)"
+    Comment="Protocol, Security. Secure Sockets Layer (SSL) First mention"
+    Definition="Some text">Secure Sockets Layer (SSL)</Variable>
+  <Variable
+    Name="Message Queuing"
+    Comment="Protocol. Message Queuing.Second + uses.  Microsoft Message Queuing is a messaging protocol that allows applications running on different servers to have failsafe communications."
+    Definition="Some text">Message Queuing</Variable>
+  <Variable
+    Name="Lightweight Directory Access Protocol"
+    Comment="Protocol. Lightweight Directory Access Protocol (LDAP) First mention"
+    Definition="Some text">Lightweight Directory Access Protocol (LDAP)</Variable>
+  <Variable
+    Name="LDAP"
+    Comment="Protocol. Lightweight Directory Access Protocol. second mention"
+    Definition="Some text">LDAP</Variable>
+  <Variable
+    Name="AD LDS"
+    Comment="Directory Service. AD LDS Second mention"
+    Definition="Some text">AD LDS</Variable>
+  <Variable
+    Name="AD DS"
+    Comment="Directory Service. Abbreviation. Second mention Formerly AD. See Active Directory Domain Services"
+    Definition="Some text">AD DS</Variable>
+  <Variable
+    Name="Active Directory Lightweight Directory Services"
+    Comment="Directory Service. Active Directory Lightweight Directory Services (AD LDS)"
+    Definition="Some text">Active Directory Lightweight Directory Services (AD LDS)</Variable>
+  <Variable
+    Name="Active Directory Domain Services"
+    Comment="Directory Service. Formerly Active Directory"
+    Definition="Some text">Active Directory Domain Services (AD DS)</Variable>
+  <Variable
+    Name="Active Directory (adjective)"
+    Comment="Directory service. Active Directory. Use ONLY as a modifier."
+    Definition="Some text">Active Directory</Variable>
+  <Variable
+    Name="Active Directory Federation Services (AD FS)"
+    Comment="Directory service. Active Directory Federation Services (AD FS). First use."
+    Definition="Some text">Active Directory Federation Services (AD FS)</Variable>
+  <Variable
+    Name="Active Directory Federation Services (AD FS) second use"
+    Comment="Directory service. Active Directory Federation Services (AD FS). second  use."
+    Definition="Some text">AD FS</Variable>
+  <Variable
+    Name="REST"
+    Comment="Protocol. REST. Representational state transfer (REST) is a style of software architecture for distributed hypermedia systems such as the World Wide Web.  (Wikipedia)"
+    Definition="Some text">REST</Variable>
+  <Variable
+    Name="RESTful"
+    Comment="Protocol-related term. Implementations of REST are called RESTful."
+    Definition="Some text">RESTful</Variable>
+  <Variable
+    Name="SOAP"
+    Comment="Protocol. SOAP. originally defined as Simple Object Access Protocol, is a protocol specification for exchanging structured information in the implementation of Web Services in computer networks. (Wikipedia)"
+    Definition="Some text">SOAP</Variable>
+</CatapultVariableSet>

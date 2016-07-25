@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="75" MadCap:lastWidth="638" MadCap:fileTags="EditingTags.1 - Ready for Edit,Personas.All,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-dennk,TopicType.Concept">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Start Command Prompt as an administrator.</p>
+        <p>Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, right-click <span class="UIElementAction">Command Prompt</span>, and then click <span class="UIElementAction">Run as administrator</span>.</p>
+    </body>
+</html>

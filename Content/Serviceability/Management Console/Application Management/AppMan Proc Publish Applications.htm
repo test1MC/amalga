@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="481" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Elvis: App Dev,Personas.Einstein: Lead App Architect,TopicType.Procedure,EditingTags.7 - Editing issues resolved,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Publish an application</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>You can publish an application to the topology by using the Publish-ApplicationInstance      <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet. For more information about the syntax and parameters of this command, see <MadCap:xref href="../../../Installation/Install Ref Appendix B PowerShell Ref.htm#Publish-" target="" title="" alt="">Publish-ApplicationInstance</MadCap:xref>.</p>
+        <p class="note">For information on how to use this cmdlet to install <MadCap:variable name="BrandingHSG.Amalga Short" /> applications, see <MadCap:xref href="../../../Installation/Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref> in the <MadCap:variable name="BrandingHSG.Amalga Short" /> Installation Guide.</p>
+        <p class="LabelforProcedures">To publish an application</p>
+        <ol>
+            <li>Start <MadCap:variable name="BrandingMS.Doors PowerShell" /> as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>
+                <p>Run the following commands to prepare <MadCap:variable name="BrandingMS.Doors PowerShell" />.</p>
+                <p class="InputTextPara">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell'</p>
+                <p class="InputTextPara">Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll
+</p>
+            </li>
+            <li>
+                <p>Run the following command to publish an application. Replace the <span class="Placeholder">placeholders </span>with variables appropriate for your installation.</p>
+                <p class="InputTextPara">Publish-ApplicationInstance -ApplicationCabFile "ApplicationCabPath" -ApplicationAuxiliaryFiles "<span class="Placeholder">AppManifestPath</span>; <span class="Placeholder">ServiceManifestPath1</span>; <span class="Placeholder">ServiceManifestPath2</span>"</p>
+            </li>
+        </ol>
+    </body>
+</html>

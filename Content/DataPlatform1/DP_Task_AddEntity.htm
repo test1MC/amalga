@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1388" MadCap:lastWidth="582" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,Personas.All,ReleaseTarget.TAP,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create entities</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to add entities to the <MadCap:variable name="FeatureName.Amalga entity registry" />. </p>
+        <p>
+            <MadCap:keyword term="entities;entity registry" />
+            <MadCap:annotation MadCap:createDate="2012-03-08T16:43:53.9252648-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic complete when xrefs are added as relevant" MadCap:editor="v-padenc" MadCap:editDate="2012-03-08T16:44:02.2969388-08:00">You </MadCap:annotation>can  extend the data model or develop a new data model by creating entities. For example, a new application may require data not yet referenced by the <MadCap:variable name="FeatureName.Amalga entity registry" />. In such a case, new entities are needed. </p>
+        <p class="note">To access data through a new entity, you must bind the entity to storage schema and define access policies for desired <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. For more information, see <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref> and <MadCap:xref href="DP_Task_ConfigEntityAccess.htm" target="" title="" alt="">Grant permissions to an entity (add an access rule)</MadCap:xref>. </p>
+        <p class="LabelforProcedures">To create an entity</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>To create an entity in a new namespace, do the following:&#160;<ol style="list-style-type: lower-alpha;"><li><MadCap:snippetText src="../Serviceability/Snippets/procst-click-AmEntReg.flsnp" /> <![CDATA[ ]]></li><li><p><MadCap:snippetText src="../Serviceability/Snippets/procst-click-create-ent.flsnp" /></p><p><MadCap:snippetText src="../Serviceability/Snippets/procre-click-create-ent.flsnp" /></p><p>For field descriptions,  see <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_NewEntity.htm" target="" title="" alt="">New Entity dialog box</MadCap:xref>. </p></li><li><p>In the Namespace field, enter the desired name for the new namespace. </p><p class="note"> Do not specify an existing namespace after following the above step. Doing so may cause errors. If you want to create an entity in an existing namespace, see the step for doing so later in this procedure. </p></li><li> In the Entity Name field, enter the desired entity name. </li><li><MadCap:snippetText src="../Serviceability/Snippets/procst-clickManageTags-entity.flsnp" /></li></ol></li>
+            <li>To create an entity in an existing namespace, do the following:&#160;<ol style="list-style-type: lower-alpha;"><li><MadCap:snippetText src="../Serviceability/Snippets/procst-click-namespace.flsnp" /> <![CDATA[ ]]></li><li><p><MadCap:snippetText src="../Serviceability/Snippets/procst-click-create-ent.flsnp" /></p><p><MadCap:snippetText src="../Serviceability/Snippets/procre-click-create-ent.flsnp" /></p><p>For field descriptions,  see <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_NewEntity.htm" target="" title="" alt="">New Entity dialog box</MadCap:xref>. </p></li><li> In the Entity Name field, enter the desired entity name. </li><li><MadCap:snippetText src="../Serviceability/Snippets/procst-clickManageTags-entity.flsnp" /></li><li>Click <span class="UIElementAction">OK</span>&#160;to save each new property. </li></ol></li>
+            <li>Add one or more properties to the new entity. 
+				<p class="note">Each entity must include a single primary key property. </p><ol style="list-style-type: lower-alpha;"><li><p>In the Property Details toolbar, click Add. </p><p>For field descriptions,  see <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_NewEntity.htm" target="" title="" alt="">New Entity dialog box</MadCap:xref>. </p></li><li><p>In the Property Name field, enter the desired property name. </p></li><li>Specify the property data type, indicate whether or not the property is a primary key property, and specify whether or not NULL values are allowed. </li><li><MadCap:snippetText src="../Serviceability/Snippets/procst-clickManageTags-prop.flsnp" /> <![CDATA[ ]]></li><li>Click <span class="UIElementAction">OK</span> to save each new property. </li></ol></li>
+            <li>Click <span class="UIElementAction">Save Entity</span> to save changes and close the <MadCap:variable name="UI-Labels.New Entity" /> dialog box. </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="DP_Task_EntityTagsEdit.htm" target="" title="" alt="">Apply semantic tags to entities</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Task_DeleteEntity.htm" target="" title="" alt="">Delete entities</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Task_EditEntity.htm" target="" title="" alt="">Edit entities</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_NewEntity.htm" target="" title="" alt="">New Entity dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_SemanticTags.htm" target="" title="" alt="">Semantic Tags dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2012-03-08T16:43:17.2249262-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="add xrefs:\r\n- entity registry (Dennis)" MadCap:editor="v-padenc" MadCap:editDate="2012-03-08T16:43:26.3597528-08:00">Concepts</MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_CON_module-EntityManagement.htm" target="" title="" alt=""> module</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+    </body>
+</html>

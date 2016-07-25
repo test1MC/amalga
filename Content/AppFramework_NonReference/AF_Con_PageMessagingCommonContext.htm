@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,EditingTags.4 - Ready for Writer,ReleaseTarget.TAP,Status.10 - Not in use" MadCap:ignoredWords="HL7" MadCap:lastBlockDepth="6" MadCap:lastHeight="831" MadCap:lastWidth="629" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="22" MadCap:timestamp="2012-02-27T20:27:18.7583299-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="23" MadCap:timestamp="2012-02-27T20:27:29.1121919-08:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="24" MadCap:timestamp="2012-02-27T20:27:45.0479290-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="25" MadCap:timestamp="2012-02-27T20:34:05.6253152-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="26" MadCap:timestamp="2012-02-27T20:35:19.2128703-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="27" MadCap:timestamp="2012-02-27T20:35:39.5851167-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="28" MadCap:timestamp="2012-02-27T20:40:39.8657583-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="29" MadCap:timestamp="2012-02-27T20:41:35.4849646-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Common context</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Page Messaging;Common Context;Clinical context;CCOW"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the <MadCap:variable name="FeatureName.Amalga Framework" /> common context as a participant in the <MadCap:annotation MadCap:createDate="2012-02-27T20:24:38.4157466-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="in AF_Con_PageMessagingBestPractices, it's &quot;page messaging system&quot;. Which should it be?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T20:26:32.5705734-08:00">Page Messaging System</MadCap:annotation>.</p>
+        <p>The common context is a named messaging group created by each page instance of the Page Messaging System and used to communicate persistent clinical context information. </p>
+        <p><span MadCap:changes="23" class="Label">In t</span><span MadCap:changes="22,24" class="Label">T</span><span MadCap:changes="24" class="Label">his topic</span> <![CDATA[ ]]><MadCap:change MadCap:changes="22">contains the following subsections:</MadCap:change></p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Overview" target="" title="" alt="">Overview on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data item definition on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Particip" target="" title="" alt="">Participant survey on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Message" target="" title="" alt="">Message merging on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the common context on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Overview"></a>Overview</h2>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-11-30T00:33:09.1880644-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="do you need to repeat this sentence (see above)?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:33:28.6190073-08:00">The "common context" is a part of the Page Messaging System that is used to communicate persistent clinical context information.</MadCap:annotation>
+        </p>
+        <p>It is composed of a named messaging group, and a client<MadCap:change MadCap:changes="22"> <![CDATA[ ]]></MadCap:change>side representation of the merged messages that have been sent to that group. Each page instance of the Page Messaging System maintains a special object (<b>PageMessagingServiceClient</b>, <MadCap:annotation MadCap:createDate="2011-11-30T00:40:07.3024129-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="add link instead?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:40:12.5834129-08:00">described below</MadCap:annotation>) which handles local messages sent to the group and merges them with the existing context. Different page instances within a single browser window use the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService </a>to synchronize their local context with the context maintained by the web service, and thus with each other.</p>
+        <p>From the perspective of a messaging participant, the common context is a single shared string value that contains a list of key-value pairs and persists from one page to the next as a user navigates within an <MadCap:variable name="BrandingHSG.Amalga Short" /> portal site. Its operation is mostly transparent to individual controls.</p>
+        <h3>Clinical context</h3>
+        <p>"Clinical context" is information about the state of a user’s interaction with healthcare applications for a specific clinical process or event.  A common clinical context allows multiple <MadCap:annotation MadCap:createDate="2011-11-28T18:09:01.5283552-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="are &quot;participants&quot; the same as &quot;user&quot; here?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T18:09:17.9639552-08:00">participants</MadCap:annotation> to coordinate their selection and presentation of data, so that choices made by the user while interacting with one application can be applied immediately by other applications.</p>
+        <p>Clinical context can include any information that is relevant to the clinical task at hand. Common examples include:</p>
+        <ul>
+            <li>The ID of the patient who is the focus of the current task</li>
+            <li>The ID of the clinical event or encounter with which the user is engaged</li>
+            <li>A specific time or range of times that specify a period for which clinical data is relevant to the user</li>
+            <li>A grouping of patients, personnel, or clinical resources that the user will manage or inspect</li>
+            <li>The ID of the individual who is using the application</li>
+        </ul>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework" />supports clinical context management with the Page Messaging System, a primarily client-side messaging system that also uses a Web service to synchronize application states across process boundaries that the client-side messaging API cannot cross.</p>
+        <h3>Context management and HL7 CCOW</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework" /> context management system is designed to conform to the Context Management Standard specifications published by the Health Level Seven Clinical Context Object Workgroup, collectively called the HL7 CCOW.</p>
+        <p>For more information about the CCOW standard and best practices, see the <a href="http://go.microsoft.com/fwlink?LinkId=234245">HL7</a> website.</p>
+        <h3>Common context message group</h3>
+        <p>The common context is a named messaging group created by each page instance of the Page Messaging System. The content of the common context is a string value associated with a session ID, <MadCap:change MadCap:changes="25">along </MadCap:change>with an optional version string.  The version and session ID are managed by the page messaging system, so from the perspective of a messaging participant, the common context is a single shared string value that contains a <MadCap:change MadCap:changes="26">JavaScript Object Notation (</MadCap:change>JSON<MadCap:change MadCap:changes="26">)</MadCap:change><MadCap:change MadCap:changes="27"> <![CDATA[ ]]></MadCap:change>representation of a list of key-value pairs. The value of the list persists from one page to the next as a user navigates within an <MadCap:variable name="BrandingHSG.Amalga Short" /> portal site.</p>
+        <p>The common context is synchronized with the back-end server using a specialized object, <b>PageMessagingServiceClient</b>, which joins the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService </a>as a CommonContext participant.  <b>PageMessagingServiceClient</b> reads the local context and sends update messages in the same way as any other messaging participant. Its operation is mostly transparent to individual controls.</p>
+        <h2><a name="Data"></a>Data item definition</h2>
+        <p>Each line in the shared text of the common context is a key-value pair that corresponds to a single data item.</p>
+        <p class="note">This section describes the structure of a CCOW clinical context message. As specified in the HL7 CCOW standard, the common context contains key-value pairs in plain text. However, a Page Messaging message payload is stored as a JavaScript     <span class="Label">Dictionary</span>. The <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.SerializeToCcow</a> and <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.DeserializeFromCcow</a> functions are provided to serialize a Common Context message payload in to CCOW format and back again.</p>
+        <h3>Item key</h3>
+        <p>Informally, the key value corresponds to the name of the data item, expressed in the following format:</p>
+        <p class="code">subject_label.role.name_prefix.optional_name_suffix</p>
+        <p>For example, if the key value is "Patient.Id.Mrn", the item name is "Mrn", its role is "Id", and its subject is "Patient".</p>
+        <p class="note">Unless otherwise specified, the value of an Item key is not case-sensitive.</p>
+        <h3>Key syntax</h3>
+        <p>This is the formal syntax for the key value of a  CommonContext data item, expressed in BNF format:</p>
+        <p class="code">&lt;Item&gt; : &lt;Subject&gt;”.”&lt;Role&gt;”.”&lt;ItemName&gt;[“.”&lt;OptionalSuffix&gt;]</p>
+        <p class="code">&lt;Subject&gt; : [“[“&lt;W3Cname&gt;”]”]&lt;Name&gt;</p>
+        <p class="code">&lt;ItemName&gt; : [“[“W3Cname”]”]&lt;Name&gt;</p>
+        <p class="code">&lt;OptionalSuffix&gt; : &lt;Name&gt;</p>
+        <p class="code">&lt;Name&gt; : {0-9, A-Z, a-z,_}1[&lt;Name&gt;]</p>
+        <p class="code">&lt;W3Cname&gt; : &lt;Name&gt; [“.”&lt;W3Cname&gt;]</p>
+        <p class="code">&lt;Role&gt; : “ID” | “Id” | “id” | “iD” | “IN” | “In” | “in” | “iN” | “CO” | “Co” | “co” | “cO” | “AN” | “An” | “an” | “aN” | “OU” | “Ou” | “ou” | “oU” | “TO” | “To” | “to” | “tO”</p>
+        <h3>Item value</h3>
+        <p>The content of a context message must correspond to the key-value pairs specified above. However, because the <span class="Label">Dictionary</span> used in the JavaScript message supports structured data in its <span class="Label">Value</span> field, the data representing a context message in the payload of a Page Messaging message is stored in a different way.</p>
+        <p>Rather than concatenating the key, item, and subject values into a single dictionary key, the key value of the message payload is simply the name of its subject (for example,  "Patient"). If the subject contains structured data, each child element is stored as a <span class="Label">Dictionary</span> of its own.</p>
+        <p>For example, the following JavaScript code describes a patient with a hospital-specific MRN:</p><pre xml:space="preserve">
+var patient =
+    { "Patient":
+        { "Id":
+            { "Mrn":
+                { "HospitalSpecific" : 123}
+            }
+        }
+    };			
+		</pre>
+        <h2><a name="Particip"></a>Participant survey</h2>
+        <p>By default, every update message sent by a  <a href="#">Common Context</a> participant is applied to the common context automatically.    The common context is intended to reflect recent user activity, and applications that use the common context should be implemented with the understanding that the context may be changed by another participant at any time.</p>
+        <p>However, there are situations where an immediate context update could result in data loss or  other unsafe condition.  Participants that may encounter such situations should specify a <b>surveyCallback</b> callback function--that is, they should pass a non-null survey callback argument when they join the common context group.   Whenever the message queue processes an update to the common context, it polls the <b>surveyCallback</b> function of each  <a href="#">Common Context</a> participant to determine whether or not it is safe to proceed.</p>
+        <p>The message queue assumes that any non-null response to a survey callback is a message to the user explaining the potential<MadCap:change MadCap:changes="28">ly</MadCap:change> adverse consequences of a context update.  The messaging system collects all such messages and displays them in a dialog box, giving the user the option to cancel the context change or allow it to continue.</p>
+        <h2><a name="Message"></a>Message merging</h2>
+        <p>Every message that passes the participant survey is committed to the common context.  Since the common context can store messages of many different types, it is unusual for a single message to replace its entire content.  In all other cases, the message content must be merged into the common context.</p>
+        <p>In general, when an update specifies a specific element (for example, "Patient.Id.Mrn") the merge replaces the line in the common context whose key value directly corresponds to the specified name, and leaves the rest of the context unchanged.</p>
+        <p>There are two cases where the merge affects content in the common context other than the line specified by the element name: when the name specifies the root of a structured data element, and when the common context includes elements that have a dependency on the specified element.</p>
+        <p class="note">Messages sent to groups other than the Common Context group are not merged with the common context.</p>
+        <h3>Structured subjects</h3>
+        <p>When an update specifies an element with children (<MadCap:change MadCap:changes="28">for example,</MadCap:change><MadCap:change MadCap:changes="29">e.g.</MadCap:change> “Patient”), the update will replace all of its child elements as well as the element itself.</p>
+        <h3>Subject dependency</h3>
+        <p>Some context updates may require changes to context elements that are outside the scope of a named element and its children.  For example, a change to the “Patient” element indicates that the user has switched to a new patient, and context information about clinical events associated with the previous patient is no longer valid and should be removed.  To the messaging system, the clinical event context is dependent upon the patient context.</p>
+        <p>There are six predefined dependencies among the CCOW subjects:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Subject</th>
+                    <th>Dependency</th>
+                </tr>
+                <tr>
+                    <td>Encounter </td>
+                    <td>Patient</td>
+                </tr>
+                <tr>
+                    <td>Observation </td>
+                    <td>
+                        <p>Patient</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DICOMStudy </td>
+                    <td>Patient</td>
+                </tr>
+                <tr>
+                    <td>DICOMStudyComponent </td>
+                    <td>DICOMStudy</td>
+                </tr>
+                <tr>
+                    <td>DICOMSeries </td>
+                    <td>DICOMStudyComponent</td>
+                </tr>
+                <tr>
+                    <td>DICOMInstance </td>
+                    <td>DICOMSeries</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Additional dependencies can be defined using the <a href="AF_Con_API_PageMessaging.htm#SubjectDependencyResolver">SubjectDependencyResolver</a> functions.</p>
+        <h2><a name="Using"></a>Using the common context</h2>
+        <p>The Page Messaging System API includes several members that make the common context easier to use.</p>
+        <h3>Joining the common context message group</h3>
+        <p>Joining the common context group requires the following steps:</p>
+        <ul>
+            <li>Create a new <a href="AF_Con_API_PageMessaging.htm#Participant">Participant</a> object.</li>
+            <li>Create a <span class="Label">MessageSurveyCallback</span> function. This function is called each time a message is sent to the common context. If there are any conditions in the application environment that would make it unsuitable to merge a new message into the common context, the survey callback will need to detect them and return a friendly warning message (as a string) if necessary.</li>
+            <li>Create a <span class="Label">MessageReceiveCallback</span> function. This function is called whenever a message passes the survey and is merged into the common context. It is possible to process the message directly, but it is better practice to read and use the merged content (see <MadCap:annotation MadCap:createDate="2011-11-30T00:45:34.1114129-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="provide link?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:45:38.8414129-08:00">below</MadCap:annotation>.)</li>
+            <li>Call <a href="AF_Con_API_PageMessaging.htm#MessagingManager">MessagingManager.get_CommonContext()</a> to retrieve the name of the CommonContext group.</li>
+            <li>Call <a href="AF_Con_API_PageMessaging.htm#Participant">Participant.Join()</a> with the group name, receive callback, and survey callback to join the CommonContext group.</li>
+        </ul>
+        <p class="caution">A participant in the common context, like any other group, should explicitly <a href="AF_Con_API_PageMessaging.htm#Participant">Leave()</a> the group if it stops participating before its host page is closed.</p>
+        <h3>Reading and changing the common context</h3>
+        <p>A <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext</a> object provides a structured description of a HL7 CCOW context message, along with some helper functions for serializing and deserializing CCOW data.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-27T20:51:32.5965080-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="style as procedure (label, numbered steps)?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T20:52:08.9241982-08:00">To</MadCap:annotation> retrieve a <span class="Label">ClinicalContext</span> object that describes the current context (in a <span class="Label">MessageReceiveCallback</span> function, for example):</p>
+        <ul>
+            <li> Call <a href="AF_Con_API_PageMessaging.htm#MessagingManager">MessagingManager.get_CurrentContext()</a>. </li>
+            <li>The <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">Payload</a> property of the returned context object contains the key-value pairs of the original CCOW message, deserialized into a <span class="LabelCShrp">Dictionary</span> for convenient retrieval.</li>
+            <li>If there is no need to package the context for external consumption, the context key-value pairs can be retrieved directly from the <span class="LabelCShrp">Dictionary</span> with no additional processing. However, the <span class="LabelCShrp">Dictionary</span> is not CCOW-compliant and should not be used to communicate context to external applications. <MadCap:annotation MadCap:createDate="2011-11-30T00:46:42.5074129-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make a Note?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:46:46.8564129-08:00">To create a CCOW-compliant context string from the <span class="LabelCShrp">Dictionary</span>, pass the <span class="Label">Dictionary </span>in to the <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.serializeToCcow()</a>&#160;helper function.</MadCap:annotation></li>
+        </ul>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-27T20:51:53.0512148-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="style as procedure (label, numbered steps)?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-27T20:52:14.4668430-08:00">To</MadCap:annotation> send an update to the clinical context, using a CCOW-compliant string:</p>
+        <ul>
+            <li>Call the <a href="AF_Con_API_PageMessaging.htm#ClinicalContext">ClinicalContext.DeserializeFromCcow()</a> function to convert the CCOW message into a <span class="Label">Dictionary</span> containing the equivalent key/value pairs.</li>
+            <li>Call <a href="AF_Con_API_PageMessaging.htm#Participant">Send</a> with the name of the Common Context group, the <span class="Label">Dictionary</span>, and a <span class="Label">SendCompleteCallback</span> delegate. </li>
+            <li>The delegate will be called with a <a href="AF_Con_API_PageMessaging.htm#MessageSendResult">MessageSendResult</a> value that indicates whether or not the context survey completed successfully. If the survey did not complete successfully, the message has not been merged into the common context.</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingParts.htm">The Page Messaging system</a>
+        </p>
+        <p class="SeeAlsoSubHead">Other resources</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234245">HL7 Clinical Context Object Workgroup</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="922" MadCap:lastWidth="366" MadCap:fileTags="TopicOwner.v-keith,ReleaseTarget.CTP1,TopicType.Procedure,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Deploy the virtual schema</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>You can deploy an application's virtual schema to your topology by using the <MadCap:xref href="../../../Installation/Install Ref Appendix B PowerShell Ref.htm#New-Virt" target="" title="" alt="">New-VirtualSchema</MadCap:xref> <![CDATA[  ]]><MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet. For more information on the syntax and parameters of this command, see <MadCap:xref href="../../../Installation/Install Ref Appendix B PowerShell Ref.htm#New-Virt" target="" title="" alt="">New-VirtualSchema</MadCap:xref>.</p>
+        <p class="note">For information on how to use this cmdlet in the context of installing <MadCap:variable name="BrandingHSG.Amalga Short" /> applications, see <MadCap:xref href="../../../Installation/Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref> in the <MadCap:variable name="BrandingHSG.Amalga Short" /> Installation Guide.</p>
+        <p class="LabelforProcedures">To deploy a virtual schema</p>
+        <ol>
+            <li>Start Doors PowerShell as an administrator.&#160;Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then right-click <span class="UIElementAction">Doors PowerShell</span> and click <span class="UIElementAction">Run as Administrator</span>.</li>
+            <li>
+                <p>Run the following commands to prepare <MadCap:variable name="BrandingMS.Doors PowerShell" />.</p>
+                <p class="InputTextPara">cd 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell'</p>
+                <p class="InputTextPara">Import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll
+</p>
+            </li>
+            <li>
+                <p>Run the following command to change a feature setting. Replace the <span class="Placeholder">placeholders </span>with variables appropriate for your installation.</p>
+                <p class="InputTextPara">New-AmVirtualSchema -ApplicationInstanceName "<span class="Placeholder">AppInstanceName</span>" -DataHostInstanceName "<span class="Placeholder">DbServerInstance</span>"</p>
+            </li>
+        </ol>
+        <p class="caution">After deploying the application virtual schema you may receive a warning similar to the following warning:<br /><br /><MadCap:annotation MadCap:createDate="2011-10-25T00:16:32.7440023-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I guess we need a message/warning style?  I  remove the &quot;code&quot; style and  the 'style=&quot;font-size: 9pt;&quot;' -- the latter being inline style.  If we are going to use somthing to distinguish t he message, I'd rather everyone use the same style." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-25T00:20:43.8160023-07:00">WARNING</MadCap:annotation>: Virtual schema created but there are entities that are not bound to the store. Application queries will not work till these are bound.<br /><br />For information on how to bind the entities, <MadCap:annotation MadCap:createDate="2012-01-04T07:53:39.0131169-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="FYI. Changed xref to point to an overview topic; the previous topic is being retired." MadCap:editor="v-padenc" MadCap:editDate="2012-01-04T07:53:42.8975053-08:00">see</MadCap:annotation> <![CDATA[ ]]><MadCap:xref href="../../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>.</p>
+    </body>
+</html>

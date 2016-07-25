@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP" MadCap:lastBlockDepth="8" MadCap:lastHeight="661.3334" MadCap:lastWidth="576">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Audit table</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-23T14:37:13.7999342-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="index entry?" MadCap:editor="v-labenn" MadCap:editDate="2011-09-23T14:37:18.2459912-07:00">Auditing</MadCap:annotation> data are stored in the AmalgaAudit database in two tables. Following are the column names, null status, and description of the Audit.Audit table. For the auditing details table, see <MadCap:xref href="Serv Ref Audit Detail Logging Schema.htm" target="" title="" alt="">Audit detail logging</MadCap:xref>.</p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Column name</th>
+                    <th>Nullable</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AuditId</td>
+                    <td>False</td>
+                    <td>A unique identifier of the audit entry.</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>False</td>
+                    <td>A time-zone-aware date/time stamp. The field type is “datetimeoffset”. The time stored is UTC. UTC time is absolute and does not change with daylight saving time.</td>
+                </tr>
+                <tr>
+                    <td>UserId</td>
+                    <td>False</td>
+                    <td>The user identification associated with the audit entry.</td>
+                </tr>
+                <tr>
+                    <td>OperationStatus</td>
+                    <td>False</td>
+                    <td>The status of the operation being audited.
+						<ul><li>Success</li><li>Failed</li><li>Unauthorized</li><li>ResourceNotFound</li><li>InvalidRequest</li></ul></td>
+                </tr>
+                <tr>
+                    <td>OperationType</td>
+                    <td>False</td>
+                    <td>The type of the operation being audited.
+						<ul><li>ViewData</li><li>UpdateData</li><li>Service</li></ul></td>
+                </tr>
+                <tr>
+                    <td>Operation</td>
+                    <td>False</td>
+                    <td>The name of the operation being audited.</td>
+                </tr>
+                <tr>
+                    <td>DeviceName</td>
+                    <td>True</td>
+                    <td>The readable name of the client device.</td>
+                </tr>
+                <tr>
+                    <td>DeviceIPAddress</td>
+                    <td>True</td>
+                    <td>The IP address of the client device.</td>
+                </tr>
+                <tr>
+                    <td>IsFromTrustedSource</td>
+                    <td>False</td>
+                    <td>A binary field that specifies whether the audited operation originated from a trusted source.</td>
+                </tr>
+                <tr>
+                    <td>IsFromPlatformService</td>
+                    <td>False</td>
+                    <td>A binary field that specifies whether the audited operation originated from a platform service.</td>
+                </tr>
+                <tr>
+                    <td>LinkedAuditId</td>
+                    <td>True</td>
+                    <td>Points to the master audit entry that relates to this entry</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

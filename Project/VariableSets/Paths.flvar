@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet conditions="Default.StyleMaster,Production.StyleMaster">
+    <Variable Name="Main Registry Key" Comment="The main registry key for Amalga UIS." Definition="Some text">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Amalga\2.0</Variable>
+    <Variable Name="WebServicePath" Comment="Per Alex Yu, 8/24/2009 correspondence with Pamela Denchfield" Definition="Some text">C:\inetpub\wwwroot\Microsoft Amalga\2.0\</Variable>
+</CatapultVariableSet>

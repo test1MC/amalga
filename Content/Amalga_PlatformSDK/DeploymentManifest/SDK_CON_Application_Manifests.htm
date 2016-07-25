@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1371" MadCap:lastWidth="420" MadCap:fileTags="TopicType.Concept,Personas.Elvis: App Dev,TopicOwner.v-dennk,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Application manifests</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="application manifests;application identity;configuration settings;application authorization;application dependencies" />This topic describes the application manifest, an XML file that contains the application-specific metadata for a hosted application.</p>
+        <p>All hosted applications must contain an application manifest. An application manifest is an XML file, named AmalgaApplication.xml, that contains elements and attributes from the deployment manifest XML schema. For more information about the deployment manifest XML schema, see <MadCap:xref href="SDK_XML_Manifest.htm" target="" title="" alt="">Deployment Manifest XML&#160;Reference on page 1</MadCap:xref>.</p>
+        <p>The application manifest is edited by a developer building a hosted application. It contains the metadata required by the <MadCap:variable name="FeatureName.Amalga fabric first use" /> to host the application. The application manifest is organized around four sections, which provide the following information to the <MadCap:variable name="FeatureName.Amalga fabric first use" /> when an instance of the hosted application is debugged, deployed, or managed:</p>
+        <ul>
+            <li>
+                <p>Application instance identification</p>
+                <p>The application manifest contains the name, version, and unique identifier of the hosted application. Once resolved, the application manifest also contains the unique name of the specific deployed instance of the hosted application. Multiple instances of the same hosted application or hosted service can be supported on a single target topology.</p>
+            </li>
+            <li>
+                <p>Configuration settings</p>
+                <p>Included in the application manifest, configuration settings provide application-specific variables that can be used to change the behavior of a hosted application. On deployment, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> automatically creates a configuration store, for an administrator to manage the settings of a hosted application, and a page in the Amalga Management Console to manage these settings for the deployed instance of that hosted application. If default values are included, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> applies those values to the settings in the configuration store during deployment. If validation rules are included, the <MadCap:variable name="FeatureName.Management Console second use" /> applies those rules when changing the values for those settings.</p>
+            </li>
+            <li>
+                <p>Application dependencies</p>
+                <p>During deployment, the <MadCap:variable name="FeatureName.Amalga fabric first use" /> uses the application dependencies declared in the application manifest to confirm that other applications on which this hosted application may depend are present on the target topology. For more information about application dependencies, see <MadCap:xref href="../SDK_CON_Application_Dependencies.htm" target="" title="" alt="">Application dependencies on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Authorization model</p>
+                <p>The authorization model describes all of the authorizable resources introduced by the hosted application, as well as the access levels required for a user to interact with a given resource.</p>
+            </li>
+        </ul>
+        <p class="note">No binaries can be added to the application manifest at design time.</p>
+        <p>In addition, the application manifest can store the test configuration used by the developer while debugging the hosted application in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Edit_AppSvc_Manifest.htm" target="" title="" alt="">Edit an application manifest or service manifest on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest.htm" target="" title="" alt="">Deployment Manifest XML&#160;Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_Service_Manifests.htm" target="" title="" alt="">Service manifests on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Deploy_Test_Dev.htm" target="" title="" alt="">Debugging a hosted application on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

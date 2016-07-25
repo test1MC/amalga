@@ -1,0 +1,23 @@
+﻿
+th.AppliesTo
+{
+	text-align: right;
+	vertical-align: middle;
+	background-color: #0000ff;
+	font-size: 10pt;
+	font-family: Calibri;
+	color: #ffffff;
+	padding-right: 5px;
+	border-left-style: none;
+	border-left-width: 0pt;
+	border-left-color: #808080;
+	border-right-style: none;
+	border-right-width: 0pt;
+	border-right-color: #808080;
+	border-top-style: none;
+	border-top-width: 0pt;
+	border-top-color: #808080;
+	border-bottom-style: none;
+	border-bottom-width: 0pt;
+	border-bottom-color: #808080;
+}

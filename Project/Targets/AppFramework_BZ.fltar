@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="MsWord"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Wills_Tech_Reviews.fltoc"
+  MasterPageLayout="/Content/Resources/PageLayouts/Default.flpgl"
+  MasterStylesheet="/Content/Resources/Stylesheets/AmalgaMain.css"></CatapultTarget>

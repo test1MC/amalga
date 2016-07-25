@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="867" MadCap:lastWidth="627" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:10:44.5108305-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">
+            <MadCap:annotation MadCap:createDate="2012-03-12T22:51:50.3345458-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="what about adding a gerund here--&quot;Handling connection events&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T22:52:09.9520184-07:00">Connection </MadCap:annotation>events</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to handle events for the <span MadCap:changes="1" class="codeEntity"><MadCap:annotation MadCap:createDate="2012-03-12T23:10:55.5319252-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="per Cjw, going forward, pls use .codeEntity style rather than ForeignCodeElement." MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:11:50.9902807-07:00">AmalgaDbConnection</MadCap:annotation></span> object in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbConnection</span> object implements the <span class="ForeignCodeElements">StateChange</span> event, from the <span class="ForeignCodeElements">DbConnection</span> object in ADO.NET, which you can use to determine if the state of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object has changed. </p>
+        <p class="note">The <span class="ForeignCodeElements">AmalgaDbConnection</span> object does not implement the <span class="ForeignCodeElements">InfoMessage</span> event from the <span class="ForeignCodeElements">DbConnection</span> object in ADO.NET.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the StateChange event on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the StateChange event</h2>
+        <p>The <span class="ForeignCodeElements">StateChange</span> event occurs when the connection state of an <span class="ForeignCodeElements">AmalgaDbConnection</span> object changes. The <span class="ForeignCodeElements">StateChange</span> event receives a <span class="ForeignCodeElements">StateChangeEventArgs</span> object that enables you to determine the change in the state of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object by comparing the <span class="ForeignCodeElements">OriginalState</span> and <span class="ForeignCodeElements">CurrentState</span> properties. The <span class="ForeignCodeElements">OriginalState</span> property is set to a <span class="ForeignCodeElements">ConnectionState</span> enumeration value that indicates the state of the object prior to the <span class="ForeignCodeElements">StateChange</span> event. The <span class="ForeignCodeElements">CurrentState</span> property is set to a <span class="ForeignCodeElements">ConnectionState</span> enumeration value that indicates the state of the object at the time of the <span class="ForeignCodeElements">StateChange</span> event.</p>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example uses an event handler for the <span class="ForeignCodeElements">StateChange</span> event to write a message to the console when the connection state of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object changes.</p><pre xml:space="preserve">protected static void OnStateChange(object sender, 
+    StateChangeEventArgs args)
+{
+    Console.WriteLine(
+        "The connection state has changed from {0} to {1}.",
+        args.OriginalState,
+        args.CurrentState);
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

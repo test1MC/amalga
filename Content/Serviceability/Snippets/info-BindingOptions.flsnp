@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="44" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>Binding options are listed only when <MadCap:annotation MadCap:createDate="2012-01-03T14:56:33.9531186-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Dongbai, please confirm that an anchor table can exist for each binding source." MadCap:editor="v-padenc" MadCap:editDate="2012-01-03T14:56:49.8067038-08:00">an anchor table exists for the selected binding source</MadCap:annotation>. For more information about anchor tables and related tables and views, <MadCap:annotation MadCap:createDate="2012-01-03T14:59:13.6400857-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="topic on anchor tables. \r\n\r\n&quot;Each related table or view is configured to match up its primary key column with a selected column in the anchor table.&quot; something like that\r\n\r\nfor now, linking to entity binding overview" MadCap:editor="v-padenc" MadCap:editDate="2012-01-23T06:57:33.5418885-08:00">see </MadCap:annotation><MadCap:xref href="../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>. </body>
+</html>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1059" MadCap:lastWidth="855" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Bind entities used by an application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>After publishing an application, the notification area of the results pane will generally call out that there are virtual schema configuration errors that need resolution before the application can be synchronized on a physical host for production. The procedures referred to in this topic bind the entities if required. When you bind an entity to storage schema, that binding applies across the <MadCap:variable name="BrandingHSG.Amalga Short" /> installation. </p>
+        <p class="note">If the notification that there are virtual schema configuration errors persists after performing this procedure, proceed to the <MadCap:xref href="AppMan Proc Application Configure Virtual Schema.htm" target="" title="" alt="">Configure application virtual schema</MadCap:xref> procedure.</p>
+        <p>To bind entities through <MadCap:variable name="BrandingMS.Doors PowerShell" />, use the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref> cmdlet. For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaDataAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To bind entities that are used by an application</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../../Snippets/procst-click-app.flsnp" />
+            </li>
+            <li>
+                <p>In the tasks pane, click <span class="UIElementAction">Bind Entities</span>. </p>
+                <p>A <MadCap:annotation MadCap:createDate="2012-02-28T10:06:27.2082121-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Documentation gap. Keith, this window  is a gap as far as VREF goes. But what do we call it? Is a VREF topic needed for ctp2? Maybe not. " MadCap:editor="v-padenc" MadCap:editDate="2012-02-28T10:18:22.4912641-08:00">new window</MadCap:annotation> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-03-02T13:33:44.9545268-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="Yes, I'm comforrable with this VisRef doc gap for CTP2." MadCap:editor="v-keith" MadCap:editDate="2012-03-02T13:34:35.0125268-08:00">opens</MadCap:annotation>, containing some functions from the <MadCap:variable name="UI-Labels.Entity Management" /> module of <MadCap:variable name="FeatureName.Management Console second use" /> (see <MadCap:xref href="../Entity Management/SERV_CON_module-EntityManagement.htm" target="" title="" alt=""> module</MadCap:xref>). The window lists entities that are used by the selected application only. </p>
+                <p class="note">You can also bind entities in the <MadCap:variable name="UI-Labels.Entity Management" /> module, which lists all entities in the <MadCap:variable name="UI-Labels.Amalga Entity Registry" /> (see <MadCap:xref href="../../../DataPlatform1/DP_Task_LocateEntity.htm" target="" title="" alt="">Find entities in the registry</MadCap:xref> to filter the list of entities). For binding instructions, see <MadCap:xref href="../../../MasterTOCLandingPages(BZ)/V3_LND_EntityBinding.htm" target="" title="" alt="">Entity binding configuration</MadCap:xref>.</p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../../Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-click-entitybinding.flsnp" /> <![CDATA[ ]]></p>
+                <p>For binding instructions, see <MadCap:xref href="../../../MasterTOCLandingPages(BZ)/V3_LND_EntityBinding.htm" target="" title="" alt="">Entity binding configuration</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>To configure access inheritance for the entity, click <span class="UIElementAction">Access Policy</span> in the navigation pane <MadCap:annotation MadCap:createDate="2012-03-02T13:35:44.0665268-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="I'm kind of lost in your comments below. If you're making the point that the current workflow as designed and impilmented by dev doesn't make sense, you'll get no argument from me.\r\nRegarding this being a new screen, that's new news to me. &quot;Follow the prompts&quot; works for me here with your note about the alternative, and I'm sure much better documented, method for configuring access inheritance for an entity." MadCap:editor="v-keith" MadCap:editDate="2012-03-02T13:39:25.6825268-08:00">and</MadCap:annotation> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-02-28T10:13:54.2274404-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Documentation gap and confusing UX workflow. Keith, this screen does not relate to entity binding so I'm not sure why it's displayed after &quot;Bind Entities&quot; is clicked. Also, the screen is different from anything documented for data permissions. This is a documentation gap for the visual reference section, but hopefully the screen is simple enough that for CTP2, the instruction to &quot;follow the prompts&quot; is sufficient." MadCap:editor="v-padenc" MadCap:editDate="2012-02-28T10:18:38.3828531-08:00">follow the prompts</MadCap:annotation>. </p>
+                <p class="note">You can also configure access inheritance in the <MadCap:variable name="UI-Labels.Entity Management" /> module, which lists all entities in the <MadCap:variable name="UI-Labels.Amalga Entity Registry" /> and displays a different user interface for this configuration task. See <MadCap:xref href="../../../DataPlatform1/DP_Task_ConfigEntityInheritAccess.htm" target="" title="" alt="">Configure access inheritance for an entity</MadCap:xref>. </p>
+            </li>
+            <li>When you have completed all entity binding and access inheritance configuration, click <span class="UIElementAction">Finish</span> to save changes and close the window.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Entity Management/SERV_VREF_AMC-mod-Entity.htm" target="" title="" alt=""> module primary window</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../MasterTOCLandingPages(BZ)/V3_LND_EntityBinding.htm" target="" title="" alt="">Entity binding configuration</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../SERV_LND_DataPerm.htm" target="" title="" alt="">Data permissions management</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

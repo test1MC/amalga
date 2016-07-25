@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.70 - Complete,ReleaseTarget.CTP1" MadCap:lastBlockDepth="4" MadCap:lastHeight="2410" MadCap:lastWidth="576">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configuration settings</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-10-03T14:10:11.0712525-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="[Will says:]\r\nThis covers some of the same content as &quot;Application configuration and user settings&quot; in the Framework section.\r\n\r\nCJW]  Pls get together with Will after the refresh and decide whether the material needs to be in two places; and whether it can be snippeted (probably not), and last but not least, are the concepts all in agreement in both topics. " MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T19:50:04.9891254-08:00">
+                <MadCap:keyword term="configuration settings;application manifests;service manifests" />This topic describes configuration settings, including how to define, read values from, and write values to configuration settings for hosted applications and hosted services.</MadCap:annotation>
+        </p>
+        <p>Configuration settings are settings that can be defined for a hosted application or hosted service in, respectively, the application manifest or service manifest to provide operational flexibility. For example, you could add a configuration setting to a hosted application that could be used to restrict the number of rows returned by queries run from hosted services within that hosted application, allowing you to control performance and functionality.</p>
+        <p class="LabelforProcedures">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Defining" target="" title="" alt="">Defining configuration settings on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Reading" target="" title="" alt="">Reading configuration settings on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Writing" target="" title="" alt="">Writing configuration settings on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Defining"></a>Defining configuration settings</h2>
+        <p>You can add a configuration setting to a hosted application by adding a <span class="MarkupLanguageElements">Setting</span> element to the <span class="MarkupLanguageElements">Settings</span> collection element in an application manifest or service manifest. </p>
+        <p class="note">The recommended way to add configuration settings to an application manifest or service manifest is by using the Setting Collection Editor, accessed from the Manifest Editor. For more information about using the Setting Collection Editor, see <MadCap:xref href="SDK_CON_Setting_ColEditor.htm" target="" title="" alt="">Setting Collection Editor on page 1</MadCap:xref>.</p>
+        <p>The following example illustrates a typical <span class="MarkupLanguageElements">Setting</span> element for a hosted application.</p><pre xml:space="preserve">&lt;Settings&gt;
+    &lt;Setting Name="QuerySize" Type="System.String"&gt;
+      &lt;DefaultValue&gt;10&lt;/DefaultValue&gt;
+    &lt;/Setting&gt;
+&lt;/Settings&gt;</pre>
+        <p>Similarly, you can add a configuration setting to a hosted service within a hosted application by adding a <span class="MarkupLanguageElements">Setting</span> element to the <span class="MarkupLanguageElements">Settings</span> collection element in a service manifest. Each hosted service in a hosted application can have its own set of configuration settings, to control the specific functionality of that particular hosted service.</p>
+        <h3>Data types</h3>
+        <p>Configuration settings support the following .NET Framework data types:</p>
+        <ul>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234797">System.String</a>
+            </li>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234798">System.Int32</a>
+            </li>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234800">System.Guid</a>
+            </li>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234801">System.DateTime</a>
+            </li>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234802">System.Boolean</a>
+            </li>
+            <li><a href="http://go.microsoft.com/fwlink?LinkId=234804">System.Double</a>
+            </li>
+        </ul>
+        <p>The data type of a configuration setting is specified in the <span class="MarkupLanguageElements">Type</span> attribute of the <span class="MarkupLanguageElements">Setting</span> element that represents the configuration setting.</p>
+        <h3>Default values</h3>
+        <p>You can specify a default value for each configuration setting, to be applied when the hosted application is published or deployed.  If no default value is specified, the value of the configuration setting is set to null.</p>
+        <p>You can specify a default value for a configuration setting by adding a <span class="MarkupLanguageElements">DefaultValue</span> element, as a child element of the <span class="MarkupLanguageElements">Setting</span> element that represents the configuration setting.</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">Validation rules</h3>
+        <p MadCap:conditions="Production.doNOTbuild">Validation rules are not yet supported.</p>
+        <h2><a name="Reading"></a>Reading configuration settings</h2>
+        <p>You can use the Settings collection of the ApplicationConfiguration and ServiceConfiguration objects, included in the Microsoft.Amalga.Hosting.Configuration namespace, to read the configuration settings defined for, respectively, a hosted application or a hosted service. These objects are instantiated when the hosted application or hosted service is started, and represent the runtime values specified for the configuration settings.</p>
+        <p class="note">You cannot use the ApplicationConfiguration or ServiceConfiguration objects to change the value of a configuration setting at runtime.</p>
+        <p>The following example demonstrates how to read the value of the QuerySize configuration setting for a hosted application, to be included in a query constructed for an AmalgaDbCommand object.</p><pre xml:space="preserve">AmalgaDbCommand command = new AmalgaDbCommand();
+command.Connection = connection;
+command.CommandText =
+&#160;&#160;&#160;" SELECT TOP " + ApplicationConfiguration.Settings["QuerySize"].Value
+&#160;&#160;&#160;+ @" Patient.PersonID AS PatientID,
+        Patient.FullName AS Name,
+        Patient.DateOfBirth AS DateOfBirth
+        FROM Patient";</pre>
+        <h2><a name="Writing"></a>Writing configuration settings</h2>
+        <p>A hosted application or hosted service cannot change its own configuration settings. The default value specified for a configuration setting is used when the hosted application is published or deployed.</p>
+        <p>However, you can change the values for the configuration settings of a hosted application or hosted service programmatically, using the Set-AmConfigurationSetting <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlet included with <MadCap:variable name="BrandingHSG.Amalga Short" />. For more information about writing configuration settings programmatically, see <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Change App Settings.htm" target="" title="" alt="">Change application settings on page 1</MadCap:xref>.</p>
+        <p>You can also change the values for the configuration settings of a hosted application or hosted service interactively, using the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. For more information about using <MadCap:variable name="FeatureName.Management Console second use" /> to change configuration settings, see <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Change App Settings.htm" target="" title="" alt="">Change application settings on page 1</MadCap:xref>.</p>
+        <p class="note">The values for configuration settings are cached by Internet Information Services (IIS). You may need to reset IIS if you change configuration settings while debugging or testing hosted applications.</p>
+    </body>
+</html>

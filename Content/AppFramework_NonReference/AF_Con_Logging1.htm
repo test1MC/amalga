@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2110.667" MadCap:lastWidth="1158" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head><title>Logging events with controls</title>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Logging activity in .NET controls</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="logging" />
+        </p>
+        <p class="abstract">This section describes how to use the Logging API available to <MadCap:variable name="FeatureName.Amalga Framework" /> .NET applications.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> Logging API&#160;allows .NET controls within <MadCap:variable name="BrandingMS.SharePoint" /> applications to record messages in the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic and performance logs. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#The" target="" title="" alt="">The FrameworkLogger class on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Diagnost" target="" title="" alt="">Diagnostic logging on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Performa" target="" title="" alt="">Performance logging on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="The"></a>The FrameworkLogger class</h2>
+        <p>The server side of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> Logging API is based on a central class, <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Logging/T_FrameworkLogger.htm">FrameworkLogger</a>, which provides a mix of static and instance methods. The static methods provide immediate access to information about the application environment, and to an instance of the <span class="Label">FrameworkLogger</span> object itself. The instance methods manage connections to logging targets and wrap different kinds of messages for logging.</p>
+        <p>To get a reference to the static instance of the <span class="ForeignCodeElements">FrameworkLogger</span> class, call <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Logging/P_FrameworkLogger_Current.htm">FrameworkLogger.Current.</a></p>
+        <h3>Logging context</h3>
+        <p>The logging context of a log message is an object that encapsulates information about the run-time environment in which the log message was created. The context includes the machine name, process ID, thread ID, the current request URL, a time stamp, and other useful diagnostic information. Each log message must include the current logging context.</p>
+        <p>To retrieve the current logging context, call <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Logging/M_FrameworkLogger_CreateLogEntryContext.htm">FrameworkLogger.CreateLogEntryContext()</a>.</p>
+        <h3>Logging level</h3>
+        <p>The logging level of a log message identifies its purpose and also specifies its destination. </p>
+        <p>Every log message must have an associated logging level. Depending on the logging method used to generate the message, the logging level may need to be set manually, or it may be automatically assigned an appropriate value.</p>
+        <p>The <span class="ForeignCodeElements">FrameworkLogger</span> methods support six logging levels:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Logging level</th>
+                    <th>Message type</th>
+                    <th>Message destination</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>TraceDetailed</td>
+                    <td>Performance log</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>TraceMinimal</td>
+                    <td>Performance log</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Info</td>
+                    <td>Diagnostic log</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Warn</td>
+                    <td>Diagnostic log</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Error</td>
+                    <td>Diagnostic log. The logging service may also write error messages to the error log.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Diagnost"></a>Diagnostic logging</h2>
+        <p>Informational, warning, and error log messages are sent to the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic log. In addition, error messages that are associated with conditions recognized by the <MadCap:variable name="FeatureName.Amalga Framework" /> may be written to the <MadCap:variable name="BrandingHSG.Amalga Short" /> error log.</p>
+        <h4>Example</h4>
+        <p>The following code illustrates three ways to record a caught exception in the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic log.</p><pre xml:space="preserve">
+try {}
+catch (Exception ex)
+{
+    // Log the exception message as an informational log entry
+    FrameworkLogger.Current.LogInformation(FrameworkLogger.CreateLogEntryContext(),
+        "Exception logged as info only: {0}", new String[] { ex.Message });
+
+    // Explicitly log the exception as an error, using a helper method
+    FrameworkLogger.Current.LogException(FrameworkLogger.CreateLogEntryContext(), ex,
+        "Exception logged using a helper method: {0}", new String[] { ex.Message });
+
+    // Implicitly log the exception as an error, because the Framework automatically
+    //  catches and logs unhandled exceptions thrown in Framework server controls
+    throw (ex);
+}		
+        </pre>
+        <h2><a name="Performa"></a>Performance logging</h2>
+        <p>Trace log messages are sent to the <MadCap:variable name="BrandingHSG.Amalga Short" /> performance log.</p>
+        <h3><MadCap:variable name="BrandingMS.SharePoint" /> monitored scopes</h3>
+        <p>A <MadCap:variable name="BrandingMS.SharePoint" /> managed scope is a section of managed code that is registered for tracking with the <MadCap:variable name="BrandingMS.SharePoint" /> server. Its performance is monitored by the server, and its usage statistics can be monitored with the <MadCap:variable name="BrandingMS.SharePoint" /> Developer Dashboard and the <MadCap:variable name="BrandingMS.SharePoint" /> service logs.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework" /> includes its own monitored scope. An <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Diagnostics/T_AmalgaMonitoredScope.htm">AmalgaMonitoredScope</a> is a <MadCap:variable name="BrandingMS.SharePoint" /> monitored scope, so it can be tracked using the standard <MadCap:variable name="BrandingMS.SharePoint" /> tools. It also acts as an <MadCap:variable name="BrandingHSG.Amalga Short" /> event marker, and writes start and finish messages into the <MadCap:variable name="BrandingHSG.Amalga Short" /> performance log.</p>
+        <p>To create an <MadCap:variable name="BrandingHSG.Amalga Short" /> monitored scope, wrap a block of managed code in a <span class="ForeignCodeElements">using</span> statement with a new <span class="ForeignCodeElements">AmalgaMonitoredScope</span> object. The scope object will create a performance log entry when the code begins execution, and another when the thread exits the <span class="ForeignCodeElements">using </span>block. In between, the performance of the code will be monitored by the <MadCap:variable name="BrandingMS.SharePoint" /> server.</p>
+        <h4>Example</h4>
+        <p>The following code illustrates how to use an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> monitored scope to send application performance data to the <MadCap:variable name="BrandingHSG.Amalga Short" /> performance log.</p><pre xml:space="preserve">
+// This event ID will identify all Amalga performance messages associated with this monitored scope.
+Guid MyMonitoredScopeId = new Guid("D906B887-39ED-454F-8C34-000B427AF559");
+
+// Create an Amalga monitored scope
+using (new AmalgaMonitoredScope(FrameworkLogger.CreateLogEntryContext(),
+    LoggingLevel.TraceDetailed, MyMonitoredScopeId, "MyScopeName"))
+{
+    // Place monitored code here.
+    // The Amalga performance log will record when the monitored code begins and ends execution.
+    // While the monitored code is running, its performance will also be tracked by the SharePoint server.
+}
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Logging/T_FrameworkLogger.htm">FrameworkLogger Class</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Diagnostics/T_AmalgaMonitoredScope.htm">AmalgaMonitoredScope Class</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_ErrorHandling.htm">Error handling</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/Logger/LOG_CON_DiagnosticLog.htm">Diagnostic log</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/Logger/LOG_CON_ViewingLogs.htm">Viewing log entries</a>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=243486">Using SPMonitoredScope</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

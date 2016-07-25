@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,TopicOwner.v-dennk,TopicType.Overview/Introduction,EditingTags.7 - Editing issues resolved,Status.70 - Complete,Personas.Elvis: App Dev" MadCap:lastBlockDepth="4" MadCap:lastHeight="1413" MadCap:lastWidth="733">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingHSG.Amalga Short" /> platform features and applications</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="platform applications;Data Connector;Data Change Notification platform application;Terminology platform application" />This topic gives an overview of the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform features and applications that are most commonly used when developing applications and services for <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> includes several platform features and applications that can be used by your applications and services to access common <MadCap:variable name="BrandingHSG.Amalga Short" /> functionality, such as logging, auditing, data access, and terminology support. </p>
+        <p class="note">The following sections describe the platform features and applications that are most commonly used when developing custom applications and features, and do not represent a comprehensive list of all <MadCap:variable name="BrandingHSG.Amalga Short" /> platform features and applications.</p>
+        <h2><MadCap:variable name="BrandingHSG.Amalga Short" /> platform features</h2>
+        <p>The following features are included with <MadCap:variable name="BrandingHSG.Amalga Short" /> to provide services that you can use, both directly and indirectly, when developing your own applications and services:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Logger" target="" title="" alt="" class="TopicInIntroTable">Logger</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Topology" target="" title="" alt="" class="TopicInIntroTable">Topology</MadCap:xref>
+            </li>
+        </ul>
+        <h3><a name="Logger"></a>Logger</h3>
+        <p>To be provided.</p>
+        <h3><a name="Topology"></a>Topology</h3>
+        <p>To be provided.</p>
+        <h2><MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications</h2>
+        <p>Similarly, the following hosted applications are included with <MadCap:variable name="BrandingHSG.Amalga Short" /> to provide services that you can use, both directly and indirectly, when developing your own applications and services: </p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data Connector</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Eventing" target="" title="" alt="">Data Change Notification</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Terminol" target="" title="" alt="">Terminology</MadCap:xref>
+            </li>
+        </ul>
+        <p>To deploy               <![CDATA[ ]]><MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications, follow the instructions for each application, as needed. For more information about deploying <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications, see <MadCap:xref href="../Installation/Install Proc App Installation.htm" target="" title="" alt="">Install applications on page 1</MadCap:xref>.</p>
+        <h3><a name="Data"></a>Data Connector</h3>
+        <p>Whenever your application uses a <a href="SDK_OVW_Virtual_Schema_Overview.htm">virtual schema</a>, it uses the data connector to retrieve data from the clinical database and the private database for the application. Data Connector functionality is provided by a hosted application, named DataConnectorApplication. Unlike most Amalga platform applications, you do not use the DataConnectorApplication application directly. Instead, you use the <MadCap:variable name="FeatureName.Amalga ADO.NET" /> client, Microsoft.Amalga.Data.DataClient, to connect to the application views represented by the virtual schema for your hosted application. </p>
+        <p>The DataConnectorApplication application must be installed on the server that hosts the data. If your application accesses data, you must specify a dependency to the DataConnectorApplication application in the application manifest at design time. When installing your application, you can choose the DataConnectorApplication instance that will be used by your application to access data, supporting geographic scaling of applications on an <MadCap:variable name="BrandingHSG.Amalga Short" /> topology.</p>
+        <p>For more information about using Data Connector to access data, see <MadCap:xref href="SDK_NAV_Data_Access.htm" target="" title="" alt="">Data access on page 1</MadCap:xref>.</p>
+        <h3><a name="Eventing"></a>Data Change Notification</h3>
+        <p>Data Change Notification (DCN), also known as eventing, provides a way for your applications and services to be notified if data changes. Data Change Notification is provided by a hosted application, Microsoft.Amalga.Event.Application, containing multiple hosted services that you can use to define, subscribe to, and receive DCN messages.  For more information about Data Change Notification, see <MadCap:xref href="DataChangeNotification/SDK_OVW_Eventing.htm" target="" title="" alt="">Data-driven events</MadCap:xref>.</p>
+        <h3><a name="Terminol"></a>Terminology</h3>
+        <p>The terminology application contains a service that allows you to navigate healthcare concepts that often have more than one clinical term to describe them. The terminology service can be accessed using either Terminology entities or the Terminology API.</p>
+    </body>
+</html>

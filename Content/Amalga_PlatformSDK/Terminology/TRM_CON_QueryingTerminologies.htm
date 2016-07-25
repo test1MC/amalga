@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1837" MadCap:lastWidth="728" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying terminologies</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="terminologies:Terminology platform application;Terminology platform application:terminologies;ITerminologyQueryService interface:Terminology platform application;Terminology platform application:ITerminologyQueryService interface;GetTerminologies method:Terminology platform application;Terminology platform application:GetTerminologies method;Terminology class:Terminology platform application;Terminology platform application:Terminology class;Terminology entity:Microsoft.Terminology entity namespace;Microsoft.Terminology entity namespace:Terminology entity;clinical terminologies:Terminology platform application;Terminology platform application:clinical terminologies;mapping terminologies:Terminology platform application;Terminology platform application:mapping terminologies;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for clinical and mapping terminologies stored by the Terminology hosted application.</p>
+        <p>You can use either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.Terminology entity to retrieve information about clinical terminologies, including mapping terminologies, from the Terminology hosted application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using ITerminologyQueryService on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using Microsoft.Terminology.Beta.Terminology on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using ITerminologyQueryService</h2>
+        <p>You can use the GetTerminologies operation, included with the ITerminologyQueryService service contract, to retrieve an array of Terminology objects. Each Terminology object represents a single clinical terminology or mapping terminology.</p>
+        <p>The Terminology object provides the following three properties:</p>
+        <ul>
+            <li>
+                <p>Id</p>
+                <p>The Id property contains a string that contains the unique identifier for the clinical terminology or mapping terminology represented by the Terminology object.</p>
+            </li>
+            <li>
+                <p>IsMappingTerminology</p>
+                <p>If this property is set to True, the Terminology object represents a mapping terminology, used to map clinical concepts between clinical terminologies.</p>
+            </li>
+            <li>
+                <p>Name</p>
+                <p>The Name property contains the display name of the clinical terminology or mapping terminology represented by the Terminology object.</p>
+            </li>
+        </ul>
+        <h3>Example</h3>
+        <p>The following example invokes the GetTerminologies operation from the ITerminologyQueryService service contract to return an array of Terminology objects.</p><pre xml:space="preserve">public Terminology[] GetTerminologiesFromService()
+{
+    // Use GetTerminologies from ITerminologyQueryService to retrieve
+    // an array of Terminology objects.
+            
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+    // Open the client channel and instantiate the WCF client.
+    ITerminologyQueryService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Invoke the GetTerminologies operation from the service, and
+    // return the resulting array of Terminology objects.
+    return (Terminology[])terminologyServiceClient.GetTerminologies();
+}
+</pre>
+        <h2><a name="Using2"></a>Using Microsoft.Terminology.Beta.Terminology</h2>
+        <p>You can also use the Terminology entity, included in the Microsoft.Terminology.Beta entity namespace, to retrieve clinical terminologies. Once an application view for the Terminology entity is added to the virtual schema of your hosted application, you can then use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from the application view. For more information about using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from application views, see <MadCap:xref href="../DataConnector/DAT_CON_RetrievingDataDataReader.htm" target="" title="" alt="">Retrieving data using AmalgaDbDataReader
+ on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Terminology.htm" target="" title="" alt="">Microsoft.Terminology.Terminology entity on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Terminologies.htm" target="" title="" alt="">Terminologies on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

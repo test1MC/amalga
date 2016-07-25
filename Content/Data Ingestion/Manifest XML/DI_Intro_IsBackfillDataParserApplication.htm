@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="634.6667" MadCap:lastWidth="847" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>IsBackfillDataParserApplication setting</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="IsBackfillDataParserApplication setting" />Sets whether the instance of a <MadCap:variable name="Applications.Backfill Data-Parser application" /> will parse historic data.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="IsBackfillDataParserApplication" Type="System.Int32"&gt;
+   &lt;DefaultValue&gt;...&lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Setting characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and range</td>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td class="ForeignCodeElements">False</td>
+                </tr>
+                <tr>
+                    <td>Target applications</td>
+                    <td>
+                        <p><a href="../DI_Con_BackfillSummary.htm">Backfill Data-Parser</a> (application manifest)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Example</h4>
+        <p>The following example enables backfill parsing. For complete instructions, see <MadCap:xref href="../DI_Task_EnableBackfill.htm" target="" title="" alt="">Enable backfill parsing</MadCap:xref>.</p><pre xml:space="preserve">
+   &lt;Setting Name="IsBackfillDataParserApplication" AmalgaDisplayName="DataParser Application Setting" Type="System.Boolean" &gt;
+         &lt;DefaultValue&gt;true&lt;/DefaultValue&gt;   
+   &lt;/Setting&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+        <p>
+            <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm" target="" title="" alt="">Setting element</MadCap:xref>
+        </p>
+    </body>
+</html>

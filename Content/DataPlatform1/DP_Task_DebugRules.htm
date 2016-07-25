@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="1235" MadCap:lastWidth="556" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,EditingTags.5 - Revised / ready for editor,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Debug access rules</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to debug access rules for <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console" />You can debug <MadCap:annotation MadCap:createDate="2012-01-26T00:41:26.1434608-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Not clear to me what is being debugged: is it how the rules work for  user access to data?  Performance often means efficiency or throughput of a server or other computer/set of computers, but that is not what you are talking about here.  Is there a way to state this without using &quot;performance&quot;?\r\n\r\nPD: The ability to assess efficiency of data access was cut from CTP2. But good point. I added a step for Visual Studio or other tools. " MadCap:editor="v-padenc" MadCap:editDate="2012-02-02T14:34:01.0489952-08:00">performance of user access to data</MadCap:annotation> and troubleshoot errors by temporarily disabling access rules. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To <MadCap:annotation MadCap:createDate="2012-01-26T00:44:26.7088153-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This proc tells them how to view SQL statements when rules enabled and disabled.  But the actual debugging happens elsewhere.\r\n\r\nPD: good point--added a step for that. " MadCap:editor="v-padenc" MadCap:editDate="2012-02-02T14:34:11.0000000-08:00">debug performance</MadCap:annotation> of user access to data</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-diag.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-diag.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>Select a role to view the corresponding SQL&#160;SELECT statement. </p>
+                <p>The SQL&#160;SELECT statement determines the underlying data for the current entity that the role can access. </p>
+            </li>
+            <li>To see how the statement changes if an access rule for the role is disabled, do the following. <ol style="list-style-type: lower-alpha;"><li>Expand the role, expand the rule category, and select the rule. </li><li>Click <span class="UIElementAction">Disable Rule</span>. </li><li>Reselect the role. </li></ol></li>
+            <li>To copy the SQL SELECT statement for further debugging in <MadCap:variable name="BrandingMS.Visual Studio second use" /> or other tools, select the statement and press CTRL+C.</li>
+            <li>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, use <MadCap:variable name="BrandingMS.Visual Studio second use" /> to assess performance of SQL&#160;SELECT statements. </li>
+            <li>When you are finished debugging, ensure that all rules are re-enabled. </li>
+        </ol>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To troubleshoot access rule errors</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-access.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-access.flsnp" />
+                </p>
+            </li>
+            <li>Select a role to view its access rules. </li>
+            <li>To see if disabling an access rule removes an error displayed in the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane, do the following. <ol style="list-style-type: lower-alpha;"><li>Expand the rule category and select the rule so that it is highlighted. </li><li>Right-click the rule and then select <span class="UIElementAction">Disable Rule</span>. <br /></li></ol></li>
+            <li>To enable a rule, right-click the rule and then select <span class="UIElementAction">Enable Rule</span>. </li>
+            <li>When you are finished debugging, ensure that all rules are enabled. </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_Diagnostic.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_SQLConditions.htm" target="" title="" alt="">SQL conditions</MadCap:xref>
+        </p>
+    </body>
+</html>

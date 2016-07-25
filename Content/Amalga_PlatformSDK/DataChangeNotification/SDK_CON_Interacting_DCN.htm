@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2008" MadCap:lastWidth="335" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Interacting with Data Change Notification</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-11-17T11:08:09.1778969-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Excellent organization - clear and elegant." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-17T11:08:29.6699459-08:00">
+                <MadCap:keyword term="Data Change Notification platform application;Change Data Capture;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;IEventHandler interface:Data Change Notification platform application;Data Change Notification platform application:IEventHandler interface;EventMessage class:Data Change Notification platform application;Data Change Notification platform application:EventMessage class;event messages:Data Change Notification platform application;Data Change Notification platform application:event messages" />This</MadCap:annotation> topic describes how to interact with the Microsoft.Amalga.Event.Application application, and its accompanying services, to add Data Change Notification (DCN) functionality to a hosted application.</p>
+        <p>Data Change Notification (DCN), also known as eventing, provides a way for your applications and services to be notified if data changes. Data Change Notification functionality is provided by the Microsoft.Amalga.Event.Application application. For more information about Data Change Notification, see <MadCap:xref href="SDK_OVW_Eventing.htm" target="" title="" alt="">Data Change Notification on page 1</MadCap:xref>.</p>
+        <p class="caution">Before you can use Data Change Notification in your hosted application to monitor application views, you must first enable Change Data Capture on the databases and tables referenced by those application views.</p>
+        <p>At a minimum, you must typically perform the following actions in your hosted application to interact with the Microsoft.Amalga.Event.Application application.</p>
+        <ul>
+            <li>
+                <p>Add an application dependency for the Microsoft.Amalga.Event.Application application to the application manifest of your hosted application. </p>
+                <p>The application dependency not only indicates that your hosted application depends on the Microsoft.Amalga.Event.Application application, but also provides an ApplicationDependency object you can use to open a WCF client channel to the services included with that application.</p>
+                <p>For more information about adding an application dependency, see <MadCap:xref href="../DeploymentManifest/SDK_PROC_Add_Dependency.htm" target="" title="" alt="">Add an application dependency on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Generate a WCF client for the EventingManagerService service, and include the WCF client in a hosted <MadCap:variable name="BrandingMS.WCF service" /> project in your hosted application. </p>
+                <p>The EventingManagerService service is used to add, change, and delete DCN event types and subscriptions for your hosted application.</p>
+                <p>For more information about generating and including a WCF client, see <MadCap:xref href="../Services/SDK_CON_UsingWCFClients.htm" target="" title="" alt="">Interacting with services on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Create and subscribe to a DCN event type.</p>
+                <p>Use the EventingManagerService service to define DCN event types and DCN event subscriptions for your hosted application.</p>
+                <p>For more information about creating and subscribing to DCN event types, see <MadCap:xref href="SDK_CON_Creating_Subscribing_DCN.htm" target="" title="" alt="">Creating DCN event types on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Receive a DCN event message.</p>
+                <p>Create a hosted <MadCap:variable name="BrandingMS.WCF service" /> that implements the Microsoft.Amalga.Eventing.IEventHandler interface and the HandleEvent method. This method is called by the EventingWcfHandlerService service, which passes a DCN event message to your hosted <MadCap:variable name="BrandingMS.WCF service" />.</p>
+                <p>For more information about receiving a DCN event message, see <MadCap:xref href="SDK_CON_Receiving_EventMessage.htm" target="" title="" alt="">Receiving a DCN event message on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Process a DCN event message.</p>
+                <p>Examine and process the EventMessage object, representing a DCN event message, received by your hosted <MadCap:variable name="BrandingMS.WCF service" />.</p>
+                <p>For more information about processing a DCN event message, see <MadCap:xref href="SDK_CON_Processing_EventMessage.htm" target="" title="" alt="">Processing a DCN event message on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p>In addition, your hosted application may need to perform some of the following actions to support Data Change Notification functionality:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="SDK_CON_Find_Subscribe_EventType.htm" target="" title="" alt="">Finding and subscribing to DCN event types on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="SDK_CON_Update_EventType.htm" target="" title="" alt="">Updating a DCN event type on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="SDK_CON_ActivateDeactivate_EventType.htm" target="" title="" alt="">Activating and deactivating a DCN event type on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="SDK_CON_Unsubscribe_Delete_DCN.htm" target="" title="" alt="">Unsubscribing from and deleting DCN event types on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

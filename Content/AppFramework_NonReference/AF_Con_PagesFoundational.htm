@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1811" MadCap:lastWidth="656" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Foundational site definitions</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to create custom Amalga 3.0 CTP2 solutions using the foundational site definitions.</p>
+        <p>The foundational site definitions provide a starting point for the development of solutions that can be deployed for the patient, provider, and staff sites. Using the provided Visual Studio templates, controls available in Visual Studio, and the foundation sites provisioned with baseline master pages available in <MadCap:variable name="BrandingMS.SharePoint" />, you can create a customized experience for your customers.</p>
+        <p>Since they are deployed as the default site collection, you can preview the foundational site pages by browsing the portal sites:</p>
+        <ul>
+            <li>Patient portal (public and private pages)- https://[your fqdn]:8080</li>
+            <li>Staff portal - https://[your fqdn]:8080/staff</li>
+            <li>Provider portal - https://[your fqdn]:8080/provider</li>
+        </ul>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Site">Site definition files</a>
+            </li>
+            <li><a href="#Create">Create new content using the base site pages</a>
+            </li>
+        </ul>
+        <h2><a name="Site"></a>Site definition files</h2>
+        <p>The site definition files consist of several sets of master page, page, and other <MadCap:variable name="BrandingMS.SharePoint" /> files that you can use as the basis for creating new site content. This section lists the files and shows you where to find them.</p>
+        <h3>Access the site definition files</h3>
+        <p>In the default deployment, the site definition files are located here:</p>
+        <p>C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\TEMPLATE\FEATURES\</p>
+        <p>Rather than taking files directly from the default deployment, you should get them from the <MadCap:annotation MadCap:createDate="2012-02-23T14:02:31.5065958-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Need location from jasonra." MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T18:20:28.4385041-08:00">microsoft.amalga.appframework.wsp    <![CDATA[ ]]></MadCap:annotation>solution package by following these steps.</p>
+        <ol>
+            <li>Navigate to<MadCap:annotation MadCap:createDate="2012-02-23T14:03:36.3100755-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="path to the solution package." MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T14:03:50.1644608-08:00"> \path\to\microsoft.amalga.appframework.wsp</MadCap:annotation>.</li>
+            <li>Rename microsoft.amalga.appframework.wsp with a .cab filename extension. Doing this allows you to open the file and browse the contents.</li>
+            <li>Open microsoft.amalga.appframework.cab and browse to <MadCap:annotation MadCap:createDate="2012-02-23T14:05:16.0860521-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="path to FEATURES" MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T14:05:20.6385073-08:00">\FEATURES</MadCap:annotation>.</li>
+        </ol>
+        <p>The following subdirectories of \FEATURES contain customizable base content that you can use.</p>
+        <ul>
+            <li>Microsoft.Amalga.Imaging_FeatureStapler</li>
+            <li>Microsoft.Amalga.Imaging_WebParts</li>
+            <li>Microsoft.Health.Framework_Common</li>
+            <li>Microsoft.Health.Framework_CustomErrorPages</li>
+            <li>Microsoft.Health.Framework_EventSourceRegistration</li>
+            <li>Microsoft.Health.Framework_FeatureStapler</li>
+            <li>Microsoft.Health.Framework_HVDataAccess</li>
+            <li>Microsoft.Health.Framework_InternalProviderSite</li>
+            <li>Microsoft.Health.Framework_InternalProviderSolutionSite</li>
+            <li>Microsoft.Health.Framework_MasterPagesLayouts</li>
+            <li>Microsoft.Health.Framework_PatientSamplePages</li>
+            <li>Microsoft.Health.Framework_PatientSite</li>
+            <li>Microsoft.Health.Framework_PatientSolutionSite</li>
+            <li>Microsoft.Health.Framework_PPMSolution</li>
+            <li>Microsoft.Health.Framework_PublicSite</li>
+            <li>Microsoft.Health.Framework_SolutionRootFeature</li>
+            <li>Microsoft.Health.Framework_StaffSite</li>
+            <li>Microsoft.Health.Framework_StaffSolutionSite</li>
+            <li>Microsoft.Health.Framework_Themes</li>
+            <li>Microsoft.Health.Framework_WebConfigUpdates</li>
+            <li>Microsoft.Health.Framework_WebParts</li>
+        </ul>
+        <p class="warning">Each portal has a template that you can use to create a new SharePoint site. These templates should only be used to create sites that match the default site structure. For example, the Patient portal template should never be used to create a site which is not an immediate descendant of the Public portal.</p>
+        <h2><a name="Create"></a>Create new content using the base site pages</h2>
+        <p>You can use the foundational pages as a starting point for creating new custom pages. The default pages have been designed with a minimum of content to facilitate the addition of custom content and controls.  When customizing, you should follow these general steps:</p>
+        <ul>
+            <li>Obtain the base file from microsoft.amalga.appframework.wsp as described earlier in this topic. Always make changes to a copy rather than the original.</li>
+            <li>Deploy the content. You can use standard <MadCap:variable name="BrandingMS.SharePoint" /> methods to deploy the custom content to your site. For more information, see <a href="http://technet.microsoft.com/en-us/library/cc263205.aspx">Deploy customizations - overview (SharePoint Server 2010)</a>.</li>
+            <li>Update the SharePoint property bag with a new property where the key is the filename minus the extension, and the value is the path to the newly deployed page. You can use the <MadCap:variable name="BrandingMS.SharePoint" /> Management Shell to call the <a href="http://technet.microsoft.com/en-us/library/ff607807.aspx">Get-SPWeb</a> cmdlet as shown in the following example:</li>
+            <li>
+                <p class="code">$url = "https://[xxxxxxx].com:8080"</p>
+            </li>
+            <li>
+                <p class="code">$web = Get-SPWeb $url</p>
+            </li>
+            <li>
+                <p class="code">$web.AllProperties["MyNewMaster"]= "14/TEMPLATE/FEATURES/Microsoft.Health.Framework_MasterPagesLayouts/MyNewMaster.master"</p>
+            </li>
+            <li>
+                <p class="code">$web.Update()</p>
+            </li>
+        </ul>
+        <p>Under certain circumstances, a customized page will not properly display content. When this happens it will appear that the page is "hung" on a blank window. A possible workaround is to override the DefaultPagePathKey method. The following code example shows how to do this.</p>
+        <p class="code">// Override for the Provider page.</p>
+        <p class="code">private string key = "ProviderDefaultPageAspxKey1";</p>
+        <p class="code">protected override string DefaultPagePathKey</p>
+        <p class="code">{</p>
+        <p class="code">get</p>
+        <p class="code">{</p>
+        <p class="code">return key;</p>
+        <p class="code">}</p>
+        <p class="code">}</p>
+        <h2><a name="Customiz"></a>See also</h2>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_PagesCustomizePatientMatch.htm">Customize patient match workflows</a>
+        </p>
+    </body>
+</html>

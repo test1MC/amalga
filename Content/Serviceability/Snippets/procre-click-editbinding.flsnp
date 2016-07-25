@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="45" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>The <MadCap:variable name="UI-Labels.Feed Browser" /> tab and <MadCap:variable name="UI-Labels.Joins" /> tab appear in the details pane. See <MadCap:xref href="../Management Console/Entity Management/SERV_VREF_FeedBrowser.htm" target="" title="" alt=""> tab</MadCap:xref> and <MadCap:xref href="../Management Console/Entity Management/SERV_VREF_JoinsTab.htm" target="" title="" alt=""> tab</MadCap:xref> for more information.</body>
+</html>

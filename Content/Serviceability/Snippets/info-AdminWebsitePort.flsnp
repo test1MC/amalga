@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="64" MadCap:lastWidth="988">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>This step assumes that the AdminWebsitePort is the default port of 9999. When you run Setup.exe to deploy the Administration feature, you can choose a different port. In that case, specify the port-number you selected.</p>
+    </body>
+</html>

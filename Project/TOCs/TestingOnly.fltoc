@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1"
+  conditions="Production.StyleMaster">
+  <TocEntry
+    Title="Set-AmEntityBinding"
+    Link="/Content/PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" />
+</CatapultToc>

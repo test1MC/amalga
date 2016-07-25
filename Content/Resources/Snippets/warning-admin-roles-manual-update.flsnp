@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="117" MadCap:lastWidth="713" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <body>
+        <p class="warning">Account permissions for the reserved-name accounts az-sa and az-user are not automatically reassigned during an <MadCap:variable name="Branding.Amalga Short" /> system update when LDAP is used. When that is the case, you must reassign permissions manually in <MadCap:variable name="FeatureName.Amalga Manager" /> for those accounts.</p>
+    </body>
+</html>

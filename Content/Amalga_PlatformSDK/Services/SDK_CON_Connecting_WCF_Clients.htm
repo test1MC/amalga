@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2714" MadCap:lastWidth="856" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,Status.70 - Complete,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Creating a WCF client channel</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to resolve a service endpoint and open a WCF client channel, to create a WCF client that can be used in a hosted application to interact with a WCF service in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <MadCap:keyword term="WCF client;WCF client channel;HostedServiceResolver class;PlatformServiceResolver class" />A WCF client is a local object that represents the WCF service in a form that the client can use to communicate with that remote service. WCF client types implement the target service contract, so when you create one and configure it, you can then use the WCF client object directly to invoke operations from the WCF service. </p>
+        <h2>Resolving service endpoints in <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable></h2>
+        <p>Before you can create a WCF client object, you must first resolve the service endpoint to be used by the object. <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> provides the following resolvers, which must be used to resolve the appropriate service endpoints, in the Microsoft.Amalga.Hosting.Configuration namespace:</p>
+        <ul>
+            <li>
+                <p>HostedServiceResolver</p>
+                <p>Use this resolver to resolve service endpoints for services in hosted applications, including <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> platform applications. For example, this resolver is used to resolve the service endpoint for the TerminologyService service, included in the Terminology platform application.</p>
+                <p>This resolver can resolve service endpoints given either a string representation of the address for the service endpoint, or an ApplicationDependency object representing the service endpoint. For more information about this resolver, see <a href="../../API/Ref/Microsoft.Amalga.Hosting.Configuration/AllMembers_T_HostedServiceResolver.htm">HostedServiceResolver</a>.</p>
+            </li>
+            <li>
+                <p>PlatformServiceResolver</p>
+                <p>Use this resolver to resolve service endpoints for services in <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> features. For example, this resolver is used to resolve the service endpoint for the TopologyService service, included in the Topology feature.</p>
+                <p>This resolver also provides ServiceEndPoint objects for the most commonly used services in <MadCap:variable name="BrandingHSG.Amalga Short" /> features. For more information about this resolver, see <a href="../../API/Ref/Microsoft.Amalga.Hosting.Configuration/AllMembers_T_PlatformServiceResolver.htm">PlatformServiceResolver</a>.</p>
+            </li>
+        </ul>
+        <p>The resulting ServiceEndPoint object is then used to create an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable>-specific client channel with which the WCF client object can communicate with the WCF service.</p>
+        <h2>Opening a client channel in <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable></h2>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> provides a custom channel factory object, named AmalgaWcfChannelFactory, in the Microsoft.Amalga.Hosting.Configuration namespace. The ServiceEndPoint object provided by a resolver, together with the WCF client object, can be used to open a client channel to the service endpoint and instantiate the WCF client.</p>
+        <h3>Using multiple operations from the same service contract</h3>
+        <p>If you use multiple methods from the same service contract for a service endpoint, you must open a WCF client channel for each method to be used. Each WCF client channel represents a single "conversation", using a single method, with a WCF service endpoint. </p>
+        <h2>Examples</h2>
+        <p>The following examples demonstrate how to use the PlatformServiceResolver, HostedServiceResolver, and AmalgaWcfChannelFactory objects to create a WCF client in a hosted application that can be used to interact with a WCF service.</p>
+        <h3>Connecting to a service for an Amalga feature</h3>
+        <p>The following example demonstrates how to use the PlatformServiceResolver object to obtain a resolved ServiceEndPoint object for the VirtualSchemaService service, exposed by the VirtualSchema feature, and then use the AmalgaWcfChannelFactory object to open a client channel using the ServiceEndPoint object and instantiate a WCF client for that service endpoint.</p><pre xml:space="preserve">
+// Resolve the service endpoint.
+ServiceEndPoint virtualSchemaManagementEndPoint = 
+   PlatformServiceResolver.VirtualSchemaManagementServiceEndPoint;
+
+// Open the client channel and instantiate the WCF client.
+IVirtualSchemaManagementService virtualSchemaManagementClient = 
+   AmalgaWcfChannelFactory&lt;IVirtualSchemaManagementService&gt;.CreateChannel(virtualSchemaManagementEndPoint);
+</pre>
+        <h3>Connecting to a service for a hosted application</h3>
+        <p>The following example demonstrates how to use the HostedServiceResolver object to obtain a resolved ServiceEndPoint object by specifying an ApplicationDependency object for the Terminology application, the GUID of the TerminologyService service. </p><pre xml:space="preserve">// Resolve the service endpoint.
+ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+   (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+   new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+   "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+// Open the client channel and instantiate the WCF client.
+ITerminologyQueryService terminologyServiceClient = 
+   AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

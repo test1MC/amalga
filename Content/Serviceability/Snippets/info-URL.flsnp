@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="73" MadCap:lastWidth="988">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p class="InputText">https://<span class="InputTextVariable">ClusterName</span>:9999</p>
+        <p>Where <span class="Placeholder">ClusterName</span> is the name of the cluster on which the Administration feature  was installed. </p>
+    </body>
+</html>

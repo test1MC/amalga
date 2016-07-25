@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="6642.333" MadCap:lastWidth="722" MadCap:fileTags="TopicType.Ref_General,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Scenario and event markers for platform services and platform applications</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p>The following tables describe the scenario markers and event markers provided for the platform features and platform applications included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. The globally unique identifier (GUID) is used in the performance log to identify a performance log entry for the start and stop of a scenario or event. For more information about the performance log, see <MadCap:xref href="LOG_CON_PerformanceLog.htm" target="" title="" alt="">Performance log on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#General" target="" title="" alt="">General scenarios and events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Authoriz" target="" title="" alt="">AuthorizationManagement scenarios and events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#DataConn" target="" title="" alt="">DataConnector scenarios and events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#ImagingR" target="" title="" alt="">ImagingRegistryDocumentApplication scenarios and events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Notifica" target="" title="" alt="">Notification scenarios and events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#TaskFlow" target="" title="" alt="">TaskFlow scenarios and events on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="General"></a>General scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by all <MadCap:variable name="BrandingHSG.Amalga Short" /> platform features and platform applications.</p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DefaultScenario</td>
+                    <td>16A2583A-1F3E-4F2C-9322-B1BB3A523AC2</td>
+                    <td>This scenario is used for any event created without a scenario.</td>
+                </tr>
+                <tr>
+                    <td>HostedApplicationLoad</td>
+                    <td>4868619C-7874-4FBB-AA41-E419A14E6A98</td>
+                    <td>Loading of a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>HostedApplicationUnload</td>
+                    <td>760A5C1B-9F8D-4D53-99D0-2746055EA5C0</td>
+                    <td>Unloading of a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>OperationExecuteScenario</td>
+                    <td>78770064-3BE8-4673-A83A-C46777A07C84</td>
+                    <td>Invocation of an operation from a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServiceContinuingScenario</td>
+                    <td>218D1041-25B5-475D-9DF1-A83EB144C241</td>
+                    <td>Continuing a Doors hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServicePausingScenario</td>
+                    <td>98E2C6CC-2066-46DA-9F7B-37880879084B</td>
+                    <td>Pausing a Doors hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServiceProcessingCommandScenario</td>
+                    <td>C43E18F8-D9FE-48C4-9553-24074B5CF703</td>
+                    <td>Invocation of a command from a Doors hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServiceRunningScenario</td>
+                    <td>54A00226-7FBF-4A71-8211-9FF6CBB5B589</td>
+                    <td>Running a Doors hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServiceStartingScenario</td>
+                    <td>7D689BAF-08CB-45CC-B863-DA61CA18343E</td>
+                    <td>Starting a Doors hosted service.</td>
+                </tr>
+                <tr>
+                    <td>ServiceStoppingScenario</td>
+                    <td>A6DF7FDD-BFA4-4048-BEBB-05B04DBE01F7</td>
+                    <td>Stopping a Doors hosted service.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ClearSettings</td>
+                    <td>740BD146-8597-4353-A414-1A8A6AFCE4A1</td>
+                    <td>
+                        <p>Disposal of configuration settings for a hosted application or hosted service.</p>
+                        <p>This event occurs within the HostedApplicationUnLoad scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CreateDiscoveryServiceFactory</td>
+                    <td>107BC871-68EE-4B6B-9873-3A624CEFA0A5</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> client channel to the IDiscoveryService service contract of the TopologyService service, provided by the Topology platform feature.</td>
+                </tr>
+                <tr>
+                    <td>CreateRuntimeServiceFactory</td>
+                    <td>C2EEAE79-84A3-4BC0-8984-A69BBBC4C782</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.WCF" /> client channel to the IRuntimeService service contract of the TopologyService service, provided by the Topology platform feature.</td>
+                </tr>
+                <tr>
+                    <td>FindDataHostInstance</td>
+                    <td>F59691DE-44F6-4F91-88A5-8DBB7B6ECCA1</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.WCF" /> client channel to the IDiscoveryService service contract of the TopologyService service, provided by the Topology platform feature, to retrieve the data host instance for a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>FindEndpointForAppDependency</td>
+                    <td>285FF160-7E2B-4BA1-A539-262A6F322325</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.WCF" /> client channel to the IDiscoveryService service contract of the TopologyService service, provided by the Topology platform feature, to retrieve the service endpoint of an application dependency for a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>FindEndpointForAppInstance</td>
+                    <td>26AD6D9E-EA81-4C08-AFB1-E0405A431918</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.WCF" /> client channel to the IDiscoveryService service contract of the TopologyService service, provided by the Topology platform feature, to retrieve the service endpoint of an hosted service for a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>FindEndpointForFeatureInstance</td>
+                    <td>AA5E4561-6A61-4232-9056-95F3BA7285F6</td>
+                    <td>Opening of a <MadCap:variable name="BrandingMS.WCF" /> client channel to the IDiscoveryService service contract of the TopologyService service, provided by the Topology platform feature, to retrieve the service endpoint of an hosted service for a platform feature.</td>
+                </tr>
+                <tr>
+                    <td>GetSettings</td>
+                    <td>B0CBC1FA-3599-4CEF-9273-F050C13D7ADE</td>
+                    <td>
+                        <p>Retrieval of configuration settings for a hosted application or hosted service.</p>
+                        <p>This event occurs within the HostedApplicationLoad scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InitializeLogger</td>
+                    <td>DE395630-D429-40FA-88DC-6E379377397D</td>
+                    <td>
+                        <p>Initialization of the Logger service for a hosted application.</p>
+                        <p>This event occurs within the HostedApplicationLoad scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LoadService</td>
+                    <td>5E36F2DA-AC5A-42DF-BF7B-BEDA337DD92D</td>
+                    <td>
+                        <p>Loading of a hosted service for a hosted application.</p>
+                        <p>This event occurs within the HostedApplicationLoad scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OperationExecuteEvent</td>
+                    <td>9C95DA4F-3F7B-4693-8845-77A0C3FF935B</td>
+                    <td>
+                        <p>Invocation of an operation from a   <MadCap:variable name="BrandingMS.WCF" /> hosted service.</p>
+                        <p>This event occurs within the OperationExecuteScenario scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QueryRuntimeServiceForAppInfo</td>
+                    <td>F30A3858-825A-46F4-B173-0870FC67660B</td>
+                    <td>Querying the IRuntimeService service contract of the TopologyService service, provided by the Topology platform feature, for information about a hosted application.</td>
+                </tr>
+                <tr>
+                    <td>QueryRuntimeServiceForServiceInfo</td>
+                    <td>23160701-050B-4D83-AFF0-321887415C44</td>
+                    <td>Querying the IRuntimeService service contract of the TopologyService service, provided by the Topology platform feature, for information about a hosted service.</td>
+                </tr>
+                <tr>
+                    <td>TearDownLogger</td>
+                    <td>3ABA8F99-EF42-445A-A0AB-7B5EDE5FF720</td>
+                    <td>
+                        <p>Disposal of the Logger service for a hosted application.</p>
+                        <p>This event occurs within the HostedApplicationUnLoad scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TearDownService</td>
+                    <td>41CF6831-9EEF-448A-A3FD-6D31142014E4</td>
+                    <td>
+                        <p>Disposal of a hosted service for a hosted application.</p>
+                        <p>This event occurs within the HostedApplicationUnLoad scenario.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Authoriz"></a>AuthorizationManagement scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by the AuthorizationManagement platform feature. </p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ScenarioIdCheckResourceAccess
+</td>
+                    <td>3FE7D23D-6ABC-4ABA-B036-7D99CFFD3729
+</td>
+                    <td>Invocation of the CheckResourceAccess operation from the IAuthorizationRuntimeService service contract for the AuthorizationManagementService service.</td>
+                </tr>
+                <tr>
+                    <td>ScenarioIdCheckResourceAccessUserId
+</td>
+                    <td>4EEBA8C3-F509-43EB-A560-AF464AD53E0A
+</td>
+                    <td>Invocation of the CheckResourceAccessUserId operation from the IAuthorizationRuntimeService service contract for the AuthorizationManagementService service.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EventIdCheckResourceAccess
+</td>
+                    <td>1C706102-27B1-4941-B61B-7508243A3DCD
+</td>
+                    <td>
+                        <p>Invocation of the CheckResourceAccess operation from the IAuthorizationRuntimeService service contract for the AuthorizationManagementService service.</p>
+                        <p>This event occurs within the ScenarioIdCheckResourceAccess scenario.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventIdCheckResourceAccessUserId
+</td>
+                    <td>5E32EE95-3D5B-4278-8F88-FB876F50B152
+</td>
+                    <td>
+                        <p>Invocation of the CheckResourceAccessUserId operation from the IAuthorizationRuntimeService service contract for the AuthorizationManagementService service.</p>
+                        <p>This event occurs within the ScenarioIdCheckResourceAccessUserId scenario.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="DataConn"></a>DataConnector scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by the <MadCap:annotation MadCap:createDate="2012-03-13T12:59:11.4379934-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Because of the &quot;platform application&quot; text, this should not be &quot;Data Connector application?&quot;" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-13T12:59:35.3167750-07:00">DataConnector platform application</MadCap:annotation>. For more information about the DataConnector platform application, see <MadCap:xref href="../DataConnector/SDK_OVW_DataConnector.htm" target="" title="" alt="">DataConnector on page 1</MadCap:xref>.</p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>No scenario markers are defined for the DataConnector platform application.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>PerfIdQueryTotal</td>
+                    <td>714916E0-F252-446A-8ABE-28036EF4405E</td>
+                    <td>This event marker is not used at this time.</td>
+                </tr>
+                <tr>
+                    <td>PerfIdQueryTranslation</td>
+                    <td>C4317BD2-3904-4390-B1FD-E3BA190CC79E</td>
+                    <td>Pre-processing a query provided during the invocation of an operation from the IDataConnectorService service contract for the DataConnectorService service.</td>
+                </tr>
+                <tr>
+                    <td>PerfIdQueryExecution</td>
+                    <td>62B45BFF-DDCF-492D-A4D9-F9420C128E90</td>
+                    <td>Executing a query provided during the invocation of an operation from the IDataConnectorService service contract for the DataConnectorService service.</td>
+                </tr>
+                <tr>
+                    <td>PerfIdQueryPostProcess</td>
+                    <td>B1C854BA-133B-4054-8374-A68F09714110</td>
+                    <td>Post-processing query results retrieved during the invocation of any operation from the IDataConnectorService service contract for the DataConnectorService service.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="ImagingR"></a>ImagingRegistryDocumentApplication scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by the ImagingRegistryDocumentApplication platform application. </p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>
+                        <MadCap:annotation MadCap:createDate="2012-03-13T13:02:09.7957023-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="no descriptions?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-13T13:02:14.3100425-07:00">Description</MadCap:annotation>
+                    </th>
+                </tr>
+                <tr>
+                    <td>IRSGetStudyInfoEntryScenario
+</td>
+                    <td>623CCD7B-72FF-462F-AE25-2D9CCBAB7A4F
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CreateStudyInfoEntryFromData</td>
+                    <td>
+                        <p>FF8968AE-CFE4-4B1D-94B7-BB71B6DD9720</p>
+                    </td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QueryInstanceFromVSchema</td>
+                    <td>CA4E1A8D-FC27-4955-96E8-AE067CB75A4F
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QueryRepositoryFromVSchema</td>
+                    <td>41617429-BC46-4595-A7DB-380CBEF0DFB6
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QuerySeriesFromVSchema</td>
+                    <td>866841FF-9DC9-41C8-9F16-5457191A6826
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>QueryStudiesFromVSchema</td>
+                    <td>73D25065-6CE4-4E5F-A307-5B2FA093CAB2
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ResolveEIDs</td>
+                    <td>A1451286-0DD3-4D11-805C-52E7412FB41D
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Notifica"></a>Notification scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by the Notification platform application. </p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>No scenario markers are defined for the Notification platform application.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>
+                        <MadCap:annotation MadCap:createDate="2012-03-13T13:02:44.5122233-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="no description? Also in next section." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-13T13:03:18.3336737-07:00">Description</MadCap:annotation>
+                    </th>
+                </tr>
+                <tr>
+                    <td>QueryNotificationOccurrencesPagingCall
+</td>
+                    <td>52E3D96D-4D4D-4895-B1D4-065E51C02534
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ValidateTypeIds
+</td>
+                    <td>5ED1073B-0DB4-4EC2-A19E-CA94F628D363
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="TaskFlow"></a>TaskFlow scenarios and events</h2>
+        <p>The following scenario markers and event markers are used by the TaskFlow platform application. </p>
+        <p class="h8">Scenario markers</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Scenario name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>None</td>
+                    <td>No scenario markers are defined for the TaskFlow platform application.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Event markers</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Event name</th>
+                    <th>GUID</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>QueryTasksXPathCall
+</td>
+                    <td>DA0AE87C-F112-4EF7-8191-F353849D4E31
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p MadCap:conditions="Production.doNOTbuild">External references</p>
+    </body>
+</html>

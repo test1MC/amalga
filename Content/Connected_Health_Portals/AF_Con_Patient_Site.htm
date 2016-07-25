@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-kathen,TopicType.Concept,EditingTags.7 - Editing issues resolved,Personas.All,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient site</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="patient site;sites:patient" />This topic describes the content of the <MadCap:variable name="Applications.patient site" /> and what can be customized.</p>
+        <p>A basic <MadCap:variable name="Applications.patient site" /> and set of controls is provided with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. A set of controls is available through the <MadCap:variable name="BrandingMS.Toolbox first use" /> which can be used to add new pages and features to the site. For more information on controls, see <MadCap:xref href="../AppFramework_NonReference/AF_Con_UsingControls.htm" target="" title="" alt="">Toolbox controls on page 1</MadCap:xref>.</p>
+        <p>The patient site will contain both unauthenticated and authenticated pages. The authenticated pages will only be accessible by patients who have logged on to the site using their <MadCap:variable name="BrandingHSG.HealthVault" /> credentials. The unauthenticated logon page is provided for them to get authenticated.</p>
+        <p>Different master pages are applied to authenticated and unauthenticated pages. For more information about master pages, see <MadCap:xref href="AF_Con_Master_Pages.htm" target="" title="" alt="">Master pages on page 1</MadCap:xref>.</p>
+        <h2>Unauthenticated pages</h2>
+        <p>Unauthenticated pages will contain:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Header" target="" title="" alt=""><![CDATA[ ]]><a href="#Header">Patient portal header</a></MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Sign" target="" title="" alt="">Sign-up control on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Logon" target="" title="" alt="">Sign in control on page 1</MadCap:xref>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Footer" target="" title="" alt="" MadCap:conditions="Production.doNOTbuild">Patient portal footer on page <MadCap:annotation MadCap:createDate="2011-10-06T11:21:27.2779581-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="Not in CTP1" MadCap:editor="v-kathen" MadCap:editDate="2011-10-06T11:21:31.3849581-07:00">1</MadCap:annotation></MadCap:xref>
+            </li>
+        </ul>
+        <h3>
+            <a name="Header">
+            </a>
+            <MadCap:variable name="Applications.Patient site sentence case" /> header</h3>
+        <p>For the unauthenticated patient portal, the <MadCap:variable name="Applications.patient site" /> header will include the organization branding area only. The look and content of the header is controlled by the master page. </p>
+        <p class="note">The master page for the unauthenticated patient page is physically defined in the public site, even though it is presented as part of the patient site.</p>
+        <p class="Figure">
+            <img src="Images/PatientUnauthenticated.png" />
+        </p>
+        <h3>
+            <a name="Sign">
+            </a>Sign-up control</h3>
+        <p>
+            <MadCap:snippetText src="Snippets/info-SignUp_patient.flsnp" />
+        </p>
+        <h3>
+            <a name="Logon">
+            </a>Logon control</h3>
+        <p>
+            <MadCap:snippetText src="Snippets/info-logon.flsnp" />
+        </p>
+        <h3 MadCap:conditions="Production.doNOTbuild">
+            <a name="Footer">
+            </a>
+            <MadCap:variable name="Applications.Patient site sentence case" /><![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-10-06T11:21:10.1669581-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="Not in CTP1" MadCap:editor="v-kathen" MadCap:editDate="2011-10-06T11:21:19.4719581-07:00">footer</MadCap:annotation></h3>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:snippetText src="Snippets/info-SiteFooter.flsnp" />
+        </p>
+        <h2>Authenticated pages</h2>
+        <p>Authenticated pages will contain:</p>
+        <ul>
+            <li>Patient site header</li>
+            <li MadCap:conditions="Production.doNOTbuild">Patient portal footer on page <MadCap:annotation MadCap:createDate="2011-10-06T11:21:27.2779581-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="Not in CTP1" MadCap:editor="v-kathen" MadCap:editDate="2011-10-06T11:21:31.3849581-07:00">1</MadCap:annotation></li>
+        </ul>
+        <p>For the authenticated patient, the <MadCap:variable name="Applications.patient site" /> header is the first control layer visible. The primary function of this control is to indicate the context of the  patient and provide a framework for site navigation. As shipped, it includes the institution brand, patient record selector, <MadCap:variable name="BrandingHSG.HealthVault Long" /> account context, and site navigation. As shipped, these controls are already authored into the <MadCap:variable name="Applications.patient site" /> header on the <MadCap:variable name="Applications.patient site" /> authenticated master page. Each control is also independently available from the <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> Toolbox and can be used to create a custom master page. Each control also has a set of available customizations. For more information, see <MadCap:xref href="../AppFramework_NonReference/AF_Con_UsingControls.htm" target="" title="" alt="">Toolbox controls on page 1</MadCap:xref>.</p>
+        <p>The <MadCap:variable name="Applications.patient site" /> header and its child controls will remain visible whenever there is an active logged on session.</p>
+        <p class="Figure">
+            <img src="Images/PatientHeader.png" />
+        </p>
+        <p>1 -Logo - displays your organization's logo.</p>
+        <p>2 - HealthVaultRecordSelector - enables access to other <MadCap:variable name="BrandingHSG.HealthVault Long" /> records for which the authenticated user has gone through the <MadCap:variable name="BrandingHSG.HealthVault" /> application authorization process. This authorization process enables the organization to view data from the user’s<MadCap:variable name="BrandingHSG.HealthVault" /> record and push data into their <MadCap:variable name="BrandingHSG.HealthVault" /> record. Data pushed into the <MadCap:variable name="BrandingHSG.HealthVault" /> record can be viewed in <MadCap:variable name="BrandingHSG.HealthVault" /> or through other authorized <MadCap:variable name="BrandingHSG.HealthVault" /> applications. <MadCap:variable name="BrandingHSG.HealthVault" /> records that the user created must also go through the application authorization process before they can be displayed in the record selector.</p>
+        <p>3 - EnterpriseAccountContext - shows the authenticated user’s <MadCap:variable name="BrandingHSG.HealthVault" /> identity, and provides a link to sign off.</p>
+        <p class="note">The Help link is not functional in the <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> release.</p>
+        <p>4 - CarouselNavigationBar - enables access to all other pages and workflow  that complete the patient site functionality for your organization.</p>
+        <p MadCap:conditions="Production.doNOTbuild">5 - Search - enables a patient to quickly <MadCap:annotation MadCap:createDate="2011-10-07T15:32:19.4339554-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="should below be &quot;sign-up&quot; control?" MadCap:editor="v-labenn" MadCap:editDate="2011-10-07T15:32:32.4652584-07:00">search</MadCap:annotation> for information on the site.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="AF_Con_Master_Pages.htm" target="" title="" alt="">Master pages</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Site_Customization.htm" target="" title="" alt="">Site customization on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking.htm" target="" title="" alt="">Patient linking</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_process.htm" target="" title="" alt="">Patient signup and linking process on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

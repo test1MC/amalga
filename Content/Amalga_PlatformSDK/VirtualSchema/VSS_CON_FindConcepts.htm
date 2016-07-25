@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1758.333" MadCap:lastWidth="507" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Find concepts assigned to entities</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to find concepts for entities in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can find concepts assigned to an array of specified entities by invoking the <span class="codeEntity">FindConcepts</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">FindConcepts</span>, you must specify a <span class="codeEntity">ConceptInfoQuery</span> object that represents the specified entities for which assigned concepts are to be retrieved. For more information about concepts, see <MadCap:xref href="../Terminology/TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the ConceptInfoQuery object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working2" target="" title="" alt="">Working with the ConceptTags object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working3" target="" title="" alt="">Working with the ConceptInfo object on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the ConceptInfoQuery object</h2>
+        <p>The ConceptInfoQuery object represents the set of specified entities for which  concepts are to be found. The ConceptInfoQuery object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Entities</td>
+                    <td>
+                        <p>An array of EntityInfo objects representing the entities to be examined.</p>
+                        <p class="note">You must specify at least one EntityInfo object that contains information about an entity in the <MadCap:variable name="FeatureName.Amalga entity registry" />; otherwise, an error occurs when invoking the operation.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When the operation is invoked, the VirtualSchemaService service retrieves the identifiers and names of every entity and entity property in the <MadCap:variable name="FeatureName.Amalga entity registry" />, mapping identifiers to fully qualified names for entities and entity properties. Once this is complete, the service then retrieves all of the concepts mapped to the entities and entity properties, returning a Dictionary object containing a ConceptTags object for each entity and entity property. </p>
+        <h2><a name="Working2"></a>Working with the ConceptTags object</h2>
+        <p>The ConceptTags object contains an array of ConceptInfo objects for a given entity or entity property, in which each ConceptInfo object represents a concept associated with that entity or entity property. The ConceptTags object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ObjectQName</td>
+                    <td>A string representing the fully qualified name of the entity or entity property.</td>
+                </tr>
+                <tr>
+                    <td>Tags</td>
+                    <td>An array of ConceptInfo objects representing the concepts associated with the entity or entity property identified in the ObjectQName property.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Working3"></a>Working with the ConceptInfo object</h2>
+        <p>The ConceptInfo object represents a concept, stored and managed by the Terminology platform application. The ConceptInfo object has the following properties</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ConceptCode</td>
+                    <td>A string representing the concept code for the concept.</td>
+                </tr>
+                <tr>
+                    <td>ConceptId</td>
+                    <td>A string representing the unique identifier for the concept.</td>
+                </tr>
+                <tr>
+                    <td>ConceptMeaning</td>
+                    <td>A string representing the meaning for the concept.</td>
+                </tr>
+                <tr>
+                    <td>Terminology</td>
+                    <td>A string representing the terminology that contains the concept.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

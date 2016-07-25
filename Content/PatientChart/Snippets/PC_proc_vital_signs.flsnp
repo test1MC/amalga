@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="469" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To change which vital signs are displayed</p>
+        <ul>
+            <li>Select the check box next to the item or items you want displayed, or click <span class="UIElementAction">ALL</span>.</li>
+        </ul>
+    </body>
+</html>

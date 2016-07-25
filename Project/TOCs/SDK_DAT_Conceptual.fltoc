@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Retrieving and modifying data in [%=BrandingHSG.Amalga Short%]"
+    Link="/Content/Amalga_PlatformSDK/DataConnector/DAT_OVW_DataAccess.htm">
+    <TocEntry
+      Title="Retrieving and modifying data with [%=FeatureName.Amalga ADO.NET%]"
+      Link="/Project/TOCs/SDK_DAT_Operational.fltoc" />
+    <TocEntry
+      Title="Retrieving data with [%=BrandingMS.Microsoft Excel 2010%] and [%=BrandingMS.PowerPivot for Excel%]"
+      Link="/Content/Amalga_PlatformSDK/DataConnector/SDK_DataPlat_TSK_Excel_PwrPivot.htm" />
+  </TocEntry>
+</CatapultToc>

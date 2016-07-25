@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1848" MadCap:lastWidth="797" MadCap:fileTags="Personas.Mahesh: DI Specialist,TopicOwner.v-ccole,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add an acquisition plug-in</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="feed acquisition:plug-in" />When you need to make nonstandard changes to  messages of a message type before they enter the <MadCap:variable name="Databases.MessageQueue" /> database, you can design and implement a custom plug-in to extend the <MadCap:xref href="../DI_Con_AcquireSummary.htm" target="" title="" alt="">Feed Acquisition application</MadCap:xref>. All custom code must be tested and maintained by you.</p>
+        <h2> Design-time activities</h2>
+        <p class="LabelforProcedures">To prepare a custom plug-in</p>
+        <ol>
+            <li>Create a new Class Library project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />.
+</li>
+            <li>Reference the Microsoft.Amalga.Pipeline.AcquisitionExtensions.dll and Microsoft.Amalga.Pipeline.AcquisitionCommon.dll assemblies in your project.</li>
+            <li>
+                <p>Write and debug the custom code. For help getting started, see <a href="../DI_Code_AquirePluginEx.htm">Acquisition plug-in code example</a>.
+Use types and members from the following namespaces:</p>
+                <ul>
+                    <li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.AcquisitionExtensions/N_Microsoft_Amalga_Pipeline_AcquisitionExtensions.htm">Microsoft.Amalga.Pipeline.AcquisitionExtensions</a> <![CDATA[ ]]></li>
+                    <li><a href="../../API/Ref/Microsoft.Amalga.Pipeline.AcquisitionCommon/N_Microsoft_Amalga_Pipeline_AcquisitionCommon.htm">Microsoft.Amalga.Pipeline.AcquisitionCommon</a>
+                    </li>
+                </ul>
+            </li>
+            <li>Compile the code as an assembly.</li>
+        </ol>
+        <h2>Resolve manifests</h2>
+        <p class="caution">Always test a custom plug-in before adding it to a feed-acquisition service manifest.</p>
+        <p>If the assembly is in the file system, use the first procedure. However, if the assembly was published to Fabric storage, use the second procedure.</p>
+        <p class="LabelforProcedures">To incorporate a custom assembly (for file system)</p>
+        <ol>
+            <li>Open the service manifest of the Feed Acquisition instance that you want to augment. Each feed has one application and one service manifest. If you need to configure the feed, see <a href="../DI_Task_AcquireApp.htm"><MadCap:xref href="../DI_Task_AcquireApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref></a>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest. </li>
+            <li>
+                <p>Add plug-in details between the <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called AcquisitionCustom, insert the following XML. In this example, the source type is Filesystem.</p>
+                <p class="tip">You can specify either an absolute or a relative path to the assembly.</p><pre xml:space="preserve" class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+	&lt;Plugin Name=" AcquisitionCustom" Assembly="Microsoft.Amalga.Pipeline.AcquisitionCustom, 	
+                 Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" 
+		  ClassName ="MyCustomClass"&gt;
+     	&lt;NameSpace&gt;Microsoft.Amalga.Pipeline.AcquisitionCustom&lt;/NameSpace&gt;
+     	&lt;URL&gt;C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\
+			Amalga_Acquisition\Microsoft.Amalga.Pipeline.AcquisitionCustom.dll&lt;/URL&gt;
+     	&lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+		]]&gt;
+  &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and synchronize the application instance. </li>
+        </ol>
+        <p class="LabelforProcedures">To incorporate a custom assembly (for Fabric storage)</p>
+        <ol>
+            <li>Open the service manifest of the Feed Acquisition instance that you intend to augment. Each feed has one application and one service manifest. If you need to configure the feed, see <MadCap:xref href="../DI_Task_AcquireApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt;</span> element between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> element tags in the service manifest. </li>
+            <li>
+                <p>Add plug-in details between the <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called AcquisitionCustom, insert the following XML. In this example, the source type is Fabric.</p>
+                <p class="note">If you set the <MadCap:xref href="DI_XML_Manifest_SourceType.htm" target="" title="" alt="">SourceType element</MadCap:xref> to Fabric, the Acquisition subsystem retrieves the plug-in from SQL Server instead of using the defined URL.</p><pre xml:space="preserve" class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+	&lt;Plugin Name=" AcquisitionCustom" Assembly="Microsoft.Amalga.Pipeline.AcquisitionCustom, 	
+		Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" 
+		ClassName ="MyCustomClass"&gt;
+	&lt;NameSpace&gt;Microsoft.Amalga.Pipeline.AcquisitionCustom&lt;/NameSpace&gt;
+	&lt;URL&gt;C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\
+			Amalga_Acquisition\Microsoft.Amalga.Pipeline.AcquisitionCustom.dll&lt;/URL&gt;
+	&lt;SourceType&gt;Fabric&lt;/SourceType&gt;
+	&lt;/Plugin&gt;
+		]]&gt;
+  &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>
+                <p>Add a new setting for the custom plug-in between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest. For example, insert the following line to add the AcquisitionCustom plug-in. The setting name must match the <MadCap:xref href="DI_XML_Manifest_Plugin.htm" target="" title="" alt="">Plugin element</MadCap:xref> name in the previous step.</p><pre xml:space="preserve" class="code">&lt;Setting Name="AcquisitionCustom" Type="System.String"&gt;
+	&lt;DefaultValue&gt; &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+            </li>
+            <li>Between the <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags, add the following CDATA structure and insert the proper base 64 encoding string between the CDATA brackets. <pre xml:space="preserve" class="code">&lt;DefaultValue&gt;
+	&lt;![CDATA[[<span class="Placeholder">***Insert base 64 encoded DLL data here.</span>]]&gt; 
+&lt;/DefaultValue&gt;</pre><p>For assistance in generating a base 64 encoded string, see <a href="http://go.microsoft.com/fwlink?LinkID=231139">Sample Base 64 Encoding and Decoding</a> at <a href="http://go.microsoft.com/fwlink?LinkID=231139">http://go.microsoft.com/fwlink/?LinkID=231139</a>.</p></li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and synchronize the application instance. </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="../DI_Con_AcquireSummary.htm" target="" title="" alt="">Feed Acquisition application</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../DI_Code_AquirePluginEx.htm" target="" title="" alt="">Acquisition plug-in code example</MadCap:xref>
+        </p>
+        <p><a href="../../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p><a href="../../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p><a href="../../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

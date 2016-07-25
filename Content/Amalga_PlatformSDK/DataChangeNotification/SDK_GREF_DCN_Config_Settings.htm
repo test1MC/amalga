@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="10641.67" MadCap:lastWidth="411.3333" MadCap:fileTags="TopicType.Ref_General,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:keyword term="configuration settings;configuration settings:Data Change Notification platform application;Data Change Notification platform application:configuration settings;ChangeTrackerService service:Data Change Notification platform application;Data Change Notification platform application:ChangeTrackerService service;EventingDispatcherService service:Data Change Notification platform application;Data Change Notification platform application:EventingDispatcherService service;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;EventingWcfHandlerService service:Data Change Notification platform application;Data Change Notification platform application:EventingWcfHandlerService service" />Data Change Notification configuration settings</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the configuration settings provided for the Data Change Notification hosted application and its associated hosted services.</p>
+        <p>The following configuration settings can specified by using the <MadCap:variable name="FeatureName.Management Console second use" /> to configure the settings for an instance of Data Change Notification (DCN). These configuration settings can also be specified manually, in the application manifest, for application settings, or the appropriate service manifest, for service settings, of an instance of DCN.</p>
+        <h2>Application settings</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>IncludeResults</td>
+                    <td>String</td>
+                    <td>
+                        <p>Determines whether changed records are included in the payload of a DCN event message. The default value of this property is set to False. For more information about payloads in DCN event messages, see <MadCap:xref href="SDK_CON_Processing_EventMessage.htm" target="" title="" alt="">Processing a DCN event message on page 1</MadCap:xref>.</p>
+                        <p class="note">The value of this property is converted to a Boolean value. If the value of this property is set to a string that cannot be converted to a Boolean value, then the property is set to False.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>ChangeTrackerService service settings</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>BatchSize</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum size of the batch that is sent to the server for writing event data logs. </p>
+                        <p>The value of this setting can be set to between 1 and 1000. The default value of this property is set to 100.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BatchTimeout</td>
+                    <td>Integer</td>
+                    <td>The time, in milliseconds, the service will wait before sending a batch of event logs to the server. The service automatically sends a batch of event logs to the server when either the maximum batch size specified in the BatchSize property is reached, or after waiting for the interval specified in this property, whichever comes first. <br />The value of this setting can be set to between 1 and 120000. The default value of this property is set to 3000.</td>
+                </tr>
+                <tr>
+                    <td>CacheTimeoutInterval</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The interval, in seconds, for which a resolved Transact-SQL statement is cached. </p>
+                        <p>The service keeps a copy of resolved Transact-SQL statements to compute data changes. These statements reflect the current user's entity binding and authorization on an entity.</p>
+                        <p>The value of this setting can be set to between 120 and 1440. The default value for this setting is set to 120.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CommandTimeout</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The time, in seconds, to wait for a command issued to Change Data Capture by the service, before terminating the command.</p>
+                        <p>The value of this setting can be set to between 1 and 360. The default value for this setting is set to 30.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DiagnosticsLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the diagnostics log. </p>
+                        <p>The value of this property can be set to the name of a valid diagnostics log level. The default value of this property is set to "Warning".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxAvailableEvents</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of event types that can be processed by a single instance of Data Change Notification at any given time, to avoid overloading the database server.</p>
+                        <p>The value of this setting can be set to between 100 and 2147483647. The default value for this setting is set to 1000.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxCdcRecords</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of CDC changes per table. </p>
+                        <p>The value of this setting can be set to between 1 and 2147483647. The default value of this property is set to 3000.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxChangedRecords</td>
+                    <td>Integer</td>
+                    <td>The maximum number of changed records retrieved by a single query from the service to Change Data Capture. The value of this setting can be set to between 1 and 2147483647. The default value of this property is set to 2000.</td>
+                </tr>
+                <tr>
+                    <td>MaxChangeProcessorThreads</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of requests to the change processor thread pool that can be active concurrently, per processor. Additional requests remain queued until a thread from the change processor thread pool becomes available. </p>
+                        <p class="tip">The total number of threads in the thread pool is calculated by multiplying the value of this setting with the number of processors from the physical host running the service.</p>
+                        <p>The value of this setting can be set to between 1 and 200. The default value of this property is set to 5.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxConcurrentQueries</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of Transact-SQL queries, issued by the service, that can be active concurrently. </p>
+                        <p>The value of this setting can be set to between 0 and 2147483647. The default value of this property is set to 25.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2012-01-23T19:42:33.9086516-08:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Not a typo - as it is spelled in the friggin' module in Amalga Management Console. Sigh." MadCap:editor="v-dennk" MadCap:editDate="2012-01-23T19:42:54.2358425-08:00">MaxEventMesageSize</MadCap:annotation>
+                    </td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum size, in bytes, allowed for a single event message. </p>
+                        <p>The value of this setting can be set to between 256000 and 3000000. The default value of this property is set to 2000000.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxExecutionTime</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of seconds to attempt processing a DCN event type. If this number is exceeded, processing times out and execution is terminated. Depending on the value of the MaxTimeoutRetries configuration setting, the service attempts to reprocess the DCN event type.</p>
+                        <p>The value of this setting can be set to between 5 and 2147483647. The default value of this property is set to 240.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxTimeoutRetries</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of times the service attempts to reprocess a DCN event type that has exceeded the executiont time set by the MaxExecutionTime configuration setting.</p>
+                        <p>If a DCN event type cannot be processed after exceeding the number of timeouts set by this configuration property, the state of the DCN event type is set to ResourceState.Suspended. For more information about the state of a DCN event type, see <MadCap:xref href="SDK_CON_Creating_EventType.htm" target="" title="" alt="">Creating a DCN event type on page 1</MadCap:xref>.</p>
+                        <p>The value of this setting can be set to between 1 and 100. The default value of this property is set to 3.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MetadataReaderPollingInterval</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The interval, in seconds, the service will wait before polling for updates to DCN event types and subscriptions.</p>
+                        <p>The value of this setting can be set to between 1 and 60. The default value of this property is set to 5.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PerformanceLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the performance log. </p>
+                        <p>The value of this property can be set to the name of a valid performance log level. The default value of this property is set to "Off".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PollingInterval</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The interval, in seconds, the service will wait before polling the database server for data changes. </p>
+                        <p>The value of this setting can be set to between 0 and 2147483647. The default value for this setting is set to 10.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>StaleEventBuffer</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The interval, in seconds, before the service resets a stale event for processing.</p>
+                        <p>A stale event can occur if the service encounters an exception while processing an event in the message queue. In such cases, the event is marked in the message queue as processed, but the event has not actually been processed and, while so marked, is ignored by all instances of the service. This property indicates how long the service should wait before resetting the status of such events, so that they can be reprocessed by an instance of the service.</p>
+                        <p>The value of this setting can be set to between 10 and 1200. The default value for this setting is set to 30.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>EventingDispatcherService service settings</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ContinueOnError</td>
+                    <td>Boolean</td>
+                    <td>
+                        <p>Specifies how the service should respond if it fails to call the WCF event handler for an event subscription. If this property is set to True, the service logs the information about the error and continues to process the current batch of event messages. If this property is set to False, the service stops processing the current batch of event messages and rolls back the processing status for all of the event messages in the current batch.</p>
+                        <p class="caution">If the value of this property is set to False, duplicate event messages may be sent to the subscriber.</p>
+                        <p>The default value of this property is set to True.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DiagnosticsLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the diagnostics log. </p>
+                        <p>The value of this property can be set to the name of a valid diagnostics log level. The default value of this property is set to "Warning".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxConcurrentActions</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of action invocations that can be performed by the service. </p>
+                        <p>The value of this setting can be set to between 0 and 2147483647. The default value of this property is set to 10.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxDispatcherThreads</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p>The maximum number of requests to the dispatcher thread pool that can be active concurrently, per processor. Additional requests remain queued until a thread from the dispatcher thread pool becomes available. </p>
+                        <p class="tip">The total number of threads in the thread pool is calculated by multiplying the value of this setting with the number of processors from the physical host running the service.</p>
+                        <p>The value of this setting can be set to between 1 and 200. The default value of this property is set to 5.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PerformanceLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the performance log. </p>
+                        <p>The value of this property can be set to the name of a valid performance log level. The default value of this property is set to "Off".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>EventingWcfHandlerService service settings</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DiagnosticsLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the diagnostics log. </p>
+                        <p>The value of this property can be set to the name of a valid diagnostics log level. The default value of this property is set to "Warning".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PerformanceLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the performance log. </p>
+                        <p>The value of this property can be set to the name of a valid performance log level. The default value of this property is set to "Off".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>EventingManagerService service settings</h2>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DiagnosticsLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the diagnostics log. </p>
+                        <p>The value of this property can be set to the name of a valid diagnostics log level. The default value of this property is set to "Warning".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MaxAllowedEventCount</td>
+                    <td>Integer</td>
+                    <td>
+                        <p>The maximum number of event types that can be allowed for a single instance of Data Change Notification at any given time. </p>
+                        <p>The value of this setting can be set to between 0 and 2147483647. The default value for this setting is set to 1000.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PerformanceLogLevel</td>
+                    <td>String</td>
+                    <td>
+                        <p>The minimum log level at which the service writes log entries into the performance log. </p>
+                        <p>The value of this property can be set to the name of a valid performance log level. The default value of this property is set to "Off".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SDK_CON_ConfiguringDCN.htm" target="" title="" alt="">Configuring DCN on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p MadCap:conditions="Production.doNOTbuild">External references</p>
+    </body>
+</html>

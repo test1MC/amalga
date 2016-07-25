@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="128" MadCap:lastWidth="570">
+    <body>
+        <p class="LabelforProcedures">To republish a report</p>
+        <p>You may have unpublished a report to work on it and now want to publish it again.</p>
+        <ol>
+            <li>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the Options icon (<img src="../Images/AN_settings.png" /> ) in the report that you want to republish,  and then click <span class="UIElementAction">Publish</span>.</li>
+        </ol>
+    </body>
+</html>

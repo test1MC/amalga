@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2871.667" MadCap:lastWidth="940" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:annotation MadCap:createDate="2012-03-12T22:57:33.1944904-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Post-CTP, keep breaking this into smaller topics" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T22:57:42.0121353-07:00">Common context and HL7 CCOW</MadCap:annotation>
+        </h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Clinical context;CCOW;HL7;Common Context;Page Messaging" /></p>
+        <p class="abstract">This topic describes the implementation of the HL7 clinical context standard as the Common Context page messaging group.</p>
+        <p>The common context is a named messaging group created by each page instance of the Page Messaging System. It is used to communicate persistent information about the clinical context of a user's interaction with a <MadCap:variable name="FeatureName.Amalga Framework second use" /> application as the user interacts with page elements and navigates from page to page. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Overview" target="" title="" alt="">Overview on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data item definition on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Particip" target="" title="" alt="">Participant survey on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Message" target="" title="" alt="">Message merging on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the common context on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Overview"></a>Overview</h2>
+        <p>The "common context" is a part of the Page Messaging System that is used to communicate persistent clinical context information.</p>
+        <p>It is composed of a named messaging group, and a client-side representation of the merged messages that have been sent to that group. Each page instance of the Page Messaging System maintains a dedicated messaging participant (<b>P<MadCap:annotation MadCap:createDate="2012-02-20T22:00:12.5834010-08:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="TMI; it's an internal class." MadCap:editor="v-wipete" MadCap:editDate="2012-02-20T22:00:19.3539746-08:00">ageMessagingServiceClien</MadCap:annotation>t</b>, <MadCap:annotation MadCap:createDate="2011-11-30T00:40:07.3024129-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="add link instead?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:40:12.5834129-08:00">described below</MadCap:annotation>) which handles local messages sent to the group and merges them with the existing context. Different page instances within a single browser window use the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService </a>to synchronize their local context with the context maintained by the web service, and thus with each other.</p>
+        <p>From the perspective of a messaging participant, the common context is a single shared string value that contains a list of key-value pairs and persists from one page to the next as a user navigates within an <MadCap:variable name="BrandingHSG.Amalga Short" /> portal site. Its operation is mostly transparent to individual controls.</p>
+        <h3>Clinical context</h3>
+        <p>"Clinical context" is information about the state of a user’s interaction with healthcare applications for a specific clinical process or event.  A common clinical context allows multiple participants to coordinate their selection and presentation of data, so that choices made by the user while interacting with one application can be applied immediately by other applications.</p>
+        <p>Clinical context can include any information that is relevant to the clinical task at hand. Common examples include:</p>
+        <ul>
+            <li>The ID of the patient who is the focus of the current task</li>
+            <li>The ID of the clinical event or encounter with which the user is engaged</li>
+            <li>A specific time or range of times that specify a period for which clinical data is relevant to the user</li>
+            <li>A grouping of patients, personnel, or clinical resources that the user will manage or inspect</li>
+            <li>The ID of the individual who is using the application</li>
+        </ul>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable>supports clinical context management with the Page Messaging System, a primarily client-side messaging system that also uses a Web service to synchronize application states across process boundaries that the client-side messaging API cannot cross.</p>
+        <h3>Context management and HL7 CCOW</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> context management system is designed to conform to the Context Management Standard specifications published by the Health Level Seven Clinical Context Object Workgroup, collectively called the HL7 CCOW.</p>
+        <p>For more information about the CCOW standard and best practices, see the <a href="http://go.microsoft.com/fwlink?LinkId=234245">HL7</a> website.</p>
+        <h3>Common context and page messaging</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> uses <a href="AF_Con_PageMessagingParts.htm">page messaging</a> to coordinate the common context. Applications that use alternative implementations of the HL7 CCOW messaging standard will not be able to interoperate with <MadCap:variable name="FeatureName.Amalga Framework second use" />applications. </p>
+        <h3>CommonContext message group</h3>
+        <p>CommonContext is a named messaging group created by each page instance of the Page Messaging System. The content of the common context is a string value associated with a session ID, along with an optional version string.  The version and session ID are managed by the page messaging system, so from the perspective of a messaging participant, the common context is a single shared string value that contains a JSON representation of a list of key-value pairs. The value of the list persists from one page to the next as a user navigates within an <MadCap:variable name="BrandingHSG.Amalga Short" /> portal site.</p>
+        <p>The common context is synchronized with the back-end server using a specialized object,<MadCap:annotation MadCap:createDate="2012-03-12T22:42:43.6373062-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="TMI?" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T22:42:50.1894742-07:00"><b>PageMessagingServiceClient</b>,</MadCap:annotation> which joins the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Services/T_PageMessagingService.htm">PageMessagingService </a>as a CommonContext participant.  <b>PageMessagingServiceClient</b> reads the local context and sends update messages in the same way as any other messaging participant. Its operation is mostly transparent to individual controls.	</p>
+        <h2><a name="Particip"></a>Participant survey</h2>
+        <p>By default, every update message sent by a  <a href="#">CommonContext</a> participant is applied to the common context automatically.    The common context is intended to reflect recent user activity, and applications that use the common context should be implemented with the understanding that the context may be changed by another participant at any time.</p>
+        <p>However, there are situations where an immediate context update could result in data loss or  other unsafe condition.  Participants that may encounter such situations should specify a <b>surveyCallback</b> callback function--that is, they should pass a non-null survey callback argument when they join the common context group.   Whenever the message queue processes an update to the common context, it polls the <b>surveyCallback</b> function of each  <a href="#">CommonContext</a> participant to determine whether or not it is safe to proceed.</p>
+        <p>The message queue assumes that any non-null response to a survey callback is a message to the user explaining the potential adverse consequences of a context update.  The messaging system collects all such messages and displays them in a dialog box, giving the user the option to cancel the context change or allow it to continue.</p>
+        <h2><a name="Message"></a>Message merging</h2>
+        <p>Every message that passes the participant survey is committed to the common context.  </p>
+        <p>When a message is merged into the common context, its affect on the existing content depends on three things: the subjects present in the message, the role ("ID"&#160;or "CO") of the data items in the message, and whether or not any subjects in the current context are dependent on the subjects present in the message. (For more information on message subjects and roles, see <a href="AF_Con_PageMessagingDefineDataItem.htm">common context message data</a>.)</p>
+        <p class="note">Messages sent to groups other than the CommonContext group are not merged with the common context.</p>
+        <h3>Identifying data items</h3>
+        <p>Data items with an "ID"&#160;role are identifiers: their value cannot be associated with more than one real-world entity. When an identifying data item is merged into the common context, any existing data items with the same subject are removed. For example, when a message that includes a "Patient.Id.Mrn" data item is merged into the common context, it represents a change in the patient context. Any existing data items with "Patient" subjects are removed from the common context.</p>
+        <h3>Corroborating data items</h3>
+        <p>Data items with a "CO"&#160;role corroborate existing data. Their value can be shared by multiple real-world entities. (For example, a date of birth may be shared by more than one person.) When a corroborating data item is merged into the common context, the existing data items do not change.</p>
+        <h3>Compound messages</h3>
+        <p>A message can contain more than one data item. For example, an update to the patient context could include both a "Patient.Id.Mrn" data item and a "Patient.Co.Name"&#160;data item.</p>
+        <p>When a message includes more than one data item,  any context changes are identified before the merge begins. If the update invalidates any message subjects, all data items with those subjects are removed before any new data items are merged in. Once the invalid messages (if any) are removed, the new data items are merged into the common context together.</p>
+        <p class="note">The only way for the common context to contain two or more identifying data items with the same subject (such as "Patient.Id.Mrn.AmalgaPersonID" and "Patient.Id.Mrn.Contoso") is to put both data items into a single message.</p>
+        <h3>Subject dependency</h3>
+        <p>Some context updates may require changes to context elements that are outside the scope of a named element and its children.  For example, a change to the “Patient” context indicates that the user has switched to a new patient. Context information about clinical encounters associated with the previous patient is no longer valid, and existing data items with "Encounter" subjects should be removed.  In contrast, the current user has not changed, so data items with "User" subjects are not affected. To the messaging system, the clinical encounter context is dependent upon the patient context, but the user context is not.</p>
+        <p>There are six predefined dependencies among the CCOW subjects:</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Subject</th>
+                    <th>Dependency</th>
+                </tr>
+                <tr>
+                    <td>Encounter </td>
+                    <td>Patient</td>
+                </tr>
+                <tr>
+                    <td>Observation </td>
+                    <td>
+                        <p>Patient</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DICOMStudy </td>
+                    <td>Patient</td>
+                </tr>
+                <tr>
+                    <td>DICOMStudyComponent </td>
+                    <td>DICOMStudy</td>
+                </tr>
+                <tr>
+                    <td>DICOMSeries </td>
+                    <td>DICOMStudyComponent</td>
+                </tr>
+                <tr>
+                    <td>DICOMInstance </td>
+                    <td>DICOMSeries</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Additional dependencies can be defined using the<a href="AF_Con_API_PageMessaging.htm#SubjectDependencyResolver">SubjectDependencyResolver</a> functions.</p>
+        <h4>Example</h4>
+        <p>The following Javascript snippet adds a dependency between the "Custom" and "Patient" subjects, then removes the dependency.</p><pre xml:space="preserve">
+// Create a SubjectDependencyResolver instance
+this._subjectDependencyResolver = new Amalga.Messaging.SubjectDependencyResolver();
+
+// Make the "Custom" subject context dependent on "Patient"
+this._subjectDependencyResolver.addDependency('Custom =&gt; Patient');
+
+// Remove the subject dependency
+this._subjectDependencyResolver.removeDependency('Custom =&gt; Patient');
+		</pre>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_PageMessagingParts.htm">The Page Messaging system</a>
+        </p>
+        <p class="SeeAlsoSubHead">Other resources</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234245">HL7 Clinical Context Object Workgroup</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="65" MadCap:lastWidth="988">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Obtain the fully qualified domain name (FQDN) of the NLB cluster on which the Administration feature was installed. If Administration was installed on a single machine, then use the FQDN of that machine. <MadCap:variable name="FeatureName.Management Console second use" /> is included in the Administration feature.</p>
+    </body>
+</html>

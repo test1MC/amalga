@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="148" MadCap:lastWidth="490">
+    <body>
+        <p class="LabelforProcedures">To copy a report to the clipboard</p>
+        <ul>
+            <li>
+                <p>On the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, in the report that you want to copy, click the Options icon (<img src="../Images/AN_settings.png" /> ), and then click <span class="UIElementAction">Copy report to clipboard</span>.</p>
+                <p>The report will then be available for use in other applications.</p>
+            </li>
+        </ul>
+    </body>
+</html>

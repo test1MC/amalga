@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2191" MadCap:lastWidth="941" MadCap:ignoredWords="GetApplicationId;GetContext" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Identifying a custom control with IAmalgaInstanceIdentifier</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="application identity;application instance;IAmalgaInstanceIdentifier">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the values that must be provided by the IAmalgaInstanceIdentifier interface methods in order to identify a custom control at run time.</p>
+        <p>&#160;</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Identity" target="" title="" alt="">Identity values on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Sharing" target="" title="" alt="">Sharing identity values with other controls on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Identity"></a>Identity values</h2>
+        <p>The application identity of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> application is composed of three separate values: the application ID, version, and context.</p>
+        <h3>Application ID</h3>
+        <p>The application ID&#160;is a GUID that identifies all instances of a given application. It is the one element of the <MadCap:variable name="BrandingMS.SharePoint" /> application identity that is common to all deployed instances of the application. It is also the only element that is always known to both <MadCap:variable name="BrandingMS.SharePoint" /> applications and <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted services prior to application instance resolution, and is required in order for the application binding process to succeed. </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetApplicationId.htm">GetApplicationId()</a> should always return the value of the application ID specified in the manifest packaged with the application. Its value should not be changed.</p>
+        <h3>Application version</h3>
+        <p>The application version&#160;is a string that identifies the version of each application. Its value is specified by  the  <MadCap:annotation MadCap:createDate="2012-01-12T22:51:49.1385433-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="if this is an XML term, then the correct style is MarkupLanguageElement as you have done for &lt;DeploymentManifest&gt;. Same with Version instances below." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-12T22:53:32.7145433-08:00"><code>Version</code></MadCap:annotation>attribute  of <span class="MarkupLanguageElements">&lt;DeploymentManifest&gt;</span>.  Its value is expected to change with each release of the application.</p>
+        <p>It is generally good practice for <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetVersion.htm">GetVersion()</a> to return the value of Version specified in the manifest packaged with the application. However, remember that the version number also serves as a way to enforce separate bindings on groups of <MadCap:variable name="BrandingMS.SharePoint" /> artifacts. Objects with identical version values can be bound as a group if their context values are the same, but objects with differing versions cannot be grouped together. No matter what context they may be assigned, they will always need to be resolved and bound separately.</p>
+        <h3>Application context</h3>
+        <p>The application context is a string that is used, along with the application ID and version, to form the triplet of values that uniquely identifies an application instance in a <MadCap:variable name="BrandingMS.SharePoint" /> environment.</p>
+        <p>In principle, <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/M_IAmalgaApplicationIdentity_GetContext.htm">GetContext()</a> can return anything, even <span class="ForeignCodeElements">String.Empty</span>. However, since the values of the application ID and version may not change from one application instance to another, controlling the value of the application context is the most reliable way to group <MadCap:variable name="BrandingMS.SharePoint" /> artifacts so that different sites or parts of a site can be bound to different application views and configuration settings.</p>
+        <p>For example, if all the <MadCap:variable name="BrandingMS.SharePoint" /> artifacts contained within a site return the same identity values, they will effectively share a single instance binding. If there is more than one application instance deployed to the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform, <MadCap:annotation MadCap:createDate="2012-01-12T22:56:52.0975433-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This sounds like a bad thing.  Wouldn;t you need UI for each app instance even it is a second instance?  Would this be likely to happen?&gt;\r\nIf it is not a problem and the audience will understand it, ignore me.  Just raising a question." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-12T22:58:32.9245433-08:00">the additional instances will not be bound to a UI.</MadCap:annotation> On the other extreme, if every SharePoint artifact uses a different context value, the site will invoke the instance binding UI&#160;every time a new control tries to access <MadCap:variable name="BrandingHSG.Amalga Short" /> platform resources. </p>
+        <h4>Example</h4>
+        <p>The following example uses a standalone class that implements IApplicationIdentity and a <MadCap:variable name="BrandingMS.WCF service"></MadCap:variable>&#160;contract to load a proxy for the <MadCap:variable name="BrandingMS.WCF service"></MadCap:variable>.  If the application and service do not yet have a binding, the Framework will bring up the application binding UI.</p><pre xml:space="preserve">
+// MyAppId provides an implementation of IAmalgaApplicationIdentity for a custom
+//  Framework application whose application ID and version are known at compile time.
+
+public class MyAppId : IAmalgaApplicationIdentity
+{
+    Guid MyAppApplicationId;
+    String MyAppVersion;
+    String MyAppContext;
+
+    public MyAppId(String context)
+    {
+        <MadCap:annotation MadCap:createDate="2012-01-12T23:01:23.8975433-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="These comments are not wrapping nicely in PDF. Not a problem for me -- does it matter to your audience." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-12T23:02:22.2625433-08:00">// The value</MadCap:annotation> of applicationId must match the value specified in the application
+        //  deployment manifest.  The ID should be generated before the deployment
+        //  package is built and should never change, so its value can be specified here.
+        // Replace the empty GUID with the application ID value from the application manifest.
+        this.MyAppApplicationId = new Guid(Guid.Empty.ToString());
+
+        // It is a good practice to use the same version that is specified in the deployment
+        //  manifest.  The version number may or may not be known at compile time, but if
+        //  it is, it can be specified here.
+        // Replace the empty string with the version value from the application manifest.
+        this.MyAppVersion = String.Empty;
+
+        // The value of the context string may be the only way to distinguish between
+        //  deployed instances of the application at run time.  The context string should
+        //  not be specified at compile time unless the application is designed to ensure
+        //  that only a single application instance will run at a time.
+        this.MyAppContext = context;
+    }
+
+    //
+    // IAmalgaApplicationIdentity
+    //
+
+    public Guid GetApplicationId()
+    {
+        return applicationId;
+    }
+
+    public string GetContext()
+    {
+        return context;
+    }
+
+    public string GetVersion()
+    {
+        return version;
+    }
+}</pre>
+        <h2><a name="Sharing"></a>Sharing identity values with other controls</h2>
+        <p>All <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls (controls derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl, </a><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_BaseUserControl.htm">BaseUserControl</a>, and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>) also implement the methods of the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> interface. However, they do not have default values for application ID, version, or context. Instead, they rely on either their parent controls or the <MadCap:variable name="BrandingMS.SharePoint" /> environment to provide their identity values, with priority given to their parent controls.</p>
+        <p>This means that whatever identity values are assigned to a control with a custom implementation of <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> will automatically apply to all of its child controls as well.</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity Interface</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_ApplicationIdentity.htm">Application identity</a>
+        </p>
+        <p><a href="AF_Con_InstanceIdResolution.htm">Application instance resolution</a>
+        </p>
+        <p><a href="AF_Con_IdentifyControlInstance.htm">Identifying a [%=FeatureName.Amalga Framework second use%] control instance</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

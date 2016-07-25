@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1804.333" MadCap:lastWidth="750" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">PerformanceCategory element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the PerformanceCategory element.</p>
+        <p>Declares a single category of performance counters for the hosted <MadCap:variable name="BrandingMS.WCF service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" />.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;PerformanceCategories&gt;<br />&#160;&#160;&#160;&lt;PerformanceCategory <br />&#160;&#160;&#160;&#160;&#160;&#160;Name = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;Version = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;CodeName = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;Help = "<span class="Parameter">string</span>"<br />&#160;&#160;&#160;&#160;&#160;&#160;MultiInstance = "<span class="Parameter">boolean</span>"&#160;&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;PerformanceCounter&gt;...&lt;/PerformanceCounter&gt;<br />&#160;&#160;&#160;&lt;/PerformanceCategory&gt;<br />&lt;/PerformanceCategories&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-<i>n</i>:
+Required element that can occur one or more times.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_PerformanceCategories.htm">PerformanceCategories</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_PerformanceCounter.htm">PerformanceCounter</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The display name of the performance counter category.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>
+                        <p>(Optional string.) The string representation of a <a href="http://msdn.microsoft.com/en-us/library/e31ax1a7.aspx">System.Version</a> object, defining the version of the performance counter category. If no value is specified, the default value is set to an empty string ("").</p>
+                        <p class="caution">The value of this attribute should be incremented each time the definition of the <span class="MarkupLanguageElements">PerformanceCategory</span> element is changed, to allow different versions of the hosted <MadCap:variable name="BrandingMS.WCF service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" /> to run side-by-side without conflicting performance counter categories.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CodeName</td>
+                    <td>
+                        <p>(Required string.) The name to be used when referring to the performance counter category in C# code.</p>
+                        <p class="caution">The value of this attribute must conform to the C# naming convention. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Help</td>
+                    <td>
+                        <p>(Required string.) The help text for the performance counter category.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MultiInstance</td>
+                    <td>
+                        <p>(Required Boolean.) Indicates whether the performance counter category is multi-instance. If set to true, the performance counter category is multi-instance; otherwise, the performance counter category is single-instance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>If the <span class="MarkupLanguageElements">Version</span> attribute is specified, the value is appended to the <span class="MarkupLanguageElements">Name</span> attribute to define the full name of the performance counter category. For example, if the <span class="MarkupLanguageElements">Name</span> attribute was set to "TestCategory" and the <span class="MarkupLanguageElements">Version</span> attribute was set to "1.0.0.0", then the full name for the resulting performance counter category would be "TestCategory - 1.0.0.0". The full name is shown in the Performance Object field of the Performance Viewer application's Add Counter dialog box. The <span class="MarkupLanguageElements">Version</span> attribute is appended to prevent different versions of the same hosted <MadCap:variable name="BrandingMS.WCF service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" /> from overwriting the performance counter categories of each other.</p>
+    </body>
+</html>

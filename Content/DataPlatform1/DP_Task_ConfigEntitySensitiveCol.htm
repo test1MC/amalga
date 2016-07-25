@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1473" MadCap:lastWidth="608" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Restrict access to an entity property (sensitive labels)</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to limit access to data using sensitive labels.  </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console;entity properties:access;properties, entity:access;entities:properties" />You can hide columns of data from unauthorized roles by applying sensitive labels to the corresponding entity properties. </p>
+        <p>When a column is hidden, the data for that column is redacted. For information about working with redacted data as an application developer, <MadCap:annotation MadCap:createDate="2012-03-06T06:11:38.5549147-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Deleted from this topic per feedback from Dennis on 3/4 that a null value is always used (no &quot;***REDACTED***&quot; string) and that Amalga.SecureData type does not exist: \r\n\r\nWhen a column is hidden, the value of the column is changed. \r\nIn Amalga 3.0 CTP2, redacted data is replaced with the following default values.\r\n- For data of type System.String, the value is replaced with the phrase ***REDACTED***.\r\n- For data of any other type, the value is replaced with empty (NULL) value.\r\nIn Amalga 3.0 CTP2, the masking values are not configurable. \r\nApplication developers can cast data to the Amalga.SecureData type to implement additional user interfaces that notify users that the data is masked. " MadCap:editor="v-padenc" MadCap:editDate="2012-03-06T06:15:47.4079016-08:00">see </MadCap:annotation><MadCap:xref href="../Amalga_PlatformSDK/DataConnector/DAT_CON_WorkingSecureData.htm" target="" title="" alt="">Working with restricted data</MadCap:xref>.</p>
+        <p>Hiding the data involves creating a sensitive label, applying that label to the entity property mapped to the column that contains the data, and granting access to the sensitive label for select roles.</p>
+        <p>Granting roles access to a sensitive label involves modifying the access policy for the related entity. </p>
+        <p>For example, to hide test result status stored in a particular column (corresponding to the Result property in the Patient entity) from administrators but show it to doctors, define a sensitive label TestResult, grant the Doctors role access to this label, and bind the label to the Result property. Now doctors can see these test results but administrators cannot.</p>
+        <p>Sensitive labels available for application are those defined for the current entity, its peers, and its parents. Multiple properties can make use of a sensitive label. Role-specific permissions are determined by the union of all rules, including sensitive labels.</p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To create a sensitive label</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" /> <![CDATA[ ]]></li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-sensitive.flsnp" /> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-sensitive.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-entername.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-entername.flsnp" /> <![CDATA[ ]]></p>
+            </li>
+        </ol>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To bind a sensitive label to an entity property</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-sensitive.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-sensitive.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entername2.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-sel-prop.flsnp" /> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-sel-prop.flsnp" /> <![CDATA[ ]]></p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-row-label.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-row-label.flsnp" />
+                </p>
+                <p>See <MadCap:xref href="DP_Task_PolicyLabel.htm" target="" title="" alt="">Grant permissions for a sensitive label</MadCap:xref> for instructions on granting roles access to sensitive labels. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_PolicyLabel.htm" target="" title="" alt="">Grant permissions for a sensitive label</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/DataConnector/DAT_CON_WorkingSecureData.htm" target="" title="" alt="">Working with secure data</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Reference</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_SensitiveLabels.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

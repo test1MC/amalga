@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="148" MadCap:lastWidth="388" MadCap:fileTags="Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild">
+    <body>
+        <p class="LabelforProcedures">To add a category</p>
+        <ol>
+            <li>
+                <p>On the <MadCap:variable name="UI-Labels.Analytics Administration" /> page, click <span class="UIElementAction">Add category</span>.</p>
+            </li>
+            <li>
+                <p>Type the name of the new category, and then click <span class="UIElementAction">Add</span>.</p>
+            </li>
+        </ol>
+    </body>
+</html>

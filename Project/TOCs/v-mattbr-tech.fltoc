@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Image Delivery Application (IDA)"
+    Link="/Content/Imaging/Service IDS/LND-IDS.htm"
+    conditions="Features.Imaging">
+    <TocEntry
+      Title="IDS structure"
+      Link="/Content/Imaging/Service IDS/GREF-IDs-Structure.htm"
+      conditions="Features.Imaging"></TocEntry>
+    <TocEntry
+      Title="IDS operation"
+      Link="/Content/Imaging/Service IDS/GREF_ODS-Op-BLOB-Thumb.htm"
+      conditions="Features.Imaging"></TocEntry>
+    <TocEntry
+      Title="[%=Imaging.Image Delivery server%] Application Event Logging and Performance Counters"
+      Link="/Content/Imaging/Service IDS/LND-IDS-Logs.htm"
+      conditions="Features.Imaging">
+      <TocEntry
+        Title="Performance counters"
+        Link="/Content/Imaging/Service IDS/GREF-Perf-Count.htm"
+        conditions="Features.Imaging" />
+      <TocEntry
+        Title="Event logs"
+        Link="/Content/Imaging/Service IDS/GREF-Events.htm"
+        conditions="Features.Imaging" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

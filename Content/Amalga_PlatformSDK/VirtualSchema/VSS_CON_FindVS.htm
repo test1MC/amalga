@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1427.667" MadCap:lastWidth="467.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Finding a virtual schema instance</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to find a virtual schema instance using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can find an instance of a virtual schema by invoking the <span class="codeEntity">FindVirtualSchema</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">FindVirtualSchema</span>, you must specify an <span class="codeEntity">VirtualSchemaQuery</span> object that represents the information that the operation uses to find the virtual schema instance.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the VirtualSchemaQuery object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the VirtualSchemaQuery object</h2>
+        <p>The VirtualSchemaQuery object represents the information used by the FindVirtualSchema operation to find virtual schema instances.  The VirtualSchemaQuery object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Includes</td>
+                    <td>
+                        <p>A collection of strings representing additional objects to be included in the results.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InstanceId</td>
+                    <td>A System.Guid object that represents the globally unique identifier (GUID) of a virtual schema.</td>
+                </tr>
+                <tr>
+                    <td>InstanceName</td>
+                    <td>A string representing the name of the virtual schema instance.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>The operation uses the logical disjunction of the properties of the VirtualSchemaQuery object for which a value is specified to determine the criteria by which a virtual schema instance is identified and returned by the operation. In other words, the set of properties for the VirtualSchemaQuery object are treated as a logical OR operation when FindVirtualSchema is invoked.</p>
+        <p>When the operation is invoked,  the following steps are performed to define the filtering for an object query:</p>
+        <ol>
+            <li>If a value is specified for the InstanceId property of the VirtualSchemaQuery object, then any EntityContainer objects for which the value of the Id property matches the specified value are included in the query.</li>
+            <li>If a value is specified for the InstanceName property of the VirtualSchemaQuery object, then any EntityContainer objects  for which the value of the Name property matches the specified value are included in the query.</li>
+            <li>If the Includes property of the VirtualSchemaQuery object contains one or more specified class names, then any objects for which the class name matches each specified value are used to filter the query.</li>
+        </ol>
+        <p>The operation performs the object query and returns the first matching virtual schema instance as an EntityContainer object.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

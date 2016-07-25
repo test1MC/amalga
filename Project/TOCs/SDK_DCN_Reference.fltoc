@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Data Change Notification Reference"
+    Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_NAV_DCN_Reference.htm">
+    <TocEntry
+      Title="Data Change Notification configuration settings"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_GREF_DCN_Config_Settings.htm" />
+  </TocEntry>
+</CatapultToc>

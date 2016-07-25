@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="993" MadCap:lastWidth="496" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Paging through a query result</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to use the overloaded Fill method to control paging for an AmalgaDbDataAdapter object in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>Paging though a query result is the process of returning the results of a query in smaller subsets of data, or pages. This is a common practice for displaying results ot a user in small, easy-to-manage chunks.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object provides a facility for returning only a page of data, through overloads of the <span class="ForeignCodeElements">Fill</span> method. However, this might not be the best choice for paging through large query results because, although the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object fills the target <span class="ForeignCodeElements">DataTable</span> or <span class="ForeignCodeElements">DataSet</span> object with only the requested records, the resources to return the entire query are still used. To return a page of data from a data source without using the resources needed to return the entire query, specify additional criteria for your query, such as a TOP expression or WHERE clause in the SELECT statement for the <span class="ForeignCodeElements">SelectCommand</span> property of your <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object, that reduce the rows returned to only those required.</p>
+        <p>To use the overloads for the <span class="ForeignCodeElements">Fill</span> method to return a page of data, invoke the <span class="ForeignCodeElements">Fill</span> method using the <span class="Parameter">startRecord</span> and <span class="Parameter">maxRecords</span> arguments. The <span class="ForeignCodeElements">startRecord</span> argument specifies the starting record for the page to be returned, and the <span class="ForeignCodeElements">maxRecords</span> specifies the number of rows for the page to be returned.</p>
+        <p>Once the page is returned from the <span class="ForeignCodeElements">Fill</span> method, you can retrieve the next page by incrementing or decrementing the <span class="Parameter">startRecord</span> argument by the value of the <span class="Parameter">maxRecords</span> argument, allowing you to move forward or backward, respectively, through the results a page at a time. Remember that the DataConnector platform application returns the entire set of results for the query, even though only one page of records is added to the DataSet object. You might want to preserve a certain number of returned rows in a local cache, to reduce trips to DataConnector.</p>
+        <p class="tip">For performance purposes, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> uses a 128K buffered stream when interacting with the DataConnector platform application to retrieve both schema and data information.</p>
+        <p>For more information about paging through a query result, see <a href="http://msdn.microsoft.com/library/tx1c9c2f.aspx">Paging Through a Query Result (ADO.NET)</a>, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/tx1c9c2f.aspx">http://msdn.microsoft.com/library/tx1c9c2f.aspx</a>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

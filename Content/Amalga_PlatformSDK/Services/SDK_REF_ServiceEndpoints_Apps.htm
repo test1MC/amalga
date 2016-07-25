@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3688.667" MadCap:lastWidth="813" MadCap:fileTags="TopicType.Ref_General,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Endpoints and contracts for <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="service endpoint" />This topic lists the service endpoints, including identifiers and service contracts, available to <MadCap:variable name="FeatureName.Amalga SDK" /> applications from hosted applications included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>The following tables list the service endpoints and service contracts for the hosted applications  included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable> that can be used from within <MadCap:variable name="FeatureName.Amalga SDK"></MadCap:variable> applications.</p>
+        <h2>Services by  application</h2>
+        <p>The following table lists the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short" /> platform application.</p>
+        <p class="note">The instance names of <MadCap:variable name="BrandingHSG.Amalga Short" /> platform applications and services may vary depending on the specific implementation of the Amalga topology. For more information about working with application instances and service instances, see <MadCap:xref href="SDK_NAV_WorkingWithServicesApps.htm" target="" title="" alt="">Interacting with  services and applications on page 1</MadCap:xref>.</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Application</th>
+                    <th>Application GUID</th>
+                    <th>Service</th>
+                </tr>
+                <tr>
+                    <td>AmalgaTaskServiceApp</td>
+                    <td>69b73645-f323-49b3-bec9-c12a9ad51828</td>
+                    <td>AmalgaTaskService</td>
+                </tr>
+                <tr>
+                    <td>ClinicalDocumentApp</td>
+                    <td>19310ca6-e393-4c10-b001-42961aa4c43a</td>
+                    <td>ClinicalDocumentService</td>
+                </tr>
+                <tr>
+                    <td>CorrelationApplication</td>
+                    <td>d13ddb1d-f9fa-4746-9a27-f4a0cc0975f1
+</td>
+                    <td>CorrelationService</td>
+                </tr>
+                <tr>
+                    <td>DataConnectorApplication</td>
+                    <td>3029ed09-0ad5-491b-a099-fc53144ff166</td>
+                    <td>DataConnectorService</td>
+                </tr>
+                <tr>
+                    <td>EnterpriseIdApplication</td>
+                    <td>185d6194-f30f-49a0-85e4-997c8f15132b</td>
+                    <td>PersonSearchService<br />EnterpriseIdRelationshipService
+</td>
+                </tr>
+                <tr>
+                    <td>EntityViewManagerApplication</td>
+                    <td>81025360-2396-46c2-97db-9bd27938ee5b
+</td>
+                    <td>EntityViewManager</td>
+                </tr>
+                <tr>
+                    <td>Microsoft.Amalga.Event.Application</td>
+                    <td>a4c70d10-c8a5-4d30-81f5-f22d7dbcf612
+</td>
+                    <td>EventingWcfHandlerService<br />EventingDispatcherService<br />EventingManagerService</td>
+                </tr>
+                <tr>
+                    <td>FrameworkAHA</td>
+                    <td>86548e02-3333-4abf-b1b0-7777d7499a09</td>
+                    <td>
+                        <p>FrameworkPatientMatchLink</p>
+                        <p>FrameworkUserSettings
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HealthVaultConnectorApp</td>
+                    <td>ede08d93-b53e-4c24-b057-67be86535a61</td>
+                    <td>HealthVaultConnectorService</td>
+                </tr>
+                <tr>
+                    <td>ImagingRegistryDocumentApplication</td>
+                    <td>4c0e16d0-3238-42de-a657-c3af8ab872ae
+</td>
+                    <td>ImagingRegistryService</td>
+                </tr>
+                <tr>
+                    <td>NotificationApplication</td>
+                    <td>edc859b8-39d3-4705-8909-2b845a0d88a1</td>
+                    <td>NotificationService</td>
+                </tr>
+                <tr>
+                    <td>TaskFlowApplication</td>
+                    <td>69b73645-f323-49b3-bec9-c12a9ad51828</td>
+                    <td>TaskFlowService</td>
+                </tr>
+                <tr>
+                    <td>TerminologyApplication</td>
+                    <td>c031033a-49be-4c8f-a6a8-cb95bddaac0a</td>
+                    <td>TerminologyService</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Service endpoints by service</h2>
+        <p>The following table contains the relative Uniform Resource Locator (URL) address for the service endpoints accessible from the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> platform application. For more information about service endpoints, see <MadCap:xref href="SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt=""> Service Endpoints and Service Contracts on page 1</MadCap:xref>.</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Service</th>
+                    <th>Service GUID</th>
+                    <th>Relative URL</th>
+                </tr>
+                <tr>
+                    <td>AmalgaTaskService</td>
+                    <td>acf32c7c-c5ed-4ea4-aa06-dcbd24ef4873</td>
+                    <td>Microsoft.Health.Framework.Services.AmalgaTaskService.svc
+</td>
+                </tr>
+                <tr>
+                    <td>ClinicalDocumentService</td>
+                    <td>bff547a6-7a42-4b3d-9a84-77b504d2e28c</td>
+                    <td>Microsoft.Amalga.ClinicalDocument.Service.ClinicalDocumentService.svc</td>
+                </tr>
+                <tr>
+                    <td>CorrelationService</td>
+                    <td>f2c7ade6-7167-43cb-82e9-a7374343d7cb
+</td>
+                    <td>Microsoft.Amalga.Correlation.Service.CorrelationService.svc</td>
+                </tr>
+                <tr>
+                    <td>DataConnectorService</td>
+                    <td>dea855c0-1b8b-4c6a-87fb-a5e587a1ca91
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Data.DataConnectorWCFWS.DataConnectorService.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EnterpriseIdRelationshipService</td>
+                    <td>16810df9-e9b0-4973-87b4-90cab81cbdd4
+</td>
+                    <td>Microsoft.Amalga.Correlation.RelationshipService.EnterpriseIdRelationshipService.svc</td>
+                </tr>
+                <tr>
+                    <td>EntityViewManager</td>
+                    <td>db2c62c5-6d18-4735-a2ab-ebd495b11d65
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Pipeline.EntityViewManager.EntityViewManager.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventingDispatcherService</td>
+                    <td>f2fb1619-280b-430f-8ae8-a3db0b62c2b4
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Server.EventDispatcherService.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EventingManagerService</td>
+                    <td>559530b5-80cc-43dd-9a94-26cd2455b388
+</td>
+                    <td>Microsoft.Amalga.Server.HttpEventManagementService.svc</td>
+                </tr>
+                <tr>
+                    <td>EventingWcfHandlerService</td>
+                    <td>a4a14eb5-67b2-43ce-9f9f-341aac908cb9
+</td>
+                    <td>
+                        <p>Microsoft.Amalga.Eventing.WcfHandler.WcfServiceActionHandler.svc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>FrameworkPatientMatchLink</td>
+                    <td>eb343b6a-c4dd-43d4-ab5c-cb3024db0984</td>
+                    <td>Microsoft.Amalga.AppFramework.Service.PatientMatchLinkService.svc</td>
+                </tr>
+                <tr>
+                    <td>FrameworkUserSettings</td>
+                    <td>ac5bf994-0875-4abe-b253-fc4f3fb83a5d
+</td>
+                    <td>Microsoft.Amalga.AppFramework.Service.UserSettingsService.svc</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultConnectorService</td>
+                    <td>a93480d6-785f-4910-ba44-d3f04a043af5</td>
+                    <td>Microsoft.Amalga.HealthVaultConnector.Service.HealthVaultConnectorService.svc</td>
+                </tr>
+                <tr>
+                    <td>ImagingRegistryService</td>
+                    <td>852e8e1b-f41b-4ae8-a82b-d30a99d5d67e
+</td>
+                    <td>Microsoft.Amalga.Imaging.Registry.ImagingRegistryService.svc</td>
+                </tr>
+                <tr>
+                    <td>NotificationService</td>
+                    <td>d7dcb82e-6181-4fdc-9bac-940da4b89bb3</td>
+                    <td>Microsoft.Amalga.Notification.Service.NotificationService.svc</td>
+                </tr>
+                <tr>
+                    <td>PersonSearchService</td>
+                    <td>dabe9628-ce74-48d9-b82d-61d41e493872
+</td>
+                    <td>Microsoft.Amalga.PersonSearch.PersonSearchService.svc</td>
+                </tr>
+                <tr>
+                    <td>TaskFlowService</td>
+                    <td>acf32c7c-c5ed-4ea4-aa06-dcbd24ef4873</td>
+                    <td>Microsoft.Amalga.TaskFlow.Service.TaskFlowService.svc</td>
+                </tr>
+                <tr>
+                    <td>TerminologyService</td>
+                    <td>8c3be61d-021b-419a-ad9a-4c74b7b115ea
+</td>
+                    <td>Microsoft.Amalga.Terminology.TerminologyService.TerminologyService.svc
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Service contracts by service</h2>
+        <p>The following service contracts are available from the services provided by each <MadCap:variable name="BrandingHSG.Amalga Short" /> platform application. For more information about service contracts, see <MadCap:xref href="SDK_NAV_WorkingWithServicesApps.htm" target="" title="" alt="">Interacting with  services and applications on page 1</MadCap:xref>.</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Service</th>
+                    <th>Service contracts</th>
+                </tr>
+                <tr>
+                    <td>AmalgaTaskService</td>
+                    <td>Microsoft.Health.Framework.Services.IAmalgaTaskService</td>
+                </tr>
+                <tr>
+                    <td>ClinicalDocumentService</td>
+                    <td>Microsoft.Amalga.ClinicalDocument.Service.IClinicalDocumentService</td>
+                </tr>
+                <tr>
+                    <td>CorrelationService</td>
+                    <td>Microsoft.Amalga.Correlation.Service.ICorrelationService
+</td>
+                </tr>
+                <tr>
+                    <td>DataConnectorService</td>
+                    <td>Microsoft.Amalga.Data.DataConnectorWCFWS.IDataConnectorService
+</td>
+                </tr>
+                <tr>
+                    <td>EnterpriseIdRelationshipService</td>
+                    <td>Microsoft.Amalga.Correlation.RelationshipService.IEnterpriseIdRelationshipService</td>
+                </tr>
+                <tr>
+                    <td>EntityViewManager</td>
+                    <td>Microsoft.Amalga.Pipeline.EntityViewManager.IEntityViewManager
+</td>
+                </tr>
+                <tr>
+                    <td>EventingDispatcherService</td>
+                    <td>Microsoft.Amalga.Eventing.IEventDispatcherService
+</td>
+                </tr>
+                <tr>
+                    <td>EventingManagerService</td>
+                    <td>Microsoft.Amalga.Eventing.IEventManagementService
+</td>
+                </tr>
+                <tr>
+                    <td>EventingWcfHandlerService</td>
+                    <td>Microsoft.Amalga.Eventing.Server.IActionHandler
+</td>
+                </tr>
+                <tr>
+                    <td>FrameworkPatientMatchLink</td>
+                    <td>Microsoft.Health.Framework.Service.IPatientMatchLinkArchiveService
+Microsoft.Health.Framework.Service.IPatientMatchLinkService
+Microsoft.Health.Framework.Service.IPatientMatchLinkWorkflowQueueService
+Microsoft.Health.Framework.Service.IStaffMatchLinkService
+</td>
+                </tr>
+                <tr>
+                    <td>FrameworkUserSettings</td>
+                    <td>Microsoft.Health.Framework.Service.IUserSettingsService
+</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultConnectorService</td>
+                    <td>Microsoft.Health.HealthVaultConnector.IHealthVaultConnector
+</td>
+                </tr>
+                <tr>
+                    <td>ImagingRegistryService</td>
+                    <td>
+                        <p>Microsoft.Amalga.Imaging.Registry.IImagingRegistryRetrieval</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NotificationService</td>
+                    <td>Microsoft.Health.NotificationApplication.NotificationService.INotificationService
+</td>
+                </tr>
+                <tr>
+                    <td>PersonSearchService</td>
+                    <td>Microsoft.Amalga.PersonSearch.IPersonSearchService
+</td>
+                </tr>
+                <tr>
+                    <td>TaskFlowService</td>
+                    <td>Microsoft.Amalga.TaskFlow.Service.ITaskFlowService</td>
+                </tr>
+                <tr>
+                    <td>TerminologyService</td>
+                    <td>Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService
+Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p MadCap:conditions="Production.doNOTbuild">Troubleshooting</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">Procedures</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">XML&#160;reference</p>
+        <p MadCap:conditions="Production.doNOTbuild">Error reference</p>
+        <p MadCap:conditions="Production.doNOTbuild">Event messages</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">Technology</p>
+        <p MadCap:conditions="Production.doNOTbuild">Overview</p>
+        <p MadCap:conditions="Production.doNOTbuild">Architecture</p>
+        <p MadCap:conditions="Production.doNOTbuild">Scenarios</p>
+        <p MadCap:conditions="Production.doNOTbuild">Alternative approaches</p>
+        <p MadCap:conditions="Production.doNOTbuild">Security</p>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Other resources</p>
+        <p MadCap:conditions="Production.doNOTbuild">Navigation page</p>
+        <p MadCap:conditions="Production.doNOTbuild">External references</p>
+    </body>
+</html>

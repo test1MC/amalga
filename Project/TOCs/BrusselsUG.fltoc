@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="FrontMatter"
+    Link="/Project/TOCs/FrontMatter.fltoc"
+    conditions="Production.PrintOnly" />
+  <TocEntry
+    Title="Amalga Data Explorer Administration Guide"
+    Link="/Content/Brussels CTP1/BR_LDN_Data_Explorer_Administration.htm">
+    <TocEntry
+      Title="Analytics Administration"
+      Link="/Content/Analytics/Analytics Configuration/TWO.htm">
+      <TocEntry
+        Title="Create and assign a user role"
+        Link="/Content/Analytics/Analytics Configuration/ONE.htm" />
+      <TocEntry
+        Title="Dynamic views"
+        Link="/Content/Analytics/AN_Con_dynamic_views.htm" />
+      <TocEntry
+        Title="Locate the name of a dynamic view"
+        Link="/Content/Analytics/AN_task_find_dynamic_name.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Patient Chart Administration"
+      Link="/Content/PatientChart/PatientChartConfiguration/PC_LND_Patient_Chart_Administration.htm">
+      <TocEntry
+        Title="Patient Chart configuration"
+        Link="/Content/PatientChart/PatientChartConfiguration/PC_Con_configuration.htm" />
+      <TocEntry
+        Title="Add a module"
+        Link="/Content/PatientChart/PatientChartConfiguration/PC_task_add_module.htm" />
+      <TocEntry
+        Title="Delete a module"
+        Link="/Content/PatientChart/PatientChartConfiguration/PC_task_delete_module.htm" />
+      <TocEntry
+        Title="Add a widget"
+        Link="/Content/PatientChart/PatientChartConfiguration/PC_task_add_widget.htm" />
+      <TocEntry
+        Title="Delete a widget"
+        Link="/Content/PatientChart/PatientChartConfiguration/PC_task_delete_widget.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Patient Lists Administration"
+      Link="/Content/PatientLists/PatientListConfiguration/PL_LDN_Patient_Lists_Administration.htm">
+      <TocEntry
+        Title="Create new criteria"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Con_create_quick_criteria.htm" />
+      <TocEntry
+        Title="Deploy quick criteria"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Task_deploy_quick_criteria.htm" />
+      <TocEntry
+        Title="View or update quick criteria"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Task_view_update_criteria.htm" />
+      <TocEntry
+        Title="Create custom criteria"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Task_create_custom criteria.htm" />
+      <TocEntry
+        Title="Create a value set"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Task_create_value_set.htm" />
+      <TocEntry
+        Title="View or update a value set"
+        Link="/Content/PatientLists/PatientListConfiguration/PL_Task_view_update_value_set.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Amalga Data Explorer User Guide"
+    Link="/Content/Brussels CTP1/BR_Con_Data_Explorer_overview.htm">
+    <TocEntry
+      Title="Supported browsers"
+      Link="/Content/Brussels CTP1/BR_Browsers_Supported.htm" />
+    <TocEntry
+      Title="Patient Lists overview"
+      Link="/Content/PatientLists/PL_Con_Patient_Lists_overview.htm">
+      <TocEntry
+        Title="[%=FeatureBrussels.Population Management%] roles and permissions"
+        Link="/Content/PatientLists/PL_Con_Roles_permissions.htm" />
+      <TocEntry
+        Title="[%=FeatureBrussels.Population Management%] scenario"
+        Link="/Content/PatientLists/PL_Con_Patient_lists_scenario.htm"></TocEntry>
+      <TocEntry
+        Title="Create a list"
+        Link="/Content/PatientLists/PL_LND_Create_list.htm">
+        <TocEntry
+          Title="Create a  patient list"
+          Link="/Content/PatientLists/PL_Task_Create_list.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Edit a list"
+        Link="/Content/PatientLists/PL_LND_Edit_list.htm">
+        <TocEntry
+          Title="Edit patient list columns"
+          Link="/Content/PatientLists/PL_Task_Choose_columns.htm" />
+        <TocEntry
+          Title="Edit patient list criteria"
+          Link="/Content/PatientLists/PL_Task_Edit_criteria.htm" />
+        <TocEntry
+          Title="Edit patient list properties"
+          Link="/Content/PatientLists/PL_Task_edit_list.htm" />
+        <TocEntry
+          Title="Delete a patient list"
+          Link="/Content/PatientLists/PL_Task_Delete_list.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Share a patient list"
+        Link="/Content/PatientLists/PL_Task_share_list.htm" />
+      <TocEntry
+        Title="View a list"
+        Link="/Content/PatientLists/PL_LND_View_list.htm">
+        <TocEntry
+          Title="View a patient list"
+          Link="/Content/PatientLists/PL_Task_View_list.htm" />
+        <TocEntry
+          Title="View a [%=FeatureBrussels.Patient Chart%] from a patient list"
+          Link="/Content/PatientLists/PL_Task_View_Patient_Chart.htm" />
+        <TocEntry
+          Title="Organize [%=UI-Labels.Patient Lists%]"
+          Link="/Content/PatientLists/PL_Task_manage_lists.htm" />
+        <TocEntry
+          Title="View the [%=FeatureBrussels.Analytics%] pane"
+          Link="/Content/PatientLists/PL_Task_View_analytics_pane.htm" />
+        <TocEntry
+          Title="View a patient list without the [%=FeatureBrussels.Analytics%] pane"
+          Link="/Content/PatientLists/PL_Task_View_Grid.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Analytics overview"
+      Link="/Content/Analytics/AN_Con_Analytics_Overview.htm">
+      <TocEntry
+        Title="Analytics scenario"
+        Link="/Content/Analytics/AN_Con_Analytics_scenario.htm"></TocEntry>
+      <TocEntry
+        Title="Analytics Roles and Permissions Overview"
+        Link="/Content/Analytics/AN_Con_Roles_Permissions.htm">
+        <TocEntry
+          Title="What all users can do"
+          Link="/Content/Analytics/AN_LND_all_users.htm">
+          <TocEntry
+            Title="Manage [%=UI-Labels.Patient Lists%]"
+            Link="/Content/PatientLists/PL_Task_manage_lists.htm" />
+          <TocEntry
+            Title="View the [%=FeatureBrussels.Analytics%] pane"
+            Link="/Content/PatientLists/PL_Task_View_analytics_pane.htm" />
+          <TocEntry
+            Title="Hide or show a report"
+            Link="/Content/Analytics/AN_Task_Hide_show_a_report.htm" />
+          <TocEntry
+            Title="View and interact with reports"
+            Link="/Content/Analytics/AN_Task_Manage_reports.htm" />
+          <TocEntry
+            Title="Filter a list using a report or graph"
+            Link="/Content/Analytics/AN_Task_Filter_list_using_report.htm" />
+          <TocEntry
+            Title="View a patient list"
+            Link="/Content/PatientLists/PL_Task_View_Grid.htm"></TocEntry>
+        </TocEntry>
+        <TocEntry
+          Title="What list editors can do"
+          Link="/Content/Analytics/AN_LND_list_editors.htm">
+          <TocEntry
+            Title="View a patient list"
+            Link="/Content/PatientLists/PL_Task_View_Grid.htm" />
+          <TocEntry
+            Title="Manage [%=UI-Labels.Patient Lists%]"
+            Link="/Content/PatientLists/PL_Task_manage_lists.htm" />
+          <TocEntry
+            Title="View the [%=FeatureBrussels.Analytics%] pane"
+            Link="/Content/PatientLists/PL_Task_View_analytics_pane.htm" />
+          <TocEntry
+            Title="Preview and publish a report"
+            Link="/Content/Analytics/AN_Task_Preview_publish_report.htm" />
+          <TocEntry
+            Title="Unpublish report"
+            Link="/Content/Analytics/AN_Task_Unpublish_report.htm" />
+          <TocEntry
+            Title="Hide or show a report"
+            Link="/Content/Analytics/AN_Task_Hide_show_a_report.htm" />
+          <TocEntry
+            Title="View and interact with reports"
+            Link="/Content/Analytics/AN_Task_Manage_reports.htm" />
+          <TocEntry
+            Title="Filter a list using a report or graph"
+            Link="/Content/Analytics/AN_Task_Filter_list_using_report.htm" />
+          <TocEntry
+            Title="Delete a report"
+            Link="/Content/Analytics/AN_Task_Delete_report.htm" />
+        </TocEntry>
+        <TocEntry
+          Title="What report authors can do"
+          Link="/Content/Analytics/AN_LND_report_authors.htm">
+          <TocEntry
+            Title="View a patient list"
+            Link="/Content/PatientLists/PL_Task_View_Grid.htm" />
+          <TocEntry
+            Title="Manage [%=UI-Labels.Patient Lists%]"
+            Link="/Content/PatientLists/PL_Task_manage_lists.htm" />
+          <TocEntry
+            Title="View the [%=FeatureBrussels.Analytics%] pane"
+            Link="/Content/PatientLists/PL_Task_View_analytics_pane.htm" />
+          <TocEntry
+            Title="Create a report from a patient list"
+            Link="/Content/Analytics/AN_Task_Create_report.htm" />
+          <TocEntry
+            Title="Preview and publish a report"
+            Link="/Content/Analytics/AN_Task_Preview_publish_report.htm" />
+          <TocEntry
+            Title="Unpublish report"
+            Link="/Content/Analytics/AN_Task_Unpublish_report.htm" />
+          <TocEntry
+            Title="Hide or show a report"
+            Link="/Content/Analytics/AN_Task_Hide_show_a_report.htm" />
+          <TocEntry
+            Title="Import a report"
+            Link="/Content/Analytics/AN_Task_Import_report.htm" />
+          <TocEntry
+            Title="Filter a list using a report or graph"
+            Link="/Content/Analytics/AN_Task_Filter_list_using_report.htm" />
+          <TocEntry
+            Title="Delete a report"
+            Link="/Content/Analytics/AN_Task_Delete_report.htm" />
+        </TocEntry>
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Patient Chart overview"
+      Link="/Content/PatientChart/PC_Con_Patient_Chart_overview.htm">
+      <TocEntry
+        Title="[%=FeatureBrussels.Patient Chart%] scenario"
+        Link="/Content/PatientChart/PC_Con_Patient_Chart_scenario.htm"></TocEntry>
+      <TocEntry
+        Title="Start [%=FeatureBrussels.Patient Chart%]"
+        Link="/Content/PatientChart/PC_Task_Launch_PC.htm" />
+      <TocEntry
+        Title="Open a [%=FeatureBrussels.Patient Chart%] module"
+        Link="/Content/PatientChart/PC_Task_Open_PC_module.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Patient Chart%]"
+        Link="/Content/PatientChart/PC_Task_Manage_PC.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Problem List%] module"
+        Link="/Content/PatientChart/PC_Task_manage_problem_list.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Vital Signs%] module"
+        Link="/Content/PatientChart/PC_Task_manage_vital_signs.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Allergies%] module"
+        Link="/Content/PatientChart/PC_Task_manage_allergies.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Laboratory%] module"
+        Link="/Content/PatientChart/PC_Task_Manage_Labs.htm" />
+      <TocEntry
+        Title="Manage the [%=FeatureBrussels.Documents%] module"
+        Link="/Content/PatientChart/PC_Task_manage_document.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Data Explorer Scenarios"
+      Link="/Content/Brussels CTP1/BR_LND_Scenarios.htm">
+      <TocEntry
+        Title="[%=FeatureBrussels.Population Management%] scenario"
+        Link="/Content/PatientLists/PL_Con_Patient_lists_scenario.htm" />
+      <TocEntry
+        Title="[%=FeatureBrussels.Analytics%] scenario"
+        Link="/Content/Analytics/AN_Con_Analytics_scenario.htm" />
+      <TocEntry
+        Title="[%=FeatureBrussels.Patient Chart%] scenario"
+        Link="/Content/PatientChart/PC_Con_Patient_Chart_scenario.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

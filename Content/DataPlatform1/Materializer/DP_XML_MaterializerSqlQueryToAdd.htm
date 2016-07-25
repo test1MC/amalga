@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1043" MadCap:lastWidth="1656" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materializer: SQL query to add settings</h1>
+        <p class="PersonaDBA">&#160;</p><pre xml:space="preserve" class="code">/* This SQL Script generates XML for materializerconfiguration section for the Materializer process. */
+Use [ClinicalData]
+Go
+
+DECLARE @entityname			AS sysname; 
+DECLARE @namespace			AS sysname;
+SET @namespace  = N'Common.Beta'	-- update with the name of your entity namespace
+SET @entityname = N'Patient';		-- update with the name of your entity
+
+-- Sanitize the namespace and entityname
+SET @namespace = REPLACE (@namespace, '.', '_')
+SET @entityname = REPLACE (@entityname, '.', '_')
+
+-- Define view name and materialized table name
+DECLARE @materializerschema		AS sysname = N'EntityViews';
+DECLARE @definingview			AS sysname = N'v_def' + @namespace + @entityname;
+DECLARE @bindingview			AS sysname = N'v_bind' + @namespace + @entityname;
+DECLARE @materializedtable		AS sysname = @namespace + @entityname + N'Materialized';
+
+-- Obtain the latest version of view and table name
+SELECT  @definingview= ISNULL(MAX(name),@definingview) FROM sys.objects WHERE TYPE = N'V' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @definingview + N'%';
+SELECT  @bindingview= ISNULL(MAX(name),@bindingview) FROM sys.objects WHERE TYPE = N'V' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @bindingview + N'%';
+SELECT  @materializedtable= ISNULL(MAX(name),@materializedtable) FROM sys.objects WHERE TYPE = N'U' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @materializedtable + N'%';
+ 
+-- Determine the Base table for the entity
+WITH ObjectDepends(referencing_id, referenced_id) 
+AS (
+    SELECT	referencing_id
+			,referenced_id 
+    FROM sys.sql_expression_dependencies AS sed 
+    WHERE OBJECT_NAME(referencing_id) = @definingview  and OBJECT_SCHEMA_NAME(referencing_id) = @materializerschema
+UNION ALL
+    SELECT sed.referencing_id
+		  ,sed.referenced_id
+    FROM ObjectDepends AS o
+    JOIN sys.sql_expression_dependencies AS sed ON sed.referencing_id = o.referenced_id
+    )
+SELECT
+	@materializerschema AS [DefiningView/Schema]
+	,@definingview AS [DefiningView/Name]		
+	,(	
+	SELECT  
+		OBJECT_SCHEMA_NAME(objdep.referenced_id) AS [Schema]
+		,BaseTable_Name.entity_name AS [Name]
+		,NULL AS [BaseTables]
+		,(SELECT ctxkey.ColumnName	 AS [Name],
+		  N'ID_TBL_' + DB_NAME() + N'.' + OBJECT_SCHEMA_NAME(objdep.referenced_id) + N'.' + BaseTable_Name.entity_name AS [Alias]
+		  FROM DataCatalog.DataVector ctxkey WHERE ctxkey.SchemaName = OBJECT_SCHEMA_NAME(objdep.referenced_id) and BaseTable_Name.entity_name = ctxkey.TableOrViewName and ctxkey.PrimaryContextKey = 1
+		  FOR XML PATH('Key'), ROOT('PrimaryContextKeys'), TYPE
+		  ) 
+	FROM ObjectDepends objdep 
+	-- The following replace the base table with v_collapse binding view if they exist.
+	CROSS APPLY(VALUES(
+		CASE 
+			WHEN OBJECT_NAME(objdep.referencing_id) like 'v_Collapse_%_Binding' THEN OBJECT_NAME(objdep.referencing_id) 
+			WHEN OBJECT_NAME(objdep.referencing_id) like 'v_Collapse_%' THEN OBJECT_NAME(objdep.referencing_id) + N'_Binding'
+			ELSE OBJECT_NAME(objdep.referenced_id) END))
+		AS BaseTable_Name(entity_name)
+	INNER JOIN sys.all_objects objtyp ON objtyp.object_id = objdep.referenced_id
+	WHERE 
+	type = 'U'													-- only return base table
+	and	OBJECT_SCHEMA_NAME(objdep.referenced_id)&lt;&gt; 'AmalgaID'	-- exclude Amalga ID tables
+	GROUP BY   OBJECT_SCHEMA_NAME(objdep.referenced_id),  BaseTable_Name.entity_name
+	FOR XML PATH('BaseTable'), ROOT('BaseTables'), TYPE
+	)
+	,@materializerschema AS [MaterializedTable/Schema]
+	,@materializedtable AS [MaterializedTable/Name]
+	FOR XML PATH('MaterializerConfiguration'), TYPE  
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1021.333" MadCap:lastWidth="621" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,EditingTags.4 - Ready for Writer,Status.70 - Complete">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Set-AmEntityBinding</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="entity binding" />Sets binding SQL statements for entities. </p>
+        <p><strong>Amalga built-in role membership required:</strong>  AmalgaDataAdmin, AmalgaSysAdmin </p>
+        <p>For more information, see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Set-AmEntityBinding -FilePath &lt;String&gt; [-Force]
+</p>
+        <h2>Parameter descriptions</h2>
+        <p class="h7">[-FilePath] &lt;String&gt;</p>
+        <p>Specifies the full path to a valid entity binding XML document containing binding SQL statements for indicated entities; see <MadCap:xref href="EntityBindingXML/PS_XML_Overview.htm">Entity binding XML overview</MadCap:xref>. </p>
+        <table>
+            <col style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>A full path to a valid entity binding XML document. Examples:&#160;"c:\temp\mybindings.xml" or "\\testserver\temp\mybindings.xml".</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-Force]</p>
+        <p>Overwrites any existing binding SQL statements for the specified entities; takes no input. </p>
+        <table>
+            <col style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Example</p>
+        <p class="InputText">Set-AmEntityBinding -FilePath c:\temp\mybindings.xml -Force</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">
+            <MadCap:annotation MadCap:createDate="2012-03-02T12:33:49.0404887-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Currently, this links to the start of the topic; should link to the section with the Load DLL proc -- will you fix that, pls?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-02T12:34:03.2671091-08:00">Tasks</MadCap:annotation>
+        </p>
+        <p MadCap:conditions=""><a href="PowerShellLanding.htm">Load DLL for cmdlet access</a>
+        </p>
+        <p class="SeeAlsoSubHead">References </p>
+        <p>
+            <MadCap:xref href="EntityBindingXML/PS_XML_Reference.htm" target="" title="" alt="">Entity binding XML&#160;reference</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../DataPlatform1/DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+    </body>
+</html>

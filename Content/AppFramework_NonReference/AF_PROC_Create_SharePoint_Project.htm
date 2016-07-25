@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,TopicOwner.v-wpete,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="6" MadCap:lastHeight="1313" MadCap:lastWidth="857" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a new <MadCap:variable name="BrandingMS.SharePoint" /> application project</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2011-11-16T19:27:07.2543657-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I agree, there needs tob e a line after the abstract. Will put it in via style sheet change." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T19:27:42.2198619-08:00">The</MadCap:annotation> topic describes how to create a new Amalga <MadCap:variable name="BrandingMS.SharePoint" /> application project in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</p>
+        <p>To create a new <MadCap:variable name="FeatureName.Amalga Framework" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> application, you can use the Amalga Empty SP Project template. This template provides a <MadCap:variable name="BrandingMS.SharePoint" /> Features collection, a <MadCap:variable name="BrandingMS.SharePoint" /> Solution Package deployment item, and a key file with an exportable public key. The template also provides references to the namespaces most commonly used while developing an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> application. The template does not create an application manifest. (<MadCap:variable name="BrandingMS.SharePoint" /> artifacts are not deployed through the <MadCap:variable name="BrandingHSG.Amalga Short" /> Topology service, so a manifest is not required.)</p>
+        <p>The <MadCap:variable name="BrandingMS.SharePoint" /> application created by the template is not an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application, and can be deployed to a <MadCap:variable name="FeatureName.Amalga Framework second use" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> farm without direct references to a hosted application. However, many of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs require an <MadCap:variable name="BrandingHSG.Amalga Short" /> application ID at run time, so each <MadCap:variable name="BrandingMS.SharePoint" /> application must be associated with either a new or existing hosted application.</p>
+        <p>In addition, the <MadCap:variable name="BrandingMS.SharePoint" /> application project must have access to a <MadCap:variable name="BrandingMS.SharePoint" /> farm with the <MadCap:variable name="FeatureName.Amalga Framework" /> package installed on the default <MadCap:variable name="BrandingMS.SharePoint" /> port. </p>
+        <p>The current best practice is to install <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />, <MadCap:variable name="BrandingMS.SharePoint" />, and <MadCap:variable name="BrandingHSG.Amalga Short" /> on a single development machine. In this configuration, the <MadCap:variable name="BrandingMS.SharePoint" /> project can be deployed directly to the Framework portal site collections on the local farm. When necessary, individual <MadCap:variable name="BrandingMS.SharePoint" /> artifacts can be copied out of the <MadCap:variable name="BrandingMS.SharePoint" /> farm, added to the <MadCap:variable name="BrandingMS.SharePoint" /> project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />, modified, and redeployed.</p>
+        <p>Once the <MadCap:variable name="BrandingMS.SharePoint" /> application project is in place, use the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.Visual Studio second use" /> item templates to add new pages and controls to the project.</p>
+        <p class="note">When adding a page or control to the project using an item template, you may see a <span class="UIElementName">Microsoft Visual Studio - Security Warning</span> dialog box. This is expected behavior. Click <span class="UIElementAction">Trust</span> to continue.</p>
+        <p class="caution">The <MadCap:variable name="FeatureName.Amalga Framework second use" /> SDK artifacts include several <MadCap:variable name="BrandingMS.SharePoint" /> site templates. Those templates are specific to individual <MadCap:variable name="FeatureName.Amalga Framework second use" /> portals, and should never be used to deploy a site to a portal other than the one specified in the template name.</p>
+        <p>The following procedure describes how to add a new project, based on the Amalga WCF Service Project or Amalga Doors Worker Project template, to an existing <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution.</p>
+        <p class="LabelforProcedures">To add a new  project for an Amalga <MadCap:variable name="BrandingMS.SharePoint" /> application to an existing <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> solution</p>
+        <ol>
+            <li>From the <span class="UIElementAction">File</span> menu, click <span class="UIElementAction">New</span>, and then click <span class="UIElementAction">Project</span>.</li>
+            <li>
+                <p>In the Add New Project dialog toolbar, select <span class="Label">.NET Framework 3.5</span> from the drop-down list.</p>
+                <p class="warning">Do not use the Amalga Empty SP Project with .NET Framework 4.0 selected. <MadCap:variable name="BrandingMS.SharePoint Server 2010 - short" /> does not support version 4.0, and adding references to 4.0 assemblies may cause runtime errors when the new application is deployed.</p>
+            </li>
+            <li>In the Category pane, select <span class="UIElementAction">Installed Templates</span>, and then select <span class="UIElementAction">Visual C#</span>.</li>
+            <li>Open the <span class="Label">Amalga</span> folder and select <span class="UIElementAction">Amalga Empty SP Project</span>.</li>
+            <li>
+                <p>In the <span class="UIElementAction">Name</span> box, type a name for the new  project.</p>
+                <p class="caution">Ensure that the name for the new project is unique within the solution. Otherwise, an error occurs.</p>
+            </li>
+            <li>In the <span class="UIElementAction">Location</span> drop-down, type or select a location in which to save the new project, or click <span class="UIElementAction">Browse</span> to select a location.</li>
+            <li>In the <span class="UIElementAction">Solution</span> drop-down list, select <span class="UIElementAction">Add to solution</span>.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>
+                <p>The <span class="Label">SharePoint Customization Wizard</span> dialog will appear. Select <span class="UIElementAction">Deploy as a farm solution</span>.</p>
+                <p>Enter one of the following sites as the farm URL:</p>
+                <ul>
+                    <li class="InputText">https://<span class="InputTextVariable">FullyQualifiedServerAddress</span>:<span class="InputTextVariable">SharePointPort</span>/Staff</li>
+                    <li class="InputText">https://<span class="InputTextVariable">FullyQualifiedServerAddress</span>:<span class="InputTextVariable">SharePointPort</span>/InternalProvider</li>
+                    <li class="InputText">https://<span class="InputTextVariable">FullyQualifiedServerAddress</span>:<span class="InputTextVariable">SharePointPort</span>/Patient</li>
+                </ul>
+                <p>The default <MadCap:variable name="BrandingMS.SharePoint" /> port for a server with the <MadCap:variable name="FeatureName.Amalga Framework" /> installed is 8080.</p>
+            </li>
+            <li>Click <span class="UIElementAction">Finish</span>.</li>
+            <li>Select the new <MadCap:variable name="BrandingMS.SharePoint" /> project in <span class="UIElementName">Solution Explorer</span>, then press <span class="UIElementAction">F4</span> to open the <span class="UIElementName">Properties</span> pane.</li>
+            <li>Under the <MadCap:variable name="BrandingMS.SharePoint" /> node in the <span class="UIElementName">Properties</span> pane, select <span class="UIElementAction">Active Deployment Configuration</span>.</li>
+            <li>Change its value to <span class="UIElementAction">DeployAmalgaSPSolution</span>.</li>
+            <li>From the <span class="UIElementAction">File</span> menu, click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Conceptual</p>
+        <p>
+            <MadCap:xref href="AF_Con_UsingControls.htm" target="" title="" alt="">Toolbox controls on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/SDK_PROC_Create_Application_Project.htm" target="" title="" alt="">Create a new hosted application project on page 1</MadCap:xref>
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

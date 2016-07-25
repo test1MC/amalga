@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,Status.70 - Complete,ReleaseTarget.CTP1" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Custom assembly parser extension</h1>
+        <p>Use the instructions in this topic to add a custom plug-in with transform or Correlation Engine configuration logic to an instance of the <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser application</MadCap:xref>. All custom code must be tested and maintained by you.</p>
+        <p class="caution">Always test a custom  plug-in before adding it to data-parser service manifest.</p>
+        <p class="h7"> Design-time activities</p>
+        <p class="LabelforProcedures">To prepare the custom assembly plug-in</p>
+        <ol>
+            <li>Create a new Class Library project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />.
+</li>
+            <li>Add a reference to the Microsoft.Amalga.Pipeline.Model.dll assembly in your project.</li>
+            <li>
+                <p>Write your custom code. To help you get started, see <MadCap:xref href="DI_Code_ParsePluginEx.htm" target="" title="" alt="">Parser plug-in code example</MadCap:xref>.
+              Use types and members from the <a href="../API/Ref/Microsoft.Amalga.Pipeline.Model/N_Microsoft_Amalga_Pipeline_Model.htm">Microsoft.Amalga.Pipeline.Model namespace</a>.</p>
+            </li>
+            <li> Compile the code as an assembly.</li>
+        </ol>
+        <p class="h7">Deployment activities</p>
+        <p>If the assembly is in the file system, use the first procedure. However, if the assembly was published to Fabric storage, use the second procedure.</p>
+        <p class="LabelforProcedures">To incorporate a custom assembly plug-in (for file system)</p>
+        <ol>
+            <li>Open the service manifest of the parser instance that you intend to augment. Each feed has one application and one service manifest. If you need to configure the parser, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest.</li>
+            <li>
+                <p>Add a reference to your plug-in between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called G2ExtensionSample, insert the following XML. In this example, the source type is Filesystem. </p>
+                <p class="note">The referenced library contains the code output that will populate the <MadCap:xref href="Manifest XML/DI_XML_Manifest_ExtensibleDataParserOutput.htm" target="" title="" alt="">ExtensibleDataParserOutput element</MadCap:xref> (described later).</p>
+                <p class="tip">You can specify either an absolute or a relative path to the assembly.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+        &lt;Plugin Name="G2ExtensionSample" Assembly="G2ExtensionSample, Version=1.0.0.0, Culture=neutral, 
+		PublicKeyToken=null" ClassName ="SampleClass"&gt;
+          &lt;NameSpace&gt;G2ExtensionSample&lt;/NameSpace&gt;
+          &lt;URL&gt;C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\Amalga_MessageShredderSvc_ADT_G\
+		G2ExtensionSample.dll&lt;/URL&gt;
+          &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+		]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest.</li>
+            <li>
+                <p>Between the opening and closing <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" target="" title="" alt="">DataParserConfiguration element</MadCap:xref> tags, insert the following structure with the output values from your custom assembly. Note that <a href="Manifest XML/DI_XML_Manifest_MessageShredderInput.htm">MessageShredderInput</a> and <a href="Manifest XML/DI_XML_Manifest_DataParserOutput.htm">DataParserOutput</a> element tags are shown for placement.</p>
+                <p>The <a href="DI_Code_ParsePluginEx.htm">example</a> output transforms data in two columns of the PV1 table. You must specify the segment and elements for this output. The referenced assembly, with custom code,  populates the values.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+  &lt;DataParserConfiguration&gt;  
+    &lt;MessageShredderInput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/MessageShredderInput&gt;
+    &lt;DataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataParserOutput&gt;
+
+    &lt;ExtensibleDataParserOutput&gt;
+         &lt;Segment Name="PV1" SourceName="PV1"&gt;            
+            &lt;Elements&gt;
+              &lt;Element Name="DIschargeDateTime" Type="System.DateTime"/&gt;
+               &lt;Element Name="AdmitDateTime" Type="System.DateTime" /&gt; 
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;      
+    &lt;/ExtensibleDataParserOutput&gt;
+  &lt;/DataParserConfiguration&gt;
+		]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+            </li>
+            <li>
+                <p>Between the opening and closing <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" target="" title="" alt="">DataParserConfiguration element</MadCap:xref> tags, add any assemblies on which the plug-in depends. Various element tags are shown for placement in the following XML example.</p>
+                <p class="caution">All dependent assemblies must be in the same folder as the hosted application. For example, if you publish a <MadCap:variable name="Applications.Data Parser application" /> instance named Amalga_DataParser_ADT_G, Amalga will create a folder for this application (such as C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\ Amalga_DataParser_ADT_G \).  Place all dependent assemblies that are used by the Amalga_DataParser_ADT_G instance under this folder and then use the relative or absolute path to the folder in the service manifest.</p>
+                <pre xml:space="preserve" class="code">&lt;DataParserConfiguration&gt;  
+  &lt;MessageShredderInput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/MessageShredderInput&gt;
+  &lt;DataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataParserOutput&gt;
+  &lt;ExtensibleDataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/ExtensibleDataParserOutput&gt;
+  &lt;DataConstants&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataConstants&gt;
+  
+  &lt;Plugins&gt;
+        &lt;Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396"&gt;
+            &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Transforms&lt;/NameSpace&gt;
+            &lt;URL&gt;./Microsoft.Amalga.Pipeline.Transforms.dll&lt;/URL&gt;
+            &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+         &lt;Plugin Name="MessageHelper2" Assembly="CustomizedTransform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"&gt;
+          &lt;NameSpace&gt;CustomizedTransform&lt;/NameSpace&gt;
+          &lt;URL&gt;./CustomizedTransform.dll&lt;/URL&gt;
+          &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+         &lt;<span style="background-color: #dcdcdc;">Dependencies</span>&gt; 
+             	&lt;Dependency Assembly=""SamplePluginInterface, Version=1.0.0.0, Culture=neutral, 
+		 	PublicKeyToken=null"" URL=""./SamplePluginInterface.dll""/&gt;
+		&lt;Dependency Assembly=""SamplePluginInterface2, Version=1.0.0.0, Culture=neutral, 
+			PublicKeyToken=null"" URL=""./SamplePluginInterface2.dll""/&gt;
+             &lt;/Dependencies&gt; 
+        &lt;/Plugin&gt;        
+    &lt;/Plugins&gt;
+
+  &lt;EnterpriseId&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/EnterpriseId&gt;
+&lt;/DataParserConfiguration&gt;</pre>
+            </li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and deploy the application instance.</li>
+        </ol>
+        <p class="LabelforProcedures">To incorporate a custom assembly plug-in (for Fabric storage)</p>
+        <ol>
+            <li>Open the service manifest of the parser instance that you intend to augment. Each feed has one application and one service manifest. If you need to configure the parser, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest.</li>
+            <li>
+                <p>Add a reference to your plug-in between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called G2ExtensionSample, insert the following XML. In this example, the source type is Fabric. </p>
+                <p class="note">The referenced library contains the code output that will populate the <MadCap:xref href="Manifest XML/DI_XML_Manifest_ExtensibleDataParserOutput.htm" target="" title="" alt="">ExtensibleDataParserOutput element</MadCap:xref> (described later).</p>
+                <p class="note">If you set the <MadCap:xref href="Manifest XML/DI_XML_Manifest_SourceType.htm" target="" title="" alt="">SourceType element</MadCap:xref> to Fabric, the shredder retrieves the plug-in from SQL Server instead of using the defined URL.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”PluginConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+        &lt;Plugin Name="G2ExtensionSample" Assembly="G2ExtensionSample, Version=1.0.0.0, Culture=neutral, 
+		PublicKeyToken=null" ClassName ="SampleClass"&gt;
+          &lt;NameSpace&gt;G2ExtensionSample&lt;/NameSpace&gt;
+          &lt;URL&gt;C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\Amalga_MessageShredderSvc_ADT_G\
+		G2ExtensionSample.dll&lt;/URL&gt;
+          &lt;SourceType&gt;Fabric&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+		]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>
+                <p>Add a new setting for the custom plug-in  between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest. For example, insert the following line to add the G2ExtensionSample plug-in. The setting name must match the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Plugin.htm" target="" title="" alt="">Plugin element</MadCap:xref> name.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name="G2ExtensionSample" Type="System.String"&gt;
+	&lt;DefaultValue&gt; &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+            </li>
+            <li>Between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags, add the following CDATA structure and insert the proper base 64 encoding string between the CDATA brackets. <pre xml:space="preserve" class="code">&lt;DefaultValue&gt;
+	&lt;![CDATA[[<span class="Placeholder">***Insert base 64 encoded DLL data here.</span>]]&gt; 
+&lt;/DefaultValue&gt;</pre><p>For assistance in generating a base 64 encoded string, see <a href="http://go.microsoft.com/fwlink?LinkID=231139">http://go.microsoft.com/fwlink/?LinkID=231139</a>.</p></li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest.</li>
+            <li>
+                <p>Between the opening and closing <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" target="" title="" alt="">DataParserConfiguration element</MadCap:xref> tags, insert the following structure with the output values from your custom assembly. Note that <a href="Manifest XML/DI_XML_Manifest_MessageShredderInput.htm">MessageShredderInput</a> and <a href="Manifest XML/DI_XML_Manifest_DataParserOutput.htm">DataParserOutput</a> element tags are shown for placement.</p>
+                <p>The <a href="DI_Code_ParsePluginEx.htm">example</a> output transforms data in two columns of the PV1 table. You must specify the segment and elements for this output. The referenced assembly, with custom code,  populates the values.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+  &lt;DataParserConfiguration&gt;  
+    &lt;MessageShredderInput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/MessageShredderInput&gt;
+    &lt;DataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataParserOutput&gt;
+
+    &lt;ExtensibleDataParserOutput&gt;
+         &lt;Segment Name="PV1" SourceName="PV1"&gt;            
+            &lt;Elements&gt;
+              &lt;Element Name="DIschargeDateTime" Type="System.DateTime"/&gt;
+               &lt;Element Name="AdmitDateTime" Type="System.DateTime" /&gt; 
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;      
+    &lt;/ExtensibleDataParserOutput&gt;
+  &lt;/DataParserConfiguration&gt;
+		]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+            </li>
+            <li>
+                <p>Between the opening and closing <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserConfiguration.htm" target="" title="" alt="">DataParserConfiguration element</MadCap:xref> tags, add any assemblies on which the plug-in depends. Various element tags are shown for placement in the following XML example.</p>
+                <p class="caution">All dependent assemblies must be in the same folder as the hosted application. For example, if you publish a <MadCap:variable name="Applications.Data Parser application" /> instance named Amalga_DataParser_ADT_G, Amalga will create a folder for this application (such as C:\Program Files\Microsoft Amalga\System 3.0\Application Worker Services\ Amalga_DataParser_ADT_G \).  Place all dependent assemblies that are used by the Amalga_DataParser_ADT_G instance under this folder and then use the relative or absolute path to the folder in the service manifest.</p>
+                <pre xml:space="preserve" class="code">&lt;DataParserConfiguration&gt;  
+  &lt;MessageShredderInput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/MessageShredderInput&gt;
+  &lt;DataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataParserOutput&gt;
+  &lt;ExtensibleDataParserOutput&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/ExtensibleDataParserOutput&gt;
+  &lt;DataConstants&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/DataConstants&gt;
+  
+  &lt;Plugins&gt;
+        &lt;Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396"&gt;
+            &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Transforms&lt;/NameSpace&gt;
+            &lt;URL&gt;./Microsoft.Amalga.Pipeline.Transforms.dll&lt;/URL&gt;
+            &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+         &lt;Plugin Name="MessageHelper2" Assembly="CustomizedTransform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"&gt;
+          &lt;NameSpace&gt;CustomizedTransform&lt;/NameSpace&gt;
+          &lt;URL&gt;./CustomizedTransform.dll&lt;/URL&gt;
+          &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+         &lt;<span style="background-color: #dcdcdc;">Dependencies</span>&gt; 
+             	&lt;Dependency Assembly=""SamplePluginInterface, Version=1.0.0.0, Culture=neutral, 
+		 	PublicKeyToken=null"" URL=""./SamplePluginInterface.dll""/&gt;
+		&lt;Dependency Assembly=""SamplePluginInterface2, Version=1.0.0.0, Culture=neutral, 
+			PublicKeyToken=null"" URL=""./SamplePluginInterface2.dll""/&gt;
+             &lt;/Dependencies&gt; 
+        &lt;/Plugin&gt;        
+    &lt;/Plugins&gt;
+
+  &lt;EnterpriseId&gt;<span class="Placeholder">Shown for placement only. Configuration removed.</span>&lt;/EnterpriseId&gt;
+&lt;/DataParserConfiguration&gt;</pre>
+            </li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and deploy the application instance. </li>
+        </ol>
+        <p class="h7">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DI_Code_ParsePluginEx.htm" target="" title="" alt="">Parser plug-in code example</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="861" MadCap:lastWidth="632" MadCap:fileTags="TopicType.Concept,TopicOwner.v-kathen,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2012-02-02T15:27:12.9555557-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="9" MadCap:timestamp="2012-02-02T15:27:12.9615563-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient linking configuration</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="patient matching;automatic linking;manual linking">
+            </MadCap:keyword>This topic describes the settings that control the functionality of patient linking.</p>
+        <p>These settings are created using a <MadCap:variable name="BrandingMS.Doors PowerShell"></MadCap:variable> command. <MadCap:annotation MadCap:createDate="2011-11-03T14:37:40.7800881-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="standard phrasing?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-03T14:37:45.6060881-07:00">In plans for a future release</MadCap:annotation>, these settings will be available through the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console"></MadCap:variable>.</p>
+        <p class="h7">Manual or automatic linking</p>
+        <p MadCap:conditions="Production.doNOTbuild">Select <span class="UIElementAction">Automatic Linking</span> or <span class="UIElementAction">Manual Linking</span>. </p>
+        <p>Patient linking can be switched from automatic to manual linking, and from manual to automatic linking, by changing the value of the <span class="codeEntity">AutoLinkEnabled</span> setting of the <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> hosted application. The default patient linking configuration uses manual linking, so default value of <span class="codeEntity">AutoLinkEnabled</span> is <span class="codeEntity">false</span>.</p>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the only way to change the value of an application setting after the application has been deployed is with <MadCap:variable name="BrandingMS.Doors PowerShell" />, using the <MadCap:xref href="../Installation/Install Ref Appendix B PowerShell Ref.htm#Set-AmCo" target="" title="" alt="">Set-AmConfigurationSetting on page 1</MadCap:xref> Powershell cmdlet.</p>
+        <p class="caution">Before changing any configuration setting with <MadCap:variable name="BrandingMS.Doors PowerShell" />, import the required <MadCap:variable name="BrandingHSG.Amalga Short" /> runtime modules as described in <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Change App Settings.htm" target="" title="" alt="">Change application settings on page 1</MadCap:xref> .</p>
+        <p>To switch from manual linking to automatic linking, run the following <MadCap:variable name="BrandingMS.Doors PowerShell" /> command:</p>
+        <p class="InputText"><span class="InputText">Set-AmConfigurationSetting -InstanceType ApplicationInstance -InstanceName FrameworkAHAInstance -SettingName AutoLinkEnabled -SettingValue True</span>
+        </p>
+        <p>To switch from automatic linking to manual linking, run the following PowerShell command:</p>
+        <p class="InputText"><span class="InputText">Set-AmConfigurationSetting -InstanceType ApplicationInstance -InstanceName FrameworkAHAInstance -SettingName AutoLinkEnabled -SettingValue False</span>
+        </p>
+        <p class="h7">Auto-link allowable number of attempts</p>
+        <p>For automatic linking, enter a maximum number of retry attempts. After a user (typically a patient or a patient representative) tries automatic linking the specified number of times,  the link request goes into manual linking mode, and the user sees a message to that effect.</p>
+        <p>The maximum allowable number of attempts is determined by the <span class="codeEntity">AutoLinkMaxAttemptedMatchCount</span> setting of the <MadCap:variable name="FeatureName.Amalga Framework" /> hosted application. To change the allowable number of attempts, follow the same procedure as when switching from automatic to manual linking. After importing the required PowerShell modules, run the following<MadCap:variable name="BrandingMS.Doors PowerShell" /> command:</p>
+        <p><span class="InputText">Set-AmConfigurationSetting -InstanceType ApplicationInstance -InstanceName FrameworkAHAInstance -SettingName AutoLinkMaxAttemptedMatchCount -SettingValue <span class="InputTextVariable">maxCount</span></span>
+        </p>
+        <p class="note">Any positive numeric value is allowed. The default setting is 3.</p>
+        <p class="h7" MadCap:conditions="Production.doNOTbuild">Patient Link uses <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-10-27T11:15:28.2356239-07:00" MadCap:creator="v-kathen" MadCap:initials="KSH" MadCap:comment="Removed for CTP per Shawna" MadCap:editor="v-kathen" MadCap:editDate="2011-10-27T11:15:42.3100312-07:00">sharing</MadCap:annotation></p>
+        <p MadCap:conditions="Production.doNOTbuild">The organization can determine whether patient linking only needs to be done once for a record (meaning  the link can be shared with <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable>), or whether each account and record combination MUST submit their own link request before they get access.</p>
+        <p MadCap:conditions="Production.doNOTbuild">The following is not set in the <MadCap:variable name="FeatureName.Management Console second use"></MadCap:variable>.</p>
+        <p class="h7">
+            <MadCap:keyword term="Patient Portal Confirmation Pages Shown">
+            </MadCap:keyword>
+            <MadCap:annotation MadCap:createDate="2011-11-03T14:48:09.8850881-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="If this is UI element, keep title case. otherwise, use sentence case in headings." MadCap:editor="v-labenn" MadCap:editDate="2011-11-03T14:48:33.1950881-07:00">Patient Portal Confirmation Pages Shown</MadCap:annotation>
+        </p>
+        <p>This is a setting that indicates whether confirmation pages are shown to <MadCap:variable name="Applications.patient site"></MadCap:variable> users upon submission of the patient link request form. By default, the confirmation page is shown  to a <MadCap:variable name="Applications.patient site"></MadCap:variable> user every time  they submit or edit the form.</p>
+        <p class="LabelforProcedures">To <MadCap:change MadCap:changes="9">hide</MadCap:change><MadCap:change MadCap:changes="8">not show</MadCap:change> the confirmation pages</p>
+        <ol>
+            <li>Open the patientmatch.aspx page.</li>
+            <li>Remove the RedirectURL property of the Next button.</li>
+            <li>Repeat for the patientsignuplinkrequest.aspx page.</li>
+        </ol>
+        <p class="h7">Hide fields in the Patient Matching page</p>
+        <p>The Patient Matching page includes a large number of fields for different kinds of identifying information. By default, all of the patient information fields are visible.</p>
+        <p>In many scenarios, it is useful to hide some of the fields.</p>
+        <p class="warning">Do not delete patient information fields from MatchInfoPatientMatch.ascx. Any deleted field will cause the patient matching page to throw a <span class="codeEntity">NullReferenceException</span>. </p>
+        <p>The patient information fields are defined in the markup file of the <span class="codeEntity">MatchInfoPatientMatch</span> user control, MatchInfoPatientMatch.ascx. </p>
+        <p class="LabelforProcedures">To hide a field in <MadCap:annotation MadCap:createDate="2012-02-02T15:29:20.7143303-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="I converted the last sentence of the above paragraph into a procedure." MadCap:editor="v-labenn" MadCap:editDate="2012-02-02T15:29:43.4526039-08:00">the</MadCap:annotation> patient matching UI</p>
+        <ol>
+            <li> Locate the <code>&lt;div&gt;</code> element in which it is defined.</li>
+            <li>Add the attribute <code>style="display:none"</code>.</li>
+        </ol>
+        <p>For example, the default page includes two separate fields for the patient Social Security number, one for the full number and one for its last four digits. In most cases it is not necessary to display both. </p>
+        <p class="LabelforProcedures">
+            <MadCap:annotation MadCap:createDate="2011-11-15T21:39:34.9109483-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="This is a good candidate for a walkthrough topic for TAP." MadCap:editor="v-wipete" MadCap:editDate="2011-11-15T21:40:07.7999648-08:00">To hide the field for the last four digits of the patient Social Security number</MadCap:annotation>
+        </p>
+        <ol>
+            <li>Open the MatciInfoPatientMatch.ascx markup file.</li>
+            <li>Locate the following tag: <code>&lt;div class="fieldContainer left fieldLast4SSN"&gt;</code></li>
+            <li>Add a <code>style</code> attribute, so the new tag value is <code>&lt;div class="fieldContainer left fieldLast4SSN" style="display:none"&gt;</code></li>
+            <li>Save MatciInfoPatientMatch.ascx and deploy it to the patient site.</li>
+        </ol>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking.htm" target="" title="" alt="">Patient linking</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_linking_process.htm" target="" title="" alt="">Patient signup and linking process on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Patient_Site.htm" target="" title="" alt="">Patient site on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Staff_Site.htm" target="" title="" alt="">Staff site on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

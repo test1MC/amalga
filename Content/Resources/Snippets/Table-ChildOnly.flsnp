@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="118.3333" MadCap:lastWidth="978" MadCap:conditions="Production.StyleMaster,Production.doNOTbuild" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <table style="caption-side: top;width: 95%;">
+            <col style="width: 33%;">
+            </col>
+            <col style="width: 33%;">
+            </col>
+            <col style="width: 33%;">
+            </col>
+            <thead>
+                <tr>
+                    <th>
+                        <MadCap:annotation MadCap:createDate="2010-02-23T17:52:14.2941744-08:00" MadCap:creator="v-ciwyco@REDMOND" MadCap:initials="CJW" MadCap:comment="TO USE THIS TABLE TEMPLATE:&#160;\r\n1. Open your topic. \r\n2. Select Insert &gt; Snippet and select this snippet file. \r\n3. In your topic, right-click the inserted snippet and select Convert to text. \r\nThe table is now ready for your updates!\r\n\r\nFor examples with appropriate text, see /Content/Example-ParentChildTable.htm \r\n\r\nThe element name goes in the first set of &lt;&gt;s, \r\nIn the next line, choose optional or required, and add the description.\r\nIn the &lt;&gt; in the last line, add the parent element name." MadCap:editDate="2010-02-23T18:04:59.4464610-08:00" MadCap:editor="v-ciwyco@REDMOND">&lt;&gt;</MadCap:annotation>
+                    </th>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <p colspan="3">Optional Required </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Parent element:&#160;<span class="MarkupLanguageElements">&lt;&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

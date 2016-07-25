@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1792.667" MadCap:lastWidth="763" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Setting element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the Setting element.</p>
+        <p>Declares a specific configuration setting that, when the hosted application is deployed, is stored in the <MadCap:variable name="BrandingHSG.Amalga Short" /> configuration store for the object represented by the deployment manifest.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;Settings&gt;<br />&#160;&#160;&#160;[ &lt;Setting <br />&#160;&#160;&#160;Name="string" Type="string"</b>
+            <MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"><b> Description="string"</b>
+            </MadCap:conditionalText><b> &gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;[ &lt;DefaultValue&gt;...&lt;/DefaultValue&gt; ]<br />&#160;&#160;&#160;&#160;&#160;&#160;[ &lt;Validation&gt;...&lt;/Validation&gt; ]<br />&#160;&#160;&#160;&lt;/Setting&gt; ]<br />&lt;/Settings&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_Settings.htm">Settings</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_DefaultValue.htm">DefaultValue</a>, <a href="SDK_XML_Manifest_Validation.htm">Validation</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The name of the configuration setting.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <p>(Required string.) The supported data type of the setting. The following data types are supported:</p>
+                        <ul>
+                            <li><a href="http://msdn.microsoft.com/library/system.string.aspx">System.String</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.int32.aspx">System.Int32</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.int64.aspx">System.Int64</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.guid.aspx">System.Guid</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.datetime.aspx">System.DateTime</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.boolean.aspx">System.Boolean</a>
+                            </li>
+                            <li><a href="http://msdn.microsoft.com/library/system.double.aspx">System.Double</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>
+                        <MadCap:annotation MadCap:createDate="2011-10-12T05:06:25.4389730-07:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Not supported for CTP1." MadCap:editor="v-dennk" MadCap:editDate="2011-10-12T05:06:33.2125274-07:00">Description</MadCap:annotation> <![CDATA[ ]]></td>
+                    <td>
+                        <p>(Optional string.) Description of the setting, displayed in Amalga Management Console.</p>
+                        <p class="tip">This attribute supports localization.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>Once an instance of a hosted application is deployed, you can change the value initially specified by the deployment manifest for a configuration setting by using any of the following methods:</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />
+                </p>
+                <p><MadCap:variable name="FeatureName.Microsoft Amalga Management Console" /> provides an administrative user interface for managing the configuration of a hosted application or hosted service. For more information about application management, <MadCap:annotation MadCap:createDate="2011-11-14T21:20:01.7979672-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="references a stub." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-14T21:20:08.6886562-08:00">see <MadCap:xref href="../../Serviceability/Management Console/Application Management/Application Management Overview.htm" target="" title="" alt="">Application management on page 1</MadCap:xref>.</MadCap:annotation><br /></p>
+            </li>
+            <li>
+                <p><MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlets</p>
+                <p>The <span class="Label">Get-AmConfigurationSetting</span> and <span class="Label">Set-AmConfigurationSetting</span> cmdlets, included with <MadCap:variable name="BrandingHSG.Amalga Short" />, can be used to get and set configuration settings for a hosted application or hosted service. </p>
+            </li>
+            <li>
+                <p><MadCap:variable name="FeatureName.Amalga Framework" /> API</p>
+                <p>The AmalgaConfigurationManager class can be used to programmatically manage the configuration settings of a hosted application or hosted service. For more information, see <MadCap:xref href="../../AppFramework_NonReference/AF_Con_Configuration1.htm" target="" title="" alt="">Application configuration and user settings on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="792" MadCap:lastWidth="877" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-keith,Status.70 - Complete">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Change feature component logging levels</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>You can change the logging levels of <MadCap:variable name="BrandingHSG.Amalga Short" /> feature components. The procedures below can be used to change both the diagnostic and performance logging levels. For information on the logging levels available in <MadCap:variable name="BrandingHSG.Amalga Short" /> see, <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>. </p>
+        <p>Changes made by the Set-AmConfigurationSetting cmdlet will be picked up automatically within a few minutes depending on the system load. There is no need to restart <MadCap:variable name="BrandingHSG.Amalga Short" /> components for the changes to take effect.</p>
+        <p>For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">For the current version of <MadCap:variable name="BrandingHSG.Amalga Short" />, setting the logging level of features is controlled at the component level. Changing the logging level of a feature's components is available through <MadCap:variable name="BrandingMS.Doors PowerShell" /> only. </p>
+        <p class="LabelforProcedures">To view <MadCap:variable name="BrandingHSG.Amalga Short" /> feature components and their logging levels through the <MadCap:variable name="FeatureName.Management Console second use" /></p>
+        <ul>
+            <li>Follow the procedures in <MadCap:xref href="AMC Task View Feature Information.htm" target="" title="" alt="">View feature information</MadCap:xref>. Components are listed under each feature in the module tree. Selecting a component will display its settings, including logging levels, in the results pane.</li>
+        </ul>
+        <p class="LabelforProcedures">To review the current logging levels of an <MadCap:variable name="BrandingHSG.Amalga Short" /> feature component through <MadCap:variable name="BrandingMS.Doors PowerShell" /></p>
+        <p class="note">To identify the components associated with a feature, use <MadCap:xref href="AMC Task View Feature Information.htm" target="" title="" alt="">View feature information</MadCap:xref> as described in the prior procedure.</p>
+        <ul>
+            <li>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting</MadCap:xref> cmdlet with appropriate parameters.</li>
+        </ul>
+        <p>Example: <span class="InputText">Get-AmConfigurationSetting -InstanceType ComponentInstance -InstanceName IdentityService -SettingName DiagnosticsLogLevel</span></p>
+        <p class="LabelforProcedures">To change the current logging levels of an <MadCap:variable name="BrandingHSG.Amalga Short" /> feature component</p>
+        <ul>
+            <li>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting</MadCap:xref> cmdlet with appropriate parameters.</li>
+        </ul>
+        <p>Example: <span class="InputText">Set-AmConfigurationSetting -InstanceType ComponentInstance -InstanceName IdentityService -SettingName DiagnosticsLogLevel -SettingValue Error</span></p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="../Application Management/AppMan Proc ChangeAppLoggingLevel.htm" target="" title="" alt="">Change service logging levels</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" target="" title="" alt="">Set-AmConfigurationSetting</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" target="" title="" alt="">Get-AmConfigurationSetting</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

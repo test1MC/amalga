@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="134" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To rearrange columns</p>
+        <ol>
+            <li>Move your mouse over the column until the pointer becomes a four-headed arrow (<img src="../Images/PC_move_column.png" />) and drag the column to a new location.</li>
+            <li>Release the mouse button.</li>
+        </ol>
+    </body>
+</html>

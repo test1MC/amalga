@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="874" MadCap:lastWidth="830" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Id element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the Id element.</p>
+        <p>Contains the GUID that identifies a hosted application.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;Dependency&gt;<br />&#160;&#160;&#160;&lt;Id&gt;<i>GUID</i>&lt;/Id&gt;<br />&lt;/Element&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String, representing a GUID.</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-1: Required element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_Dependency.htm">Dependency</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The value of this element is used to identify a hosted application referenced in a <span class="MarkupLanguageElements">Dependency</span> element. The value of this element must match the value for the <span class="MarkupLanguageElements">Id</span> attribute of the <span class="MarkupLanguageElements">DependencyManifest</span> element from the application manifest of the hosted application referenced in the <span class="MarkupLanguageElements">Dependency</span> element.</p>
+        <p class="SeeAlso">See Also</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_DeploymentManifest.htm" target="" title="" alt="">DeploymentManifest Element on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

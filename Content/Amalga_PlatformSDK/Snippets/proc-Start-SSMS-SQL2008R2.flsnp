@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="75" MadCap:lastWidth="665" MadCap:fileTags="EditingTags.1 - Ready for Edit,Personas.All,ReleaseTarget.CTP1,Status.70 - Complete,TopicOwner.v-dennk,TopicType.Concept">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Start <MadCap:variable name="BrandingMS.SQL Server Management Studio" />.</p>
+        <p>Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Microsoft SQL&#160;Server 2008 R2</span>, and then click <span class="UIElementAction">SQL&#160;Server Management Studio</span>.</p>
+    </body>
+</html>

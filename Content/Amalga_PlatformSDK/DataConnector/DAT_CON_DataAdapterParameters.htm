@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="845" MadCap:lastWidth="626" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T23:09:30.0816586-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-12T23:09:30.1284589-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-03-12T23:36:04.8397777-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">AmalgaDbDataAdapter parameters</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how the <span MadCap:changes="3" class="codeEntity">AmalgaDbDataAdapter</span> class uses parameterized queries in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to manage updates.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> class has four properties that are used to retrieve data from and update data to an instance of the DataConnector platform application. The <span class="ForeignCodeElements">SelectCommand</span> property contains an <span class="ForeignCodeElements">AmalgaDbCommand</span> object that represents a SELECT statement used to return data from an instance of the DataConnector platform application, while the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, and <span class="ForeignCodeElements">DeleteCommand</span> properties contain <span class="ForeignCodeElements">AmalgaDbCommand</span> objects that represent, respectively, parameterized INSERT, UPDATE and DELETE statements used to manage changes with an instance of the DataConnector platform application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with commands and parameters on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Setting" target="" title="" alt="">Setting the SourceColumn and SourceVersion properties for parameters on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Example" target="" title="" alt="">Example on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with commands and parameters</h2>
+        <p>The <span class="ForeignCodeElements">SelectCommand</span> property must be set before you invoke the <span class="ForeignCodeElements">Fill</span> method of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> class. The <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span> and <span class="ForeignCodeElements">DeleteCommand</span> properties must be set before the <span class="ForeignCodeElements">Update</span> method of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> class is invoked, depending on what changes were made to the data in the associated <span class="ForeignCodeElements">DataTable</span> object. For example, if rows have been added, the <span class="ForeignCodeElements">InsertCommand</span> property must be set before you call the <span class="ForeignCodeElements">Update</span> method. When <span class="ForeignCodeElements">Update</span> is processing an inserted, updated, or deleted row, the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> class uses the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in, respectively, the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span> or <span class="ForeignCodeElements">DeleteCommand</span> property to process the action. Current information about the modified row is passe<MadCap:change MadCap:changes="2">d</MadCap:change><MadCap:change MadCap:changes="1">s</MadCap:change> to the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in that property by using the <span class="ForeignCodeElements">AmalgaDbParameter</span> objects defined in the <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> collection for the <span class="ForeignCodeElements">Parameters</span> property of that <span class="ForeignCodeElements">AmalgaDbCommand</span> object.</p>
+        <p>When you update a row, you call the UPDATE statement, which uses a unique identifier to identify the row in the table to be updated. The unique identifier is typically the value of a primary key field. The UPDATE statement uses parameters that contain both the unique identifier and the columns and values to be updated, as shown in the following SQL statement:</p>
+        <p class="code">UPDATE [Customers] SET&#160;[CompanyName] = @CompanyName WHERE&#160;[CustomerID] = @CompanyID</p>
+        <p class="note">The syntax for parameter placeholders depends on the value of the <span class="ForeignCodeElements">UseOleDbSequentialParameter</span> property for the <span class="ForeignCodeElements">AmalgaDbConnection</span> object. By default, the <span class="ForeignCodeElements">AmalgaDbConnection</span> object uses named parameter placeholders, as shown in the above example.</p>
+        <p>The <span class="ForeignCodeElements">Add</span> method of the <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object takes the name of the parameter, the data type, the size (if applicable to the data type), and the name of the associated <span class="ForeignCodeElements">SourceColumn</span> object from the <span class="ForeignCodeElements">DataTable</span> object. </p>
+        <p class="note"><span class="ForeignCodeElements">AmalgaDbParameter</span> objects with empty <span class="ForeignCodeElements">ParameterValue</span> property values are allowed in an <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object. Similarly, multiple <span class="ForeignCodeElements">AmalgaDbParameter</span> objects with the same <span class="ForeignCodeElements">ParameterName</span> property value are allowed in the same <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object.<br />For more information about sequential parameter placeholders, see <MadCap:xref href="DAT_CON_ConfiguringParameters.htm" target="" title="" alt="">Configuring parameters and parameter data types on page 1</MadCap:xref>.<br /></p>
+        <h2><a name="Setting"></a>Setting the SourceColumn and SourceVersion properties for parameters</h2>
+        <p>The <span class="ForeignCodeElements">SourceColumn</span> and <span class="ForeignCodeElements">SourceVersion</span> properties of an <span class="ForeignCodeElements">AmalgaDbParameter</span> object may be passed as constructor arguments, or set after creating an <span class="ForeignCodeElements">AmalgaDbParameter</span> object. The value of the <span class="ForeignCodeElements">SourceColumn</span> object is the name of the <span class="ForeignCodeElements">DataColumn</span> object from the<span class="ForeignCodeElements"> DataRow</span> object where the value of the parameter will be retrieved. The value of the <span class="ForeignCodeElements">SourceVersion</span> property specifies the version of the <span class="ForeignCodeElements">DataRow</span> object that the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object uses to retrieve the value.</p>
+        <p>The following table shows the <span class="ForeignCodeElements">DataRowVersion</span> enumeration values available for use with the <span class="ForeignCodeElements">SourceVersion</span> property of the <span class="ForeignCodeElements">AmalgaDbParameter</span> object.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Enumeration value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Current</td>
+                    <td>
+                        <p>The parameter uses the current value of the column.</p>
+                        <p>This is the default value of the SourceVersion property.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Default</td>
+                    <td>The parameter uses the default value of the column, specified by the value of the DefaultValue property for the DataColumn object representing the column.</td>
+                </tr>
+                <tr>
+                    <td>Original</td>
+                    <td>The parameter uses the original value of the column, ignoring any changes.</td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>The parameter uses a proposed value for the column.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Example"></a>Example</h2>
+        <p>The following example defines an <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object for an application view named <span class="ForeignCodeElements">PatientNote</span>. The following actions are performed in the example:</p>
+        <ul>
+            <li>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object is created. The <span class="ForeignCodeElements">MissingSchemaAction</span> property of the object is set to <span class="ForeignCodeElements">MissingSchemaAction.AddWithKey</span>, to ensure that primary key constraints are retrieved and added to a <span class="ForeignCodeElements">DataSet</span> object when the <span class="ForeignCodeElements">Fill</span> method of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object is invoked.</li>
+            <li>New <span class="ForeignCodeElements">AmalgaDbCommand</span> objects are created for each command used by the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</li>
+            <li>The SELECT statement for retrieving data is added to the <span class="ForeignCodeElements">CommandText</span> property of the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in the <span class="ForeignCodeElements">SelectCommand</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</li>
+            <li>The parameterized INSERT, UPDATE, and DELETE statements are added to the <span class="ForeignCodeElements">CommandText</span> property of the <span class="ForeignCodeElements">AmalgaDbCommand</span> objects in, respectively, the <span class="ForeignCodeElements">InsertCommand</span>, <span class="ForeignCodeElements">UpdateCommand</span>, and <span class="ForeignCodeElements">DeleteCommand</span> properties of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object.</li>
+            <li>
+                <p>Parameters are defined for each of the <span class="ForeignCodeElements">AmalgaDbCommand</span> objects, by using the <span class="ForeignCodeElements">Add</span> method of the <span class="ForeignCodeElements">AmalgaDbParameterCollection</span> object in the <span class="ForeignCodeElements">Parameters</span> property for each <span class="ForeignCodeElements">AmalgaDbCommand</span> object.</p>
+                <p class="note">
+                    <MadCap:annotation MadCap:createDate="2012-03-12T23:38:18.6680863-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="rather long sentence. Break into two?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:38:27.9657459-07:00">The <span class="ForeignCodeElements">AmalgaDbParameter</span> object defined to support the @oldNoteID&#160;parameter in the UPDATE statement uses the <span class="ForeignCodeElements">SourceVersion</span> property to specify that the original value of the NoteID column in the <span class="ForeignCodeElements">DataTable</span> object should be used when the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in the <span class="ForeignCodeElements">UpdateCommand</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object is invoked.</MadCap:annotation>
+                </p>
+            </li>
+            <li>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object is returned.</li>
+        </ul><pre xml:space="preserve">private AmalgaDbDataAdapter CreatePatientNoteDataAdapter(AmalgaDbConnection connection)
+{
+    // Create an AmalgaDbDataAdapter object.
+    AmalgaDbDataAdapter adapter = new AmalgaDbDataAdapter();
+
+    // Ensure that primary key constraints are added to any DataSet object
+    // filled by invoking the Fill method of this object.
+    adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+    // Create new AmalgaDbCommand objects for each command.
+    adapter.SelectCommand = new AmalgaDbCommand();
+    adapter.InsertCommand = new AmalgaDbCommand();
+    adapter.UpdateCommand = new AmalgaDbCommand();
+    adapter.DeleteCommand = new AmalgaDbCommand();
+
+    // Set the CommandText properties for the AmalgaDbCommand objects
+    // to be used by the AmalgaDbDataAdapter.
+    adapter.SelectCommand.CommandText =
+        @"SELECT [NoteID], [NoteText], [PatientPersonID] FROM [PatientNote]";
+    adapter.InsertCommand.CommandText =
+        @"INSERT INTO [PatientNote] ([NoteID], [NoteText], [PatientPersonID]) " + 
+        "VALUES (@NoteID, @NoteText, @PatientPersonID)";
+    adapter.UpdateCommand.CommandText =
+        @"UPDATE [PatientNote] SET [NoteID]=@NoteID, [NoteText]=@NoteText, " + 
+        "[PatientPersonID]=@PatientPersonID WHERE NoteID=@oldNoteID";
+    adapter.DeleteCommand.CommandText =
+        @"DELETE FROM [PatientNote] WHERE NoteID=@NoteID";
+
+    // Define the AmalgaDbParameter objects used by the AmalgaDbCommand
+    // objects.
+    adapter.InsertCommand.Parameters.Add("@NoteID", SqlDbType.Int, 4, "NoteID");
+    adapter.InsertCommand.Parameters.Add("@NoteText", SqlDbType.NVarChar, 4000, "NoteText");
+    adapter.InsertCommand.Parameters.Add("@PatientPersonID", 
+        SqlDbType.NVarChar, 80, "PatientPersonID");
+
+    adapter.UpdateCommand.Parameters.Add("@NoteID", SqlDbType.Int, 4, "NoteID");
+    adapter.UpdateCommand.Parameters.Add("@NoteText", SqlDbType.NVarChar, 4000, "NoteText");
+    adapter.UpdateCommand.Parameters.Add("@PatientPersonID", 
+        SqlDbType.NVarChar, 80, "PatientPersonID");
+    adapter.UpdateCommand.Parameters.Add("@oldNoteID", 
+        SqlDbType.Int, 4, "NoteID").SourceVersion = DataRowVersion.Original;
+
+    adapter.DeleteCommand.Parameters.Add("@NoteID", SqlDbType.Int, 4, "NoteID");
+
+    // Return the newly defined AmalgaDbDataAdapter.
+    return adapter;
+}
+     <![CDATA[
+]]></pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

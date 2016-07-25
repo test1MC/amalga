@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="776.3334" MadCap:lastWidth="582" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,TopicOwner.v-padenc,Status.50 - InTech Review">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Assign accounts to a role</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">This topic describes how to assign accounts to <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <p>
+            <MadCap:keyword term="roles;security;access control framework;framework:access control;permissions;Management Console;users" />You can <MadCap:annotation MadCap:createDate="2012-02-07T13:54:06.4136248-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="122730 set for M5: would automatically keep Amalga roles in 1-to-1 sync with AD" MadCap:editor="v-padenc" MadCap:editDate="2012-02-07T13:54:32.1784190-08:00">assign </MadCap:annotation>user, security group, and computer accounts to <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <p>Assigning a computer account to a role of appropriate permissions allows the computer to access <MadCap:variable name="BrandingHSG.Amalga Short" /> data and applications offline, without any user context at run time. Use this configuration to create reports or send scheduled alerts.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../Snippets/info-SupportedUsers.flsnp" /> Groups must be of the security type; distribution groups cannot be added to <MadCap:variable name="BrandingHSG.Amalga Short" /> roles.  <MadCap:snippetText src="../../Snippets/info-ADFS-ComputerAcct.flsnp" /></p>
+        <p class="note">
+            <MadCap:snippetText src="../../Snippets/info-PSonly.flsnp" />
+        </p>
+        <p class="LabelforProcedures">To assign accounts to an <MadCap:variable name="BrandingHSG.Amalga Short" /> role, use the following cmdlets.</p>
+        <table style="margin-left: 0;margin-right: auto;caption-side: top;width: 95%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>To assign this type of account...</th>
+                    <th>Use this cmdlet:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User, security group, or computer account</td>
+                    <td>
+                        <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Add-AmRoleMembership.htm" target="" title="" alt="">Add-AmRoleMembership</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The current computer account</td>
+                    <td>
+                        <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Add-AmMachineServiceAccount.htm" target="" title="" alt="">Add-AmMachineServiceAccount</MadCap:xref>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short" /> cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../../../PowerShellCmdlets/PowerShellLanding.htm">Load DLL for cmdlet access</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Add-AmMachineServiceAccount.htm" target="" title="" alt="">Add-AmMachineServiceAccount</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Add-AmRoleMembership.htm" target="" title="" alt="">Add-AmRoleMembership</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SERV_CON_ComputerAccts.htm" target="" title="" alt="">Computer accounts</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SERV_CON_RolesUsers.htm" target="" title="" alt="">Roles and users</MadCap:xref>
+        </p>
+    </body>
+</html>

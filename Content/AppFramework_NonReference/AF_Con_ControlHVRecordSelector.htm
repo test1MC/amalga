@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="833" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren,EditingTags.4 - Ready for Writer,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;"><MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-11T20:50:34.8270682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Always select a Status file tag and a Release file tag, pls, and do your best to keep the Status tag current.\r\n\r\nIf you have time, pls add 1) an index marker and 2) the persona file tag.  " MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:50:37.0860682-08:00">This </MadCap:annotation>topic describes the features and usage of <MadCap:annotation MadCap:createDate="2012-02-11T20:51:00.5060682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="If we are going to have more topics about this or referencing it, we should add a variable.  LMK if you want one." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:51:24.0380682-08:00">the <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector</MadCap:annotation>.</p>
+        <p>The <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector displays information about the currently logged-in patient, enables the patient to switch between records and to create new records in their <MadCap:variable name="BrandingHSG.HealthVault" /> account. It also provides patient context data, including first name, last name, nickname, image, and  record ID. It also returns the <MadCap:variable name="BrandingHSG.HealthVault" /> Account ID, which can be used to query HealthVault for all authorized records. The Record Selector also publishes the current patient context to the Context Manager, which can then make patient data available to other controls on the page. The Record Selector control displays only patient records for which the user has provided authorization.</p>
+        <p class="warning">The <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector is intended only for use on patient portal pages. It should not be used on staff or provider portals.</p>
+        <p class="warning">There should typically only be one <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector instance on a page. In some situations, it may be necessary to author a page with multiple web parts receiving data from different <MadCap:variable name="BrandingHSG.HealthVault" /> records (for example a page displaying a summary of a family). In cases where more than one <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector is present, the header for the page should not contain a <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector instance.<br /></p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Adding" target="" title="" alt=""><a href="#Adding">Adding the  Record Selector to a project</a>
+                </MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Accessin" target="" title="" alt=""><a href="#Accessin">Accessing  Record Selector context data</a>
+                </MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Customiz" target="" title="" alt=""><a href="#Customiz">Customizing the appearance of a HealthVault Record Selector instance</a>
+                </MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Adding"></a>Adding the <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector to a project</h2>
+        <p>You can add a <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>. </p>
+        <h2><a name="Accessin"></a>Accessing <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector context data</h2>
+        <p>The <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector refreshes the <MadCap:annotation MadCap:createDate="2012-02-13T12:42:17.0266712-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Need to link to this content once it exists (per Will, who is writing said content)." MadCap:editor="v-wfren" MadCap:editDate="2012-02-13T12:42:39.4449128-08:00">patient context</MadCap:annotation> each time the selected record is changed.  All controls added to the page that subscribe to CommonContext messages via the PageMessageManager will be notified of patient context changes initiated by the <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector, and refresh their patient-centric data accordingly. The <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector specifies both the <MadCap:variable name="BrandingHSG.HealthVault" /> Record ID and the <MadCap:variable name="BrandingHSG.Amalga Short" /> Patient ID in the following format:</p>
+        <p class="code">Patient.Id.MRN.HVRecordID = "xxxxx"</p>
+        <p class="code">Patient.ID.MRN.AmalgaPersonId = "yyyyy"</p>
+        <p>For more information about consuming CommonContext messages, see <a href="AF_Con_PageMessagingParts.htm">Page messaging</a>.</p>
+        <h2><a name="Customiz"></a>Customizing the appearance of a HealthVault Record Selector instance</h2>
+        <p>You can change the appearance and behavior of the <MadCap:variable name="BrandingHSG.HealthVault" /> Record Selector control by  editing the control properties in the <MadCap:variable name="BrandingMS.Visual Studio second use" /> Properties Window. For a complete list of properties, see <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_HealthVaultRecordSelector.htm">HealthVaultRecordSelector</a>. Each customized instance needs to be deployed to the site as a new control.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_HealthVaultRecordSelector.htm">HealthVaultRecordSelector</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_UsingControls.htm">Toolbox controls</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_PageMessagingParts.htm">Page messaging</a>
+        </p>
+    </body>
+</html>

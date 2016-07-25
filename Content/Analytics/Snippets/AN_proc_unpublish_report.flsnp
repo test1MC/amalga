@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="160" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To unpublish a report</p>
+        <ol>
+            <li>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the Options icon (<img src="../Images/AN_settings.png" /> ) in the report that you want to unpublish, and then click <span class="UIElementAction">Unpublish</span>.</li>
+            <li>
+                <p>Click <span class="UIElementAction">Unpublish</span> to confirm that you don't want users to be able to see the report.</p>
+                <p>A placeholder with the name of the report will be displayed for all users.</p>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-padenc,Personas.Carlos: IT Admin,TopicType.Ref_General,ReleaseTarget.TAP,EditingTags.5 - Revised / ready for editor,Status.50 - InTech Review" MadCap:lastBlockDepth="8" MadCap:lastHeight="1305" MadCap:lastWidth="582">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Built-in <MadCap:variable name="BrandingHSG.Amalga Short" /> roles</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="roles;roles:built-in;access control framework;framework:access control;permissions;security" />This topic  describes built-in <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> is shipped with the following static, built-in <MadCap:variable name="BrandingHSG.Amalga Short" /> roles, which provide access to predefined platform operations, including all administrative operations, such as publishing applications and granting access to data. </p>
+        <table style="width: 100%;">
+            <col style="width: 236px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Role title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BUILTIN\AmalgaAppAdmin</td>
+                    <td>
+                        <p>Administrators authorized to perform the following application-related tasks:&#160;</p>
+                        <ul>
+                            <li>Install and uninstall applications</li>
+                            <li>Grant permissions to applications </li>
+                            <li>Deploy and remove virtual schemas</li>
+                            <li>Modify application settings</li>
+                            <li>View diagnostic logs</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\AmalgaDataAdmin</td>
+                    <td>
+                        <p>Administrators authorized to perform the following data-related tasks:&#160;</p>
+                        <ul>
+                            <li>Create and delete entities</li>
+                            <li>Modify binding information for entities</li>
+                            <li>Grant permissions to entities (control access to data)&#160;</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\AmalgaDataPrivilegedService</td>
+                    <td>
+                        <p>Computer accounts running services that need to retrieve resolved queries for users directly rather than using Doors authentication. </p>
+                        <p class="noteInTable">Role membership in BUILTIN\AmalgaDataPrivilegedService allows services on the computer account to retrieve users' queries by passing the userid as a parameter instead of using Doors authentication. An example of a service benefiting from membership in this role is an eventing service. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\AmalgaService</td>
+                    <td>
+                        <p>All computer accounts running platform services or application services. </p>
+                        <p class="noteInTable"> Role membership in BUILTIN\AmalgaService is set up at installation; computer accounts for computers on which platform or application services are installed are automatically added to this role.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\AmalgaSysAdmin</td>
+                    <td>
+                        <p> Administrators authorized to run all management services in the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform. </p>
+                        <p>Membership in this role is required to deploy and manage an <MadCap:variable name="BrandingHSG.Amalga Short" /> topology, deploy and remove applications, manage <MadCap:variable name="BrandingHSG.Amalga Short" /> entities, manage roles and permissions, and view logging and auditing information. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\AmalgaUsers</td>
+                    <td>All <MadCap:variable name="BrandingHSG.Amalga Short" />&#160;users, including computer accounts as well as user and group accounts, that are <MadCap:annotation MadCap:createDate="2012-01-27T00:38:25.8123186-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Will there be Amalga users that are not members of an Amalga role?  Or is this functionally all amalga Users since every user must be a member of at least one role?\r\n\r\nPD: Yes, this is functionally all Amalga users because to be an Amalga user, your account must be a member of an Amalga role." MadCap:editor="v-padenc" MadCap:editDate="2012-02-06T08:19:47.4905906-08:00">members of <MadCap:variable name="BrandingHSG.Amalga Short" /> roles</MadCap:annotation>. </td>
+                </tr>
+                <tr>
+                    <td>BUILTIN\HVPatient</td>
+                    <td><MadCap:variable name="BrandingHSG.HealthVault Long No TM" /> patient accounts from the <MadCap:variable name="BrandingHSG.HealthVault" /> Security Token Service (STS). </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SERV_TASK_Roles-Add.htm" target="" title="" alt="">Add a role</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="../../Secure Data Access/Secure Data Access Intro.htm" target="" title="" alt="">Data access security</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SERV_CON_EffectiveUserPerm.htm" target="" title="" alt="">Effective user permissions</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../Secure Data Access/SERV_CON_RolesApps.htm" target="" title="" alt="">Roles and applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SERV_CON_RolesUsers.htm" target="" title="" alt="">Roles and users</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../AppFramework_NonReference/AF_Con_HVDataAccess.htm" target="" title="" alt="">Working with  data</MadCap:xref>
+        </p>
+    </body>
+</html>

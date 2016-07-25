@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet
+  Comment="My set of condition tags"
+  conditions="Default.StyleMaster,Production.StyleMaster">
+  <ConditionTag
+    BackgroundColor="LightCoral"
+    Name="Product Description"
+    Comment="Legal product descirption" />
+  <ConditionTag
+    BackgroundColor="#7fffd4"
+    Name="IPM"
+    Comment="Semantic Tagging for Imaging -- Image Processing Module" />
+</CatapultConditionTagSet>

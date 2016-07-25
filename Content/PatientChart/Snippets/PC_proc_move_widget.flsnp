@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="868" MadCap:fileTags="EditingTags.7 - Editing issues resolved" MadCap:conditions="Manuals.XRefOtherManual">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To open a module</p>
+        <ul>
+            <li>Click the title in the Clinical Summary. The module will be opened  on a new tab. Then you will be able to further modify the data displayed by grouping, filtering, or sorting. The functions available depend on the module.</li>
+        </ul>
+    </body>
+</html>

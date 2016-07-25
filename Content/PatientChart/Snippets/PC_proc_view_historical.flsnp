@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="128" MadCap:lastWidth="570" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To view historical data (Vital Signs)</p>
+        <p>If there is no data available for the last 24 hours, you will see a message that no data exists and a link to view historical data.</p>
+        <ul>
+            <li>Click <span class="UIElementAction">View historical data</span> where you want to view past information.</li>
+        </ul>
+    </body>
+</html>

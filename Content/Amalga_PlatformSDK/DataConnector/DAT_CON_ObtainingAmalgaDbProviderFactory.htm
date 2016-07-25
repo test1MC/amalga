@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="841" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Obtaining an AmalgaDbProviderFactory</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to obtain an instance of the <span class="codeEntity">AmalgaDbProviderFactory</span> class in <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbProviderFactory</span> class is the <MadCap:variable name="FeatureName.Amalga ADO.NET" /> implementation of the <span class="ForeignCodeElements">DbProviderFactory</span> class in ADO.NET, to support the factory design pattern used by ADO.NET for provider-independent data access.</p>
+        <p>The ADO.NET methodology for retrieving provider information, listing the installed provider factory classes, and creating an instance of the <span class="ForeignCodeElements">DbProviderFactory</span> class can be used with <MadCap:variable name="FeatureName.Amalga ADO.NET" />. For more information about  working with the <span class="ForeignCodeElements">DbProviderFactory</span> class in ADO.NET, see <a href="http://msdn.microsoft.com/library/dd0w4a2z.aspx">Obtaining a DbProviderFactory (ADO.NET)</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at <a href="http://msdn.microsoft.com/library/dd0w4a2z.aspx">http://msdn.microsoft.com/library/dd0w4a2z.aspx</a></MadCap:conditionalText>.</p>
+        <p class="note">The <span class="ForeignCodeElements">AmalgaDbProviderFactory</span> object does not implement the <span class="ForeignCodeElements">CreateDataSourceEnumerator</span> method or the <span class="ForeignCodeElements">CreatePermission</span> method from the <span class="ForeignCodeElements">DbProviderFactory</span> class. <MadCap:variable name="FeatureName.Amalga ADO.NET" /> does not implement the <span class="ForeignCodeElements">DbDataSourceEnumerator</span> or <span class="ForeignCodeElements">CodeAccessPermission</span> classes.</p>
+        <h2>Example</h2>
+        <p>The following example demonstrates how to use the <span class="ForeignCodeElements">AmalgaDbProviderFactory</span> class to instantiate an <span class="ForeignCodeElements">AmalgaDbConnection</span> object, cast as a <span class="ForeignCodeElements">DbConnection</span> object.</p><pre xml:space="preserve">public DbConnection CreateDbConnection(
+    string providerName)
+{
+    // Define a variable for the DbConnection object.
+    DbConnection connection = null;
+
+    // Instantiate the AmalgaDbProviderFactory class, and
+    // then use it to instantiate an AmalgaDbConnection class and
+    // cast it as a DbConnection object.
+    // For hosted applications, you can use the static function
+    // GetVirtualSchemaConnectionString() to obtain a connection
+    // string.
+    try
+    {
+        AmalgaDbProviderFactory factory = new AmalgaDbProviderFactory();
+        connection = factory.CreateConnection();
+        connection.ConnectionString = GetVirtualSchemaConnectionString();
+    }
+    catch (Exception ex)
+    {
+        // Set the connection to null if a DbConnection instance was created.
+        if (connection != null)
+        {
+            connection = null;
+        }
+        Console.WriteLine(ex.Message);
+    }
+
+    // Return the connection.
+    return connection;
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

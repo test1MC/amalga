@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/windowsworker" Type="WindowsWorker" Name="DataParser" InstanceName="DataParser_Model_ADT_G" Id="44162965-1f39-4f81-94b4-63002da90b90" Version="1.0.0.0">
+    <WindowsWorkerManifest HostAssembly="Microsoft.Amalga.Pipeline.DataParser.exe" LogicalHostName="FabricLogicalHost" AuthenticationMode="None" ClusteringMode="FailOver" />
+        <Settings>
+            <Setting Name="BatchSize" Type="System.Int32">
+                <DefaultValue>50</DefaultValue>
+            </Setting>
+            <Setting Name="IdleSleepSeconds" Type="System.Int32">
+                <DefaultValue>5</DefaultValue>
+            </Setting>
+            <Setting Name="ConnectionTimeoutSeconds" Type="System.Int32">
+                <DefaultValue>60</DefaultValue>
+            </Setting>
+            <Setting Name="FeedInfoXml" Type="System.String">
+                <DefaultValue>
+                    <![CDATA[
+<FeedInfo>
+    <Name>ADT.G Feed</Name>
+    <Type>ADT.G</Type>
+    <Provider>MS Internal</Provider>
+    <TerminologyName>Microsoft Beta HL7 V2.X Code</TerminologyName>
+    <PreferenceRanking>100</PreferenceRanking>
+    <PreferredCulture>en-US</PreferredCulture>
+    <DefaultTimeZone>Pacific Standard Time</DefaultTimeZone>
+</FeedInfo>
+                    ]]>
+                </DefaultValue>
+            </Setting>
+            <Setting Name="FeedConfigurationXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<DataParserConfiguration>
+    <MessageShredderInput>
+        <Segment Name="MSH" SourceName="MSH">
+            <Elements>
+                <Element Name="MSH_6" />
+            </Elements>
+        </Segment>
+        <Segment Name="PID" SourceName="PID">
+            <Elements>
+                <Element Name="PID_3_Repeating" />
+                <Element Name="PID_5_1" />
+                <Element Name="PID_5_2" />
+                <Element Name="PID_7" />
+                <Element Name="PID_18" />
+            </Elements>
+        </Segment>
+        <Segment Name="NK1" SourceName="NK1">
+            <Elements>
+                <Element Name="NK1_1" />
+            </Elements>
+        </Segment>
+        <Segment Name="PV1" SourceName="PV1">
+            <Elements>
+                <Element Name="PV1_19" />
+                <Element Name="PV1_44" />
+                <Element Name="PV1_45" />
+            </Elements>
+        </Segment>
+        <Segment Name="PV2" SourceName="PV2">
+            <Elements />
+        </Segment>
+        <Segment Name="IN1" SourceName="IN1">
+            <Elements>
+                <Element Name="IN1_2" />
+            </Elements>
+        </Segment>
+        <Segment Name="GT1" SourceName="GT1">
+            <Elements>
+                <Element Name="GT1_1" />
+            </Elements>
+        </Segment>
+        <Segment Name="DG1" SourceName="DG1">
+            <Elements>
+                <Element Name="DG1_1" />
+                <Element Name="DG1_3_1" />
+            </Elements>
+        </Segment>
+    </MessageShredderInput>
+    <DataParserOutput>
+        <Segment Name="PID" SourceName="PID">
+            <Elements>
+                <Element Name="FamilyName" Type="System.String" MaxLength="100">
+                    <ConceptId>1uJSHAEy5J0eLAWfCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ToTitleCase</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="GivenName" Type="System.String" MaxLength="100">
+                    <ConceptId>1uJSHAEy5J0eLAWjCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ToTitleCase</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_2" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="FullName" Type="System.String" MaxLength="200">
+                    <ConceptId>1uJSHAEy5J0eLJbGCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter SourceType="Inline" Value=" " />
+                            <Parameter SourceType="DerivedField" SourceTable="PID" SourceName="FamilyName" />
+                            <Parameter SourceType="DerivedField" SourceTable="PID" SourceName="GivenName" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="DateOfBirth" Type="System.DateTime">
+                    <ConceptId>1uJSHAEy5J0eLJbOCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ToDateTime</Action>
+                        <InputParameters>
+                            <Parameter Name="" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_7" />
+                            <Parameter SourceType="Inline" Value="en-us" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="MRN" Type="System.String" MaxLength="100">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ApplyXPath</Action>
+                        <InputParameters>
+                            <Parameter Name="Xml" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_3_Repeating" />
+                            <Parameter Name="XPath" SourceType="Inline" Value="/Repetitions/Repetition[2]/PID_3_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <!-- Use Person concept id so we can bind the patient entity -->
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="MRN" SourceType="DerivedField" SourceTable="PID" SourceName="MRN" />
+                            <Parameter Name="Domain" SourceType="ShreddedInput" SourceTable="MSH" SourceName="MSH_6" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="NK1" SourceName="NK1">
+            <Elements>
+                <Element Name="SetId" Type="System.Int32">
+                    <ConceptId />
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="NK1" SourceName="NK1_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="NextOfKin_NK1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYCSCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="MRN" SourceType="DerivedField" SourceTable="PID" SourceName="Patient_PID_ContextKey" />
+                            <Parameter Name="SetId" SourceType="DerivedField" SourceTable="NK1" SourceName="SetId" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="PID" SourceName="Patient_PID_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="PV1" SourceName="PV1">
+            <Elements>
+                <Element Name="AdmitDateTime" Type="System.DateTime">
+                    <ConceptId>1uJSHAEy5J0eLJmeCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ToDateTime</Action>
+                        <InputParameters>
+                            <Parameter Name="" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_44" />
+                            <Parameter SourceType="Inline" Value="en-us" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="DischargeDateTime" Type="System.DateTime">
+                    <ConceptId>1uJSHAEy5J0eLJmiCsgBAA</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ToDateTime</Action>
+                        <InputParameters>
+                            <Parameter Name="" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_45" />
+                            <Parameter SourceType="Inline" Value="en-us" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" />
+                            <Parameter Name="Domain" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="PID" SourceName="Patient_PID_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="PV2" SourceName="PV2">
+            <Elements>
+                <Element Name="Encounter_PV2_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="VisitContextKey" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="VisitContextKey" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="IN1" SourceName="IN1">
+            <Elements>
+                <Element Name="Insurance_IN1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYCbCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="InsuranceId" SourceType="ShreddedInput" SourceTable="IN1" SourceName="IN1_2" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="VisitContextKey" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+            <CollapseConfiguration>
+                <PrimaryKeyColumn>Insurance_IN1_ContextKey</PrimaryKeyColumn>
+                <ResultRowsFilter>Insurance_IN1_ContextKey is not null and Insurance_IN1_ContextKey &lt;&gt; ''</ResultRowsFilter>
+            </CollapseConfiguration>
+        </Segment>
+        <Segment Name="GT1" SourceName="GT1">
+            <Elements>
+                <Element Name="SetId" Type="System.Int32">
+                    <ConceptId />
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="GT1" SourceName="GT1_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Guarantor_GT1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYCkCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" />
+                            <Parameter Name="SetId" SourceType="DerivedField" SourceTable="GT1" SourceName="SetId" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="VisitContextKey" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+            <CollapseConfiguration>
+                <PrimaryKeyColumn>Guarantor_GT1_ContextKey</PrimaryKeyColumn>
+                <ResultRowsFilter>SetId is not null</ResultRowsFilter>
+            </CollapseConfiguration>
+        </Segment>
+        <Segment Name="DG1" SourceName="DG1">
+            <Elements>
+                <Element Name="SetId" Type="System.Int32">
+                    <ConceptId />
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="DG1" SourceName="DG1_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="DiagnosisCleansedCodingSystem" Type="System.String" MaxLength="400">
+                    <ConceptId />
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="ICD9CodingSystemName" SourceType="Inline" Value="ICD-9-CM Code"/>
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="DiagnosisCleansedCode" Type="System.String" MaxLength="400">
+                    <ConceptId />
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter SourceType="ShreddedInput" SourceTable="DG1" SourceName="DG1_3_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="DiagnosisCleansedText" Type="System.String" MaxLength="400">
+                    <ConceptId />
+                    <Lookup>
+                        <Function>Lookups.usf_Terminology_ConvertCodeToText</Function>
+                        <InputParameters>
+                            <Parameter Name="selectedTerminologyId" Type="System.String" SourceType="Constant" SourceName="ICD9ContentSetId" />
+                            <Parameter Name="codeTypeId" Type="System.String" SourceType="Constant" SourceName="ICD9CodingSystemTypeId" />
+                            <Parameter Name="incomingConceptCode" Type="System.String" SourceType="ShreddedInput" SourceTable="DG1" SourceName="DG1_3_1" />
+                        </InputParameters>
+                    </Lookup>
+                </Element>
+                <Element Name="DiagnosisCode_SNOMED" Type="System.String" MaxLength="400">
+                    <ConceptId />
+                    <Lookup>
+                        <Function>Lookups.usf_Terminology_ConvertCodeToCode</Function>
+                        <InputParameters>
+                            <Parameter Name="incomingConceptCode" Type="System.String" SourceType="ShreddedInput" SourceTable="DG1" SourceName="DG1_3_1" />
+                            <Parameter Name="conversionTerminologyId" Type="System.String" SourceType="Constant" SourceName="ICD9ToSNOMEDConversionTerminologyId" />
+                        </InputParameters>
+                    </Lookup>
+                </Element>
+                <Element Name="Diagnosis_DG1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBuCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" />
+                            <Parameter Name="SetId" SourceType="DerivedField" SourceTable="DG1" SourceName="SetId" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="VisitContextKey" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+            <CollapseConfiguration>
+                <PrimaryKeyColumn>Diagnosis_DG1_ContextKey</PrimaryKeyColumn>
+                <ResultRowsFilter>SetId is not null</ResultRowsFilter>
+            </CollapseConfiguration>
+        </Segment>
+    </DataParserOutput>
+    <ExtensibleDataParserOutput />
+    <ExpandableDataParserOutput>
+        <Segment Name="PID_PatientIdentifier" SourceName="PID">
+            <Elements>
+                <Element Name="PatientIdentifier_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYA4CrJmYw</ConceptId>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                </Element>
+                <Element Name="IDNumber" Type="System.String" MaxLength="200">
+                    <ConceptId>1uJSHAEy5J0eLAU3CsgBAA</ConceptId>
+                </Element>
+                <Element Name="IDType" Type="System.String" MaxLength="200">
+                    <ConceptId>1uJSHAEy5J0eLAVTCsgBAA</ConceptId>
+                </Element>
+            </Elements>
+        </Segment>
+    </ExpandableDataParserOutput>
+    <DataConstants>
+        <Element Name="Pipe" Type="System.String" Value="|" />
+        <Element Name="ICD9ContentSetId" Type="System.String" Value="ABjfrwDwaR0MBAI82I5XRA" />
+        <Element Name="ICD9CodingSystemTypeId" Type="System.String" Value="AAE/rADjg0+O7oAH2I5XVw" />
+        <Element Name="ICD9ToSNOMEDConversionTerminologyId" Type="System.String" Value="ABjfrwDwaR0MBAI62I5XRA" />
+    </DataConstants>
+    <Plugins>
+        <Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" ClassName="MessageHelpers">
+            <NameSpace>Microsoft.Amalga.Pipeline.Transforms</NameSpace>
+            <URL>./Microsoft.Amalga.Pipeline.Transforms.dll</URL>
+            <SourceType>FileSystem</SourceType>
+        </Plugin>
+    </Plugins>
+    <EnterpriseId>
+        <EnterpriseIdAction Action="StandardMapping" AnchorTable="PV1">
+            <InputIdentifiers>
+                <PersonIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="DerivedField" SourceTable="PID" SourceName="MRN"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </PersonIdentifier>
+                <!--
+                <PatientRecordIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="DerivedField" SourceTable="PID" SourceName="MRN"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </PatientRecordIdentifier>
+                <EncounterSetIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </EncounterSetIdentifier>
+                -->
+                <EncounterIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </EncounterIdentifier>
+            </InputIdentifiers>
+        </EnterpriseIdAction>
+    </EnterpriseId>
+</DataParserConfiguration>
+                ]]>
+            </DefaultValue>
+        </Setting>
+        <Setting Name="PluginConfigurationXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<Plugin Name="PluginBinary" Assembly="Microsoft.Amalga.Pipeline.ModelADTPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ClassName ="ADTPlugin">
+    <NameSpace>Microsoft.Amalga.Pipeline.ModelADTPlugin</NameSpace>
+    <SourceType>Fabric</SourceType>
+    <PluginData>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UQAcAOQDYQAkAL8DbwDhAAQEdQDpACgEeQDxADQEfwD5AFQEhQAsANYDUQA0AOQDYQAZAHIEoQAkAJYEpwA8AMEEtgD5ANEEvQABAQQEdQAhAeAExQAZAA8FygApASsF0ABEAL8DbwBMAAQEdQAhAT8F6gBMAEYF8QA5AXIF9wBBAYcFGQAJAPsAGQAuAAsAKQEuABMANQEuABsANQEuACMAOwEuACsAKQEuADMATQEuADsANQEuAEsANQEuAFMAcQEuAGMAmwEuAGsAqAEuAHMA4AEuAHsA6QEuAIMA8gH7ADcASgBaAGYAkQCZAKsA2ADjAASAAAABAAAAAAAAAAAAAAAAAEEAAAAEAAAAAAAAAAAAAAABAGoAAAAAAAMAAAAAAAAAAAAAAAoAgQAAAAAABAAAAAAAAAAAAAAAAQAOBAAAAAAAAAA8TW9kdWxlPgBNaWNyb3NvZnQuQW1hbGdhLlBpcGVsaW5lLk1vZGVsQURUUGx1Z2luLmRsbABBRFRQbHVnaW4ATWljcm9zb2Z0LkFtYWxnYS5QaXBlbGluZS5Nb2RlbEFEVFBsdWdpbgBtc2NvcmxpYgBTeXN0ZW0AT2JqZWN0AE1pY3Jvc29mdC5BbWFsZ2EuUGlwZWxpbmUuTW9kZWwASURhdGFQYXJzZXJFeHRlbnNpb24ASURhdGFQYXJzZXJDb250ZXh0AFByb2Nlc3NNZXNzYWdlAENvbmZpZ3VyZUNvcnJlbGF0aW9uAEV4cGFuZE1lc3NhZ2UALmN0b3IAY29udGV4dABTeXN0ZW0uUmVmbGVjdGlvbgBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAQXNzZW1ibHlDdWx0dXJlQXR0cmlidXRlAFN5c3RlbS5SdW50aW1lLkludGVyb3BTZXJ2aWNlcwBDb21WaXNpYmxlQXR0cmlidXRlAEd1aWRBdHRyaWJ1dGUAQXNzZW1ibHlWZXJzaW9uQXR0cmlidXRlAEFzc2VtYmx5RmlsZVZlcnNpb25BdHRyaWJ1dGUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lzdGVtLkRpYWdub3N0aWNzAERlYnVnZ2FibGVBdHRyaWJ1dGUARGVidWdnaW5nTW9kZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAE1lc3NhZ2VTaHJlZGRlck1lc3NhZ2UAZ2V0X1NocmVkZGVyTWVzc2FnZQBNZXNzYWdlVGVtcGxhdGVgMgBNZXNzYWdlU2hyZWRkZXJUYWJsZQBJTWVzc2FnZVNocmVkZGVyQ29sdW1uAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljAElFbnVtZXJhYmxlYDEAZ2V0X0l0ZW0ASUVudW1lcmF0b3JgMQBHZXRFbnVtZXJhdG9yAGdldF9DdXJyZW50AFRhYmxlQmFzZWAyAElDb2x1bW4AZ2V0X1ZhbHVlAFN5c3RlbS5YbWwuTGlucQBYRG9jdW1lbnQAUGFyc2UAWE5hbWUAb3BfSW1wbGljaXQAWENvbnRhaW5lcgBYRWxlbWVudABEZXNjZW5kYW50cwBEYXRhUGFyc2VyTWVzc2FnZQBnZXRfQ29uZmlndXJhdGlvbkJhc2VkT3V0cHV0TWVzc2FnZQBnZXRfUm93SWQARGF0YVBhcnNlclRhYmxlAERhdGFQYXJzZXJDb2x1bW4AR2V0VGFibGVCeVJvd0lkAEVsZW1lbnQAU3RyaW5nAElzTnVsbE9yV2hpdGVTcGFjZQBFeHBhbmRhYmxlRGF0YVBhcnNlck1lc3NhZ2UAZ2V0X0V4cGFuZGFibGVPdXRwdXRNZXNzYWdlAEFkZFJvdwBDb2x1bW5CYXNlYDEAQ29uY2F0AHNldF9SYXdWYWx1ZQBTeXN0ZW0uQ29sbGVjdGlvbnMASUVudW1lcmF0b3IATW92ZU5leHQASURpc3Bvc2FibGUARGlzcG9zZQAAAAdQAEkARAAAH1AASQBEAF8AMwBfAFIAZQBwAGUAYQB0AGkAbgBnAAAVUgBlAHAA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</PluginData>
+</Plugin>
+                ]]>
+            </DefaultValue>
+        </Setting>
+    </Settings>
+</DeploymentManifest>

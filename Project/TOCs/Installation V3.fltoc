@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Installation"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_Installation.htm"
+    StartChapter="true"
+    PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+    PageType="first"
+    PageNumberReset="reset"
+    PageNumberFormat="decimal"
+    PageNumber="1"
+    StartSection="false"
+    ReplaceMergeNode="false"
+    SectionNumberReset="reset"
+    SectionNumber="1"
+    ChapterNumberReset="reset"
+    ChapterNumber="1"
+    VolumeNumberReset="same">
+    <TocEntry
+      Title="Installation terms"
+      Link="/Content/Installation/Install Ref Terminology.htm"
+      StartChapter="true"
+      PageType="first"
+      AutoEndOnLeftPage="disabled"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageNumberReset="reset"
+      PageNumber="1"
+      StartSection="false"
+      ReplaceMergeNode="true"
+      PageNumberFormat="decimal" />
+    <TocEntry
+      Title="Installation overview"
+      Link="/Content/Installation/Install Con Installtn Overview.htm"
+      AutoEndOnLeftPage="disabled"
+      StartSection="false"
+      StartChapter="true"
+      PageNumber="1"
+      PageNumberReset="continue" />
+    <TocEntry
+      Title="Topology concepts"
+      Link="/Content/Installation/Install Con Planning and Design Overview.htm"
+      StartChapter="true"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageType="first"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false"
+      AutoEndOnLeftPage="disabled"></TocEntry>
+    <TocEntry
+      Title="Installation prerequisites"
+      Link="/Content/Installation/Install Ref Prerequisites II.htm"
+      StartChapter="true"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageType="first"
+      AutoEndOnLeftPage="disabled"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false">
+      <TocEntry
+        Title="ADFS installation and configuration"
+        Link="/Content/Installation/Prereq Proc ADFS.htm"
+        ReplaceMergeNode="true" />
+      <TocEntry
+        Title="Certificate prerequisites"
+        Link="/Content/Installation/Prereq Proc Certificates.htm" />
+      <TocEntry
+        Title="Network DTC configuration"
+        Link="/Content/Installation/Prereq Proc DTC Config.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Install Amalga platform"
+      Link="/Content/Installation/Install Nav Platform Install Overview.htm"
+      ReplaceMergeNode="true"
+      StartChapter="true"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageType="first"
+      AutoEndOnLeftPage="disabled"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false">
+      <TocEntry
+        Title="Single server platform installation"
+        Link="/Content/Installation/Install Proc SingleBox Installation.htm"
+        ReplaceMergeNode="false" />
+      <TocEntry
+        Title="Multiple server platform installation"
+        Link="/Content/Installation/Install Proc MultiBox Installation.htm"></TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Install Amalga applications"
+      Link="/Content/Installation/Install Con Applications Mini-toc.htm"
+      StartChapter="true"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageType="first"
+      AutoEndOnLeftPage="disabled"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false">
+      <TocEntry
+        Title="[%=BrandingHSG.HealthVault%] Connector prerequisites"
+        Link="/Content/Installation/Install Nav HVConnect Prereqs.htm">
+        <TocEntry
+          Title="Create a [%=BrandingHSG.HealthVault%] PPE application"
+          Link="/Content/Installation/Install Proc HVConnect PPE.htm" />
+        <TocEntry
+          Title="Create a [%=BrandingHSG.HealthVault%] RD application"
+          Link="/Content/Installation/Install PRoc HVConnect RD.htm" />
+        <TocEntry
+          Title="[%=BrandingHSG.HealthVault%] Connection authorization configuration"
+          Link="/Content/Installation/Install Proc HVConnect DataType Auth.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Resolve application manifests"
+        Link="/Content/Installation/Install Proc Application manifest resolution.htm" />
+      <TocEntry
+        Title="Install applications"
+        Link="/Content/Installation/Install Proc App Installation.htm" />
+      <TocEntry
+        Title="Configure applications"
+        Link="/Content/Installation/Install Proc Configuration.htm" />
+      <TocEntry
+        Title="Verify application installation"
+        Link="/Content/Installation/Install Proc App Verification.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Install Amalga Data Explorer"
+      Link="/Project/TOCs/AmalgaDataExplorer_Install.fltoc"
+      ReplaceMergeNode="false"
+      StartChapter="true"
+      AutoEndOnLeftPage="disabled"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false" />
+    <TocEntry
+      Title="Remove an application instance"
+      Link="/Content/Serviceability/Management Console/Application Management/AppMan Remove App Instance.htm"
+      AutoEndOnLeftPage="disabled"
+      StartSection="false"
+      StartChapter="false" />
+    <TocEntry
+      Title="Setup utility reference"
+      Link="/Content/Installation/Install Ref App A Setup Command Reference.htm"
+      StartChapter="true"
+      PageLayout="/Content/Resources/PageLayouts/Chapter.flpgl"
+      PageType="first"
+      AutoEndOnLeftPage="disabled"
+      PageNumber="1"
+      PageNumberReset="continue"
+      StartSection="false" />
+  </TocEntry>
+</CatapultToc>

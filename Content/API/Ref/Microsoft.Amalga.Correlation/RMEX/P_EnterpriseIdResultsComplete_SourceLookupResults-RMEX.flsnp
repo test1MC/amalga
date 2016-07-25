@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>SourceLookupResults Property </title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.Correlation" />
+    <meta name="file" content="P_EnterpriseIdResultsComplete_SourceLookupResults" />
+    <meta name="outDir" content="Microsoft.Amalga.Correlation" />
+  </head>
+  <body>
+    <h1 class="heading">
+      <span onclick="ExpandCollapse(remarksToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(remarksToggle, event)" tabindex="0">
+        <img id="remarksToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Remarks</span>
+    </h1>
+    <div id="remarksSection" class="section" name="collapseableSection" style="">
+            Important: The SourceLookupResults property represents lookup and matching results for the source groups configured in the message. 
+            These results show the enterprise identifier values of the source groups prior to a merge, reparent, or change operation. 
+            Depending on the operation, some of the final identifiers can match the ones defined by the target such that the source results 
+            provide the before-operation date and the target results provide the after-operation date.</div>
+    <h1 class="heading" MadCap:conditions="Production.doNOTbuild">
+      <span onclick="ExpandCollapse(examplesInfoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(examplesInfoToggle, event)" tabindex="0">
+        <img id="examplesInfoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Examples</span>
+    </h1>
+    <div id="examplesInfoSection" class="section" name="collapseableSection" style="" MadCap:conditions="Production.doNOTbuild">
+      <p>Add examples here.</p>
+    </div>
+  </body>
+</html>

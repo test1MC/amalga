@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p class="LabelforProcedures">To scroll reports when there are more than can fit on the screen</p>
+        <ul>
+            <li>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the arrow at the right or left edge of the screen to scroll reports to the right or left.</li>
+        </ul>
+    </body>
+</html>

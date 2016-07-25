@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1126.667" MadCap:lastWidth="671.6667" MadCap:fileTags="TopicType.Concept,Personas.All,ReleaseTarget.TAP,TopicOwner.v-kathen,Status.50 - InTech Review" MadCap:conditions="Production.doNOTbuild,API.APIRef">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Configure a module</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the configuration options for a module for <MadCap:variable name="FeatureBrussels.Patient Chart" />.</p>
+        <p><a name="Configur"></a>Configuration information</p>
+        <table style="width: 100%;">
+            <col style="width: 20%;">
+            </col>
+            <col style="width: 90px;">
+            </col>
+            <col style="width: 474px;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Mandatory?</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Module</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>ModuleID</td>
+                    <td>Yes</td>
+                    <td>
+                        <p>Must be unique; </p>
+                        <p>should not contain any punctuation included in filtering set (see <MadCap:xref href="#Punctuat" target="" title="" alt="">Punctuation filtering</MadCap:xref>)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DisplayName</td>
+                    <td>Yes</td>
+                    <td>A unique name is recommended; should not contain any punctuation included in filtering set; Resource key is supported (see<MadCap:xref href="#Resource" target="" title="" alt=""> Resource file</MadCap:xref>)</td>
+                </tr>
+                <tr>
+                    <td>LaunchURL</td>
+                    <td>Yes</td>
+                    <td>${Prefix} is required</td>
+                </tr>
+                <tr>
+                    <td>IsRecommended</td>
+                    <td>No</td>
+                    <td>Default = false; If true, module will be displayed in the Recommended group in the module launcher</td>
+                </tr>
+                <tr>
+                    <td>HasChildren</td>
+                    <td>No</td>
+                    <td>Must be true if the module has sub-modules</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <p class="h7"><a name="Punctuat"></a>Punctuation filtering</p>
+        <p>The following punctuation will be replaced with an empty string:</p>
+        <ul>
+            <li>&lt; &gt; \ ^ " ' [ ] { } or a space</li>
+        </ul>
+        <p>Do not include them in IDs or names.</p>
+        <p class="h7"><a name="Resource"></a>Resource file</p>
+        <p>The resource file  prefix is Microsoft.Health.PatientChart.Configuration. It is located in the application global resource folder - for example, C:\inetpub\wwwroot\wss\VirtualDirectories\8080\App_GlobalResources. </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1505" MadCap:lastWidth="438" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Prepare database host</h1>
+        <p class="warning">Perform each of these steps in order to successfully create an <MadCap:variable name="BrandingHSG.Amalga Short" /> Database Server. It is not necessary to repeat these steps on any other server.</p>
+        <h2>Configure Doors Firewall</h2>
+        <ol>
+            <li>Open Doors Server Manager</li>
+            <li>Expand 'Configuration'</li>
+            <li>Expand 'Doors Firewall with Advanced Security'</li>
+            <li>Right click 'Inbound Rules'</li>
+            <li>Click 'New Rule' </li>
+            <li>Select 'Port' and click next</li>
+            <li>Ensure 'TCP' is selected</li>
+            <li>Select 'Specific local ports'</li>
+            <li>Enter '8889, 443, 9999, 1433' in the text box and click next</li>
+            <li>Ensure 'Allow the connection' is selected and click next</li>
+            <li>Ensure 'Domain', 'Private', and 'Public' are all selected and click next</li>
+            <li>In the 'Name' box type 'Amalga Inbound Exceptions' and click Finish</li>
+        </ol>
+        <h2>Install <MadCap:variable name="BrandingMS.SQL Server" /></h2>
+        <p class="note">This is the only logical host on which <MadCap:variable name="BrandingMS.SQL Server" /> must be installed.</p>
+        <p class="note">&#160;</p>
+        <ol>
+            <li>Follow the instructions associated with <MadCap:variable name="BrandingMS.SQL Server" /> to complete this step.</li>
+            <li>Ensure SQL Server is using Doors Authentication</li>
+            <li>Both the administrator and 'Network Service' must have administrative rights</li>
+        </ol>
+        <h2>Attach the HLI database </h2>
+        <ol>
+            <li>Navigate to http://connect.microsoft.com and navigate to the Amalga download page.</li>
+            <li>Download the Health Language International (HLI) database .zip file</li>
+            <li>Extract the zip file to a folder on the <MadCap:variable name="BrandingHSG.Amalga Short" /> database logical host</li>
+            <li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio" /></li>
+            <li>Log in to the <MadCap:variable name="BrandingHSG.Amalga Short" /> Database logical host <MadCap:variable name="BrandingMS.SQL Server" /></li>
+            <li>Right click 'Databases'</li>
+            <li>Click 'Attach</li>
+            <li>Click 'Add'</li>
+            <li>Navigate to the folder in which you have copied the HLI <MadCap:variable name="UI-Labels.Column -  entity binding" /></li>
+            <li>Highlight the HLI.mdf file and click 'OK'</li>
+            <li>Delete the log file entry (*.ldf) </li>
+            <li>Click OK</li>
+        </ol>
+        <h2>Index the HLI database</h2>
+        <p class="CHANGEME">THIS&#160;IS&#160;AN&#160;INTERNAL&#160;SCRIPT. HOW&#160;WILL&#160;THE&#160;CUSTOMER&#160;GET&#160;A&#160;COPY&#160;OF&#160;IT?</p>
+        <ol>
+            <li>Click Start, All Programs, Microsoft SQL Server 2008 R2</li>
+            <li>Click <MadCap:variable name="BrandingMS.SQL Server Management Studio" /></li>
+            <li>Enter the <MadCap:variable name="BrandingMS.SQL Server" /> name on which the HLI&#160;database is attached, or enter '.' </li>
+            <li>Click File, Open, File...</li>
+            <li>Browse to the location of the HLIDatabaseIndexes.sql file</li>
+            <li>Click Open</li>
+            <li>In the first line of the script, replace 'HLIData' with the name of your HLI database (<span class="Label">NOTE</span>: by default this will be 'HLI')</li>
+            <li>Click 'Execute'</li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

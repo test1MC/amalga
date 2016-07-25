@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="Last Updated"
+    Link="/Content/LastUpdated.htm"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="FrontMatter"
+    Link="/Project/TOCs/FrontMatter.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="Introduction to Amalga documentation"
+    Link="/Content/MasterTOCLandingPages(BZ)/Welcome_CTP1.htm" />
+  <TocEntry
+    Title="Architecture"
+    Link="/Project/TOCs/Architecture.fltoc" />
+  <TocEntry
+    Title="Installation"
+    Link="/Project/TOCs/Installation - CTP2.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="Application Development"
+    Link="/Project/TOCs/HgMasterwithXternalAPI.fltoc"
+    ReplaceMergeNode="true"
+    StartSection="false"
+    StartChapter="false" />
+  <TocEntry
+    Title="Operations"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_Operations.htm"
+    ReplaceMergeNode="true">
+    <TocEntry
+      Title="[%=FeatureName.Microsoft Amalga Management Console%] Introduction"
+      Link="/Content/Serviceability/Management Console/AMC Introduction.htm" />
+    <TocEntry
+      Title="Open [%=FeatureName.Management Console second use%]"
+      Link="/Content/Serviceability/Management Console/AMC_OpenConsole.htm" />
+    <TocEntry
+      Title="Security"
+      Link="/Project/TOCs/Security.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="System management"
+      Link="/Content/Serviceability/Management Console/System Management/System Management Header.htm">
+      <TocEntry
+        Title="Manage Amalga features"
+        Link="/Content/Serviceability/Management Console/System Management/Manage Amalga Features Header.htm">
+        <TocEntry
+          Title="View feature information"
+          Link="/Content/Serviceability/Management Console/System Management/AMC Task View Feature Information.htm" />
+        <TocEntry
+          Title="View feature settings"
+          Link="/Content/Serviceability/Management Console/System Management/View Feature Configuration.htm" />
+        <TocEntry
+          Title="Change feature settings"
+          Link="/Content/Serviceability/Management Console/System Management/Change Feature Configuration.htm" />
+        <TocEntry
+          Title="Change feature component logging levels"
+          Link="/Content/Serviceability/Management Console/System Management/SysMan Task ChangeFeatureLogging.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Manage Amalga  hosts"
+        Link="/Content/Serviceability/Management Console/System Management/Manage Amalga Logical Hosts Header.htm">
+        <TocEntry
+          Title="View logical host information"
+          Link="/Content/Serviceability/Management Console/System Management/AMC Task View LogicalHost Information.htm" />
+        <TocEntry
+          Title="View physical host information"
+          Link="/Content/Serviceability/Management Console/System Management/AMC Task View PhysicalHost Information.htm" />
+        <TocEntry
+          Title="View data host information"
+          Link="/Content/Serviceability/Management Console/System Management/AMC Task View DataHost Information.htm"
+          ReplaceMergeNode="true" />
+        <TocEntry
+          Title="Synchronize physical hosts"
+          Link="/Content/Serviceability/Management Console/System Management/Sync Physical Hosts.htm" />
+        <TocEntry
+          Title="Register a data host"
+          Link="/Content/Serviceability/Management Console/System Management/AMC_Task_RegisterDataHost.htm" />
+        <TocEntry
+          Title="Unregister a data host"
+          Link="/Content/Serviceability/Management Console/System Management/AMC_Task_UnregisterDataHost.htm" />
+        <TocEntry
+          Title="Unregister a data host label"
+          Link="/Content/Serviceability/Management Console/System Management/AMC_Task_UnregisterDataHostLabel.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Application management"
+      Link="/Content/Serviceability/Management Console/Application Management/Application Management Overview.htm">
+      <TocEntry
+        Title="Open the Applications management module"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc OpenAppManageModule.htm" />
+      <TocEntry
+        Title="Deploy applications"
+        Link="/Content/Serviceability/Management Console/Application Management/AppDeploy Nav Application Deployment Header.htm">
+        <TocEntry
+          Title="Publish an application"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" />
+        <TocEntry
+          Title="Configure application settings"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Configure Settings.htm" />
+        <TocEntry
+          Title="Resolve application dependencies"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Resolve Dependencies.htm" />
+        <TocEntry
+          Title="Assign application logical hosts"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Assign Logical Hosts.htm" />
+        <TocEntry
+          Title="Configure application virtual schema"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Configure Virtual Schema.htm" />
+        <TocEntry
+          Title="Bind application entities"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Bind Entities.htm" />
+        <TocEntry
+          Title="Sync application"
+          Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Remove applications"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm" />
+      <TocEntry
+        Title="Change application service logging levels"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc ChangeAppLoggingLevel.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Auditing"
+      Link="/Content/Serviceability/Logging/Serv_Nav_Auditing.htm">
+      <TocEntry
+        Title="Audit table"
+        Link="/Content/Serviceability/Logging/Serv Ref Audit Logging Schema.htm" />
+      <TocEntry
+        Title="Audit detail table"
+        Link="/Content/Serviceability/Logging/Serv Ref Audit Detail Logging Schema.htm" />
+      <TocEntry
+        Title="Custom audit operation types"
+        Link="/Content/Serviceability/Logging/Serv Ref Audit Custom Audit OperationTypes.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Logging"
+      Link="/Content/Serviceability/Logging/Serv Con Logging MiniTOC.htm">
+      <TocEntry
+        Title="Change application service logging levels"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan Proc ChangeAppLoggingLevel.htm" />
+      <TocEntry
+        Title="Change feature component logging levels"
+        Link="/Content/Serviceability/Management Console/System Management/SysMan Task ChangeFeatureLogging.htm" />
+      <TocEntry
+        Title="Logging tables schemata"
+        Link="/Content/Serviceability/Logging/Serv Con Logging Tables Schema.htm">
+        <TocEntry
+          Title="Diagnostic logging table schema"
+          Link="/Content/Serviceability/Logging/Sev Ref Diagnostic Logging Schema.htm" />
+        <TocEntry
+          Title="Performance logging table schema"
+          Link="/Content/Serviceability/Logging/Serv Ref Performance Logging Schema.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Logging query samples"
+        Link="/Content/Serviceability/Logging/Serv Con Logging Query Samples.htm">
+        <TocEntry
+          Title="Diagnostic 24 hour errors and warnings query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic 24 Hour Errors Warnings SQL.htm" />
+        <TocEntry
+          Title="Diagnostic daily log query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic 24 Hour SQL.htm" />
+        <TocEntry
+          Title="Diagnostic all system logs query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic All System Logs SQL.htm" />
+        <TocEntry
+          Title="Diagnostic application logs query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic Application Logs SQL.htm" />
+        <TocEntry
+          Title="Diagnostic errors and warnings query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic Errors Warnings SQL.htm" />
+        <TocEntry
+          Title="Diagnostic logical host log query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic Logical Host Logs SQL.htm" />
+        <TocEntry
+          Title="Diagnostic server logs query"
+          Link="/Content/Serviceability/Logging/Serv Ref Diagnostic Server Logs SQL.htm" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="AMC-VREF"
+      Link="/Project/TOCs/AMC-VREF.fltoc"
+      ReplaceMergeNode="true" />
+  </TocEntry>
+  <TocEntry
+    Title="Entity management"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_Data_Acquisition_Management.htm"
+    ReplaceMergeNode="true">
+    <TocEntry
+      Title="Entity Binding"
+      Link="/Project/TOCs/AMC_ManageEntityBinding.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Materialized entity views"
+      Link="/Project/TOCs/CC_Materialization.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Entity Registry"
+      Link="/Project/TOCs/AMC_EntityRegistry.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Common.Beta entity namespace"
+      Link="/Project/TOCs/Common_Entity_Defs.fltoc"
+      ReplaceMergeNode="true" />
+    <TocEntry
+      Title="Microsoft.Terminology entity namespace"
+      Link="/Project/TOCs/Terminology_Entity_Defs.fltoc"
+      ReplaceMergeNode="true" />
+  </TocEntry>
+  <TocEntry
+    Title="Data pipeline"
+    Link="/Project/TOCs/Data pipeline.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="Imaging"
+    Link="/Project/TOCs/Imaging V3.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="CTP1 Sample Data Explorer User Guide"
+    Link="/Project/TOCs/BrusselsUG.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="Windows PowerShell Reference for Amalga"
+    Link="/Project/TOCs/PowerShellReference.fltoc" />
+</CatapultToc>

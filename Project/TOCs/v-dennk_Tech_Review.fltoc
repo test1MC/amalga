@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="SDK_TRM_Conceptual"
+    Link="/Project/TOCs/SDK_TRM_Conceptual.fltoc"
+    ReplaceMergeNode="true" />
+  <TocEntry
+    Title="SDK_TRM_Operational"
+    Link="/Project/TOCs/SDK_TRM_Operational.fltoc"
+    ReplaceMergeNode="true" />
+</CatapultToc>

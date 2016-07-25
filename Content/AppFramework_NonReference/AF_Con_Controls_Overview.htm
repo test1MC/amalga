@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="830" MadCap:lastWidth="1171" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;"><MadCap:variable name="BrandingHSG.Amalga Short" /> controls overview</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the controls provided by the <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> and the common features that those controls provide.</p>
+        <p>The controls provided as part of the <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> are the building blocks for Web-based <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> applications. Web sites that include <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> controls have access to a rich set of common features that enhance the ability of the controls to interact with each other and with the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> platform services.</p>
+        <p><MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> controls are not just passive consumers of the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> platform services. Many of the common features of the Framework controls depend on client side code that is loaded into the local browser by the controls themselves. Managing those features presents important design considerations when placing them into applications, modifying Amalga production controls, and creating custom controls.</p>
+        <p>Web sites built with <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> controls also begin with a standard look and feel, illustrated by the basic sites installed as part of a default <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> implementation. </p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>Categories of <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> control</li>
+            <li>Features of a <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> control</li>
+        </ul>
+        <h2>Categories of <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> control</h2>
+        <p>The controls in the <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> SDK&#160;can be divided into two groups.</p>
+        <ul>
+            <li>Production controls - most of the controls that comprise the basic <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> portal sites are included in the SDK for reuse or extension. Most of these controls are also available in the <MadCap:variable name="BrandingMS.Toolbox first use"></MadCap:variable>. </li>
+            <li>Generic Controls - The SDK includes base classes for creating new <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> controls. Controls that inherit from these base classes have access to the features common to all <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> controls.</li>
+        </ul>
+        <h2>Features of a <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> control</h2>
+        <p>The following features are available to Web sites built with <MadCap:variable name="FeatureName.Amalga Framework"></MadCap:variable> controls:</p>
+        <ul>
+            <li><a href="AF_Con_PageMessagingParts.htm">Page messaging</a> - the page messaging system enables the different elements of a Web site to exchange messages asynchronously, without requiring a postback to the Web server. This allows multiple page elements to coordinate their content in response to a user interaction with a single element. The page messaging system also includes support for HL7 CCOW <a href="AF_Con_PageMessagingCommonContext.htm">context passing</a> and management, within the scope defined by a single browser window.</li>
+            <li><a href="AF_Con_UserNotification.htm">Notifications</a> - the notification system delivers event-driven messages to the user, where the content of the message is determined by the meaning of the event and not by the current context of the user session. Notifications are automatically surfaced to the user using the SharePoint UI.</li>
+            <li><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> data access -  data-bound <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> controls have access to a specialized data source that exposes some or all of the content of an associated  <MadCap:variable name="FeatureName.virtual schema"></MadCap:variable>.</li>
+            <li><a href="AF_Con_Tasks.htm">Cross application task flow</a> - the task flow system provides the infrastructure for a control in one <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> application to request action from another application, or from itself in a different user context. Tasks can be defined with multiple states, allowing one or more applications to track and advance each task from initiation to completion.</li>
+            <li><a href="AF_Con_Logging1.htm">Logging</a> - the logging system allows <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> applications to persist information to the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> logs in response to meaningful events, for both server-side and client-side events.</li>
+            <li><a href="AF_Con_Configuration1.htm">User settings and configuration</a> - the Configuration system allows <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> controls to store and retrieve strongly typed values on a per-application basis. The system also allows those values to be overridden on a per-user basis.</li>
+            <li><a href="AF_Con_InstanceIdResolution.htm">Application identity</a> - <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls can resolve the identity of their own application instance.</li>
+        </ul>
+    </body>
+</html>

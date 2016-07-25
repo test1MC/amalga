@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/application"
+                    Type = "Application"
+                    Name="MessageShredderApplication"
+                    InstanceName="MessageShredderApplication_Model_CLAB_ORU"
+                    Id ="1442E941-10C4-4C3A-912F-052D715987DA"
+                    Version ="1.0.0.0">
+    <Settings />
+    <Dependencies>
+        <Dependency Name="TerminologyAppDependency" InstanceName="TerminologyApplication_Ins1" Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" />
+    </Dependencies>
+    <ApplicationManifest Publisher ="Microsoft" AmalgaMinVersion ="1.0.0.0" />
+</DeploymentManifest>

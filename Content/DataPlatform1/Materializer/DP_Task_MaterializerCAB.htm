@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="374" MadCap:lastWidth="782" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Unpack Materializer CAB file</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p class="LabelforProcedures">
+            <MadCap:keyword term="materialized entity view:CAB file" />To locate and unpack Materialization manifest XML files</p>
+        <ol>
+            <li>Create a staging folder with a nested temporary folder. For example, create C:\Materialize Manifest to hold the CAB files and C:\Materialize Manifest\MasterConfig to hold the extracted XML files.</li>
+            <li>Navigate to <span class="Placeholder">root</span>\v3\Rel\Applications\Release and locate Materialize.CAB.</li>
+            <li>Copy the set of CAB files to the staging folder.</li>
+            <li>Extract the XML files to the \MasterConfig subfolder. Keep the extracted XML files as master configuration files from which you can generate application instances.</li>
+            <li>Create a subfolder for each new entity. For example, create C:\Materialize Manifest\Patient for the Patient entity.</li>
+            <li>Copy a full set of extracted XML configuration files to the entity folder. For example, copy the XML files from the master folder (C:\Materialize Manifest \MasterConfig) to the entity folder (C:\Materialize Manifest\Patient).</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>
+        </p>
+    </body>
+</html>

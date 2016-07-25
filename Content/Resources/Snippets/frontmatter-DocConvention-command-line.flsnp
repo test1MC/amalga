@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="429.3334" MadCap:lastWidth="1169" MadCap:fileTags="TopicOwner.StyleMasterResource" MadCap:conditions="Production.PrintOnly,Production.StyleMaster">
+    <body>
+        <p class="h7">Command-line Formatting Conventions</p>
+        <table style="margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Format or symbol</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tr>
+                <td class="InputText">boldtext</td>
+                <td>Indicates text to be typed exactly as specified.</td>
+            </tr>
+            <tr>
+                <td class="Placeholder">italictext</td>
+                <td>Indicates a placeholder, to be replaced with an applicable value.</td>
+            </tr>
+            <tr>
+                <td>[ ]</td>
+                <td>Indicates zero or more optional elements (within brackets). Multiple elements are separated by vertical bars. Unless otherwise specified in the related documentation, you can either omit the optional elements or choose one or more.</td>
+            </tr>
+            <tr>
+                <td>{ }</td>
+                <td>Indicates one or more required elements (within braces). Multiple elements are separated by vertical bars. Unless otherwise specified in the related documentation, you must choose one or more of the required elements.</td>
+            </tr>
+            <tr>
+                <td>|</td>
+                <td>Separates elements in a list. Within brackets, elements are optional. Within braces, at least one element is required.</td>
+            </tr>
+            <tr>
+                <td>…</td>
+                <td>Indicates that the preceding element can be repeated; repetitions must be separated by blanks</td>
+            </tr>
+            <tr>
+                <td>,…</td>
+                <td>Indicates that the preceding element can be repeated; repetitions must be separated by commas.</td>
+            </tr>
+            <tr>
+                <td>:…</td>
+                <td>Indicates that the preceding element can be repeated; repetitions must be separated by colons.</td>
+            </tr>
+        </table>
+    </body>
+</html>

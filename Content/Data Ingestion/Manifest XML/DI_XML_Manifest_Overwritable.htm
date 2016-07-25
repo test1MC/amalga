@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1014" MadCap:lastWidth="856" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Overwritable element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>Declares whether the default error action can be overwritten in the service manifest.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="ErrorHandlingConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;ErrorHandlingConfiguration&gt;
+            &lt;ErrorHandlingPolicies&gt;
+               &lt;ErrorHandlingPolicy&gt;<b>
+                  &lt;Overwritable&gt;...&lt;/Overwritable&gt;</b>	
+               &lt;/ErrorHandlingPolicy&gt;
+            &lt;/ErrorHandlingPolicies&gt;
+         &lt;/ErrorHandlingConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-1: Required element that can occur once and only once.<br></br>0-1: Optional element that can occur once and only once.<br></br>1-<i>n</i>:
+Required element that can occur one or more times.<br></br>0-<i>n</i>: Optional element that can occur one or more times.
+<br></br>1-2: Required element that can occur at least once and no more than twice.<br></br>0-2: Optional element that can occur at least once and no more than twice.<br></br></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ErrorHandlingPolicy.htm">ErrorHandlingPolicy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Overwritable element</span> restricts or allows a change to a user-defined error action. For a list of predefined error codes, see <MadCap:xref href="../DI_Ref_PredefinedErrorCodes.htm" target="" title="" alt="">Predefined error codes for the data pipeline</MadCap:xref>.</p>
+        <p class="Label">Constraints</p>
+        <p>Declare the <span class="MarkupLanguageElements">Overwritable element</span> element only within a service manifest of the <MadCap:variable name="Applications.Message Shredder (application)" />, <MadCap:variable name="Applications.Data Parser (application)" />, <MadCap:variable name="Applications.Materializer (application)" />, and <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> applications. </p>
+        <p class="Label">Example</p>
+        <p>&lt;Overwritable&gt;true&lt;/Overwritable&gt;</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXml element hierarchy</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

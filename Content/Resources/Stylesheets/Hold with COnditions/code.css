@@ -1,0 +1,135 @@
+/*<meta conditions="Default.StyleMaster,Production.StyleMaster" fileTags="TopicOwner.StyleMasterResource" />*/
+
+div#remarksSection #remarksSection .code
+{
+	font-family: monospace;
+	mc-hyphenate: never;
+}
+
+#remarksSection .codeEntity
+{
+	font-weight: bold;
+}
+
+#remarksSection .LabelVB
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+#remarksSection .LabelCShrp
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+#remarksSection .LanguageKey
+{
+	font-weight: bold;
+}
+
+#remarksSection .MarkupLanguageElements
+{
+	font-weight: bold;
+	mc-hyphenate: never;
+}
+
+#remarksSection .XMLRequired
+{
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 8pt;
+}
+
+#remarksSection p.Syntax
+{
+	background-color: #dcdcdc;
+	font-family: monospace;
+}
+
+#remarksSection pre
+{
+	font-family: monospace;
+	margin-bottom: 8pt;
+	margin-top: 8pt;
+}
+
+#remarksSection a.NewClass
+{
+	
+}
+
+#remarksSection a.APIMembers
+{
+	text-decoration: none;
+}
+
+div#examplesInfoSection #examplesInfoSection .code
+{
+	font-family: monospace;
+	mc-hyphenate: never;
+}
+
+#examplesInfoSection .codeEntity
+{
+	font-weight: bold;
+}
+
+#examplesInfoSection .LabelVB
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+#examplesInfoSection .LabelCShrp
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+#examplesInfoSection .LanguageKey
+{
+	font-weight: bold;
+}
+
+#examplesInfoSection .MarkupLanguageElements
+{
+	font-weight: bold;
+	mc-hyphenate: never;
+}
+
+#examplesInfoSection .XMLRequired
+{
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 8pt;
+}
+
+#examplesInfoSection p.Syntax
+{
+	background-color: #dcdcdc;
+	font-family: monospace;
+}
+
+#examplesInfoSection pre
+{
+	font-family: monospace;
+	margin-bottom: 8pt;
+	margin-top: 8pt;
+}
+
+#examplesInfoSection a.NewClass
+{
+	
+}
+
+#examplesInfoSection a.APIMembers
+{
+	text-decoration: none;
+}
+
+p.Syntax
+{
+	mc-hyphenate: never;
+}
+

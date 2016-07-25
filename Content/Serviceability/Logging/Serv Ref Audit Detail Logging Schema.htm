@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP" MadCap:lastBlockDepth="8" MadCap:lastHeight="488.3333" MadCap:lastWidth="576">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Audit detail table</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-02T19:39:43.5084757-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Pls add index keyword here." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-02T19:40:03.0984757-07:00">Auditing</MadCap:annotation> data are stored in the AmalgaAudit database in two tables. Following are the column names, null status, and description of the Audit.AuditDetail table. For the higher level auditing table, see <MadCap:xref href="Serv Ref Audit Logging Schema.htm" target="" title="" alt="">Audit table</MadCap:xref></p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Column name</th>
+                    <th>Nullable</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AuditId</td>
+                    <td>False</td>
+                    <td>The unique identifier of the audit entry. AuditID plus sequence is the primary key of the AuditDetails table.</td>
+                </tr>
+                <tr>
+                    <td>Sequence</td>
+                    <td>False</td>
+                    <td>The record sequence under the same auditing operation. AuditID plus sequence is the primary key of the AuditDetails table.</td>
+                </tr>
+                <tr>
+                    <td>GroupIndex</td>
+                    <td>False</td>
+                    <td>The index of the group.</td>
+                </tr>
+                <tr>
+                    <td>PropertyName</td>
+                    <td>False</td>
+                    <td>The name of the property.</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>False</td>
+                    <td>The value of the property.</td>
+                </tr>
+                <tr>
+                    <td>PropertyType</td>
+                    <td>False</td>
+                    <td>The type of the propery being audited.
+						<ul><li>Entity property (EP)</li><li>Data connectory query (QU)</li><li>Others (OT)</li></ul></td>
+                </tr>
+                <tr>
+                    <td>IsFromTrustedSource</td>
+                    <td>False</td>
+                    <td>A binary field that specifies whether the audited operation originated from a trusted source.</td>
+                </tr>
+                <tr>
+                    <td>IsFromPlatformService</td>
+                    <td>False</td>
+                    <td>A binary field that specifies whether the audited operation originated from a platform service.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

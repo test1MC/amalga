@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="599" MadCap:lastWidth="815" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-keith,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Register a data host</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p> In the context of <MadCap:variable name="BrandingHSG.Amalga Short" />, a data host is a <MadCap:variable name="BrandingMS.SQL Server" /> instance which is meant to hold <MadCap:variable name="BrandingHSG.Amalga Short" />Application private databases. You can add additional data hosts to the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology by using the <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet below.</p>
+        <p>For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">For the current version of <MadCap:variable name="BrandingHSG.Amalga Short" />, registering a data host is possible through <MadCap:variable name="BrandingMS.Doors PowerShell" /> only. </p>
+        <p class="LabelforProcedures">To register a data host to the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology</p>
+        <ul>
+            <li>Run the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Register-AmDataHost.htm" target="" title="" alt="">Register-AmDataHost</MadCap:xref> cmdlet with appropriate parameters.</li>
+        </ul>
+        <p>Example: <span class="InputText">Register-AmDataHost –ServerInstance SQLMachine2 –Label PrivateApplicationData</span></p>
+        <p>Example: <span class="InputText">Register-AmDataHost –ServerInstance SQLMachine2\sqlinstancename –Label PrivateApplicationData</span></p>
+        <p class="SeeAlso">See <MadCap:annotation MadCap:createDate="2011-12-20T19:47:11.1997607-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="By default, mark See also section in your topic as &quot;DnB&quot; (Properties&gt; Conditional Text&gt;Production&gt;DoNOTBuild). You can remove the condition as you add cross-references to your topic." MadCap:editor="v-labenn" MadCap:editDate="2011-12-20T19:47:23.1885617-08:00">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Register-AmDataHost.htm" target="" title="" alt="">Register-AmDataHost</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_UnRegister-AmDataHost.htm" target="" title="" alt="">Unregister-AmDataHost</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_Unregister-AmDataHostLabel.htm" target="" title="" alt="">Unregister-AmDataHostLabel</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../../Architecture/Arch_Concept_DataPipe.htm" target="" title="" alt="">Data architecture</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

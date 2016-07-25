@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete" MadCap:ignoredWords="MessageHelpers;IsBackfillDataParserApplication;FeedConfigurationXML" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data Parser application</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <div id="cardtype">
+            <p class="abstract">
+                <MadCap:keyword term="Data Parser application" />This topic summarizes the characteristics of the <MadCap:variable name="Applications.Data Parser application" />.</p>
+            <p class="Label">When to use this application</p>
+            <p>Configure and deploy one parser application instance for each feed. For configuration instructions, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve Data Parser manifests</MadCap:xref>. </p>
+        </div>
+        <div id="ident">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Identification</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Application name</p>
+                    <p>DataParserApplication</p>
+                    <p class="Label">DoorsWorker (service) name</p>
+                    <p>DataParser</p>
+                    <p class="Label">Publisher</p>
+                    <p>Microsoft Corporation	Version 1.0.0.0</p>
+                    <p class="Label">DoorsWorkerManifest values</p>
+                    <p>AuthenticationMode ="None"</p>
+                    <p>ClusteringMode="FailOver"</p>
+                    <p>HostAssembly="Microsoft.Amalga.Pipeline.DataParser.exe"</p>
+                    <p>LogicalHostName="<span class="Placeholder">Insert local host name</span>"</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Dependencies and relationships</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Dependent on the following attribute values of the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency element</MadCap:xref></p>
+                    <p>(You must specify in each application manifest the unique instance name of the dependency.)</p>
+                    <p>Name=TerminologyAppDependency InstanceName="<span class="Placeholder">TerminologyApplication_Ins1</span>"</p>
+                    <p class="Label">Related applications</p>
+                    <p>
+                        <MadCap:variable name="Applications.Feed Acquisition (application)" /> and <MadCap:variable name="Applications.Message Shredder (application)" /> applications.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Configuration design</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Input</p>
+                    <p>Shredded columns (declared with the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref>).</p>
+                    <p>
+                        <span class="Label">Output</span><![CDATA[ ]]></p>
+                    <p>Derived columns (declared with the <MadCap:xref href="Manifest XML/DI_XML_Manifest_DataParserOutput.htm" target="" title="" alt="">DataParserOutput element</MadCap:xref>).</p>
+                    <p class="Label">Application manifest settings</p>
+                    <p>No settings.</p>
+                    <p class="Label">Service manifest settings</p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_BatchSizeSetting.htm">BatchSize setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_ConnectionTimeoutSecondsSetting.htm">ConnectionTimeoutSeconds setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_IdleSleepSecondsSetting.htm">IdleSleepSeconds setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_FeedInfoXML.htm">FeedInfoXML setting</a>
+                    </p>
+                    <p>
+                        <a href="DI_XML_List_Parse.htm">FeedConfigurationXML setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+                    </p>
+                    <p>
+                        <a href="Manifest XML/DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXML setting</a>
+                    </p>
+                    <p class="Label">Performance counters</p>
+                    <p>See <MadCap:xref href="DI_GREF_PipelinePerCount.htm" target="" title="" alt="">Pipeline performance counters</MadCap:xref>.</p>
+                    <p class="Label">Error codes</p>
+                    <p>See <MadCap:xref href="DI_Ref_PredefinedErrorCodes.htm" target="" title="" alt="">Default error code for the data pipeline</MadCap:xref>.</p>
+                    <p class="Label">Extensibility</p>
+                    <p>None.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Deployment</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Deployment duration</p>
+                    <p>This application operates continuously in production.</p>
+                    <p class="Label">Special instructions</p>
+                    <ul>
+                        <li>Deploy the data-parser instance after the associated feed-acquisition and shredder instances have been deployed.</li>
+                        <li>Supports installation to a failover cluster (Active/Passive) mode for disaster recovery and failover.
+                        </li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Remarks</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p> Once shredded data is understood and interpreted, the  <MadCap:variable name="Applications.Data Parser application" /> can be configured to create derived columns for cleansing data, normalization, code lookups, composite transforms like concatenations, and so on. The data parser is responsible for generating these columns. Each derived column should include a terminology concept identifier  when the message type supports semantic tags.</p>
+                    <p class="h9">Context key</p>
+                    <p>A context key is a combination of fields that are native to a message and uniquely identify an entity. As a general rule, for every entity that you want to create out of a message type, you must specify one context key.</p>
+                    <p>In addition, a context key eliminates partial information from an output view (called a collapsed view). For example, if you have multiple records for a patient, the parser can collapse the set into a single record showing only the relevant information determined by the context key. </p>
+                    <p class="h9">Data transforms</p>
+                    <p>Configuration-based transformation makes it easy for you to prepare shredded data for use by applications. Supplied transforms range from simple string manipulation, such as adding title capitalization, to generating new fields by concatenating existing columns into new columns. The pipeline contains a transform library  that you can include as a plug-in to your parser. The library contains <a href="../API/Ref/Microsoft.Amalga.Pipeline.Transforms/AllMembers_T_MessageHelpers.htm" class="APIMembers">MessageHelpers</a>. For configuration details, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve Data Parser manifests</MadCap:xref>.</p>
+                    <p>In addition to the provided libraries, you can import your own custom transform logic as an application plug-in.</p>
+                    <p class="h9">
+                        <MadCap:variable name="FeatureName.Amalga Correlation Engine" /> options</p>
+                    <p>
+                        <MadCap:variable name="BrandingHSG.Amalga Short" /> maps external, source-specific identifiers to a set of internal identifiers across multiple visits, institutions, and domains.  These identifiers are unique within <MadCap:variable name="BrandingHSG.Amalga Short" /> and are collectively processed by the <MadCap:variable name="FeatureName.Amalga Correlation Engine" />. You can map non-standard source identifiers to standardized <MadCap:variable name="BrandingHSG.Amalga Short" /> elements directly in a parser service manifest; no external code is required.</p>
+                    <p>Each correlation element maps to two pieces of information that the engine concatenates into a single identifier. First, the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Id.htm" target="" title="" alt="">Id element</MadCap:xref> must contain values for the SourceTable and SourceName attributes. These values are typically provided as message shredder input. Second is the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Domain.htm" target="" title="" alt="">Domain element</MadCap:xref>, typically the assigning authority for the first piece of information. You can define each domain name as a separate constant in your manifest. It is possible to use shredded input to define the domain.</p>
+                    <p>The following table shows the four correlation elements and provides identifier-value examples. The elements are hierarchical: <a href="Manifest XML/DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a> is the highest level. Map only the elements that you need. For example, if MRN and Account are sufficient for a feed, then map only the <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a> and <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a> elements.</p>
+                    <table>
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <tbody>
+                            <tr>
+                                <th>Correlation element</th>
+                                <th>Represents an identifier that maps</th>
+                                <th colspan="2">Typical values for Id and Domain</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="Manifest XML/DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a>
+                                </td>
+                                <td>Across the enterprise</td>
+                                <td>
+                                    <p>&lt;Id&gt; </p>
+                                    <p>&lt;Domain&gt; </p>
+                                </td>
+                                <td>
+                                    <p>EMPI (for example, PID_2_1)</p>
+                                    <p>EMPI-assigning authority.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="Manifest XML/DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a>
+                                </td>
+                                <td>Within an institution or only part of the enterprise</td>
+                                <td>
+                                    <p>&lt;Id&gt;</p>
+                                    <p>&lt;Domain&gt;</p>
+                                </td>
+                                <td>
+                                    <p>MRN</p>
+                                    <p>PID_3_4</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="Manifest XML/DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a>
+                                </td>
+                                <td>Across a set of encounters for a patient</td>
+                                <td>
+                                    <p>&lt;Id&gt;</p>
+                                    <p>&lt;Domain&gt;</p>
+                                </td>
+                                <td>
+                                    <p>PID_18_1</p>
+                                    <p>PID_18_4  (Account-assigning authority.)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="Manifest XML/DI_XML_Manifest_EncounterIdentifier.htm">EncounterIdentifier</a>
+                                </td>
+                                <td>To an encounter</td>
+                                <td>
+                                    <p>&lt;Id&gt;</p>
+                                    <p>&lt;Domain&gt;</p>
+                                </td>
+                                <td>
+                                    <p>PV1_19_1</p>
+                                    <p>Visit-assigning authority.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Restrictions</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> value in the shredder must equal the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref> value of the associated feed.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <p class="SeeAlso">See also</p>
+            <p class="SeeAlsoSubHead">Tasks</p>
+            <p>
+                <a href="DI_Task_ParseApp.htm">Resolve Data Parser manifests</a>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>
+            </p>
+            <p>
+                <a href="DI_Con_ParseExtend.htm">Add parser extensions</a>
+            </p>
+        </div>
+    </body>
+</html>

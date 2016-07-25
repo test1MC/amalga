@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="235" MadCap:lastWidth="518">
+    <body>
+        <p class="LabelforProcedures">To create a report</p>
+        <MadCap:snippetBlock src="AN_proc_Open_Analytics_pane.flsnp" />
+        <ol>
+            <li value="2">Click <span class="UIElementAction">Create a report</span>.</li>
+            <li>
+                <MadCap:snippetText src="AN_proc_start_report_builder.flsnp" />&#160;</li>
+            <li>Click <span class="UIElementAction">Open</span>.</li>
+            <li>Create the report, and then save it.</li>
+            <li>Once you have created the report and saved it, return to the <MadCap:variable name="UI-Labels.Analytics Administration" /> page and <MadCap:xref href="../AN_Task_Import_report.htm" target="" title="" alt="">Import a report</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

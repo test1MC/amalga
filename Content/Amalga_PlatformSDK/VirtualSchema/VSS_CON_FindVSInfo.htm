@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2206.333" MadCap:lastWidth="508" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Finding virtual schema information</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to find virtual schema information using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can find information on virtual schema instances by invoking the <span class="codeEntity">FindVirtualSchemaInfo</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">FindVirtualSchemaInfo</span>, you must specify an <span class="codeEntity">VirtualSchemaInfoQuery</span> object that represents the information that the operation uses to find and retrieve information on virtual schema instances, represented as a collection of <span class="codeEntity">VirtualSchemaInfo</span> objects.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the VirtualSchemaInfoQuery object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working2" target="" title="" alt="">Working with the VirtualSchemaInfo object on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the VirtualSchemaInfoQuery object</h2>
+        <p>The VirtualSchemaInfoQuery object represents the information used by the FindVirtualSchemaInfo operation to identify virtual schema instances for which information is returned.  The VirtualSchemaInfoQuery object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DataManifestId</td>
+                    <td>
+                        <p>A System.Guid object that represents the globally unique identifier (GUID) of a data manifest.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>InstanceNames</td>
+                    <td>A collection of strings representing the names of virtual schema instances.</td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td>
+                        <p>A string representing the publisher of a virtual schema instance.</p>
+                        <p class="note">This property is not used by this operation.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>The operation uses the logical disjunction of the properties of the VirtualSchemaInfoQuery object for which a value is specified to determine the criteria by which a virtual schema instance is identified and information about that instance is returned by the operation. In other words, the set of properties for the VirtualSchemaInfoQuery object are treated as a logical OR operation when FindVirtualSchemaInfo is invoked.</p>
+        <p>When the operation is invoked,  the following steps are performed to define the filtering for an object query:</p>
+        <ol>
+            <li>If the InstanceNames property of the VirtualSchemaInfoQuery object contains one or more virtual schema instance names, then any EntityContainer objects for which the value of the Name property matches each specified value is included in the query.</li>
+            <li>If a value is specified for the DataManfiestId property of the VirtualSchemaInfoQuery object, then any EntityContainer objects for which the value of the DataManifestId property matches the specified value are included in the query.</li>
+        </ol>
+        <p>The operation performs the object query and returns information on all matching virtual schema instances as a collection of VirtualSchemaInfo objects, ordered by name.</p>
+        <h2><a name="Working2"></a>Working with the VirtualSchemaInfo object</h2>
+        <p>The results of the FindVirtualSchemaInfo operation are returned as a collection of VirtualSchemaInfo objects, each of which represents a virtual schema instance that meets the criteria specified in the VirtualSchemaInfoQuery object passed to the operation. The VirtualSchemaInfo object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CreatedOn</td>
+                    <td>A System.DateTime object representing the date and time on which the virtual schema instance was created.</td>
+                </tr>
+                <tr>
+                    <td>DataManifestId</td>
+                    <td>A System.Guid object representing the globally unique identifier of the data manifest used to create the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>HasPrivateDataStore</td>
+                    <td>A Boolean indicating whether an application private database is referenced by the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>InstanceId</td>
+                    <td>A System.Guid object representing the globally unique identifier of the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>InstanceName</td>
+                    <td>A string containing the name of the virtual schema instance.</td>
+                </tr>
+                <tr>
+                    <td>IsActive</td>
+                    <td>A Boolean indicating whether the virtual schema instance is active. For more information about activating a virtual schema instance, see <MadCap:xref href="VSS_CON_ActivateVS.htm" target="" title="" alt="">Activating a virtual schema on page 1</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PrivateDatabaseName</td>
+                    <td>
+                        <p>A string containing the name of the application private database referenced by the virtual schema instance.</p>
+                        <p>If the virtual schema instance does not reference an application private database, then the value of this property is set to an empty string.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PrivateDataStoreScript</td>
+                    <td>
+                        <p>A string containing the SQL script used to define the application private database referenced by the virtual schema instance.</p>
+                        <p>If the virtual schema instance does not reference an application private database, then the value of this property is set to an empty string.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td>A string representing the publisher of the virtual schema instance.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

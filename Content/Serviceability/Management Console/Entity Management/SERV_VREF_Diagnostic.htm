@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1268.667" MadCap:lastWidth="671" MadCap:fileTags="TopicType.Ref-Visual,Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,Status.50 - InTech Review">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="UI-Labels.Diagnostic (pane)" /> pane</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic displays  an image of the <MadCap:variable name="UI-Labels.Diagnostic (pane)" /> pane and describes its key elements.        </p>
+        <p>
+            <MadCap:keyword term="entity registry;access policies;access rules;SQL conditions;roles;sensitive labels" />
+            <MadCap:snippetText src="../../../Resources/Snippets/Vis-Ref-AMC-Purpose.flsnp" class="Label" />&#160;View the SQL query used for accessing the entity data. Useful for understanding <MadCap:annotation MadCap:createDate="2012-01-23T14:15:52.0328142-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="RTM: run the query to show performance numbers. also, compare to an &quot;all access rule.&quot; (TAP work item was 105609)" MadCap:editor="v-padenc" MadCap:editDate="2012-01-23T14:16:39.3368142-08:00">performance</MadCap:annotation>. </p>
+        <p><span class="Label">Access</span> For access steps, see <MadCap:xref href="../../../DataPlatform1/DP_Task_DebugRules.htm" target="" title="" alt="">Debug access rules</MadCap:xref>.</p>
+        <p>The following image shows the <MadCap:variable name="UI-Labels.Diagnostic (pane)" /> pane for the Patient entity, displaying the SQL&#160;SELECT statement corresponding to the underlying data accessible by the BUILTIN\AmalgaUsers role. Note that the RO VIP&#160;rule is disabled (gray font), which limits the SQL&#160;SELECT statement to the single remaining enabled rule for the BUILTIN\AmalgaUsers role. </p>
+        <p>
+            <img src="../../Images/EMT-Diagnostic-.png" />
+        </p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Ref#</th>
+                    <th>Name</th>
+                    <th>Description and tasks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Enable Rule</td>
+                    <td>Includes the selected access rule in the SQL SELECT statement for the related role. </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Disable Rule</td>
+                    <td>Excludes the selected access rule from the SQL SELECT statement for the related role. Use this option during debugging only. </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Filter Clause for Selected Role</td>
+                    <td>Displays the SQL SELECT statement corresponding to the enabled access rules for the selected role. This statement determines the underlying data for the current entity that the role can access. You can copy the statement by selecting it and pressing CTRL+C.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>(disabled rule)</td>
+                    <td>Disabled rules are indicated by gray font. Rules can be disabled or enabled in the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane or the <MadCap:variable name="UI-Labels.Diagnostic (pane)" /> pane. </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>(enabled rule)</td>
+                    <td>Enabled rules are indicated by normal font. Rules can be disabled or enabled in the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane or the <MadCap:variable name="UI-Labels.Diagnostic (pane)" /> pane. </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Rules</td>
+                    <td>Lists all roles that have been granted permissions to the current entity, along with the access rules defined for each role. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SERV_TASK_OpenEM.htm" target="" title="" alt="">Open the  module</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../../DataPlatform1/DP_Task_DebugRules.htm" target="" title="" alt="">Debug access rules</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../../DataPlatform1/DP_Task_ConfigEntityAccess.htm" target="" title="" alt="">Grant permissions to an entity (add an access rule)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Task_ConfigEntitySensitiveCol.htm" target="" title="" alt="">Restrict access to an entity property (sensitive labels)</MadCap:xref>
+        </p>
+        <p MadCap:conditions="" class="SeeAlsoSubHead">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="SERV_VREF_AMC-mod-Entity.htm" target="" title="" alt=""> module primary window</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../AMC Introduction.htm" target="" title="" alt=""> Overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../Secure Data Access/Secure Data Access Intro.htm" target="" title="" alt="">Data access security</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../../DataPlatform1/DP_Con_SQLConditions.htm" target="" title="" alt="">SQL conditions</MadCap:xref>
+        </p>
+    </body>
+</html>

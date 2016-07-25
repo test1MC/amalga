@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To see truncated data</p>
+        <ul>
+            <li>
+                <p>Move your mouse over the cell that is truncated and a window will appear displaying the entire text from the cell.</p>
+                <p class="note">Text at the end of a truncated cell will be faded.</p>
+            </li>
+        </ul>
+    </body>
+</html>

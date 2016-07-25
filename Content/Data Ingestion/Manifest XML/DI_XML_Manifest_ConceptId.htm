@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="2220" MadCap:lastWidth="910" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>ConceptId element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="ConceptId element" />Declares a concept identifier for a derived column to enable assisted binding.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;ConceptId&gt;...&lt;/ConceptId&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;ConceptId&gt;...&lt;/ConceptId&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;ConceptId&gt;...&lt;/ConceptId&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+              &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Element.htm">Element</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>A concept identifier is the globally unique identifier (GUID) of the semantic tag that  describes relational-schema components, such as tables and entities. Each semantic tag is a is a fully qualified string representation of a concept in a clinical terminology included with the Terminology platform application.  Use the following query to display the complete list of terminology GUIDs from the <MadCap:annotation MadCap:createDate="2012-03-10T16:54:10.7868684-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is this the TerminologyData database?  if so, should be Health Language Terminology Data (see variable in Database.flvar." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-10T17:24:43.1699781-08:00">HLI database</MadCap:annotation>:</p><pre xml:space="preserve">SELECT
+   [ContentSetGuid]
+   ,[ContentSetSearchText]
+FROM [AmalgaSourceData].[Terminology].[ContentSet]</pre>
+        <p>The <span class="MarkupLanguageElements">ConceptId</span> element is mandatory when you want a derived column to be displayed during assisted binding. Unlike derived columns, shredded columns  receive concept identifiers automatically when the message type supports semantic tags. You declare this element once for each derived column specified in the data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p>The following figure shows both shredded and derived columns in the PID table during ingestion. In this example, Derived Col1 and Derived Col2 are assigned explicit concepts that connect the columns to entity properties defined in the entity registry. When you map multiple columns to the same concept identifier, each tagged column is visible during the binding process.</p>
+        <p class="Figure">
+            <img src="../Images/Shred_term_enity.png" style="width: 726px;height: 211px;" />
+        </p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;Element Name="FamilyName" Type="System.String" MaxLength="100"&gt;
+    &lt;ConceptId&gt;1uJSHAEy5J0eLAWfCsgBAA&lt;/ConceptId&gt;
+    &lt;Transform&gt;
+        &lt;Action&gt;ToTitleCase&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+        &lt;/InputParameters&gt;
+    &lt;/Transform&gt;
+&lt;/Element&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

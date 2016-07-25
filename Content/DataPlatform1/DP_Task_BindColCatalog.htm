@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1428" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,Personas.All,ReleaseTarget.TAP,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure binding: selected column (<MadCap:variable name="UI-Labels.Feed Browser" /> tab)</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to bind entity properties to columns selected from the storage schema listed in the <MadCap:variable name="UI-Labels.Feed Browser" /> tab. </p>
+        <p>
+            <MadCap:keyword term="entity binding" />
+            <MadCap:annotation MadCap:createDate="2012-02-22T09:18:46.5693801-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic status as complete when xrefs are added as relevant" MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:18:52.8545801-08:00">You </MadCap:annotation>can bind entity properties to columns selected from storage schema. </p>
+        <p>For information about defining entity bindings using <MadCap:variable name="BrandingMS.Doors PowerShell" />, see <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>.   </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To bind a property to a column selected from storage schema</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp">
+                </MadCap:snippetText>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-entitybinding.flsnp">
+                    </MadCap:snippetText> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-entitybinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-SwitchToAssisted.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-SwitchToAssisted.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-bindsource.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-bindsource.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-FB-sel-col.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-FB-sel-col.flsnp" />
+                </p>
+                <p class="note">
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-catalogrefresh.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-FB-drag-col.flsnp" /> <![CDATA[ ]]></p>
+                <p>If the entity property is not a primary key property and the column being bound is not from the anchor table for the selected binding source (or a table or view of known relationship to the anchor table), then the <MadCap:variable name="UI-Labels.Relationship Editor" /> dialog box appears. </p>
+            </li>
+            <li>
+                <p>If prompted by the appearance of the <MadCap:variable name="UI-Labels.Relationship Editor" /> dialog box, indicate the relationship between the selected column's parent table or view and the anchor table by selecting a column from the anchor table to map to the related table's or view's primary key column. </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-FB-drag-col.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-click-save.flsnp" />
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/EntityBindingXML/PS_XML_Reference.htm" target="" title="" alt="">Entity binding XML&#160;reference</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_FeedBrowser.htm" target="" title="" alt=""> tab</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RelationshipEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:52:41.8258756-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+    </body>
+</html>

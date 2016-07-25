@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="701" MadCap:lastWidth="704" MadCap:fileTags="TopicType.Navigation,ReleaseTarget.CTP1,Status.70 - Complete,Personas.Carlos: IT Admin,TopicType.Overview/Introduction,EditingTags.7 - Editing issues resolved,TopicOwner.v-ssiera" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-03-08T18:55:27.2841861-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingHSG.HealthVault" /> Connection prerequisites</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-08T18:55:25.2097524-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Pls add index entry." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-08T18:55:37.5178517-08:00">A</MadCap:annotation> <![CDATA[ ]]><MadCap:variable name="BrandingHSG.HealthVault"><MadCap:change MadCap:changes="1">P</MadCap:change></MadCap:variable> application ID and a certificate for communication with <MadCap:variable name="BrandingHSG.HealthVault" /> must be obtained prior to deploying <MadCap:variable name="BrandingHSG.HealthVault" /> Connection.  The application should be registered in the <MadCap:variable name="BrandingHSG.HealthVault" /> pre-production environment (PPE) for development and test purposes.  If Personally Identifiable Information (PII) is involved, please request a <MadCap:variable name="BrandingHSG.HealthVault" /> Rapid Deploy (RD) environment.&#160;</p>
+        <p>Similar to HealthVault PPE, Rapid Deploy applications are created and registered through Application Configuration Center (ACC). There is a separate instance of ACC that can be pointed to <MadCap:variable name="BrandingHSG.HealthVault" /> RD for this purpose.  The steps are the same for both PPE and RD environments.</p>
+        <p class="Label">To prepare for <MadCap:variable name="BrandingHSG.HealthVault" /> Connection installation</p>
+        <ol>
+            <li>Perform one of the following. PPE in most cases; RD if personally identifiable patient data will be used.<ol style="list-style-type: lower-alpha;"><li><MadCap:xref href="Install Proc HVConnect PPE.htm" target="" title="" alt="">Create a  PPE application</MadCap:xref></li><li><MadCap:xref href="Install PRoc HVConnect RD.htm" target="" title="" alt="">Create a  RD application</MadCap:xref></li></ol></li>
+            <li>
+                <MadCap:xref href="Install Proc HVConnect DataType Auth.htm" target="" title="" alt=""> Connection authorization configuration</MadCap:xref> (optional)</li>
+            <li>
+                <p>If you want to digitally sign the data before pushing it to <MadCap:variable name="BrandingHSG.HealthVault" />, you will need a signing certificate. Obtain a signing certificate from one of the commercial third party certificate providers.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Install Ref Prerequisites II.htm" target="" title="" alt="">Installation prerequisites</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Prereq Proc Certificates.htm" target="" title="" alt="">Certificate prerequisites</MadCap:xref>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/healthvault/bb802509">HealthVault SDK and Application Information</a>
+        </p>
+    </body>
+</html>

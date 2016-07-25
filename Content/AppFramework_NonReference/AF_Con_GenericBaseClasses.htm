@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1573.333" MadCap:lastWidth="1158" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Base classes and control templates</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic discusses the base classes and control templates that are available for developers to use.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> SDK provides several base classes for creating generic <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls. Any control that is derived from one of these classes will automatically support the basic features required by the <MadCap:variable name="BrandingHSG.Amalga Short" /> client infrastructure, but will require additional design consideration in order to smoothly integrate their additional functionality into an   <MadCap:variable name="BrandingHSG.Amalga Short" /> portal.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>The Framework base classes</li>
+            <li>The Framework control templates</li>
+        </ul>
+        <h2>The <MadCap:variable name="FeatureName.Amalga Framework second use"></MadCap:variable> base classes</h2>
+        <h3>BaseServerControl</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm"> BaseServerControl </a>is an ASP.NET composite control with built-in support for the page messaging and logging APIs. Its constructor also loads and initializes the <MadCap:variable name="FeatureName.Amalga Framework second use" /> client-side APIs into the DOM&#160;of the local browser, if another <MadCap:variable name="FeatureName.Amalga Framework second use" /> control has not already done so.</p>
+        <p>As a <a href="http://go.microsoft.com/fwlink?LinkId=234248">CompositeControl</a>, the base server control has no default UI. It is generally used as a container for other, visible controls.</p>
+        <h3>VisualServerControl</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> <![CDATA[ ]]><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_VisualServerControl.htm">VisualServerControl </a> is a <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl </a>that is designed to host a single user control. </p>
+        <p>Controls derived from <span class="Label">VisualServerControl</span> must override its <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_VisualServerControl_DefaultUserControlPath.htm">DefaultUserControlPath </a>property to specify the path of the user control that should be loaded along with the server control. The derived control also has the option of overriding the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/M_VisualServerControl_PreAddChildControl.htm">PreAddChildControl </a>method to assign values to settable properties of the user control before it is rendered, and can override the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_VisualServerControl_RequiresPatientLink.htm">RequiresPatientLink </a>property to indicate that the server control requires access to patient linking in order to run.</p>
+        <h3>TemplateControl</h3>
+        <p>The  <MadCap:variable name="FeatureName.Amalga Framework second use" /> <![CDATA[ ]]><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_TemplateControl.htm">TemplateControl </a>is a <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_VisualServerControl.htm">VisualServerControl </a> that is populated with child controls according to a predefined template.</p>
+        <p>Controls derived from <span class="Label">TemplateControl</span> may override its <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_TemplateControl_ItemTemplate.htm">ItemTemplate </a>property to provide a default template. Otherwise, a template should be assigned before the <span class="Label">TemplateControl</span> is rendered.</p>
+        <p>For more information about using templates to configure a server control, see <a href="http://go.microsoft.com/fwlink?LinkId=234265">Templated Server Control Example</a>.</p>
+        <h3>BaseWebPart</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm"> BaseWebPart </a>is a <MadCap:variable name="BrandingMS.SharePoint" /> <![CDATA[ ]]><a href="http://go.microsoft.com/fwlink?LinkId=234259">WebPart</a>. Like the <span class="Label">BaseServerControl</span>, it provides built-in support for page messaging and logging, and loads and initializes the client-side APIs if they are not already present. Like other web parts, it does provide a default UI, but its appearance is mostly determined by the settings of its <MadCap:variable name="BrandingMS.SharePoint" />&#160;host.</p>
+        <h3>BaseUserControl</h3>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_BaseUserControl.htm">BaseUserControl </a>is a standard <MadCap:variable name="BrandingMS.ASP.NET second use" /> user control, with one added feature. </p>
+        <p>Controls derived from <span class="Label">BaseUserControl</span> can call its  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/M_BaseUserControl_GetContainer``1.htm">GetContainer(T) </a>method. <span class="Label">GetContainer(T)</span> returns the closest containing control that implements the <a href="http://go.microsoft.com/fwlink?LinkId=234260">INamingContainer</a> interface, which is usually its parent server control. The parent container control is useful for applying templates.</p>
+        <p>Unlike the server controls, the <MadCap:variable name="FeatureName.Amalga Framework second use" /> base user control does not manage the client-side APIs.</p>
+        <h2><a name="The"></a>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> control templates</h2>
+        <p>The <MadCap:variable name="FeatureName.Amalga SDK" /> includes several item templates that allow controls to be quickly added to <MadCap:variable name="BrandingMS.SharePoint" /> or other projects in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Path</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Amalga Server Control</td>
+                    <td>Visual C# Items/Amalga</td>
+                    <td>Creates a control derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a>, with additional safeguards for handling design time and runtime experience in SharePoint 2010.</td>
+                </tr>
+                <tr>
+                    <td>Amalga User Control</td>
+                    <td>Visual C# Items/Amalga</td>
+                    <td>Creates a control derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_BaseUserControl.htm">BaseUserControl</a>, with additional safeguards for handling design-time and run-time experience in SharePoint 2010. It includes all references and register directives required to drag and drop into a host control or Web Part.</td>
+                </tr>
+                <tr>
+                    <td>Amalga WebPart</td>
+                    <td>Visual C# Items/Amalga</td>
+                    <td>Creates a Web Part derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>, with additional safeguards for handling design-time and run-time experience in SharePoint 2010.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Visual WebPart</td>
+                    <td>Visual C# Items/Amalga</td>
+                    <td>Combines the Amalga Web Part and Amalga User Control templates to create a user control hosted in a Web Part.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Empty Site Page</td>
+                    <td>Visual C# Items/Amalga</td>
+                    <td>Creates a site page derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Pages/T_BasePage.htm">BasePage</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

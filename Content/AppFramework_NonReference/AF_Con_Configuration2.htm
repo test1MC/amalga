@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.50 - InTech Review,EditingTags.4 - Ready for Writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="858" MadCap:lastWidth="576" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Retrieve the value of a configuration setting</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="configuration;settings" />
+        </p>
+        <p class="abstract">This topic describes how to retrieve the value of an <MadCap:variable name="BrandingHSG.Amalga Short" /> application configuration setting.</p>
+        <p>The configuration manager represents the configuration settings associated with the control's application instance as an instance of the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/I_IConfigurationItemStore.htm">IConfigurationItemStore </a>interface.</p>
+        <p>Internally, configuration settings are represented as <span class="Label">ConfigurationItem</span> objects, each of which contains the name of a setting and its value. <span class="Label">ConfigurationItem</span> values are always stored as strings, but <span class="Label">ConfigurationItemStore</span> includes a number of methods that return the value of a named setting as <span class="Label">Int32</span>, <span class="Label">Guid</span>, and other useful types.</p>
+        <p>&#160;</p>
+        <h4>Example</h4>
+        <p>The following code reads the value of the <span class="Label">NumberOfTabs</span> setting for the current user. If there is no user setting, it reads the default value from the application configuration. If the application configuration is not available, it throws a <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_FrameworkException.htm">FrameworkException</a>, which will be caught by the Framework layer and written into the <MadCap:variable name="BrandingHSG.Amalga Short" /> event logs.</p><pre xml:space="preserve">
+// Name of a configuration setting
+String tabSetting = "NumberOfTabs";
+Int32 userTabPreference;
+
+// Get the user settings store for the current application instance
+IWriteableConfigurationItemStore userSettings =
+AmalgaConfigurationManager.Current.GetUserConfiguration((BaseServerControl)this);
+
+// Get the value of the user setting, if there is one.
+//  If not, get the default application setting.
+if (userSettings.HasConfigurationItem(tabSetting))
+    userTabPreference = userSettings.GetConfigurationValueInt32(tabSetting);
+else
+{
+    // Get the application settings store for the current application instance
+    IConfigurationItemStore appSettings =
+    AmalgaConfigurationManager.Current.GetApplicationConfiguration((BaseServerControl)this);
+
+    // Get the application configuration setting, if there is one.
+    //  If not, throw a FrameworkException indicating that the setting was not found.  The
+    //  FrameworkException will be automatically written to the Amalga error log.
+    if (appSettings.HasConfigurationItem(tabSetting))
+        userTabPreference = appSettings.GetConfigurationValueInt32(tabSetting);
+    else
+        throw new FrameworkException(FrameworkErrorCode.ConfigurationEntryNotFound, tabSetting + " setting not available.");
+}
+		</pre>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/T_AmalgaConfigurationManager.htm">AmalgaConfigurationManager Class</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/I_IConfigurationItemStore.htm">IConfigurationItemStore Interface</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Configuration/I_IWriteableConfigurationItemStore.htm">IWriteableConfigurationItemStore Interface</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Overview.htm">Deployment manifest overview</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Settings.htm">Settings element</a>
+        </p>
+        <p><a href="../Amalga_PlatformSDK/SDK_CON_Setting_ColEditor.htm">Setting Collection Editor</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

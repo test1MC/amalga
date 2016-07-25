@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2468.667" MadCap:lastWidth="801" MadCap:ignoredWords="MaterializedEntityManager" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.1 - Ready for Edit" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materialized entity view</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic summarizes the <MadCap:variable name="FeatureName.materialized entity view" /> feature.</p>
+        <h2>
+            <MadCap:keyword term="Materialized entity view" />Materialization overview</h2>
+        <p>When you bind an <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> entity, the system automatically materializes the associated entity view to improve query performance of the <MadCap:variable name="BrandingHSG.Amalga Short" /> applications that use the virtual schema based on the entity. Entity binding detects all binding changes when you save them.</p>
+        <p> For first-time binding or when there is a change in the binding, the system calls the <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> application, which provisions a set of database artifacts and registers the entity with its underlying data source to be tracked.  The service then periodically monitors the underlying tables used by the entity for any changes and synchronizes the changes to the materialized entity table.</p>
+        <p class="note">Every time you change an entity's binding, a new set of materialization artifacts is created and populated.  When you have a large set of data, the initial population (seeding) of the entity can take a while. </p>
+        <p>During the seeding period, the entity fetches data directly from the underlying data source and you can expect the following behavior:</p>
+        <ul>
+            <li>The query performance for the virtual schemas using the entity might be slower.</li>
+            <li>Any eventing solution that is set on the application view is stopped. Eventing automatically resumes when the new materialized entity complete the seeding. However,  there can be duplicates of missing events during the transition.</li>
+        </ul>
+        <p>Before you can bind an entity to an <MadCap:variable name="BrandingHSG.AmalgaV2" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-03-09T12:42:38.9350750-08:00" MadCap:creator="v-ccole" MadCap:initials="V-" MadCap:comment="Disussed using V2 w/ Cindy. Remove for TAP." MadCap:editor="v-ccole" MadCap:editDate="2012-03-09T12:43:17.0926750-08:00">(V2)</MadCap:annotation> data source, you must first create a view to the data and then register the view with  <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. For help preparing an <MadCap:variable name="BrandingHSG.AmalgaV2" /> data source, contact <MadCap:snippetText src="../../Resources/Snippets/phrase-your-Microsoft-representative.flsnp" />. </p>
+        <p>The following functions and clauses are not supported in a view used for entity binding:</p>
+        <ul>
+            <li>Non-deterministic function (for example, using the GETDATE function to calculate patient's age).</li>
+            <li>Use of TOP clause to return only the first set of rows from the query results.</li>
+            <li>Use of CROSS JOIN, INTERSECT and EXCEPT clauses in a query.</li>
+            <li>Use of GROUP BY clause in a query.</li>
+        </ul>
+        <p>If the previous clauses or functions are found, the <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> application throws an error at the time of binding. You must remove the unsupported clause before you can try to bind the entity again.</p>
+        <h2>Deploying materialization application<MadCap:annotation MadCap:createDate="2012-03-09T11:58:18.8018111-08:00" MadCap:creator="v-ccole" MadCap:initials="V-" MadCap:comment="The plan is that this section will move to Stefan's app install guide." MadCap:editor="v-ccole" MadCap:editDate="2012-03-09T11:58:42.9771410-08:00">s</MadCap:annotation></h2>
+        <p>There are two applications required to enable materialization:</p>
+        <ul>
+            <li><MadCap:variable name="Applications.Materialized Entity Manager (application)" /> application : provision a set of database artifacts to the <MadCap:variable name="Databases.MaterializedEntity" /> database.</li>
+            <li><MadCap:variable name="Applications.Materializer (application)" /> application : track changes on underlying data source and synchronize the changes to the materialized entity.</li>
+        </ul>
+        <p>You must update the following XML element attributes before deploying the application instances:</p>
+        <ul>
+            <li>
+                <p><MadCap:variable name="Applications.Materialized Entity Manager (application)" /> manifest</p>
+                <ul>
+                    <li>InstanceName</li>
+                    <li>LogicalHostName</li>
+                </ul>
+            </li>
+            <li><MadCap:variable name="Applications.Materialized Entity Manager (application)" />Application manifest<ul><li>InstanceName</li></ul></li>
+            <li>
+                <p><MadCap:variable name="Applications.Materializer (application)" /> manifest</p>
+                <ul>
+                    <li>Instance Name</li>
+                    <li>LogicalHostName</li>
+                    <li>ChangeSetWriteBatchSize: Number of update batches to process when updating materialized entity.</li>
+                    <li>MaxWorkerThreads</li>
+                    <li>IdleSleepMilliSeconds: The interval period (in milliseconds) between the <MadCap:variable name="Applications.Materializer (application)" /> service update job.</li>
+                    <li>CleanUpTaskTimeHour: Time in the day (0-23) to delete obsolete <MadCap:variable name="Applications.Materializer (application)" /> service artifact; for example, setting up this value to 0 will have the cleanup task to run at midnight every day.</li>
+                </ul>
+            </li>
+            <li><MadCap:variable name="Applications.Materializer (application)" />Application manifest<ul><li>InstanceName</li></ul></li>
+        </ul>
+        <p class="note">Entity binding throws the following error if the <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> application is not installed or not running:<br />"Entity binding requires <MadCap:variable name="Applications.Materialized Entity Manager (application)" /> application. The application is either not installed or not running. Please make sure the application is running and try to bind the entity again."</p>
+        <h2>Permission to the underlying data source<MadCap:annotation MadCap:createDate="2012-03-09T12:44:48.7126750-08:00" MadCap:creator="v-ccole" MadCap:initials="V-" MadCap:comment="The plan is that this section will move to Stefan's app install guide." MadCap:editor="v-ccole" MadCap:editDate="2012-03-09T12:44:50.1648750-08:00">&#160;</MadCap:annotation></h2>
+        <p>The <MadCap:variable name="Applications.Materialized Entity Manager (application)" />  application automates setting up tracking of underlying data sources for entities. Changes to the <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> data sources are done at the time of ingestion. </p>
+        <p>To enable Change Data Capture (CDC) on the <MadCap:variable name="BrandingHSG.AmalgaV2" /> (V2) database, see <a href="http://go.microsoft.com/fwlink?LinkId=246293">Enabling Change Data Capture</a>. Use the <a href="http://go.microsoft.com/fwlink?LinkId=246294">cdc.fn_cdc_get_all_changes_<span class="Placeholder">capture_instance</span></a> function to return all changes. In addition, you must apply the db_owner, db_datareader permissions to the V2 database as follows:</p>
+        <ul>
+            <li>In a single box installation, the BUILTIN\Network Service account must be granted these permissions.</li>
+            <li>In a multi-box installation, the Server machine accounts (ServerName$), must have this level of permission.</li>
+        </ul>
+        <h2>Error handling during materialization</h2>
+        <p>Errors can occur during the seeding or updating phases materialization. The <MadCap:variable name="Applications.Materializer (application)" /> service also attempts to switch the entity to fetch data directly from the underlying (unmaterialized) data source to ensure data availability. The following table shows the errors that can be sent to the Doors event log.</p>
+        <table>
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>EventID</th>
+                    <th>Event description and impact</th>
+                </tr>
+                <tr>
+                    <td>10903</td>
+                    <td>An error has occurred during population or synchronization of materialized entity.  The entity is being switched to a non-materialized data sources to allow data availability.</td>
+                </tr>
+                <tr>
+                    <td>10904</td>
+                    <td>
+                        <p>Error has occurred when attempting to switch data source for entity. The error can happen when:</p>
+                        <ul>
+                            <li>Attempting to switch to materialized entity at the completion of seeding. In this case, the entity continues to read directly from (unmaterialized) data source. See the previous limitation.</li>
+                            <li>Attempting to switch from a materialized entity due to an error. Because the switch fails, the entity continues to read from the materialized entity even though  the <MadCap:variable name="Applications.Materializer (application)" /> service stops updating the materialized entity until the issue is resolved.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Service monitoring</h2>
+        <p>You can monitor materialization services by viewing the Doors performance counters described in the following table.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Performance Category</th>
+                    <th>Performance Counter</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Amalga Materialized Entities</td>
+                    <td>Entity backlog</td>
+                    <td>Displays the number of remaining update batches to be materialized.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Materialized Entities</td>
+                    <td>Average time per sync job</td>
+                    <td>Displays the average time of the sync job for the materialized entity.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Materializer </td>
+                    <td>Materializer backlog</td>
+                    <td>Displays the number of remaining update batches to be materialized across all materialized entities.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Materializer </td>
+                    <td>Total batches read</td>
+                    <td>Displays the number of batches to process from source table.</td>
+                </tr>
+                <tr>
+                    <td>Amalga Materializer </td>
+                    <td>Total batches processed</td>
+                    <td>Displays the number of batches processed by the <MadCap:variable name="Applications.Materializer (application)" /> service.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The materialization backlog is calculated as follows:</p>
+        <ul>
+            <li>Number of batches of update on the underlying data source * number of entities using the changed table.</li>
+        </ul>
+        <p>For example, if the PID segment is updated in two update batches and there are five entities bound to the PID segment, then the backlog is 10. After the <MadCap:variable name="Applications.Materializer (application)" /> service updates two entities, the backlog is reduced to eight.</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-09T11:53:54.9403685-08:00" MadCap:creator="v-ccole" MadCap:initials="V-" MadCap:comment="Link to Stefan's app install topic." MadCap:editor="v-ccole" MadCap:editDate="2012-03-09T11:54:37.0443286-08:00">TBD</MadCap:annotation>
+        </p>
+    </body>
+</html>

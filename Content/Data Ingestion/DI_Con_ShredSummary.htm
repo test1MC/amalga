@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="11" MadCap:lastHeight="2747.333" MadCap:lastWidth="691.3333" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="FeedConfigurationXml" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Message Shredder application</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <div id="cardtype">
+            <p class="abstract">
+                <MadCap:keyword term="Message Shredder application" />This topic summarizes the characteristics of the <MadCap:variable name="Applications.Message Shredder application" />.</p>
+            <p class="Label">When to use this application</p>
+            <p>Configure and deploy one shredder application instance for each feed. For configuration details, see <MadCap:xref href="DI_Task_ShredApp.htm" target="" title="" alt="">Resolve Message Shredder manifests</MadCap:xref>.</p>
+        </div>
+        <div id="ident">
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Identification</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Application name</p>
+                    <p>MessageShredderApplication</p>
+                    <p class="Label">DoorsWorker (service) name</p>
+                    <p>MessageShredder</p>
+                    <p class="Label">Publisher</p>
+                    <p>Microsoft Corporation	Version 1.0.0.0</p>
+                    <p class="Label">DoorsWorkerManifest values</p>
+                    <p>AuthenticationMode ="None"</p>
+                    <p>ClusteringMode="FailOver"</p>
+                    <p>HostAssembly="Microsoft.Amalga.Pipeline.MessageShredder.exe"</p>
+                    <p>LogicalHostName="<span class="Placeholder">Insert local host name</span>"</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Dependencies and relationships</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Dependent on the following  attribute values of the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency element</MadCap:xref></p>
+                    <p>(You must specify in each application manifest the unique instance name of the dependency.)</p>
+                    <p>Name="TerminologyAppDependency" InstanceName="<span class="Placeholder">TerminologyApplication_Ins1</span>"</p>
+                    <p class="Label">Related applications</p>
+                    <p><MadCap:variable name="Applications.Feed Acquisition (application)" /> and <MadCap:variable name="Applications.Data Parser (application)" /> applications.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Configuration design</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p><span class="Label">Input</span>
+                    </p>
+                    <p> Comma-separated values (CSV) file or HL7 messages. During a polling interval, each service instance obtains raw messages of the specified message type from the <MadCap:variable name="Databases.MessageQueue" />.dbo.MSG201 table. You can specify the number of messages in a batch. The default batch size is 500 messages.</p>
+                    <p class="Label">Output</p>
+                    <p>Shredded columns.</p>
+                    <p class="Label">Application manifest settings</p>
+                    <p>No settings.</p>
+                    <p class="Label">Service manifest settings</p>
+                    <p><a href="Manifest XML/DI_Intro_BatchSizeSetting.htm">BatchSize setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_IdleSleepSecondsSetting.htm">IdleSleepSeconds setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_FeedInfoXML.htm">FeedInfoXML setting</a>
+                    </p>
+                    <p><a href="DI_XML_List_Shred.htm">FeedConfigurationXml setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_ShredderPluginConfigurationXML.htm">ShredderPluginConfigurationXML setting</a>
+                    </p>
+                    <p><a href="Manifest XML/DI_Intro_ErrorHandlingConfigurationXml.htm">ErrorHandlingConfigurationXML setting</a>
+                    </p>
+                    <p class="Label">Performance counters</p>
+                    <p>See <MadCap:xref href="DI_GREF_PipelinePerCount.htm" target="" title="" alt="">Pipeline performance counters</MadCap:xref>.</p>
+                    <p class="Label">Error codes</p>
+                    <p>See <MadCap:xref href="DI_Ref_PredefinedErrorCodes.htm" target="" title="" alt="">Default error code for the data pipeline</MadCap:xref>.</p>
+                    <p class="Label">Extensibility</p>
+                    <p>See <MadCap:xref href="DI_Con_ShredExtend.htm" target="" title="" alt="">Add a shredder plug-in</MadCap:xref>.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Deployment</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p class="Label">Deployment duration</p>
+                    <p>This application operates continuously in production.</p>
+                    <p class="Label">Special instructions</p>
+                    <ul>
+                        <li>Deploy the shredder instance after the associated feed-acquisition instance has been deployed. </li>
+                        <li>Supports installation to a failover cluster (Active/Passive) mode for disaster recovery and failover.
+                        </li>
+                    </ul>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Remarks</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The <MadCap:variable name="Applications.Message Shredder application" /> automatically splits each file or message into tables and columns based on the structure of the message or file. Each service instance reads message data from the specified message queue, analyzes the messages, creates a <MadCap:variable name="BrandingMS.SQL Server" /> schema to hold each data field, and inserts the data into the schema. An individual shredder (one instance of the <MadCap:variable name="Applications.Message Shredder application" />) works with data from a single feed. The pipeline shreds all feeds in parallel. </p>
+                    <p class="h7">Generated tables</p>
+                    <p>Message structure, not message content, determines the storage schema for each message type. Generation of tables is automatic and requires no configuration. However, you can specify <a href="#HL7_parent-child">parent-child relationships for HL7 messages</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> (described later)</MadCap:conditionalText>.</p>
+                    <p>All output tables include the following shredded columns.</p>
+                    <table class="informal" style="border-left-style: none;border-left-width: 0px;border-left-color: #ffffff;border-right-style: none;border-right-width: 0px;border-right-color: #ffffff;border-top-style: none;border-top-width: 0px;border-top-color: #ffffff;border-bottom-style: none;border-bottom-width: 0px;border-bottom-color: #ffffff;margin-left: 0;margin-right: auto;">
+                        <col style="width: 183px;" />
+                        <col />
+                        <thead>
+                            <tr class="informal">
+                                <th class="informal2">Column</th>
+                                <th class="informal2">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="informal">
+                                <td class="informal">RowID</td>
+                                <td class="informal">Uniquely identifies each row (sequential GUID).</td>
+                            </tr>
+                            <tr class="informal">
+                                <td class="informal">MessageID</td>
+                                <td class="informal">Corresponds to MsgID from the MSG201 input table.</td>
+                            </tr>
+                            <tr class="informal">
+                                <td class="informal">SequenceNumber</td>
+                                <td class="informal">Corresponds to the sequencing-identity column from MSG201 input table.</td>
+                            </tr>
+                            <tr class="informal">
+                                <td class="informal">RelativeIndex</td>
+                                <td class="informal">Indicates the position of the current segment within a message.</td>
+                            </tr>
+                            <tr class="informal">
+                                <td class="informal">NextRelativeIndex</td>
+                                <td class="informal">Shows the values for the relative index of the next occurrence of the same segment. This column is used in queries to find the child of each parent segment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="h9">Format example: Comma-separated value (CSV)</p>
+                    <ul>
+                        <li>Input to a shredder instance:
+                    <p class="code" style="font-style: italic;">item1, item2, item3, item4</p><p class="code" style="font-style: italic;">item5, item6, item7, item8</p></li>
+                        <li>Output table and columns:<p><table><col /><col /><col /><col /><col /><col /><col /><col /><col /><tbody><tr><td>RowID</td><td>MessageID</td><td>SequenceNumber</td><td>RelativeIndex</td><td>NextRelativeIndex</td><td>Item1</td><td>Item2</td><td>…</td><td>Item<span class="Placeholder">X</span></td></tr></tbody></table></p></li>
+                    </ul>
+                    <p class="h9">Format example: HL7 version 2.5</p>
+                    <ul>
+                        <li>Input to a shredder instance:
+					<p class="code">MSH|^~\&amp;|GHH LAB|ELAB-3|GHH OE|BLDG4|200202150930||ORU^R01|CNTRL-3456|P|2.4</p><p class="code">PID|||555-44-4444||EVERYWOMAN^EVE^E^^^^L|JONES|19620320|F|||153 FERNWOOD DR.^</p><p class="code">^STATESVILLE^OH^35292||(206)3345232|(206)752-121||||AC555444444||67-A4335^OH^20030520</p><p class="code">OBR|1|845439^GHH OE|1045813^GHH LAB|15545^GLUCOSE|||200202150730|||||||||</p><p class="code">555-55-5555^PRIMARY^PATRICIA P^^^^MD^^|||||||||F||||||444-44-4444^HIPPOCRATES^HOWARD H^^^^MD</p><p class="code">OBX|1|SN|1554-5^GLUCOSE^POST 12H CFST:MCNC:PT:SER/PLAS:QN||^182|mg/dl|70_105|H|||F</p><p class="code">OBX|2|SN|1554-6^GLUCOSE^POST 24H CFST:MCNC:PT:SER/PLAS:QN||^182|mg/dl|70_105|H|||F</p></li>
+                        <li>Output table and columns for OBX:<table><col /><col /><col /><col /><col /><col /><col /><col /><col /><tbody><tr><td>RowID</td><td>MessageID</td><td>SequenceNumber</td><td>RelativeIndex</td><td>NextRelativeIndex</td><td>OBX_1</td><td>OBX_2</td><td>…</td><td>OBX_18_1</td></tr></tbody></table></li>
+                    </ul>
+                    <p class="h7"><a name="HL7_parent-child"></a>Optional parent-child relationship configuration</p>
+                    <p>Some elements, particularly in HL7 messages, are hierarchical in nature.You must configure the shredder service to include relationship information, which allows applications to rejoin the data that was shredded into separate tables during ingestion. </p>
+                    <p>For example, a PID segment in an HL7 message normally contains data that is a parent of the PV1 segment. The relationship means that any visit information stored in PV1 is tied to the patient identification information stored in PID. It is not enough to indicate that PID is a parent of PV1 within a message, because there can be multiple instances of both, such as in an ADT^A17 message in which there are two PID segments. There are also two PV1 segments, each corresponding to their own PID segment.</p>
+                    <p>A segment can also belong to different kinds of parents. For instance, an NTE segment can belong to OBX or OBR. An OBX segment can belong to OBR or PV2. </p>
+                    <p>The child segment always inherits the context key of the parent segment. You can define the same parent for multiple segments, but each segment row can have only one parent relationship. When there are multiple parent segments, the closest previous parent segment row will be selected as the parent.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <MadCap:dropDown>
+                <MadCap:dropDownHead>
+                    <MadCap:dropDownHotspot>Restrictions</MadCap:dropDownHotspot>
+                </MadCap:dropDownHead>
+                <MadCap:dropDownBody>
+                    <p>The <MadCap:xref href="Manifest XML/DI_XML_Manifest_Type.htm" target="" title="" alt="">Type element</MadCap:xref> value in the shredder must equal the <MadCap:xref href="Manifest XML/DI_XML_Manifest_MsgType.htm" target="" title="" alt="">MsgType element</MadCap:xref> value of the associated feed.</p>
+                </MadCap:dropDownBody>
+            </MadCap:dropDown>
+            <p class="SeeAlso">See also</p>
+            <p class="SeeAlsoSubHead">Tasks</p>
+            <p><a href="DI_Task_ShredApp.htm">Resolve Message Shredder manifests</a>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm" target="" title="" alt="">Publish an application </MadCap:xref>
+            </p>
+            <p>
+                <MadCap:xref href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm" target="" title="" alt="">Sync application</MadCap:xref>
+            </p>
+            <p><a href="DI_Con_ShredExtend.htm">Add a shredder plug-in</a>
+            </p>
+        </div>
+    </body>
+</html>

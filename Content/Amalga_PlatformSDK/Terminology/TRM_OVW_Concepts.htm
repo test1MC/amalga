@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="5" MadCap:lastHeight="4939" MadCap:lastWidth="567" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Terminology concepts</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application;clinical terminologies:Terminology platform application;Terminology platform application:clinical terminologies;mapping terminologies:Terminology platform application;Terminology platform application:mapping terminologies;concepts:Terminology platform application;Terminology platform application:concepts;relationships:Terminology platform application;Terminology platform application:relationships;synonyms:Terminology platform application;Terminology platform application:synonyms;semantic tags:Terminology platform application;Terminology platform application:semantic tags" />This topic describes the concepts related to the Terminology platform application, included with <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>In <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the Terminology platform application provides services that can be used to store, map, and query clinical terminologies and their related clinical concepts and synonyms, and apply those clinical concepts to data assets by assigning semantic tags based on those concepts.</p>
+        <p class="Label">In this section</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with clinical terminologies on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working2" target="" title="" alt="">Working with semantic tags on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with clinical terminologies</h2>
+        <p>When describing the care and treatment of patients, a structured vocabulary of terms called a clinical terminology is used to consistently and accurately describe complex clinical concepts, such as diseases and treatments, associated with care. Each clinical terminology represents a single domain of clinical concepts, and clinical concepts are typically represented by unique codes within the domain of a given clinical terminology.</p>
+        <p>For example, the International Classification of Diseases, Ninth Edition (ICD-9) clinical terminology uses standardized codes and display terms to identify and classify clinical concepts. The following table provides just a few of the thousands of display terms and codes supported by the ICD-9 clinical terminology.</p>
+        <table style="width: 100%;caption-side: bottom;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Display term</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hypertensive disease</td>
+                    <td>401-404</td>
+                </tr>
+                <tr>
+                    <td>Essential hypertension</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td>Malignant essential hypertension</td>
+                    <td>401.0</td>
+                </tr>
+                <tr>
+                    <td>Benign essential hypertension</td>
+                    <td>401.1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Within a single clinical terminology, clinical concepts can be related to each other in a variety of ways. The ICD-9 clinical terminology demonstrates a typical acyclic hierarchical structure, with hierarchical relationships between clinical concepts. For example, the following diagram shows the relationships between the clinical concepts listed in the previous table, for the ICD-9 clinical terminology.</p>
+        <p>
+            <img src="../Images/TerminologyConcepts01.png" />
+        </p>
+        <p>ICD-9 is not the only clinical terminology available. Several standardized clinical terminologies are typically used, and often have different codesandmeanings associated with the same clinical concept. For example, the following table describes the same clinical concepts shown in the previous table, but usesthe display terms and codes supported by the Systematized Nomenclature of Medicine<MadCap:annotation MadCap:comment="insert em dash" MadCap:createDate="2012-03-05T17:22:11.2165438-08:00" MadCap:creator="v-labenn" MadCap:editDate="2012-03-05T17:22:20.1082018-08:00" MadCap:editor="v-labenn" MadCap:initials="LLB">-</MadCap:annotation>Clinical Terms (<MadCap:annotation MadCap:comment="is it &quot;SNOWMED CT&quot; or &quot;SNOWMED-CT&quot;? (hyphen or not?" MadCap:createDate="2012-03-05T17:21:20.9240782-08:00" MadCap:creator="v-labenn" MadCap:editDate="2012-03-05T17:21:58.5342316-08:00" MadCap:editor="v-labenn" MadCap:initials="LLB">SNOMED CT</MadCap:annotation>) clinical terminology.</p>
+        <table style="width: 100%;caption-side: bottom;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Display term</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hypertensive disorder, systemic arterial</td>
+                    <td>38341003</td>
+                </tr>
+                <tr>
+                    <td>Essential hypertension</td>
+                    <td>59621000</td>
+                </tr>
+                <tr>
+                    <td>Benign essential hypertension</td>
+                    <td>1201005</td>
+                </tr>
+                <tr>
+                    <td>Malignant essential hypertension</td>
+                    <td>78975002</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Similarly,  the following diagram shows the hierarchical relationships between the clinical concepts listed in the previous table, for the SNOMED CT clinical terminology.</p>
+        <p>
+            <img src="../Images/TerminologyConcepts02.png" />
+        </p>
+        <p class="note">Even within a single clinical terminology, multiple display terms can be used to describe the same, single clinical concept. Many clinical terminologies include the idea of a synonym, a display term which maps to another concept. For more information about synonyms, see <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>.</p>
+        <p>A single provider can use multiple clinical terminologies, and typically must map clinical concepts between multiple clinical terminologies to ensure that incoming data from external sources can be accepted and loaded into the provider's data store. Not all clinical terminologies cover the same domain of clinical concepts, and some clinical terminologies are periodically revised to incorporate changes in the medical field.        </p>
+        <p>The same clinical concepts can be described in very different ways between clinical terminologies. Often, a mapping terminology is used to map clinical concepts between clinical terminologies. For example, the following diagram illustrates how the equivalent clinical concepts previously described for both the ICD-9 and SNOMED CT clinical terminologies can be related to each other. (Note that not all clinical concepts are mapped between clinical terminologies so easily.)</p>
+        <p>
+            <img src="../Images/TerminologyConcepts03.png" />
+        </p>
+        <p class="Figure"><MadCap:variable name="BrandingHSG.Amalga Short" /> provides a set of public entities, in the Microsoft.Terminology.Beta namespace, that can be mapped to application views in the virtual schema of a hosted application for querying purposes. Additionally, <MadCap:variable name="BrandingHSG.Amalga Short" /> also provides a service endpoint, ITerminologyQueryService, with which your hosted application can retrieve information about:</p>
+        <ul>
+            <li>Terminologies</li>
+            <li>Concepts and root concepts</li>
+            <li>Synonyms</li>
+            <li>Relationships and relationship types</li>
+        </ul>
+        <h2><a name="Working2"></a>Working with semantic tags</h2>
+        <p>In <MadCap:variable name="BrandingHSG.Amalga Short" />, the terminologies and concepts stored and organized by the Terminology platform application are expressed as semantic tags, strings applied to data assets that provide additional metadata for organization, search, and performance functionality. </p>
+        <p>Semantic tags can be applied as messages are acquired, shredded, and parsed in the data pipeline, ensuring that clinical concepts are consistently applied to incoming data. Semantic tags can also be applied to specific data assets, to provide discoverability and organization metadata for the storage system in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>For more information about applying semantic tags, see <MadCap:xref href="TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_OVW_WorkingTerminologyQueries.htm" target="" title="" alt="">Working with terminology queries on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_OVW_WorkingSemanticTags.htm" target="" title="" alt="">Working with semantic tags on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref target="" title="" alt="">Terminology Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Terminologies.htm" target="" title="" alt="">Terminologies on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Synonyms.htm" target="" title="" alt="">Synonyms on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Relationships.htm" target="" title="" alt="">Relationships on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Other resources </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/Entity_MS_Terminology/DP_Nav_EntityDefs.htm" target="" title="" alt="">Microsoft.Terminology entity namespace on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

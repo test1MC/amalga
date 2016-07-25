@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1174" MadCap:lastWidth="362" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Source systems</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:source systems;source systems:Terminology platform application;Terminology platform application:ISemanticLabelTaggingService interface;ISemanticLabelTaggingService interface:Terminology platform application;message shredder;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes source systems and how the Terminology platform application interacts with them for semantic tagging purposes.</p>
+        <p>In data ingestion terms, a source system identifies a specific incoming data feed. The Terminology platform application can map a source system to a clinical terminology for data ingestion purposes, allowing clinical concepts in incoming messages to be consistently and accurately identified when messages from the source system are shredded.</p>
+        <p>Messages submitted by the source system to the data pipeline are examined by the Message Shredder subsystem, which applies semantic tags to the columns it shreds automatically when the message type supports semantic tags. For more information about the <MadCap:variable name="FeatureName.Message Shredder" /> subsystem, see <MadCap:xref href="../../Data Ingestion/DI_Con_ShredSummary.htm" target="" title="" alt="">Message Shredder application on page 1</MadCap:xref>.</p>
+        <p>To ensure that a message type can support semantic tags, the Terminology platform application stores metadata about the source system, mapping the data feed provider and message type to a specific clinical terminology, so that the Message Shredder subsystem can identify and, if needed, transcode clinical concepts to incoming columns. </p>
+        <p>You can programmatically add a new source system to the Terminology platform application, by using the ISemanticLabelTaggingService service contract from the TerminologyService service. For more information about adding source systems, see <MadCap:xref href="TRM_CON_AddingSourceSystems.htm" target="" title="" alt="">Adding source systems on page 1</MadCap:xref>. Once added, you can retrieve information about existing source systems, also by using the ISemanticLabelTaggingService service contract. For more information about querying source systems, see <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref></p>
+        <p>You can also deactivate semantic tagging for an existing source system by using the same service. Deactivating the source system does not delete the mapping from the Terminology platform application, but instead indicates that the <MadCap:variable name="FeatureName.Message Shredder" /> pipeline application should not use that mapping during message shredding. For more information about deactivating a source system, see <MadCap:xref href="TRM_CON_DeactivatingSourceSystems.htm" target="" title="" alt="">Deactivating source systems on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingSourceSystems.htm" target="" title="" alt="">Adding source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DeactivatingSourceSystems.htm" target="" title="" alt="">Deactivating source systems on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Source systems and data vectors on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

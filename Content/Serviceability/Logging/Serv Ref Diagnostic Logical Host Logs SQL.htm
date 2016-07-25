@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="454" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Personas.All,Status.70 - Complete,TopicType.Ref_General,ReleaseTarget.TAP">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2011-09-23T13:48:45.0138371-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Diagnostic logical host log query</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>All log entries, from all time, from the specified logical host, <MadCap:change MadCap:changes="1">are </MadCap:change>sorted by date. Replace <span class="Placeholder">FabricLogicalHost</span> with the appropriate logical host name.  </p><pre xml:space="preserve">SELECT [Id]
+      ,[EntryID]
+      ,[TimeStampUTC]
+      ,[ActivityID]
+      ,[PId]
+      ,[TId]
+      ,[Level]
+      ,[ServerName]
+      ,[LogicalHostName]
+      ,[ParentInstance]
+      ,[ComponentInstance]
+      ,[Source]
+      ,[Context]
+      ,[Message]
+      ,[ExceptionName]
+      ,[AssemblyName]
+      ,[ClassName]
+      ,[MethodName]
+      ,[FileName]
+      ,[LineNumber]
+      ,[StackTrace]
+  FROM [AmalgaSystem].[DiagLog].[DiagLogEntry]
+  WHERE LogicalHostName = 'FabricLogicalHost' 
+  ORDER BY TimeStampUTC
+</pre>
+    </body>
+</html>

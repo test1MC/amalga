@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="868" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To hide a widget</p>
+        <ul>
+            <li>Click the Options icon ( <img src="../../Analytics/Images/AN_settings.png" />) in the widget you want to hide and click <span class="UIElementAction">Hide</span>. The widget will close, but the Options icon will still be displayed.</li>
+        </ul>
+    </body>
+</html>

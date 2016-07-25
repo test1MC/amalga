@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="78" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>The storage schema listed in the <MadCap:variable name="UI-Labels.Feed Browser" /> tab corresponds to the storage schema in place when <MadCap:variable name="FeatureName.Management Console second use" /> was accessed. Storage schema can change when tables or views are created through data ingestion or through publication of read-write application views. To update the list of storage schema, refresh the browser and then redisplay the entity binding window.</body>
+</html>

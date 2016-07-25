@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="75" MadCap:lastWidth="988">
+    <head>
+    </head>
+    <body>
+        <p>For more information about built-in <MadCap:variable name="BrandingHSG.Amalga Short" /> roles and operations allowed for each role, see <MadCap:xref href="../Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>. For information on adding accounts to roles, see <MadCap:xref href="../Management Console/User Management/SERV_TASK_Roles-AcctAdd.htm" target="" title="" alt="">See "Assign accounts to a role"</MadCap:xref>.</p>
+    </body>
+</html>

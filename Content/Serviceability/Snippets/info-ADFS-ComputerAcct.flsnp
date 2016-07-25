@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="120" MadCap:lastWidth="576" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource,EditingTags.2 - Edit in process,EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p>Computer accounts participating in <MadCap:variable name="BrandingHSG.Amalga Short" /> must be stored in the main user identity store (such as <MadCap:variable name="TechnicalTerms.Active Directory Domain Services" />) that is used by the instance of <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS)" /> dedicated to <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+    </body>
+</html>

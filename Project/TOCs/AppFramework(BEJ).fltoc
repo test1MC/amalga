@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="Developing a User Interface using the [%=FeatureName.Amalga Framework%] "
+    Link="/Content/AppFramework_NonReference/AF_Lnd.htm">
+    <TocEntry
+      Title="AF_Con_GettingStarted"
+      Link="/Content/AppFramework_NonReference/AF_Con_GettingStarted.htm"
+      ReplaceMergeNode="false"
+      StartSection="false"
+      StartChapter="false"
+      VolumeNumberReset="same"
+      SectionNumberReset="continue"
+      ChapterNumberReset="continue"
+      ComputeToc="false"
+      conditions="Production.doNOTbuild">
+      <TocEntry
+        Title="AF_Con_WithSharePoint2010"
+        Link="/Content/AppFramework_NonReference/AF_Con_WithSharePoint2010.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_WithPortals"
+        Link="/Content/AppFramework_NonReference/AF_Con_WithPortals.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_BuildingBlocks"
+        Link="/Content/AppFramework_NonReference/AF_Con_BuildingBlocks.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_DevEnvironment"
+        Link="/Content/AppFramework_NonReference/AF_Con_DevEnvironment.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="AF_Con_DevRequirements"
+          Link="/Content/AppFramework_NonReference/AF_Con_DevRequirements.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="AF_Con_DevConfig"
+          Link="/Content/AppFramework_NonReference/AF_Con_DevConfig.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="AF_Con_StarterKit"
+          Link="/Content/AppFramework_NonReference/AF_Con_StarterKit.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="AF_Task_InstallStarterKit"
+          Link="/Content/AppFramework_NonReference/AF_Task_InstallStarterKit.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Pages and solutions"
+      Link="/Content/AppFramework_NonReference/AF_Con_PagesSolutions.htm">
+      <TocEntry
+        Title="Portal page administration and configuration"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesPortalPageAdministration.htm" />
+      <TocEntry
+        Title="Foundational site definitions"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesFoundational.htm" />
+      <TocEntry
+        Title="Patient Portal site"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesPatientPortal.htm" />
+      <TocEntry
+        Title="Provider Portal site"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesProviderPortal.htm" />
+      <TocEntry
+        Title="Staff Portal site"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesStaffPortal.htm" />
+    </TocEntry>
+    <TocEntry
+      Link="/Content/AppFramework_NonReference/AF_Con_Controls.htm"
+      Title="[%=FeatureName.Amalga Framework second use%] controls">
+      <TocEntry
+        Title="[%=BrandingHSG.Amalga Short%] controls overview"
+        Link="/Content/AppFramework_NonReference/AF_Con_Controls_Overview.htm" />
+      <TocEntry
+        Title="Generic controls"
+        Link="/Content/AppFramework_NonReference/AF_Con_GenericControlsLanding.htm">
+        <TocEntry
+          Title="Base classes and control templates"
+          Link="/Content/AppFramework_NonReference/AF_Con_GenericBaseClasses.htm" />
+        <TocEntry
+          Title="Running Javascript from a server control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlAddsJavascript.htm" />
+        <TocEntry
+          Title="Create a  [%=FeatureName.Amalga Framework second use%] control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ExtendControls.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Toolbox controls"
+        Link="/Content/AppFramework_NonReference/AF_Con_UsingControls.htm">
+        <TocEntry
+          Title="About Box"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlAboutBox.htm" />
+        <TocEntry
+          Title="AF_Con_ControlGridView"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlGridView.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Patient Banner control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlPatientBanner.htm" />
+        <TocEntry
+          Title="Patient Portal Sign Up control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlPatientPortalSignup.htm" />
+        <TocEntry
+          Title="Patient Portal Sign In control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlPatientPortalSignin.htm" />
+        <TocEntry
+          Title="Patient Search control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlPatientSearch.htm" />
+        <TocEntry
+          Title="HealthVault Record Selector"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlHVRecordSelector.htm" />
+        <TocEntry
+          Title="Reusable Lightbox control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlReusableLightbox.htm" />
+        <TocEntry
+          Title="[%=BrandingMS.SharePoint%] Ribbon Toggle control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlSPRibbonToggle.htm" />
+        <TocEntry
+          Title="Solution Picker control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlSolutionPicker.htm" />
+        <TocEntry
+          Title="AF_Task_WebPartInGridView"
+          Link="/Content/AppFramework_NonReference/AF_Task_WebPartInGridView.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="Localizable List control"
+          Link="/Content/AppFramework_NonReference/AF_Con_ControlLocalizableList.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Create and extend [%=BrandingHSG.Amalga Short%] controls"
+        Link="/Content/AppFramework_NonReference/AF_Con_Controls_Create_LND.htm">
+        <TocEntry
+          Title="Create a new [%=BrandingHSG.Amalga Short%] control"
+          Link="/Content/AppFramework_NonReference/AF_Con_Controls_Add_New.htm" />
+      </TocEntry>
+      <TocEntry
+        Link="/Content/AppFramework_NonReference/AF_Con_EC_Landing.htm"
+        Title="External connectivity">
+        <TocEntry
+          Title="Creating clinical documents"
+          Link="/Content/AppFramework_NonReference/AF_Con_EC_ClinicalDocument1.htm"></TocEntry>
+        <TocEntry
+          Title="HealthVault Connector"
+          Link="/Content/AppFramework_NonReference/AF_Con_EC_HVConnector1.htm" />
+        <TocEntry
+          Title="Working with [%=BrandingHSG.HealthVault%] data"
+          Link="/Content/AppFramework_NonReference/AF_Con_HVDataAccess.htm">
+          <TocEntry
+            Title="AF_Con_HVAuth"
+            Link="/Content/AppFramework_NonReference/AF_Con_HVAuth.htm"
+            conditions="Production.doNOTbuild" />
+          <TocEntry
+            Title="AF_Con_HVClientAccess"
+            Link="/Content/AppFramework_NonReference/AF_Con_HVClientAccess.htm"
+            conditions="Production.doNOTbuild" />
+        </TocEntry>
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Site customization"
+      Link="/Content/Connected_Health_Portals/AF_Con_Site_Customization.htm">
+      <TocEntry
+        Title="Base structural styles"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesMasterPageStyles.htm" />
+      <TocEntry
+        Title="Master pages"
+        Link="/Content/Connected_Health_Portals/AF_Con_Master_Pages.htm" />
+      <TocEntry
+        Title="Customize patient match workflows"
+        Link="/Content/AppFramework_NonReference/AF_Con_PagesCustomizePatientMatch.htm" />
+      <TocEntry
+        Title="Themes"
+        Link="/Content/Connected_Health_Portals/AF_Con_Themes.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="Deploy a theme"
+          Link="/Content/Connected_Health_Portals/AF_Task_Deploy_Theme.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+      <TocEntry
+        Title="Add legal content"
+        Link="/Content/Connected_Health_Portals/AF_Con_Add_Legal_Content.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="Framework error handling"
+      Link="/Content/AppFramework_NonReference/AF_Con_ErrorHandling.htm"
+      StartSection="false"
+      StartChapter="false">
+      <TocEntry
+        Title="AF_Con_ErrorHandlingUsage"
+        Link="/Content/AppFramework_NonReference/AF_Con_ErrorHandlingUsage.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_ErrorMessages"
+        Link="/Content/AppFramework_NonReference/AF_Con_ErrorMessages.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="AF_Con_ErrorMessagesPageMessaging"
+          Link="/Content/AppFramework_NonReference/AF_Con_ErrorMessagesPageMessaging.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="AF_Con_ErrorMessagesConfiguration"
+          Link="/Content/AppFramework_NonReference/AF_Con_ErrorMessagesConfiguration.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="Patient linking"
+      Link="/Content/Connected_Health_Portals/AF_Con_Patient_linking.htm">
+      <TocEntry
+        Title="Patient linking configuration"
+        Link="/Content/Connected_Health_Portals/AF_Con_Patient_linking_config.htm" />
+      <TocEntry
+        Title="Patient linking process"
+        Link="/Content/Connected_Health_Portals/AF_Con_Patient_linking_process.htm" />
+      <TocEntry
+        Title="Patient signup and linking process"
+        Link="/Content/Connected_Health_Portals/AF_Con_Patient_linking_process.htm" />
+      <TocEntry
+        Title="Add a custom field"
+        Link="/Content/Connected_Health_Portals/AF_Task_Add_Custom_Fields.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Staff handles link requests"
+        Link="/Content/Connected_Health_Portals/AF_Con_Patient_linking_staff.htm" />
+    </TocEntry>
+    <TocEntry
+      Link="/Content/Connected_Health_Portals/AF_Con_Sites.htm"
+      Title="Site definitions"
+      conditions="Production.doNOTbuild">
+      <TocEntry
+        Title="Patient site"
+        Link="/Content/Connected_Health_Portals/AF_Con_Patient_Site.htm"
+        conditions="Production.doNOTbuild"
+        StartSection="false"
+        StartChapter="false"
+        VolumeNumberReset="same"
+        SectionNumberReset="continue"
+        ChapterNumberReset="continue" />
+      <TocEntry
+        Title="Internal provider site"
+        Link="/Content/Connected_Health_Portals/AF_Con_Internal_Provider_Site.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="Staff site"
+        Link="/Content/Connected_Health_Portals/AF_Con_Staff_Site.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_MasterPageStylesheets"
+        Link="/Content/AppFramework_NonReference/AF_Con_MasterPageStylesheets.htm"
+        conditions="Production.doNOTbuild">
+        <TocEntry
+          Title="AF_Con_CustomizeStylesheets"
+          Link="/Content/AppFramework_NonReference/AF_Con_CustomizeStylesheets.htm"
+          conditions="Production.doNOTbuild" />
+        <TocEntry
+          Title="AF_Task_ExtendThemeableStylesheet"
+          Link="/Content/AppFramework_NonReference/AF_Task_ExtendThemeableStylesheet.htm"
+          conditions="Production.doNOTbuild" />
+      </TocEntry>
+    </TocEntry>
+    <TocEntry
+      Title="AF_Con_BrandingAndCustomization"
+      Link="/Content/AppFramework_NonReference/AF_Con_BrandingAndCustomization.htm"
+      conditions="Production.doNOTbuild">
+      <TocEntry
+        Title="AF_Con_BrandingWhatToCustomize"
+        Link="/Content/AppFramework_NonReference/AF_Con_BrandingWhatToCustomize.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_CustomizationTiers"
+        Link="/Content/AppFramework_NonReference/AF_Con_CustomizationTiers.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_CustomizationTools"
+        Link="/Content/AppFramework_NonReference/AF_Con_CustomizationTools.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_CustomizationDeployment"
+        Link="/Content/AppFramework_NonReference/AF_Con_CustomizationDeployment.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_CustomizationSharePoint"
+        Link="/Content/AppFramework_NonReference/AF_Con_CustomizationSharePoint.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_CustomizationLinks"
+        Link="/Content/AppFramework_NonReference/AF_Con_CustomizationLinks.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+    <TocEntry
+      Title="AF_Con_AppDeploymentAndBinding"
+      Link="/Content/AppFramework_NonReference/AF_Con_AppDeploymentAndBinding.htm"
+      conditions="Production.doNOTbuild">
+      <TocEntry
+        Title="AF_Con_DeploymentStructure"
+        Link="/Content/AppFramework_NonReference/AF_Con_DeploymentStructure.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_DeploymentWorkflow"
+        Link="/Content/AppFramework_NonReference/AF_Con_DeploymentWorkflow.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_DeploymentRequiredArtifacts"
+        Link="/Content/AppFramework_NonReference/AF_Con_DeploymentRequiredArtifacts.htm"
+        conditions="Production.doNOTbuild" />
+      <TocEntry
+        Title="AF_Con_DeploymentRequiredPermissions"
+        Link="/Content/AppFramework_NonReference/AF_Con_DeploymentRequiredPermissions.htm"
+        conditions="Production.doNOTbuild" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

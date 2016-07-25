@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1093" MadCap:lastWidth="728" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>CTP2 - 07d DataExplorer Installation</h1>
+        <h2 style="color: #ff0000;">QUESTIONS&#160;REGARDING&#160;THE&#160;FOLLOWING&#160;COMMANDS</h2>
+        <p style="color: #ff0000;">The following commands are documented by test, but it is unclear to me on which host they should be run. Any input is appreciated.</p>
+        <ol>
+            <li class="InputText">./Setup.exe /Feature=ApplicationFramework /Install /AmalgaAdfsProviderUrl="https://V3Platform.redmond.corp.microsoft.com/adfs/ls" /HealthVaultStsProviderUrl="https://V3Brussels.redmond.corp.microsoft.com:7000/Login.aspx" /AdfsSigningCertPublic="C:\Certificates\ADFS Token Signing.cer" /StsSigningCertPublic="C:\Certificates\StsSigningPublicCert.cer" /SharePointApplicationPort=8080 /SharePointApplicationSSLCert="C:\Certificates\Server.redmond.Corp.Microsoft.Com.pfx" /SharePointApplicationSSLCertPublic="C:\Certificates\Server.redmond.Corp.Microsoft.Com.pfx" /HealthVaultAppCert="C:\Certificates\AppFrHV.pfx"  /HealthVaultAppCertPasswordSecure="livehealth/1" /HealthVaultPublicCert="C:\Certificates\GTE CyberTrust Global Root.cer" /PlatformServicesUrl="https://V3Platform.redmond.corp.microsoft.com:8889" /EULA=Accept<br></br><br></br></li>
+            <li class="InputText">.\Setup.exe /Feature ApplicationFramework /Uninstall /PlatformServicesUrl="https://V3Platform.redmond.corp.microsoft.com:8889"  /SharepointApplicationPort=8080<br></br><br></br></li>
+            <li class="InputText">./Setup.exe /Feature=HealthVaultSTS /StsApplicationPort=7000 /StsApplicationSSLCert="C:\Certificates\Server.redmond.Corp.Microsoft.com.pfx" /StsSigningCertWIthPrivateKey="C:\Certificates\HealthVaultStsSigningCert.pfx" /StsSigningCertPasswordSecure="STSTest" /StsPhysicalLocation="C:\HealthVaultSts" /HealthVaultAppCert="C:\Certificates\AppFrHV.pfx" /HealthVaultAppCertPasswordSecure="livehealth/1" /HealthVaultPublicCert="C:\Certificates\GTE CyberTrust Global Root.cer"  /HealthvaultApplicationId="42500dec-6730-4c97-9cd1-896ae69c91f2" /ProxyServer="http://itgproxy:80" /EULA=Accept<br></br><br></br></li>
+            <li class="InputText">./Setup.exe /Feature=AmalgaSharePointADFS /ClaimsProviderRootUrl=https://V3Brussels.redmond.corp.microsoft.com:7000/ /RelyingPartyRootUrl=https://V3Brussels.redmond.corp.microsoft.com:8080/ /StsSigningCertPublic="C:\Certificates\StsSigningPublicCert.cer" /StsSigningCertWithPrivateKey="C:\Certificates\HealthVaultStsSigningCert.pfx" /StsSigningCertPasswordSecure="STSTest"  /EULA=Accept</li>
+        </ol>
+        <p>Delete this text and replace it with your own content.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

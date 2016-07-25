@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1042.667" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.15 - Blocked">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Get-AmServiceEncryptionCertificate</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The Get-AmServiceEncryptionCertificate cmdlet gets the service encryption certificate associated with the endpoints of an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component. This certificate is also used as the token encryption certificate in <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" />.</p>
+        <p>The SSL certificate of the logical host to which a service is assigned is used as the service and token encryption certificate.</p>
+        <h2 MadCap:conditions="">Syntax</h2>
+        <p class="Syntax">Get-AmServiceEncryptionCertificate -InstanceName &lt;String&gt; -InstanceType &lt;String&gt;</p>
+        <h2 MadCap:conditions="">Parameter descriptions</h2>
+        <p class="h7">[-InstanceName] &lt;string&gt;</p>
+        <p>Takes the name of the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component instance. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>Name of an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> service or component instance.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-InstanceType] &lt;string&gt;</p>
+        <p>Takes the instance type of the item. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>ServiceInstance</p>
+                        <p>ComponentInstance</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="">Examples</p>
+        <p class="InputText">Get-AmServiceEncryptionCertificate -InstanceName TopologyService -InstanceType ComponentInstance</p>
+        <p class="InputText">Get-AmServiceEncryptionCertificate -InstanceName DataConnectorService -InstanceType ServiceInstance</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+    </body>
+</html>

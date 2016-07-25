@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="935" MadCap:lastWidth="420" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add an application dependency</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="application dependencies" />This topic describes how to use the Manifest Editor to add an application dependency to an application manifest.</p>
+        <p>Hosted applications can depend on other applications for features or support, and require that those dependent applications be present on a target Amalga topology before deployment. For example, any hosted application that contains a data manifest and accesses data from the Amalga platform depends on the DataConnector hosted application included with the <MadCap:variable name="FeatureName.Amalga fabric first use" />, and could not access data without having a valid instance of the DataConnector hosted application deployed on the target Amalga topology. The deployment tools provided with the Amalga platform check for application dependencies prior to deployment, stopping deployment if the requisite applications are not present.</p>
+        <p>You can explicitly specify such dependencies by using the Manifest Editor in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> to add <span class="MarkupLanguageElements">Dependency</span> elements to the <span class="MarkupLanguageElements">Dependencies</span> element of an application manifest for a hosted application. For more information about the <span class="MarkupLanguageElements">Dependency</span> element, see <MadCap:xref href="SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency Element on page 1</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To add an application dependency to an application manifest in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /></p>
+        <ol>
+            <li>In Solution Explorer, right-click the application manifest to which an application dependency must be added, and then click <span class="UIElementAction">Edit Manifest</span>.</li>
+            <li>If needed, expand <span class="UIElementAction">Data</span>.</li>
+            <li>Select <span class="UIElementAction">Dependencies</span>, and then click the ellipsis button (<b>...</b>) to display the Dependency Collection Editor.</li>
+            <li>Click <span class="UIElementAction">Add</span>.</li>
+            <li>Set the attributes for the new <span class="MarkupLanguageElements">Dependency</span> element to the appropriate values.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_Dependency.htm" target="" title="" alt="">Dependency Element on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Application_Dependencies.htm" target="" title="" alt="">Application dependencies on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Dependency_ColEditor.htm" target="" title="" alt="">Dependency Collection Editor on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SDK_CON_Manifest_Editor.htm" target="" title="" alt="">Manifest Editor on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

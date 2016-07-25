@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="542" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Procedure,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Personas.Einstein: Lead App Architect,Personas.Elvis: App Dev,TopicOwner.v-ssiera,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve manifests for an application</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic contains information and relevant links to enable resolving the application manifests. </p>
+        <p>For examples of how to resolve manifests in the context of <MadCap:variable name="BrandingHSG.Amalga Short" />CTP, see <MadCap:xref href="../../../Installation/Install Proc Application manifest resolution.htm" target="" title="" alt="">Resolve application manifests</MadCap:xref> in the <MadCap:variable name="BrandingHSG.Amalga Short" /> Installation Guide.</p>
+        <h2>Manifests needing resolution</h2>
+        <p>Following are the manifest types that need resolution. An application will have one application manifest and one or more service manifests.</p>
+        <ol>
+            <li>Application manifest: Only one per application containing application level settings.</li>
+            <li>Service manifests: There must be at least one of the following service manifest types and there may several. If there is more than one, each service manifest must be resolved.<ul><li>Doors Worker manifest: There can be one or more, and contains DoorsWorker service settings.</li><li><MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />manifest: There can be one or more, and contains WCF endpoint settings.</li></ul></li>
+        </ol>
+        <h2>Resolution requirements</h2>
+        <p>At a minimum, manifests must be resolve by editing the appropriate XML elements to include the following.</p>
+        <ul>
+            <li>Application instance names</li>
+            <li>Logical host targets</li>
+            <li>Dependency instance names</li>
+        </ul>
+    </body>
+</html>

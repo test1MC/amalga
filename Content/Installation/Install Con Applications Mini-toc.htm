@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2878.667" MadCap:lastWidth="660" MadCap:fileTags="ReleaseTarget.CTP1,Status.70 - Complete,Personas.Carlos: IT Admin,TopicType.Navigation,EditingTags.7 - Editing issues resolved,TopicOwner.v-ssiera" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Install Amalga applications – process overview</h1>
+        <p class="PersonaAll">&#160;</p>
+        <h2>Application installation process</h2>
+        <p>Applications are installed on the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology by the completing the following steps.</p>
+        <p>&#160;</p>
+        <p>
+            <img src="Images/ApplicationFlow3.png" />
+        </p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col MadCap:conditions="Production.doNOTbuild" />
+            <thead>
+                <tr>
+                    <th>&#160;</th>
+                    <th>Step</th>
+                    <th>Description</th>
+                    <th>Page</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr MadCap:conditions="">
+                    <td>1</td>
+                    <td>
+                        <MadCap:xref href="Install Nav HVConnect Prereqs.htm" target="" title="" alt=""> Connection prerequisites</MadCap:xref>
+                    </td>
+                    <td><MadCap:variable name="BrandingHSG.HealthVault" /> Connection has unique prerequisites to installation.</td>
+                    <td>
+                        <MadCap:xref href="#Applicat" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <MadCap:xref href="Install Proc Application manifest resolution.htm" target="" title="" alt="">Application manifest resolution</MadCap:xref>
+                    </td>
+                    <td>Extract and adjust the application manifests to reflect site appropriate application instance names, logical host names, and other parameters.</td>
+                    <td>
+                        <MadCap:xref href="Install Proc Application manifest resolution.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>
+                    </td>
+                    <td>
+                        <p>Install the applications using <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> cmdlets.</p>
+                    </td>
+                    <td>
+                        <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <MadCap:xref href="Install Proc Configuration.htm" target="" title="" alt="">Configuration</MadCap:xref>
+                    </td>
+                    <td>Adjust application specific requirements such as database access, performance parameters, and other settings.</td>
+                    <td>
+                        <MadCap:xref href="Install Proc Configuration.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <MadCap:xref href="Install Proc App Verification.htm" target="" title="" alt="">Verify application installation</MadCap:xref>
+                    </td>
+                    <td>Verify the success of the application installations.</td>
+                    <td>
+                        <MadCap:xref href="Install Proc App Verification.htm" target="" title="" alt="" class="PageNumber">1</MadCap:xref>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Required Amalga hosted applications</h2>
+        <p>To create a functioning <MadCap:variable name="BrandingHSG.Amalga Short" /> system, the following applications need to be installed in the order listed and on the server specified. The server names correlate to the diagram following the table.</p>
+        <p>The Data Ingestion, Imaging, and Data Explorer applications must be installed according to separate documentation. For those applications, use the associated links to access the installation procedures. If the documentation column contains "NA", the application can be installed with the documentation in this guide by starting with <MadCap:xref href="Install Proc Application manifest resolution.htm" target="" title="" alt="">Application manifest resolution</MadCap:xref>.</p>
+        <p class="caution">Read the important application notes below before beginning installation.</p>
+        <ul>
+            <li>Although other documentation must be used to install the Data Ingestion, Imaging, and Data Explorer applications, they must still be installed in the order listed.</li>
+            <li>Although other documentation must be used to install the Data Ingestion, Imaging, and Data Explorer applications, be sure to consult the <MadCap:xref href="Install Proc Configuration.htm" target="" title="" alt="">Configure applications</MadCap:xref> section to complete the database access configuration and other steps as required.</li>
+        </ul>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Application</th>
+                    <th>Server</th>
+                    <th>Documentation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>1</p>
+                    </td>
+                    <td>DataConnector</td>
+                    <td>PlatformLogicalHost</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Terminology</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Eventing</td>
+                    <td>PlatformLogicalHost
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Materializer</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>
+                        <MadCap:xref href="../DataPlatform1/Materializer/DP_Ovw_MaterializeView.htm" target="" title="" alt="">Materialized entity views</MadCap:xref> (available in Amalga 3.0 CTP CHM file)
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>FeedAcquisition</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>
+                        <MadCap:xref href="../Data Ingestion/DI_Lnd_DataPipeApps.htm" target="" title="" alt="">Data pipeline primer</MadCap:xref> (available in Amalga 3.0 CTP CHM file)           <![CDATA[
+                    ]]></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>MessageShredder</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>
+                        <MadCap:xref href="../Data Ingestion/DI_Lnd_DataPipeApps.htm" target="" title="" alt="">Data pipeline primer</MadCap:xref> (available in Amalga 3.0 CTP CHM file)           <![CDATA[
+                    ]]></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>DataParser</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>
+                        <MadCap:xref href="../Data Ingestion/DI_Lnd_DataPipeApps.htm" target="" title="" alt="">Data pipeline primer</MadCap:xref> (available in Amalga 3.0 CTP CHM file)           <![CDATA[
+                    ]]></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>EntityViewManager</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>CorrelationApplication</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>EnterpriseIdApplication</td>
+                    <td>AppsLogicalHost1</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>TaskFlowApplication</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>NotificationApplication</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>ClinicalDocument</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>HealthVaultConnector</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Framework</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>NA</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>DataExplorer</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>
+                        <MadCap:xref href="../AmalgaDataExplorer555/InstallationAndDeployment/ADE_Prerequisites.htm" target="" title="Data Explorer" alt="" /> (Separate section of this document)</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>ImagingRegistryDocumentApplication</td>
+                    <td>AppsLogicalHost2
+</td>
+                    <td>
+                        <MadCap:xref href="../Imaging/Service IRS/MIM-WKT-Deploy-IRS.htm" target="" title="" alt="">How to Deploy the IRDS Application</MadCap:xref> (available in Amalga 3.0 CTP CHM file)           <![CDATA[
+                    ]]></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p MadCap:conditions="Production.ScreenOnly">
+            <img src="Images/MultiBoxTopology2.png" />
+        </p>
+        <p MadCap:conditions="Production.PrintOnly">
+            <img src="Images/MultiBoxTopology2.png" style="width: 559px;height: 438px;" />
+        </p>
+        <h2 MadCap:conditions="Production.InternalOnly">Important application installation notes</h2>
+        <p class="caution" MadCap:conditions="Production.InternalOnly">Please review the following issues before beginning any application installation.</p>
+        <ul MadCap:conditions="Production.InternalOnly">
+            <li>Security best practices dictate that Amalga hosted applications not be installed on the same server as Platform services and <MadCap:variable name="TechnicalTerms.Active Directory (adjective)" /> Federation Services (ADFS).</li>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p class="Label">Tasks</p>
+        <p>
+            <MadCap:xref href="Install Proc Application manifest resolution.htm" target="" title="" alt="">Resolve application manifests</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Install Proc Configuration.htm" target="" title="" alt="">Configure applications</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Install Proc App Verification.htm" target="" title="" alt="">Verify application installation</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Install Ref Appendix B PowerShell Ref.htm" target="" title="" alt=""> installation Doors PowerShell reference</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="Install Con Applications Mini-toc.htm" target="" title="" alt="">Install applications process overview</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.70 - Complete,ReleaseTarget.CTP1,Personas.All,TopicOwner.v-wfren" MadCap:ignoredWords="AF_Con_Master_Pages" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Site customization</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="sites: customization;customizing sites" />This topic describes the ways that the sites can be customized.</p>
+        <p>All the elements of an <MadCap:variable name="FeatureName.Amalga Framework" /> site can be customized. Some customizations (like branding<MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"> and legal content</MadCap:conditionalText>) are required to meet  the specific needs of your hospital environment, while others (like fonts and colors) are optional.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Ways" target="" title="" alt="">Ways to customize a  site</MadCap:xref>
+            </li>
+            <li MadCap:conditions="Production.doNOTbuild">
+                <MadCap:xref href="#Theming" target="" title="" alt="">Theming</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Styling" target="" title="" alt="">Styling</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Customiz" target="" title="" alt="">Customization</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Control" target="" title="" alt="">Control extension</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Control2" target="" title="" alt="">Control replacement</MadCap:xref>
+            </li>
+        </ul>
+        <h2>
+            <a name="Ways">
+            </a>Ways to customize a <MadCap:variable name="FeatureName.Amalga Framework second use" /> site</h2>
+        <p class="Figure">&#160;</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> provides several ways to customize the appearance and behavior of a site. They are listed below in order of increasing capability  and complexity.</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <a name="Theming">
+            </a>Theming</h2>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:variable name="BrandingMS.SharePoint" /> supports Office 2010 themes, which provide a quick and easy way to apply colors and different fonts to the content of a site.  Any site owner or user with designer rights can customize themes by modifying the site settings in the browser.</p>
+        <p MadCap:conditions="Production.doNOTbuild">For more information on modifying <MadCap:variable name="BrandingMS.SharePoint" /> themes, see <a href="http://technet.microsoft.com/en-us/library/ee424397.aspx">Themes overview</a>.</p>
+        <h2>
+            <a name="Styling">
+            </a>Styling</h2>
+        <p>The Framework portal sites use one style sheet (Base.css) to control the appearance and layout of every element in the page. The base style sheet defines the core size, spacing, and layout styles used by the site. Use these styles whenever possible to keep site styling consistent. For more information, see <a href="../AppFramework_NonReference/AF_Con_PagesMasterPageStyles.htm">Base structural styles</a>.</p>
+        <h2>
+            <a name="Customiz">
+            </a>Customization</h2>
+        <p>"Site customization" refers to changing or replacing any of the specific resources on the <MadCap:variable name="BrandingMS.SharePoint" /> site.  This includes, but is not limited to, the following:</p>
+        <p>
+            <span class="Label">Image files</span> – logos, backgrounds, and other graphical page elements.</p>
+        <p>
+            <span class="Label">Resource files</span> (.resx) – localizable text used by the page elements.</p>
+        <p>
+            <span class="Label">User control files</span> (.ascx) – configuration for Web Parts and server controls.</p>
+        <p>
+            <span class="Label">Master pages</span> (.master) - common structure for the pages of a site. For more information about the <MadCap:variable name="FeatureName.Amalga Framework second use" /> master pages, see <a href="AF_Con_Master_Pages.htm"><MadCap:xref href="AF_Con_Master_Pages.htm" target="" title="" alt=""> Master pages on page 1</MadCap:xref></a>.</p>
+        <p class="warning">Site pages associated with patient matching work flows should not be replaced, as this will break the work flow. Similarly, removing individual items from a patient matching work flow page will break the reference in the code-behind. It is safe to add new page items that reference the code-behind. For more information, see <a href="../AppFramework_NonReference/AF_Con_PagesCustomizePatientMatch.htm">Customize patient matching work flows</a>.</p>
+        <h2>
+            <a name="Control">
+            </a>
+            <MadCap:annotation MadCap:createDate="2011-10-07T02:44:18.2811839-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="I'll expand this with links to the control topics." MadCap:editor="v-wipete" MadCap:editDate="2011-10-07T02:44:36.5801012-07:00">Control extension</MadCap:annotation>
+        </h2>
+        <p>The preceding tiers of customization allow changes to the structure and appearance of the sites.  To change the functionality of the site, you may need to replace one or more of the controls that implement the site's behavior.</p>
+        <p>Control e<MadCap:annotation MadCap:createDate="2011-10-15T15:28:38.5780116-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Should &quot;control extension&quot; be set apart in any way? Make a variable?" MadCap:editor="v-labenn" MadCap:editDate="2011-10-15T15:29:10.7616000-07:00">xtension </MadCap:annotation>is the replacement of one site control with another, where the new control is derived from one of the controls shipped with the <MadCap:variable name="FeatureName.Amalga Framework second use" />. Control extension allows the new control to inherit support for the <MadCap:annotation MadCap:createDate="2011-10-15T15:36:05.9697220-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="if there are topics on these subjects, we should link to them." MadCap:editor="v-labenn" MadCap:editDate="2011-10-15T15:36:29.5966420-07:00">page messaging system, application identity discovery</MadCap:annotation>, and other <MadCap:variable name="FeatureName.Amalga Framework second use" /> features without any additional programming.</p>
+        <p>For more information on extending <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls, see <a href="../AppFramework_NonReference/AF_Con_Controls.htm"><MadCap:variable name="FeatureName.Amalga Framework" /> controls overview</a> and <a href="../AppFramework_NonReference/AF_Con_ExtendControls.htm">Creating a new<MadCap:variable name="FeatureName.Amalga Framework second use" /> control.</a></p>
+        <h2>
+            <a name="Control2">
+            </a>Control replacement</h2>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-15T15:29:21.7771216-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Should &quot;control replacement&quot; be set apart in any way? Make a variable?" MadCap:editor="v-labenn" MadCap:editDate="2011-10-15T15:29:39.2518908-07:00">Control replacement </MadCap:annotation>is the process of writing a new control entirely from scratch, including implementation of the interfaces required to interact with other <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls and services.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="AF_Con_Master_Pages.htm" target="" title="" alt="">Master pages on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

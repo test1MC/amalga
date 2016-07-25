@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying positional data vectors</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:data vectors;data vectors:Terminology platform application;GetPositionalDataVectors method:Terminology platform application;GetTablePositionalDataVectors method:Terminology platform application;ISemanticLabelTaggingService interface:Terminology platform application;SearchFilter class:Terminology platform application;DataVectorSearchFilter class:Terminology platform application;PositionalDataVector class:Terminology platform application;Terminology platform application:GetPositionalDataVectors method;Terminology platform application:GetTablePositionalDataVectors method;Terminology platform application:ISemanticLabelTaggingService interface;Terminology platform application:SearchFilter class;Terminology platform application:DataVectorSearchFilter class;Terminology platform application:PositionalDataVector class;DataVectorTable class:Terminology platform application;Terminology platform application:DataVectorTable class;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for positional data vectors from the Terminology platform application.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-05T16:28:42.5669103-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Dennis, please add &quot;In this topic&quot; label and bulleted xrefs to level 2 headings, as you did in the topic file TRM_CON_QueryingRelationshipTypes.hym.\r\n\r\nalso,add level 2 index entires." MadCap:editor="v-labenn" MadCap:editDate="2012-03-05T16:31:17.3250775-08:00">You</MadCap:annotation> can use the ISemanticLabelTaggingService service contract from the TerminologyService service to retrieve existing positional data vectors from the Terminology platform application. The service contract provides two operations with which to filter the results, depending on whether you want to filter the results either by a set of search filters or by a specific table or view.</p>
+        <h2>Querying positional data vectors by search filter</h2>
+        <p>You can use the GetPositionalDataVectors operation, included in the ISemanticLabelTaggingService service contract, to retrieve a collection of PositionalDataVector objects that represent information about a filtered subset of positional data vectors. The GetPositionalDataVectors operation accepts an array of DataVectorSearchFilter objects, which can be used to filter the results based on the values of PositionalDataVector properties, and a string array containing concept GUIDs, which can be used to filter the results based on specific concepts.</p>
+        <h3>Example</h3>
+        <p>The following example demonstrates how to use the GetPositionalDataVectors operation to retrieve the data vectors for the MEDORDER source system. </p><pre xml:space="preserve">public PositionalDataVector[] GetPositionalDataVectorsFromService()
+{
+    // Use GetPositionalDataVectorsFromService from ISemanticLabelTaggingService
+    // to retrieve a filtered array of PositionalDataVector objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+    // Open the client channel and instantiate the WCF client.
+    ISemanticLabelTaggingService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Define an array of DataVectorSearchFilter objects, and add a new  
+    // object that limits the search to only those data vectors defined for the
+    // MEDORDER source system.
+    DataVectorSearchFilter[] testArray = new DataVectorSearchFilter[1] {
+        new DataVectorSearchFilter() {
+            SearchType = TerminologyClient.SearchType.ExactMatch,
+            PropertyName = DataVectorSearchPropertyName.SourceSystemName,
+            PropertyValue = "MEDORDER" }
+    };
+
+    // Define an array of strings for concept GUIDs.
+    string[] testGuids = new string[1];
+
+    // Invoke the operation from the service, passing in the array, and
+    // return the resulting array of PositionalDataVector objects.
+    return terminologyServiceClient.GetPositionalDataVectors(testArray, testGuids);
+}
+</pre>
+        <h2>Querying positional data vectors by table or view</h2>
+        <p>You can also use the GetTablePositionalDataVectors operation, included in the same service contract, to retrieve information about the positional data vectors for a specific set of tables or views. The GetTablePositionalDataVectors operation accepts an array of DataVectorTable objects, with which you can specify the database, schema, and table or view names for which the service can retrieve an array of PositionalDataVector objects. </p>
+        <h3>Example</h3>
+        <p>The following example demonstrates how to use the GetTablePositionalDataVectors operation to retrieve the data vectors for a single sample table, [ClinicalData].[MEDORDER].[v_Collapse_ORC_Default].</p><pre xml:space="preserve">public PositionalDataVector[] GetTablePositionalDataVectorsFromService()
+{
+    // Use GetTablePositionalDataVectorsFromService from ISemanticLabelTaggingService
+    // to retrieve an array of PositionalDataVector objects for a single table.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ISemanticLabelTaggingService");
+
+    // Open the client channel and instantiate the WCF client.
+    ISemanticLabelTaggingService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ISemanticLabelTaggingService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Define an array of DataVectorTable objects, and add a new DataVectorTable 
+    // object that references the [ClinicalData].[MEDORDER].[v_Collapse_ORC_Default]
+    // table.
+    DataVectorTable[] testArray = new DataVectorTable[1] 
+        {new DataVectorTable() {
+            DatabaseName = "ClinicalData",
+            SchemaName = "MEDORDER",
+            TableOrViewName = "v_Collapse_ORC_Default"
+        }};
+
+    // Invoke the operation from the service, passing in the array, and
+    // return the resulting array of PositionalDataVector objects.
+    return terminologyServiceClient.GetTablePositionalDataVectors(testArray);
+}
+</pre>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_AddingDataVectors.htm" target="" title="" alt="">Adding data vectors on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingSourceSystems.htm" target="" title="" alt="">Querying source systems on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_DataVectors.htm" target="" title="" alt="">Source systems and data vectors on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

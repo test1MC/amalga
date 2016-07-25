@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1608" MadCap:lastWidth="971" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren,Status.40 - Ready for Tech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Base structural styles</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the default base structural styles, and shows how to customize styles and use themes.</p>
+        <p>You can change the visual appearance and layout of the toolbox controls and portal site pages by overriding styles that are defined in the base structural stylesheet.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Base">Base structural style sheet</a>
+            </li>
+            <li><a href="#Customiz">Override default styles and add new styles</a>
+            </li>
+            <li>U<a href="#Use">se <MadCap:variable name="BrandingMS.SharePoint" /> themes</a><MadCap:annotation MadCap:createDate="2012-02-16T23:04:58.7290846-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="How does theming work?" MadCap:editor="v-wfren" MadCap:editDate="2012-02-16T23:05:03.2029792-08:00">&#160;</MadCap:annotation></li>
+        </ul>
+        <h2><a name="Base"></a>Base structural style sheet</h2>
+        <p>The base structural style sheet for Amalga is base.css, which is loaded after (and therefore overrides) <MadCap:variable name="BrandingMS.SharePoint" />'s corev4.css. All of the styles and structure in the Amalga portal sites are defined in base.css. By default, base.css is installed to \14\TEMPLATE\LAYOUTS\1033\STYLES\Amalga. Feel free to browse through base.css to see how things are set up by default. Sections </p>
+        <p class="warning">Do not edit or delete base.css. Instead, use a custom style sheet to override the styles of base.css.</p>
+        <h2><a name="Customiz"></a>Override default styles and add new styles</h2>
+        <p>You can create a custom style sheet to override any of the styles that have been set in base.css, and to add new styles. To do this, use the following process.</p>
+        <ol>
+            <li>Create a new custom CSS file to override, or add to, any of the base styles. Be sure to name your styles uniquely. We recommend beginning each selector with a unique identifier. For example, <span class="code">#myApp.bigHeader</span> rather than just <span class="code">#bigHeader</span>. Doing this will help to prevent collisions with other stylesheets on the site, either default or those from other solutions that may be installed.</li>
+            <li>Deploy the custom style sheet to \14\TEMPLATE\LAYOUTS\1033\STYLES\Amalga.</li>
+            <li>Set a new property (key-value pair) in the SharePoint property bag for the web to which the stylesheet will be applied. For example:<ul style="list-style-type: circle;"><li>Key="CustomCss"</li><li>Value="\14\TEMPLATE\LAYOUTS\1033\STYLES\Amalga"</li></ul><p>Note that all webs underneath the root will include this custom style sheet.</p></li>
+        </ol>
+        <p><MadCap:variable name="BrandingMS.SharePoint" /> registers style sheets in the following order:</p>
+        <ol>
+            <li>corev4.css</li>
+            <li>jquery-ui.css</li>
+            <li>base.css</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2012-02-17T16:39:59.4322085-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Need to discuss theme.css in the theme section." MadCap:editor="v-wfren" MadCap:editDate="2012-02-17T16:40:10.3132965-08:00">theme.css</MadCap:annotation>
+            </li>
+            <li>[custom].css</li>
+        </ol>
+        <h3>Update the <MadCap:variable name="BrandingMS.SharePoint" /> property bag</h3>
+        <p>There are many ways to update the <MadCap:variable name="BrandingMS.SharePoint" /> property bag. You can use the <MadCap:variable name="BrandingMS.SharePoint" /> Management Shell to call the <a href="http://technet.microsoft.com/en-us/library/ff607807.aspx">Get-SPWeb</a> cmdlet as shown in the following example:</p>
+        <p class="code">$url = "https://[xxxxxxx].com:8080"</p>
+        <p class="code">$web = Get-SPWeb $url</p>
+        <p class="code">$web.AllProperties["CustomCss"]= "14/TEMPLATE/LAYOUTS/1033/STYLES/Amalga/[custom].css"</p>
+        <p class="code">$web.Update()</p>
+        <p>To view all properties:</p>
+        <p class="code">$web.AllProperties</p>
+        <p>You can also set the property programmatically (for example from a feature receiver), as shown here:</p>
+        <p class="code">private static void SetSPWebProperty(SPWeb web, string key, string value)</p>
+        <p class="code">{</p>
+        <p class="code"> if (web != null &amp;&amp; !web.AllProperties.ContainsKey(key))</p>
+        <p class="code"> {</p>
+        <p class="code"> web.AllProperties[key] = value;</p>
+        <p class="code"> web.Update();</p>
+        <p class="code"> }</p>
+        <p class="code">}</p>
+        <p class="note">Whenever changing the <MadCap:variable name="BrandingMS.SharePoint" /> property bag, be sure to use iisreset to flush the cache so that the change is properly picked up.</p>
+        <h2><a name="Use"></a>Use <MadCap:variable name="BrandingMS.SharePoint" /> themes</h2>
+        <p>You can make quick changes to the font and color options of a site by changing the <MadCap:variable name="BrandingMS.SharePoint" /> theme. You can also create a custom theme. To change site themes, take the following steps.</p>
+        <ol>
+            <li>Activate the <MadCap:variable name="BrandingMS.SharePoint" /> ribbon by clicking the caret in the upper-right corner of the page. In order to do this you will need to have the Design permission level.</li>
+            <li>In the <MadCap:variable name="BrandingMS.SharePoint" /> ribbon, click Site Actions, then select Site Settings.</li>
+            <li>On the Site Settings page under Look and Feel, click Site Theme.</li>
+            <li>Choose a theme and click Apply to apply the theme.</li>
+        </ol>
+        <p class="note"><MadCap:variable name="BrandingMS.SharePoint" /> themes only affect fonts, and the colors of certain page elements. Themes do not affect the layout or content of your site. The default Fovea items are not affected. For more information about themes see <a href="http://sharepoint.microsoft.com/blogs/GetThePoint/Lists/Posts/Post.aspx?ID=256">Using SharePoint Themes to Customize your SharePoint Site</a>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

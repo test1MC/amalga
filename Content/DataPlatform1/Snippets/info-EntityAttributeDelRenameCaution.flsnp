@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="64" MadCap:lastWidth="660" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>Before renaming or deleting entities or properties, ensure that the entity or property is not bound to columns or applications, and ensure that the entity or property is not specified by any access rules. </p>
+    </body>
+</html>

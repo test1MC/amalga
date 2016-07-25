@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="860.6667" MadCap:lastWidth="576" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,EditingTags.1 - Ready for Edit,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Extend Pipeline applications</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="Extend Pipeline applications" />Each pipeline application has a specific extensibility point, or points, and requirements to plug in external logic. The following table enumerates the applications, describes the extensibility points for each, and identifies the setting to declare in the service manifest.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 308px;" />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Application</th>
+                    <th>FeedConfigurationXML setting &lt;DataParserConfiguration&gt;<br />&lt;Plugins&gt;</th>
+                    <th>PluginConfigurationXML setting</th>
+                    <th>ShredderPluginConfigurationXML setting</th>
+                </tr>
+                <tr>
+                    <td><b><MadCap:variable name="Applications.Feed Acquisition (application)" /></b>
+                    </td>
+                    <td style="text-align: left;">None.</td>
+                    <td>Use this extensibility point to trap and verify messages prior to insertion to the <MadCap:variable name="Databases.MessageQueue" /> database, </td>
+                    <td>None.</td>
+                </tr>
+                <tr>
+                    <td><b><MadCap:variable name="Applications.Message Shredder (application)" /></b>
+                    </td>
+                    <td>None.</td>
+                    <td>None.</td>
+                    <td>Use this extensibility point to plug in a custom shredder if the delivered HL7 or CSV shredders do not match the message type, </td>
+                </tr>
+                <tr>
+                    <td><b><MadCap:variable name="Applications.Data Parser (application)" /></b>
+                    </td>
+                    <td>Use this extensibility point to specify the <a href="../API/Ref/Microsoft.Amalga.Pipeline.Transforms/Methods_T_MessageHelpers.htm">MessageHelper</a> transformation library. </td>
+                    <td>Use this extensibility point to plug in a custom transform library or custom transform code.</td>
+                    <td>None.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="Manifest XML/DI_Con_AcquireExtend.htm">Add an acquisition plug-in</a>
+        </p>
+        <p><a href="DI_Con_ShredExtend.htm">Add a shredder plug-in</a>
+        </p>
+        <p><a href="DI_Con_ParseExtend.htm">Add parser extensions</a>
+        </p>
+        <p class="SeeAlsoSubHead">Reference</p>
+        <p><a href="Manifest XML/DI_Intro_PluginModelConfigurationXML.htm">PluginModelConfigurationXML setting</a>
+        </p>
+        <p><a href="Manifest XML/DI_Intro_ShredderPluginConfigurationXML.htm">ShredderPluginConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_List_Parse.htm">[%=Applications.Data Parser (application)%] hierarchy</a>
+        </p>
+        <p><a href="Manifest XML/DI_XML_Manifest_Plugin.htm">Plugin element</a>
+        </p>
+    </body>
+</html>

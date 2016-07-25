@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="1100" MadCap:lastWidth="1720" MadCap:fileTags="Personas.Mahesh: DI Specialist,TopicOwner.v-ccole,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Feed acquisition: service manifest example for MLLP format</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>Modify the configuration as needed. For value descriptions, see <MadCap:xref href="DI_Task_AcquireApp.htm" target="" title="" alt="">Acquisition application</MadCap:xref>.</p><pre xml:space="preserve" class="code">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DeploymentManifest xmlns="http://www.microsoft.com/2011/03/health/deployment/hosting"
+                    Type = "DoorsWorker"
+                    Name="FeedAcquisition"
+                    InstanceName="AcquisitionService_ADT"
+                    Id="ff003bed-0e89-48ea-af49-51bf20621729"
+                    Version ="1.0.0.0"
+                    &gt;
+  &lt;DoorsWorkerManifest LogicalHostName = "FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="NLB" HostAssembly="Microsoft.Amalga.Pipeline.FeedAcquisition.exe"/&gt;
+
+   &lt;PerformanceCategories&gt;
+        &lt;PerformanceCategory Name="Amalga Data Acquisition Service Stats" Version="" CodeName="AcquisitionService" Help="Store the stats for Data Acquisition" MultiInstance="Yes"&gt;
+            &lt;PerformanceCounter Name="Messages Per Second" CodeName="MessagesProcessedPerSec" Type="RateOfCountsPerSecond32" Help="Records the service activity rate as the number of messages processed per second" /&gt;
+            &lt;PerformanceCounter Name="Message Process Time" CodeName="LastMessageProcessTime" Type="NumberOfItems64" Help="Records the time spent to process the last message" /&gt;
+            &lt;PerformanceCounter Name="Number of Invalid Messages" CodeName="InvalidMessageProcessedCount" Type="NumberOfItems64" Help="Records the number of invalid messages processed" /&gt;
+        &lt;/PerformanceCategory&gt;
+    &lt;/PerformanceCategories&gt;
+
+    &lt;Settings&gt;
+	 &lt;Setting Name="IdleConnectionTimeout" Type="System.Int32"&gt;
+			&lt;DefaultValue&gt;60000&lt;/DefaultValue&gt;
+		&lt;/Setting&gt;
+	 &lt;Setting Name="PluginConfigurationXml" Type="System.String"&gt;
+			&lt;DefaultValue/&gt;
+		&lt;/Setting&gt;
+        &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+            &lt;DefaultValue&gt;
+		 &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+                &lt;feeds&gt;
+                    &lt;feed name="ADT0"&gt;
+                       &lt;receiveadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.MLLPServer"&gt;
+                            &lt;port&gt;20000&lt;/port&gt;
+      			&lt;startblockcharacter&gt;0x0B&lt;/startblockcharacter&gt;
+      			&lt;endblockcharacter&gt;0x1C&lt;/endblockcharacter&gt;
+      			&lt;carriagereturncharacter&gt;0x0D&lt;/carriagereturncharacter&gt;
+
+&lt;ackcapture&gt;(?&amp;lt;tok0&amp;gt;[^|]*)\|(?&amp;lt;tok1&amp;gt;[^|]*)\|(?&amp;lt;tok2&amp;gt;[^|]*)\|(?&amp;lt;tok3&amp;gt;[^|]*)\|(?&amp;lt;tok4&amp;gt;
+	[^|]*)\|(?&amp;lt;tok5&amp;gt;[^|]*)\|(?&amp;lt;tok6&amp;gt;[^|]*)\|(?&amp;lt;tok7&amp;gt;[^|]*)\|(?&amp;lt;tok8&amp;gt;
+	[^|]*)\|(?&amp;lt;tok9&amp;gt;[^|]*)\|(?&amp;lt;tok10&amp;gt;[^|]*)\|(?&amp;lt;tok11&amp;gt;[^|]*)\|(?&amp;lt;tok12&amp;gt;[^|]*)\|(?&amp;lt;tok13&amp;gt;[^|]*)&lt;/ackcapture&gt;
+&lt;ackformular&gt;MSH|&amp;lt;tok1&amp;gt;|&amp;lt;tok4&amp;gt;|&amp;lt;tok5&amp;gt;|&amp;lt;tok2&amp;gt;|&amp;lt;tok3&amp;gt;
+	|$date||ACK^&amp;lt;tok8&amp;gt;|&amp;lt;tok9&amp;gt;|&amp;lt;tok10&amp;gt;|2.1|&amp;lt;tok12&amp;gt;\rMSA|AA|&amp;lt;tok9&amp;gt;||&amp;lt;tok12&amp;gt;&lt;/ackformular&gt;
+&lt;nackcapture&gt;(?&amp;lt;tok0&amp;gt;[^|]*)\|(?&amp;lt;tok1&amp;gt;[^|]*)\|(?&amp;lt;tok2&amp;gt;[^|]*)\|(?&amp;lt;tok3&amp;gt;[^|]*)\|(?&amp;lt;tok4&amp;gt;
+	[^|]*)\|(?&amp;lt;tok5&amp;gt;[^|]*)\|(?&amp;lt;tok6&amp;gt;[^|]*)\|(?&amp;lt;tok7&amp;gt;[^|]*)\|(?&amp;lt;tok8&amp;gt;[^|]*)\|(?&amp;lt;tok9&amp;gt;[^|]*)\|(?&amp;lt;tok10&amp;gt;
+	[^|]*)\|(?&amp;lt;tok11&amp;gt;[^|]*)\|(?&amp;lt;tok12&amp;gt;[^|]*)\|(?&amp;lt;tok13&amp;gt;[^|]*)&lt;/nackcapture&gt;
+&lt;nackformular&gt;MSH|&amp;lt;tok1&amp;gt;|&amp;lt;tok4&amp;gt;|&amp;lt;tok5&amp;gt;|&amp;lt;tok2&amp;gt;|&amp;lt;tok3&amp;gt;|$date||ACK^&amp;lt;tok8&amp;gt;|&amp;lt;tok9&amp;gt;
+	|&amp;lt;tok10&amp;gt;|2.1|&amp;lt;tok12&amp;gt;\rMSA|AA|&amp;lt;tok9&amp;gt;||&amp;lt;tok12&amp;gt;&lt;/nackformular&gt;
+
+				&lt;defaultack&gt;0x0B,0x15,0x1C,0x0D&lt;/defaultack&gt;
+				&lt;defaultnack&gt;0x0B,0x06,0x1C,0x0D&lt;/defaultnack&gt;
+
+                        &lt;/receiveadapter&gt;
+                        &lt;sendadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.SqlStorage"&gt;
+                            &lt;connectionstring&gt;Data Source=localhost;Initial Catalog=MessageQueue;Integrated Security=True&lt;/connectionstring&gt;
+                        &lt;/sendadapter&gt;
+    			&lt;tempstorageadapter name="Microsoft.Amalga.Pipeline.AcquisitionAdapters.FileStorage"&gt;
+      				&lt;directory&gt;C:\Temp\SecondaryStorage&lt;/directory&gt;
+    			&lt;/tempstorageadapter&gt;
+                        &lt;msgtype&gt;ADT0&lt;/msgtype&gt;
+			&lt;verifier&gt;^MSH\|([^|\r\n]*\|){13,}.*\r\n&lt;/verifier&gt;
+			
+                    &lt;/feed&gt;
+                &lt;/feeds&gt;]]&gt;
+            &lt;/DefaultValue&gt;
+        &lt;/Setting&gt;
+    &lt;/Settings&gt;
+
+&lt;/DeploymentManifest&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_AcquireSummary.htm" target="" title="" alt="" style="font-weight: normal;">Feed acquisition</MadCap:xref>
+        </p>
+    </body>
+</html>

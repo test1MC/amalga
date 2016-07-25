@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1" conditions="Default.StyleMaster,Production.StyleMaster">
+    <TocEntry Title="[%=FrontMatter.TITLE%]&#160;" Link="/Content/fm-Title.htm" StartSection="false" StartChapter="true" PageLayout="/Content/Resources/PageLayouts/Title.flpgl" PageType="title" PageNumberReset="reset" PageNumberFormat="lower-roman" PageNumber="1" conditions="Default.PrintOnly,Production.PrintOnly">
+    </TocEntry>
+    <TocEntry Title="Legal Notices" Link="/Content/fm-CopyrightPage.htm" StartChapter="true" PageLayout="/Content/Resources/PageLayouts/Title.flpgl" PageNumber="1" PageNumberReset="continue" StartSection="false" AutoEndOnLeftPage="disabled" conditions="Default.PrintOnly,Production.PrintOnly" />
+    <TocEntry Title="Legal Notices" Link="/Content/fm-CopyrightPageWeb.htm" StartChapter="true" AutoEndOnLeftPage="disabled" PageNumber="1" PageNumberReset="continue" StartSection="false" conditions="Default.ScreenOnly,Production.ScreenOnly" />
+    <TocEntry Title="Conventions" Link="/Content/fm-Conventions.htm" StartSection="false" StartChapter="true" AutoEndOnLeftPage="disabled" PageNumber="1" PageNumberReset="continue" conditions="Production.PrintOnly" />
+    <TocEntry Title="Contents" Link="/Content/fm-Contents.htm" StartChapter="true" PageLayout="/Content/Resources/PageLayouts/Title.flpgl" PageNumber="1" PageNumberReset="continue" StartSection="false" conditions="Default.PrintOnly,Production.PrintOnly" />
+</CatapultToc>

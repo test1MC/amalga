@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="892" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-02-23T21:13:39.9448773-08:00" />
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-02-23T21:18:30.1279851-08:00" MadCap:attribute="MadCap:conditions" MadCap:value="Production.doNOTbuild" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-02-26T13:48:20.0268026-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-02-26T13:56:59.3354256-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="5" MadCap:timestamp="2012-02-26T14:10:27.6375394-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="6" MadCap:timestamp="2012-02-26T14:10:52.6429069-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="7" MadCap:timestamp="2012-02-26T14:40:36.8714664-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2012-02-26T14:40:36.8714664-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Reusable Lightbox controls</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-02-23T21:03:46.5100641-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="The previous line is styled PersonaAll (by default) but you don't have a persona file tag.   Also needs an index entry." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-23T21:04:43.1643025-08:00">The </MadCap:annotation>Reusable Lightbox controls provide a way to display messages to users in a floating (modal) dialog<MadCap:change MadCap:changes="6"> box</MadCap:change>.</p>
+        <p>The Reusable Lightbox controls can be used to present users with messages<MadCap:change MadCap:changes="1">,</MadCap:change> and perform various actions based on the resultant user input. For example, you could create a lightbox that asks "Are you sure you want to delete this file?". There are two <MadCap:change MadCap:changes="6">control types</MadCap:change><MadCap:change MadCap:changes="5">varieties</MadCap:change> to choose from:</p>
+        <ul>
+            <li><b>MessageLightBoxHyperlink</b> - Opens a lightbox that uses a predefined master page <MadCap:annotation MadCap:createDate="2012-02-13T15:15:58.5955371-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Screen shot?\r\n\r\nLLB: if you think it would be useful. What do your reviewers say?" MadCap:editor="v-labenn" MadCap:editDate="2012-02-26T14:11:27.1918958-08:00">template </MadCap:annotation>that defines the placement, styling, and location of header content, button placement, and button area background color. You can also specify which buttons will be displayed (OK, Cancel, and custom). Use for creating message or confirmation modal dialogs.</li>
+            <li><b>CustomLightBoxHyperlink</b> - Opens a lightbox that displays a custom ASPX page. Use this one to display custom content in a modal dialog<MadCap:change MadCap:changes="3"> box</MadCap:change>.</li>
+        </ul>
+        <p>You can add one or more Reusable Lightbox control instances to a page by using standard <MadCap:variable name="BrandingMS.ASP.NET second use" /> markup, or you can invoke a control directly from JavaScript.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Adding">Adding a Reusable Lightbox control to a <MadCap:variable name="BrandingMS.Visual Studio second use" /> project</a>
+            </li>
+            <li><a href="#Configur">Configuring a MessageLightBoxHyperlink instance</a>
+            </li>
+            <li><a href="#Using">Using JavaScript to invoke a Reusable Lightbox instance</a>
+            </li>
+        </ul>
+        <h2><a name="Adding"></a>Adding a Reusable Lightbox control to a project</h2>
+        <p>You can add a Reusable Lightbox control to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>.</p>
+        <h2><a name="Configur"></a>Configuring a MessageLightBoxHyperlink instance</h2>
+        <p>In order for the control's resources to be localizable, you will need to create a resource (.resx) file. Resources include text strings to display within the control, and other strings such as callback functions, and  image file paths. Be sure to set the <b>DeploymentType</b> property for the .resx file to <b>AppGlobalResource</b> so that it is placed in the correct location at deployment time.</p>
+        <p>The following example shows the <MadCap:variable name="BrandingMS.ASP.NET second use" /> markup for a lightbox with the OK button option.</p>
+        <p class="code">&lt;Amalga:MessageLightBoxHyperLink</p>
+        <p class="code">ID="btnTest"</p>
+        <p class="code">runat="server"</p>
+        <p class="code">LightBoxMessageText="&lt;%$Resources:CLB,lbMessageText%&gt;"</p>
+        <p class="code">Text="&lt;%$Resources:CLB,lbText%&gt;"</p>
+        <p class="code">LightBoxTitle="&lt;%$Resources:CLB,lbTitle%&gt;"</p>
+        <p class="code">LightBoxCloseCallbackJsFunction="&lt;%$Resources:CLB,lbCloseCall%&gt;" /&gt;</p>
+        <p>The following table shows the resource file used in the example (CLB.resx):</p>
+        <table style="width: 100%;">
+            <col style="width: 144px;" />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Comment</th>
+                </tr>
+                <tr>
+                    <td>lbMessageText</td>
+                    <td>This is the message text.</td>
+                    <td>The Lightbox message text</td>
+                </tr>
+                <tr>
+                    <td>lbText</td>
+                    <td>Click here!</td>
+                    <td>The hyperlink text</td>
+                </tr>
+                <tr>
+                    <td>lbTitle</td>
+                    <td>A Message</td>
+                    <td>The Lightbox window title</td>
+                </tr>
+                <tr>
+                    <td>lbCloseCall</td>
+                    <td>onClose()</td>
+                    <td>The callback function</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In <MadCap:variable name="BrandingMS.ASP.NET second use" /> markup of the preceding example, resources are referenced using explicit markup that takes the following form:</p>
+        <p class="code">&lt;%$Resources:Class,ResourceID%&gt;</p>
+        <p>The Class value identifies the resource file to use when you use global resources. When .resx files are compiled, the base file name, without extensions, is used as the class name of the resulting assembly, explicitly. The actual strings are defined in the .resx file itself. For more information about localizing resources in <MadCap:variable name="BrandingMS.ASP.NET second use" />, see <a href="http://msdn.microsoft.com/en-us/library/ie/ms227427.aspx" target="_blank">ASP.NET&#160;Web Pages Resource&#160;Overview</a>.</p>
+        <p>Each of the button types in the Reusable Lightbox control can be configured to invoke a callback function. These are always in the form of <MadCap:change MadCap:changes="5">a </MadCap:change>JavaScript that is either embedded on the page, or referenced by the page. There are three button types: OK, Cancel, and custom. By default<MadCap:change MadCap:changes="4">,</MadCap:change> only the OK button is displayed.</p>
+        <h2><a name="Using"></a>Using JavaScript to invoke a Reusable Lightbox control</h2>
+        <p>You can invoke a Reusable Lightbox control directly from JavaScript code on a page. <MadCap:annotation MadCap:createDate="2012-02-26T14:44:55.5732955-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make a 2-step procedure?\r\n\r\nTo...\r\n1 Add a reference to Web.js...\r\n   &lt;script type=&quot;text/javascript&quot; src=&quot;../_layouts/scripts/amalga/Web.js&quot;&amp;gt;&amp;lt;/scrip&gt; \r\n2. Create a function..." MadCap:editor="v-labenn" MadCap:editDate="2012-02-26T14:47:11.3046735-08:00">To</MadCap:annotation> do this, first add a reference to Web.js as shown in the following example.</p>
+        <p class="code">&lt;script type="text/javascript" src="../_layouts/scripts/amalga/Web.js"&gt;&lt;/script&gt;</p>
+        <p>Then create a function to create the control instance by using the framework. <MadCap:change MadCap:changes="7">The following example shows how to create and display an inline lightbox.</MadCap:change></p>
+        <p MadCap:changes="8">The following example shows how to create and display an inline lightbox.</p>
+        <p class="code">&lt;script&gt;</p>
+        <p class="code">function createAndShowInlineLightBox() {</p>
+        <p class="code">var btn = new Microsoft.Amalga.AppFramework.Web.Common.MessageLightBoxButtonContainer();</p>
+        <p class="code">btn.result = Microsoft.Amalga.AppFramework.Web.Common.DialogResult.OK;</p>
+        <p class="code">btn.text = "OK";</p>
+        <p class="code">btn.toolTip = "OK Tooltip";</p>
+        <p class="code">btn.callback = "onOkCallback()";</p>
+        <p class="code">var img = new Microsoft.Amalga.AppFramework.Web.Common.MessageLightBoxImageContainer();</p>
+        <p class="code">img.imageType = Microsoft.Amalga.AppFramework.Web.Common.LightBoxMessageImageType.success;</p>
+        <p class="code">var obj = new Microsoft.Amalga.AppFramework.Web.Common.MessageLightBoxOptions();</p>
+        <p class="code">obj.title = "Test dialog";</p>
+        <p class="code">obj.message = "This is a test message.";</p>
+        <p class="code">obj.buttons = [btn];</p>
+        <p class="code">obj.imageData = img;</p>
+        <p class="code">obj.allowMaximize = true;</p>
+        <p class="code">obj.autoSize = false;</p>
+        <p class="code">obj.showClose = true;</p>
+        <p class="code">obj.height = 400;</p>
+        <p class="code">obj.width = 600;</p>
+        <p class="code">Amalga.AppFramework.Controls.MessageLightBox.createInstance('result', obj).showModalDialogInline();</p>
+        <p class="code">}</p>
+        <p class="code">function onOkCallback() {</p>
+        <p class="code">alert("onOkCallback was called.");</p>
+        <p class="code">}</p>
+        <p class="code">&lt;/script&gt;</p>
+        <p class="code">&lt;!-- Page element to display the control. --&gt;</p>
+        <p class="code">&lt;div id="result"&gt;&lt;/div&gt;</p>
+        <p class="SeeAlso" MadCap:changes="2">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_MessageLightBoxHyperLink.htm">MessageLightBoxHyperlink</a>
+        </p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_CustomLightBoxHyperLink.htm"><MadCap:annotation MadCap:createDate="2012-02-23T21:18:44.5052403-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Is this the only one you want to show up?  The others are conditioned Production.DoNotBuild.  To clear the condition, &gt;Topic Properties&gt; Conditions" MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-23T21:19:59.9685501-08:00">CustomLightBoxHyperlink</MadCap:annotation></a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_UsingControls.htm">Toolbox controls</a>
+        </p>
+    </body>
+</html>

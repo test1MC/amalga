@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:lastBlockDepth="5" MadCap:lastHeight="2835.333" MadCap:lastWidth="989" MadCap:ignoredWords="FaultException;HealthServiceAccessDeniedException;HealthServiceCredentialTokenExpiredException;HealthServiceAuthenticatedSessionTokenExpiredException;SecurityException;SecurityAccessDeniedException" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="FeatureName.Amalga Framework second use" /> error handling</h1>
+        <p>
+            <MadCap:keyword term="Error handling">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the <MadCap:variable name="FeatureName.Amalga Framework second use" /> error handling system.</p>
+        <p>The error handling system traps errors that originate within <MadCap:variable name="FeatureName.Amalga Framework second use" /> web pages, displays an appropriate message to the user (which may include the option to take action in response to the error), and writes them to the <MadCap:variable name="BrandingHSG.Amalga Short" /> logs as appropriate.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Overview" target="" title="" alt="">Overview on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Page" target="" title="" alt="">Page level error handling on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#WebPart" target="" title="" alt="">WebPart error handling on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Custom" target="" title="" alt="">Custom error handling on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Exceptio" target="" title="" alt="">Exception handling by type on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Overview"></a>Overview</h2>
+        <p>&#160;</p>
+        <p>Page level and  web part errors are presented to the user in two parts: the error message and the error detail. The error message provides user oriented content that may include useful hyperlinks, such as a link to online help. The error detail is a collapsible control which, when expanded, displays information that allows a system administrator to locate the error in the <MadCap:variable name="BrandingHSG.Amalga Short" /> error log.</p>
+        <h3>Error message</h3>
+        <p>The error message typically includes some or all of the following information:</p>
+        <ul>
+            <li>Title - a friendly name for the error type</li>
+            <li>User message - A friendly description of the error condition and ways that the user might respond</li>
+            <li>Retry link - a link back to the page in which the error was encountered</li>
+            <li>Help link - a link to an online help page that provides additional information about the error or an appropriate response</li>
+            <li>Home page link - a link to the user's home page (page level errors only)</li>
+        </ul>
+        <h3>Error detail</h3>
+        <p>The error detail provides information that allows a system administrator to locate the error in the <MadCap:variable name="BrandingHSG.Amalga Short" /> error log.</p>
+        <p>It includes the following values:</p>
+        <ul>
+            <li>The error ID associated with the error</li>
+            <li>The date and time of the event</li>
+            <li>The error's correlation ID, which associates the error ID with the time stamp. The correlation ID allows a system administrator to find a specific error instance in the <MadCap:variable name="BrandingHSG.Amalga Short" /> logs.</li>
+        </ul>
+        <p>For more information on logging, see <MadCap:xref href="AF_Con_Logging1.htm" target="" title="" alt="">Logging messages on page 1</MadCap:xref> and <MadCap:xref href="../Serviceability/Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging on page 1</MadCap:xref>.</p>
+        <h2><a name="Page"></a>Page level error handling</h2>
+        <p>Page level error handling is used in response to errors that are recoverable, but are still severe enough to warrant taking the user away from the current page and into a new page. It is also used when the information that is required to respond to the error is very dense, and needs to be presented to the user outside the context of the preceding activity. In both cases, the new page is specifically oriented around communicating the error condition to the user and enabling the user to respond.</p>
+        <p>Page level errors are handled by an http module, which will catch any unhandled exception or <MadCap:variable name="FeatureName.Amalga Framework second use" /> error and redirect the request to an error page. Since the http module is used by the entire IIS application, any page deployed within a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal will support page level error handling.</p>
+        <p class="note">The page level error handler traps exceptions before they can be caught by <MadCap:variable name="BrandingMS.SharePoint" /> .</p>
+        <h2><a name="WebPart"></a>WebPart error handling</h2>
+        <p>The WebPart error handler traps exceptions that originate within a WebPart, and displays an error message inside the WebPart itself.</p>
+        <p class="note">It is possible to have more than one WebPart in a page displaying an error message at the same time.</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2011-11-03T02:09:36.6546748-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="HandleExceptionWorker for TAP" MadCap:editor="v-wipete" MadCap:editDate="2011-11-03T02:09:43.9867218-07:00">WebPart design considerations</MadCap:annotation>
+        </h3>
+        <p>Web part level error handling is implemented in the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart </a>class. Custom WebParts must inherit from <span class="Label">BaseWebPart</span> in order to use this feature. </p>
+        <p>Error handling is only fully supported in the following WebPart methods:</p>
+        <ul>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_OnInitRuntime_1_d617a0aa.htm">OnInitRuntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_OnLoadDesigntime_1_d2e98c0a.htm">OnLoadDesigntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_OnLoadRuntime_1_f708c2e1.htm">OnLoadRuntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_CreateChildControlsDesigntime.htm">CreateChildControlsDesigntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_CreateChildControlsRuntime.htm">CreateChildControlsRuntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_OnPreRenderDesigntime_1_af9633ad.htm">OnPreRenderDesigntime</a>
+            </li>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/M_BaseWebPart_OnPreRenderRuntime_1_48542000.htm">OnPreRenderRuntime</a>
+            </li>
+        </ul>
+        <p><MadCap:variable name="FeatureName.Amalga Framework second use" /> WebParts should handle all life cycle events within those methods. Errors that arise within wiring events such as <span class="Label">Page_Load</span> or <span class="Label">Page_Init</span> may be surfaced at the page level, rather than inside the WebPart.</p>
+        <p class="caution">WebParts that do not inherit from <span class="Label">BaseWebPart</span> cannot use the WebPart error handling features.</p>
+        <h2><a name="Custom"></a>Custom error handling</h2>
+        <p>Applications which trap exceptions that would otherwise be handled by a <MadCap:variable name="FeatureName.Amalga Framework second use" /> page or WebPart are responsible for logging the error and presenting it to the user.</p>
+        <p>For more information, see <a href="AF_Con_Logging1.htm">Logging events</a>.</p>
+        <h2><a name="Exceptio"></a>Exception handling by type</h2>
+        <p>&#160;</p>
+        <h3>FrameworkException</h3>
+        <p>A <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_FrameworkException.htm">FrameworkException </a>is a predefined exception thrown by part of the <MadCap:variable name="FeatureName.Amalga Framework" />. In most cases, the meaning of the <span class="Label">FrameworkException</span> is determined by the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/E_FrameworkErrorCode.htm">FrameworkErrorCode </a>value assigned to its <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/P_FrameworkException_ErrorCode.htm">ErrorCode </a>property. However, there are some exceptions (such as <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_InstanceResolutionException.htm">InstanceResolutionException</a>) that must provide information in addition to the properties provided by <span class="Label">FrameworkException</span>, and are represented by a derived class.</p>
+        <p>When a <span class="Label">FrameworkException</span> is surfaced in an error page or WebPart, the content of its error message is  read from a resource file, <code>mshGlobalError.resx</code>. The message values are retrieved using the following keys:</p>
+        <ul>
+            <li><span class="InputTextVariable">%FrameworkErrorCode%</span>_Title</li>
+            <li><span class="InputTextVariable">%FrameworkErrorCode%</span>_Message</li>
+            <li><span class="InputTextVariable">%FrameworkErrorCode%</span>_HelpText</li>
+            <li><span class="InputTextVariable">%FrameworkErrorCode%</span>_HelpLink</li>
+        </ul>
+        <p>The content of each error message can be customized by modifying the values of the appropriate keys in the resource file. If no title or message values are available, a generic error message is displayed instead.</p>
+        <h4>Mapped FrameworkExceptions</h4>
+        <p>Some <MadCap:variable name="FeatureName.Amalga Framework second use" /> errors correspond directly to specific exceptions thrown by other APIs. The <MadCap:variable name="FeatureName.Amalga Framework second use" /> traps each of those exceptions and maps it on to a <span class="Label">FrameworkException</span> with the appropriate error code.</p>
+        <p>The following exceptions are mapped on to <span class="Label">FrameworkException</span>:</p>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Exception</th>
+                    <th>FrameworkException error code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="http://go.microsoft.com/fwlink?LinkId=234046">HealthServiceAccessDeniedException</a>
+                    </td>
+                    <td><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/E_FrameworkErrorCode.htm">FrameworkErrorCode</a>.HealthVaultAccessDenied</td>
+                </tr>
+                <tr>
+                    <td><a href="http://go.microsoft.com/fwlink?LinkId=234049">HealthServiceCredentialTokenExpiredException</a>
+                    </td>
+                    <td>FrameworkErrorCode.HealthVaultTokenExpired</td>
+                </tr>
+                <tr>
+                    <td><a href="http://go.microsoft.com/fwlink?LinkId=234046">HealthServiceAuthenticatedSessionTokenExpiredException</a>
+                    </td>
+                    <td>FrameworkErrorCode.HealthVaultTokenExpired</td>
+                </tr>
+                <tr>
+                    <td><a href="http://go.microsoft.com/fwlink?LinkId=234067">SecurityException</a>
+                    </td>
+                    <td>FrameworkErrorCode.AccessDenied</td>
+                </tr>
+                <tr>
+                    <td><a href="http://go.microsoft.com/fwlink?LinkId=234068">SecurityAccessDeniedException</a>
+                    </td>
+                    <td>FrameworkErrorCode.AccessDenied</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>InstanceResolutionException</h4>
+        <p>An <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_InstanceResolutionException.htm">InstanceResolutionException </a>indicates that the current application is not bound to an application instance. Instead of displaying a standard error message, the user is redirected to an application binding page. The binding page allows the user to select from a list of available application instance names. When the user selects an instance name, that name is bound to the current application instance ID and version, and the user is returned to the page where the original binding exception was thrown.</p>
+        <h3>FaultException</h3>
+        <p>A <a href="http://go.microsoft.com/fwlink?LinkId=234045">FaultException</a> indicates an error in communication with an <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-03T00:09:41.5146730-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="This could be more specific." MadCap:editor="v-wipete" MadCap:editDate="2011-11-03T00:09:48.2691786-07:00">platform service</MadCap:annotation>. Since the <MadCap:variable name="BrandingHSG.Amalga Short" /> platform automatically records communication errors in the <MadCap:variable name="BrandingHSG.Amalga Short" /> error log, a FaultException is displayed to the user but is not explicitly logged on the <MadCap:variable name="FeatureName.Amalga Framework second use" /> side.</p>
+        <p>The <span class="Label">FaultException</span> error message includes an <MadCap:variable name="BrandingHSG.Amalga Short" /> platform activity ID, which can be used to look up the associated event in the <MadCap:variable name="BrandingHSG.Amalga Short" /> logs.</p>
+        <h4>HealthVaultTokenExpired</h4>
+        <p>The <span class="Label">HealthVaultTokenExpired</span> error code in a <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_FrameworkException.htm">FrameworkException </a>indicates that the user is connected to the <MadCap:variable name="Applications.patient site" /> using a <MadCap:variable name="BrandingHSG.HealthVault" /> account, but their <MadCap:variable name="BrandingHSG.HealthVault" /> session has expired.  Instead of displaying a standard error message, the user is redirected to the <MadCap:variable name="BrandingHSG.HealthVault" /> login page. Expired <MadCap:variable name="BrandingHSG.HealthVault" /> session errors are not logged.</p>
+        <h3>Other Exceptions</h3>
+        <p>When a <MadCap:variable name="FeatureName.Amalga Framework second use" /> page or WebPart traps an exception that is not in one of the categories described above, it displays a generic error message to the user and writes a message to the <MadCap:variable name="BrandingHSG.Amalga Short" /> diagnostic log. It does not log the error in the <MadCap:variable name="BrandingHSG.Amalga Short" /> event log.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="AF_Con_Logging1.htm" target="" title="" alt="">Logging messages on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

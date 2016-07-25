@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="119" MadCap:lastWidth="888">
+    <head>
+    </head>
+    <body><pre xml:space="preserve"><span style="font-size: 10pt;">
+         <a href="../DI_XML_Manifest_DataParserOutput.htm">&lt;DataParserOutput&gt;</a>
+            <a href="../DI_XML_Manifest_Segment.htm">&lt;Segment&gt;</a>
+               <a href="../DI_XML_Manifest_Elements.htm">&lt;Elements&gt;</a>
+                  <a href="../DI_XML_Manifest_Element.htm">&lt;Element&gt;</a>
+                     <a href="../DI_XML_Manifest_ConceptId.htm">&lt;ConceptId&gt;</a>
+                     <a href="../DI_XML_Manifest_Lookup.htm">&lt;Lookup&gt;</a>
+                        <a href="../DI_XML_Manifest_Function.htm">&lt;Function&gt;</a>
+                        <a href="../DI_XML_Manifest_InputParameter.htm">&lt;InputParameters&gt;</a>
+                           <a href="../DI_XML_Manifest_Parameter.htm">&lt;Parameter&gt;</a>   
+                              <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                                 <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+                     <a href="../DI_XML_Manifest_Transform.htm">&lt;Transform&gt;</a>
+                        <a href="../DI_XML_Manifest_Action.htm">&lt;Action&gt;</a>
+                        <a href="../DI_XML_Manifest_InputParameter.htm">&lt;InputParameters&gt;</a>
+                           <a href="../DI_XML_Manifest_Parameter.htm">&lt;Parameter&gt;</a>   
+                              <a href="../DI_XML_Manifest_Array.htm">&lt;Array&gt;</a>
+                                 <a href="../DI_XML_Manifest_ArrayElement.htm">&lt;ArrayElement&gt;</a>
+               <a href="../DI_XML_Manifest_CollapseConfiguration.htm">&lt;CollapseConfiguration&gt;</a>
+                  <a href="../DI_XML_Manifest_PrimaryKeyColumn.htm">&lt;PrimaryKeyColumn&gt;</a>
+                  <a href="../DI_XML_Manifest_ResultType.htm">&lt;ResultType&gt;</a>
+                  <a href="../DI_XML_Manifest_ResultTypeSortField.htm">&lt;ResultTypeSortField&gt;</a>
+                  <a href="../DI_XML_Manifest_ResultRowsFilter.htm">&lt;ResultRowsFilter&gt;</a></span></pre>
+    </body>
+</html>

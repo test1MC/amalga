@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1093" MadCap:lastWidth="789" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Segments element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Segments element" />Declares one or more message segments.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;MessageShredderConfiguration&gt;<b>
+            &lt;Segments&gt;</b>
+               &lt;Segment&gt;...&lt;/Segment&gt;<b>					
+            &lt;/Segments&gt;</b>
+         &lt;/MessageShredderConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_MessageShredderConfiguration.htm">MessageShredderConfiguration</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Segment.htm">Segment</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Segments</span> element is mandatory when you declare one or more <a href="DI_XML_Manifest_Segment.htm">Segment</a> elements in the FeedConfigurationXML setting of a <MadCap:variable name="Applications.Message Shredder (application)" /> service manifest. Declare a segment only when you want to specify the parent of the specified segment.</p>
+        <p>Do not declare this element in the manifests of other pipeline applications. In particular,  do not declare a <span class="MarkupLanguageElements">Segments</span> element in a  data parser service manifest when you specify a segment for derivation.</p>
+        <p class="Label">Example</p>
+        <p>The following example specifies  a parent segment for each segment in the set. The MSH segment has no parent segment.</p><pre xml:space="preserve">&lt;MessageShredderConfiguration&gt;
+    &lt;Segments&gt;
+        &lt;Segment Name="MSH" SourceName="MSH" Description="Message Header" /&gt;
+        &lt;Segment Name="PID" SourceName="PID" ParentName="MSH" Description="Person Identification" /&gt;
+        &lt;Segment Name="NK1" SourceName="NK1" ParentName="PID" Description="Next of Kin" /&gt;
+        &lt;Segment Name="PV1" SourceName="PV1" ParentName="PID" Description="Patient Visit" /&gt;
+        &lt;Segment Name="PV2" SourceName="PV2" ParentName="PV1" Description="Patient Visit" /&gt;
+        &lt;Segment Name="IN1" SourceName="IN1" ParentName="PV1" Description="Insurance Information" /&gt;
+        &lt;Segment Name="GT1" SourceName="GT1" ParentName="PV1" Description="Guarantor" /&gt;
+        &lt;Segment Name="DG1" SourceName="DG1" ParentName="PV1" Description="Diagnosis" /&gt;
+    &lt;/Segments&gt;
+&lt;/MessageShredderConfiguration&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_MessageShredderConfiguration.htm">MessageShredderConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

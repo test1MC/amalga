@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved,ReleaseTarget.CTP1,Status.70 - Complete" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Parser output</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>The structure of parsed output depends on the input and the derivations performed during parsing. By default, the Data Parser subsystem creates one read-only table for each output segment, which includes a RowId column and an additional column for each derived field that you define in the parser. For example:</p>
+        <p class="sixpointline">&#160;</p>
+        <p class="Label">Column example: DataParser.ADT.PID_Derived (HL7)</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>RowID</td>
+                    <td>FirstName</td>
+                    <td>LastName</td>
+                    <td>FullName</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Use the following structure to specify data parser output that includes concept identifiers and transforms.</p>
+        <pre xml:space="preserve" class="code">   &lt;DataParserOutput&gt;
+        &lt;Segment&gt;
+            &lt;Elements&gt;
+                &lt;Element&gt;
+                    &lt;ConceptId&gt;&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter/&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                  &lt;/Element&gt;
+            &lt;/Elements&gt;            
+        &lt;/Segment&gt;
+    &lt;/DataParserOutput&gt;</pre>
+        <p>Both input and output tables reside in the ClinicalData database. Use the Data Parser subsystem name to distinguish output tables from Message Shredder subsystem input tables and views. All parser output tables use the following format:</p>
+        <p>[<span class="Placeholder">database</span>].[<span class="Placeholder">feedname</span>].[<span class="Placeholder">Segment</span>_Derived]</p>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data parser</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseInput.htm" target="" title="" alt="">Parser input</MadCap:xref>
+        </p>
+    </body>
+</html>

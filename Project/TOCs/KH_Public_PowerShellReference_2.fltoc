@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Windows PowerShell Reference for Amalga"
+    Link="/Content/PowerShellCmdlets/PowerShellLanding.htm">
+    <TocEntry
+      Title="Add-AmMachineServiceAccount"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Add-AmMachineServiceAccount.htm" />
+    <TocEntry
+      Title="Add-AmRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Add-AmRole.htm" />
+    <TocEntry
+      Title="Add-AmRoleMembership"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Add-AmRoleMembership.htm" />
+    <TocEntry
+      Title="Add-AmRoleToAccessLevel"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Add-AmRoleToAccessLevel.htm" />
+    <TocEntry
+      Title="Add-AmTrustedSTS"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Add-AmTrustedSTS.htm" />
+    <TocEntry
+      Title="Get-AmAccessLevel"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmAccessLevel.htm" />
+    <TocEntry
+      Title="Get-AmBuiltInRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmBuiltInRole.htm" />
+    <TocEntry
+      Title="Get-AmConfigurationSetting"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmConfigurationSetting.htm" />
+    <TocEntry
+      Title="Get-AmRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmRole.htm" />
+    <TocEntry
+      Title="Get-AmRoleForAccessLevel"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmRoleForAccessLevel.htm" />
+    <TocEntry
+      Title="Get-AmRoleMembership"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmRoleMembership.htm" />
+    <TocEntry
+      Title="Get-AmServiceEncryptionCertificate"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmServiceEncryptionCertificate.htm" />
+    <TocEntry
+      Title="Get-AmTrustedSTSCollection"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmTrustedSTSCollection.htm" />
+    <TocEntry
+      Title="Get-AmUserRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Get-AmUserRole.htm" />
+    <TocEntry
+      Title="Grant-AmCertificateReadAccess"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Grant-AmCertificateReadAccess.htm" />
+    <TocEntry
+      Title="New-AmEventSource"
+      Link="/Content/PowerShellCmdlets/PS_Ref_New-AmEventSource.htm" />
+    <TocEntry
+      Title="New-AmVirtualSchema"
+      Link="/Content/PowerShellCmdlets/PS_Ref_New-AmVirtualSchema.htm" />
+    <TocEntry
+      Title="Out-AmManagementConsolePackage"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Out-AmManagementConsolePackage.htm" />
+    <TocEntry
+      Title="Publish-AmApplicationInstance"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Publish-AmApplicatioinInstance.htm" />
+    <TocEntry
+      Title="Publish-AmManagementConsolePackage"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Publish-AmManagementConsolePackage.htm" />
+    <TocEntry
+      Title="Register-AmDataHost"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Register-AmDataHost.htm" />
+    <TocEntry
+      Title="Remove-AmMachineServiceAccount"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmMachineServiceAccount.htm" />
+    <TocEntry
+      Title="Remove-AmRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmRole.htm" />
+    <TocEntry
+      Title="Remove-AmRoleFromAccessLevel"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmRoleFromAccessLevel.htm" />
+    <TocEntry
+      Title="Remove-AmRoleMembership"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmRoleMembership.htm" />
+    <TocEntry
+      Title="Remove-AmTrustedSTS"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmTrustedSTS.htm" />
+    <TocEntry
+      Title="Remove-AmVirtualSchema"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Remove-AmVirtualSchema.htm" />
+    <TocEntry
+      Title="Revoke-AmCertificateReadAccess"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Revoke-AmCertificateReadAccess.htm" />
+    <TocEntry
+      Title="Set-AmClusterGroup"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Set-AmClusterGroup.htm" />
+    <TocEntry
+      Title="Set-AmConfigurationSetting"
+      Link="/Content/PowerShellCmdlets/PS_Ref_SetAmConfigurationSetting.htm" />
+    <TocEntry
+      Title="Set-AmEntityBinding"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" />
+    <TocEntry
+      Title="Set-AmHostCertificateProperty"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Set-AmHostCertificateProperty.htm" />
+    <TocEntry
+      Title="Set-AmVirtualSchemaActive"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Set-AmVirtualSchemaActive.htm" />
+    <TocEntry
+      Title="Sync-AmManagementConsolePackage"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Sync-AmManagementConsolePackage.htm" />
+    <TocEntry
+      Title="Sync-AmPhysicalHost"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm" />
+    <TocEntry
+      Title="UnPublish-AmApplicationInstance"
+      Link="/Content/PowerShellCmdlets/PS_Ref_UnPublish-AmApplicationInstance.htm" />
+    <TocEntry
+      Title="Unpublish-AmManagementConsolePackage"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Unpublish-AmManagementConsolePackage.htm" />
+    <TocEntry
+      Title="UnRegister-AmDataHost"
+      Link="/Content/PowerShellCmdlets/PS_Ref_UnRegister-AmDataHost.htm" />
+    <TocEntry
+      Title="Unregister-AmDataHostLabel"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Unregister-AmDataHostLabel.htm" />
+    <TocEntry
+      Title="Unregister-AmInstanceWithLogicalHostInstance"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Unregister-AmInstanceWithLogicalHostInstance.htm" />
+    <TocEntry
+      Title="Update-AmApplicationInstance"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Update-AmApplicationInstance.htm" />
+    <TocEntry
+      Title="Update-AmRole"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Update-AmRole.htm" />
+    <TocEntry
+      Title="Update-AmServiceEncryptionCertificate"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Update-AmServiceEncryptionCertificate.htm" />
+    <TocEntry
+      Title="Update-AmSTSTokenSigningCertificate"
+      Link="/Content/PowerShellCmdlets/PS_Ref_Update-AmSTSTokenSigningCertificate.htm" />
+  </TocEntry>
+</CatapultToc>

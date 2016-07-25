@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="458" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.MedDispense entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.MedDispense.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].MedDispense" /><span class="Label">Entity concept code</span>: RXD</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DispensedByProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>DispensedByProviderName</td>
+                    <td>RXD-10</td>
+                    <td>HL7</td>
+                    <td>Provider identifier of the person dispensing the pharmaceutical.</td>
+                </tr>
+                <tr>
+                    <td>DispensedDateTime</td>
+                    <td>RXD-3</td>
+                    <td>HL7</td>
+                    <td>Date and time when the order was dispensed.</td>
+                </tr>
+                <tr>
+                    <td>DispensedDateTime_o</td>
+                    <td>RXD-3</td>
+                    <td>HL7</td>
+                    <td>Date and time offset when the order was dispensed.</td>
+                </tr>
+                <tr>
+                    <td>DispensedLocation</td>
+                    <td>RXD-13</td>
+                    <td>HL7</td>
+                    <td>Dispensed-to location.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>MedDispenseID</td>
+                    <td>MedDispenseID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.MedDispense entity.</td>
+                </tr>
+                <tr>
+                    <td>MedicationID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Medication.htm" target="" title="" alt="">.Medication entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>MedOrderID</td>
+                    <td>MedOrderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.MedOrder.htm" target="" title="" alt="">Common.Beta.MedOrder entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+﻿p.PersonaAll
+Color: #000000
+
+p.PersonaEndUser
+Color: #00528C
+
+Vivian Atlas: QA Mgr--Health Professional End User
+Luis Sousa: Nurse Mgr--Health Professional End User
+Karen Toh: MD--Health Professional End User
+
+
+p.PersonaAppDev
+Color: #008066
+
+Elvis_AppDev_ITDev
+Einstein: Lead App Architect--IT Dev
+
+p.PersonaAppDev_Analyst
+Color: #00635E
+
+Mort_ClinicalAppAnalyst_ITDev (automation and MU compliance)
+
+p.PersonaAppDev_Informatics
+Color: #728000
+
+Arwen: Clinical Informatics--IT Dev (think DAO)
+
+p.PersonaDBA
+Color: #8C1A00
+
+Debbie Data: DBA--IT Dev
+
+p.PersonaDISpecialist
+Color: #804300
+
+Mahesh_DISpecialist_ITDev (java dev and other query languages)
+
+p.PersonaITAdmin
+Color: #8A002A
+
+Carlos: IT Admin--IT Dev
+Bill Bits: IT Mgr--IT Dev

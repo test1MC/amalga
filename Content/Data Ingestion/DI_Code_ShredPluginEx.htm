@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="838" MadCap:lastWidth="576" MadCap:fileTags="Status.70 - Complete,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Shredder plug-in code example</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>The C# example that follows shows custom verification logic that extends an instance of the Message Shredder application. The following hello world example shows the possibilities when authoring a custom shredder.</p><pre xml:space="preserve" class="code">//Plug-in application name: ShredderCustom
+// Custom code example for the Message Shredder application.</pre><pre xml:space="preserve" class="code">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Amalga.Pipeline.Model;
+using System.Globalization;
+
+namespace CustomizedSamplePlugin
+{
+    // Customer Logic
+    public class HelloWorldPlugin : IMessageShredder
+    {
+        // Shred a raw message (from msg201).
+        public override MessageShredderMessage ShredMessage(
+            RawMessage message,
+            MessageShredderConfiguration feedConfiguration)
+        {
+            if (feedConfiguration == null)
+                throw new ArgumentNullException("feedConfiguration");
+
+
+            //Step 1, Get the message content.
+            Byte[] content = message.GetData();
+
+
+            //Step2, Write your logic to parse, transform or even convert the message content.
+            string output = Encoding.ASCII.GetString(content);
+
+            if(string.IsNullOrEmpty(output))
+                output = "Actually, I don't do any job. Just say Hello to you guys.";
+
+
+            //Step3, Build the standard output for the Message Shredder application.
+            var firstGenerationMessage = new MessageShredderMessage(message.MessageId, message.SequenceNumber, message.MessageType);
+
+            var firstGenerationTable = new MessageShredderTable
+            {
+                Name = "MyWords",
+                SourceName = "MyWords"
+            };
+
+            var fieldSemanticLabel = String.Format(
+                  CultureInfo.InvariantCulture,
+                  "{0}.{1}",
+                  firstGenerationTable.SourceName,
+                  1);
+
+            var firstGenerationColumn = new MessageShredderColumn
+            {
+                Name = fieldSemanticLabel,                
+                RawValue = output,
+            };
+
+            firstGenerationTable.AddColumn(firstGenerationColumn);
+            firstGenerationMessage.AddTable(firstGenerationTable);
+
+            //Step 4, Return the standard shredded message and the message shredder process will help you 
+	     // to dump the data to the database.
+            return firstGenerationMessage;
+        }
+    }
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ShredExtend.htm" target="" title="" alt="">Shredder extension</MadCap:xref>
+        </p>
+    </body>
+</html>

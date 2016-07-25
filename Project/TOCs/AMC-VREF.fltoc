@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <TocEntry
+    Title="[%=FeatureName.Management Console second use%] visual reference"
+    Link="/Content/MasterTOCLandingPages(BZ)/V3_LND_AMC-VREF.htm">
+    <TocEntry
+      Title="[%=FeatureName.Microsoft Amalga Management Console%] window"
+      Link="/Content/Serviceability/Management Console/AMC_VizRef.htm" />
+    <TocEntry
+      Title="Application module"
+      Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_mod-NAV Header.htm">
+      <TocEntry
+        Title="Application module primary window"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-App.htm" />
+      <TocEntry
+        Title="Access Inheritance dialog box"
+        Link="/Content/Serviceability/Management Console/Application Management/SERV_VREF_App-PrivDataAccess.htm" />
+      <TocEntry
+        Title="Application status"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" />
+      <TocEntry
+        Title="Assign logical host pane"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-Assign Logical Host Pane.htm" />
+      <TocEntry
+        Title="Configure virtual schema pane"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-Configure Virtual Schema Pane.htm" />
+      <TocEntry
+        Title="Edit Permissions dialog box"
+        Link="/Content/Serviceability/Management Console/Application Management/SERV_VREF_App-PermEdit.htm" />
+      <TocEntry
+        Title="Permissions dialog box"
+        Link="/Content/Serviceability/Management Console/Application Management/SERV_VREF_App-PermView.htm" />
+      <TocEntry
+        Title="Resolve application dependency pane"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-Resolve Dependency Pane.htm" />
+      <TocEntry
+        Title="Sync application pane"
+        Link="/Content/Serviceability/Management Console/Application Management/AppMan_Vref_AMC-mod-SyncApplication.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Entity Management module"
+      Link="/Content/Serviceability/Management Console/Entity Management/SERV_CON_module-EntityManagement.htm"
+      ReplaceMergeNode="true">
+      <TocEntry
+        Title="[%=UI-Labels.Entity Management%] module primary window"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_AMC-mod-Entity.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Access Policy (pane)%] pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Diagnostic (pane)%] pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_Diagnostic.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Edit Entity - dialog%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_EditEntity.htm" />
+      <TocEntry
+        Title="Entity binding pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" />
+      <TocEntry
+        Title="Entity summary pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_EntitySummary.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Feed Browser%] tab"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_FeedBrowser.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Input custom SQL condition%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_InputSQL.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Joins%] tab"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_JoinsTab.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.New Entity%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_NewEntity.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Related Access Policies (pane)%] pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_RelatedAccessPolicies.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Relationship Editor%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_RelationshipEditor.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Rule Editor%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Semantic Tags%] dialog box"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_SemanticTags.htm" />
+      <TocEntry
+        Title="[%=UI-Labels.Sensitive Labels (pane)%] pane"
+        Link="/Content/Serviceability/Management Console/Entity Management/SERV_VREF_SensitiveLabels.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="System module"
+      Link="/Content/Serviceability/Management Console/System Management/SysMan_Vref_mod-NAV Header.htm">
+      <TocEntry
+        Title="System module primary window"
+        Link="/Content/Serviceability/Management Console/System Management/SysMan_Vref_AMC-mod-System Main.htm" />
+    </TocEntry>
+  </TocEntry>
+</CatapultToc>

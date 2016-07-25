@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,Status.70 - Complete,ReleaseTarget.RTM" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="FeatureName.Amalga Framework" /> service endpoints</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="service endpoint;framework" /></p>
+        <p class="abstract">This topic describes the default service endpoints for the  <MadCap:variable name="FeatureName.Amalga Framework" /> web services.</p>
+        <p>&#160;</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>Generic service endpoint</li>
+            <li>Parts of a service endpoint<br /></li>
+            <li><MadCap:variable name="FeatureName.Amalga Framework second use" />service values</li>
+            <li>Example</li>
+        </ul>
+        <h2>Generic service endpoint</h2>
+        <p>The service endpoints of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> web services all conform to the following template:</p>
+        <p>https://<span class="InputTextVariable">ServerFQDN</span>:<span class="InputTextVariable">ServicePort</span>/<span class="InputTextVariable">ServiceInstanceName</span>/<span class="InputTextVariable">ServiceAddress</span></p>
+        <h2>Parts of a service endpoint</h2>
+        <p>Each endpoint has the following parts:</p>
+        <ul>
+            <li>ServerFQDN - the fully qualified domain name of the server that hosts the web service.</li>
+            <li>ServicePort - the TCP port assigned to the web services. The default service port for <MadCap:variable name="FeatureName.Amalga Framework second use" /> web services is <strong>8801</strong>.</li>
+            <li>ServiceInstanceName - The instance name assigned to the web service when it was deployed. Instance names are site-specific and are usually specified in the service manifest. In practice, many instance names are constructed by adding a standard postfix (such as "_Ins1") to each service name. The names of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> web services are listed below.</li>
+            <li>ServiceAddress - the path to the .svc WCF implementation file for each service. The default path for each service is listed below.</li>
+        </ul>
+        <h2>Framework service values</h2>
+        <table style="width: 100%;">
+            <col style="width: 33%;" />
+            <col style="width: 360px;" />
+            <col style="width: 33%;" />
+            <thead>
+                <tr>
+                    <th>Web service</th>
+                    <th>Service name</th>
+                    <th>Service address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Clinical Document service</td>
+                    <td>ClinicalDocumentService</td>
+                    <td>Microsoft.Amalga.ClinicalDocument.Service.ClinicalDocumentService.svc</td>
+                </tr>
+                <tr>
+                    <td>Task Flow service</td>
+                    <td>TaskFlowService</td>
+                    <td>Microsoft.Amalga.TaskFlow.Service.TaskFlowService.svc</td>
+                </tr>
+                <tr>
+                    <td><MadCap:variable name="BrandingHSG.HealthVault" />Connector service</td>
+                    <td>HealthVaultConnectorService</td>
+                    <td>Microsoft.Amalga.HealthVaultConnector.Service.HealthVaultConnectorService.svc</td>
+                </tr>
+                <tr>
+                    <td>Imaging service</td>
+                    <td>ImagingRegistryService</td>
+                    <td>Microsoft.Amalga.Imaging.Registry.ImagingRegistryService.svc</td>
+                </tr>
+                <tr>
+                    <td>Notification service</td>
+                    <td>NotificationService</td>
+                    <td>Microsoft.Amalga.Notification.Service.NotificationService.svc</td>
+                </tr>
+                <tr>
+                    <td>Patient Match and Linking service</td>
+                    <td>PatientMatchLinkService</td>
+                    <td>Microsoft.Amalga.AppFramework.Service.PatientMatchLinkService.svc</td>
+                </tr>
+                <tr>
+                    <td>User Settings service</td>
+                    <td>UserSettingsService</td>
+                    <td>Microsoft.Amalga.AppFramework.Service.UserSettingsService.svc</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example</h2>
+        <p>For example, if the Task Flow service were deployed to Webserver.Example.com and its instance name was derived from its service name as described above, its default service endpoint would be:</p>
+        <p class="InputTextPara">https://Webserver.Example.com:8801/TaskFlowService_Ins1/Microsoft.Amalga.TaskFlow.Service.TaskFlowService.svc</p>
+    </body>
+</html>

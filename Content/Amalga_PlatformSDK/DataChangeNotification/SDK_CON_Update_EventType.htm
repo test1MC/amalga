@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1324" MadCap:lastWidth="335" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Updating a DCN event type</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event types:Data Change Notification platform application;Data Change Notification platform application:event types;UpdateEventType method:Data Change Notification platform application;Data Change Notification platform application:UpdateEventType method;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;EventType class:Data Change Notification platform application;Data Change Notification platform application:EventType class" />This topic describes how to change an existing DCN definition by using the UpdateEventType operation.</p>
+        <p>Hosted applications can update existing DCN event types by retrieving an EventType object for an existing DCN event type, updating the desired properties, and then specifying the updated EventType object when calling the UpdateEventType operation in the IEventManagementService contract for the EventingManagerService service.</p>
+        <p>For more information about finding an existing DCN event type, see <MadCap:xref href="SDK_CON_Find_EventType.htm" target="" title="" alt="">Finding a DCN event type on page 1</MadCap:xref>.</p>
+        <p>The UpdateEventType operation performs the following actions when updating a DCN event type:</p>
+        <ul>
+            <li>
+                <p>Confirms that a DCN event type with the event identifier specified in the EventId property of the updated EventType object exists. </p>
+                <p class="note">You cannot create a new DCN event type by calling the UpdateEventType operation. For more information about creating a new DCN event type, see <MadCap:xref href="SDK_CON_Creating_EventType.htm" target="" title="" alt="">Creating a DCN event type on page 1</MadCap:xref>.</p>
+            </li>
+            <li>If the NeverExpire property of the updated EventType object is set to True, ensures that the ExpiresOn property is also set to DateTime.MaxValue. For more information about expiration dates, see <MadCap:xref href="SDK_CON_Creating_EventType.htm" target="" title="" alt="">Creating a DCN event type on page 1</MadCap:xref>.</li>
+            <li>
+                <p>Ensures that the user account calling the UpdateEventType operation matches the Owner property of the existing DCN event type to be updated.</p>
+                <p class="note">Only the user account that created the DCN event type can update that DCN event type. Otherwise, an error occurs.</p>
+            </li>
+            <li>Confirms that the user account calling the UpdateEventType operation is authorized to access the eventable resources specified in the updated EventType object. Otherwise, an error occurs.</li>
+            <li>Validates existing DCN event subscriptions for the updated EventType object.</li>
+            <li>Updates the existing DCN event type using the updated EventType object.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-ccole,Status.70 - Complete,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Transform library class extension</h1>
+        <p>Use the instructions in this topic to add custom, configuration-driven transforms to an instance of the <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser application</MadCap:xref>. All custom code must be tested and maintained by you.</p>
+        <p class="caution">Always test a custom  plug-in before adding it to a data-parser service manifest.</p>
+        <h2> Design-time activities</h2>
+        <p class="LabelforProcedures">To prepare the custom library class</p>
+        <ol>
+            <li>Create a new Class Library project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio" />.
+</li>
+            <li>Add a reference to the Microsoft.Amalga.Pipeline.Model.dll assembly in your project.</li>
+            <li>
+                <p>Add the <b>TransformClass</b> and <b>TransformMethod</b> attributes to the class and methods that represent the transform actions you intend to configure in the service manifest. The following example shows the placement of the attributes.</p>
+                <pre xml:space="preserve" class="code">[TransformClass]
+    public class Transformer
+{
+</pre>
+                <pre xml:space="preserve" class="code">	[TransformMethod]
+	public string ToUpperCase(string lowCaseString)
+        {
+            return lowCaseString.ToUpper();
+        }
+
+        [TransformMethod]
+        public DateTimeOffset ToDateTime(string dateTime)
+        {
+            return DateTimeOffset.Parse(dateTime);
+        }
+
+        [TransformMethod]
+        public string GetCount(string[] strArray)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (string arg in strArray)
+            {
+                sb.Append(arg);
+            }
+            return sb.ToString();
+        }
+  }</pre>
+            </li>
+            <li>Compile the class as an assembly.</li>
+        </ol>
+        <h2>Resolve manifests</h2>
+        <p>If the assembly is in the file system, use the first procedure. However, if the assembly was published to Fabric storage, use the second procedure.</p>
+        <p class="LabelforProcedures">To incorporate a custom library class (for file system)</p>
+        <ol>
+            <li>Open the service manifest of the parser instance that you intend to augment. Each feed has one application and one service manifest. If you need to configure the parser, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest. </li>
+            <li>
+                <p>Add plug-in details between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called TransformLibCustom and use the ToUpperCase action, insert the following XML. In this example, the source type is Filesystem. </p>
+                <p class="tip">You can specify either an absolute or a relative path to the assembly.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DataParserConfiguration&gt;
+    &lt;MessageShredderInput&gt;
+        &lt;Segment Name="PID" SourceName="PID" &gt;
+            &lt;Elements&gt;
+                &lt;Element Name="PID_5_1" /&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;
+    &lt;/MessageShredderInput&gt;
+    &lt;DataParserOutput&gt;
+        &lt;Segment Name="PID" SourceName="PID"&gt;
+            &lt;Elements&gt;
+                &lt;Element Name="FName" Type="System.String" MaxLength="50"&gt;
+                    &lt;ConceptId&gt;11627229-A030-41C4-B323-9C5B8DAE0384&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;ToUpperCase&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter Name="LowCaseString" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;            
+    &lt;/DataParserOutput&gt;       
+    &lt;Plugins&gt;
+            &lt;Plugin Name="TransformLibCustom" Assembly="MyNamespace.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396"&gt;
+            &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Transforms&lt;/NameSpace&gt;
+            &lt;URL&gt;./MyNamespace.Transforms.dll&lt;/URL&gt;
+            &lt;SourceType&gt;FileSystem&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+    &lt;/Plugins&gt;
+&lt;/DataParserConfiguration&gt;
+		]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and deploy the application instance.</li>
+        </ol>
+        <p class="LabelforProcedures">To incorporate a custom transform library class (for Fabric storage)</p>
+        <ol>
+            <li>Open the service manifest of the parser instance that you intend to augment. Each feed has one application and one service manifest. If you need to configure the parser, see <MadCap:xref href="DI_Task_ParseApp.htm" target="" title="" alt="">Resolve  manifests</MadCap:xref>.</li>
+            <li>Locate or insert the <span class="code">&lt;Setting Name=”FeedConfigurationXml” Type=”System.String”&gt;</span> entry between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest.</li>
+            <li>
+                <p>Add plug-in details between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags. For example, to add a plug-in called TransformLibCustom and use the ToUpperCase action, insert the following XML. In this example, the source type is Fabric.</p>
+                <p class="note">If you set the <MadCap:xref href="Manifest XML/DI_XML_Manifest_SourceType.htm" target="" title="" alt="">SourceType element</MadCap:xref> to Fabric, the parser retrieves the plug-in from SQL Server instead of using the defined URL.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name=”FeedConfiguration” Type=”System.String”&gt; 
+  &lt;DefaultValue&gt;
+		&lt;![CDATA[[
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;DataParserConfiguration&gt;   
+    &lt;MessageShredderInput&gt;
+        &lt;Segment Name="PID" SourceName="PID" &gt;
+            &lt;Elements&gt;
+                &lt;Element Name="PID_5_1" /&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;
+    &lt;/MessageShredderInput&gt;
+    &lt;DataParserOutput&gt;
+        &lt;Segment Name="PID" SourceName="PID"&gt;
+            &lt;Elements&gt;
+                &lt;Element Name="FName" Type="System.String" MaxLength="50"&gt;
+                    &lt;ConceptId&gt;11627229-A030-41C4-B323-9C5B8DAE0384&lt;/ConceptId&gt;
+                    &lt;Transform&gt;
+                        &lt;Action&gt;ToUpperCase&lt;/Action&gt;
+                        &lt;InputParameters&gt;
+                            &lt;Parameter Name="LowCaseString" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_5_1" /&gt;
+                        &lt;/InputParameters&gt;
+                    &lt;/Transform&gt;
+                &lt;/Element&gt;
+            &lt;/Elements&gt;
+        &lt;/Segment&gt;            
+    &lt;/DataParserOutput&gt;       
+    &lt;Plugins&gt;        
+        &lt;Plugin Name="TransformLibCustom" Assembly="MyNamespace.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396"&gt;
+            &lt;NameSpace&gt;Microsoft.Amalga.Pipeline.Transforms&lt;/NameSpace&gt;
+            &lt;URL&gt;C:/MyNamespace.Transforms.dll&lt;/URL&gt;
+            &lt;SourceType&gt;Fabric&lt;/SourceType&gt;
+        &lt;/Plugin&gt;
+    &lt;/Plugins&gt;
+&lt;/DataParserConfiguration&gt;
+		]]&gt;
+  &lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+                <p class="note">Include the PublicKeyToken attribute only if the assembly is signed. Use the correct token.</p>
+            </li>
+            <li>
+                <p>Add a new setting for the custom plug-in  between the <span class="code">&lt;Settings&gt; &lt;/Settings&gt;</span> tags in the service manifest. For example, insert the following line to add the TransformLibCustom class plug-in. The setting name must match the <MadCap:xref href="Manifest XML/DI_XML_Manifest_Plugin.htm" target="" title="" alt="">Plugin element</MadCap:xref> name in the previous step.</p>
+                <pre xml:space="preserve" class="code">&lt;Setting Name="TransformLibCustom" Type="System.String"&gt;
+	&lt;DefaultValue&gt; &lt;/DefaultValue&gt;
+&lt;/Setting&gt;
+</pre>
+            </li>
+            <li>Between the <MadCap:xref href="../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm" target="" title="" alt="">DefaultValue element</MadCap:xref> tags, add the following CDATA structure and insert the proper base 64 encoding string between the CDATA brackets. <pre xml:space="preserve" class="code">&lt;DefaultValue&gt;
+	&lt;![CDATA[[<span class="Placeholder">***Insert base 64 encoded DLL data here.</span>]]&gt; 
+&lt;/DefaultValue&gt;</pre><p>For assistance in generating a base 64 encoded string, see <a href="http://go.microsoft.com/fwlink?LinkID=231139">http://go.microsoft.com/fwlink/?LinkID=231139</a>.</p></li>
+            <li>Save and close the service manifest.</li>
+            <li>Publish and deploy the application instance. </li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DI_Con_ParseSummary.htm" target="" title="" alt="">Data Parser application</MadCap:xref>
+        </p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Publish.htm">Publish an application</a>
+        </p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Application Sync.htm">Sync application</a>
+        </p>
+        <p>
+            <a href="../Serviceability/Management Console/Application Management/AppMan Proc Remove App through AMC.htm">Remove applications</a>
+        </p>
+    </body>
+</html>

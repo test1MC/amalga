@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1527" MadCap:lastWidth="521.6666" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;"><a name="top"></a>Creating an entity association</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to create entity associations using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />. .</p>
+        <p>Entity associations define the associations between application views in the conceptual schema, as well as between entities in the storage schema, for a virtual schema. You must first use an EntityAssociation object to define the entity association to be created, and then invoke the CreateEntityAssociation operation of the IVirtualSchemaManagementService service contract to create that entity association in the virtual schema.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with EntityAssociation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working2" target="" title="" alt="">Working with EntityConstraint on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the EntityAssociation object</h2>
+        <p>The EntityAssociation object represents an entity association in a virtual schema. The EntityAssociation object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>EntityContainer</td>
+                    <td>An EntityContainer object representing the entity container that holds the entity association.</td>
+                </tr>
+                <tr>
+                    <td>ForeignEntityConstraint</td>
+                    <td>An EntityConstraint object representing a foreign key constraint to another entity.</td>
+                </tr>
+                <tr>
+                    <td>ForeignEntityMultiplicity</td>
+                    <td>A string representing the multiplicity of the foreign key constraint in ForeignEntityConstraint.</td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>A System.Guid object representing the globally unique identifier (GUID) of the EntityAssociation object.</td>
+                </tr>
+                <tr>
+                    <td>UniqueEntityConstraint</td>
+                    <td>An EntityConstraint object representing a unique or primary key constraint.</td>
+                </tr>
+                <tr>
+                    <td>UniqueEntityMulitplicity</td>
+                    <td>A string representing the multiplicity of the unique or primary key constraint.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Working2"></a>Working with the EntityConstraint object</h2>
+        <p>If the entity association represents a foreign key constraint, you must define a corresponding EntityConstraint object that describes the foreign key constraint as the value of the ForeignEntityConstraint property for the EntityAssociation object. Similarly, if the entity association represents a unique constraint or primary key constraint, you must define a corresponding EntityConstraint object that describes the unique or primary key constraint as the value of the UniqueEntityConstraint property for the EntityAssociation object. </p>
+        <p>The EntityConstraint object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ConstraintType</td>
+                    <td>An integer that describes the type of constraint.</td>
+                </tr>
+                <tr>
+                    <td>Entity</td>
+                    <td>An Entity object representing the entity to which the constraint applies.</td>
+                </tr>
+                <tr>
+                    <td>EntityConstraintProperties</td>
+                    <td>An array of EntityConstraintProperty objects representing user-defined properties for the constraint.</td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>A System.Guid object representing the globally unique identifier for the constraint.</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>A string containing the name of the constraint.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

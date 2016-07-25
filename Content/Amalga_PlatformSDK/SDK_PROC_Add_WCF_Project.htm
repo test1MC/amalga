@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1308" MadCap:lastWidth="425.6667" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Add a new hosted service project</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="hosted services" />This topic describes how to add a new <MadCap:variable name="BrandingMS.WCF service" /> or <MadCap:variable name="BrandingMS.Doors service" /> project to an existing solution containing an Amalga application project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</p>
+        <p>To create a new hosted <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" /> or hosted <MadCap:variable name="BrandingMS.Doors service" />, you can use, respectively, the Amalga WCF&#160;Service Project or Amalga Doors Worker Project template. These templates provide a service manifest and sample classes for developing a hosted service. These templates also provide references to the namespaces most commonly used while developing a hosted service.</p>
+        <p>To include a hosted service in your hosted application, the <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution for the hosted application must meet the following requirements:</p>
+        <ul>
+            <li>The <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution must contain an <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> application project, created from the Amalga Application Project template.</li>
+            <li>The project for the hosted service must contain a reference to the Amalga application project.</li>
+        </ul>
+        <p>The following procedure describes how to add a new project, based on the Amalga WCF&#160;Service Project or Amalga Doors Worker Project template, to an existing <MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> solution that already contains an <MadCap:variable name="BrandingHSG.AmalgaV3 second use" />application project based on the Amalga Application Project template.</p>
+        <p class="LabelforProcedures">To add a new  project for a hosted service to an existing <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> solution</p>
+        <ol>
+            <li>From the <span class="UIElementAction">File</span> menu, click <span class="UIElementAction">New</span>, and then click <span class="UIElementAction">Project</span>.</li>
+            <li>In the Category pane, select <span class="UIElementAction">Installed Templates</span>, and then select <span class="UIElementAction">Visual C#</span>.</li>
+            <li>In the Templates pane, select either <span class="UIElementAction">Amalga WCF&#160;Service Project</span> or <span class="UIElementAction">Amalga Doors Worker Project</span>, depending on whether you want to develop, respectively, a hosted <MadCap:variable name="BrandingMS.WCF service" /> or a hosted <MadCap:variable name="BrandingMS.Doors service" />.</li>
+            <li>
+                <p>In the <span class="UIElementAction">Name</span> box, type a name for the new  project.</p>
+                <p class="caution">Ensure that the name for the new project is unique within the solution.  Otherwise, an error occurs.</p>
+            </li>
+            <li>In the <span class="UIElementAction">Location</span> drop-down, type or select a location in which to save the new project, or click <span class="UIElementAction">Browse</span> to select a location.</li>
+            <li>
+                <p>In the <span class="UIElementAction">Solution</span> drop-down list, select <span class="UIElementAction">Add to solution</span>.</p>
+            </li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>In Solution Explorer, right-click the new project and then click <span class="UIElementAction">Add Reference</span>.</li>
+            <li>Click the <span class="UIElementAction">Projects</span> tab, and then select the Amalga application project for the hosted application that will contain the hosted service.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Application_Project.htm" target="" title="" alt="">Create a new Amalga application project on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_PROC_Create_Data_Manifest.htm" target="" title="" alt="">Add a new data manifest on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_LND_Amalga_WCF_Services.htm" target="" title="" alt="">Hosted  s on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_Con_Amalga_Worker(NT)_Svcs.htm" target="" title="" alt="">Build hosted Doors services on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

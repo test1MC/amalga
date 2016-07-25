@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1166" MadCap:lastWidth="608" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure access inheritance for an entity</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to inherit access rules from peer or parent entities. </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console;parent rules;peer rules;child rules;rules:child;rules:parent;rules:peer" />You can reuse an access policy in other entities by configuring the other entities to inherit from the entity on which the access policy was defined. For example, you can configure the Visit entity to inherit the access policy (containing its access rules and sensitive label permissions for all authorized roles) from the Patient entity. Inheritance can be between peers or from parent to child. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To inherit access rules from a peer or parent entity </p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-relatedaccess.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-relatedaccess.flsnp" /> <![CDATA[ ]]></p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-addInh.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-addInh.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>Select <span class="UIElementAction">Parent Entity</span> or <span class="UIElementAction">Peer Entity</span> and click <span class="UIElementAction">Next</span>. </p>
+                <p class="note">Ensure that each role represented in the child entity's access policy is also represented in the parent entity's access policy.  Parent rules can be set at the rule access level for "authorized children only."</p>
+                <p>By default, the dialog box lists entities that have the same semantic tags (as applied to their primary key properties). </p>
+            </li>
+            <li>To browse the complete <MadCap:variable name="FeatureName.entity registry" /> rather than just those with matching semantic tags, select <span class="UIElementAction">Entire Registry</span>. </li>
+            <li>
+                <p>Select the desired entity and click <span class="UIElementAction">Next</span>. </p>
+                <p>The primary key property of the selected parent or peer entity is listed.</p>
+            </li>
+            <li>
+                <p>Select the property of the current entity that you want to map to the related entity's primary key property. </p>
+                <p>If the related entity is a parent, this mapping explicitly defines a primary key-foreign key relationship. If the related entity is a peer, this mapping explicitly identifies and matches the primary key properties of both entities.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Finish</span> to save inheritance settings and close the dialog box. </p>
+                <p>The changes are saved and the <MadCap:variable name="UI-Labels.Related Access Policies (pane)" /> pane is redisplayed. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_InheritEdit.htm" target="" title="" alt="">Edit an entity relationship (access inheritance)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RelatedAccessPolicies.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

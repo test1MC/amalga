@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1313" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,Personas.All,ReleaseTarget.TAP,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure binding: add and edit joins</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to edit joins, or relationships, between tables for an entity and binding source.     </p>
+        <p>
+            <MadCap:keyword term="entity binding;SQL joins" />
+            <MadCap:annotation MadCap:createDate="2012-02-23T07:00:32.9978178-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic complete when xrefs are added as relevant" MadCap:editor="v-padenc" MadCap:editDate="2012-02-23T07:00:40.7408178-08:00">You </MadCap:annotation>can add and edit relationships (joins)&#160;between a bound column's parent table or view and the <span class="newconcept">anchor table </span>(the table or view that is bound to the entity's primary key property). Joins allow you to bind properties of an entity to columns from multiple tables and views. For example, you can bind one property to the Observation column from the entity's anchor table and bind another property to an Order column from another table or view, as long as you specify a join between the tables or views. </p>
+        <p>Each entity property binding can have a unique join&#160;for its bound column. A join maps the primary key column of the bound column's parent table or view to a selected column of the anchor table. </p>
+        <p>Self-joins are also possible; that is, if the bound column is in the anchor table, you can add or edit a join for the anchor table. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To add a relationship (join) for an entity property binding </p>
+        <ul>
+            <li>Bind the entity property to a column from a table or view other than the entity's anchor table and then follow the prompts to select the desired anchor table column. See <MadCap:xref href="DP_Task_BindColCatalog.htm" target="" title="" alt="">Configure binding: selected column ( tab)</MadCap:xref>. </li>
+        </ul>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To edit a relationship (join) for an entity property binding </p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-entitybinding.flsnp" /> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-entitybinding.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-editbinding.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-editbinding.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-SwitchToAssisted.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-SwitchToAssisted.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>Expand the binding source you want, and then expand the entity property with the table relationship (join) that you want to edit. </p>
+                <p>Joins specific to the bound column are indicated under <MadCap:annotation MadCap:createDate="2012-01-17T15:51:52.1964951-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="need UI variable" MadCap:editor="v-padenc" MadCap:editDate="2012-01-17T15:51:55.6534197-08:00">Join On Anchor Table Column</MadCap:annotation>. </p>
+            </li>
+            <li>Click <span class="UIElementAction"><MadCap:annotation MadCap:createDate="2012-02-16T09:53:23.3456565-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="bug 122958: misleading label. button is Add but it doesn't add anything. should be Edit." MadCap:editor="v-padenc" MadCap:editDate="2012-02-23T07:04:10.7328178-08:00">Add</MadCap:annotation></span>. </li>
+            <li>In the displayed <MadCap:variable name="UI-Labels.Relationship Editor" /> dialog box, select the desired anchor table column from the drop-down list. </li>
+            <li>Click OK to save changes and close the dialog box. </li>
+            <li>Click <span class="UIElementAction">Save</span> to save changes to the binding information. </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_JoinsTab.htm" target="" title="" alt=""> tab</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RelationshipEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:57:12.4491374-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+    </body>
+</html>

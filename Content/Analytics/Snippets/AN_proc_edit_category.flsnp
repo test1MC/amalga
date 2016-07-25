@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="344" MadCap:lastWidth="362" MadCap:conditions="Production.doNOTbuild" MadCap:fileTags="Status.10 - Not in use">
+    <body>
+        <p class="LabelforProcedures">To edit a category</p>
+        <ol>
+            <li>
+                <p>On the <MadCap:variable name="UI-Labels.Analytics Administration" /> page, click <span class="UIElementAction">Edit categories</span>.</p>
+            </li>
+            <li>
+                <p>Do one of the following:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>To rename a category, click the current name and, in the Enter new name box, type the new name, and then click <span class="UIElementAction">Save</span>.</li>
+                    <li>
+                        <p>To delete a category, click the name of the category to delete and, in the Enter new name box, type the name of an existing category, and then click <span class="UIElementAction">Save</span>.</p>
+                        <p>Reports assigned to the deleted category will be merged into that category.</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef,Region.US" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>AmalgaDbDataReader Methods</title>
+        <link rel="stylesheet" type="text/css" href="../../../Resources/Stylesheets/Presentation.css">
+        </link>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/EventUtilities.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/Dropdown.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/script_manifold.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CheckboxMenu.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CommonUtilities.js">
+        </script>
+        <meta name="container" content="Microsoft.Amalga.Data.DataClient" />
+        <meta name="file" content="Methods_T_AmalgaDbDataReader" />
+        <meta name="outDir" content="Microsoft.Amalga.Data.DataClient" />
+    </head>
+    <body>
+        <input type="hidden" id="userDataCache" class="userDataStyle" />
+        <input type="hidden" id="hiddenScrollOffset" />
+        <img id="collapseImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" title="Collapse image" />
+        <img id="expandImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" title="Expand Image" />
+        <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />
+        <img id="expandAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" />
+        <img id="dropDownImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdown.gif" />
+        <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdownHover.gif" />
+        <img id="copyImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycode.gif" title="Copy image" />
+        <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycodeHighlight.gif" title="CopyHover image" />
+        <div id="header">
+            <table id="topTable" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />&#160;<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>&#160;</span><span>&#160;&#160;&#160;&#160;</span><span id="memberOptionsDropdown" class="filter" tabindex="0"><img id="memberOptionsDropdownImage" src="../../../Resources/Sandcastle/icons/dropdown.gif" />&#160;<label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All&#160;</nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label></span>
+                    </td>
+                </tr>
+            </table>
+            <div id="devlangsMenu">
+                <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+                <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+                <br />
+            </div>
+            <div id="memberOptionsMenu">
+                <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+                <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+                <br />
+                <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+                <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+                <br />
+            </div>
+            <table id="bottomTable" cellpadding="0" cellspacing="0">
+                <tr id="headerTableRow1">
+                    <td align="left"><span id="runningHeaderText"></span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow2">
+                    <td align="left"><span id="nsrTitle">AmalgaDbDataReader Methods</span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow3">
+                    <td align="left"><a href="T_AmalgaDbDataReader.htm">AmalgaDbDataReader Class</a>&#160; <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See&#160;Also</a>&#160;</td>
+                </tr>
+            </table>
+            <table id="gradientTable">
+                <tr>
+                    <td class="nsrBottom" background="../../../Resources/Sandcastle/icons/gradient.gif" />
+                </tr>
+            </table>
+        </div>
+        <div id="mainSection">
+            <div id="mainBody">
+                <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+                </div><font color="DarkGray"></font>
+                <p />
+                <p>The <a href="T_AmalgaDbDataReader.htm">AmalgaDbDataReader</a> type exposes the following members.</p>
+                <h1 class="heading"><span onclick="ExpandCollapse(methodTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(methodTableToggle, event)" tabindex="0"><img id="methodTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Methods</span>
+                </h1>
+                <div id="methodTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_Close.htm">Close</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Close
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/t2waaczd" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Close<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/2ch65xad" target="_blank">CreateObjRef</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+                        </tr>
+                        <tr data="public;protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDbDataReader_Dispose.htm">Dispose</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/4k87zsw7" target="_blank">Finalize</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetBoolean_1_b2f74d3a.htm">GetBoolean</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Boolean. 
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/514xxfc4" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetBoolean(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetByte_1_e875cfc0.htm">GetByte</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Byte. 
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/823h644b" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetByte(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetBytes_5_19ce42fd.htm">GetBytes</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Reads a stream of bytes from the specified column offset into the buffer an array starting at the given buffer offset.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/2dw9cw16" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetBytes(Int32, Int64, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Byte<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>, Int32, Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetChar_1_f7803f89.htm">GetChar</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a char.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/4zy2ctx5" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetChar(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetChars_5_d6ef33f8.htm">GetChars</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Reads a stream of chars from the specified column offset into the buffer an array starting at the given buffer offset. 
+            The length of the stream must be less than 2 giga bytes, otherwise a not supported exception will be thrown.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/ksdazzxz" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetChars(Int32, Int64, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Char<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>, Int32, Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/1f4hddda" target="_blank">GetData</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetDataTypeName_1_e3cd5458.htm">GetDataTypeName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets a string representing the data type of the specified column.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/s5fatf3h" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetDataTypeName(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetDateTime_1_eceb438f.htm">GetDateTime</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a DateTime object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/dssz5z53" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetDateTime(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/y76x1kyd" target="_blank">GetDbDataReader</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetDecimal_1_3b4cc720.htm">GetDecimal</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Decimal object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/35yt3x1c" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetDecimal(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetDouble_1_1be858b0.htm">GetDouble</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Double object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/cyxh7869" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetDouble(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetEnumerator.htm">GetEnumerator</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            GetEnumerator
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/999cetad" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetEnumerator<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetFieldType_1_d6ddc873.htm">GetFieldType</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the Type that is the data type of the object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/f55ahxt0" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetFieldType(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetFloat_1_3991b139.htm">GetFloat</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Float object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/3ezkasc1" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetFloat(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetGuid_1_487e8a61.htm">GetGuid</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a Guid object.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/3dh5xawz" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetGuid(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetInt16_1_32f50517.htm">GetInt16</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a 16-bit signed integer.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/wead4560" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetInt16(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetInt32_1_0a7ff4dc.htm">GetInt32</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a 32-bit signed integer.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/y1fw7bbz" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetInt32(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetInt64_1_e8b2946e.htm">GetInt64</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the value of the specified column as a 64-bit signed integer.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/b0k1ah6x" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetInt64(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/c6y7316f" target="_blank">GetLifetimeService</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetName_1_442c1fe9.htm">GetName</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the name of the specified column.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/x9afs8bh" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetName(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetOrdinal_1_af5e0b2f.htm">GetOrdinal</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the column ordinal, given the name of the column.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/1s7f00f0" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetOrdinal(String)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/c33t99b9" target="_blank">GetProviderSpecificFieldType</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/f4xkdfs3" target="_blank">GetProviderSpecificValue</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/czx542ek" target="_blank">GetProviderSpecificValues</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetSchemaTable.htm">GetSchemaTable</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Get schema table.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/99w0bff2" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetSchemaTable<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetString_1_78dd2155.htm">GetString</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Get String according to ordinal.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/w36ks4hs" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetString(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetValue_1_793ea633.htm">GetValue</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Get value according to ordinal.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/exbdkftw" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetValue(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_GetValues_1_16177bdb.htm">GetValues</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Get values.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/ty6ed6y9" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetValues(<span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zwt5tzck" target="_blank">InitializeLifetimeService</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_IsDBNull_1_c14c2a58.htm">IsDBNull</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns IsDBNull property
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/dcycx5dd" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>IsDBNull(Int32)</a>.)</td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="O_T_AmalgaDbDataReader_MemberwiseClone.htm">MemberwiseClone</a>
+                            </td>
+                            <td>Overloaded.  </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_NextResult.htm">NextResult</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Go to next row result
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/8fekx44t" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>NextResult<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_AmalgaDbDataReader_Read.htm">Read</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Advances to AmalgaDbDataReader to the next record.
+            </span>
+                                </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/99byw92b" target="_blank">DbDataReader<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Read<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/7bxwbwt2" target="_blank">ToString</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(ExplicitInterfaceImplementationTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(ExplicitInterfaceImplementationTableToggle, event)" tabindex="0"><img id="ExplicitInterfaceImplementationTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Explicit&#160;Interface&#160;Implementations</span>
+                </h1>
+                <div id="ExplicitInterfaceImplementationTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="explicit;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubinterface.gif" title="Explicit interface implemetation" />
+                                <img src="../../../Resources/Sandcastle/icons/privmethod.gif" title="Private method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bb298673" target="_blank">IDataRecord<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>GetData</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/tk6yxcs1" target="_blank">DbDataReader</a>.)</td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />See Also</span>
+                </h1>
+                <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                    <div class="seeAlsoStyle"><a href="T_AmalgaDbDataReader.htm">AmalgaDbDataReader Class</a>
+                    </div>
+                    <div class="seeAlsoStyle"><a href="N_Microsoft_Amalga_Data_DataClient.htm">Microsoft.Amalga.Data.DataClient Namespace</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footerLine">
+                    <img width="100%" height="3px" src="../../../Resources/Sandcastle/icons/footer.gif" title="Footer image" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

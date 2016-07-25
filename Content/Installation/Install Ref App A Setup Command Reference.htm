@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="5353.667" MadCap:lastWidth="639.6666" MadCap:fileTags="EditingTags.4 - Ready for Writer,ReleaseTarget.CTP1,TopicType.Ref_General,Status.70 - Complete,Personas.Carlos: IT Admin,TopicOwner.v-ssiera" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Setup  utility reference</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>This section contains the Setup utility command syntax and associated arguments and variables required to install <MadCap:variable name="BrandingHSG.Amalga Long" />.</p>
+        <h2>Setup syntax</h2>
+        <p class="Syntax">setup.exe<br />[/Help | /?]<br />/Feature <i>FeatureName</i><br />[/Operation {Install | Uninstall}]<br />/ParameterName <i>ParameterValue</i> ...<br />[/Eula Accept] <br /></p>
+        <h2>Arguments</h2>
+        <p> Setup supports integral parameters, called arguments, that are not scripted by the deployment files but are an integral part of the Setup tool. The supported arguments and description are listed in the following table.</p>
+        <table style="caption-side: top;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Requirement</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/Help</td>
+                    <td>Optional</td>
+                    <td> Displays command-line help in the console window including the available features, operations, and parameters.</td>
+                </tr>
+                <tr>
+                    <td>/Feature</td>
+                    <td>Required</td>
+                    <td>Specifies the <MadCap:variable name="BrandingHSG.Amalga Short" /> feature that will receive the operation specified. For a list of features and values, see <MadCap:xref href="#Valid" target="" title="" alt="">Valid Features and Descriptions</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>/Operation</td>
+                    <td>Optional</td>
+                    <td>Specifies the operation to be performed on the feature. The accepted values are Install and Uninstall . If /Operation is omitted, the default is Install.</td>
+                </tr>
+                <tr>
+                    <td>/Eula</td>
+                    <td>Optional</td>
+                    <td>Silently accepts the conditions of the end-user license agreement (EULA) for the specified feature. If /Eula is omitted, a dialog box is displayed requiring the user to accept or decline the EULA before the Setup operation can continue.  The only value is Accept.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Valid"></a>Features</h2>
+        <p>The following table contains the values for the Feature argument and their descriptions. <MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"><MadCap:annotation MadCap:createDate="2011-11-19T00:00:16.4972325-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="xref links to a DNB'd topic." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-19T00:00:52.7832325-08:00">For </MadCap:annotation>more information on <MadCap:variable name="BrandingHSG.Amalga Short" /> features, see <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_Platform_Arch_For_Developers.htm" target="" title="" alt=""> platform development architecture</MadCap:xref>.</MadCap:conditionalText></p>
+        <table>
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>FeatureName values</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PlatformServices</td>
+                    <td>
+                        <p>
+                            <MadCap:snippetText src="Snippets/Text_PlatformServices_Definition.flsnp" /> <![CDATA[ ]]></p>
+                        <p class="note">Platform services must be installed before any other feature.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ApplicationServices</td>
+                    <td>
+                        <MadCap:snippetText src="Snippets/Text_ApplicationServices_Definition.flsnp" />
+                        <p class="note">Application services must be installed before any <MadCap:variable name="BrandingHSG.Amalga Short" /> applications.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DataPipelineStorage</td>
+                    <td>
+                        <MadCap:snippetText src="Snippets/Text_DataPipelineStorage_Definition.flsnp" />
+                        <p class="note">DataPipelineStorage must be installed before any data ingestion applications can be installed (Acquisition, <MadCap:variable name="FeatureName.Message Shredder" />, <MadCap:variable name="FeatureName.Data Parser" />).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ApplicationFramework</td>
+                    <td>
+                        <MadCap:snippetText src="Snippets/Text_ApplicationFramework_Definition.flsnp" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>ManagementConsole</td>
+                    <td>Represents the components required to support the <MadCap:variable name="BrandingHSG.Amalga Short" /> Management Console and associated functions.</td>
+                </tr>
+                <tr>
+                    <td>AmalgaSharePointAdfs</td>
+                    <td>Configures the various trust relationships which are required to allow SP to trust claims produced for Amalga</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultSts</td>
+                    <td>Represents a Security Token System (STS) which allows claims based authentication against HealthVault.</td>
+                </tr>
+                <tr>
+                    <td>SDK</td>
+                    <td>Represents the <MadCap:variable name="BrandingHSG.Amalga Short" /> software development kit for developers. For more information, see <MadCap:xref href="../Amalga_PlatformSDK/SDK_OVW_Amalga_Platform_SDK_Overview.htm" target="" title="" alt="">SDK_OVW_Amalga_Platform_SDK_Overview on page 1</MadCap:xref>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Parameters and descriptions</h2>
+        <p>Parameters are used to provide specific topology values required for Setup to operate against the specified Feature. The following table provides the names of the parameters and descriptions of the administrator supplied values required by Setup. For information on the combinations of Features and their required parameters, see <MadCap:xref href="#Feature" target="" title="" alt="">Feature, Operation, and Parameter Combinations on page 1</MadCap:xref>.</p>
+        <p>The large majority of the parameters are optional. Several parameters become required if a specific installation option is chosen. For more information, see <MadCap:xref href="#Feature" target="" title="" alt="">Feature, Operation, and Parameter Combinations on page 1</MadCap:xref>.</p>
+        <p>For more information on the certificates required for some parameters, see <MadCap:xref href="Prereq Proc Certificates.htm" target="" title="" alt="">Certificate prerequisites</MadCap:xref>.</p>
+        <table>
+            <col />
+            <col style="width: 160px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Parameter name</th>
+                    <th>Default</th>
+                    <th>Parameter value</th>
+                </tr>
+                <tr>
+                    <td>AdfsSigningCertPublic</td>
+                    <td>&#160;</td>
+                    <td>Path to the .cer file holding the public key for the ADFS signing certificate.</td>
+                </tr>
+                <tr>
+                    <td>AdminWebsiteClusterName</td>
+                    <td>&#160;</td>
+                    <td>The cluster name for the Amalga Central Administration website.</td>
+                </tr>
+                <tr>
+                    <td>AdminWebsitePort</td>
+                    <td>9999</td>
+                    <td>The port for the Amalga Central Administration website.</td>
+                </tr>
+                <tr>
+                    <td>AdminWebsiteSSLThumbprint</td>
+                    <td>&#160;</td>
+                    <td>The thumbprint of the SSL certificate for the applications website. Must be specified if Application Protocol is "https".</td>
+                </tr>
+                <tr>
+                    <td>AmalgaAdfsProviderUrl</td>
+                    <td>&#160;</td>
+                    <td>Amalga ADFS claims provider URL: https://&lt;FQDN_ADFSServer&gt;/adfs/ls</td>
+                </tr>
+                <tr>
+                    <td>ApplicationClusterName</td>
+                    <td>&#160;</td>
+                    <td>The cluster name for the application.</td>
+                </tr>
+                <tr>
+                    <td>ApplicationId</td>
+                    <td>86548e02-3333-<br MadCap:conditions="Production.PrintOnly" />4abf-b1b0-7777d<br MadCap:conditions="Production.PrintOnly" />7499a09</td>
+                    <td>Amalga application id</td>
+                </tr>
+                <tr>
+                    <td>ApplicationPort</td>
+                    <td>8801</td>
+                    <td>The port for the applications website.</td>
+                </tr>
+                <tr>
+                    <td>ApplicationSSLThumbprint</td>
+                    <td>&#160;</td>
+                    <td>The thumbprint of the SSL certificate for the applications website.</td>
+                </tr>
+                <tr>
+                    <td>ApplicationVersion</td>
+                    <td>1.0.0.0</td>
+                    <td>Amalga application version</td>
+                </tr>
+                <tr>
+                    <td>ClaimsProviderRootUrl</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p>https://&lt;HvStsServer&gt;:</p>
+                        <p>&lt;HvStsPort&gt;/login.aspx</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ClinicalDataDBServerInstance</td>
+                    <td>&#160;</td>
+                    <td>The ClinicalData Database Server.</td>
+                </tr>
+                <tr>
+                    <td>HealthvaultApplicationId</td>
+                    <td>&#160;</td>
+                    <td>The Application GUID to identify the HealthVault application</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultPublicCert</td>
+                    <td>&#160;</td>
+                    <td>Path to a Public Key file (.cer)  for the root authority of the <MadCap:variable name="BrandingHSG.HealthVault" /> server certificate</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultStsProviderUrl</td>
+                    <td>&#160;</td>
+                    <td>HealthVault STS claims provider URL with "login.aspx" appended. https://&lt;HvSts&gt;:&lt;HVSTSport&gt;/login.aspx</td>
+                </tr>
+                <tr>
+                    <td>LogicalHostType</td>
+                    <td>NLB</td>
+                    <td>Type of the logical host. The supported Host types are NLB, FailOver and None</td>
+                </tr>
+                <tr>
+                    <td>MessageQueue<br MadCap:conditions="Production.PrintOnly" />DBServerInstance</td>
+                    <td>&#160;</td>
+                    <td>The MessageQueue Database Server.</td>
+                </tr>
+                <tr>
+                    <td>PhysicalHostPort</td>
+                    <td>8900</td>
+                    <td>The port for the physical host website.</td>
+                </tr>
+                <tr>
+                    <td>PlatformClusterName</td>
+                    <td>&#160;</td>
+                    <td>The cluster name for the platform.</td>
+                </tr>
+                <tr>
+                    <td>PlatformPort</td>
+                    <td>8889</td>
+                    <td>The port for the platform website.</td>
+                </tr>
+                <tr>
+                    <td>PlatformServicesUrl</td>
+                    <td>&#160;</td>
+                    <td>URL of Amalga Platform services application</td>
+                </tr>
+                <tr>
+                    <td>PlatformSSLThumbprint</td>
+                    <td>&#160;</td>
+                    <td>The thumbprint of the SSL certificate for the platform website.</td>
+                </tr>
+                <tr>
+                    <td>PlatformUrl</td>
+                    <td>https://platform.<br MadCap:conditions="Production.PrintOnly" />healthvault-ppe.com/platform/</td>
+                    <td>HealthVault Platform URL used to read and write <MadCap:variable name="BrandingHSG.HealthVault" /> items</td>
+                </tr>
+                <tr>
+                    <td>ProxyServer</td>
+                    <td>&#160;</td>
+                    <td>Proxy server if any required for external communication, if missing, proxy settings will be disabled</td>
+                </tr>
+                <tr>
+                    <td>RelyingPartyRootUrl</td>
+                    <td>&#160;</td>
+                    <td>URL for SharePoint Application that relies on claims. In the form, <br />https://&lt;sp_server&gt;:&lt;port_for_AppFramework&gt;/ - Use FQDN for server.</td>
+                </tr>
+                <tr>
+                    <td>SecondsToWait</td>
+                    <td>10</td>
+                    <td>Time to poll for service status when attempting to restart services.</td>
+                </tr>
+                <tr>
+                    <td>SessionState<br MadCap:conditions="Production.PrintOnly" />ConnectionString</td>
+                    <td>&#160;</td>
+                    <td>Connection string for SQL server session state, if missing session state will be left to default implementation of SharePoint Foundation</td>
+                </tr>
+                <tr>
+                    <td>SharePointApplicationPort</td>
+                    <td>8080</td>
+                    <td>Port number for a SharePoint claims based application</td>
+                </tr>
+                <tr>
+                    <td>SharePoint<br MadCap:conditions="Production.PrintOnly" />ApplicationSSLCert</td>
+                    <td>&#160;</td>
+                    <td>Path to the .pfx file to use as the SSL cert for the web app</td>
+                </tr>
+                <tr>
+                    <td>SharePointApplication<br MadCap:conditions="Production.PrintOnly" />SSLCertPasswordSecure</td>
+                    <td>&#160;</td>
+                    <td>SSL certificate password</td>
+                </tr>
+                <tr>
+                    <td>ShellUrl</td>
+                    <td>https://account.<br MadCap:conditions="Production.PrintOnly" />healthvault-ppe.com/</td>
+                    <td>HealthVault Shell URL used to manage the healthvault accounts</td>
+                </tr>
+                <tr>
+                    <td>StsApplicationPort</td>
+                    <td>7000</td>
+                    <td>Port number for STS application</td>
+                </tr>
+                <tr>
+                    <td>StsApplicationSSLCert</td>
+                    <td>&#160;</td>
+                    <td>Path to the .pfx for a cert to use as the SSL cert for the <MadCap:variable name="BrandingHSG.HealthVault" /> STS </td>
+                </tr>
+                <tr>
+                    <td>StsApplicationSSL<br MadCap:conditions="Production.PrintOnly" />CertPasswordSecure</td>
+                    <td>&#160;</td>
+                    <td>SSL certificate password</td>
+                </tr>
+                <tr>
+                    <td>StsPhysicalLocation</td>
+                    <td>&#160;</td>
+                    <td>Folder to deploy temporary <MadCap:variable name="BrandingHSG.HealthVault" /> STS files</td>
+                </tr>
+                <tr>
+                    <td>StsSigningCert<br MadCap:conditions="Production.PrintOnly" />PasswordSecure</td>
+                    <td>&#160;</td>
+                    <td>Password for the StsSigningCertWithPrivateKey, if required.</td>
+                </tr>
+                <tr>
+                    <td>StsSigningCertPublic</td>
+                    <td>&#160;</td>
+                    <td>Path to the .cer file containing the public key corresponding to the private key for the HealthVault STS</td>
+                </tr>
+                <tr>
+                    <td>StsSigningCert<br MadCap:conditions="Production.PrintOnly" />WithPrivateKey</td>
+                    <td>&#160;</td>
+                    <td>Path to a .pfx for the <MadCap:variable name="BrandingHSG.HealthVault" /> STS</td>
+                </tr>
+                <tr>
+                    <td>SystemDBServerInstance</td>
+                    <td>&#160;</td>
+                    <td>The System Database Server.</td>
+                </tr>
+                <tr>
+                    <td>TerminologyDBName</td>
+                    <td>&#160;</td>
+                    <td>Name of the Terminology database</td>
+                </tr>
+                <tr>
+                    <td>WebAppAppPoolAccount</td>
+                    <td>&#160;</td>
+                    <td>Application pool admin username with domain, defaults to service account of the <MadCap:variable name="BrandingMS.SharePoint" /> farm</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Feature"></a>Feature, operation, and parameter combinations</h2>
+        <p>The following table lists the feature and operation combinations along with the required, optional, and dependent parameters. Dependent parameters are optional unless they are required to support a specific installation option. For instance, if  LogicalHostType is failover, PlatformClusterName is required.</p>
+        <p class="note">The following combinations assume an install operation since uninstall is not supported in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <table style="caption-side: top;">
+            <col />
+            <col MadCap:conditions="Production.doNOTbuild" />
+            <col />
+            <col style="width: 261px;" />
+            <thead>
+                <tr>
+                    <th>Feature name</th>
+                    <th>Operation</th>
+                    <th>Required</th>
+                    <th>Optional / Dependent Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Platform<br MadCap:conditions="Production.PrintOnly" />Services</td>
+                    <td>Install</td>
+                    <td>
+                        <p>PlatformClusterName, PlatformSSLThumbprint, LogicalHostType, LogicalHostName, SystemDBServerInstance</p>
+                    </td>
+                    <td>
+                        <p>PlatformPort,
+PhysicalHostPort, TopologyName, ClusterGroups</p>
+                        <p>&#160;</p>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Application<br MadCap:conditions="Production.PrintOnly" />Services</td>
+                    <td>Install</td>
+                    <td>PlatformClusterName, ApplicationClusterName, LogicalHostType, LogicalHostName, 
+ApplicationSSLThumbprint</td>
+                    <td>ApplicationProtocol,
+ApplicationPort,
+PlatformPort,
+PhysicalHostPort, <br />ClusterGroups</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Application<br MadCap:conditions="Production.PrintOnly" />Framework</td>
+                    <td>Install</td>
+                    <td>AmalgaAdfsProviderUrl, HealthVaultStsProviderUrl, StsSigningCertPublic, AdfsSigningCertPublic, SharePointApplicationPort, SharePointApplicationSSLCert, PlatformServicesUrl </td>
+                    <td>SharePointApplicationSSLCertPasswordSecure, WebAppAppPoolAccount, HealthVaultPublicCert, ApplicationId, ApplicationVersion, SessionStateConnectionString, SecondsToWait</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>DataPipeline<br MadCap:conditions="Production.PrintOnly" />Storage</td>
+                    <td>Install</td>
+                    <td>TerminologyDBName
+</td>
+                    <td>MessageQueueDBServerInstance,
+ClinicalDataDBServerInstance
+</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Amalga<br MadCap:conditions="Production.PrintOnly" />SharePointAdfs</td>
+                    <td>Install</td>
+                    <td>ClaimsProviderRootUrl, RelyingPartyRootUrl, StsSigningCertWithPrivateKey, StsSigningCertPublic</td>
+                    <td>StsSigningCertPasswordSecure</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>HealthVaultSts</td>
+                    <td>Install</td>
+                    <td>StsApplicationSSLCert, StsPhysicalLocation, StsSigningCertWithPrivateKey, HealthVaultAppCert,<br MadCap:conditions="Production.PrintOnly" />HealthvaultApplicationId </td>
+                    <td>StsApplicationPort, StsApplicationSSLCertPasswordSecure, StsSigningCertPasswordSecure, HealthVaultAppCertPasswordSecure, HealthVaultPublicCert,<br MadCap:conditions="Production.PrintOnly" />ShellUrl,<br MadCap:conditions="Production.PrintOnly" />PlatformUrl,<br MadCap:conditions="Production.PrintOnly" />ProxyServer</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Magangement<br MadCap:conditions="Production.PrintOnly" />Console</td>
+                    <td>Install</td>
+                    <td>
+                        <p>AdminWebsiteClusterName, AdminWebsiteSSLThumbprint, PlatformClusterName,</p>
+                        <p>LogicalHostName</p>
+                    </td>
+                    <td>AdminWebsitePort, AdminWebsiteProtocol, PlatformPort, LogicalHostType</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>SDK</td>
+                    <td>Install</td>
+                    <td>None</td>
+                    <td>PlatformClusterName, PlatformPort, ApplicationPort, ApplicationProtocol, ApplicationSSLThumbprint</td>
+                </tr>
+                <tr MadCap:conditions="Production.doNOTbuild">
+                    <td>&#160;</td>
+                    <td>Uninstall</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Setup fault tolerance and roll forward recovery</h2>
+        <p>Setup is designed to be fault tolerant and re-executable on failure, allowing roll-forward
+recovery for a given feature and operation. If a failure occurs while running Setup for a
+given feature and operation, you should perform the following procedure.</p>
+        <p class="Label">To do a roll-forward recovery</p>
+        <ol>
+            <li>Review all error information reported by Setup, including logs, to determine the cause of the failure.</li>
+            <li>Resolve the cause of the failure.</li>
+            <li>Run Setup again, specifying the same feature, operation, and parameters.</li>
+        </ol>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-01T00:02:17.9835931-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Does the rerun require using the same user credentials as the earlier try?\r\n\r\nKH - Yes, probably, but needs confirmation post-ctp." MadCap:editor="v-keith" MadCap:editDate="2011-11-17T23:32:56.7302163-08:00">When</MadCap:annotation> the Setup command is run again, Setup will skip operations and tasks already performed and resume processing at the point of error. If additional errors occurs during process repeat the steps to resolve the error and begin the Setup command again.</p>
+        <h2>Setup logs</h2>
+        <p>While performing an operation for a feature, Setup not only reports progress to the console
+window, but also logs progress to log files stored on the computer running Setup. Setup creates logs to identify failed tasks and errors in "%SystemDrive%\ProgramData\Microsoft\Amalga\3.0\InstallLogs\<br MadCap:conditions="Production.PrintOnly" /><span class="Placeholder">Date and Time</span>\<span class="Placeholder">Amalga Component</span>\Amalga Operation\<span class="Placeholder">Amalga Task</span>\<br MadCap:conditions="Production.PrintOnly" /><span class="Placeholder">Amalga Task</span>.log". </p>
+        <p class="note">Because the administrator may not know exactly what tasks and operations are being run at the time of error, it is important to note the error log location from the command window at the time of failure.</p>
+    </body>
+</html>

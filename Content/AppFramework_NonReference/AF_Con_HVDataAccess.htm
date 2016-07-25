@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete,TopicType.Concept,EditingTags.6 - Revised / ready for writer" MadCap:lastBlockDepth="4" MadCap:lastHeight="1105" MadCap:lastWidth="941" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-01-27T00:42:14.8624113-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Working with <MadCap:variable name="BrandingHSG.HealthVault" /> data</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="HealthVault" /></p>
+        <p class="abstract">
+            <MadCap:annotation MadCap:createDate="2012-01-27T00:47:57.7537012-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Instead of Working with HV data, can you be more specific? Say, Viewing and sending HV data?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-27T00:48:34.8104065-08:00">This </MadCap:annotation>topic describes ways of working with <MadCap:variable name="BrandingHSG.HealthVault" /> data using <MadCap:change MadCap:changes="1">the </MadCap:change><MadCap:variable name="FeatureName.Amalga Framework" />.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using the  Record Selector on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using the  SDK on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Sending" target="" title="" alt="">Sending data to  on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>
+            <MadCap:annotation MadCap:createDate="2012-01-27T00:49:31.8621111-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="How are they using the selector, or what are they using it for?  If possible, use a more specific verb. Alternatively, heading could be HealthVault Record Selector if there isn't a single verb that covers it." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-27T00:53:22.7291955-08:00">Using</MadCap:annotation> the HealthVault Record Selector</h2>
+        <p>The <MadCap:annotation MadCap:createDate="2012-01-27T00:53:50.5849808-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Need a variable? " MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-27T00:54:01.2380460-08:00">HealthVault Record Selector</MadCap:annotation> is a <MadCap:variable name="FeatureName.Amalga Framework second use" /> <![CDATA[ ]]><a href="AF_Con_UsingControls.htm">Toolbox control</a> that allows a user to select and view a record that the user is authorized to see.</p>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_HealthVaultRecordSelector.htm">HealthVaultRecordSelector </a>depends on the <MadCap:annotation MadCap:createDate="2012-01-27T00:54:20.1619382-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Need a variable? Is this an application?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-27T00:54:29.4038623-08:00">HealthVault Connector</MadCap:annotation> to establish a connection to the <MadCap:variable name="BrandingHSG.HealthVault" /> service, and the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingHSG.HealthVault" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-11-18T11:41:49.4355861-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Pls spellout and folllow with (STS)acronym." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-18T11:43:04.0216514-08:00">STS</MadCap:annotation> for user authentication and authorization. If those applications are installed correctly, the <span class="Label">HealthVaultRecordSelector</span> can be dropped from the <MadCap:variable name="BrandingMS.Toolbox first use" /> into a custom <MadCap:variable name="FeatureName.Amalga Framework second use" /> control and work with no additional configuration.</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2011-11-10T18:59:29.9380445-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="If AddNewRecordUrl is not set, overriding the OnAddNewRecord event handler will completely replace response to &quot;Add a Person&quot; . This is the only way to implement an &quot;Add a Person&quot; response that does not begin by navigating to a new page.  NOTE: event does not exist." MadCap:editor="v-wipete" MadCap:editDate="2011-11-10T18:59:46.6144445-08:00">Add a new record</MadCap:annotation>
+        </h3>
+        <p>By default, selecting "Add a Person" in the Record Selector causes the user to navigate away from the page containing the Record Selector and to a page that begins the Patient Matching workflow. It is <MadCap:annotation MadCap:createDate="2011-11-18T11:45:26.4688947-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="And the two ways are, in brief . . .? I see one, but not two. DNB'd phrase for now." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-18T11:46:45.8998370-08:00">possible to modify this behavior</MadCap:annotation><MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"> in two ways</MadCap:conditionalText>.</p>
+        <p>Assigning a value to the  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/P_HealthVaultRecordSelector_AddNewRecordUrl.htm">AddNewRecordUrl </a>property will cause the Record Selector to navigate to the specified page, instead of the default Patient Match page.</p>
+        <h2><a name="Using2"></a>Using the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK</h2>
+        <p>Any application can connect to the <MadCap:variable name="BrandingHSG.HealthVault" /> shell, allow the user to log in, and use the <MadCap:variable name="BrandingHSG.HealthVault" /> web service to send and receive data. The HealthVault Connector makes connecting to the <MadCap:variable name="BrandingHSG.HealthVault" /> shell easier by providing connection information based on a common <MadCap:variable name="BrandingHSG.HealthVault" /> Application ID and certificate that are assigned to each local <MadCap:variable name="BrandingHSG.Amalga Short" /> implementation.</p>
+        <p>For more information, see <a href="http://go.microsoft.com/fwlink?LinkId=234041">Getting Started with the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK</a>.</p>
+        <h2><a name="Sending"></a>Sending data to <MadCap:variable name="BrandingHSG.HealthVault" /></h2>
+        <p>The HealthVault Connector application supports two ways to send clinical data to <MadCap:variable name="BrandingHSG.HealthVault" />.</p>
+        <p>The HealthVault Connector can also send data directly to an authorized <MadCap:variable name="BrandingHSG.HealthVault" /> record, either as a standard clinical document, or as a native <MadCap:variable name="BrandingHSG.HealthVault" /> data type.</p>
+        <p>A Direct to Clinical connection allows healthcare information to be sent to a <MadCap:variable name="BrandingHSG.HealthVault" /> record without waiting for the connection to be authorized. The sent information is written to a temporary store, and is not added to the <MadCap:variable name="BrandingHSG.HealthVault" /> record until the connection is authorized by the record owner.</p>
+        <p>For more information, see <MadCap:xref href="AF_Con_EC_HVConnector1.htm" target="" title="" alt="">HealthVault Connector</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_EC_HVConnector1.htm">HealthVault Connector</a>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234041">Getting Started with the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK</a>
+        </p>
+        <p class="SeeAlsoSubHead">Other resources</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234041">Download the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK</a>
+        </p>
+    </body>
+</html>

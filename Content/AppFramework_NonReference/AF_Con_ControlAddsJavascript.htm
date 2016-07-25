@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="846" MadCap:lastWidth="576" MadCap:fileTags="TopicOwner.v-wpete,Status.30 - Development: over 50%,ReleaseTarget.TAP" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Running Javascript from a server control</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic discusses how to add Javascript to the browser DOM using a <MadCap:variable name="FeatureName.Amalga Framework second use" /> server control.</p>
+        <p><MadCap:variable name="BrandingMS.SharePoint" /> applications that use the <MadCap:variable name="FeatureName.Amalga Framework second use" /> client side APIs depend on Javascript code to integrate the features of the API into the structure of a <MadCap:variable name="BrandingMS.SharePoint" /> page. Incorporating the Javascript code into the data of a custom <MadCap:variable name="FeatureName.Amalga Framework second use" /> server control allows Javascript developers to bridge their code to the server side APIs, and to take advantage of the code security of a signed .NET assembly.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>Using ScriptManager</li>
+            <li>Selecting an event handler</li>
+            <li>Framework APIs that require client side code</li>
+        </ul>
+        <p>&#160;</p>
+        <h2>Using ScriptManager</h2>
+        <p>The <a href="http://msdn.microsoft.com/en-us/library/bb398863.aspx">ScriptManager</a> control allows .NET applications to manage client side script.</p>
+        <p>The ScriptManager supports the following scenarios:</p>
+        <ul>
+            <li>Sending Javascript directly to the browser.</li>
+            <li>Calling Web services directly from Javascript using proxy functions.</li>
+            <li>Refreshing <span class="codeEntity">UpdatePanel</span> and <span class="codeEntity">Timer</span> controls without a postback.</li>
+            <li>Accessing ASP.NET authentication directly from Javascript.</li>
+        </ul>
+        <p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/bb386453.aspx">Creating Custom Client Script by Using the Microsoft Ajax Library</a>.</p>
+        <h2>Selecting an event handler</h2>
+        <p>If the Javascript code does not depend on the <MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs, it can be safely loaded early in the ASP.NET page life cycle. The <span class="codeEntity">OnLoad</span> event handler is a good choice for making a custom Javascript API available to other page elements and events. </p>
+        <p>If the Javascript does depend on the <MadCap:variable name="FeatureName.Amalga Framework second use" /> client side APIs, the point at which it can be safely loaded from a server control depends on its page environment. In a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal page, the client side APIs&#160;are loaded into the browser DOM by the master page before its page elements are loaded. In a site that does not use a <MadCap:variable name="FeatureName.Amalga Framework second use" /> master page, the APIs are loaded by the first <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a> control whose <span class="codeEntity">OnPreRender</span> event handler is called. </p>
+        <p>Since ASP.NET raises  events in container controls before raising the equivalent events in their child controls, it is safe to load Javascript with the <span class="codeEntity">OnPreRender</span> event handler of any child of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> portal page or server control. </p>
+        <p>For more detail on the sequence of events during the life cycle of an ASP.NET&#160;page, see <a href="http://msdn.microsoft.com/en-us/library/ms178472.aspx">ASP.NET Page Life Cycle Overview</a>.</p>
+        <h2><![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs that require client side code</h2>
+        <p>Most of the <MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs are accessible from client side code. However, there are a few whose features can only be fully utilized with Javascript.</p>
+        <h3>Page messaging</h3>
+        <p>The page messaging system uses a completely client side API. The functions that create messaging participants, join message groups, and send and receive messages are all restricted to Javascript. In addition, the standard payload of a CommonContext message is stored as a nested Javascript dictionary. It can be parsed with any language, but it is much more accessible in Javascript.</p>
+        <h3>Callback methods</h3>
+        <p>Many client side APIs use callback methods to manage the transitions from one application state to another. These callbacks must be written in Javascript.</p>
+        <p>The following <MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs rely on client side callbacks:</p>
+        <ul>
+            <li>Page messaging</li>
+            <li>Local notifications</li>
+            <li>User notifications</li>
+            <li>Message lightbox</li>
+            <li>Client side data access</li>
+            <li>Client side logging</li>
+        </ul>
+        <p>&#160;</p>
+        <h2 MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-03-13T04:43:29.4310006-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="There should be one." MadCap:editor="v-wipete" MadCap:editDate="2012-03-13T04:43:38.0736222-07:00">Example</MadCap:annotation>
+        </h2>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Landing.htm"><MadCap:variable name="FeatureName.Amalga Framework" /> JavaScript API reference</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/bb398863.aspx">ScriptManager</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/ms178472.aspx">ASP.NET Page Life Cycle Overview</a>
+        </p>
+        <p><a href="http://msdn.microsoft.com/en-us/library/bb386453.aspx">Creating Custom Client Script by Using the Microsoft Ajax Library</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

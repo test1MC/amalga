@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="HtmlHelp"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/TestingOnly.fltoc"
+  ConditionTagExpression="include[Features.Imaging or &quot;Releases.Investigation Use&quot;] exclude[Manuals.QFEs or Manuals.QFEs-Mandatory or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "
+  OutputFile="Legal notices draft"
+  conditions="Production.StyleMaster"
+  DisableAutoSync="true"
+  ExcludeUnreferencedContent="true">
+  <Variables>
+    <Variable
+      Name="BrandingHSG/Amalga Long">Microsoft Amalga V3 CTP1</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+  </Variables>
+</CatapultTarget>

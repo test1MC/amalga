@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment=""
+  Type="HtmlHelp"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/BZ_Master_AmalgaV3.fltoc"
+  ConditionTagExpression="include[Manuals.XRefOtherManual or Production.TOCsAll] exclude[API.APIRef or Manuals.QFEs or Manuals.QFEs-Mandatory or Production.doNOTbuild or Production.InternalOnly or Production.Pivot or Production.PrintOnly or Production.QuestionableMaterial or Production.StyleMaster or Production.TOCSingle or Production.WhitePaperOnly or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] "
+  OutputFile="Amalga 3 0 CTP"
+  MasterPage="/Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp"
+  MoveOutputContentToRoot="true"
+  Skin="/Project/Skins/Default-w-Index.flskn"
+  GenerateWebSafeImages="true"
+  WebSafeFileExtension="png"
+  DefaultUrl="/Content/MasterTOCLandingPages(BZ)/Welcome_CTP1 letter.htm"
+  GetLatestBeforeCompile="false"
+  DisableAutoSync="true"
+  ExcludeUnreferencedContent="true"
+  Medium="External">
+  <Variables>
+    <Variable
+      Name="HSGBranding/Amalga Long">Amalga v3</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+    <Variable
+      Name="LegalAnd3rdParty/Version Number-current">VERSION 3.0 CUSTOMER TECHNOLOGY PREVIEW</Variable>
+  </Variables>
+</CatapultTarget>

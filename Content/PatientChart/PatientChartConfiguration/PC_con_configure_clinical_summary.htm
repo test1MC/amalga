@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1116" MadCap:lastWidth="912" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="API.APIRef">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Configure Clinical Summary</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the configuration options for a module for the Clinical Summary.</p>
+        <h2>Presentation configuration</h2>
+        <table style="width: 100%;">
+            <col style="width: 20%;">
+            </col>
+            <col style="width: 20%;">
+            </col>
+            <col style="width: 90px;">
+            </col>
+            <col style="width: 474px;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Children</th>
+                    <th>Mandatory?</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ColumnCount</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Number of columns in the Clinical Summary; positive integer</td>
+                </tr>
+                <tr>
+                    <td>Columns</td>
+                    <td>ColumnConfiguration</td>
+                    <td>Yes</td>
+                    <td>Configuration for the columns; <span class="CHANGEME">Is there a maximum number allowed?</span></td>
+                </tr>
+                <tr>
+                    <td>ColumnConfiguration</td>
+                    <td>Index, Width, Widgets</td>
+                    <td>Yes</td>
+                    <td>Configuration for the column; repeat for each column</td>
+                </tr>
+                <tr>
+                    <td>Index</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Index of the column; zero-based integer</td>
+                </tr>
+                <tr>
+                    <td>Width</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Percentage of the window devoted to the column</td>
+                </tr>
+                <tr>
+                    <td>Widgets</td>
+                    <td>WidgetLayoutConfiguration</td>
+                    <td>&#160;</td>
+                    <td>Configuration for all widgets</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>WidgetLayoutConfiguration</p>
+                    </td>
+                    <td>Index, ID, Height, MinimumHeight, DisplayName</td>
+                    <td>&#160;</td>
+                    <td>Configuration for each widget; repeat for each widget</td>
+                </tr>
+                <tr>
+                    <td>Index</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Index of the widget in the column; zero-based integer</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Widget ID; must match the ID in logical configuration</td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Widget border height</td>
+                </tr>
+                <tr>
+                    <td>MinimumHeight</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Minimum height of the widget border; when resizing, this is the minimum height.</td>
+                </tr>
+                <tr>
+                    <td>DisplayName</td>
+                    <td>&#160;</td>
+                    <td>Yes</td>
+                    <td>Widget title. Use resource key in Microsoft.Health.PatientChart.ClinicalSummary.resx if globalization is required.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 MadCap:conditions="Production.doNOTbuild">Logical configuration</h2>
+        <table style="width: 100%;">
+            <col style="width: 158px;">
+            </col>
+            <col style="width: 20%;">
+            </col>
+            <col style="width: 90px;">
+            </col>
+            <col style="width: 474px;">
+            </col>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Children</th>
+                    <th>Mandatory?</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WidgetIdentityConfiguration</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Logical configuration of a single widget; repeat for all widgets</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Widget ID; must match the ID in presentation configuration</td>
+                </tr>
+                <tr>
+                    <td>RelatedModuleID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p>When clicking the widget title, the related module will open;</p>
+                        <p>can be empty if there is no related module</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>WebPartName</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Name of the webpart</td>
+                </tr>
+                <tr>
+                    <td>ContentPageUri</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>
+                        <p>The Uri of the content page that contains the webpart; </p>
+                        <p>relative path to the site root <span class="CHANGEME">Is this used instead of the name? Is it only used for a Beijing webpart?</span></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

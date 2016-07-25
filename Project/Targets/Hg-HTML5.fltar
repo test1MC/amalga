@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/BZ_Master_AmalgaV3.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/AmalgaMain.css"
+  ExcludeUnreferencedContent="true"
+  MasterPage="/Content/Resources/MasterPages/AmalgaMasterNoCSS-AppliesHeader.flmsp"
+  Medium="DRAFT"
+  ConditionTagExpression="include[Production.ScreenOnly] exclude[Production.doNOTbuild or Production.InternalOnly or Production.PrintOnly or Production.WhitePaperOnly or Region.China or Region.Thailand or Region.UK] ">
+  <PrintedOutput
+    CollapseMargins="true" />
+</CatapultTarget>

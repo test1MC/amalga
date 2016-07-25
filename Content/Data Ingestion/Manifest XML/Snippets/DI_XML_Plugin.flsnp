@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="247" MadCap:lastWidth="828">
+    <head>
+    </head>
+    <body><pre xml:space="preserve"><span style="font-size: 10pt;">
+      <a href="../DI_XML_Manifest_Plugin.htm">&lt;Plugin&gt;</a>
+         <a href="../DI_XML_Manifest_PluginData.htm">&lt;PluginData&gt;</a>
+         <a href="../DI_XML_Manifest_URL.htm">&lt;URL&gt;</a>
+         <a href="../DI_XML_Manifest_SourceType.htm">&lt;SourceType&gt;</a>
+         <a href="../DI_XML_Manifest_NameSpace.htm">&lt;NameSpace&gt;</a>
+         <a href="../DI_XML_Manifest_Dependencies.htm">&lt;Dependencies&gt;</a>
+            <a href="../DI_XML_Manifest_Dependency.htm">&lt;Dependency&gt;
+</a></span></pre>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet
+  Comment=""
+  Type="ReleaseTarget"
+  conditions="Production.StyleMaster">
+  <FileTag
+    Name="CTP1"
+    Comment="" />
+  <FileTag
+    Name="RTM"
+    Comment="" />
+  <FileTag
+    Name="TAP"
+    Comment="" />
+</CatapultFileTagSet>

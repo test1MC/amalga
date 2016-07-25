@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Name="Microsoft Amalga DICOM Metadata Migration"
+    Comment="Tool. Microsoft Amalga DICOM Metadata Migration. First use."
+    Definition="Some text">Microsoft Amalga DICOM Metadata Migration</Variable>
+  <Variable
+    Name="Medical Imaging Module Database Maintenance tool"
+    Comment="Tool. Medical Imaging Module Database Maintenance tool. Sentence case."
+    Definition="Some text">Medical Imaging Module Database Maintenance tool</Variable>
+  <Variable
+    Name="Medical Imaging Module Database Maintenance Tool"
+    Comment="Tool. Medical Imaging Module Database Maintenance Tool. Title case."
+    Definition="Some text">Medical Imaging Module Database Maintenance Tool</Variable>
+  <Variable
+    Name="IRDS"
+    Comment="Server. IRDS Acronym for Imaging Registry and Document Server"
+    Definition="Some text">IRDS</Variable>
+  <Variable
+    Name="Invoker"
+    Comment="MHVCC- Feature, backend: event-driven method invocation system"
+    Definition="Some text">Invoker</Variable>
+  <Variable
+    Name="Installation Media title"
+    Comment="Media  Only for use in titles"
+    Definition="Some text">Installation Media</Variable>
+  <Variable
+    Name="Installation media"
+    Comment="Media. Disc, DVD, thumbdrive -- whatever media we provide for the installation files"
+    Definition="Some text">installation media</Variable>
+  <Variable
+    Name="Imaging Registry and Document server"
+    Comment="Server. Imaging Registry and Document.  IRDS"
+    Definition="Some text">Imaging Registry and Document</Variable>
+  <Variable
+    Name="Imaging Application servers"
+    Comment="Servers, group of.  In technical documents this is referred to as the MT, for middle-tier, or imaging middle-tier. Parts include the Image Metadata Server (IMS) and Image Delivery Server (IDS). In practice the IMS and IDS servers may be clustered."
+    Definition="Some text">Imaging Application</Variable>
+  <Variable
+    Name="Images viewer"
+    Comment="Module (informal name). Refers to the features that open when you click Images on the Info window list (per PM)"
+    Definition="Some text">Images viewer</Variable>
+  <Variable
+    Name="Image Viewer"
+    Comment="Component, baseline. Info component (baseline)  Rev 01/10/09"
+    Definition="Some text">Images</Variable>
+  <Variable
+    Name="Image Metadata server"
+    Comment="Server. Image Metadata (IMS) Server that handles requests for DICOM metadata and BLOB data from the client. It also balances the load of the IDS."
+    Definition="Some text">Image Metadata</Variable>
+  <Variable
+    Name="Image Delivery server"
+    Comment="Server. Image Delivery (IDS) Processes DICOM files for delivery to the client."
+    Definition="Some text">Image Delivery</Variable>
+  <Variable
+    Name="Image Acquisition and Distribution Engine"
+    Comment="Server. Image Acquisition and Distribution Engine (IADE)"
+    Definition="Some text">Image Acquisition and Distribution Engine</Variable>
+  <Variable
+    Name="IADE"
+    Comment="Server. Image Acquisition and Distribution Engine"
+    Definition="Some text">IADE</Variable>
+  <Variable
+    Name="DSAL"
+    Comment="Middle Tier component.  DICOM Storage Abstraction Layer"
+    Definition="Some text">DSAL</Variable>
+  <Variable
+    Name="DicomMetaData Database"
+    Comment="Database. Located on the DICOM Image Storage server; holds metadata for DICOM files in storage.&#xD;&#xA; See DICOM Storage Abstraction Layer (full). &#xD;&#xA;See IADE. &#xD;&#xA;The image delivery server processes DICOM files for delivery to the client.&#xD;&#xA;Metadata Server handles requests for DICOM metadata and BLOB data from the client. It also balances the load of the IDS."
+    Definition="Some text">DicomMetaData</Variable>
+  <Variable
+    Name="DicomBlobData database"
+    Comment="Database. Binary Large Object (BLOB) database that stores DICOM files"
+    Definition="Some text">DicomBlobData</Variable>
+  <Variable
+    Name="DICOM storage commitment"
+    Comment="Service. DICOM storage commitment.  Sentence case"
+    Definition="Some text">DICOM storage commitment</Variable>
+  <Variable
+    Name="DICOM Storage Commitment"
+    Comment="Service. DICOM Storage Commitment (Title Case) Verifies that files have been stored in persistent storage."
+    Definition="Some text">DICOM Storage Commitment</Variable>
+  <Variable
+    Name="DICOM Storage Abstraction Layer"
+    Comment="Middle Tier component. DSAL"
+    Definition="Some text">DICOM Storage Abstraction Layer</Variable>
+  <Variable
+    Name="DICOM service class provider"
+    Comment="Service. DICOM service class provider. Sentence case"
+    Definition="Some text">DICOM service class provider</Variable>
+  <Variable
+    Name="DICOM Service Class Provider"
+    Comment="Service. DICOM service class provider. Title Case. DICOM (SCP) service on the IADE server that receives input to the DICOM Servers"
+    Definition="Some text">DICOM Service Class Provider</Variable>
+  <Variable
+    Name="DICOM Sender"
+    Comment="Service. Title case. Works hand in hand with the retriever to store and retrieve DICOM files from persistent storage."
+    Definition="Some text">DICOM Sender</Variable>
+  <Variable
+    Name="DICOM sender"
+    Comment="Service. Works hand in hand with the retriever to store and retrieve DICOM files from persistent storage."
+    Definition="Some text">DICOM sender</Variable>
+  <Variable
+    Name="DICOM Script Engine"
+    Comment="Engine.  Formerly DICOM Parser; processes input from the filer and creates the Amalga ID"
+    Definition="Some text">DICOM script engine</Variable>
+  <Variable
+    Name="DICOM SCP"
+    Comment="Service. See DICOM Service Class Provider"
+    Definition="Some text">DICOM SCP</Variable>
+  <Variable
+    Name="DICOM router"
+    Comment="Service. DICOM router. Sentence case."
+    Definition="Some text">DICOM router</Variable>
+  <Variable
+    Name="DICOM Router"
+    Comment="Service. DICOM Router. Title Case Only"
+    Definition="Some text">DICOM Router</Variable>
+  <Variable
+    Name="DICOM Retriever"
+    Comment="Service. Title case. Works hand in hand with the sender to store and retrieve DICOM files from persistent storage."
+    Definition="Some text">DICOM Retriever</Variable>
+  <Variable
+    Name="DICOM retriever"
+    Comment="Service. Sentence case. Works hand in hand with the sender to store and retrieve DICOM files from persistent storage."
+    Definition="Some text">DICOM retriever</Variable>
+  <Variable
+    Name="DICOM Metadata Migration"
+    Comment="Tool. DICOM Metadata Migration. Second and later use."
+    Definition="Some text">DICOM Metadata Migration</Variable>
+  <Variable
+    Name="DICOM Manager"
+    Comment="Component, baseline. Admin component (baseline)"
+    Definition="Some text">DICOM Manager</Variable>
+  <Variable
+    Name="DICOM integrator"
+    Comment="Service. Manages DICOM storage in both persistent and cache scenarios."
+    Definition="Some text">DICOM integrator</Variable>
+  <Variable
+    Name="DICOM Integrator"
+    Comment="Service - Title case. Manages DICOM storage in both persistent and cache scenarios."
+    Definition="Some text">DICOM Integrator</Variable>
+  <Variable
+    Name="DICOM Image Storage server"
+    Comment="Server. Storage server that includes DicomMetadata Database and DicomBlob Database in a single machine or a cluster"
+    Definition="Some text">DICOM Image Storage</Variable>
+  <Variable
+    Name="DICOM Filer"
+    Comment="Service - Title case only. Processes (and files on local machine) incoming DICOM files."
+    Definition="Some text">DICOM Filer</Variable>
+  <Variable
+    Name="DICOM filer"
+    Comment="Service. Processes (and files on local machine) incoming DICOM files."
+    Definition="Some text">DICOM filer</Variable>
+  <Variable
+    Name="DICOM Configuration Tool-title"
+    Comment="Tool. For use only in titles."
+    Definition="Some text">DICOM Configuration Tool</Variable>
+  <Variable
+    Name="DICOM Configuration Tool"
+    Comment="Tool. A management application with a graphic user interface used to create, configure, install, and maintain DICOM services, AE Titles, and DICOM storage."
+    Definition="Some text">DICOM configuration tool</Variable>
+  <Variable
+    Name="DICOM"
+    Comment="Standard. Digital Imaging and Communications in Medicine: can be server, system, etc."
+    Definition="Some text">DICOM</Variable>
+  <Variable
+    Name="study browser"
+    Comment="Feature. study browser"
+    Definition="Some text">study browser</Variable>
+  <Variable
+    Name="Study browser"
+    Comment="Feature. Study browser. start of sentence"
+    Definition="Some text">Study browser</Variable>
+  <Variable
+    Name="Study browser web part"
+    Comment="Control. Study browser web part. Start of sentence"
+    Definition="Some text">Study browser web part</Variable>
+  <Variable
+    Name="study browser web part"
+    Comment="Control. study browser web part."
+    Definition="Some text">study browser web part</Variable>
+  <Variable
+    Name="Imaging Registry and Document application (IRDA)"
+    Comment="Application. Imaging Registry and Document application (IRDA). First use."
+    Definition="Some text">Imaging Registry and Document application (IRDA)</Variable>
+  <Variable
+    Name="IRDA"
+    Comment="Application. IRDA. Imaging Registry and Document application (IRDA). First use."
+    Definition="Some text">IRDA</Variable>
+  <Variable
+    Name="Imaging Registry and Document (application)"
+    Comment="Application. Imaging Registry and Document ( application). Use in lists of applications"
+    Definition="Some text">Imaging Registry and Document</Variable>
+  <Variable
+    Name="Image Registry service (IRS)"
+    Comment="Service. Image Registry service (IRS). Hosted by IRDS."
+    Definition="Some text">Image Registry service (IRS)</Variable>
+  <Variable
+    Name="Image Registry (service)"
+    Comment="Service. Image Registry. Use in lists of services."
+    Definition="Some text">Image Registry</Variable>
+  <Variable
+    Name="IRS"
+    Comment="Service. IRS Image Registry service"
+    Definition="Some text">IRS</Variable>
+  <Variable
+    Name="Image Delivery application (IDA)"
+    Comment="Application. Image Delivery application (IDA). First use."
+    Definition="Some text">Image Delivery application (IDA)</Variable>
+  <Variable
+    Name="Image Delivery (application)"
+    Comment="Application. Image Delivery. IDA"
+    Definition="Some text">Image Delivery</Variable>
+  <Variable
+    Name="IDA"
+    Comment="Application. IDA. Image Delivery application (IDA)"
+    Definition="Some text">IDA</Variable>
+  <Variable
+    Name="IDA SOAP WCF service"
+    Comment="Service. IDA SOAP WCF service"
+    Definition="Some text">IDA SOAP WCF service</Variable>
+  <Variable
+    Name="IDA Core service"
+    Comment="Service. IDA Core service"
+    Definition="Some text">IDA Core service</Variable>
+  <Variable
+    Name="IDA REST service"
+    Comment="Service. IDA REST service"
+    Definition="Some text">IDA REST service</Variable>
+  <Variable
+    Name="IDA REST (service)"
+    Comment="Service. IDA REST for use in lists"
+    Definition="Some text">IDA REST</Variable>
+  <Variable
+    Name="IDA SOAP WCF (service)"
+    Comment="Service. IDA SOAP WCF for use in lists"
+    Definition="Some text">IDA SOAP WCF</Variable>
+  <Variable
+    Name="IDA Core (service)"
+    Comment="Service. IDA Core for use in lists."
+    Definition="Some text">IDA Core</Variable>
+</CatapultVariableSet>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="846" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-02-11T20:20:34.0120682-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-02-11T20:20:34.0240682-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="3" MadCap:timestamp="2012-02-11T20:24:36.2170682-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="4" MadCap:timestamp="2012-02-11T20:24:36.2180682-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="5" MadCap:timestamp="2012-02-11T20:25:46.7770682-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="6" MadCap:timestamp="2012-02-11T20:25:46.7780682-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient Search control</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">The Patient Search control enables staff and providers to search for patients using various <MadCap:annotation MadCap:createDate="2012-02-11T20:35:20.4470682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I began to wonder why you had this tagged edtied -- then I finished, checked tht file tags, and you didn't have it tagged for editng. OOPS.  Will see you again down the road," MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:36:21.0750682-08:00">criteria</MadCap:annotation>.</p>
+        <p>The Patient Search control appears by default on the global header for the <MadCap:change MadCap:changes="2">s</MadCap:change><MadCap:change MadCap:changes="1">S</MadCap:change>taff <MadCap:change MadCap:changes="2">p</MadCap:change><MadCap:change MadCap:changes="1">P</MadCap:change>ortal and <MadCap:change MadCap:changes="2">p</MadCap:change><MadCap:change MadCap:changes="1">P</MadCap:change>rovider <MadCap:change MadCap:changes="2">p</MadCap:change><MadCap:change MadCap:changes="1">P</MadCap:change>ortal sites. The control initially appears as a hyperlink showing the text "Search for patient", and a magnifier icon. When a user clicks the link, a lightbox-style control presents advanced search options, allowing the user to search for a patient by using one or more of the following fields:</p>
+        <ul>
+            <li>First Name</li>
+            <li>Last Name</li>
+            <li>Date of Birth</li>
+            <li>SSN</li>
+            <li>MRN</li>
+        </ul>
+        <p>The search results are displayed in a grid, with each row representing a single search result. When a patient is selected, the user is then returned to the page that they were already on, with the resulting patient <MadCap:annotation MadCap:createDate="2012-02-11T20:22:22.6430682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Switched implies one patient in, one patient out of the contect. Will that always be the case?  You could also say &quot;resulting  patient as the curernt page context&quot;.  " MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:24:03.3380682-08:00">switched into</MadCap:annotation> the current page context.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Adding" target="" title="" alt="" MadCap:changes="3">Adding the Patient Search control to a project</MadCap:xref>
+                <MadCap:change MadCap:changes="4">Adding the Patient Search control to a project</MadCap:change>
+            </li>
+            <li>
+                <MadCap:xref href="#Customiz" target="" title="" alt="" MadCap:changes="3">Customizing the appearance of a Patient Search control instance</MadCap:xref>
+                <MadCap:change MadCap:changes="4">Customizing the appearance of a Patient Search control instance</MadCap:change>
+            </li>
+            <li>
+                <MadCap:xref href="#Localizi" target="" title="" alt="" MadCap:changes="5">Localizing a Patient Search control instance</MadCap:xref>
+                <MadCap:change MadCap:changes="6">Localizing a Patient Search control instance</MadCap:change>
+            </li>
+        </ul>
+        <h2><a name="Adding" MadCap:changes="3"></a>Adding the Patient Search control to a project</h2>
+        <p>The Patient Search control has a large number of potential uses across a site. You can add a local Patient Search control instance to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>. Once you add an instance of the control, it will automatically hook into the page messaging system, and will render according to the page CSS. Once the control is added to the page, you will need to add code to leverage search results, and to drive context on the page if needed. The following example demonstrates how to do this:</p>
+        <p class="code">
+            <MadCap:annotation MadCap:createDate="2012-02-11T20:26:43.2140682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="That would be really good &lt;g&gt;.  Writers sometimes use the CHANGEME style to make it obvious that something is missing." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:27:50.4120682-08:00">//code example goes here</MadCap:annotation>
+        </p>
+        <h2><a name="Customiz" MadCap:changes="3"></a>Customizing the appearance of a Patient Search control instance</h2>
+        <p>You can change the appearance and behavior of a Patient Search control instance by editing the control properties in the <MadCap:variable name="BrandingMS.Visual Studio second use" /> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2012-02-11T20:28:52.8460682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="In the UI, is Window initial capped?  &quot;Wiondow&quot; houldnt be in the UI at all, but if it is, we are stuck." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:29:44.5850682-08:00">Properties Window</MadCap:annotation>. For a complete list of properties, see <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_PatientSearch.htm">PatientSearch class</a>. Each customized instance needs to be deployed to the site as a new control.</p>
+        <h2><a name="Localizi" MadCap:changes="5"></a>Localizing a Patient Search control <MadCap:annotation MadCap:createDate="2012-02-11T20:30:23.7520682-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Our person who manages localization projects may be of use if Shawna and Shree are not: Michele Coady." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-11T20:34:10.4340682-08:00">instance</MadCap:annotation></h2>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-02-09T13:26:20.1882588-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="How is this done? RESX? I have an outstanding mail to Shawna and Shree." MadCap:editor="v-wfren" MadCap:editDate="2012-02-09T13:26:35.6188017-08:00">[text]</MadCap:annotation>
+        </p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_PatientSearch.htm">PatientSearch class</a>
+        </p>
+    </body>
+</html>

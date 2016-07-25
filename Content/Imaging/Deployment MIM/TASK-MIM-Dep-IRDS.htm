@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use" MadCap:lastBlockDepth="8" MadCap:lastHeight="2942.333" MadCap:lastWidth="448">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Deploy <MadCap:variable name="Imaging.Imaging Registry and Document (application)" /> application</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:IRDA deployment" />The <MadCap:variable name="Imaging.IRDA" /> should be installed on a logical host at the central site. You can synchronize this application to one of the existing logical hosts; for example, in the sample topology, <span class="Label">AppsLogicalHost2</span>. For more information see <MadCap:xref href="LAN-MIM-Dep-Top.htm"> topology on page 1</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To install the <MadCap:variable name="Imaging.IRDA" /></p>
+        <p>Install the application with the following procedures:            </p>
+        <ul>
+            <li><a href="#To publish and synchronize the application">Resolve the manifest files</a>.</li>
+            <li><a href="#To resolve the manifest files">Publish and synchronize</a> the application.</li>
+            <li><a href="TASK-MIM-Dep-IRDS-Verify.htm">Verify the deployment</a> of the Imaging Registry and Document application.</li>
+        </ul>
+        <p>For more information on the <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets, see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Publish-AmApplicatioinInstance.htm">Publish-AmApplicationInstance on page 1, and <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm">Sync-AmPhysicalHost on page 1</MadCap:xref>.</MadCap:xref></p>
+        <p class="LabelforProcedures"><a name="To resolve the manifest files"></a>To resolve the manifest files</p>
+        <ol>
+            <li>Get application and service manifest files from <span class="Label">ImagingRegistryDocumentApplication.cab</span>.</li>
+            <li>Modify <span class="Label">AmalgaApplication.xml</span>.<ol style="list-style-type: lower-alpha;"><li>Add <span class="Label">InstanceName </span>(for example, IRSApp_Inst1) to DeploymentManifest.</li><li>Add the <span class="Label">DataConnectorApplication </span>instance name in the Dependency section.</li></ol></li>
+            <li>Modify <span class="Label">ImagingRegistryService.xml</span>.<ol style="list-style-type: lower-alpha;"><li>Add <span class="Label">InstanceName </span>(for example, IRSService_Inst1) to the DeploymentManifest.</li><li>Add <span class="Label">LogicalHostName </span>to WcfServiceManifest, for example, <span class="InputText">LogicalHostName = "AppsLogicalHost2"</span>.</li></ol></li>
+        </ol>
+        <p class="LabelforProcedures"><a name="To publish and synchronize the application"></a>To publish and synchronize the application</p>
+        <ol>
+            <li><![CDATA[  ]]><MadCap:snippetText src="../../Resources/Snippets/proc-StartPowerShell.flsnp" /> Run <MadCap:variable name="BrandingMS.Doors PowerShell" /> on a node where the Imaging Registry and Document application is installed.</li>
+            <li>Run the following command:<p class="InputText">Import-module 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell\Microsoft.Amalga.Powershell.dll'</p></li>
+            <li>Run the following command, replacing placeholders as indicated in the following table:<p class="InputText">Publish-ApplicationInstance -ApplicationCabFile <span class="InputTextVariable">ApplicationCabFilePath </span>-ApplicationAuxiliaryFiles "<span class="InputTextVariable">AppManifestFilePath</span>; <span class="InputTextVariable">ServiceManifestPath</span>"</p><table style="width: 95%; margin-left: 0; margin-right: auto;"><col /><col /><thead><tr><th>Placeholder	</th><th>Value</th></tr></thead><tbody><tr><td class="InputTextVariable">ApplicationCabFilePath </td><td>The full path for the Imaging Registry and Document application CAB file.</td></tr><tr><td class="InputTextVariable">AppManifestFilePath</td><td>The full path for the Imaging Registry and Document application manifest file, which is in .xml format.</td></tr><tr><td class="InputTextVariable">ServiceManifestFilePath</td><td><p>The full path for the Imaging Registry service manifest file, which is in .xml format.</p></td></tr></tbody></table></li>
+            <li>Create a virtual schema by running the following command:<p class="InputText">New-AmVirtualSchema -ApplicationInstanceName <span class="InputTextVariable">AppInstanceName </span>-<span class="InputText">DataHostInstanceName </span><span class="InputTextVariable">DataHostInstanceName</span></p><table style="width: 95%; margin-left: 0; margin-right: auto;"><col style="width: 168px;" /><col /><thead><tr><th>Placeholder	</th><th>Value</th></tr></thead><tbody><tr><td class="InputTextVariable">AppInstanceName</td><td>The instance name for the Imaging Registry and Document application.</td></tr><tr><td class="InputTextVariable">DataHostInstanceName</td><td>The fully qualified domain name for the computerwhere the <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> clinical database is installed. This value is the fully qualified domain name of the local machine if <MadCap:variable name="BrandingHSG.Amalga Short" /> is installed on a single server.</td></tr></tbody></table></li>
+            <li>Add an appropriate role to the Imaging user access level by running the following command: <p class="InputText">Add-AmRoleToAccessLevel -ApplicationOrFeatureInstanceName <span class="InputTextVariable">AppInstanceName </span>-AccessLevelName ImagingUser -Roles <span class="InputTextVariable">Roles</span></p><table style="width: 95%; margin-left: 0; margin-right: auto;"><col /><col /><thead><tr><th>Placeholder	</th><th>Value</th></tr></thead><tbody><tr><td class="InputTextVariable">AppInstanceName</td><td>The instance name for the Imaging Registry and Document application.</td></tr><tr><td class="InputTextVariable">Roles</td><td>Appropriate value for the parameter Roles, for example., <span class="Label">BUILTIN\AmalgaUsers</span>.</td></tr></tbody></table></li>
+            <li>Run the following command:<p class="InputText">Sync-AmPhysicalHost</p><p>For more information see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm">Sync-AmPhysicalHost on page 1</MadCap:xref>.</p></li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep.htm">Installation steps on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Sync-AmPhysicalHost.htm">Sync-AmPhysicalHost on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Publish-AmApplicatioinInstance.htm">Publish-AmApplicationInstance on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

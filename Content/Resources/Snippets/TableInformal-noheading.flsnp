@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="117" MadCap:lastWidth="978" MadCap:conditions="Production.StyleMaster,Production.doNOTbuild" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+    </head>
+    <body>
+        <table class="informal">
+            <col />
+            <col />
+            <tbody>
+                <tr class="informal">
+                    <td class="informal">
+                        <MadCap:annotation MadCap:createDate="2009-09-16T12:53:21.8342305-07:00" MadCap:creator="v-padenc@REDMOND" MadCap:initials="CJW" MadCap:comment="TO USE THIS TABLE TEMPLATE:&#160;\r\n1. Open your topic. \r\n2. Select Insert &gt; Snippet and select this snippet file. \r\n3. In your topic, right-click the inserted snippet and select Convert to text. \r\nThe table is now ready for your updates!&#160;You can enter text, and add rows and columns. \r\n\r\nTo remove the gridlines on inserted columns and rows, select the columns or rows, and apply the td.informal style. " MadCap:editDate="2010-02-23T22:22:57.0677500-08:00" MadCap:editor="v-ciwyco@REDMOND">table</MadCap:annotation> row 1, cell 1</td>
+                    <td class="informal">table row 1, cell 2</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">&#160;</td>
+                    <td class="informal">&#160;</td>
+                </tr>
+                <tr class="informal">
+                    <td class="informal">&#160;</td>
+                    <td class="informal">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

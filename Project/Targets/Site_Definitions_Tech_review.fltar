@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment="New Target"
+  Type="MsWord"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Kathy_TechReview2.fltoc"
+  EmbedImages="true"
+  ConditionTagExpression="exclude[Production.doNOTbuild or Production.PrintOnly] "></CatapultTarget>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-wpete,Status.50 - InTech Review" MadCap:lastBlockDepth="6" MadCap:lastHeight="2708" MadCap:lastWidth="915" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Local notifications</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="local notification">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic describes the <MadCap:variable name="FeatureName.Amalga Framework" /> local notification feature.</p>
+        <p>The notification system allows <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications to deliver messages directly to the current user. Local notifications provide immediate feedback in response to user activity, or alert the user to application activity. Local notifications are not persistent, are not managed by the Notification web service, and are not available outside the current web page.</p>
+        <p>To deliver a persistent message to a specified user, use <a href="AF_Con_UserNotification.htm">User notifications</a> instead.</p>
+        <p class="Label">In this topic:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Local" target="" title="" alt="">Local notification system on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Life" target="" title="" alt="">Life cycle of a local notification on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Local"></a>Local notification system</h2>
+        <p>The local notification system consists of the notification manager and the UI elements that display notification content to the user.</p>
+        <h3>Notification Manager</h3>
+        <p>The phrase "NotificationManager" can refer to one of three things: </p>
+        <ol>
+            <li>The on-page <a href="AF_Con_API_Notification.htm">NotificationManager</a> JavaScript object, which provides access to the client side Notification API.      <![CDATA[ ]]></li>
+            <li>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.Utility/T_NotificationManager.htm">Microsoft.Amalga.AppFramework.Web.Utility.NotificationManager</a> static class, which provides the Notification API&#160;to .NET controls.</li>
+            <li>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">Microsoft.Amalga.AppFramework.Web.ServerControls.NotificationManager</a> non-UI server control, which loads and initializes the Javascript object into Web pages that do not contain other <MadCap:variable name="FeatureName.Amalga Framework second use" /> server controls.</li>
+        </ol>
+        <p class="note">Any server control derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl</a> or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a> will automatically load the Notification client side API. The <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_NotificationManager.htm">NotificationManager</a> server control is only necessary when no other <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls are present in the page.</p>
+        <p>The Notification Manager API allows client side code to do the following:</p>
+        <ul>
+            <li>Add a local notification to the current web page.</li>
+            <li>Remove one or all local notifications from the current page.</li>
+        </ul>
+        <h3>Notification UI</h3>
+        <p>Local notifications are presented to the logged-in user with the Notification Banner, which displays them using the <MadCap:variable name="BrandingMS.SharePoint" /> <![CDATA[ ]]><span class="LabelCShrp">UI.Status</span> bar control.      <![CDATA[ ]]></p>
+        <h2>Predefined local notifications</h2>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> includes a number of predefined user notification resources that support the <a href="AF_Con_ControlSolutionPicker.htm">Solution Picker</a> control.</p>
+        <p>The text resources for the predefined local notifications can be modified in order to customize the Solution Picker.<br />To change the content of the predefined notification types, edit the resource values in the AmalgaCore.resx resource file.</p>
+        <p class="warning">Do not modify the key values associated with the predefined notification resources. Changes to the key values may disable elements in the Solution Picker UI.</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-03-12T16:02:00.0654367-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="In spreadsheet, not in code" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T16:02:05.3695727-07:00">AlreadyLinkedByStaff</MadCap:annotation>
+        </h3>
+        <p MadCap:conditions="Production.doNOTbuild">The user was editing their previously submitted Patient Link Request. However, the staff had already processed their previous request by the time the user hit the “Submit” button.  Since the first write wins, the staff action will win and this request will NOT be formally submitted.</p>
+        <h4 MadCap:conditions="Production.doNOTbuild">Resource key</h4>
+        <p MadCap:conditions="Production.doNOTbuild">&lt;not present&gt;</p>
+        <h4 MadCap:conditions="Production.doNOTbuild">Recommended Severity</h4>
+        <p MadCap:conditions="Production.doNOTbuild">Warning</p>
+        <h3>CurrentDefaultSolutionInvalidOrNotAvailable	</h3>
+        <p>The user does not have access to the current default solution.</p>
+        <h4>Resource key</h4>
+        <p>SolutionPicker_Error_CurrentDefaultSolutionInvalidOrNotAvailable</p>
+        <h4>Recommended Severity</h4>
+        <p>Warning</p>
+        <h4>Arguments</h4>
+        <p>{0} - the URL of the current default solution</p>
+        <h3 MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-03-12T13:13:10.0638740-07:00" MadCap:creator="v-wipete" MadCap:initials="V-" MadCap:comment="Defined but not actually used" MadCap:editor="v-wipete" MadCap:editDate="2012-03-12T16:02:20.9855731-07:00">DefaultSolutionInvalidOrNotAvailable</MadCap:annotation> <![CDATA[	]]></h3>
+        <p MadCap:conditions="Production.doNOTbuild">The user does not have access to the default solution.</p>
+        <h4 MadCap:conditions="Production.doNOTbuild">Resource key</h4>
+        <p MadCap:conditions="Production.doNOTbuild">SolutionPicker_Error_CurrentSolutionInvalidOrNotAvailable</p>
+        <h4 MadCap:conditions="Production.doNOTbuild">Recommended Severity</h4>
+        <p MadCap:conditions="Production.doNOTbuild">Error</p>
+        <h4 MadCap:conditions="Production.doNOTbuild">Arguments</h4>
+        <p MadCap:conditions="Production.doNOTbuild">{0} - the URL of the current default solution</p>
+        <h3>NoAccessToRootWeb   <![CDATA[	]]></h3>
+        <p>The user does not have the permissions required in order to populate the solution list.</p>
+        <h4>Resource key</h4>
+        <p>SolutionPicker_Error_NoAccessToRootWeb</p>
+        <h4>Recommended Severity</h4>
+        <p>Error</p>
+        <h3>NoSolutionsOrNoAccess   <![CDATA[	]]></h3>
+        <p>The user has sufficient permissions to access the solutions list, but does not have the permissions required in order to access any individual solutions.</p>
+        <h4>Resource key</h4>
+        <p>SolutionPicker_Error_NoSolutionsOrNoAccess</p>
+        <h4>Recommended Severity</h4>
+        <p>Error</p>
+        <h2><a name="Life"></a>Life cycle of a local notification</h2>
+        <p>The life cycle of a local notification goes through the following steps:</p>
+        <h3>Development</h3>
+        <ul>
+            <li>An application developer identifies an event (or other application condition) that is meaningful within the context of a specific page at run time.</li>
+            <li>The developer identifies the information that the user needs to know in order to respond appropriately.</li>
+            <li>The developer defines one or more notification messages that correspond to the event.</li>
+            <li>The developer places any necessary text resources into a resource file. The message text may any string, including HTML.</li>
+            <li>The developer writes application code that handles the identified event or other application condition.</li>
+        </ul>
+        <h3>Run time</h3>
+        <ul>
+            <li>The application uses the notification manager to add a local notification to the page.</li>
+            <li>The Notification Manager passes the notification information on to the UI element, which presents the notification to the user.</li>
+            <li>If the <span class="ForeignCodeElements">showClose</span> parameter of the local notification allows it, the user may close the local notification.</li>
+            <li>If the user cannot or does not close the local notification, the application may use the notification manager to close the notification. Local notifications that are not closed by the application or the user will be automatically closed when the user closes or navigates away from the page.</li>
+        </ul>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="AF_Con_API_Notification.htm"><MadCap:annotation MadCap:createDate="2012-02-10T10:54:36.3954968-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This should be an Xref, since you are using the same text as you would see with an Xref." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-10T10:54:37.8151150-08:00">JavaScript </MadCap:annotation>API reference: Notification Manager</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">&#160;</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

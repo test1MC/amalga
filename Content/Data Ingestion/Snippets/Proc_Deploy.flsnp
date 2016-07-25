@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head />
+    <body>
+        <p>Perform the following sequence from the data pipeline logical host. You must repeat this sequence on every computer where you expect the service to be installed.</p>
+        <p class="LabelforProcedures">To deploy an application instance</p>
+        <ol>
+            <li>
+                <p>Type the following command to deploy the application instance to the physical host:</p>
+                <p class="InputText">Sync-PhysicalHost</p>
+            </li>
+            <li>
+                <p>From <span class="UIElementAction">Start</span>, run <span class="UIElementAction">services.msc</span> to open the Services MMC. Verify that your service name appears in the service list.</p>
+            </li>
+            <li>Right-click the service and point to <span class="UIElementAction">Start</span>.</li>
+        </ol>
+    </body>
+</html>

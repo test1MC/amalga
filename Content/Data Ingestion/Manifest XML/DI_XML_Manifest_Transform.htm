@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1933" MadCap:lastWidth="1030" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Transform element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Transform element" />Declares a transform action and the associated parameters for the specified segment element.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+            &lt;DataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Transform&gt;</b>
+                           &lt;Action&gt;...&lt;/Action&gt;
+                           &lt;InputParameters /&gt;<b>						
+                        &lt;/Transform&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/DataParserOutput&gt;
+					
+            &lt;ExtensibleDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Transform&gt;</b>
+                           &lt;Action&gt;...&lt;/Action&gt;
+                           &lt;InputParameters /&gt;<b>		
+                        &lt;/Transform&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+               &lt;/Segment&gt;
+            &lt;/ExtensibleDataParserOutput&gt;
+					
+            &lt;ExpandableDataParserOutput&gt;
+               &lt;Segment&gt;
+                  &lt;Elements&gt;
+                     &lt;Element&gt;<b>
+                        &lt;Transform&gt;</b>
+                           &lt;Action&gt;...&lt;/Action&gt;
+                           &lt;InputParameters /&gt;<b>								
+                        &lt;/Transform&gt;</b>
+                     &lt;/Element&gt;
+                  &lt;/Elements&gt;
+              &lt;/Segment&gt;
+            &lt;/ExpandableDataParserOutput&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Element.htm">Element</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Action.htm">Action</a>, <a href="DI_XML_Manifest_InputParameter.htm">InputParameters</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Transform</span> element is mandatory in the data-parser service manifest to transform the format of data from the message.  Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p>
+        <p>The following example generates a context key by concatenating a shredded segment element and a derived column.</p><pre xml:space="preserve">&lt;Element Name="Diagnosis_DG1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true"&gt;
+    &lt;ConceptId&gt;f/xuQgEy71iABYBuCrJmYw&lt;/ConceptId&gt;
+    &lt;Transform&gt;
+        &lt;Action&gt;Concatenate&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" /&gt;
+            &lt;Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" /&gt;
+            &lt;Parameter Name="SetId" SourceType="DerivedField" SourceTable="DG1" SourceName="SetId" /&gt;
+        &lt;/InputParameters&gt;
+    &lt;/Transform&gt;
+&lt;/Element&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget Version="1" Comment="New Target" Type="PDF" Destinations="" GlossaryTermConversion="marked" OutputFile="Amalga V3 CTP1" ConditionTagExpression="include[&quot;Releases.Investigation Use&quot;] exclude[API.APIRef or Manuals.XRefOtherManual or Production.doNOTbuild or Production.InternalOnly or Production.ScreenOnly or Production.StyleMaster or Production.TOCsAll or Production.WhitePaperOnly or &quot;ProductSKUs.Product Description&quot; or Region.China or Region.Thailand or Region.UK] " PatchHeadingLevels="true" MasterToc="/Project/TOCs/FrontMatter.fltoc" conditions="Production.StyleMaster">
+    <Variables>
+        <Variable Name="BrandingHSG/Amalga Long">Microsoft Amalga 3.0  Customer Technology Preview</Variable>
+        <Variable Name="BrandingHSG/Amalga Long TM">Microsoft® Amalga™ 3.0  Customer Technology Preview</Variable>
+        <Variable Name="BrandingHSG/Brussels Long">CTP1 Sample Data Explorer</Variable>
+        <Variable Name="BrandingHSG/Brussels second use">CTP1 SampleData Explorer</Variable>
+        <Variable Name="BrandingHSG/LS Long TM">DO NOT USE --------------------</Variable>
+        <Variable Name="BrandingHSG/LS Short">DO NOT USE --------------------</Variable>
+        <Variable Name="LegalAnd3rdParty/Version Number-current">VERSION 3.0 COMMUNITY TECHNICAL PREVIEW</Variable>
+        <Variable Name="ManualNames/TITLE">Deployment and Installation</Variable>
+        <Variable Name="LegalAnd3rdParty/Software Publication Date">October 2011</Variable>
+    </Variables>
+    <PDF ShowUsedBookmarks="false" />
+</CatapultTarget>

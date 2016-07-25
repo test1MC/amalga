@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="5267" MadCap:lastWidth="438" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingHSG.Brussels second use"></MadCap:variable> sample SQL queries</h1>
+        <p>The following are sample SQL scripts for use during installation.</p>
+        <p>&#160;</p>
+        <p class="Keyword">DictationDocument</p>
+        <p class="code">SELECT</p>
+        <blockquote>
+            <p class="code">EncounterID = GEID,</p>
+            <p class="code">PatientID = OID,</p>
+            <p class="code">DocumentID,</p>
+            <p class="code">UniversalServiceIdentifier,</p>
+            <p class="code">UniversalServiceText = null,</p>
+            <p class="code">UniversalServiceCodingSystem,</p>
+            <p class="code">ObservationIdentifierCode = ObservationIdentifier,</p>
+            <p class="code">ObservationIdentifierText = null,</p>
+            <p class="code">ObservationIdentifierCodingSystem = null,</p>
+            <p class="code">ResponsibleObserverID = null,</p>
+            <p class="code">ResultStatusCode,</p>
+            <p class="code">ObservationDateTime,</p>
+            <p class="code">ObservationDateTimeOffset,</p>
+            <p class="code">LastModifiedDateTimeOffset,</p>
+            <p class="code">SetID = SequenceNumber,</p>
+            <p class="code">ObservationValue</p>
+        </blockquote>
+        <p class="code">FROM</p>
+        <p class="code">(</p>
+        <p class="code">SELECT DISTINCT</p>
+        <p class="code">DocumentID = obx.FillerOrderNumber + N''('' + CONVERT(varchar(10), obx.SequenceNumber) + N'')'',</p>
+        <p class="code">OID = id.OID,</p>
+        <p class="code">GEID = id.GEID,</p>
+        <p class="code">obr.FillerOrderIdentifier,</p>
+        <p class="code">ResultStatusCode = obx.ResultStatusCode,</p>
+        <p class="code">ObservationDateTime = obr.ObservationDateTime,</p>
+        <p class="code">ObservationDateTimeOffset = TODATETIMEOFFSET(obr.ObservationDateTime, CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)),</p>
+        <p class="code">UniversalServiceIdentifier = obr.UniversalServiceIdentifier,</p>
+        <p class="code">UniversalServiceName = obr.UniversalServiceName,</p>
+        <p class="code">UniversalServiceCodingSystem = obr.UniversalServiceCodingSystem,</p>
+        <p class="code">obx.ObservationIdentifier,</p>
+        <p class="code">LastModifiedDateTimeOffset = (</p>
+        <blockquote>
+            <p class="code">select max(UpdateDateTime) from (</p>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.ObservationDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azDIC.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                <p class="code">union</p>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.ObservationEndDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.ObservationEndDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azDIC.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                <p class="code">union</p>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.SpecimenReceivedDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.SpecimenReceivedDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azDIC.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                <p class="code">union</p>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.StatusChangedDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.StatusChangedDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azDIC.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier) UpdateDateTimes</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <p class="code">),</p>
+            <p class="code">obx.SequenceNumber,</p>
+            <p class="code">obx.ObservationValue</p>
+        </blockquote>
+        <p class="code">FROM azDIC.dbo.OBR603 AS obr</p>
+        <p class="code">LEFT JOIN azDIC.dbo.OBX603 AS obx</p>
+        <blockquote>
+            <p class="code">ON obr.EID=obx.EID AND obr.FillerOrderIdentifier = obx.FillerOrderNumber</p>
+        </blockquote>
+        <p class="code">LEFT JOIN azAEID.dbo.AEID201 AS id</p>
+        <blockquote>
+            <p class="code">ON id.EID=obr.EID</p>
+        </blockquote>
+        <p class="code">) AS D1</p>
+        <p class="code">&#160;</p>
+        <p class="Keyword">PathologyDocument</p>
+        <p class="code">SELECT</p>
+        <blockquote>
+            <p class="code">EncounterID = GEID,</p>
+            <p class="code">PatientID = OID,</p>
+            <p class="code">DocumentID,</p>
+            <p class="code">UniversalServiceIdentifier,</p>
+            <p class="code">UniversalServiceText = null,</p>
+            <p class="code">UniversalServiceCodingSystem,</p>
+            <p class="code">ObservationIdentifierCode = ObservationIdentifier,</p>
+            <p class="code">ObservationIdentifierText = null,</p>
+            <p class="code">ObservationIdentifierCodingSystem = null,</p>
+            <p class="code">ResponsibleObserverID = null,</p>
+            <p class="code">ResultStatusCode,</p>
+            <p class="code">ObservationDateTime,</p>
+            <p class="code">ObservationDateTimeOffset,</p>
+            <p class="code">LastModifiedDateTimeOffset,</p>
+            <p class="code">SetID = SequenceNumber,</p>
+            <p class="code">ObservationValue</p>
+        </blockquote>
+        <p class="code">FROM</p>
+        <p class="code">(</p>
+        <p class="code">SELECT DISTINCT</p>
+        <blockquote>
+            <p class="code">DocumentID = obx.EID + N''_'' + obx.FillerOrderIdentifier + N''_'' + obx.UniversalServiceIdentifier + N''_'' + CONVERT(varchar(10), obx.SequenceNumber),</p>
+        </blockquote>
+        <blockquote>
+            <p class="code">OID = id.OID,</p>
+            <p class="code">GEID = id.GEID,</p>
+            <p class="code">obr.FillerOrderIdentifier,</p>
+            <p class="code">ResultStatusCode = null,</p>
+            <p class="code">ObservationDateTime = obr.ObservationDateTime,</p>
+            <p class="code">ObservationDateTimeOffset = TODATETIMEOFFSET(obr.ObservationDateTime, CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)),</p>
+            <p class="code">UniversalServiceIdentifier = obr.UniversalServiceIdentifier,</p>
+            <p class="code">UniversalServiceName = obr.UniversalServiceName,</p>
+            <p class="code">UniversalServiceCodingSystem = null,</p>
+            <p class="code">obx.ObservationIdentifier,</p>
+            <p class="code">LastModifiedDateTimeOffset = (</p>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">select max(UpdateDateTime) from (</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">select TODATETIMEOFFSET(</p>
+                <p class="code">obr.ObservationDateTime,</p>
+                <p class="code">CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                <p class="code">from azPATH.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                <p class="code">union</p>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.ObservationEndDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.ObservationEndDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azPATH.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                <p class="code">union</p>
+                <p class="code">select TODATETIMEOFFSET(</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">obr.SpecimenReceivedDateTime,</p>
+                    <p class="code">CAST(ISNULL(obr.SpecimenReceivedDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">from azPATH.dbo.OBR601 obr2</p>
+                <p class="code">where obr2.EID = obr.EID</p>
+                <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier) UpdateDateTimes</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <p class="code">),</p>
+        </blockquote>
+        <blockquote>
+            <p class="code">obx.SequenceNumber,</p>
+            <p class="code">obx.ObservationValue</p>
+        </blockquote>
+        <p class="code">FROM azPATH.dbo.OBR701 AS obr</p>
+        <p class="code">LEFT JOIN azPATH.dbo.OBX701 AS obx</p>
+        <blockquote>
+            <p class="code">ON obr.EID=obx.EID AND obr.FillerOrderIdentifier = obx.FillerOrderIdentifier</p>
+        </blockquote>
+        <p class="code">LEFT JOIN azAEID.dbo.AEID201 AS id</p>
+        <blockquote>
+            <p class="code">ON id.EID=obr.EID</p>
+        </blockquote>
+        <p class="code">) AS D1</p>
+        <p class="code">&#160;</p>
+        <p class="Keyword">RadiologyDocument</p>
+        <p class="code">SELECT</p>
+        <blockquote>
+            <p class="code">EncounterID = GEID,</p>
+            <p class="code">PatientID = OID,</p>
+            <p class="code">DocumentID,</p>
+            <p class="code">UniversalServiceIdentifier,</p>
+            <p class="code">UniversalServiceText = null,</p>
+            <p class="code">UniversalServiceCodingSystem,</p>
+            <p class="code">ObservationIdentifierCode = ObservationIdentifier,</p>
+            <p class="code">ObservationIdentifierText = null,</p>
+            <p class="code">ObservationIdentifierCodingSystem = null,</p>
+            <p class="code">ResponsibleObserverID = null,</p>
+            <p class="code">ResultStatusCode,</p>
+            <p class="code">ObservationDateTime,</p>
+            <p class="code">ObservationDateTimeOffset,</p>
+            <p class="code">LastModifiedDateTimeOffset,</p>
+            <p class="code">SetID = SequenceNumber,</p>
+            <p class="code">ObservationValue</p>
+        </blockquote>
+        <p class="code">FROM</p>
+        <p class="code">(</p>
+        <p class="code">SELECT DISTINCT</p>
+        <blockquote>
+            <p class="code">DocumentID = obx.FillerOrderNumber + N''('' + CONVERT(varchar(10), obx.SequenceNumber) + N'')'',</p>
+            <p class="code">OID = id.OID,</p>
+            <p class="code">GEID = id.GEID,</p>
+            <p class="code">obr.FillerOrderIdentifier,</p>
+            <p class="code">ResultStatusCode = obx.ResultStatusCode,</p>
+            <p class="code">ObservationDateTime = obr.ObservationDateTime,</p>
+            <p class="code">ObservationDateTimeOffset = TODATETIMEOFFSET(obr.ObservationDateTime, CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)),</p>
+            <p class="code">UniversalServiceIdentifier = obr.UniversalServiceIdentifier,</p>
+            <p class="code">UniversalServiceName = obr.UniversalServiceName,</p>
+            <p class="code">UniversalServiceCodingSystem = obr.UniversalServiceCodingSystem,</p>
+            <p class="code">obx.ObservationIdentifier,</p>
+            <p class="code">LastModifiedDateTimeOffset = (</p>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">select max(UpdateDateTime) from (</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">select TODATETIMEOFFSET(</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <blockquote>
+                        <p class="code">obr.ObservationDateTime,</p>
+                        <p class="code">CAST(ISNULL(obr.ObservationDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                    </blockquote>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">from azRAD.dbo.OBR601 obr2</p>
+                    <p class="code">where obr2.EID = obr.EID</p>
+                    <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                    <p class="code">union</p>
+                    <p class="code">select TODATETIMEOFFSET(</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <blockquote>
+                        <p class="code">obr.ObservationEndDateTime,</p>
+                        <p class="code">CAST(ISNULL(obr.ObservationEndDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                    </blockquote>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">from azRAD.dbo.OBR601 obr2</p>
+                    <p class="code">where obr2.EID = obr.EID</p>
+                    <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                    <p class="code">union</p>
+                    <p class="code">select TODATETIMEOFFSET(</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <blockquote>
+                        <p class="code">obr.SpecimenReceivedDateTime,</p>
+                        <p class="code">CAST(ISNULL(obr.SpecimenReceivedDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                    </blockquote>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">from azRAD.dbo.OBR601 obr2</p>
+                    <p class="code">where obr2.EID = obr.EID</p>
+                    <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier</p>
+                    <p class="code">union</p>
+                    <p class="code">select TODATETIMEOFFSET(</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <blockquote>
+                        <p class="code">obr.StatusChangedDateTime,</p>
+                        <p class="code">CAST(ISNULL(obr.StatusChangedDateTimeUTCOffset, 0) AS int)) as UpdateDateTime</p>
+                    </blockquote>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <blockquote>
+                    <p class="code">from azRAD.dbo.OBR601 obr2</p>
+                    <p class="code">where obr2.EID = obr.EID</p>
+                    <p class="code">and obr2.FillerOrderIdentifier = obr.FillerOrderIdentifier) UpdateDateTimes</p>
+                </blockquote>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">),</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">obx.SequenceNumber,</p>
+                <p class="code">obx.ObservationValue</p>
+            </blockquote>
+        </blockquote>
+        <p class="code">FROM azRAD.dbo.OBR601 AS obr</p>
+        <p class="code">LEFT JOIN azRAD.dbo.OBX601 AS obx</p>
+        <blockquote>
+            <p class="code">ON obr.EID=obx.EID AND obr.FillerOrderIdentifier = obx.FillerOrderNumber</p>
+        </blockquote>
+        <p class="code">LEFT JOIN azAEID.dbo.AEID201 AS id</p>
+        <blockquote>
+            <p class="code">ON id.EID=obr.EID</p>
+        </blockquote>
+        <p class="code">) AS D1</p>
+        <p class="code">&#160;</p>
+        <p class="Keyword">VitalSign</p>
+        <p class="code">select</p>
+        <blockquote>
+            <p class="code">EncounterID = ID.GEID,</p>
+            <p class="code">PatientID = ID.OID,</p>
+            <p class="code">OrderID = null,</p>
+            <p class="code">ResultID = N''ClinDoc_'' + ID.EID + N''_'' + obx.FillerOrderIdentifier + N''_'' + convert(nvarchar(16), obx.SequenceNumber),</p>
+            <p class="code">FillerOrderNumber = null,</p>
+            <p class="code">ValueType = obx.ValueType,</p>
+            <p class="code">ObservationIdentifier = obx.ObservationIdentifier,</p>
+            <p class="code">ObservationIdentifierText = obx.Observation,</p>
+            <p class="code">ObservationIdentifierCodingSystem = null,</p>
+            <p class="code">ObservationSubID = obx.ObservationSubIdentifier,</p>
+            <p class="code">ObservationValue = obx.ObservationValue,</p>
+            <p class="code">UnitsIdentifier =  null,</p>
+            <p class="code">UnitsText = obx.Units,</p>
+            <p class="code">UnitsCodingSystem = null,</p>
+            <p class="code">ReferenceRange = obx.ReferencesRange,</p>
+            <p class="code">AbnormalFlags = obx.AbnormalFlags,</p>
+            <p class="code">ObservationDateTime = obx.ObservationDateTime,</p>
+            <p class="code">ObservationDateTime_o = TODATETIMEOFFSET(</p>
+        </blockquote>
+        <blockquote>
+            <blockquote>
+                <p class="code">obx.ObservationDateTime,</p>
+                <p class="code">convert(int,ISNULL(obx.ObservationDateTimeUTCOffset, 0))),</p>
+            </blockquote>
+        </blockquote>
+        <blockquote>
+            <p class="code">Observer = obx.ResponsibleObserverLName + N'', '' + obx.ResponsibleObserverFName,</p>
+            <p class="code">SetID = obx.SequenceNumber</p>
+        </blockquote>
+        <p class="code">from  azClinDoc.dbo.OBX702 obx</p>
+        <p class="code">join azAEID.dbo.AEID201 ID on ID.EID = obx.EID</p>
+        <p class="code">&#160;</p>
+        <p class="code">.</p>
+        <p class="code">&#160;</p>
+        <p class="code">&#160;</p>
+    </body>
+</html>

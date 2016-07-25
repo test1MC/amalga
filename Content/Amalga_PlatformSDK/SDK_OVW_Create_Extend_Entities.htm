@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,Status.60 - Revising,ReleaseTarget.CTP1,TopicType.Overview/Introduction,EditingTags.6 - Revised / ready for writer" MadCap:lastBlockDepth="2" MadCap:lastHeight="636" MadCap:lastWidth="756">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-03-09T22:05:39.8023112-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-03-09T22:05:39.9895136-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data entity overview</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the function of  <MadCap:variable name="BrandingHSG.Amalga Short" /> data entities. .</p>
+        <p>
+            <MadCap:keyword term="entities" /><MadCap:variable name="BrandingHSG.Amalga Short" /> data entities represent data in physical databases, but they provide an abstraction layer so that applications can reference that data without needing to interact directly with the physical database. When <MadCap:variable name="BrandingHSG.Amalga Short" /> is installed, a large number of <MadCap:variable name="BrandingHSG.Amalga Short" /> entities are provided that cover common healthcare concepts. However, your application may require entities that need to be created for this purpose.</p>
+        <p>You can create entities by using the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />. For instructions on how to create entities, see <MadCap:xref href="../DataPlatform1/DP_Task_AddEntity.htm" target="" title="" alt="">Create entities</MadCap:xref>. Note that in addition to defining the new entities, you need to use the <MadCap:variable name="FeatureName.Management Console second use" /> to bind the entities to databases.</p>
+        <p>When your application is deployed, the new entities that it uses will be imported. The deployment process ensures that <MadCap:annotation MadCap:createDate="2012-03-09T22:05:20.9260692-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="all entities?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T22:05:25.5905290-08:00">everything</MadCap:annotation> in the data manifest for the application <MadCap:annotation MadCap:createDate="2011-09-28T10:41:05.7302681-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="\r\n[PG]  Basically, the deployment process ensures that entities in the virtual schema actually map to something in a real database somewhere." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T22:03:25.4565252-08:00">can resolve</MadCap:annotation> to <MadCap:annotation MadCap:createDate="2012-03-09T22:01:50.1960626-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Dennis,is this a correct usage of resolve?\r\nI like PG's annotated description better that what is in the doc text (with the exception of techie terms like something and somewhere)." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T22:05:01.9718262-08:00">a physical database</MadCap:annotation>. If an entity <MadCap:change MadCap:changes="2">is not</MadCap:change><MadCap:change MadCap:changes="1">cannot</MadCap:change> resolve<MadCap:change MadCap:changes="2">d</MadCap:change>, then you will be prompted for a database to bind the entity to. Note that <MadCap:annotation MadCap:createDate="2012-03-09T22:07:11.4923292-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Do entities get imported?  or bound?" MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T22:07:22.1616348-08:00">once an entity has been imported</MadCap:annotation>, it can be used by any application. </p>
+        <p class="note">Entities are read-only. If your application requires private, writable data, then you can specify that data in the virtual schema. The data created in this fashion will  be accessible only by the application instance. See <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Virtual Schema Designer</MadCap:xref> for information on how to create writable data in the virtual schema.</p>
+        <p class="SeeAlso">See Also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="../DataPlatform1/DP_Task_AddEntity.htm" target="" title="" alt="">Create entities</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="SDK_CON_Virtual_Schema_Designer.htm" target="" title="" alt="">Virtual Schema Designer</MadCap:xref>
+        </p>
+    </body>
+</html>

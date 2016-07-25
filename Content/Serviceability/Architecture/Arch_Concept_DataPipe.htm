@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="847" MadCap:lastWidth="706" MadCap:fileTags="TopicType.Concept,Personas.Carlos: IT Admin,ReleaseTarget.TAP,TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Data architecture</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the architectural constructs in the data pipeline.</p>
+        <p>At its core, <MadCap:variable name="BrandingHSG.Amalga Short" /> is a data management and delivery system. This topic discusses the architectural constructs that support the acquisition, transformation, normalization, and distribution of the clinical data.</p>
+        <p class="Figure">
+            <img src="../Images/ArchDataPipeline_1.png" style="width: 706px;height: 220px;" />
+        </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Data" target="" title="" alt="">Data pipeline</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Entity" target="" title="" alt="">Entity registry</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Virtual" target="" title="" alt="">Virtual schemas</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Data"></a>Data pipeline</h2>
+        <p>Before the data can be bound to entities and virtual schemas for access by applications, the data must be acquired from its source and transformed in several steps.</p>
+        <ul>
+            <li><strong>Acquisition</strong>: The acquisition subsystem takes data from a source interface and writes it out to a queue for additional processing. This queue is maintained as a historical repository of all the information that enters the system in its original form.</li>
+            <li><strong>Shred</strong>: The message shredder splits each message into tables and columns based on the structure of the message or file. The message shredder subsystem reads message data from the message queue, analyzes the messages, creates a <MadCap:variable name="BrandingMS.SQL Server" /> schema to hold each data field, and inserts the data into the schema. An individual shredder (one instance of the message shredder application) works with data from a single feed. The subsystem shreds all feeds in parallel.</li>
+            <li><strong>Parse</strong>: The data parser subsystem provides a configuration-based model that you can use to define which shredded columns to retrieve for further action, how data in those columns should look, and what to write to output tables. </li>
+            <li><strong>Correlation</strong>: <MadCap:variable name="BrandingHSG.Amalga Short" /> maps external, source-specific identifiers to a set of internal identifiers across multiple visits, institutions, and domains. These identifiers are unique within <MadCap:variable name="BrandingHSG.Amalga Short" /> and are processed by the correlation engine. </li>
+        </ul>
+        <h2><a name="Entity"></a>Entity registry</h2>
+        <p>After the data has been transformed and written to the clinical database, the tables and columns are mapped to <MadCap:variable name="BrandingHSG.Amalga Short" /> entities contained in the registry. <MadCap:variable name="BrandingHSG.Amalga Short" /> entities represent any healthcare or organizational concept that you might need to centrally manage and expose to applications. Examples include patients, visits, and lab results. The entities provide a single place to map a concept to site-specific <MadCap:variable name="BrandingMS.SQL Server" /> data. Note that patient data could be scattered across multiple tables and databases, but only one patient entity is required for the mapping. </p>
+        <p>This abstraction layer allows for the underlying database tables to be modified without changing the virtual schema or application. If for instance the "Trey Labs" tables are changed because of a new parsing implementation, only the "Trey Labs" associated entities would need to be bound to the new table structure. The virtual schemas and applications that use the "Trey Labs" information would remain unchanged.</p>
+        <p>The entity registry is the single repository for all entities used by the topology. The entities are used by <MadCap:variable name="FeatureName.virtual schema" />s and their associated applications to query data. The entity's binding to data can be configured using the <MadCap:variable name="FeatureName.Microsoft Amalga Management Console" />.</p>
+        <h2><a name="Virtual"></a>Virtual schemas</h2>
+        <p>Each application contains a virtual schema which consists of application views that contain entities. Reading and writing data is very similar to ADO.NET, but with special Amalga classes that use the application view names rather than the SQL Server view names. From the application point of view, the virtual schema is the database. The application has no visibility to the entity registry or underlying tables.</p>
+        <p>The virtual schema enables you to focus on business logic without exposing the details of how the underlying data is stored. With virtual schemas, applications are more portable, because applications are freed from hard-coded dependencies on a particular storage schema. The mappings between the conceptual data model and the underlying data structures, such as tables and columns, can be changed without changing the code for the hosted application.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Arch_Concept_Logical.htm" target="" title="" alt="">Logical architecture</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Arch_Concept_Physical.htm" target="" title="" alt="">Physical architecture</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

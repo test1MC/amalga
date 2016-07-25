@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Default.StyleMaster,Production.StyleMaster">
+  <Variable
+    Name="Microsoft Amalga Management Console"
+    Comment="Tool. Approved hsgfnc Microsoft Amalga Management Console. First use in topic"
+    Definition="Some text">Microsoft Amalga Management Console</Variable>
+  <Variable
+    Name="Management Console second use"
+    Comment="Tool. Management Console. Second and later use in topic if not confusing and no other console is in the topic."
+    Definition="Some text">Management Console</Variable>
+  <Variable
+    Comment="Services grouping. Amalga fabric. The set of services that undertake the non-app-specific tasks common to all app development."
+    Definition="Some text"
+    Name="Amalga fabric first use">Amalga fabric</Variable>
+  <Variable
+    Name="fabric second use"
+    Comment="Services grouping. fabric, Amalga fabric second use. The set of services that undertake the non-app-specific tasks common to all app development."
+    Definition="Some text">fabric</Variable>
+  <Variable
+    Name="Fabric title case second use"
+    Comment="Services grouping. Fabric title case second use."
+    Definition="Some text">Fabric</Variable>
+  <Variable
+    Name="Amalga Fabric title case first use"
+    Comment="Services grouping. Fabric title case first use"
+    Definition="Some text">Amalga Fabric</Variable>
+  <Variable
+    Name="Amalga Framework"
+    Comment="Feature. Amalga Application Framework -- per Will and PM team"
+    Definition="Some text">Amalga Application Framework</Variable>
+  <Variable
+    Comment="Feature -- may have to be changed to Amalga Application Framework application"
+    Definition="Some text"
+    Name="Amalga Framework application">Amalga Framework application</Variable>
+  <Variable
+    Name="Amalga SDK"
+    Comment=""
+    Definition="Some text">Amalga SDK</Variable>
+  <Variable
+    Name="data feed loader"
+    Comment="part of data pipeline"
+    Definition="Some text">data feed loader</Variable>
+  <Variable
+    Name="Data Parser"
+    Comment="Feature. Approved hsgfnc Major piece of data pipeline;  &quot;provides an additional level of meaning to the data.  We will also perform transformation and correlation of the data during this phase&quot;"
+    Definition="Some text">Data Parser</Variable>
+  <Variable
+    Name="feed acquisition"
+    Comment="Feature. Approved hsgfnc. data feed loader instance;  (use acquisition alone in assembly and namespace naming)"
+    Definition="Some text">Feed Acquisition</Variable>
+  <Variable
+    Name="materialized entity view"
+    Comment="Feature. Approved hsgfnc. Capping per Chris Cole: not a proper name. Feature that creates a view backed by physical storage.  It is used for performance reasons, and to keep the view up to date without manual intervention."
+    Definition="Some text">materialized entity view</Variable>
+  <Variable
+    Name="Message Shredder"
+    Comment="Feature. Approved hsgfnc"
+    Definition="Some text">Message Shredder</Variable>
+  <Variable
+    Name="Amalga ADO.NET"
+    Comment="Data connector. Modeled on ADO.NET"
+    Definition="Some text">Amalga ADO.NET</Variable>
+  <Variable
+    Name="Amalga entity registry"
+    Comment="Feature. Amalga entity registry. Use in context where there could be other kinds of entity registries."
+    Definition="Some text">Amalga entity registry</Variable>
+  <Variable
+    Name="data pipeline"
+    Comment="Super-feature. data pipeline. Approved hsgfnc/  second use: pipeline if context is clear."
+    Definition="Some text">data pipeline</Variable>
+  <Variable
+    Name="Data pipeline sentence case"
+    Comment=""
+    Definition="Some text">Data pipeline</Variable>
+  <Variable
+    Name="data pipeline second use"
+    Comment=""
+    Definition="Some text">pipeline</Variable>
+  <Variable
+    Name="Data pipeline second use"
+    Comment=""
+    Definition="Some text">Pipeline</Variable>
+  <Variable
+    Name="Amalga Framework service"
+    Comment="Service. may have to be changed to Amalga Application Framework service"
+    Definition="Some text">Amalga Framework service</Variable>
+  <Variable
+    Name="virtual schema"
+    Comment="Feature. virtual schema"
+    Definition="Some text">virtual schema</Variable>
+  <Variable
+    Name="Viirtual schema sentence case"
+    Comment="Feature. Viirtual schema sentence case"
+    Definition="Some text">Viirtual schema</Variable>
+  <Variable
+    Name="Amalga Framework second use"
+    Comment=""
+    Definition="Some text">Framework</Variable>
+  <Variable
+    Name="Application view sentence case"
+    Comment=""
+    Definition="Some text">Application view</Variable>
+  <Variable
+    Name="application view"
+    Comment="Feature. application view -- see Will's definition in C:\UA-SRC\AmalgaV3-wking\Content\AppFramework_NonReference\AF_Con_AppViewDataAccess.htm&#xD;&#xA; (I think.)"
+    Definition="Some text">application view</Variable>
+  <Variable
+    Name="virtual schema designer"
+    Comment="Tool. virtual schema designer (in VS?) No caps within sentence."
+    Definition="Some text">Virtual Schema Designer</Variable>
+  <Variable
+    Name="Virtual schema designer sentence case"
+    Comment="Tool. Virtual schema designer. Start of sentence use only."
+    Definition="Some text">Virtual schema designer</Variable>
+  <Variable
+    Name="Entity registry - start of sentence"
+    Comment=""
+    Definition="Some text">Entity registry</Variable>
+  <Variable
+    Name="entity registry"
+    Comment="Feature. entity registry. typical usage."
+    Definition="Some text">entity registry</Variable>
+  <Variable
+    Name="entity management"
+    Comment="Feature. entity management. Feature should be capped?"
+    Definition="Some text">entity management</Variable>
+  <Variable
+    Name="Amalga ADO.NET Data Provider for OLE DB"
+    Comment="Data Provider. Amalga ADO.NET Data Provider for OLE DB. First use; see data provider for OLD DB for second use"
+    Definition="Some text">Amalga ADO.NET Data Provider for OLE DB</Variable>
+  <Variable
+    Name="data provider for OLE DB second use"
+    Comment="Data provider, data provider for OLD DB, second use;  see Amalga ADO.NET Data Provider for OLE DB for first use"
+    Definition="Some text">data provider for OLE DB</Variable>
+  <Variable
+    Name="Amalga Correlation Engine"
+    Comment="Service. Correlation Engine service;  a windows service we use for Amalga ID"
+    Definition="Some text">Amalga Correlation Engine</Variable>
+</CatapultVariableSet>

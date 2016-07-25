@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1450.667" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Insurance entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.Insurance.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].Insurance" /><span class="Label">Entity concept code</span>: IN1, IN2</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>EligibilityDateTime</td>
+                    <td>IN1-26</td>
+                    <td>HL7</td>
+                    <td>Report of eligibility date.</td>
+                </tr>
+                <tr>
+                    <td>EligibilityDateTime_o</td>
+                    <td>IN1-26</td>
+                    <td>HL7</td>
+                    <td>Report of eligibility date offset.</td>
+                </tr>
+                <tr>
+                    <td>EligibilityFlag</td>
+                    <td>IN1-25</td>
+                    <td>HL7</td>
+                    <td>Whether this insurance carrier sends a report that indicates that the patient is eligible for benefits and whether it identifies those benefits.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>GroupName</td>
+                    <td>IN1-9</td>
+                    <td>HL7</td>
+                    <td>Group name of the insured’s insurance.</td>
+                </tr>
+                <tr>
+                    <td>GroupNumber</td>
+                    <td>IN1-8</td>
+                    <td>HL7</td>
+                    <td>Group number of the insured’s insurance.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressCity</td>
+                    <td>IN1-5-3</td>
+                    <td>HL7</td>
+                    <td>City.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressCountry</td>
+                    <td>IN1-5-6</td>
+                    <td>HL7</td>
+                    <td>Country identifier.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressOtherDesignation</td>
+                    <td>IN1-5-2</td>
+                    <td>HL7</td>
+                    <td>Other designation.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressPostalCode</td>
+                    <td>IN1-5-5</td>
+                    <td>HL7</td>
+                    <td>Zip or postal code.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressStateOrProvince</td>
+                    <td>IN1-5-4</td>
+                    <td>HL7</td>
+                    <td>State or province.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyAddressStreet</td>
+                    <td>IN1-5-1</td>
+                    <td>HL7</td>
+                    <td>Street address.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactInfo
+</td>
+                    <td>IN1-7</td>
+                    <td>HL7</td>
+                    <td>Phone number of the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonFamilyName</td>
+                    <td>IN1-6-1</td>
+                    <td>HL7</td>
+                    <td>Family name of the person who should be contacted at the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonFullName
+</td>
+                    <td>IN1-6</td>
+                    <td>HL7</td>
+                    <td>Name of the person who should be contacted at the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonGivenName</td>
+                    <td>IN1-6-2</td>
+                    <td>HL7</td>
+                    <td>Given name of the person who should be contacted at the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonMiddleName</td>
+                    <td>IN1-6-3</td>
+                    <td>HL7</td>
+                    <td>Second and further given names or initials thereof.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonPrefix</td>
+                    <td>IN1-6-5</td>
+                    <td>HL7</td>
+                    <td>Prefix, such as DR.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyContactPersonSuffix</td>
+                    <td>IN1-6-4</td>
+                    <td>HL7</td>
+                    <td>Suffix, such as JR or III.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyID</td>
+                    <td>IN1-3</td>
+                    <td>HL7</td>
+                    <td>Unique identifier for the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceCompanyName</td>
+                    <td>IN1-4</td>
+                    <td>HL7</td>
+                    <td>Name of the insurance company.</td>
+                </tr>
+                <tr>
+                    <td>InsuranceID</td>
+                    <td>InsuranceID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.Insurance entity.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsFamilyName</td>
+                    <td>IN1-16-1</td>
+                    <td>HL7</td>
+                    <td>Family name of the insured.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsFullName
+</td>
+                    <td>IN1-16</td>
+                    <td>HL7</td>
+                    <td>Name of the insured person.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsGivenName</td>
+                    <td>IN1-16-2</td>
+                    <td>HL7</td>
+                    <td>Given name of the insured.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsGroupEmployerID</td>
+                    <td>IN1-10</td>
+                    <td>HL7</td>
+                    <td>Group employer identifier for the insured’s insurance.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsGroupEmployerName</td>
+                    <td>IN1-11</td>
+                    <td>HL7</td>
+                    <td>Name of the employer that provides the employee’s insurance.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsMiddleName</td>
+                    <td>IN1-16-3</td>
+                    <td>HL7</td>
+                    <td>Second and further given names or initials thereof.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsNamePrefix</td>
+                    <td>IN1-16-5</td>
+                    <td>HL7</td>
+                    <td>Prefix, such as DR.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsNameSuffix</td>
+                    <td>IN1-16-4</td>
+                    <td>HL7</td>
+                    <td>Suffix, such as JR or III.</td>
+                </tr>
+                <tr>
+                    <td>InsuredsSSN</td>
+                    <td>IN2-2</td>
+                    <td>HL7</td>
+                    <td>Social security number of the insured.</td>
+                </tr>
+                <tr>
+                    <td>MedicareHICNumber</td>
+                    <td>IN2-6</td>
+                    <td>HL7</td>
+                    <td>Medicare Health Insurance Number (HIN), defined by CMS or other regulatory agencies.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>PlanEffectiveDate</td>
+                    <td>IN1-12</td>
+                    <td>HL7</td>
+                    <td>Date that the insurance goes into effect.</td>
+                </tr>
+                <tr>
+                    <td>PlanExpirationDate</td>
+                    <td>IN1-13</td>
+                    <td>HL7</td>
+                    <td>Last date of service that the insurance will cover or for which it is responsible.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDCode</td>
+                    <td>IN1-2-1</td>
+                    <td>HL7</td>
+                    <td>Unique identifier for the insurance plan.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDCodingSystem</td>
+                    <td>IN1-2-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>PlanIDText</td>
+                    <td>IN1-2-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the insurance plan.</td>
+                </tr>
+                <tr>
+                    <td>PolicyNumber</td>
+                    <td>IN1-36</td>
+                    <td>HL7</td>
+                    <td>Individual policy number of the insured to uniquely identify this patient’s plan.</td>
+                </tr>
+                <tr>
+                    <td>RelationshipToPatientCode</td>
+                    <td>IN1-17-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the insured’s relationship to the patient.</td>
+                </tr>
+                <tr>
+                    <td>RelationshipToPatientCodingSystem</td>
+                    <td>IN1-17-3</td>
+                    <td>HL7</td>
+                    <td>Name of coding system.</td>
+                </tr>
+                <tr>
+                    <td>RelationshipToPatientText</td>
+                    <td>IN1-17-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the insured’s relationship to the patient.</td>
+                </tr>
+                <tr>
+                    <td>SetID
+</td>
+                    <td>IN1-1</td>
+                    <td>HL7</td>
+                    <td>Number that identifies this transaction.</td>
+                </tr>
+                <tr>
+                    <td>VerificationDateTime</td>
+                    <td>IN1-29</td>
+                    <td>HL7</td>
+                    <td>Benefit verification data and time.</td>
+                </tr>
+                <tr>
+                    <td>VerificationDateTime_o</td>
+                    <td>IN1-29</td>
+                    <td>HL7</td>
+                    <td>Benefit verification data and time offset.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

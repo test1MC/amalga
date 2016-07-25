@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1644" MadCap:lastWidth="302" MadCap:fileTags="TopicOwner.v-kathen,ReleaseTarget.TAP,Personas.Elvis: App Dev,TopicType.Procedure,Status.70 - Complete,EditingTags.4 - Ready for Writer">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Create a value set</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="value sets, creating;creating value sets" />This topic describes how to use the ValueSetCreationScript to create a value set. You select options from these custom criteria to create a patient list.</p>
+        <MadCap:snippetBlock src="Snippets/PL_con_value_sets.flsnp" />
+        <p class="LabelforProcedures">To create a value set</p>
+        <ol>
+            <li>In @MyID, enter your user ID.</li>
+            <li>Do one of the following:</li>
+        </ol>
+        <ul>
+            <li>
+                <p>If this is a static list, type the values in the @Options variable in the following format: DisplayName1,&#160;Value1; DisplayName2, Value2 or Value1; Value2; etc.</p>
+                <p>or</p>
+            </li>
+            <li>
+                <p>If the values will be created by an SQL query, copy the query into the @Query variable. The query must return two columns. The values in the first column will be used as the display text and the second as the values for evaluation.</p>
+                <p class="note">You can use the QueryTestScript.sql script to test the query.</p>
+                <p class="note"><MadCap:variable name="BrandingHSG.Brussels first use" /> does not support the distinct keyword in queries, so you must use "group by" to find distinct values. For example, <span class="code">select DischargeDisposition, DischargeDisposition from Encounter group by DischargeDisposition</span>.</p>
+            </li>
+        </ul>
+        <ol MadCap:continue="true">
+            <li>In @TitlesEqualValues, enter a <span class="InputText">1</span> if the display title and actual values are identical. Otherwise, leave it as <span class="InputText">0</span>.</li>
+            <li>In @SetName, enter a name. <MadCap:annotation MadCap:createDate="2012-02-23T14:26:31.9337835-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="make sure these statements in related topics are phrased consistently." MadCap:editor="v-labenn" MadCap:editDate="2012-02-23T14:26:54.1440452-08:00">The</MadCap:annotation> name is for internal use only.</li>
+            <li>In @Organization, enter your organization. The organization is for internal use only.</li>
+            <li>
+                <p>In @Bindings, enter the custom criteria to which you want to bind the value set in the format entity.attribute.&#160;Separate multiple criteria with semicolons.</p>
+                <p class="note">Bindings are locale-specific.</p>
+            </li>
+            <li>
+                <p>Run the script.</p>
+                <p class="note">Changes will take effect once the cache is updated on the <MadCap:variable name="BrandingMS.SharePoint" /> server.</p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

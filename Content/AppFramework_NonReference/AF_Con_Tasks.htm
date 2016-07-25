@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:ignoredWords="XPath" MadCap:lastBlockDepth="4" MadCap:lastHeight="843" MadCap:lastWidth="576" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2011-11-30T00:54:53.2574771-08:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2011-11-30T00:56:25.6267131-08:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2011-11-30T00:56:59.6701171-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Task flow</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="task;workflow;task flow;taskflow" />
+        </p>
+        <p class="abstract">This topic describes the <MadCap:variable name="FeatureName.Amalga Framework" /> cross application task feature.</p>
+        <p>The cross application task flow system allows a control in one <MadCap:variable name="FeatureName.Amalga Framework second use" /> application to request action from another application, or from itself in a different user context. </p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Anatomy" target="" title="" alt="">Anatomy of a task on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#The" target="" title="" alt="">The task flow service on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Life" target="" title="" alt="">Life cycle of a task on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Anatomy"></a>Anatomy of a task</h2>
+        <p>A <MadCap:change MadCap:changes="1">"</MadCap:change>task<MadCap:change MadCap:changes="1">"</MadCap:change> is a<MadCap:annotation MadCap:createDate="2011-11-30T00:55:06.1287641-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="explain?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:55:11.2352747-08:00"> stateful</MadCap:annotation>, structured message with associated tracking and auditing information.</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2011-11-11T03:16:11.8761456-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Task&lt;T&gt;" MadCap:editor="v-wipete" MadCap:editDate="2011-11-11T03:16:16.8525456-08:00">Task</MadCap:annotation>
+        </h3>
+        <p>A  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/T_BaseTask.htm">BaseTask </a>is a string message with attached tracking and auditing information. Unlike a notification, a task is not usually addressed to an individual user. Instead, tasks are grouped by type and state (such as pending patient match requests) and presented to any user with the appropriate permissions to advance the task to its next state.</p>
+        <h4>Task identity</h4>
+        <p>When a task is created, it is assigned a unique  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_TaskId.htm">TaskId </a>and a <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_VersionId.htm">VersionId</a>. </p>
+        <p>A task may be stored in multiple states during its life cycle. The <span class="Label">TaskId</span> associated with the task remains the same for all stored states, but the <span class="Label">VersionId</span> changes each time the task is updated.</p>
+        <h4>Message payload</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_Payload.htm">Payload </a>of a task contains the content of the task message, and consists of a single XML fragment. For tasks created using the client API (<MadCap:annotation MadCap:createDate="2011-11-30T00:55:38.4049914-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="vs. a link?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:55:43.5455054-08:00">see below</MadCap:annotation>), the payload XML is created by serializing a message object.</p>
+        <h4>Task state</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_State.htm">State </a>is a string value that identifies the current status of the task and, by implication, what needs to be done with it. The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/T_TaskState.htm">TaskState </a>class provides a set of useful string values (e.g. "pending" and "included",) but developers can use any string to identify a state.</p>
+        <h4>Task type</h4>
+        <p>The <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_TaskType.htm">TaskType </a>is a string value that identifies the type (including the namespace) of the data in the payload. For tasks that are created using the client API, it identifies the type of the object that was serialized to produce the payload value, and that will be used to deserialize the message when it is delivered.</p>
+        <p class="caution">Developers who create their own task types within the task flow service should place those types within their own namespace. Placing custom tasks types into unique namespaces prevents type name collisions.</p>
+        <h4>Current state</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_IsCurrent.htm">IsCurrent </a>property is a <span class="Label">Boolean</span> value that indicates whether or not a given task state is the most recent state with that <span class="Label">TaskId</span>. </p>
+        <p>The task flow service maintains an immutable history of each completed state in which the task is stored. The APIs support retrieval of any or all task states from that history. The <span class="Label">BaseTask</span> object associated with the most recent state will have its <span class="Label">IsCurrent</span> property set to <span class="Label">true</span>. For <span class="Label">BaseTask</span> objects associated with older states, the property is <span class="Label">false</span>.</p>
+        <h4>Task assignment</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_AssignedTo.htm">AssignedTo </a>property is an optional string. It is not assigned or used by the task flow service or the client API, but it is available for developers who wish to implement their own per-user delivery.</p>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2011-11-11T03:22:38.9087456-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="TaskFilter&lt;T&gt;" MadCap:editor="v-wipete" MadCap:editDate="2011-11-11T03:22:45.0963456-08:00">Task Filter</MadCap:annotation>
+        </h3>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/T_BaseTaskFilter.htm">BaseTaskFilter </a>is an object whose values are used to define a query for matching tasks. </p>
+        <p>The non-<span class="Label">null</span> values of the task filter properties are joined together with logical AND<MadCap:change MadCap:changes="2"> operator</MadCap:change>s to create the retrieval query. The query will only return tasks whose property values match all of the conditions specified by the task filter.</p>
+        <h4>Date range</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTaskFilter_DateFrom.htm">DateFrom </a>and  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTaskFilter_DateTo.htm">DateTo Property</a> properties specify a date range. Task states whose creation or update time falls within the specified range will match the filter.</p>
+        <p>The task filter does not support open-ended date ranges. If either end of the range is specified, the other end must be specified as well.</p>
+        <h4>Content</h4>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTaskFilter_XPathFilter.htm">XPathFilter </a>property supplies an <a href="http://go.microsoft.com/fwlink?LinkId=234042">XPath</a> expression that is applied to the XML content of the task <span class="Label">Payload</span>. </p>
+        <p>When an <span class="Label">XPathFilter</span> is set, the following filter properties must be set as well: </p>
+        <ul>
+            <li><a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTaskFilter_TaskType.htm">TaskType</a>
+            </li>
+            <li>
+                <MadCap:change MadCap:changes="2">A</MadCap:change>
+                <MadCap:change MadCap:changes="3">a</MadCap:change> date range (using <span class="Label">DateFrom</span> and <span class="Label">DateTo</span>)</li>
+            <li>
+                <MadCap:change MadCap:changes="2">A</MadCap:change>
+                <MadCap:change MadCap:changes="3">a</MadCap:change> limit on the number of tasks the query can return (<a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTaskFilter_MaxTaskNumber.htm">MaxTaskNumber Property</a>)</li>
+        </ul>
+        <h2><a name="The"></a>
+            <MadCap:annotation MadCap:createDate="2011-10-28T22:41:09.8718553-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="and a client API. The client API wraps the service with a generic interface that handles message serialization and deserialization [post CTP]" MadCap:editor="v-wipete" MadCap:editDate="2011-10-28T22:41:26.6731630-07:00">The task flow service</MadCap:annotation>
+        </h2>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.TaskFlow.Service/T_TaskFlowService.htm">TaskFlowService </a>service stores and manages all tasks requested within the <MadCap:variable name="FeatureName.Amalga Framework second use" />. </p>
+        <p>The service can do the following:</p>
+        <ul>
+            <li>Create new tasks</li>
+            <li>Retrieve a list of tasks that are consistent with the property values of a task filter</li>
+            <li>Update the state of a task</li>
+        </ul>
+        <p>The service cannot delete tasks or remove stored task states.</p>
+        <h2><a name="Life"></a>
+            <MadCap:annotation MadCap:createDate="2011-10-07T11:05:40.3889421-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="Add code that does this." MadCap:editor="v-wipete" MadCap:editDate="2011-10-07T11:05:44.6477967-07:00">Life cycle of a task</MadCap:annotation>
+        </h2>
+        <p>The life cycle of a task goes through the following steps, using the client API:</p>
+        <ul>
+            <li>An application developer identifies a communication process requirement that can be met by sending a stateful message.</li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2011-10-28T22:45:27.1708016-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment=" serializable message class whose properties can carry the information needed to get from each state to the next" MadCap:editor="v-wipete" MadCap:editDate="2011-10-28T22:45:29.5264167-07:00">The developer creates an XML&#160;model of the message data.</MadCap:annotation>
+            </li>
+            <li>The developer identifies and names the states that the process needs to go through to meet the requirement.</li>
+            <li>The developer identifies the conditions under which each state in the process can be processed, and either registers event handlers or builds interactive page elements as necessary to meet those conditions. The final state in the process does not require a handler.</li>
+            <li>The handler method for the initial state creates a connection to the  <a href="../API/Ref/Microsoft.Amalga.TaskFlow.Service/T_TaskFlowService.htm">TaskFlowService </a>using the <MadCap:annotation MadCap:createDate="2011-11-30T00:52:30.6334129-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="vs. &quot;client-side API&quot;" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T00:52:48.3084129-08:00">client API</MadCap:annotation>.</li>
+            <li>The handler creates a new message object and uses it to create a new <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/T_BaseTask.htm">BaseTask</a>, with  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/P_BaseTask_State.htm">State </a>set to its initial value. It then adds the task to the task service.</li>
+            <li>Each subsequent state handler method creates a  <a href="../API/Ref/Microsoft.Amalga.AppFramework.TaskFlowClient/T_BaseTaskFilter.htm">BaseTaskFilter </a>based on the serializable message type and the appropriate value of <span class="Label">State</span>.</li>
+            <li>Each state handler periodically queries the <span class="Label">TaskFlowService</span> for a list of current tasks that match its filter settings.</li>
+            <li>The handler processes each <span class="Label">BaseTask</span>. When processing is complete, the handler sets its <span class="Label">State</span> property to the next state in the process sequence.</li>
+            <li>When each task reaches a terminal state (a state for which there is no handler), the process is complete.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See <MadCap:annotation MadCap:createDate="2011-11-30T01:01:05.1386615-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="add xrefs?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-30T01:01:10.3541830-08:00">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

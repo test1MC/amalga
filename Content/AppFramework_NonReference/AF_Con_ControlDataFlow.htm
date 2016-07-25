@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.CTP1,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:lastBlockDepth="4" MadCap:lastHeight="814" MadCap:lastWidth="576" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-02-28T13:25:28.0253334-08:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-02-28T13:25:28.0409334-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Features of Framework controls</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Controls"></MadCap:keyword></p>
+        <p class="abstract">This topic describes the features common to all                 <![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga Framework" /> controls.</p>
+        <p>The following features are defining characteristics of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> control. Unlike other features described in <a href="AF_Con_Controls.htm">Amalga Framework Controls</a>, which are available to any page element that can discover the API assemblies, these features must be correctly implemented  for a control to  participate in a <MadCap:variable name="BrandingMS.SharePoint" />-based <MadCap:variable name="BrandingHSG.Amalga Short" /> environment.</p>
+        <p>Any control derived from a <MadCap:variable name="FeatureName.Amalga Framework second use" /> generic or production control will support these features by default. </p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Client" target="" title="" alt="">Client API management on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Page" target="" title="" alt="">Page messaging and context passing on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Configur" target="" title="" alt="">Configuration and user settings on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Applicat" target="" title="" alt="">Application identity on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Client"></a>Client API management</h2>
+        <p>The primary feature that distinguishes <MadCap:variable name="FeatureName.Amalga Framework second use" /> server controls from standard<MadCap:variable name="BrandingMS.ASP.NET second use" /> server controls, and that distinguishes <MadCap:variable name="FeatureName.Amalga Framework second use" /> Web Parts from standard <MadCap:variable name="BrandingMS.SharePoint" /> Web Parts, is their support for the <MadCap:variable name="FeatureName.Amalga Framework second use" /> client-side APIs.</p>
+        <p>Implementation details may differ from control to control, but all <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls must do the following:</p>
+        <ul>
+            <li>Load the client side JavaScript APIs into the Document Object Model (DOM)of the local browser.</li>
+            <li>Initialize the client-side APIs, if they have not already been initialized.</li>
+            <li>Register the control with the appropriate client-side API managers.</li>
+        </ul>
+        <h2><a name="Page"></a>Page messaging and context passing</h2>
+        <p>Page messaging is a primarily client-side messaging system used to synchronize otherwise independent elements of a single page within a     <MadCap:variable name="FeatureName.Amalga Framework second use" /> application. It also uses a <MadCap:change MadCap:changes="2">w</MadCap:change><MadCap:change MadCap:changes="1">W</MadCap:change>eb service to synchronize some application states as a "common context" across page boundaries that the client side messaging API cannot cross.</p>
+        <h2><a name="Configur"></a>Configuration and user settings</h2>
+        <p>The Configuration system allows <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications to store and retrieve strongly typed values on a per-application basis. The system also allows those values to be overridden for each user, and for the user setting values to persist across multiple sessions.</p>
+        <h2><a name="Applicat"></a>Application identity</h2>
+        <p><MadCap:variable name="FeatureName.Amalga Framework second use" /> controls can resolve the identity of their own application instance, and can identify themselves to other controls. </p>
+        <p>This includes, but is not limited to, an implementation of the <span class="Label">IAmalgaApplicationIdentity</span> interface.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="AF_Con_ExtendControls.htm" target="" title="" alt="">Creating a new  control on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_PageMessagingParts.htm" target="" title="" alt="">Page messaging on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_Configuration1.htm" target="" title="" alt="">Application configuration and user settings on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AF_Con_InstanceIdResolution.htm" target="" title="" alt="">Identifying a Framework control instance on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Interacting with Logger"
+    Link="/Content/Amalga_PlatformSDK/Logger/LOG_OVW_InteractingLogger.htm">
+    <TocEntry
+      Title="Reading audit log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_AuditLog_Reading.htm" />
+    <TocEntry
+      Title="Writing audit log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_AuditLog_Writing.htm" />
+    <TocEntry
+      Title="Reading diagnostic log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_DiagLog_Reading.htm" />
+    <TocEntry
+      Title="Writing diagnostic log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_DiagLog_Writing.htm" />
+    <TocEntry
+      Title="Reading event log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_EventLog_Reading.htm" />
+    <TocEntry
+      Title="Writing event log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_EventLog_Writing.htm" />
+    <TocEntry
+      Title="Reading performance log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_PerfLog_Reading.htm" />
+    <TocEntry
+      Title="Writing performance log entries"
+      Link="/Content/Amalga_PlatformSDK/Logger/LOG_CON_PerfLog_Writing.htm" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="1" MadCap:lastHeight="44" MadCap:lastWidth="673">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+		<ul>
+			<li><span class="UIElementName">Read Only Rules</span>: Read-only permissions for the current entity and any children or peer entities. </li>
+			<li><span class="UIElementName">Read Only Rules applying to children of this Entity only</span>:&#160;Read-only permissions for children entities (those that inherit the current entity's access policy). </li>
+			<li><span class="UIElementName">Read/Write Rules</span>:&#160;Read-write permissions for the current entity and any children or peer entities. </li>
+			<li><span class="UIElementName">Read/Write Only Rules applying to children of this Entity only</span>:&#160;Read-write permissions for children entities (those that inherit the current entity's access policy). </li>
+		</ul>
+	</body>
+</html>

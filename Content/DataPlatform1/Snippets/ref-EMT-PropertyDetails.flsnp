@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="179" MadCap:lastWidth="608" MadCap:conditions="Default.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementAction">Property Name</span>:&#160;Name of the selected entity property; editable. </li>
+            <li><span class="UIElementAction">Descriptive Name</span>:&#160;Friendly name of the entity property; editable. </li>
+            <li><span class="UIElementAction">Description</span>:&#160;Friendly description of the entity property; editable.</li>
+            <li><span class="UIElementAction">Data Type</span>:&#160;Drop-down list of supported <MadCap:variable name="BrandingMS.SQL Server" /> data types for the property; editable.  </li>
+            <li><span class="UIElementAction">Primary Key</span>:&#160;When selected, indicates that the property is the primary key property of the entity. </li>
+            <li><span class="UIElementAction">Nullable</span>:&#160;When selected, indicates that the property allows the NULL&#160;value. </li>
+            <li><span class="UIElementAction">Property Tags</span>:&#160;Semantic tags applied to the property; editable using <span class="UIElementAction">Manage Tags</span>. </li>
+        </ul>
+    </body>
+</html>

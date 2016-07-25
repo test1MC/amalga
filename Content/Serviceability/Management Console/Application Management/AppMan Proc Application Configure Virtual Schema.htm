@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="792" MadCap:lastWidth="1085" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure application virtual schema</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>After publishing an application, the notification area of the results pane will generally call out that there are virtual schema configuration errors that need resolution before the application can be synchronized on a physical host for production. The procedure in this topic configures the virtual schema and creates a private database, if required, for the application.</p>
+        <p class="note">If the notification that there are virtual schema configuration errors persists after performing this procedure, proceed to the <MadCap:xref href="AppMan Proc Application Bind Entities.htm" target="" title="" alt="">Bind application entities</MadCap:xref> procedure.</p>
+        <p>To configure an application virtual schema through <MadCap:variable name="BrandingMS.Doors PowerShell" />, use the <MadCap:xref href="../../../PowerShellCmdlets/PS_Ref_New-AmVirtualSchema.htm" target="" title="" alt="">New-AmVirtualSchema</MadCap:xref> cmdlet. For instructions on accessing <MadCap:variable name="BrandingHSG.Amalga Short" /> PowerShell cmdlets, see <MadCap:xref href="../../../PowerShellCmdlets/PowerShellLanding.htm" target="" title="" alt="">PowerShell reference</MadCap:xref>.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaDataAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To assign logical hosts</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>In the module navigation tree, expand the <MadCap:variable name="BrandingHSG.Amalga Short" class="UIElementAction" /><span class="UIElementAction"> Hosted Applications</span> folder and select the application for virtual schema configuration.</li>
+            <li>In the tasks pane, click <span class="UIElementAction">Configure Virtual Schema</span>. </li>
+            <li>In the <MadCap:xref href="AppMan_Vref_AMC-mod-Configure Virtual Schema Pane.htm" target="" title="" alt="">Configure Virtual Schema pane</MadCap:xref>, click the down arrow at the right of the data host assignment box and select a data host from the list presented.</li>
+            <li>Click <span class="UIElementAction">Create Virtual Schema</span>. The views making up the application's virtual schema are transferred to the data host, and a database script is generated to create the application's private database.</li>
+            <li>Create the application's private database.<ol style="list-style-type: lower-alpha;"><li>In the <MadCap:xref href="AppMan_Vref_AMC-mod-Configure Virtual Schema Pane.htm" target="" title="" alt="">Configure Virtual Schema pane</MadCap:xref>, click <span class="UIElementAction">Copy Script to Clipboard</span>. </li><li>Open <MadCap:variable name="BrandingMS.SQL Server Management Studio" /> and connect to the data host you selected in the previous step. </li><li>Paste the script into a query pane. </li><li>Execute the script to create the private database.</li></ol></li>
+            <li>In the <MadCap:xref href="AppMan_Vref_AMC-mod-Configure Virtual Schema Pane.htm" target="" title="" alt="">Configure Virtual Schema pane</MadCap:xref>, click <span class="UIElementAction">Close</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-Configure Virtual Schema Pane.htm" target="" title="" alt="">Configure Virtual Schema pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="38" MadCap:lastWidth="721" MadCap:conditions="Production.StyleMaster" MadCap:fileTags="TopicOwner.StyleMasterResource">
+    <body>
+        <p>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCSingle">the <span class="BookManualName"><MadCap:variable name="ManualNames.Amalga Web Guide" /></span></MadCap:conditionalText>
+            <MadCap:conditionalText MadCap:conditions="Production.TOCsAll"><MadCap:variable name="FeatureName.Amalga Web" />
+            </MadCap:conditionalText>
+        </p>
+    </body>
+</html>

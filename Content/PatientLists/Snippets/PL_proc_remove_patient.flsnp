@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Production.doNOTbuild" MadCap:fileTags="Status.10 - Not in use" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="320">
+    <body>
+        <p class="LabelforProcedures">To remove a patient from a patient list</p>
+        <ul>
+            <li>Click the <span class="UIElementAction">X</span> on the row containing the patient you want to remove.</li>
+        </ul>
+    </body>
+</html>

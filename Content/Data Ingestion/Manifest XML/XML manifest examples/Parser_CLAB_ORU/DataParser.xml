@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/windowsworker" Type="WindowsWorker" Name="DataParser" InstanceName="DataParser_Model_CLAB_ORU" Id="6746BB0B-7E8C-4690-B4A8-9216B544C3ED" Version ="1.0.0.0">
+    <WindowsWorkerManifest HostAssembly="Microsoft.Amalga.Pipeline.DataParser.exe" LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" ClusteringMode="FailOver" />
+    <Settings>
+        <Setting Name="BatchSize" Type="System.Int32">
+            <DefaultValue>50</DefaultValue>
+        </Setting>
+        <Setting Name="IdleSleepSeconds" Type="System.Int32">
+            <DefaultValue>5</DefaultValue>
+        </Setting>
+        <Setting Name="FeedInfoXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<FeedInfo>
+    <Name>CLAB.ORU Feed</Name>
+    <Type>CLAB.ORU</Type>
+    <Provider>MS Internal</Provider>
+    <TerminologyName>Microsoft Beta HL7 V2.X Code</TerminologyName>
+    <PreferenceRanking>100</PreferenceRanking>
+    <PreferredCulture>en-US</PreferredCulture>
+    <DefaultTimeZone>Pacific Standard Time</DefaultTimeZone>
+</FeedInfo>
+                ]]>
+            </DefaultValue>
+        </Setting>
+        <Setting Name="FeedConfigurationXml" Type="System.String">
+            <DefaultValue>
+                <![CDATA[
+<?xml version="1.0" encoding="utf-8" ?>
+<DataParserConfiguration>
+    <MessageShredderInput>
+        <Segment Name="MSH" SourceName="MSH">
+            <Elements>
+                <Element Name="MSH_6" />
+            </Elements>
+        </Segment>
+        <Segment Name="PID" SourceName="PID">
+            <Elements>
+                <Element Name="PID_3_Repeating" />
+            </Elements>
+        </Segment>
+        <Segment Name="PV1" SourceName="PV1">
+            <Elements>
+                <Element Name="PV1_19" />
+            </Elements>
+        </Segment>
+        <Segment Name="OBR" SourceName="OBR">
+            <Elements>
+                <Element Name="OBR_4" />
+            </Elements>
+        </Segment>
+        <Segment Name="OBX" SourceName="OBX">
+            <Elements>
+                <Element Name="OBX_1" />
+            </Elements>
+        </Segment>
+    </MessageShredderInput>
+    <DataParserOutput>
+        <Segment Name="PID" SourceName="PID">
+            <Elements>
+                <Element Name="MRN" Type="System.String" MaxLength="100">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ApplyXPath</Action>
+                        <InputParameters>
+                            <Parameter Name="Xml" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_3_Repeating" />
+                            <Parameter Name="XPath" SourceType="Inline" Value="/Repetitions/Repetition[2]/PID_3_1" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <!-- Use Person concept id so we can bind the patient entity -->
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="MRN" SourceType="DerivedField" SourceTable="PID" SourceName="MRN" />
+                            <Parameter Name="Domain" SourceType="ShreddedInput" SourceTable="MSH" SourceName="MSH_6" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="PV1" SourceName="PV1">
+            <Elements>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Concatenate</Action>
+                        <InputParameters>
+                            <Parameter Name="Pipe" SourceType="Constant" SourceName="Pipe" />
+                            <Parameter Name="Visit" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19" />
+                            <Parameter Name="Domain" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Patient_PID_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYADCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="PID" SourceName="Patient_PID_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+        <Segment Name="OBR" SourceName="OBR">
+            <Elements>
+                <Element Name="Order_OBR_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBKCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="UniversalServiceId" SourceType="ShreddedInput" SourceTable="OBR" SourceName="OBR_4" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+            <CollapseConfiguration>
+                <PrimaryKeyColumn>Order_OBR_ContextKey</PrimaryKeyColumn>
+                <!-- Need to create derived columns for sorting/filtering. -->
+                <!--
+                <ResultTypeSortField>CAST(REPLACE(REPLACE(REPLACE([OBR_25], 'C', 100), 'F', 50), 'P', 1) as int)</ResultTypeSortField>
+                <ResultRowsFilter>[OBR_25] IN ('C', 'F', 'P')</ResultRowsFilter>
+                -->
+            </CollapseConfiguration>
+        </Segment>
+        <Segment Name="OBX" SourceName="OBX">
+            <Elements>
+                <Element Name="Result_OBX_ContextKey" Type="System.String" MaxLength="200" ContextKey="true">
+                    <ConceptId>f/xuQgEy71iABYBTCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.ConcatenateStringList</Action>
+                        <InputParameters>
+                            <Parameter Name="Arguments" SourceType="Array" Type="System.String">
+                                <Array>
+                                    <ArrayElement SourceType="ShreddedInput" SourceTable="OBR" SourceName="OBR_4" />
+                                    <ArrayElement SourceType="ShreddedInput" SourceTable="OBX" SourceName="OBX_1" />
+                                </Array>
+                            </Parameter>
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Order_OBR_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBKCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="OBR" SourceName="Order_OBR_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+                <Element Name="Encounter_PV1_ContextKey" Type="System.String" MaxLength="200" ReferenceKey="true">
+                    <ConceptId>f/xuQgEy71iABYBBCrJmYw</ConceptId>
+                    <Transform>
+                        <Action>Microsoft.Amalga.Pipeline.Transforms.MessageHelpers.Copy</Action>
+                        <InputParameters>
+                            <Parameter Name="Source" SourceType="DerivedField" SourceTable="PV1" SourceName="Encounter_PV1_ContextKey" />
+                        </InputParameters>
+                    </Transform>
+                </Element>
+            </Elements>
+        </Segment>
+    </DataParserOutput>
+    <ExtensibleDataParserOutput />
+    <DataConstants>
+        <Element Name="Pipe" Type="System.String" Value="|" />
+    </DataConstants>
+    <Plugins>
+        <!-- Here, we can define multiple transform library, so that user can import their library. We can treat each library as a plugin-->
+        <Plugin Name="MessageHelper" Assembly="Microsoft.Amalga.Pipeline.Transforms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a03c60abe3a7c396" ClassName="MessageHelpers">
+            <NameSpace>Microsoft.Amalga.Pipeline.Transforms</NameSpace>
+            <URL>./Microsoft.Amalga.Pipeline.Transforms.dll</URL>
+            <SourceType>FileSystem</SourceType>
+        </Plugin>
+    </Plugins>
+    <EnterpriseId>
+        <EnterpriseIdAction Action="StandardMapping" AnchorTable="PV1">
+            <InputIdentifiers>
+                <PersonIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="DerivedField" SourceTable="PID" SourceName="MRN"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </PersonIdentifier>
+                <!--
+                <PatientRecordIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="DerivedField" SourceTable="PID" SourceName="MRN"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </PatientRecordIdentifier>
+                <EncounterSetIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_18"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </EncounterSetIdentifier>
+                -->
+                <EncounterIdentifier>
+                    <Id Name="Id" Type="System.String" SourceType="ShreddedInput" SourceTable="PV1" SourceName="PV1_19"/>
+                    <Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceName="MSH_6" SourceTable="MSH" />
+                </EncounterIdentifier>
+            </InputIdentifiers>
+        </EnterpriseIdAction>
+    </EnterpriseId>
+</DataParserConfiguration>
+                ]]>
+            </DefaultValue>
+        </Setting>
+        <Setting Name="PluginConfigurationXml" Type="System.String">
+            <DefaultValue/>
+        </Setting>
+		<Setting Name="ConnectionTimeoutSeconds" Type="System.Int32">
+			<DefaultValue>60</DefaultValue>
+		</Setting>
+    </Settings>
+</DeploymentManifest>

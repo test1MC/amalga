@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet Comment="My set of condition tags" conditions="Default.StyleMaster,Production.StyleMaster">
+    <ConditionTag Comment="" Name="UK" BackgroundColor="#363774" />
+    <ConditionTag Comment="" Name="US" BackgroundColor="#8989fe" />
+    <ConditionTag BackgroundColor="#b00058" Name="China" Comment="" />
+    <ConditionTag BackgroundColor="LightBlue" Name="Thailand" Comment="" />
+</CatapultConditionTagSet>

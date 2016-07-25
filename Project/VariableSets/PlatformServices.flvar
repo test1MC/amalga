@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet conditions="Production.StyleMaster">
+    <Variable Comment="" Name="Add var here">this text is displayed</Variable>
+</CatapultVariableSet>

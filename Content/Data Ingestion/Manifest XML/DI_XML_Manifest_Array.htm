@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1845" MadCap:lastWidth="679" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Array element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Array element" />Declares a list of arguments as a parameter.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;
+
+            &lt;DataParserOutput&gt;(Note: Element levels removed.)
+                  &lt;InputParameters&gt;
+                     &lt;Parameter&gt;<b>
+                        &lt;Array /&gt;</b>
+                     &lt;/Parameter&gt;
+                  &lt;/InputParameters&gt;
+            &lt;/DataParserOutput&gt;
+
+            &lt;EnterpriseId&gt;
+               &lt;EnterpriseIdAction&gt; TransformName=<i>String</i> AnchorTable=<i>String</i> &gt;
+                  &lt;InputIdentifiers&gt;
+                     &lt;PatientRecordIdentifier&gt;
+                        &lt;Id&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Id&gt;
+                        &lt;Domain&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Domain&gt;
+                     &lt;PersonIdentifier&gt;
+                        &lt;Id&gt;<b>
+                           &lt;Array /&gt;</b>
+                              &lt;/Id&gt;
+                        &lt;Domain&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Domain&gt;
+                     &lt;ProviderIdentifier&gt;
+                        &lt;Id&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Id&gt;
+                        &lt;Domain&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Domain&gt;
+                     &lt;EncounterSetIdentifier&gt;
+                        &lt;Id&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Id&gt;
+                        &lt;Domain&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Domain&gt;
+                     &lt;EncounterIdentifier&gt; 
+                        &lt;Id&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Id&gt;
+                        &lt;Domain&gt;<b>
+                           &lt;Array /&gt;</b>
+                        &lt;/Domain&gt;
+                  &lt;/InputIdentifiers&gt;&gt;
+               &lt;/EnterpriseIdAction&gt;
+            &lt;/EnterpriseId&gt;
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_Parameter.htm">Parameter</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_ArrayElement.htm">ArrayElement</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>Declare the <span class="MarkupLanguageElements">Array</span> element in the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p><pre xml:space="preserve">&lt;Element Name="Result_OBX_ContextKey" Type="System.String" MaxLength="200" ContextKey="true"&gt;
+    &lt;ConceptId&gt;f/xuQgEy71iABYBTCrJmYw&lt;/ConceptId&gt;
+    &lt;Transform&gt;
+        &lt;Action&gt;ConcatenateStringList&lt;/Action&gt;
+        &lt;InputParameters&gt;
+            &lt;Parameter Name="Arguments" SourceType="Array" Type="System.String"&gt;
+                &lt;Array&gt;
+                    &lt;ArrayElement SourceType="ShreddedInput" SourceTable="OBR" SourceName="OBR_4" /&gt;
+                    &lt;ArrayElement SourceType="ShreddedInput" SourceTable="OBX" SourceName="OBX_1" /&gt;
+                &lt;/Array&gt;
+            &lt;/Parameter&gt;
+        &lt;/InputParameters&gt;
+    &lt;/Transform&gt;
+&lt;/Element&gt;
+</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

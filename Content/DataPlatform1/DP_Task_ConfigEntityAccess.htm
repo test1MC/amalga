@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1352" MadCap:lastWidth="608" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Grant permissions to an entity (add an access rule)</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to enable <MadCap:variable name="BrandingHSG.Amalga Short" /> users to access data by authorizing their roles for the related entities through access rules. </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console" />You can enable <MadCap:variable name="BrandingHSG.Amalga Short" /> users to access data by granting permissions for the related entities to the users' <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <p>Each role can have the following types of access rules (one of each type): </p>
+        <MadCap:snippetBlock src="Snippets/ref-EMT-AccessPolicy-RuleGroups.flsnp" />
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">
+            <MadCap:annotation MadCap:createDate="2011-12-19T12:33:04.6928824-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="TAP: 83863, 85579 (lookup enhancement, support for ACF on writable app views) ... maybe this anno is more related to entity CRUD tasks than AAA.\r\n\r\nFor one thing, need to warn user that if an entity or property is referenced in an access rule, then the entity or property won't be able to be edited or deleted. from 83863: &quot;Deleting or updating an entity is not allowed if it is used by an app or if is used in any ACF rule (either directly or via inheritance).&quot; &gt;&gt; what terminology is used in the UI? &quot;bound applications&quot;? plus: entities and entity properties referenced in access rules, whether &quot;local or inherited&quot;?\r\n\r\nUnblocked. 85579 still in plan, but no ACF will be available for app private entities post app sync (must redeploy / resync app if want to change relationship between private entity and public entity). need to xref content from Dennis/Keith. related to DCR 114782." MadCap:editor="v-padenc" MadCap:editDate="2012-02-02T15:29:33.8213067-08:00">To</MadCap:annotation> grant permissions to an entity (add an access rule)</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-access.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-access.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>In the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane, click <span class="UIElementAction">Authorize Role</span>. </p>
+                <p class="note">If the <MadCap:variable name="BrandingHSG.Amalga Short" /> role you want is already authorized, you can alternatively select the role in the <span class="UIElementName">Authorized Roles</span> section and then click <span class="UIElementAction">Add New Rule</span>. </p>
+                <p>The <MadCap:variable name="UI-Labels.Rule Editor" /> dialog box appears. </p>
+            </li>
+            <li>Select the role and click <span class="UIElementAction">Next</span>. </li>
+            <li>Select the rule access level and click <span class="UIElementAction">Next</span>.</li>
+            <li>Select the privilege (read or read/write) and click <span class="UIElementAction">Next</span>. </li>
+            <li>
+                <p>Define a SQL condition if needed. </p>
+                <p>For instructions on adding SQL conditions to access rules, see <MadCap:xref href="DP_Task_RuleCond.htm" target="" title="" alt="">Add a SQL condition to an access rule</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Enter a name for the rule and then click <span class="UIElementAction">Finish</span>. </p>
+                <p>The rule is saved and the <MadCap:variable name="UI-Labels.Access Policy (pane)" /> pane is redisplayed. </p>
+                <p class="note">To authorize the role to access data from entity properties that are tagged with sensitive labels, select the check boxes for the sensitive labels listed under <MadCap:variable name="UI-Labels.Visible Sensitive Labels for Role" />. See   <MadCap:xref href="DP_Task_PolicyLabel.htm" target="" title="" alt="">Grant permissions for a sensitive label</MadCap:xref> for instructions.          </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_RuleCond.htm" target="" title="" alt="">Add a SQL condition to an access rule</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Task_ConfigEntityInheritAccess.htm" target="" title="" alt="">Configure access inheritance for an entity</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_RuleCopy.htm" target="" title="" alt="">Copy an access rule</MadCap:xref>
+        </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Task_PolicyLabel.htm" target="" title="" alt="">Grant permissions for a sensitive label</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_InputSQL.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RuleAccessLevels.htm" target="" title="" alt="">Access inheritance</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Con_SQLConditions.htm" target="" title="" alt="">SQL conditions</MadCap:xref>
+        </p>
+    </body>
+</html>

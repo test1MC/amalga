@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="4235" MadCap:lastWidth="1050" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Creating DCN event types</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event types:Data Change Notification platform application;event subscriptions:Data Change Notification platform application;Data Change Notification platform application:event types;Data Change Notification platform application:event subscriptions;event messages:Data Change Notification platform application;Data Change Notification platform application:event messages;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;HostedServiceResolver class:Data Change Notification platform application;Data Change Notification platform application:HostedServiceResolver class;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;CreateEventType method:Data Change Notification platform application;Data Change Notification platform application:CreateEventType method;ApplicationDependency class;DeliveryChannel class" />This topic describes the general process involved in creating and subscribing to Data Change Notification (DCN) event types.</p>
+        <p>You must first subscribe to at least one DCN event type before you can receive DCN messages. Your hosted application can have multiple DCN event subscriptions, each associated with a single DCN event type. The DCN event type describes the application views, columns, and other information needed by the various services in the Microsoft.Amalga.Event.Application application to identify data change events and write DCN event messages, while the DCN event subscription describes the service endpoint in your hosted application to which DCN messages for the associated DCN event type should be sent.</p>
+        <p class="LabelforProcedures">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Before" target="" title="" alt="">Before you begin on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Process" target="" title="" alt="">Process Overview on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Examples" target="" title="" alt="">Examples on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Before"></a>
+            <MadCap:annotation MadCap:createDate="2012-03-09T22:11:42.8240770-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Pls revise for TAP. IMO, once you start doing these, you have begun. Maybe Preliminary activities?  Either that, or define what it is you are not yet beginning, as in Before you begin creating a DCN event type." MadCap:editor="v-ciwyco" MadCap:editDate="2012-03-09T22:14:45.1585626-08:00">Before you begin</MadCap:annotation>
+        </h2>
+        <p>Before you can interact with the EventingManagerService service, you must resolve a service endpoint and then open a WCF client channel to the service endpoint, using a WCF client previously generated for the service, for the IEventManagementService contract provided by the EventingManagerService service. </p>
+        <p class="note">You must do this for each method to be called from the service, as each WCF client channel represents a separate "conversation" between your hosted application and the EventingManagerService service.</p>
+        <p>The easiest way to resolve a service endpoint for the EventingManagerService service is by providing an application dependency to the HostedServiceResolver object. For more information about resolving a service endpoint, see <MadCap:xref href="../Services/SDK_CON_Connecting_WCF_Clients.htm" target="" title="" alt="">Creating a WCF client channel on page 1</MadCap:xref>. </p>
+        <p>You can then use the resulting ServiceEndPoint object to create a WCF client channel for the IEventManagementService contract provided by the EventingManagerService service, using the IEventManagementService interface defined in the WCF client you generated for the service. For more information about generating a WCF client, see <MadCap:xref href="../Services/SDK_CON_Obtaining_Service_Metadata.htm" target="" title="" alt="">Obtaining information about services on page 1</MadCap:xref>.</p>
+        <h2><a name="Process"></a>Process overview</h2>
+        <p>Once you have generated a WCF client and opened a WCF client channel, the<MadCap:annotation MadCap:createDate="2011-11-16T21:17:45.8861625-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I like this format: clearly a set of tasks, but not easily confused with a procedure" MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T21:18:29.5285263-08:00"> following general steps</MadCap:annotation> must be performed to create and subscribe to a DCN event type.</p>
+        <ol>
+            <li>
+                <p>Define a DCN event subscription.</p>
+                <p>The DCN event subscription contains the metadata that links your hosted application to a DCN event type. You can either create a new DCN event subscription and add it to an existing DCN event type, or create a new DCN event subscription and include it when creating a new DCN event type. For more information about defining a DCN event subscription, see <MadCap:xref href="SDK_CON_Creating_EventSubscription.htm" target="" title="" alt="">Defining a DCN event subscription on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Define a DCN event type.</p>
+                <p>The DCN event type contains the metadata that identifies the application view for which you want to receive data change notifications. For more information about defining a DCN event type, see <MadCap:xref href="SDK_CON_Creating_EventType.htm" target="" title="" alt="">Creating a DCN event type on page 1</MadCap:xref>. </p>
+            </li>
+            <li>
+                <p>Call the CreateEventType operation to create and subscribe to the newly defined DCN event type.</p>
+                <p>Once you have defined your DCN event subscription and associated it with your newly defined DCN event type, you can call the CreateEventType operation, part of the IEventManagementService contract of the EventingManagerService service, to create the DCN event subscription and DCN event type in the application database for the Microsoft.Amalga.Event.Application application.   </p>
+            </li>
+        </ol>
+        <p>At this point, you can start receiving and processing DCN messages for the DCN event subscription and DCN event type. </p>
+        <h2><a name="Examples"></a>
+            <MadCap:annotation MadCap:createDate="2011-11-16T21:22:28.8914602-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Post refresh, these should go into a new topic or topics." MadCap:editor="v-ciwyco" MadCap:editDate="2011-11-16T21:22:55.0840792-08:00">Examples</MadCap:annotation>
+        </h2>
+        <p>The following examples demonstrate common activites associated with creating and subscribing to a DCN event type from within a hosted application.</p>
+        <h3>Getting the application dependency for DCN</h3>
+        <p>The following example provides a sample function that returns an ApplicationDependency object for the application dependency, which you defined in the application manifest of your hosted application, for the Microsoft.Amalga.Event.Application application.</p><pre xml:space="preserve">private ApplicationDependency GetDCNDependency()
+{
+    // This variable is set to the value of the Name attribute for the
+&#160;&#160;&#160;&#160;// Dependency element in the application manifest for your hosted application.
+&#160;&#160;&#160;&#160;// The element represents the application dependency for the 
+    // Microsoft.Amalga.Event.Application hosted application.
+    const string dcnDependencyName = "DCNDependency";
+
+    // Retrieve the ApplicationDependency object for the application
+    // dependency from the Dependencies collection of the 
+    // ApplicationConfiguration object.
+    var deps = this.ApplicationConfiguration.Dependencies;
+    return (ApplicationDependency) deps[eventingDependencyName];
+}</pre>
+        <h3>Creating a WCF client channel for IEventManagementService</h3>
+        <p>The following example uses an ApplicationDependency object, such as the result from the previous example, along with the metadata needed to identify the service endpoint and service contract, to resolve the service endpoint and open a WCF client channel that uses the IEventManagementService contract from the EventingManagerService service.</p><pre xml:space="preserve">private IEventManagementService GetEventManagementService(ApplicationDependency eventingDependency)
+{
+    // This variable is set to the default value for the fully qualified domain name (FQDN) of the 
+    // IEventManagementService contract, as deployed on your Amalga topology. 
+    // You can also discover the services and contracts available on your Amalga topology by using 
+    // the Topology feature included with the Amalga platform.
+    const string serviceContractName = "Microsoft.Amalga.Eventing.IEventManagementService";
+
+    // This variable is set to the service GUID of the EventingManagerService service. 
+    // Service GUIDs are unique and, once published, do not change.
+    Guid serviceId = new Guid("559530B5-80CC-43DD-9A94-26CD2455B388");
+
+    // Given an ApplicationDependency object, the service GUID, and the name of the service contract, 
+    // resolve the service endpoint using the HostedServiceResolver object.
+    ServiceEndPoint eventManagerEndpoint =
+        HostedServiceResolver.ResolveServiceEndPoint(eventingDependency, serviceId, serviceContractName);
+
+    // Given a resolved ServiceEndPoint object, create a WCF client channel that uses the 
+    // IEventManagementService interface defined in your WCF client. 
+    return AmalgaWcfChannelFactory&lt;IEventManagementService&gt;.CreateChannel(eventManagerEndpoint);
+}</pre>
+        <h3>Creating and subscribing to a DCN event type</h3>
+        <p class="Figure">The following example creates and subscribes to a DCN event type for an application view, named Diagnosis, defined in the data manifest of your hosted application.</p><pre xml:space="preserve">public void CreateEventType()
+{
+    // Define a new delivery channel for the hosted application.
+    DeliveryChannel channel = new DeliveryChannel
+    {
+        Type = "ServiceEndpoint"
+    };
+
+    // Define the properties for the delivery channel.
+    channel.Properties = new Dictionary&lt;string, DeliveryChannelProperty&gt;();
+
+    // Specify the name of the application instance for the delivery channel.
+    channel.Properties.Add("ApplicationInstance",
+        new DeliveryChannelProperty
+        {
+            DataType = "string",
+            Value = this.ApplicationConfiguration.InstanceName
+        });
+
+    // Specify the service ID of the WCF service in your 
+    // hosted application that implements IEventHandler.
+    channel.Properties.Add("ServiceId",
+        new DeliveryChannelProperty
+        {
+            DataType = "string",
+            Value = "a5966ab3-7047-4f47-9c3f-11f930ba9acc"
+        });
+
+    // Specify the version information of the hosted application.
+    channel.Properties.Add("MinVersion",
+        new DeliveryChannelProperty
+        {
+            DataType = "string",
+            Value = this.ApplicationConfiguration.Version.ToString()
+        });
+
+
+    // Define a new DCN event subscription.
+    EventSubscription subscription = new EventSubscription
+    {
+        Name = "DiagnosisChangeTrackingSubscriber",
+        // A value is required for the ExpireOn property. If you do not want
+        // the DCN event subscription to expire, specify DateTime.MaxValue.
+        ExpireOn = DateTime.MaxValue,
+        // Specify the newly-defined delivery channel.
+        Delivery = channel
+    };
+
+    // Define the collection of eventable resources to be specified for the 
+    // DCN event type. In this case, the example is creating a DCN event type for an
+    // application view named Diagnosis, defined in the data manifest of this hosted 
+    // application.
+    Dictionary&lt;string, string&gt; eventableResources = new Dictionary&lt;string, string&gt;();
+
+    // Specify the name of the application view to be tracked.
+    eventableResources.Add("ApplicationViewName", "Diagnosis");
+
+    // Specify the instance name of the virtual schema for this hosted application. 
+    // The virtual schema instance name always matches the application instance name. 
+    eventableResources.Add("ApplicationViewInstanceName", this.ApplicationConfiguration.InstanceName);
+
+    // Create the DCN event type.
+    EventType eventType = new EventType
+    {
+        Description = "EventType for Amalga Eventing Sample Application",
+        Name = "DiagnosisChangeTracking",
+        NeverExpire = true,
+        Priority = EventPriority.Normal,
+        ResourceProperties = eventableResources,
+        SelectedColumns = new string[] { "DiagnosisCode", "DiagnosisDateTime" },
+        State = ResourceState.Active,
+        SqlSyntaxCondition = "DiagnosisCode is not null",
+        Subscriptions = new EventSubscription[] {subscription}
+    };
+
+    // Create a WCF client channel to the EventingManagerService service, 
+    // using the IEventManagementService contract.
+    IEventManagementService eventManagementService = GetEventManagementService(GetEventingDependency());
+
+    // Call the CreateEventType operation to create and subscribe to
+    // the DCN event type.
+    eventManagementService.CreateEventType(eventType);
+}</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

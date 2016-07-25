@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="1604.333" MadCap:lastWidth="675">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p>The following <MadCap:annotation MadCap:createDate="2012-01-04T16:37:36.3795604-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="image is nonstandard size. although bug 111897 was fixed, the dialog box size was not changed. therefore had to set IE zoom level to 82%. for RTM, if this issue is solved, recapture this image." MadCap:editor="v-padenc" MadCap:editDate="2012-03-08T12:18:48.3626125-08:00">image </MadCap:annotation>shows the <MadCap:variable name="UI-Labels.Edit Entity - dialog" /> dialog box with the OrderAddendum1 entity and its QuantityTimingEndDateTime_o property opened for editing. </p>
+        <p>
+            <img src="../Images/EMT-entity-attr-edit-.png" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" style="max-width: 675px;max-height: auto;" />
+        </p>
+        <table style="width: 95%;">
+            <col />
+            <col />
+            <col style="width: 339px;" />
+            <thead>
+                <tr>
+                    <th>Ref#</th>
+                    <th>Name</th>
+                    <th>Description and tasks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Entity Name</td>
+                    <td>Name of the entity; editable. </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Entity Tags</td>
+                    <td>Semantic tags applied to the entity; editable using <span class="UIElementAction">Manage Tags</span>. </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Namespace</td>
+                    <td>Namespace in which this entity resides; editable for new entities if no namespace was selected when creating the entity. If the specified namespace does not exist, it is created. </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><MadCap:variable name="UI-Labels.Manage Tags" />
+                    </td>
+                    <td>Displays the <MadCap:variable name="UI-Labels.Semantic Tags" /> dialog box for application of tags to the entity. </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>(toolbar buttons)</td>
+                    <td>
+                        <p>Toolbar buttons for editing the selected entity property: </p>
+                        <MadCap:snippetBlock src="../../DataPlatform1/Snippets/ref-EMT-PropertyDetailsToolbar.flsnp" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><MadCap:variable name="UI-Labels.Manage Tags" />
+                    </td>
+                    <td>
+                        <p>Displays the <MadCap:variable name="UI-Labels.Semantic Tags" /> dialog box for application of tags to the selected entity property. </p>
+                        <p class="noteInTable">
+                            <MadCap:snippetText src="../../DataPlatform1/Snippets/info-EMT-SemanticTagsFacilitateBinding.flsnp" /> For more information, see <MadCap:xref href="../../DataPlatform1/DP_Task_BindColRec.htm" target="" title="" alt="">Configure binding: recommended column</MadCap:xref> and <MadCap:xref href="../../DataPlatform1/DP_Task_ConfigEntityInheritAccess.htm" target="" title="" alt="">Configure access inheritance for entities</MadCap:xref>. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Save Entity</td>
+                    <td>Saves changes to the entity. </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>(highlighted item)</td>
+                    <td>Visual indicator of selected entity property.</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Property Details</td>
+                    <td>
+                        <p>Fields that define the selected entity property:</p>
+                        <MadCap:snippetBlock src="../../DataPlatform1/Snippets/ref-EMT-PropertyDetails.flsnp" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Description</td>
+                    <td>Friendly description of the entity; editable.</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Descriptive Name</td>
+                    <td>Friendly name of the entity; editable. </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Concept,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:lastBlockDepth="11" MadCap:lastHeight="871.6667" MadCap:lastWidth="543" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data access performance</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">This topic describes how to optimize the performance of data access.</p>
+        <p>
+            <MadCap:keyword term="access control framework;performance;SQL Server;best practices;framework:access control;entities:access" />Data access performance is gated on <MadCap:variable name="BrandingMS.SQL Server" /> performance. Follow optimization best practices for SQL statements when writing rule filters (SQL conditions) and binding entities to data. </p>
+        <p class="note">Materialized entity views are automatically generated when changes to entity binding are saved. For more information about materialized entity views, see <MadCap:xref href="../../DataPlatform1/Materializer/DP_Ovw_Materializer CTP2.htm">Materialized entity view</MadCap:xref>. </p>
+        <p>This section lists specific best practices by area.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Best practice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Indexing</td>
+                    <td>Ensure that all physical table columns used in access rules are indexed.</td>
+                </tr>
+                <tr>
+                    <td>Binding SQL&#160;statement </td>
+                    <td>
+                        <ul>
+                            <li>Limit the number of joins in the view. For improved performance, do not use joins, if possible. </li>
+                            <li>Use LEFT JOIN statements if a JOIN statement must be used in SQL views and entity bindings.</li>
+                            <li>Avoid using UNION statements in SQL views and entity bindings.  </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Roles</td>
+                    <td>Minimize the overlap among roles for best performance and manageability. That is, if a user is a member many roles, the time required to access data is expected to be increased, compared with a user who is a member of only one role.</td>
+                </tr>
+                <tr>
+                    <td>Entity properties</td>
+                    <td>Minimize the number of properties defined in an entity to only those required by the rules contained in the access policy. You can always add properties on an as-needed basis.</td>
+                </tr>
+                <tr>
+                    <td>Sensitive labels</td>
+                    <td>Minimize combined sensitive labels. A single sensitive label can be applied to multiple entity properties within a schema. Minimizing labels required for manageability of the solution improves the performance of <MadCap:variable name="BrandingHSG.Amalga Short" />.</td>
+                </tr>
+                <tr>
+                    <td>Rule filters</td>
+                    <td>Minimize the number of entity properties used in rule filters. For instructions on debugging access rules, see <MadCap:xref href="../../DataPlatform1/DP_Task_DebugRules.htm" target="" title="" alt="">Debug access rules</MadCap:xref>. </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/DP_Task_DebugRules.htm" target="" title="" alt="">Debug access rules</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts </p>
+        <p>
+            <MadCap:xref href="../SERV_LND_AppPerm.htm" target="" title="" alt="">Application permissions management</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SERV_LND_DataPerm.htm" target="" title="" alt="">Data permissions management</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/Materializer/DP_Ovw_Materializer CTP2.htm">Materialized entity view</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SERV_LND_Roles.htm" target="" title="" alt="">Role management</MadCap:xref>
+        </p>
+    </body>
+</html>

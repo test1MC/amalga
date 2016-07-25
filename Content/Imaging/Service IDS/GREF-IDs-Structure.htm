@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1787" MadCap:lastWidth="292" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Image Delivery server" /> application structure</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Image Delivery Application" />This topic introduces the structure and processes used by the <MadCap:variable name="Imaging.Image Delivery server" /> application (<MadCap:variable name="Imaging.IDA" />).</p>
+        <p class="h8"><MadCap:variable name="Imaging.Image Delivery server" /> application requests</p>
+        <p>A client can access image metadata using APIs exposed on the <MadCap:variable name="Imaging.Imaging Registry and Document server" /> server&#160; or directly through imaging entities. The image metadata includes a unique site identifier that you can use to access the corresponding image BLOB data. Clients query an interface on the <MadCap:variable name="Imaging.Image Registry (service)" /> service to retrieve the endpoint for the <MadCap:variable name="Imaging.IDA" /> by using the site identifier. Since image BLOB&#160;data is not accessible by using entities, the <MadCap:variable name="Imaging.IDA" /> is the gateway for all image BLOB-related requests.</p>
+        <p>Requests include the following items:</p>
+        <ol>
+            <li>BLOB data retrieval</li>
+            <li>Thumbnail retrieval</li>
+        </ol>
+        <p>These requests are supported through <MadCap:variable name="TechnicalTerms.REST" /> web APIs. This enables you to build controls based on the  <MadCap:variable name="FeatureName.Amalga Framework" /> and facilitates use of the browser cache, since image requests use GET commands.</p>
+        <p class="h8"><MadCap:variable name="Imaging.Image Delivery server" />application services</p>
+        <p>The <MadCap:variable name="Imaging.IDA" /> consists of the following three services installed on the same physical machine:</p>
+        <ul>
+            <li><span class="Label"><MadCap:variable name="Imaging.IDA SOAP WCF service" /></span>
+                <p>A SOAP <MadCap:variable name="BrandingMS.WCF" /> endpoint implemented as an <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted <MadCap:variable name="BrandingMS.WCF service" />. The <MadCap:variable name="Imaging.IDA SOAP WCF service" /> is resolved through the Amalga topology service by using the instance name of the <MadCap:variable name="Imaging.IDA" /> returned by the IRS.  Any client application or control needs to first talk to <MadCap:variable name="Imaging.IDA SOAP WCF service" /> to get a security reference.</p>
+                <p>The full URL&#160;address of the IDS REST service is returned by the SOAP service along with the security reference.</p>
+            </li>
+            <li><span class="Label"><MadCap:variable name="Imaging.IDA Core service" /></span>
+                <p>An <MadCap:variable name="BrandingHSG.Amalga Short" />-hosted worker service which does not expose any publicly accessible endpoints. The core service  generates and validates the security reference in order to secures access to the image data. The service can talk to other hosted services, such as the <MadCap:variable name="Applications.Data Connector (application)" />, by using a fixed service identity. The core service is responsible for retrieval, caching, and rendering requested data.</p>
+            </li>
+            <li><span class="Label"><MadCap:variable name="Imaging.IDA REST service" /></span>
+                <p>A <MadCap:variable name="TechnicalTerms.REST" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.WCF" /> endpoint hosted in <MadCap:variable name="BrandingMS.Internet Information Services (IIS)" />. This endpoint is not protected by <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" /> and passes the client WADO-style (Web Access to <MadCap:variable name="Imaging.DICOM" /> Persistent Objects) requests to the core service along with the security reference. It returns response streams to the client.</p>
+            </li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="GREF_ODS-Op-BLOB-Thumb.htm"> Application operation on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LND-IDS.htm">Image Delivery Application on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

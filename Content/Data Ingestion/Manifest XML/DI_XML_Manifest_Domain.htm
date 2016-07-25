@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2454" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Domain element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="Domain element" />Declares a set of source identity parameters.    </p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+            &lt;EnterpriseId&gt;
+                &lt;EnterpriseIdAction&gt; TransformName=<i>String</i> AnchorTable=<i>String</i> &gt;
+                   &lt;InputIdentifiers&gt;
+                      &lt;PatientRecordIdentifier&gt;<b>
+                         &lt;Domain&gt;</b>&lt;Array/&gt;<b>&lt;/Domain&gt;</b>
+                      &lt;PersonIdentifier&gt;<b>
+                         &lt;Domain&gt;</b>&lt;Array/&gt;<b>&lt;/Domain&gt;</b>
+                      &lt;ProviderIdentifier&gt;<b>
+                         &lt;Domain&gt;</b>&lt;Array/&gt;<b>&lt;/Domain&gt;</b>
+                      &lt;EncounterSetIdentifier&gt;<b>
+                         &lt;Domain&gt;</b>&lt;Array/&gt;<b>&lt;/Domain&gt;</b>
+                      &lt;EncounterIdentifier&gt;<b>
+                         &lt;Domain&gt;</b>&lt;Array/&gt;<b>&lt;/Domain&gt;</b>
+                   &lt;/InputIdentifiers&gt;&gt;
+                &lt;/EnterpriseIdAction&gt;
+             &lt;/EnterpriseId&gt;
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_EncounterIdentifier.htm">EncounterIdentifier</a>, <a href="DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a>, <a href="DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a>, <a href="DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a>, <a href="DI_XML_Manifest_ProviderIdentifier.htm">ProviderIdentifier</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Array.htm">Array</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Optional string.) Name of the domain. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SourceType</td>
+                    <td>
+                        <p>(Required string.) Defines the input source. The following values are allowed.</p>
+                        <table style="width: 100%;">
+                            <col style="width: 118px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>ShreddedInput</td>
+                                    <td>
+                                        <p>Reads input from a shredded message.  You must also specify values for the SourceTable and SourceName attributes in the domain. </p>
+                                        <p class="note">Always explicitly declare SourceTable and SourceName attribute values in the parser service manifest using the <MadCap:xref href="DI_XML_Manifest_MessageShredderInput.htm" target="" title="" alt="">MessageShredderInput element</MadCap:xref> before adding them to a domain.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>DerivedField</td>
+                                    <td>Reads a field that you derive in the parser service manifest. You must also specify values for the SourceTable and SourceName attributes in the domain.</td>
+                                </tr>
+                                <tr>
+                                    <td>Inline</td>
+                                    <td>Reads a value that you specify in the parameter using the Value attribute.</td>
+                                </tr>
+                                <tr>
+                                    <td>Constant</td>
+                                    <td>Reads a global value. You must declare the constant first in the <MadCap:xref href="DI_XML_Manifest_DataConstants.htm" target="" title="" alt="">DataConstants element</MadCap:xref> and then specify the named constant with the SourceName attribute.</td>
+                                </tr>
+                                <tr>
+                                    <td>Array</td>
+                                    <td>Reads a variable list of arguments that you declare with the Array element. Use the Type attribute to indicate the array type.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SourceTable</td>
+                    <td>(Optional string) Specifies the table from which to read the data. For example, if you want to define a transform for table PID, set the SourceTable attribute to "PID" or any of its parents (MSH).</td>
+                </tr>
+                <tr>
+                    <td>SourceName</td>
+                    <td>(Optional string) The name of the table column or constant as indicated by the source type.</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>(Optional string) Data type such as System.String.</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td>(Optional string) Specifies an explicit inline value, such as "|" (pipe).</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Domain</span> element value when concatenated with the <MadCap:xref href="DI_XML_Manifest_Id.htm" target="" title="" alt="">Id element</MadCap:xref> value fully identifies an encounter, encounter set, patient record, person, or provider source. You must configure at least one source identifier. </p>
+        <p class="Label">Constraints</p>
+        <ul>
+            <li>Declare the <span class="MarkupLanguageElements">Domain</span> element only within a service manifest of the <MadCap:variable name="Applications.Data Parser application" />. </li>
+            <li>Specify the <span class="MarkupLanguageElements">Domain</span> element only once for each source identifier that you define. </li>
+        </ul>
+        <p class="Label">Example</p>
+        <p class="code">&lt;Domain Name="Domain" Type="System.String" SourceType="ShreddedInput" SourceTable="PID" SourceName="PID_3_5" /&gt;     <![CDATA[
+]]></p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef,Region.US" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>PatientMatchLinkService Methods</title>
+        <link rel="stylesheet" type="text/css" href="../../../Resources/Stylesheets/Presentation.css">
+        </link>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/EventUtilities.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/Dropdown.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/script_manifold.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CheckboxMenu.js">
+        </script>
+        <script type="text/javascript" src="../../../Resources/Sandcastle/scripts/CommonUtilities.js">
+        </script>
+        <meta name="container" content="Microsoft.Amalga.AppFramework.Service" />
+        <meta name="file" content="Methods_T_PatientMatchLinkService" />
+        <meta name="outDir" content="Microsoft.Amalga.AppFramework.Service" />
+    </head>
+    <body>
+        <input type="hidden" id="userDataCache" class="userDataStyle" />
+        <input type="hidden" id="hiddenScrollOffset" />
+        <img id="collapseImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" title="Collapse image" />
+        <img id="expandImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" title="Expand Image" />
+        <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />
+        <img id="expandAllImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/expand_all.gif" />
+        <img id="dropDownImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdown.gif" />
+        <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/dropdownHover.gif" />
+        <img id="copyImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycode.gif" title="Copy image" />
+        <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../../../Resources/Sandcastle/icons/copycodeHighlight.gif" title="CopyHover image" />
+        <div id="header">
+            <table id="topTable" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"><img ID="toggleAllImage" class="toggleAll" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />&#160;<label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label>&#160;</span><span>&#160;&#160;&#160;&#160;</span><span id="memberOptionsDropdown" class="filter" tabindex="0"><img id="memberOptionsDropdownImage" src="../../../Resources/Sandcastle/icons/dropdown.gif" />&#160;<label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All&#160;</nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered&#160;</nobr></label></span>
+                    </td>
+                </tr>
+            </table>
+            <div id="devlangsMenu">
+                <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+                <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+                <br />
+            </div>
+            <div id="memberOptionsMenu">
+                <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+                <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+                <br />
+                <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+                <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+                <br />
+            </div>
+            <table id="bottomTable" cellpadding="0" cellspacing="0">
+                <tr id="headerTableRow1">
+                    <td align="left"><span id="runningHeaderText"></span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow2">
+                    <td align="left"><span id="nsrTitle">PatientMatchLinkService Methods</span>
+                    </td>
+                </tr>
+                <tr id="headerTableRow3">
+                    <td align="left"><a href="T_PatientMatchLinkService.htm">PatientMatchLinkService Class</a>&#160; <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See&#160;Also</a>&#160;</td>
+                </tr>
+            </table>
+            <table id="gradientTable">
+                <tr>
+                    <td class="nsrBottom" background="../../../Resources/Sandcastle/icons/gradient.gif" />
+                </tr>
+            </table>
+        </div>
+        <div id="mainSection">
+            <div id="mainBody">
+                <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()">
+                </div><font color="DarkGray"></font>
+                <p />
+                <p>The <a href="T_PatientMatchLinkService.htm">PatientMatchLinkService</a> type exposes the following members.</p>
+                <h1 class="heading"><span onclick="ExpandCollapse(methodTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(methodTableToggle, event)" tabindex="0"><img id="methodTableToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />Methods</span>
+                </h1>
+                <div id="methodTableSection" class="section" name="collapseableSection" style="">
+                    <table id="memberList" class="members" frame="lhs" cellpadding="2">
+                        <col width="10%" />
+                        <tr>
+                            <th class="iconColumn">
+              &#160;
+            </th>
+                            <th class="nameColumn">Name</th>
+                            <th class="descriptionColumn">Description</th>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_AssignRequest_2_6545b6c4.htm">AssignRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Assigns the request identified by the supplied requestId to the supplied staff user
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_CancelRequest_2_f4bec91c.htm">CancelRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Cancels the request identified by the supplied id
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_CanUserMatchAndLink_2_7c1c9019.htm">CanUserMatchAndLink</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Indicates if the user is allowed to perform a match and link.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_EscalateRequest_4_3376618b.htm">EscalateRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Escalates the request identified by the supplied request id
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/4k87zsw7" target="_blank">Finalize</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetActiveRequest_1_82657402.htm">GetActiveRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns the active request for a user (if one is present)
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetAllLinkedPatients_1_9953f326.htm">GetAllLinkedPatients</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns all linked patients
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetAllRequests_1_8d5ec8e5.htm">GetAllRequests</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns all requests made by the user
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetAllRequestsByUser_1_f0aba717.htm">GetAllRequestsByUser</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns all requests made by the user
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetAmalgaId_1_c77d4424.htm">GetAmalgaId</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Obtains the amalga id the supplied patientUserInfo is linked to.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetAndAssignNextRequest_1_35149e31.htm">GetAndAssignNextRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns the request for the supplied staff user, possibly assigning the request to him/her
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetRequestById_1_925f8004.htm">GetRequestById</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns the request identified by the supplied requestId
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetRequestsByStatus_1_e5a64293.htm">GetRequestsByStatus</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns all requests that have the same status as the supplied status
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_GetRequestsByStatuses_1_68d10d5d.htm">GetRequestsByStatuses</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns all requests that have the same status as any of the supplied statuses 
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="../Microsoft.Amalga.Hosting.Service/M_AmalgaService_GetVirtualSchemaConnectionString.htm">GetVirtualSchemaConnectionString</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Gets the Virtual Schema connection string for the application that hosts the service
+            </span>
+                                </div> (Inherited from <a href="../Microsoft.Amalga.Hosting.Service/T_AmalgaService.htm">AmalgaService</a>.)</td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="../Microsoft.Amalga.Hosting.WcfService/M_AmalgaWcfService_Initialize.htm">Initialize</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Initializes the service instance. This method is used by the infrastructure and should not
+            be called directly from code.
+            </span>
+                                </div> (Inherited from <a href="../Microsoft.Amalga.Hosting.WcfService/T_AmalgaWcfService.htm">AmalgaWcfService</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_LinkRequest_3_a6cc943c.htm">LinkRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Links the request identified by the supplied request id to the supplied result
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_MatchAndLink_2_218f31ce.htm">MatchAndLink</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Performs matching and linking under the implemented policy.
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="protected;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/protmethod.gif" title="Protected method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/57ctke0a" target="_blank">MemberwiseClone</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_RejectRequest_4_b9cc6b53.htm">RejectRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Rejects the request identified by the supplied request id
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_Search_2_fbb0447d.htm">Search</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Returns a list of results matching the supplied MatchParameters
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;inherited;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="http://msdn2.microsoft.com/en-us/library/7bxwbwt2" target="_blank">ToString</a>
+                            </td>
+                            <td> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_UnLinkRequest_5_4c73f2b5.htm">UnLinkRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Unlinks the request identified by the supplied request id
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data="public;declared;notNetfw;">
+                            <td>
+                                <img src="../../../Resources/Sandcastle/icons/pubmethod.gif" title="Public method" />
+                            </td>
+                            <td><a href="M_PatientMatchLinkService_UpdateRequest_3_1517f86a.htm">UpdateRequest</a>
+                            </td>
+                            <td>
+                                <div class="summary"><span class="dev">
+            Updates the match parameters for the request identified by the supplied id
+            </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h1 class="heading"><span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0"><img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../../../Resources/Sandcastle/icons/collapse_all.gif" />See Also</span>
+                </h1>
+                <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+                    <div class="seeAlsoStyle"><a href="T_PatientMatchLinkService.htm">PatientMatchLinkService Class</a>
+                    </div>
+                    <div class="seeAlsoStyle"><a href="N_Microsoft_Amalga_AppFramework_Service.htm">Microsoft.Amalga.AppFramework.Service Namespace</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footerLine">
+                    <img width="100%" height="3px" src="../../../Resources/Sandcastle/icons/footer.gif" title="Footer image" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

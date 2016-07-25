@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="183" MadCap:lastWidth="482" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">
+            <MadCap:annotation MadCap:createDate="2011-10-26T23:39:46.2402643-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="At this time, this snippet is used only in one topic.  I changd this to a bullet, since it is a single step proc.  If you use it as the fist step of a long proc, then it gets complicated . . ." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-26T23:42:21.7198107-07:00">To</MadCap:annotation> view list properties</p>
+        <ul>
+            <li>
+                <p>Click <span class="UIElementAction">More</span>, and then click <span class="UIElementAction">View list properties</span>.</p>
+                <p>The list properties are displayed.</p>
+            </li>
+        </ul>
+    </body>
+</html>

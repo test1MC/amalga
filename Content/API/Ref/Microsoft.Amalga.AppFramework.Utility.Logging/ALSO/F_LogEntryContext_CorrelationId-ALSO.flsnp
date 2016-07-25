@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditions="API.APIRef" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+  <head>
+    <title>CorrelationId Field</title>
+    <link rel="stylesheet" type="text/css" href="../../../../Resources/Stylesheets/Presentation.css"> </link>
+    <meta name="container" content="Microsoft.Amalga.AppFramework.Utility.Logging" />
+    <meta name="file" content="F_LogEntryContext_CorrelationId" />
+    <meta name="outDir" content="Microsoft.Amalga.AppFramework.Utility.Logging" />
+  </head>
+  <body>
+    <div class="seeAlsoStyle">
+      <p MadCap:conditions="Production.doNOTbuild">Additional link.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="96" MadCap:lastWidth="320">
+    <body>
+        <p class="LabelforProcedures">To change the displayed columns</p>
+        <ul>
+            <li>Click <span class="UIElementAction">Edit list</span> and follow the instructions in <MadCap:xref href="../PL_Task_Choose_columns.htm" target="" title="" alt="">Choose columns</MadCap:xref> to make changes.</li>
+        </ul>
+    </body>
+</html>

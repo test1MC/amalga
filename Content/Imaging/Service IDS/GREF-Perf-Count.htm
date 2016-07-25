@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="870.6667" MadCap:lastWidth="629" MadCap:fileTags="Personas.Elvis: App Dev,TopicType.Ref_General,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Performance  counters for the <MadCap:variable name="Imaging.IDA" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Image Delivery Application: performance counters" />This topic describes performance counters for the <MadCap:variable name="Imaging.Image Delivery server" /> application (<MadCap:variable name="Imaging.IDA" />)</p>
+        <p>The <MadCap:variable name="Imaging.IDA" /> logs the following types of events:</p>
+        <ul>
+            <li>Web access events</li>
+            <li>Data access events</li>
+            <li>Capacity-related events</li>
+        </ul>
+        <p class="h8">Web access events</p>
+        <p>If the <MadCap:variable name="Imaging.IDA" /> encounters a web access error while accessing a web service (such as the topology web service), an event will be created based on the following table.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Event title	</th>
+                    <th>HTTP error code</th>
+                    <th>Event ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Request unauthorized</td>
+                    <td>401	</td>
+                    <td>35002</td>
+                </tr>
+                <tr>
+                    <td>Request timeout</td>
+                    <td>408	</td>
+                    <td>35008</td>
+                </tr>
+                <tr>
+                    <td>Service unavailable</td>
+                    <td>503	</td>
+                    <td>35021</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Database access events</p>
+        <p>The <MadCap:variable name="Imaging.IDA" /> provides an interface for the <MadCap:variable name="Imaging.DICOM" /> <![CDATA[ ]]><MadCap:variable name="Applications.Data Connector (application)" /> library to create an event log in case of a database access error.</p>
+        <p class="h8">Capacity-related events</p>
+        <p>If the <MadCap:variable name="Imaging.IDA" /> encounters an event that pertains to capacity of a used resource, appropriate events be created based on the following table:</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Event title</th>
+                    <th>Event ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Disk is full</td>
+                    <td>31001</td>
+                </tr>
+                <tr>
+                    <td>Disk utilization above high water mark</td>
+                    <td>31002</td>
+                </tr>
+                <tr>
+                    <td>Critical resource starved</td>
+                    <td>31003</td>
+                </tr>
+                <tr>
+                    <td>Critical resource above high water mark</td>
+                    <td>31004</td>
+                </tr>
+                <tr>
+                    <td>Capacity trend predicts failure in <span class="Placeholder">N</span> days</td>
+                    <td>31005</td>
+                </tr>
+                <tr>
+                    <td>Restart if load fails</td>
+                    <td>31008</td>
+                </tr>
+                <tr>
+                    <td>Component is hung, backlog above threshold</td>
+                    <td>31009</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LND-IDS-Logs.htm"> Application Event Logging and Performance Counters on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

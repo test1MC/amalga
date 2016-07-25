@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use" MadCap:lastBlockDepth="4" MadCap:lastHeight="711" MadCap:lastWidth="527">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Verify the deployment of <MadCap:variable name="Imaging.Image Delivery server" /> application</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:IDA deployment" />Verify the deployment of the IDA by following these procedures:</p>
+        <ul>
+            <li>Verify the operation of the <MadCap:variable name="Imaging.Image Delivery server" /> SOAP service</li>
+            <li>Verify the operation of the <MadCap:variable name="Imaging.Image Delivery server" /> REST service</li>
+        </ul>
+        <p class="LabelforProcedures">To verify the operation of the <MadCap:variable name="Imaging.Image Delivery server" /> SOAP service</p>
+        <ol>
+            <li>From Doors <span class="Label">Start</span>, click <span class="Label">All Programs</span>, point to <span class="Label"><MadCap:variable name="BrandingMS.Microsoft Visual Studio" style="mc-tag-and-class: ;" /></span>, point to <span class="Label">Visual Studio Tools</span>, and then click <span class="Label">Visual Studio Command Prompt</span>.</li>
+            <li>Type:<span class="InputText"> WCFTestClient</span></li>
+            <li>Right-click <span class="Label">My Service Project</span> and then click <span class="Label">Add service</span>.</li>
+            <li>Type <span class="InputText">https://<span class="InputTextVariable">Your_Machine_FQDN</span>:8801/<span class="InputTextVariable">Your_Instance_Name</span>/Microsoft.Amalga.Imaging.Delivery.SoapService.svc</span> in the<span class="Label"> Add service</span> box.</li>
+            <li>Type a studyUUID in the <span class="Label">StudyUUID </span>box.</li>
+            <li>Click <span class="Label">Invoke </span>. Verify that an error message is not displayed.</li>
+        </ol>
+        <p class="LabelforProcedures">To verify the operation of the <MadCap:variable name="Imaging.Image Delivery server" /> REST service</p>
+        <ol>
+            <li>From Doors <span class="Label">Start</span>, point to <span class="Label">All Programs</span>, click<span class="Label"> Internet Explorer</span>.</li>
+            <li> In the address bar, type: <span class="InputText">https://<span class="InputTextVariable">Your_Machine_FQDN</span>:IDS_RESTful_PortNumber/ImageDeliveryRestService.svc/_<br />Retrieve?_<br />req=wado&amp;contentType=application_<br />%2Fdicom&amp;<MadCap:annotation MadCap:createDate="2012-03-05T16:23:35.7290636-08:00" MadCap:creator="v-mattbr" MadCap:initials="V-" MadCap:comment="Need to explain how to get instanceUUID and securityReference." MadCap:editor="v-mattbr" MadCap:editDate="2012-03-05T16:23:36.6877010-08:00">instanceUUID=abc&amp;securityReference</MadCap:annotation>=abc</span>.</li>
+            <li>Verify that the browser does not display a <span class="Label">HTTP 404</span> error.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-DEP-IDS.htm">Deploy Image Delivery Application on page 1</MadCap:xref> <![CDATA[ ]]></p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep.htm">Installation steps on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

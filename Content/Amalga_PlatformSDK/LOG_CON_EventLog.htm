@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2189" MadCap:lastWidth="704" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="6" MadCap:timestamp="2012-03-12T14:01:28.4811813-07:00" />
+            <MadCap:AddChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="7" MadCap:timestamp="2012-03-12T14:01:28.4811813-07:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Event logging</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the concepts associated with Doors event logging in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p><MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> provides Doors event logging support, allowing localized and non-localized event entries to be written to custom Doors event logs for hosted applications, <MadCap:variable name="BrandingHSG.Amalga Short" /> features, and <MadCap:variable name="FeatureName.Amalga Framework" /> applications.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Architec" target="" title="" alt="">Architecture on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Event" target="" title="" alt="">Event logs and event sources on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with event logging on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Architec"></a>Architecture</h2>
+        <p>The following diagram illustrates the logical architecture and data flow for event logging in <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p>
+            <img src="Images/LoggerArchitectureEvent.png" />
+        </p>
+        <p>Hosted applications use the EventLog class, provided by the hosting runtime in the Microsoft.Amalga.Hosting.Service namespace, to write warning, error, and information events to the Amalga Applications event log, a custom Doors event log created by <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p class="note">While platform features can generate localized event log entries, platform applications and hosted applications can generate only non-localized event log entries.</p>
+        <h2><a name="Event"></a>Event logs and event sources</h2>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> maintains three custom event logs, into which events are written depending on the source of the event:</p>
+        <ul>
+            <li>
+                <p>Amalga Applications</p>
+                <p>Events from hosted applications, including hosted services owned by hosted applications, are written to this custom event log.</p>
+            </li>
+            <li>
+                <p>Amalga Features</p>
+                <p>Events from platform features, including hosted services owned by platform features, are written to this custom event log. Events from hosted applications, including hosted services owned by hosted applications, may also be written to this custom event log if errors occur when writing events to the Amalga Applications event log.</p>
+            </li>
+            <li>
+                <p>AmalgaAppFramework</p>
+                <p>Events from <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications are written to this custom event log. </p>
+            </li>
+        </ul>
+        <p>The event sources used to write to these application event logs are typically created when an application or feature first attempts to write to the appropriate custom event log. If an event source does not already exist, an event source named after the instance of the hosted feature is created for the Amalga Applications event log if a hosted service, from a hosted application, attempts to write to the Doors event log. Otherwise, an event source named Microsoft.Health is used to write to the Amalga Features event log. </p>
+        <p>The Microsoft.Health event source is also used if an error occurs while attempting to create or write to an event source for a hosted service. If an error occurs while attempting to write to the Microsoft.Health event source, events are instead written to the Application event log. If the Application event log must be used, all further attempts to write events are automatically written to the Application event log until the situation which caused the error is resolved. </p>
+        <h2><a name="Working"></a>W<MadCap:change MadCap:changes="7">riting events</MadCap:change><MadCap:change MadCap:changes="6">orking with event logging</MadCap:change></h2>
+        <p>The EventLog static object, in the Microsoft.Amalga.HostingRuntime namespace, can be used to write warning, error, and information events to the Doors event log. For more information about writing events, see <MadCap:xref href="Logger/LOG_CON_EventLog_Writing.htm" target="" title="" alt="">Writing event log entries on page 1</MadCap:xref>.</p>
+        <h2 MadCap:changes="7">Viewing event logs</h2>
+        <p>You can use the Event Viewer, included with Doors, to examine the events in the Amalga Applications, Amalga Features, and Amalga AppFramework event logs. For more information about using the Event Viewer, see <MadCap:xref href="Logger/LOG_CON_EventLog_Reading.htm" target="" title="" alt="">Interacting with the event log on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="Logger/LOG_CON_EventLog_Reading.htm" target="" title="" alt="">Interacting with the event log on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="Logger/LOG_CON_EventLog_Writing.htm" target="" title="" alt="">Writing event log entries on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="Logger/LOG_OVW_Logger.htm" target="" title="" alt="">Logger on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

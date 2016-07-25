@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Default.StyleMaster,Production.StyleMaster">
+  <Variable
+    Name="Confidential"
+    Comment="For use with Internal Only tagged content"
+    Definition="Some text">The following information is for internal release only.</Variable>
+  <Variable
+    Name="Firefox 3.0"
+    Comment="Browser. Supported. Firefox 3.0"
+    Definition="Some text">Firefox 3.0</Variable>
+  <Variable
+    Name="Extensible Markup Language (XML)"
+    Comment="Language. Extensible Markup Language (XML)"
+    Definition="Some text">Extensible Markup Language (XML)</Variable>
+  <Variable
+    Name="Crystal Reports Server"
+    Comment="Crystal Reports Server  Per Kathleen O Connor, 5/3/2011 email."
+    Definition="Some text">DO NOT USE  ---------------------- Crystal Reports Server XI</Variable>
+  <Variable
+    Name="Crystal Reports Developer"
+    Comment="Crystal Reports Developer  Per Kathleen O Connor, 5/3/2011 email."
+    Definition="Some text">DO NOT USE  ---------------------- Crystal Reports Developer XI</Variable>
+  <Variable
+    Name="Citrix XenApp 5.0"
+    Comment="Client VirtualizationDelivery. Supported. Citrix XenApp 5.0"
+    Definition="Some text">Citrix XenApp 5.0</Variable>
+  <Variable
+    Name="Citrix Presentation Server 4.5"
+    Comment="Client VirtualizationDelivery. Supported. Citrix Presentation Server 4.5"
+    Definition="Some text">Citrix Presentation Server 4.5</Variable>
+  <Variable
+    Name="VMWare ESXi Hypervisor 3.i, 3.5.0"
+    Comment=""
+    Definition="Some text">VMWare ESXi Hypervisor 3.i, 3.5.0</Variable>
+  <Variable
+    Name="VMWare ESXi"
+    Comment="Server Virtualization. Supported. VMWare ESXi"
+    Definition="Some text">VMWare ESXi</Variable>
+  <Variable
+    Name="Trend Micro"
+    Comment="Antivirus. Supported. Trend Micro"
+    Definition="Some text">Trend Micro</Variable>
+  <Variable
+    Name="Symantec Norton AntiVirus 2009"
+    Comment="Antivirus. Supported. Symantec Norton AntiVirus 2009"
+    Definition="Some text">Symantec Norton AntiVirus 2009</Variable>
+  <Variable
+    Name="Symantec Antivirus 10.2.2"
+    Comment="Antivirus. Supported. Symantec Antivirus 10.1.x"
+    Definition="Some text">Symantec Antivirus 10.2.2</Variable>
+  <Variable
+    Name="Symantec Antivirus 10.1.x"
+    Comment="Antivirus. Supported. Symantec Antivirus 10.1.x"
+    Definition="Some text">Symantec Antivirus 10.1.x</Variable>
+  <Variable
+    Name="Safari 3.5"
+    Comment="Browser. Supported. Safari 3.5"
+    Definition="Some text">Safari 3.5</Variable>
+  <Variable
+    Name="McAfee VirusScan Enterprise 8.x"
+    Comment="Antivirus. Supported. McAfee VirusScan Enterprise 8.x"
+    Definition="Some text">McAfee VirusScan Enterprise 8.x</Variable>
+  <Variable
+    Name="Mac OS 10.5"
+    Comment="Client OS. Supported. Mac OS 10.5  Supported for web client only"
+    Definition="Some text">Mac OS 10.5</Variable>
+  <Variable
+    Name="PN-UIS ALL"
+    Comment="UIS Product Part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-UGB"
+    Comment="User Guide Basic part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-UGA"
+    Comment="User Guide Advanced part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SvrInstall"
+    Comment="Server Installation part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppXSL"
+    Comment="XSL Printing Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppTLC"
+    Comment="Tab List Control Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppHVI"
+    Comment="HealthVault Integration Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppEDNL"
+    Comment="Enhanced Data Navigation - Labs Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppEDND"
+    Comment="Enhanced Data Navigation - Docs Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppCP"
+    Comment="Context Passing Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SuppAWeb"
+    Comment="Amalga Web Supplement part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-SP"
+    Definition="Some text"
+    Comment="Script Programming part number">UPDATE</Variable>
+  <Variable
+    Name="PN-Pharos"
+    Comment="Pharos - Life Sciences - part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-Imaging"
+    Comment="Imaging part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-DR"
+    Comment="Desk Reference part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-CInstall"
+    Comment="Client Installation part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="PN-AI"
+    Comment="Analysis and Integration part number"
+    Definition="Some text">UPDATE</Variable>
+  <Variable
+    Name="Crystal Reports"
+    Comment=""
+    Definition="Some text">DO NOT USE ---------------------- Crystal Reports</Variable>
+  <Variable
+    Name="Crystal Reports Runtime"
+    Comment=""
+    Definition="Some text">DO NOT USE  ---------------------- Crystal Reports Runtime</Variable>
+  <Variable
+    Name="Version Number-current"
+    Comment="For Title pages."
+    Definition="Some text">OVERRIDE for specific product and version</Variable>
+  <Variable
+    Name="Software Publication Date"
+    Comment="Release Date (RTS or RTM as appropriate)"
+    Definition="Some text">OVERRIDE LegalAnd3rdParty.Software Publication Date IN TARGET</Variable>
+</CatapultVariableSet>

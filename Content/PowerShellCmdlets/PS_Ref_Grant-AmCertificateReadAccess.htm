@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="994.6666" MadCap:lastWidth="569" MadCap:fileTags="Personas.All,ReleaseTarget.TAP,TopicOwner.v-padenc,TopicType.Ref_General,Status.15 - Blocked">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Grant-AmCertificateReadAccess</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>The Grant-AmCertificateReadAccess grants the specified user read access to the private key of the SSL certificate.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-09T12:38:57.1782402-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="this paragraph marked a &quot;Remarks&quot; by Pritvi, 3/9. might better go into the &quot;Accepted values&quot; section of the -Username parameter description. " MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:40:58.3141924-08:00">After </MadCap:annotation>setting the SSL certificate on a logical host, run this cmdlet on all the physical hosts in the logical host.  If the logical host is set up as an NLB cluster, specify the <MadCap:variable name="TechnicalTerms.Active Directory Federation Services (AD FS) second use" /> service account as the Username; otherwise, specify "NetworkServiceSid" as the Username.</p>
+        <h2 MadCap:conditions="">Syntax</h2>
+        <p class="Syntax">Grant-AmCertificateReadAccess -Username &lt;String&gt; -CertificateThumbprint &lt;String&gt;</p>
+        <h2 MadCap:conditions="">Parameter descriptions</h2>
+        <p class="h7">[-Username] &lt;string&gt;</p>
+        <p>Takes the user account to be granted read access to the private key of the SSL certificate.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>
+                        <p>
+                            <MadCap:annotation MadCap:createDate="2012-03-09T12:15:52.4894584-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="what is the convention for indicating either a literal value or a description of a value?" MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:36:43.0434186-08:00">NetworkServiceSid</MadCap:annotation>
+                        </p>
+                        <p>or a service account of the form "domain\username".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">[-CertificateThumbprint] &lt;string&gt;</p>
+        <p> Takes the thumbprint of the SSL certificate. </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>Named</td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Thumbprint of the SSL certificate <MadCap:annotation MadCap:createDate="2012-03-09T12:15:27.0379135-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="what is the convention for allowed characters?" MadCap:editor="v-padenc" MadCap:editDate="2012-03-09T12:15:36.1078204-08:00">(can contain spaces).</MadCap:annotation></td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="">Examples</p>
+        <p class="InputText">Grant-AmCertificateReadAccess -Username NetworkServiceSid -CertificateThumbprint "40 a1 d2 62 2b fb da c8 0a 38 85 8a d8 00 1e 09 45 47 36 9b"</p>
+        <p class="InputText">Grant-AmCertificateReadAccess -Username contoso\adfsservice -CertificateThumbprint ddb0c572f0e0aaaf0d83a5f656584ad27e5deb55</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p>
+            <MadCap:xref href="PowerShellLanding.htm" target="" title="" alt=""> reference for </MadCap:xref>
+        </p>
+    </body>
+</html>

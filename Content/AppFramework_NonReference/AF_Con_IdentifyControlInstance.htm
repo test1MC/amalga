@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1071.667" MadCap:lastWidth="928" MadCap:fileTags="TopicOwner.v-wpete,ReleaseTarget.TAP,Status.40 - Ready for Tech Review,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Identifying a       <![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga Framework second use" /> control instance</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="application identity;application instance">
+            </MadCap:keyword>
+        </p>
+        <p class="abstract">This topic <MadCap:annotation MadCap:createDate="2012-01-10T21:36:53.4088472-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="In the built CHM (as of 1/10/2012), in the TOC, the TOC heading for &quot;Identifying a Framework control instance&quot; goes to the topic, &quot;Application instance resolution&quot;. OK?" MadCap:editor="v-labenn" MadCap:editDate="2012-01-10T22:11:31.0534500-08:00">describes</MadCap:annotation> the features used to identify the application instance of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> control.</p>
+        <p>The <MadCap:variable name="FeatureName.Amalga Framework second use" /> is designed to promote the reuse of its application artifacts, including controls. An application control can run in more than one <MadCap:variable name="BrandingHSG.Amalga Short" /> deployment, or in more than one application instance within a single deployment. To support per-application features such as application views and configuration settings, each control must have a mechanism by which it can discover its own run-time identity.</p>
+        <h2>Reading identity values from the runtime environment</h2>
+        <p>All <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls (controls derived from <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl, </a><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_BaseUserControl.htm">BaseUserControl</a>, and <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>) implement the methods of the <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> interface, and act as application identity handles for binding to application views, reading configuration settings, and similar tasks. However, they do not have default values for application ID, version, or context. The first time their identity methods are queried, these  <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls will attempt to discover workable identity values from their environment. If they are unable to do so, the identity request will  throw an <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core/T_ApplicationResolutionException.htm">ApplicationResolutionException</a>.</p>
+        <p class="note">Custom implementations of <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a> may provide default values for the identity methods. Participation in these identity discovery practices is optional.</p>
+        <h3>Reading identity values from the control hierarchy</h3>
+        <p>By default, a <MadCap:variable name="FeatureName.Amalga Framework second use" /> control will copy the identity of its closest identified parent in the control hierarchy. That is, it will first check its parent control, then its parent's parent, and so on. If it finds a control that has completed instance resolution, it will copy the identity values of that control as its own.</p>
+        <h3>Reading identity values from the <MadCap:variable name="BrandingMS.SharePoint" /> environment</h3>
+        <p>If the control is unable to read identity values from its parent controls, it will try to read them from the <MadCap:variable name="BrandingMS.SharePoint" /> environment.</p>
+        <p>If the following properties are defined in the <a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.allproperties.aspx">SPWeb.AllProperties</a> collection of the website, the control will use their values as its own identity.</p>
+        <table style="width: 100%;">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <thead>
+                <tr>
+                    <th>Application identity value</th>
+                    <th>SPWeb.AllProperties property name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Application ID</td>
+                    <td>ApplicationId</td>
+                </tr>
+                <tr>
+                    <td>Version</td>
+                    <td>ApplicationVersion</td>
+                </tr>
+                <tr>
+                    <td>Context</td>
+                    <td>ApplicationContext</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">The primary SPWeb site deployed with the <MadCap:variable name="FeatureName.Amalga Framework" /> has values assigned to these properties by default. <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls within that site, or within subwebs of that site, will discover those values when queried. Independent sites must either set their own default values in the AllProperties collection, or depend on custom implementations of <a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity</a>.</p>
+        <p>&#160;</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="../API/Ref/Microsoft.Amalga.AppFramework.Core.Identity/I_IAmalgaApplicationIdentity.htm">IAmalgaApplicationIdentity Interface</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_ApplicationIdentity.htm">Application identity</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

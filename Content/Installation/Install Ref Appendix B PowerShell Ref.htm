@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="787.6667" MadCap:lastWidth="624" MadCap:fileTags="TopicType.Ref_General,ReleaseTarget.CTP1,Personas.Carlos: IT Admin,Status.70 - Complete,EditingTags.4 - Ready for Writer,TopicOwner.v-ssiera,Status.10 - Not in use" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Amalga <MadCap:variable name="BrandingMS.Doors PowerShell" /> reference</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="caution">This is not an exhaustive reference to <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingMS.Doors PowerShell" /> commands. Only selected cmdlets are included.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-12-27T08:09:17.6135843-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Keith, I changed the intro paragraph to expand beyond installation cmdlets." MadCap:editor="v-padenc" MadCap:editDate="2011-12-27T08:09:37.5215749-08:00">This</MadCap:annotation> topic lists <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets used to install and uninstall <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications, in addition to cmdlets used for security (such as management of roles and application permissions). For more information about procedures related to installation cmdlets, see <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>. </p>
+        <h3><a name="Publish-"></a>Publish-ApplicationInstance</h3>
+        <p>The Publish-ApplicationInstance cmdlet uploads the application package to the <MadCap:variable name="Databases.AmalgaSystem" /> database.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Publish-ApplicationInstance [-ApplicationCabFile] &lt;string&gt; <br MadCap:conditions="Production.PrintOnly" />[-ApplicationAuxiliaryFiles] &lt;string[]&gt; [&lt;CommonParameters&gt;]</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-ApplicationCabFile] &lt;string&gt;</p>
+        <p>Takes the local or Universal Naming Convention (UNC) path for the application .cab file to be uploaded to <MadCap:variable name="Databases.AmalgaSystem" /> database.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Local or UNC path. Examples:
+ \\sharename\TestApp.cab, <br MadCap:conditions="Production.PrintOnly" />c:\Temp\TestApp.cab, .\TestApp.cab
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">
+            <MadCap:annotation MadCap:createDate="2011-09-28T21:17:04.0968134-07:00" MadCap:creator="v-keith" MadCap:initials="V-" MadCap:comment="This parameter will be removed post-CTP1. replaced by other paramters  –ApplicationInstanceName and  -ServiceInstanceName?" MadCap:editor="v-keith" MadCap:editDate="2011-09-28T21:17:41.6375671-07:00">[-ApplicationAuxiliaryFiles] &lt;string[]&gt;</MadCap:annotation>
+        </p>
+        <p>Defines the semicolon-separated UNC paths to all the resolved application and service manifest files.         </p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>
+                        <p>Semicolon-separated UNC paths to the resolved application and service manifests. </p>
+                        <ul>
+                            <li>The manifest file names should  be exactly the same as the application and service names.</li>
+                            <li>There should be one resolved manifest file for the application and one resolved manifest file for each service that is part of the application.</li>
+                            <li>
+                                <p>Manifest file names are case-insensitive.</p>
+                            </li>
+                            <li> Examples:
+ C:\Manifest\LabApp.xml, .\LabApp.xml, <br MadCap:conditions="Production.PrintOnly" />\\sharename\LabApp.xml
+</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">&lt;CommonParameters&gt;</p>
+        <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <p>When -Verbose is set to True, Publish-ApplicationInstance logs all displayed </p>
+        <p>information.</p>
+        <h4>Example</h4>
+        <p class="InputText">Publish-ApplicationInstance -ApplicationCabFile "C:\Manifest\ApplicationWith1WCFService.cab" -ApplicationAuxiliaryFiles "C:\Manifest\TestApplication1.xml; C:\Manifest\TestWCFAmalgaService1.xml; C:\Manifest\TestWCFAmalgaService2.xml"</p>
+        <p>&#160;</p>
+        <h3><a name="New-Virt"></a>New-AmVirtualSchema</h3>
+        <p>The New-AmVirtualSchema cmdlet takes the Entity Data Model (EDMX) file from the application .cab and passes it to the virtual schema service, which creates the <MadCap:variable name="FeatureName.virtual schema" /> for the application instance.</p>
+        <p>If the EDMX file contains read/write application entities, the New-Virtual Schema cmdlet creates the public entities, private database, and their private registry in the database.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax" MadCap:conditions="Production.PrintOnly">New-AmVirtualSchema [-ApplicationInstanceName] &lt;string&gt; <br MadCap:conditions="Production.PrintOnly" />[-DataHostInstanceName] &lt;string&gt; [-force] [&lt;CommonParameters&gt;]</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-ApplicationInstanceName] &lt;string&gt;</p>
+        <p>Takes the unique application instance name as recorded in the topology database and included in the resolved application or service manifest used during Publish-ApplicationInstance process.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Application instance name as recorded in the <MadCap:variable name="Databases.AmalgaSystem" /> database
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-DataHostInstanceName] &lt;string&gt;</p>
+        <p>Takes the alias name of the database server instance as recorded in the <MadCap:variable name="Databases.AmalgaSystem" /> database.</p>
+        <p class="caution">For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, the format of the DataHostInstanceName is "FQDNServer_Instance".</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Database server alias</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-force]</p>
+        <p>This parameter takes no values. When this parameter is specified, New-AmVirtualSchema cmdlet overwrites the previously existing virtual schema for the application. A common usage of this parameter is to overwrite a corrupted <MadCap:variable name="FeatureName.virtual schema" /> that can not be removed.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">&lt;CommonParameters&gt;</p>
+        <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <p>When -Verbose is set to True, New-AmVirtualSchema logs all information displayed on the <MadCap:variable name="BrandingMS.Doors PowerShell" /> console.</p>
+        <h4>Example</h4>
+        <p class="InputText">New-AmVirtualSchema -ApplicationInstanceName "ApplicationNameInstance1" -DataHostInstanceName "localhost"</p>
+        <h3><a name="Sync-Phy"></a>Sync-PhysicalHost </h3>
+        <p>The Sync-PhysicalHost cmdlet queries the topology service, downloads all the new changes to the physical host and applies them. These changes include the following actions</p>
+        <ul>
+            <li>Downloading new services and hosting them</li>
+            <li>Uninstalling services from the physical host</li>
+        </ul>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-09-28T21:57:05.4569254-07:00" MadCap:creator="v-keith" MadCap:initials="V-" MadCap:comment="Check this statement after CTP1." MadCap:editor="v-keith" MadCap:editDate="2011-09-28T21:57:25.1308926-07:00">For </MadCap:annotation>Doors Worker services, if Sync-Physical Host has new changes for the service, the service needs to be in a Stopped state before running Sync-PhysicalHost.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Sync-PhysicalHost –ServiceInstanceName &lt;string&gt; -force [&lt;CommonParameters&gt;]</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-ServiceInstanceName] &lt;string&gt;</p>
+        <p>Takes the unique instance name as recorded in the topology database and included in the resolved application or service manifest used during the Publish-ApplicationInstance process.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Application instance name as recorded in the AmalgaSystem database                   
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-force]</p>
+        <p>This parameter takes no values. When this parameter is specified, then services are forced to synchronize on the physical host, regardless of the requirement.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Examples</h4>
+        <p class="InputTextPara">Sync-PhysicalHost</p>
+        <p class="InputTextPara">Sync-PhysicalHost -ServiceInstanceName TestApp1 –force -Verbose</p>
+        <h3>UnPublish-ApplicationInstance</h3>
+        <p>The UnPublish-ApplicationInstance cmdlet removes the application package from the <MadCap:variable name="Databases.AmalgaSystem" /> database. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">UnPublish-ApplicationInstance [ApplicationInstanceName] &lt;string&gt; [&lt;CommonParameters&gt;]</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-ApplicationInstanceName] &lt;string&gt;</p>
+        <p>Takes the unique application instance name as recorded in the topology database and included in the resolved application or service manifest used during the Publish-ApplicationInstance process.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Application instance name as recorded in the topology database
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">&lt;CommonParameters&gt;</p>
+        <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <p>When -Verbose is set to True, UnPublish-ApplicationInstance logs all information displayed on the <MadCap:variable name="BrandingMS.Doors PowerShell" /> console.</p>
+        <h4>Example</h4>
+        <p class="InputText">UnPublish-ApplicationInstance -ApplicationInstanceName BPMeasure_Instance1</p>
+        <h4>Notes</h4>
+        <ul>
+            <li>UnPublish-ApplicationInstance fails if there are other application instances dependent on the instance being removed. An error message displays the dependant application instance.</li>
+        </ul>
+        <h3>Remove-VirtualSchema</h3>
+        <p>The Remove-VirtualSchema cmdlet removes the <MadCap:variable name="FeatureName.virtual schema" /> for the application instance from the database host instance.</p>
+        <p>Remove-VirtualSchema does not delete the following items.</p>
+        <ul>
+            <li>Public entities that the application created</li>
+            <li>Private databases</li>
+        </ul>
+        <h4>Syntax</h4>
+        <p class="Syntax">Remove-VirtualSchema [-ApplicationInstanceName] &lt;string&gt; <br MadCap:conditions="Production.PrintOnly" /> [&lt;CommonParameters&gt;]</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-ApplicationInstanceName] &lt;string&gt;</p>
+        <p>Takes the unique application instance name as recorded in the topology database and included in the resolved application or service manifest used during the Publish-ApplicationInstance process.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Application instance name as recorded in the topology database
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">&lt;CommonParameters&gt;</p>
+        <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, -OutVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <p>When -Verbose is set to True, Remove-VirtualSchema logs all information displayed on the <MadCap:variable name="BrandingMS.Doors PowerShell" /> console.</p>
+        <h4>Example</h4>
+        <p class="InputText">Remove-VirtualSchema -ApplicationInstanceName BPMeasure_Instance1</p>
+        <h3><a name="Get-AmCo"></a>Get-AmConfigurationSetting</h3>
+        <p>Get-AmConfigurationSetting returns the list of configuration settings for an application, service feature or component.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmConfigurationSetting –InstanceType &lt;string&gt; -InstanceName &lt;string&gt; [-SettingName] &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-InstanceType] &lt;string&gt;</p>
+        <p>Takes the type of the instance.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>ApplicationInstance<br />ServiceInstance<br />FeatureInstance<br />ComponentInstance
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-InstanceName] &lt;string&gt;</p>
+        <p>Takes the name of the instance.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Instance names, such as Terminology_Inst1 (application instance), or externalregistry (feature instance).</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-SettingName] &lt;string&gt;</p>
+        <p>Takes the setting name to return for the instance. Only one name can be specified. If omitted, all setting are returned.</p>
+        <table>
+            <col style="width: 125px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Settings such as: FeaturePublisher, DiagnosticlogLevel, or Description.</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Example</h4>
+        <p class="InputTextPara">Get-AmConfigurationSetting -InstanceType featureinstance -InstanceName externalregistry</p>
+        <h3><a name="Set-AmCo"></a>Set-AmConfigurationSetting</h3>
+        <p>Set-AmConfigurationSetting sets the configuration setting values for the application, service feature, or component.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Set-AmConfigurationSetting –InstanceType &lt;String&gt; -InstanceName &lt;String&gt;  -SettingName &lt;String&gt; [-SettingValue] &lt;String&gt; [-SettingValueFile] &lt;String&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <p class="Label">[-InstanceType] &lt;string&gt;</p>
+        <p>Takes the type of the instance.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>ApplicationInstance<br></br>ServiceInstance<br></br>FeatureInstance<br></br>ComponentInstance
+</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-InstanceName] &lt;string&gt;</p>
+        <p>Takes the name of the instance.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Instance names, such as Terminology_Inst1 (application instance), or externalregistry (feature instance).</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-SettingName] &lt;string&gt;</p>
+        <p>Takes the setting name to return for the instance. Only one name can be specified. If omitted, all setting are returned.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Settings such as: FeaturePublisher, DiagnosticlogLevel, or Description.</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-SettingValue] &lt;string&gt;</p>
+        <p>Takes the new value for the setting.</p>
+        <p class="note">-SettingFile and -SettingValue are mutually exclusive.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Setting value. For example, "123".</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Label">[-SettingValueFile] &lt;string&gt;</p>
+        <p>Takes the path to a file containing settings for the instance.</p>
+        <p class="note">-SettingFile and -SettingValue are mutually exclusive.</p>
+        <table>
+            <col style="width: 125px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Required?</th>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <th>Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th>Accepted values</th>
+                    <td>Setting Value. For example: c:\abc.doc.</td>
+                </tr>
+                <tr>
+                    <th>Accept Wildcards?</th>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>
+            <MadCap:annotation MadCap:createDate="2011-12-27T09:21:57.3420618-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="Keith, from this point on are the cmdlets I added for management of roles and app permissions. The cmdlets are listed in alphabetical order. I'm guessing you may want to alphabetize all cmdlets referenced int his file. Perhaps each cmdlet shoiuld be its own topic file? " MadCap:editor="v-padenc" MadCap:editDate="2011-12-27T09:26:42.4424658-08:00">Add</MadCap:annotation>-AmMachineServiceAccount</h3>
+        <p>Adds the current computer account to an <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Add-AmMachineServiceAccount -RoleName &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputTextPara">Add-AmMachineServiceAccount -RoleName BUILTIN\AmalgaService</p>
+        <h3>Add-AmRole </h3>
+        <p>Adds an <MadCap:variable name="BrandingHSG.Amalga Short" /> role to the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Add-AmRole -RoleName &lt;string&gt; -DisplayName &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-DisplayName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Add-AmRole -RoleName ERStaff -DisplayName EmergencyRoomStaff</p>
+        <h3>Add-AmRoleMembership</h3>
+        <p>Assigns a user, group, or computer account to an <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Add-AmRoleMembership -RoleName &lt;string&gt; -UserAccount &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-UserAccount.flsnp" />
+        <h4>Example </h4>
+        <p class="InputTextPara">Add-AmRoleMembership -RoleName ERStaff -UserAccount Contoso\ERDoctors</p>
+        <h3>Add-AmRolesToAccessLevel</h3>
+        <p>Grants permissions for an application and access level to one or more <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Add-AmRolesToAccessLevel  -ApplicationorFeatureInstanceName &lt;string&gt; -AccessLevelName &lt;string&gt; -Roles &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-ApplicationorFeatureInstanceName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-AccessLevelName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-Roles.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Add-AmRolesToAccessLevel -ApplicationorFeatureInstanceName LabApp1 -AccessLevelName Writer -Roles Contoso\LabAdmin,Contoso\Manager</p>
+        <h3>Get-AmAccessLevels</h3>
+        <p>Lists all access levels defined for an application. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmAccessLevels -ApplicationorFeatureInstanceName &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-ApplicationorFeatureInstanceName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Get-AmAccessLevels -ApplicationorFeatureInstanceName LabApp1</p>
+        <h3>Get-AmAllRoles</h3>
+        <p>Lists all <MadCap:variable name="BrandingHSG.Amalga Short" /> roles in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmAllRoles</p>
+        <h3>Get-AmBuiltInRoles</h3>
+        <p>Lists all built-in <MadCap:variable name="BrandingHSG.Amalga Short" /> roles in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. </p>
+        <p>For more information about built-in roles, see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmAllRoles</p>
+        <h3>Get-AmRoleMembership </h3>
+        <p>Lists all user, group, and computer accounts assigned to an <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmRoleMembership -RoleName &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputTextPara">Get-AmRoleMembership -RoleName Physicians</p>
+        <h3> Get-AmRolesForAccessLevel</h3>
+        <p>Lists all <MadCap:variable name="BrandingHSG.Amalga Short" /> roles that are granted permission to an application and access level. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmRolesForAccessLevel -ApplicationorFeatureInstanceName &lt;string&gt; -AccessLevelName &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-ApplicationorFeatureInstanceName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-AccessLevelName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Get-AmRolesForAccessLevel -ApplicationorFeatureInstanceName LabApp1 -AccessLevelName Writer</p>
+        <h3>Get-AmUserRoles </h3>
+        <p>Lists all <MadCap:variable name="BrandingHSG.Amalga Short" /> roles to which a user, group, or computer account is assigned. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Get-AmUserRoles  -UserAccount &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-UserAccount.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Get-AmUserRoles -UserAccount PhysiciansEastlake</p>
+        <h3>Remove-AmMachineServiceAccount </h3>
+        <p>Removes assignment of the current computer account from an <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Remove-AmMachineServiceAccount -RoleName &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputTextPara">Remove-AmMachineServiceAccount -RoleName BUILTIN\AmalgaService</p>
+        <h3>Remove-AmRole </h3>
+        <p>Removes an <MadCap:variable name="BrandingHSG.Amalga Short" /> role from the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Remove-AmRole -RoleName &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Remove-AmRole -RoleName Admin</p>
+        <h3>Remove-AmRoleMembership</h3>
+        <p>Removes assignment of a user, group, or computer account from an   <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Remove-AmRoleMembership -RoleName &lt;string&gt; -UserAccount &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-UserAccount.flsnp" />
+        <h4>Example</h4>
+        <p class="InputTextPara">Remove-AmRoleMembership -RoleName ERStaff -UserAccount Contoso\Reception</p>
+        <h3>Remove-AmRolesFromAccessLevel</h3>
+        <p>Removes permissions for application access levels from the specified <MadCap:variable name="BrandingHSG.Amalga Short" /> roles. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Remove-AmRolesFromAccessLevel  -ApplicationorFeatureInstanceName &lt;string&gt; -AccessLevelName &lt;string&gt; -Roles &lt;string&gt;</p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-ApplicationorFeatureInstanceName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-AccessLevelName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-Roles.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Remove-AmRolesToAccessLevel -ApplicationorFeatureInstanceName LabApp1 -AccessLevelName Report -Roles Contoso\LabAdmin,Contoso\Manager</p>
+        <h3>Update-AmRole   </h3>
+        <p>Revises the user-friendly display name for an <MadCap:variable name="BrandingHSG.Amalga Short" /> role. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax">Update-AmRole -RoleName &lt;string&gt; -NewDisplayName &lt;string&gt; </p>
+        <h4>Parameter Descriptions</h4>
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-RoleName.flsnp" />
+        <MadCap:snippetBlock src="../Serviceability/Snippets/PS-param-NewDisplayName.flsnp" />
+        <h4>Example</h4>
+        <p class="InputText">Update-AmRole -RoleName Admin -NewDisplayName Administrators </p>
+    </body>
+</html>

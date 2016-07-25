@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p class="LabelforProcedures">To deploy a theme</p>
+        <ol>
+            <li>Create a theme using PowerPoint.</li>
+            <li>Create an empty SharePoint 2010 project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</li>
+            <li>Create an empty element item. By default, this automatically creates a <MadCap:variable name="BrandingMS.SharePoint" /> feature item as well or associate the element to the recently created feature item.</li>
+            <li>Add themes to the empty element.</li>
+            <li>Package and deploy the project to the <MadCap:variable name="BrandingMS.SharePoint" /> farm.</li>
+            <li MadCap:conditions="Production.doNOTbuild">Activate the feature for any site where the themes need to be deployed.</li>
+        </ol>
+    </body>
+</html>

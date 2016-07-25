@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1067" MadCap:lastWidth="335" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Subscribing to a DCN event type</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event subscriptions:Data Change Notification platform application;Data Change Notification platform application:event subscriptions;EventSubscription class:Data Change Notification platform application;Data Change Notification platform application:EventSubscription class;Subscribe method:Data Change Notification platform application;Data Change Notification platform application:Subscribe method;IEventManagementService interface:Data Change Notification platform application;Data Change Notification platform application:IEventManagementService interface;EventingManagerService service:Data Change Notification platform application;Data Change Notification platform application:EventingManagerService service;EventType class:Data Change Notification platform application;Data Change Notification platform application:EventType class" />This topic describes how to subscribe to an existing DCN event type by using the Subscribe operation.</p>
+        <p>Hosted applications can subscribe to an existing DCN event type by defining a DCN event subscription with an EventSubscription object, specifying the event identifier for the existing DCN event type in the EventId property of the EventSubscription object, and then specifying the EventSubscription object while calling the Subscribe operation in the IEventManagementService contract for the EventingManagerService service.</p>
+        <p class="Figure">The Subscribe operation performs the following actions when creating a DCN event subscription for an existing DCN event type.</p>
+        <ul>
+            <li>Confirms that the DCN event type with the event identifier specified in the EventId property of the EventSubscription object exists.</li>
+            <li>
+                <p>Ensures that the user account that calls the Subscribe operation must match the value of the Owner property for the EventType object that represents the existing DCN event type to be subscribed. </p>
+                <p class="note">Only the user account that created the DCN event type can subscribe to a DCN event type. Otherwise, an error occurs.</p>
+            </li>
+            <li>Confirms that the user account calling the Subscribe operation is authorized to access the eventable resources associated with the specified existing DCN event type. Otherwise, an error occurs.</li>
+            <li>Creates a new DCN event subscription for the specified existing DCN event type.</li>
+        </ul>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="772" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Procedure,Personas.Carlos: IT Admin,ReleaseTarget.TAP,Status.50 - InTech Review,TopicOwner.v-keith" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve application dependencies</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>After publishing an application, the notification area of the results pane will generally call out that application dependencies need to be resolved before the application can be synchronized on a physical host for production. For example, if an application developer specifies that the application requires the DataConnector application to be present in the system, the administrator has to resolve the dependency by selecting an instance of dataconnector from the list of dataconnector instances available.The procedure in this topic resolves such dependencies.</p>
+        <p class="note">
+            <MadCap:snippetText src="../../../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span> AmalgaAppAdmin, or AmalgaSysAdmin.</p>
+        <p class="LabelforProcedures">To resolve application dependencies</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/procst-open-MC-AM_2.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../../Snippets/info-open-MC-AM_2.flsnp" />
+                </p>
+            </li>
+            <li>In the module navigation tree, expand the <MadCap:variable name="BrandingHSG.Amalga Short" class="UIElementAction" /><span class="UIElementAction"> Hosted Applications</span> folder and select the application for dependency resolution.</li>
+            <li>In the tasks pane, click <span class="UIElementAction">Resolve Dependencies</span>. The application's dependencies will be listed in the <MadCap:xref href="AppMan_Vref_AMC-mod-Resolve Dependency Pane.htm" target="" title="" alt="">Resolve Application Dependency pane</MadCap:xref>.</li>
+            <li>Resolve each dependency.<ol><li>To the right of each dependency listing, click <span class="UIElementAction">Edit Selection</span>.</li><li>Click the option button next to the application instance you want to use to satisfy the dependency.</li></ol></li>
+            <li>After selecting an application instance to resolve all the dependencies, click <span class="UIElementAction">Save</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="AppDeploy Nav Application Deployment Header.htm" target="" title="" alt="">Application deployment (Management Console)</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-AppDeploy_Msgs.htm" target="" title="" alt="">Application deployment status</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="AppMan_Vref_AMC-mod-Resolve Dependency Pane.htm" target="" title="" alt="">Resolve Application Dependency pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../../Logging/Serv Con Logging MiniTOC.htm" target="" title="" alt="">Operational logging</MadCap:xref>
+        </p>
+    </body>
+</html>

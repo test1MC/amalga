@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="384" MadCap:lastWidth="555" MadCap:fileTags="EditingTags.5 - Revised / ready for editor">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To share a patient list</p>
+        <ol>
+            <li>
+                <p>When viewing the list, click <span class="UIElementAction">Edit list</span>, and then click <span class="UIElementAction">Edit list properties</span>.</p>
+                <p>The list properties are displayed.</p>
+            </li>
+            <li>Click the <span class="UIElementAction">Sharing</span> tab.</li>
+            <li>Click <span class="UIElementAction">Add more permissions</span>.</li>
+            <li>In the <span class="UIElementAction">Who it will be shared with</span> drop-down list, select the role (for example, Everyone) to which you want to grant permission.</li>
+            <li>In the <span class="UIElementAction">What they can do</span> drop-down list, select the permission level.</li>
+            <li>Repeat steps 3-5 until you have added all the permissions.</li>
+            <li>
+                <p>To delete sharing for a specific role or group, click (<img src="../../PatientChart/Images/PC_close.png" />)&#160;next to the permission.</p>
+                <p class="note">To make the list private again, delete all the permissions that were added.</p>
+            </li>
+            <li>
+                <p>Click <span class="UIElementAction">Save</span>.</p>
+                <p class="note">The people with whom the list was shared must close and reopen their browser before they will be able to see the shared list.</p>
+            </li>
+        </ol>
+    </body>
+</html>

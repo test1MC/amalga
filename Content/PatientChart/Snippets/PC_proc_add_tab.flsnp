@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="92" MadCap:lastWidth="688" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To open a new widget</p>
+        <ol>
+            <li>Click the <span class="UIElementAction">Open</span> tab.</li>
+            <li>Click the name of the widget to add to a tab.</li>
+        </ol>
+    </body>
+</html>

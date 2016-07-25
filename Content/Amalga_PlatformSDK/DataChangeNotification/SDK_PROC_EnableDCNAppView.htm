@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1061" MadCap:lastWidth="369" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:keyword term="Change Data Capture;Data Change Notification platform application;application views" />Enable or disable DCN on an <MadCap:variable name="FeatureName.application view" /></h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to enable or disable Data Change Notification for an application view in <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+        <p>You can automatically enable or disable DCN on the databases and underlying data structures for an application view used by a hosted application by setting the Enable for Eventing property for an application view in <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+        <p>When the application is deployed, the application deployment tool is then be used to automatically generate the SQL&#160;Server script needed to enable Change Data Capture (CDC) for the databases and tables referenced by the DCN-enabled application views for that hosted application. </p>
+        <p class="LabelforProcedures">To enable or disable DCN on an application view in <MadCap:variable name="FeatureName.virtual schema designer" /></p>
+        <ol>
+            <li>In Solution Explorer, right-click the data manifest (.edmx) file for the hosted application, and then click <span class="UIElementAction">Open</span>.</li>
+            <li>
+                <p>Select the appropriate application view in the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+                <p>The entity type information is displayed in the <span class="UIElementAction">Properties</span> window.</p>
+            </li>
+            <li>In the Properties window, navigate to and select the <span class="UIElementAction">Enable for Eventing</span> property.</li>
+            <li>To enable DCN for the application view, set the <span class="UIElementAction">Enable for Eventing</span> property to <MadCap:annotation MadCap:createDate="2012-02-02T22:50:04.1527669-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Once this is set to true, and the user decides they don't want to do CDC after all:\r\n--- how can they find out which databases and views have CDC enabled (aha! get CDC databases and tables) &lt;g&gt;\r\n--- Do they have to disable each  table, then database to reverse the effects of this proc? \r\nIf the reversal is a lot of work, then might be good for the user to be aware of that before they do this proc.\r\n[DWK] Keeping, as I'll probably need to address this post-CTP2." MadCap:editor="v-dennk" MadCap:editDate="2012-03-06T06:43:00.3915904-08:00">True.</MadCap:annotation> Otherwise, set the property to False.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1210" MadCap:lastWidth="417" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">ApplicationAuthorization element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the ApplicationAuthorization element.</p>
+        <p>Defines the resources exposed in the hosted application, as well as the access levels required to access the exposed resources.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;ApplicationManifest&gt;<br />&#160;&#160;&#160;[ &lt;ApplicationAuthorization&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;AccessLevels&gt;...&lt;/AccessLevels&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;Resources&gt;...&lt;/Resources&gt;<br />&#160;&#160;&#160;&lt;/ApplicationAuthorization&gt; ]<br />&lt;/ApplicationManifest&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_ApplicationManifest.htm">ApplicationManifest</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_ApplicationManifest.htm">AccessLevels</a>, <a href="SDK_XML_Manifest_Resources.htm">Resources</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The contents of the <span class="MarkupLanguageElements">ApplicationAuthorization</span> element are used in <MadCap:variable name="FeatureName.Management Console second use" /> to manage access and authorization for exposed resources, such as <MadCap:variable name="FeatureName.application view" />s and service operations, provided by the object defined in the deployment manifest. The raw contents of this element are stored internally by <MadCap:variable name="BrandingHSG.Amalga Short" />.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See Also</p>
+        <p MadCap:conditions="Production.doNOTbuild">
+            <MadCap:xref href="../SDK_CON_Authent_Access_Author.htm" target="" title="" alt="">Access, authentication, and authorization framework on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

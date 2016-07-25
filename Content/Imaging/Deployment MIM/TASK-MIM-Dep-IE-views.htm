@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use" MadCap:lastBlockDepth="8" MadCap:lastHeight="1281" MadCap:lastWidth="475">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create underlying SQL views</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:entities" />Copy the configuration files from the media to the data host, prepare the configuration file, and run a script to create the underlying SQL views.</p>
+        <p class="LabelforProcedures">To create the underlying SQL views</p>
+        <ol>
+            <li>Copy the following files from the <span class="Label">V3\Release\Samples\Imaging</span> folder on the installation media into a single folder on the data host. The data host is the server that hosts the <span class="Label">AzAEID </span>and <span class="Label">ClinicalData </span>databases. <br />Copy these files:<ul><li>CreateImagingViews_V2.ps1</li><li>ServerConfiguration.xml</li><li>create_imaging_correlation_view.sql</li><li>create_linked_server.sql</li><li>ImagingEntitiesBinding.xml</li><li><p>create_dicommetadata_views.sql</p></li><li><p>create_IRDD_views.sql</p></li></ul></li>
+            <li>Modify the server configuration file. For more information, see <MadCap:xref href="TASK-MIM-DEP-Modify-Server-Configuration-File.htm">Modify the Server Configuration File on page 1</MadCap:xref>.</li>
+            <li>
+                <MadCap:snippetText src="../../Resources/Snippets/proc-StartPowerShell.flsnp" /> You can launch <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" /> on any computer in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology, for example, <span class="Label">AppsLogicalHost2</span>. Run the following command, supplying the placeholders as indicated in the table:<p class="InputText">.\CreateImagingViews_V2.ps1 <span class="InputTextVariable">ConfigurationFile DataHost userId userPassword</span> <![CDATA[ ]]><span class="InputTextVariable">ImagingDataHost ImagingUserId ImagingUserPassword</span></p><table style="width: 95%; margin-left: 0; margin-right: auto;"><col /><col /><thead><tr><th>Placeholder	</th><th>Value</th></tr></thead><tbody><tr><td class="InputTextVariable">ConfigurationFile</td><td>Name of the <MadCap:variable name="BrandingHSG.Amalga Medical Imaging Module" /> configuration file. The name of the sample file present on the installation media is “ServerConfiguration.xml.” This file should be modified before creating the Imaging views.</td></tr><tr><td class="InputTextVariable">DataHost</td><td>Name of the server that hosts the Amalga V3 clinical database</td></tr><tr><td class="InputTextVariable">userId</td><td><p>User ID for the data host (optional)</p><p class="note">If the optional parameters are not provided, Doors authentication will be used.</p></td></tr><tr><td class="InputTextVariable">userPassword</td><td>User password for the data host (optional)</td></tr><tr><td class="InputTextVariable">ImagingDataHost</td><td>Imaging data host is the server where the imaging databases are located, i.e. in centralized (single site) topology this would be the Imaging data server with the <MadCap:variable name="Imaging.DicomMetaData Database" /> database, in the distributed (multi-site) topology this is the IRDD.</td></tr><tr><td class="InputTextVariable">ImagingUserId</td><td>User ID for the Imaging data host (optional).</td></tr><tr><td class="InputTextVariable">ImagingUserPassword</td><td>User password for the Imaging data host (optional).</td></tr></tbody></table></li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep-IE.htm">Install and bind Imaging entities on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

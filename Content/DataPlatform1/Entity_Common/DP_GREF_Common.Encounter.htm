@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1570" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.Encounter entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.Encounter.flsnp" />
+        <p><span class="Label"><MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].Encounter" />Entity concept code</span>: PV1, PV2</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AdmitDateTime</td>
+                    <td>PV1-44</td>
+                    <td>HL7</td>
+                    <td>Admitting date and time.</td>
+                </tr>
+                <tr>
+                    <td>AdmitDateTime_o</td>
+                    <td>PV1-44</td>
+                    <td>HL7</td>
+                    <td>Admitting date and time offset.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCode</td>
+                    <td>PV2-3-1</td>
+                    <td>HL7</td>
+                    <td>Reason for the patient admission.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonCodingSystem</td>
+                    <td>PV2-3-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>AdmitReasonText</td>
+                    <td>PV2-3-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the reason for patient admission.</td>
+                </tr>
+                <tr>
+                    <td>AdmittingDoctorID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>. </td>
+                </tr>
+                <tr>
+                    <td>AdmittingDoctorName</td>
+                    <td>PV1-17</td>
+                    <td>HL7</td>
+                    <td>Name of the admitting physician.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationBed</td>
+                    <td>PV1-3-3</td>
+                    <td>HL7</td>
+                    <td>Patient's bed.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationBuilding</td>
+                    <td>PV1-3-7</td>
+                    <td>HL7</td>
+                    <td>Location of the building.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationDescription</td>
+                    <td>PV1-3-9</td>
+                    <td>HL7</td>
+                    <td>Location description.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationFacility</td>
+                    <td>PV1-3-4</td>
+                    <td>HL7</td>
+                    <td>Facility caring for a patient.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationFloor</td>
+                    <td>PV1-3-8</td>
+                    <td>HL7</td>
+                    <td>Floor number of the patient's room.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationPointOfCare</td>
+                    <td>PV1-3-1</td>
+                    <td>HL7</td>
+                    <td>Point-of-care location.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationRoom</td>
+                    <td>PV1-3-2</td>
+                    <td>HL7</td>
+                    <td>Patient's room.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationStatus</td>
+                    <td>PV1-3-5</td>
+                    <td>HL7</td>
+                    <td>Location status.</td>
+                </tr>
+                <tr>
+                    <td>AssignedPatientLocationType</td>
+                    <td>PV1-3-6</td>
+                    <td>HL7</td>
+                    <td>Person location type.</td>
+                </tr>
+                <tr>
+                    <td>AttendingDoctorID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>AttendingDoctorName</td>
+                    <td>PV1-7</td>
+                    <td>HL7</td>
+                    <td>Name of the attending physician.</td>
+                </tr>
+                <tr>
+                    <td>DischargeDateTime</td>
+                    <td>PV1-45</td>
+                    <td>HL7</td>
+                    <td>Discharge date and time.</td>
+                </tr>
+                <tr>
+                    <td>DischargeDateTime_o</td>
+                    <td>PV1-45</td>
+                    <td>HL7</td>
+                    <td>Discharge date and time offset.</td>
+                </tr>
+                <tr>
+                    <td>DischargeDisposition</td>
+                    <td>PV1-36</td>
+                    <td>HL7</td>
+                    <td>Disposition of the patient at time of discharge (discharged to home,
+expired, and so on).</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.Encounter entity.</td>
+                </tr>
+                <tr>
+                    <td>EncounterType</td>
+                    <td>PV1-4</td>
+                    <td>HL7</td>
+                    <td>Circumstances under which the patient was or will be admitted.</td>
+                </tr>
+                <tr>
+                    <td>PatientClass</td>
+                    <td>PV1-2</td>
+                    <td>HL7</td>
+                    <td>Categorizes patients by site.</td>
+                </tr>
+                <tr>
+                    <td>PatientDemographicHistoryID
+</td>
+                    <td>PatientDemographicHistoryID
+</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the     <![CDATA[ ]]><MadCap:xref href="DP_GREF_Common.PatientDemographicHistory.htm" target="" title="" alt="">Common.Beta.PatientDemographicHistory entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PatientStatusCode</td>
+                    <td>PV2-24</td>
+                    <td>HL7</td>
+                    <td>Status of the episode of care.</td>
+                </tr>
+                <tr>
+                    <td>PatientType</td>
+                    <td>PV1-18</td>
+                    <td>HL7</td>
+                    <td>Site-specific value that identifies a patient type.</td>
+                </tr>
+                <tr>
+                    <td>PatientTypeNormalized	
+</td>
+                    <td>&#160;</td>
+                    <td>HL7</td>
+                    <td>Normalized site-specific values that identify the patient type.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>PrimaryConsultingDoctorID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PrimaryConsultingDoctorName</td>
+                    <td>PV1-9</td>
+                    <td>HL7</td>
+                    <td>Name of the consulting physician. </td>
+                </tr>
+                <tr>
+                    <td>ReferringDoctorID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>ReferringDoctorName</td>
+                    <td>PV1-8</td>
+                    <td>HL7</td>
+                    <td>Name of the referring physician.</td>
+                </tr>
+                <tr>
+                    <td>ServicingFacility</td>
+                    <td>PV1-39</td>
+                    <td>HL7</td>
+                    <td>Healthcare facility with
+which the visit is associated in a multiple-facility environment.</td>
+                </tr>
+                <tr>
+                    <td>ServicingFacilityNormalized
+</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Normalized healthcare facility with
+which this visit is associated in a multiple facility environment.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCleansedCode</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed code.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCleansedCodingSystem</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed coding system.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCleansedText</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Cleansed text.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCode</td>
+                    <td>PV2-4-1</td>
+                    <td>HL7</td>
+                    <td>Identifier for the reason for a patient location change.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonCodingSystem</td>
+                    <td>PV2-4-3</td>
+                    <td>HL7</td>
+                    <td>Name of the coding system.</td>
+                </tr>
+                <tr>
+                    <td>TransferReasonText</td>
+                    <td>PV2-4-2</td>
+                    <td>HL7</td>
+                    <td>Text that describes the reason for a patient location change.</td>
+                </tr>
+                <tr>
+                    <td>VisitNumber</td>
+                    <td>PV1-19-1</td>
+                    <td>HL7</td>
+                    <td>Unique number assigned to each patient visit.</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityID</td>
+                    <td>PV1-19-4-2</td>
+                    <td>HL7</td>
+                    <td>Universal identifier.</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityNamespace</td>
+                    <td>PV1-19-4-1</td>
+                    <td>HL7</td>
+                    <td>Namespace identifier.</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberAssigningAuthorityType</td>
+                    <td>PV1-19-4-3</td>
+                    <td>HL7</td>
+                    <td>Universal identifier type.</td>
+                </tr>
+                <tr>
+                    <td>VisitNumberType</td>
+                    <td>PV1-19-5</td>
+                    <td>Hl7</td>
+                    <td>Identifier type code.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

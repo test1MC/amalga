@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="EditingTags.7 - Editing issues resolved">
+    <head />
+    <body>
+        <p>Perform the following sequence from any computer in the Amalga topology.</p>
+        <p class="LabelforProcedures">To publish an application instance</p>
+        <ol>
+            <li>
+                <p>Run Doors PowerShell as administrator and change directories using the following command:</p>
+                <p class="InputTextPara">cd C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell</p>
+            </li>
+            <li>Import the Amalga Hosted Runtime and Topology libraries (one time).
+                <p class="InputTextPara">import-module .\Microsoft.Amalga.Deployment.RuntimeLib.dll</p><p class="InputTextPara">import-module .\Microsoft.Amalga.Deployment.TopologyLib.dll</p></li>
+            <li>
+                <p>Publish an instance of the application using the following syntax:</p>
+                <p class="Syntax">Publish-ApplicationInstance -ApplicationCabFile <span class="Placeholder">FullPathOfApplication</span>.cab -ApplicationAuxiliaryFile "<span class="Placeholder">FullPathOfAppManifest</span>.xml;<span class="Placeholder">FullPathOfServiceManifest</span>.xml"</p>
+            </li>
+        </ol>
+    </body>
+</html>

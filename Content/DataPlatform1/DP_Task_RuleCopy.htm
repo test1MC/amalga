@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="938" MadCap:lastWidth="556" MadCap:fileTags="Personas.Carlos: IT Admin,TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Copy an access rule</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to copy access rules for use by other <MadCap:variable name="BrandingHSG.Amalga Short" /> roles in access policies for entities.    </p>
+        <p>
+            <MadCap:keyword term="access policies;access rules;roles;entities:access;access control framework;framework:access control;access inheritance;access levels, rule;access rules:access levels;permissions:data;policies:access;rule access levels;rule SQL conditions;rules:access;rules:access levels;rules:SQL conditions;security;SQL conditions, rule;permissions:entities;sensitive labels;labels:sensitive;Management Console" />You can copy access rules from one <MadCap:variable name="BrandingHSG.Amalga Short" /> role to another <MadCap:variable name="BrandingHSG.Amalga Short" /> role in the same entity-specific access policy. </p>
+        <p class="note">For information on reusing access policies in other entities (access inheritance), see <MadCap:xref href="DP_Task_ConfigEntityInheritAccess.htm" target="" title="" alt="">Configure access inheritance for an entity</MadCap:xref>. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To copy an access rule </p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp" />
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-access.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-access.flsnp" />
+                </p>
+            </li>
+            <li>In the <span class="UIElementName">Authorized Roles</span> section, click the role that has the access rule you want to copy. <br /></li>
+            <li>In the <span class="UIElementName">Rules applying to Role</span> section, expand the group that contains the access rule you want to copy, right-click the access rule, and then select <span class="UIElementAction">Copy Rule</span> from the right-click menu. </li>
+            <li>In the <span class="UIElementName">Authorized Roles</span> section, click the role that you want to use the copied rule. </li>
+            <li>
+                <p>In the <span class="UIElementName">Rules applying to Role</span> section, right-click a group  and then select <span class="UIElementAction">Paste Rule</span> from the right-click menu. </p>
+                <p class="note">You can click any rule group for purposes of pasting the rule. </p>
+                <p>The copied rule appears in the <span class="UIElementName">Rules applying to Role</span> section for the selected role. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks </p>
+        <p><a href="../Serviceability/SERV_LND_DataPerm.htm">Data permissions management tasks</a>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="DP_Task_RuleDel.htm" target="" title="" alt="">Delete an access rule</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_AccessPolicy.htm" target="" title="" alt=""> pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_RuleEditor.htm" target="" title="" alt=""> dialog box</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DP_Con_RolesData.htm" target="" title="" alt="">Roles and data (entities)</MadCap:xref>
+        </p>
+    </body>
+</html>

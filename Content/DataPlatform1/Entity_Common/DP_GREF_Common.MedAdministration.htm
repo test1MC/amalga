@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="539.3334" MadCap:lastWidth="1015" MadCap:fileTags="TopicType.Ref_General,Personas.All,ReleaseTarget.TAP,TopicOwner.v-ccole,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.MedAdministration entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.MedAdministration.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].MedAdministration" /><span class="Label">Entity concept code</span>: RXA</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AdministeredByProviderID</td>
+                    <td>ProviderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Provider.htm" target="" title="" alt="">Common.Beta.Provider entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>AdministeredByProviderName</td>
+                    <td>RXA-10</td>
+                    <td>HL7</td>
+                    <td>Provider identifier of the person administering the pharmaceutical or treatment.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity.</MadCap:xref></td>
+                </tr>
+                <tr>
+                    <td>EndDateTime</td>
+                    <td>RXA-4</td>
+                    <td>HL7</td>
+                    <td>Date and time for the end of administration.</td>
+                </tr>
+                <tr>
+                    <td>EndDateTime_o</td>
+                    <td>RXA-4</td>
+                    <td>HL7</td>
+                    <td>Date and time offset for the end of administration.</td>
+                </tr>
+                <tr>
+                    <td>MedAdministrationID</td>
+                    <td>MedAdministrationID</td>
+                    <td>Amalga</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.MedAdministration entity.
+</td>
+                </tr>
+                <tr>
+                    <td>MedicationID</td>
+                    <td>&#160;</td>
+                    <td>&#160;</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Medication.htm" target="" title="" alt="">.Medication entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>MedOrderID</td>
+                    <td>MedOrderID</td>
+                    <td>Amalga</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.MedOrder.htm" target="" title="" alt="">Common.Beta.MedOrder entity</MadCap:xref>.
+</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID</td>
+                    <td>Amalga</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime</td>
+                    <td>RXA-3</td>
+                    <td>HL7</td>
+                    <td>Date and time for the start of administration.</td>
+                </tr>
+                <tr>
+                    <td>StartDateTime_o</td>
+                    <td>RXA-3</td>
+                    <td>HL7</td>
+                    <td>Date and time offset for the start of administration.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

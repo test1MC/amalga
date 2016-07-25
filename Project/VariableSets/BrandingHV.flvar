@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet
+  conditions="Production.StyleMaster">
+  <Variable
+    Comment=""
+    Name="Microsoft HealthVault Connection Center second use">HealthVault Connection Center</Variable>
+  <Variable
+    Comment=""
+    Name="Microsoft HealthVault Connection Center first use">Microsoft HealthVault Connection Center</Variable>
+  <Variable
+    Name="Relying Party Suite (RPS) 6.0"
+    Definition="Some text"
+    Comment="Application (SDK?) software linked either to Windows Live in general and HV in particular?">Relying Party Suite (RPS) 6.0</Variable>
+</CatapultVariableSet>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,ReleaseTarget.CTP1,TopicOwner.v-ssiera,TopicType.Procedure,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:conditions="API.APIRef">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Install the <MadCap:variable name="BrandingHSG.Brussels second use" /><![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> Front End</h1>
+        <p>The Client Applications feature performs the following actions:</p>
+        <ul>
+            <li>Uses current credentials for <MadCap:variable name="BrandingMS.SharePoint" /> administration</li>
+            <li>Installs the WSPs to <MadCap:variable name="BrandingMS.SharePoint" /> solution store (in this order)<ul><li>Microsoft.Health.Amalga.AppCore.wsp</li><li>Microsoft.Amalga.AmalgaDataExplorer.wsp</li><li>PCDeploy.wsp</li></ul></li>
+            <li>Deploys Microsoft.Health.Framework.wsp to the web app on port 8080 if it is not already there</li>
+            <li>Deploys the other Amalga WSPs to the web app on port 8080</li>
+            <li>Provisions the <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /><![CDATA[ ]]><MadCap:variable name="Applications.internal provider site" /> site at https://<span class="Parameter">fqdn</span>:8080/sites/Amalga</li>
+        </ul>
+        <p class="LabelforProcedures">To install the <MadCap:variable name="BrandingHSG.Brussels second use" /> application</p>
+        <ol>
+            <li>Verify that <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> is installed and available on port 8080.       <![CDATA[ ]]><p class="note">8080 is the default port for <MadCap:variable name="BrandingHSG.AmalgaV3 second use" />.</p><p class="note">The installation site should be on: https://<span class="Placeholder">fqdn</span>:8080/sites/amalga. (Replace <span class="Placeholder">fqdn</span> with your fully qualified domain name.)          </p></li>
+            <li>Make sure the Amalga Physical Host service is started.<ol style="list-style-type: lower-alpha;"><li>From the <strong>Start </strong>menu enter <span class="InputText">Computer Management</span> in the search dialog.</li><li>Click <span class="UIElementAction">Computer Management</span>.</li><li>In the Computer Management application, expand the <span class="UIElementAction">Services and Applications</span> branch.</li><li>Click <span class="UIElementAction">Services</span>.</li><li>Locate Amalga Physical Host Service and verify whether Status is set to Started.<ol style="list-style-type: lower-roman;"><li>If the Amalga Physical Host service is not started, right-click it.</li><li>Click <span class="UIElementAction">Start</span>.</li></ol></li></ol></li>
+            <li>Create a root-level folder on the host machine titled c:\DataExplorerInstallation.</li>
+            <li>Copy the <MadCap:xref href="ADE_InstallationFiles.htm" target="" title="" alt=""> installation files </MadCap:xref>from your installation media into the folder.</li>
+            <li>Open a Command Prompt with administrator level permissions.</li>
+            <li>Change directories to the c:\DataExplorerInstallation\ created in step 3.</li>
+            <li>Run <span class="InputText">setup.exe /Feature ClientApplications /install</span>.</li>
+        </ol>
+        <blockquote>
+            <p class="note">Setup.exe has two supported switches for the <MadCap:variable name="BrandingHSG.Amalga Short" /> release: <br /><br />/AmalgaDataFQDN (Optional) allows you to identify the fully qualified domain name of your <MadCap:variable name="BrandingHSG.Amalga Short" /> server. (Default Value = '$env:ComputerName.$env:UserDnsDomain')<br /><br />/AmalgaDataPort (Optional) allows you to specify the data connection port for your <MadCap:variable name="BrandingHSG.Amalga Short" /> installation. (Default value = '8889')</p>
+            <p class="note">If your <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /> Data server is on a different computer than <MadCap:variable name="BrandingHSG.Amalga Short" />, use the /AmalgaDataFQDN switch to specify the location of the Data server fully qualified domain name. <br />For example: <span class="InputText">setup.exe /Feature Client Applications/AmalgaDataFQDN <span class="InputTextVariable">fqdn</span>/install</span>. (Note that the fully qualified domain name in this example is the <MadCap:variable name="BrandingHSG.Amalga Short" /> data server's FQDN.) <br /></p>
+        </blockquote>
+        <p class="LabelforProcedures">To verify the installation</p>
+        <ul>
+            <li>
+                <p>Ensure your <MadCap:variable name="BrandingHSG.Brussels second use" /> installation was completed successfully by opening the following URL, https://<span class="Placeholder">fqdn</span>:8080/sites/Amalga,  to verify that the site is running. </p>
+                <p class="note">You can ignore any certificate warnings you might see.</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.4 - Ready for Writer,TopicOwner.v-wfren" MadCap:ignoredWords="CompositeControl" MadCap:lastBlockDepth="5" MadCap:lastHeight="1783" MadCap:lastWidth="931" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a  generic <MadCap:variable name="FeatureName.Amalga Framework second use" /> control</h1>
+        <p class="PersonaAll">&#160;<MadCap:keyword term="Creating a control"></MadCap:keyword></p>
+        <p class="abstract">This topic describes ways to create     <MadCap:variable name="FeatureName.Amalga Framework" /> controls.</p>
+        <p>The following sections describe two basic design patterns developed by the <MadCap:variable name="BrandingHSG.Amalga Short" /> team for creating well behaved <MadCap:variable name="FeatureName.Amalga Framework second use" /> controls.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Creating" target="" title="" alt="">Creating a thin server control on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Creating2" target="" title="" alt="">Creating a thick server control on page 1</MadCap:xref>
+                <br />
+            </li>
+        </ul>
+        <h2><a name="Structur"></a><a name="The2"></a>Create a thin server control</h2>
+        <p>The structure of a "thin" <MadCap:variable name="FeatureName.Amalga Framework second use" /> server control is straightforward: it ensures that the client-side APIs are loaded, renders one or more client-side entities, provides any necessary configuration information (such as HealthVault connection information) and <MadCap:annotation MadCap:createDate="2011-11-28T17:39:54.7591552-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="what does this mean, exactly? Sounds anthropormorphic." MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T17:40:15.2263552-08:00">gets out of the way</MadCap:annotation>. </p>
+        <p>The client-side elements hosted by the server control can include user controls, Silverlight controls, or simple HTML&#160;and JavaScript. The only requirement for the client-side elements is that they must be able to call JavaScript methods.</p>
+        <h3>Host a client control</h3>
+        <p>Hosting a client control in a thin <MadCap:variable name="FeatureName.Amalga Framework second use" /> server control is similar to using any other <MadCap:variable name="BrandingMS.ASP.NET second use" /> host. There are only a few considerations that are specific to the <MadCap:variable name="FeatureName.Amalga Framework second use" /> environment.</p>
+        <ul>
+            <li>Consider hosting the client control in a custom <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_VisualServerControl.htm">VisualServerControl</a>. <span class="Label">VisualServerControl</span> provides a simplified configuration pattern and adds a few safeguards to make sure that the user control renders correctly and at the appropriate time.</li>
+            <li>Use the server-side APIs early, and store the results. For example, a .NET-based client-side control can use the <MadCap:variable name="BrandingHSG.HealthVault" /> APIs to communicate directly with the HealthService, but only once it has a connection. The host server control can request a <MadCap:variable name="BrandingHSG.HealthVault" /> connection configuration and pass it when the client control is created.</li>
+            <li>Limit communication to JavaScript and the DOM&#160;as much as possible. The client-side <MadCap:variable name="FeatureName.Amalga Framework second use" /> APIs make extensive use of global JavaScript methods and variables  to minimize the need for server postbacks. </li>
+            <li>If necessary, plan for marshaling between the client control and the DOM. The client-side APIs will fail if JavaScript is not available to the control. For example, a hosted Silverlight control will need to use the <a href="http://msdn.microsoft.com/en-us/library/cc645076(v=VS.95).aspx">Silverlight HTML&#160;bridge</a> to access the APIs.</li>
+        </ul>
+        <h2><a name="Creating2"></a>Create a thick server control</h2>
+        <p>A "thick" server control can refer to one of many different design patterns. The following describe the pattern followed by most of the server controls included in the <MadCap:variable name="FeatureName.Amalga Framework second use" />.</p>
+        <ul>
+            <li>The parent control is a <MadCap:variable name="FeatureName.Amalga Framework second use" /> base control, and provides access to the client-side APIs.</li>
+            <li>Child controls are server controls, including the provided <MadCap:variable name="FeatureName.Amalga Framework second use" /> Toolbox controls, <MadCap:variable name="BrandingMS.ASP.NET second use" /> data-bound controls, or both. These server controls have access to the full <MadCap:variable name="FeatureName.Amalga Framework second use" /> API.</li>
+            <li>The child server controls are wrapped in <a href="http://go.microsoft.com/fwlink?LinkId=234261">UpdatePanel</a> controls, which are hosted by the parent <MadCap:variable name="FeatureName.Amalga Framework second use" /> control. This allows the individual server controls to be updated in response to changing data, without causing a visible refresh of the whole page. If some child controls are mapped on to different data sources, using multiple update panels allows their content to be refreshed individually rather than all at once.</li>
+        </ul>
+        <h3>Wrap an existing server control</h3>
+        <p>Wrapping an existing server control is a special case of creating a thick server control. The <MadCap:annotation MadCap:createDate="2011-11-28T18:04:51.7873552-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="what follows is not formatted like a process. should there be procedure steps?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T18:05:12.2773552-08:00">following process</MadCap:annotation> is based on the pattern used by the <MadCap:variable name="FeatureName.Amalga Framework second use" /> <![CDATA[ ]]><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_GridView.htm">GridView </a><MadCap:annotation MadCap:createDate="2012-02-10T14:12:55.0901684-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="need to update with new version of gridview" MadCap:editor="v-wfren" MadCap:editDate="2012-02-10T14:13:12.6606818-08:00">control</MadCap:annotation>. A custom control created in this way  can be substituted directly for the wrapped control, but also supports all the features required of a <MadCap:variable name="FeatureName.Amalga Framework second use" /> control.</p>
+        <h4>Base class</h4>
+        <p>Both cases begin with a custom control derived from  <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.ServerControls/T_BaseServerControl.htm">BaseServerControl </a>or <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.WebParts/T_BaseWebPart.htm">BaseWebPart</a>. Using a <MadCap:variable name="FeatureName.Amalga Framework second use" /> base control allows the new control to participate in the page messaging system and ensures that the other client-side APIs are available. The custom control must implement any interfaces that are also implemented by the wrapped control.</p>
+        <h4>Private instance controls</h4>
+        <p>The wrapped control is instantiated as a private variable within the base control, along with an <a href="http://go.microsoft.com/fwlink?LinkId=234261">UpdatePanel</a>. The <span class="LabelCShrp">UpdatePanel</span> is added to the base control's <span class="LabelCShrp">Controls</span> collection, and the wrapped control is added to the <span class="LabelCShrp">UpdatePanel</span>.</p>
+        <h4>Event handlers</h4>
+        <p>Any event handlers required by the wrapped class should be bound to the equivalent event handlers in the base control.</p>
+        <h4>Method and property wrappers</h4>
+        <p>The base class should implement wrappers for any methods and properties of the wrapped class that may need to be used. The derived class must implement any interfaces that are implemented by the wrapped class. Non-interface members can be provided or hidden as needed. </p>
+        <p>Method and property wrappers should  call the equivalent members of the wrapped class, and return the result.</p>
+        <h4>Framework event handlers</h4>
+        <p>Finally, the base control should implement handler methods that update the wrapped control in response to <MadCap:variable name="FeatureName.Amalga Framework second use" /> events, such as changes in the common context. </p>
+        <p>At this point,  the value of the <a href="http://go.microsoft.com/fwlink?LinkId=234261">UpdatePanel</a> becomes apparent. The host control is a full participant in the page messaging system. <MadCap:annotation MadCap:createDate="2011-11-28T16:51:19.0628611-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Haven't I seen this before?" MadCap:editor="v-labenn" MadCap:editDate="2011-11-28T16:51:27.1749651-08:00">The host control can also update its wrapped control programmatically; this is enabled by the UpdatePanel.</MadCap:annotation> That means that it can cause its wrapped control to update in response to changes in the common context, but it also means that it chooses when that update should be applied. For example, in applications which contain multiple interdependent controls, the overall user experience may be improved substantially by ensuring that the controls always update in the same order, with a short delay between updates to allow the common context to remain current. That kind of UI pattern is much easier to implement when the control updates are under direct control.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234266">ITemplate Interface</a>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234265">Templated Server Control Example</a>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234263">UpdatePanel Control Overview</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

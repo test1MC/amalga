@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1462.333" MadCap:lastWidth="841" MadCap:fileTags="TopicType.Ref_General,Status.40 - Ready for Tech Review,ReleaseTarget.TAP,TopicOwner.v-keith">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AttributesChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="1" MadCap:timestamp="2012-01-31T17:10:57.9104280-08:00" MadCap:attribute="style" MadCap:value="width: 125px;" />
+            <MadCap:RemoveChange MadCap:userName="v-ciwyco" MadCap:initials="CJW" MadCap:id="2" MadCap:timestamp="2012-01-31T17:12:51.1387497-08:00" />
+        </MadCap:changeData>
+        <link href="../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Register-AmDataHost</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p> In the context of <MadCap:variable name="BrandingHSG.Amalga Short" />, a data host is a <MadCap:variable name="BrandingMS.SQL Server" /> instance which is meant to hold <MadCap:variable name="BrandingHSG.Amalga Short" />Application private databases. </p>
+        <p>This cmdlet registers the specified SQL server instance as a data host and assigns a label to it. This command can be run multiple times to assign multiple labels.</p>
+        <p><strong>Amalga built-in role membership required:</strong> AmalgaSysAdmin<br MadCap:changes="2" /></p>
+        <p>For more information, <MadCap:annotation MadCap:createDate="2012-01-31T17:13:23.2159571-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="This cross ref will build correctly only in AmalgaV3 project." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-31T17:14:20.0036353-08:00">see <MadCap:xref href="../Serviceability/Management Console/User Management/SERV_CON_BuiltinRoles.htm" target="" title="" alt="">Built-in  roles</MadCap:xref>.</MadCap:annotation></p>
+        <h2>Syntax</h2>
+        <p class="Syntax">Register-AmDataHost -ServerInstance &lt;String&gt; -Label &lt;String&gt;     <![CDATA[
+]]></p>
+        <h2>
+            <MadCap:annotation MadCap:createDate="2012-01-17T14:17:42.8998049-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Every parameter should have this information:\r\n---Parameter  from syntax\r\n---Description of the effect of the parameter on the cmdlet\r\n---Table of values" MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-30T12:23:01.1068293-08:00">Parameter description<MadCap:annotation MadCap:createDate="2012-01-31T14:39:05.0916030-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Use plural only if there are multiple parameters." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:17:22.3230079-08:00">s</MadCap:annotation></MadCap:annotation>
+        </h2>
+        <p class="h7">-ServerInstance &lt;String&gt;</p>
+        <p>The <MadCap:variable name="BrandingMS.SQL Server" /> instance to register as an <MadCap:variable name="BrandingHSG.Amalga Short" /> data host in the topology.</p>
+        <table>
+            <col MadCap:changes="1" style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>
+                        <p>Named</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td><MadCap:variable name="BrandingMS.SQL Server" /> machine name, or a <MadCap:variable name="BrandingMS.SQL Server" /> machine name and instance name combination: SQLMachine2, or SQLMachine2\Instance1.					</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td> No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h7">-Label &lt;String&gt;</p>
+        <p>The string label assigned to the data host instance.  This label will be shown to users to allow easier data host selection during <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted application deployment.</p>
+        <table>
+            <col style="width: 141px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <th class="informal">Required?</th>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th class="informal">Position</th>
+                    <td>
+                        <p>Named</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="informal">Default value</th>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accepted values</th>
+                    <td>Any string that describes a data host in terms that will assist an administrator in making assignments to that data host. For example, a data host that was intended for application's private databases could be labeled "PrivateApplicationData".				</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept pipeline input?</th>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <th class="informal">Accept wildcards?</th>
+                    <td> No</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-01-31T13:04:38.9509938-08:00" MadCap:creator="v-keith" MadCap:initials="KH" MadCap:comment="The common parameters implementation will not be documented for CTP2.\r\n\r\nThis section is included for future doc updates as dev takes more advantage of the common parameter base functions.\r\n\r\nThere will be a statement on the PS landing page about common parameter support." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:16:33.6060134-08:00">&lt;</MadCap:annotation>CommonParameters&gt;</p>
+        <p MadCap:conditions="Production.doNOTbuild">This cmdlet supports <MadCap:variable name="BrandingMS.Doors PowerShell" />&#160; common parameters as described in the following table. For more information, see <a href="http://go.microsoft.com/fwlink?LinkID=229930">Common Parameters</a>.</p>
+        <table style="width: 95%;" MadCap:conditions="Production.doNOTbuild">
+            <col style="width: 141px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter </th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-Verbose
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Debug
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WarningVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td> -ErrorAction
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-ErrorVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutVariable
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-OutBuffer   
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-WhatIf
+</td>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>-Confirm
+</td>
+                    <td>&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h8">Example</p>
+        <p class="InputTextPara">Register-AmDataHost –ServerInstance SQLMachine2 –Label PrivateApplicationData 
+</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See <MadCap:annotation MadCap:createDate="2012-01-18T16:56:23.9613761-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="If you add a  cross-reference or hyperlink in the See also section, remember to remove the DoNotBuild condition for that paragraph." MadCap:editor="v-labenn" MadCap:editDate="2012-01-31T15:46:25.4519781-08:00">also</MadCap:annotation></p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related tasks that complete operations identical or similar to that of this cmdlet.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference related cmdlets.]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[(optional)]</p>
+    </body>
+</html>

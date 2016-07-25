@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="3247" MadCap:lastWidth="441" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Resolve application manifests</h1>
+        <p class="PersonaAll">
+            <MadCap:annotation MadCap:createDate="2012-01-08T18:52:57.0767747-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="need abstract" MadCap:editor="v-labenn" MadCap:editDate="2012-01-08T18:53:03.3967747-08:00">&#160;</MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-11-16T09:48:58.1054065-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="This is more of an abstract than an intro. Should re-visit post-doc refresh.\r\n\r\nKH - yes a few more words about what manifests are and why we're resolving them.\r\nThis whole section will need to be reviewed as to whether we do it using the cmd line or GUI." MadCap:editor="v-keith" MadCap:editDate="2011-11-17T22:57:12.2349404-08:00">This section contains the procedures for resolving the application manifests. After the manifests are resolved, continue on to install the application in the topology, as specified in <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>.</MadCap:annotation>
+        </p>
+        <h2>Manifest types that need resolution</h2>
+        <p>Following are the manifest types that need resolution. An application will have one application manifest and zero or more service manifests.</p>
+        <ul>
+            <li>Application manifest: Only one per application containing application-level settings.</li>
+            <li>Service manifests: These are not required. An application may have only a <MadCap:variable name="FeatureName.virtual schema" /> and no associated services. There are one or more of the following service manifest types. If there is more than one, each service manifest must be resolved.<ul><li>Doors worker manifest: There can be one or more, and contains Doors Worker service settings.</li><li><MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" /> manifest: There can be one or more, and contains WCF endpoint settings.</li></ul></li>
+        </ul>
+        <h4 MadCap:conditions="Production.doNOTbuild">Doors worker manifest</h4>
+        <p MadCap:conditions="Production.doNOTbuild">The Doors worker manifest contains the following nodes. Most of the changes to the manifest are made in the &lt;Settings&gt; node  (not all possible nodes are shown).</p><pre xml:space="preserve" style="font-size: 10pt;" MadCap:conditions="Production.doNOTbuild"><span style="font-family: 'Courier New';">&lt;DeploymentManifest&gt;
+     &lt;DoorsWorkerManifest&gt;
+     &lt;Settings&gt;
+          &lt;Setting&gt;
+     &lt;PerformanceCategories&gt;
+</span></pre>
+        <h4 MadCap:conditions="Production.doNOTbuild"><MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" />manifest</h4>
+        <p MadCap:conditions="Production.doNOTbuild">The <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF) service" /> manifest contains the following nodes. Most of the changes to the manifest are made in the &lt;Settings&gt; node (not all possible nodes are shown).</p><pre xml:space="preserve" style="font-family: 'Courier New';font-size: 10pt;" MadCap:conditions="Production.doNOTbuild">&lt;DeploymentManifest&gt;
+     &lt;WcfServiceManifest&gt;
+          &lt;Contracts&gt;
+     &lt;Settings&gt;
+          &lt;Setting&gt;
+     &lt;PerformanceCategories&gt;
+</pre>
+        <p class="Label" MadCap:conditions="Production.doNOTbuild">Notes</p>
+        <ul MadCap:conditions="Production.doNOTbuild">
+            <li>All XML nodes that can accept changes are called out. If a node is not called out, it should not be changed.</li>
+            <li>In each case, the service manifests must be saved with the same name as the original file.</li>
+        </ul>
+        <h2>Multiple application instances</h2>
+        <p>You may want to install multiple instances of selected applications. For example, an enterprise may require multiple Clinical Document application instances. Each application instance can have its own configuration settings at the application and service level.</p>
+        <p>You would still use the same steps in <MadCap:xref href="#Applicat" target="" title="" alt="">Application manifest resolution procedure</MadCap:xref>, with the  additional cycle of  unique application instance names and all the respective service instance names. Using the Clinical Document application as an example, the steps would be as follows.</p>
+        <p class="LabelforProcedures">Clinical Document installation example</p>
+        <ol>
+            <li>Resolve the manifests using the <MadCap:xref href="#Applicat" target="" title="" alt="">Application manifest resolution procedure</MadCap:xref> and specify a unique instance name for the first Clinical Document application instance.</li>
+            <li>Continue the application installation process with<MadCap:variable name="BrandingMS.Doors PowerShell" /> as specified in <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>.</li>
+            <li>After the first instance is installed, edit the Clinical Document application and service manifests to change the instance name to a different name from the first instance.</li>
+            <li>Continue the second instance installation process with <MadCap:variable name="BrandingMS.Doors PowerShell" />, as specified in <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>.</li>
+            <li>Repeat steps3and 4 to install as many application instances as needed.</li>
+        </ol>
+        <h2><a name="Applicat"></a>Application manifest resolution <MadCap:annotation MadCap:createDate="2011-11-16T09:50:30.3240648-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="could break out this procedure into a separate topic (post-doc refresh).\r\n\r\nKH - Yes. This and several other installation topics." MadCap:editor="v-keith" MadCap:editDate="2011-11-18T11:09:52.5205730-08:00">procedure</MadCap:annotation></h2>
+        <p>The following procedure extracts, resolves, and saves the application manifests.</p>
+        <p class="caution">Best practice is for each application and service name used in the following procedures to be unique within the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology.</p>
+        <p class="LabelforProcedures">To resolve the application manifests</p>
+        <ol>
+            <li>Extract the application manifests,<ol style="list-style-type: lower-alpha;"><li>Copy the application CAB file  from &lt;InstallationRoot&gt;\Applications to a temporary directory where &lt;InstallationRoot&gt; is the root directory of the installation media, or the folder where you have copied the installation media. This example will use C:\Manifest as the temporary directory example.</li><li>Create a subdirectory and extract the application CAB files to that directory. For example, C:\Manifest\Extracted.</li></ol></li>
+            <li>Resolve the application manifest,<ol style="list-style-type: lower-alpha;"><li>Open C:\Manifest\Extracted\AmalgaApplication.xml for editing.</li><li><p>Add an InstanceName attribute to the DeploymentManifest element. The DeploymentManifest element should look like the following example.</p><p class="code" style="font-size: 10pt;">&lt;DeploymentManifest Name="SampleAppName" <strong>InstanceName="SampleAppName_Instance1"</strong> Id="55bb140a-a3a8-4af1-98a8-b5981316df3c" ... &gt;</p><p class="note"> The application instance name may not include spaces, but may include dashes and underscores.</p></li><li><p>Add an InstanceName attribute to each Dependency element. The name must match a previously defined InstanceName for the relevant dependency. The dependency element should look like the following example. In the example, "ExistingTerminologyApplication" is the instance name of the terminology application previously installed.</p><p class="code" style="font-size: 10pt;">&lt;Dependency Name="TerminologyApplication" Type="Application" Id="c031033a-49be-4c8f-a6a8-cb95bddaac0a" MinVersion="1.0.0.0" <strong>InstanceName="ExistingTerminologyApplication"</strong>/&gt;</p></li><li><p>Save the application manifest file with the same name specified in the Name attribute of the DeploymentManifest element. SampleAppName, in the example from the previous step.</p><p class="warning">The Data Connector application has a unique requirement here to save the application manifest file as "DataConnectorApplication.xml".</p></li></ol></li>
+            <li>Resolve <strong>each </strong>service manifest that is present in the application CAB file.<ol style="list-style-type: lower-alpha;"><li>Open C:\Manifest\Extracted\&lt;ServiceManifest&gt;.xml for editing where &lt;ServiceManifest&gt; is the name of the specific service manifest.</li><li>Add an instance name attribute to the DeploymentManifest  element using the same procedure as the application manifest, but a different and unique instance name.</li><li><p>Add a LogicalHostHame attribute to the WcfServiceManfiest or DoorsWorkerManifest element depending on the type of manifest being resolved. The LogicalHostName must be the same as one specified when installing <MadCap:variable name="BrandingHSG.Amalga Short" />. The WcfServiceManfiest or DoorsWorkerManifest element  should look like the following.</p><p class="code" style="font-size: 10pt;">&lt;WcfServiceManifest AccessLevel="Public" <strong>LogicalHostName="ApplicationLogicalHost"</strong> ... &gt;</p></li><li>Save the service manifest using the  original name.</li><li>Repeat steps a through d for each service manifest.</li></ol></li>
+            <li>Copy all the resolved manifests into the temporary directory, C:\Manifest. The &lt;applicationname&gt;CAB file should also still be in C:\Manifest.</li>
+        </ol>
+        <p>After resolving all the manifests in the CAB file, you can  install the application in the topology as specified in <MadCap:xref href="Install Proc App Installation.htm" target="" title="" alt="">Install applications</MadCap:xref>.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1555" MadCap:lastWidth="656" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Patient Portal site</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">The Patient Portal site is used by the institution to communicate to patients, family, and caregivers.</p>
+        <p>The Patient Portal site provides system integrators with a starting point for creating sites to meet the needs of patients, family, and caregivers. By default it contains two pages: the Patient Portal login page, and the Patient Portal home page. </p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Patient">Patient Portal login page (PatientSignIn.aspx)</a>
+            </li>
+            <li><a href="#Patient3">Patient Sign Up Link Request page (PatientSignUpLinkRequest.aspx)</a>
+            </li>
+            <li><a href="#Patient2">Patient Portal home page (default.aspx)</a>
+            </li>
+            <li>
+                <MadCap:annotation MadCap:createDate="2012-02-06T15:01:00.3271599-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Explain which controls are present by default; how to handle branding, sub-branding; other particular customization such as the table on pg. 14 of 39809 spec?" MadCap:editor="v-wfren" MadCap:editDate="2012-02-06T16:37:13.5405817-08:00"><a href="#Customiz">Customizing the Patient Portal site</a>
+                </MadCap:annotation>
+            </li>
+            <li><a href="#Adding">Adding a new page to the Patient Portal site</a>
+            </li>
+        </ul>
+        <h2><a name="Patient"></a>Patient Portal login page (PatientSignIn.aspx)</h2>
+        <p>The Patient Portal Login page is the first page patients see when they access the Patient Portal site. The initial page is non-authenticated, and presents a set of controls which allow new users to create a <MadCap:variable name="BrandingHSG.HealthVault" /> account (<a href="AF_Con_ControlPatientPortalSignup.htm">Patient Portal sign up control</a>), and registered users to sign in to the site (<a href="AF_Con_ControlPatientPortalSignin.htm">Patient Portal sign in control</a>). Other controls on the page include a "What is <MadCap:variable name="BrandingHSG.HealthVault" />?" lightbox control, containing a brief description of the <MadCap:variable name="BrandingHSG.HealthVault" /> service, and a user control that contains all components of the<MadCap:annotation MadCap:createDate="2012-02-06T18:42:57.2568779-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="I predict that this will link to something specific in the final phase (site definitions?)" MadCap:editor="v-wfren" MadCap:editDate="2012-02-06T18:43:26.9358455-08:00"> patient public header</MadCap:annotation>:</p>
+        <ul>
+            <li><![CDATA[ ]]><MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</li>
+            <li>Patient Portal Logo control</li>
+            <li>Clickable Healthvault Logo</li>
+        </ul>
+        <p class="note">The <MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control is never visible to end-users, but can be accessed by the site administrator and anybody with the appropriate permissions. For more information see <a href="AF_Con_ControlSPRibbonToggle.htm"><MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</a>.</p>
+        <h2><a name="Patient3"></a>Patient Sign Up Link Request page (PatientSignUpLinkRequest.aspx)</h2>
+        <p>The Patient Sign Up Link Request page is where new patients can create a <MadCap:variable name="BrandingHSG.HealthVault" /> account, and request health records for family members. The patient first fills out the "<MadCap:variable name="BrandingHSG.HealthVault" /> information" section in the top half of the form, and the name and details for a family member in the "Patient Information" section on this page. They also have the option to add additional family members to their account after signing up.</p>
+        <h2><a name="Patient2"></a>Patient Portal home page (default.aspx)</h2>
+        <p>The Patient Portal home page is where users are directed upon signing in. On this page, the patient header user control contains all components of the signed in patient header:</p>
+        <ul>
+            <li><MadCap:variable name="BrandingMS.SharePoint" /> Ribbon Toggle control</li>
+            <li>Patient Portal Logo</li>
+            <li>HealthVault Record Selector control</li>
+            <li>The Carousel Navigation Bar control</li>
+            <li>The Patient Account Context control</li>
+            <li>The Notification Banner control</li>
+        </ul>
+        <p>The main content placeholder of the Patient Portal home page contains two web part zones which enable administrators to add, edit, and delete web parts in page edit mode. There are two additional pages at the same level as this page</p>
+        <h2><a name="Customiz"></a>Customizing the Patient Portal site</h2>
+        <p>The following modifications are specific to the Patient Portal site pages.</p>
+        <ul>
+            <li>Customize the Patient Portal header by adding, removing, resizing, and repositioning links, assets, and controls.</li>
+            <li>Add a custom background image to the Patient Portal header.</li>
+        </ul>
+        <p>You can also add assets and controls to the pages themselves, and modify the appearance by updating the style sheets and using <MadCap:variable name="BrandingMS.SharePoint" /> built-in customization options. For more general information about customizing the Portal sites, see <a href="AF_Con_PagesPortalPageAdministration.htm">Portal Page administration and customization</a>.</p>
+        <h2><a name="Configur"></a>Adding a new page to the Patient Portal site</h2>
+        <p>You can use the <MadCap:variable name="BrandingHSG.Amalga Short" /> Empty Site Page template to create additional down-level pages for the Patient Portal site. The following steps describe how to add a new page.</p>
+        <ol>
+            <li>Open the project in <MadCap:variable name="BrandingMS.Visual Studio second use" />.</li>
+            <li>Right-click the project name, click <b>Add</b>, then click <b>New item</b>.</li>
+            <li>Under <b>Installed Templates</b>, click <MadCap:variable name="BrandingHSG.Amalga Short" />.</li>
+            <li>Select the <MadCap:variable name="BrandingHSG.Amalga Short" /> Empty Site Page template.</li>
+            <li>Name the page, and click OK to create the page.</li>
+            <li>Deploy the project.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_ControlPatientBanner.htm">Patient banner control</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_ControlPatientPortalSignin.htm">Patient Portal sign in control</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_ControlPatientPortalSignup.htm">Patient Portal sign up control</a>
+        </p>
+    </body>
+</html>

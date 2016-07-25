@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1207" MadCap:lastWidth="764" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Personas.Elvis: App Dev,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved,TopicOwner.v-ccole">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Receiving a DCN event message</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="event messages:Data Change Notification platform application;Data Change Notification platform application:event messages;IEventHandler interface:Data Change Notification platform application;Data Change Notification platform application:IEventHandler interface;EventMessage class:Data Change Notification platform application;Data Change Notification platform application:EventMessage class;EventingWcfHandlerService service:Data Change Notification platform application;Data Change Notification platform application:EventingWcfHandlerService service;HandleEvent method:Data Change Notification platform application;Data Change Notification platform application:HandleEvent method" />This topic describes the concepts involved in receiving and processing the contents of Data Change Notification (DCN) event messages sent from the EventingWcfHandlerService service.</p>
+        <p>To receive a DCN event message for a DCN event type, you must first subscribe to the DCN event type, specifying a service endpoint for a hosted WCF service that implements the Microsoft.Amalga.Eventing.IEventHandler interface and related objects associated with DCN event messages, such as the EventMessage object.</p>
+        <p>The EventingWcfHandlerService then calls the HandleEvent operation of the IEventHandler contract for the hosted WCF service specified in the DCN event subscription, passing a EventMessage object  to the hosted WCF service. The EventMessage object, in the Microsoft.Amalga.Eventing namespace, represents a DCN event message. At that point, your hosted application can then process the DCN event message as needed. For more information about processing a DCN event message, see <MadCap:xref href="SDK_CON_Processing_EventMessage.htm" target="" title="" alt="">Processing a DCN event message</MadCap:xref>.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>a sdfasdfasdf</p>
+        <h2>Example</h2>
+        <p class="Figure">The following example demonstrates a simple implementation of the HandleEvent method in the IEventHandler interface, in which the hosted WCF service serializes the received EventMessage object to a file in a temporary folder.</p><pre xml:space="preserve">using System;
+using System.IO;
+using System.Xml.Serialization;
+using Microsoft.Amalga.Eventing;
+using Microsoft.Amalga.Hosting.WcfService;
+
+namespace AmalgaEventingSampleEventHandler
+{
+    public class AmalgaEventingSampleEventHandler : AmalgaWcfService, IEventHandler
+    {
+        // IEventHandler.HandleEvent implementation
+        public void HandleEvent(EventMessage message)
+        {
+            // Generate a path and file name for an XML file to be saved in a temporary folder.
+            string fileName = "EventMessage-" + DateTime.Now.ToString("MM-dd-yyyy-HH-mm-ss") + ".xml";
+            string outputFilePath = Path.Combine(System.IO.Path.GetTempPath(), fileName);            
+
+            // Instantiate a FileInfo object for the XML file.
+            FileInfo outputFile = new FileInfo(outputFilePath);
+
+            // Serialize the EventMessage object received from the EventingWcfHandlerService
+            // service into the XML file.
+            using (FileStream outStream = outputFile.OpenWrite())
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(message.GetType());
+                xmlSerializer.Serialize(outStream, message);
+                outStream.Flush();
+                outStream.Close();
+            }
+        }
+    }
+}</pre>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

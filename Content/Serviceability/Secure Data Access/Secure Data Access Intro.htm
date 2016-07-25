@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,Personas.Carlos: IT Admin,TopicOwner.v-padenc,EditingTags.7 - Editing issues resolved,Status.70 - Complete,ReleaseTarget.TAP" MadCap:lastBlockDepth="4" MadCap:lastHeight="866" MadCap:lastWidth="634">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Data access security</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="access policies;access rules;roles;access control framework;entities:access;framework:access control;permissions;permissions:applications;permissions:data;permissions:entities;policies:access;rules:access;security" />
+        </p>
+        <p class="abstract">This topic provides conceptual information about how permissions for <MadCap:variable name="BrandingHSG.Amalga Short" /> data and applications are managed in terms of roles. </p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> permissions are managed in terms of roles only. Authorization for <MadCap:variable name="BrandingHSG.Amalga Short" /> data and applications is based on user membership within <MadCap:variable name="BrandingHSG.Amalga Short" /> roles specific to the topology. A role is a set of access rights for a logical collection of authenticated <MadCap:variable name="BrandingHSG.Amalga Short" /> users. </p>
+        <p>For example, in the illustration below, Holly is a member of the role “ICU Nurses”. Based on her membership in this role, Holly is authorized to access the application “PatientNotes”. This role membership also allows her to view data under the entities “Patient” and “Visit”; for “Visit,” she is granted read-write privileges.</p>
+        <p>
+            <img src="../Images/AppDataPermissions.png" style="max-height: auto;max-width: 469px;" MadCap:mediastyle="@media print { max-width: 6in;max-height: auto; }" />
+        </p>
+        <p>This access control framework helps show the right data to the right user at the right time. Access is granted specifically for data (entities) and applications. No access is given by default. </p>
+        <p>Roles are authorized for data (entities)&#160;via access policies. For more information, see <MadCap:xref href="../SERV_LND_DataPerm.htm" target="" title="" alt="">Data permissions management</MadCap:xref>. </p>
+        <p>Roles are authorized for applications via access levels. For more information, see <MadCap:xref href="../SERV_LND_AppPerm.htm" target="" title="" alt="">Application permissions management</MadCap:xref>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p>
+            <MadCap:xref href="../Management Console/User Management/SERV_TASK_Roles-AcctAdd.htm" target="" title="" alt="">Assign accounts to a role</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SERV_TASK_App-PermAdd.htm" target="" title="" alt="">Grant permissions to an application</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../../DataPlatform1/DP_Task_ConfigEntityAccess.htm" target="" title="" alt="">Grant permissions to an entity</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="../SERV_LND_AppPerm.htm" target="" title="" alt="">Application permissions management</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SERV_LND_DataPerm.htm" target="" title="" alt="">Data permissions management</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../SERV_LND_Roles.htm" target="" title="" alt="">Role management</MadCap:xref>
+        </p>
+    </body>
+</html>

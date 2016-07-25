@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use" MadCap:lastBlockDepth="8" MadCap:lastHeight="764" MadCap:lastWidth="475">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Bind entities to the underlying SQL view</h1>
+        <p>
+            <MadCap:keyword term="Imaging:entities" />You can use a <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlets  to bind entities to the underlying SQL views.</p>
+        <p>For more information on the <MadCap:variable name="BrandingMS.Doors PowerShell" /> cmdlet, see <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm">Set-AmEntityBinding on page 1</MadCap:xref>.</p>
+        <p class="LabelforProcedures">To bind entities to SQL views</p>
+        <ol>
+            <li>From <MadCap:variable name="BrandingMS.Microsoft" /> Doors <span class="Label">Start</span>, click <span class="Label">All Program</span>, click <span class="Label">Accessories</span>, click <span class="Label">Doors PowerShell</span>, and then click <span class="Label">Doors PowerShell</span>. You can run <span class="Label">Doors PowerShell</span> from any computer in the <MadCap:variable name="BrandingHSG.Amalga Short" /> topology.</li>
+            <li>Type:<p class="InputText">Import-module 'C:\Program Files\Microsoft Amalga\System 3.0\Platform\PowerShell\Microsoft.Amalga.Powershell.dll'</p></li>
+            <li>Type:<p class="InputText">Set-AmEntityBinding -FilePath <span class="InputTextVariable">ImagingBindingFilePath</span> <![CDATA[ ]]></p><table style="width: 95%; margin-left: 0; margin-right: auto;"><col /><col /><thead><tr><th>Placeholder	</th><th>Value</th></tr></thead><tbody><tr><td class="InputTextVariable">ImagingBindingFilePath</td><td>	The path of the <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="BrandingHSG.Amalga Medical Imaging Module" /><MadCap:variable name="BrandingHSG.Medical Imaging Module" />  binding configuration file that maps entities to SQL views. The name of the sample file present on the installation media is <span class="Label">ImagingEntitiesBinding.xml</span>. For example: c:\install\ImagingEntitiesBinding.xml.</td></tr></tbody></table></li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm">Set-AmEntityBinding on page 1</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep-IE.htm">Install and bind Imaging entities on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

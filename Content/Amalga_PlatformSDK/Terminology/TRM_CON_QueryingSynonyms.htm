@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="4" MadCap:lastHeight="1552" MadCap:lastWidth="728" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying synonyms</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:synonyms;synonyms:Terminology platform application;ITerminologyQueryService interface:Terminology platform application;Terminology platform application:ITerminologyQueryService interface;GetSynonyms method:Terminology platform application;Terminology platform application:GetSynonyms method;Concept class:Terminology platform application;Terminology platform application:Concept class;Synonym entity:Microsoft.Terminology entity namespace;Microsoft.Terminology entity namespace:Synonym entity;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for synonyms identified in and stored by the Terminology hosted application.</p>
+        <p>You can use either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.Synonym entity to retrieve information about synonyms from the Terminology hosted application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using ITerminologyQueryService on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using Microsoft.Terminology.Beta.Synonym on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using ITerminologyQueryService</h2>
+        <p>You can use the GetSynonyms operation, included with the ITerminologyQueryService service contract, to retrieve an array of Concept objects, in which each Concept object represents a synonym, given a specified concept ID.</p>
+        <h3>Example</h3>
+        <p>The following example uses the GetSynonyms operation from the ITerminologyQueryService to retrieve synonyms associated with the clinical concept for hypertensive disease in the ICD-9 clinical terminology.</p><pre xml:space="preserve">public Concept[] GetSynonymsFromService()
+{
+    // Use GetSynonyms from ITerminologyQueryService to retrieve
+    // an array of Concept objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+    // Open the client channel and instantiate the WCF client.
+    ITerminologyQueryService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Identify the concept for which synonyms are to be retrieved. The
+    // concept identifier provided below describes the clinical concept for
+    // hypertensive disease in the ICD-9 clinical terminology.
+    string conceptID = "5794577";
+
+    // Invoke the operation from the service, and
+    // return the resulting array of Concept objects.
+    return (Concept[])terminologyServiceClient.GetSynonyms(conceptID);
+}</pre>
+        <h2><a name="Using2"></a>Using Microsoft.Terminology.Beta.Synonym</h2>
+        <p>You can also use the Synonym entity, included in the Microsoft.Terminology.Beta entity namespace, to retrieve synonyms.  Once an application view for the Synonym entity is added to the virtual schema of your hosted application, you can then use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from the application view. For more information about using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from application views, see <MadCap:xref href="../DataConnector/DAT_CON_RetrievingDataDataReader.htm" target="" title="" alt="">Retrieving data using AmalgaDbDataReader
+ on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">Synonyms</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

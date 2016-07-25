@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Interacting with Data Change Notification (DCN)"
+    Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Interacting_DCN.htm">
+    <TocEntry
+      Title="Enabling DCN"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Enabling_DCN.htm" />
+    <TocEntry
+      Title="Creating DCN event types"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Creating_Subscribing_DCN.htm">
+      <TocEntry
+        Title="Defining a DCN event subscription"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Creating_EventSubscription.htm" />
+      <TocEntry
+        Title="Creating a DCN event type"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Creating_EventType.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Finding and subscribing to DCN event types"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Find_Subscribe_EventType.htm">
+      <TocEntry
+        Title="Finding a DCN event type"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Find_EventType.htm" />
+      <TocEntry
+        Title="Subscribing to a DCN event type"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Subscribe_EventType.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Updating a DCN event type"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Update_EventType.htm" />
+    <TocEntry
+      Title="Activating and deactivating a DCN event type"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_ActivateDeactivate_EventType.htm" />
+    <TocEntry
+      Title="Unsubscribing from and deleting DCN event types"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Unsubscribe_Delete_DCN.htm">
+      <TocEntry
+        Title="Unsubscribe a DCN event subscription"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Unsubscribe_EventType.htm" />
+      <TocEntry
+        Title="Deleting a DCN event type"
+        Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Delete_EventType.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Receiving a DCN event message"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Receiving_EventMessage.htm" />
+    <TocEntry
+      Title="Processing a DCN event message"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_Processing_EventMessage.htm" />
+    <TocEntry
+      Title="Configuring DCN"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_CON_ConfiguringDCN.htm" />
+    <TocEntry
+      Title="Get a list of CDC-enabled databases from [%=BrandingMS.SQL Server 2008%]"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_GetCDCDatabases.htm" />
+    <TocEntry
+      Title="Get a list of CDC-enabled tables from [%=BrandingMS.SQL Server 2008%]"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_GetCDCTables.htm" />
+    <TocEntry
+      Title="Enable Change Data Capture for a database"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_EnableCDCDatabase.htm" />
+    <TocEntry
+      Title="Disable Change Data Capture for a database"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_DisableCDCDatabase.htm" />
+    <TocEntry
+      Title="Enable Change Data Capture for a table"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_EnableCDCTable.htm" />
+    <TocEntry
+      Title="Disable Change Data Capture for a table"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_DisableCDCTable.htm" />
+    <TocEntry
+      Title="Enable or disable DCN on an [%=FeatureName.application view%]"
+      Link="/Content/Amalga_PlatformSDK/DataChangeNotification/SDK_PROC_EnableDCNAppView.htm" />
+  </TocEntry>
+</CatapultToc>

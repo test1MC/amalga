@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="344" MadCap:lastWidth="722" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To preview and publish a report that has never been published</p>
+        <ol>
+            <li>In the placeholder for the report, click <span class="UIElementAction">Preview and Publish</span>.</li>
+            <li>In the Preview dialog box, click <span class="UIElementAction">Publish</span>.</li>
+        </ol>
+        <p class="note">You must preview the report before you can publish it. When previewing a report, if there are problems, and you are a report author, return to <MadCap:variable name="BrandingMS.Report Builder second use" />, create a new report, import, and publish it. Delete the report that had problems. If you are not a report author, you can delete the report with problems and request that a new report be created.</p>
+        <p class="note">Publishing a report makes the report available on the <MadCap:variable name="FeatureBrussels.Analytics" /> pane. Once a report is published, all <MadCap:annotation MadCap:createDate="2012-02-14T17:44:09.5857557-08:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="I removed  &quot;will&quot; between these two words." MadCap:editor="v-ciwyco" MadCap:editDate="2012-02-14T17:44:25.0833053-08:00">users have</MadCap:annotation> access to the report.</p>
+    </body>
+</html>

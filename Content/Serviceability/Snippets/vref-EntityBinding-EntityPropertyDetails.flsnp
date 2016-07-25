@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="111" MadCap:lastWidth="556">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <ul>
+            <li><span class="UIElementName">Property Name</span>:&#160;Name of the entity property.</li>
+            <li><span class="UIElementName">Concept</span>: Identifiers for the semantic tags applied to the property.</li>
+            <li><span class="UIElementName">Data Type</span>: SQL Server data type for the property. </li>
+            <li><span class="UIElementName">Primary Key</span>:&#160;Indicator of the property's primary key status. "True" indicates that the property is the primary key property of the entity. </li>
+        </ul>
+    </body>
+</html>

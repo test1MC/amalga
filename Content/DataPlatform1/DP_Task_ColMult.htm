@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1107" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Personas.All,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Configure binding: multiple binding sources per entity</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to bind entities to multiple binding sources.   </p>
+        <p>
+            <MadCap:keyword term="entity binding;binding sources;sources:binding" />
+            <MadCap:annotation MadCap:createDate="2012-02-22T09:50:12.6355770-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic as complete when xrefs are inserted as relevant." MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:50:22.2141612-08:00">You </MadCap:annotation>can bind entities to multiple binding sources. Each added binding source is automatically given the next lower precedence. For example, if two binding sources exist for an entity and you add a third, then the third binding source is given the precedence of number three in the sequence of binding sources for that entity. </p>
+        <p>Use multiple binding sources to make data from different storage schema available through a single entity.  For example, inpatient data might be stored separately from outpatient data; therefore, each type of data would have unique storage schema. To bind the patient entity to both storage schemas, you can create a binding source specific to each storage schema.</p>
+        <p class="note">Precedence of binding sources cannot be changed except by removing and re-adding binding sources in the sequence that matches the desired precedence. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaDataAdmin or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To add a binding source to an entity</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp">
+                </MadCap:snippetText>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-entitybinding.flsnp">
+                    </MadCap:snippetText> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-entitybinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-editbinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-SwitchToAssisted.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-SwitchToAssisted.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-addbind.flsnp" /> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-addbind.flsnp" />
+                </p>
+            </li>
+            <li>
+                <p>To edit the binding source name, double-click the name and edit as desired.               <![CDATA[ ]]></p>
+                <p>You can now bind additional columns to the entity properties using this new binding source. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">
+            <MadCap:annotation MadCap:createDate="2012-02-22T09:47:39.4094304-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="possible gaps:\r\n\r\n- Source level coalescence rather than column level. From spec: Binding tool coalesces at source level, not at column level. Therefore, only data tables sharing the same set or the superset of primary keys (Patient ID in this case) of the donor table can be mixed and matched.  If Arwen choose his anchor table to be EPIC.PhysiologyScoreV2, and the donor table (e.g. UW.ICUScore.SAPS_II) does not have all primary key value of the anchor table, some cells for SAP_II will have NULL value after column expansion with left out join.    \r\n\r\n- Ability to do a self-join. From 106191, which is resolved: \r\nmotherID is an attribute of Patient entity, which is a foreign key to PK of the Patient entity itself.\r\nmotherName requires self-join to Patient to fetch the latest name from Patient entity itself. In relationship editor of motherName, we should let user choose a column to self-join with." MadCap:editor="v-padenc" MadCap:editDate="2012-02-22T09:49:59.1257172-08:00">See </MadCap:annotation>also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../PowerShellCmdlets/PS_Ref_Set-AmEntityBinding.htm" target="" title="" alt="">Set-AmEntityBinding</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-02-29T07:56:39.9376364-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="../Amalga_PlatformSDK/Terminology/TRM_CON_SemanticTags.htm" target="" title="" alt="">Semantic tags</MadCap:xref>
+        </p>
+    </body>
+</html>

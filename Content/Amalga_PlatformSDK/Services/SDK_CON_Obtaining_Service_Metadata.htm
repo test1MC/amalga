@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1211" MadCap:lastWidth="364" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Obtaining information about services</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to obtain information from <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> services.</p>
+        <p>In <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" />, services and clients model contracts using managed attributes, interfaces, and methods. To connect to a service using a WCF client, you need to first obtain the service contract from a service endpoint.</p>
+        <p>First, you must identify the service endpoint for the service to be used by your hosted application. For more information about identifying service endpoints, see <MadCap:xref href="SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt="">Service Endpoint Reference on page 1</MadCap:xref>.</p>
+        <p>Once you have a service endpoint, you can then use one of the following methods to obtain the necessary information and define a WCF client that you can incorporate into your hosted application.</p>
+        <ul>
+            <li>
+                <p>You can generate a WCF client from a running WCF service, including <MadCap:variable name="BrandingHSG.Amalga Short" /> platform services, by using the ServiceModel Metadata Utility Tool (svcutil.exe). This is the preferred method for generating a WCF client for an <MadCap:variable name="BrandingHSG.Amalga Short" /> platform service. For more information about the ServiceModel Metadata Utility Tool, see "<a href="http://go.microsoft.com/fwlink?LinkId=234805">ServiceModel Metadata Utility Tool (Svcutil.exe)</a>"<MadCap:conditionalText MadCap:conditions="Production.PrintOnly">, on Microsoft Developer Network at http://go.microsoft.com/fwlink/?LinkId=234805</MadCap:conditionalText>.</p>
+                <p>Once it is generated, you can add the WCF client to your hosted application. For more information about generating a WCF client, see <MadCap:xref href="SDK_PROC_Generate_WCF_Client.htm" target="" title="" alt="">Generate a WCF client on page 1</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>You can also add a service reference within <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> to generate a WCF client. For more information about adding a service reference, see <MadCap:xref href="SDK_PROC_Add_Svc_Reference.htm" target="" title="" alt="">Add a service reference on page 1</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <p>The resulting WCF client can be used to create a WCF client channel and interact with a service endpoint. For more information about creating a WCF client channel, see <MadCap:xref href="SDK_CON_Connecting_WCF_Clients.htm" target="" title="" alt="">Creating a WCF client channel on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

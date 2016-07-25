@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1424.333" MadCap:lastWidth="789" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">ApplicationManifest element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the ApplicationManifest element.</p>
+        <p>Contains application-specific metadata required by a hosted application.</p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;DeploymentManifest&gt;<br />&#160;&#160;&#160;&lt;ApplicationManifest <br />&#160;&#160;&#160;&#160;&#160;&#160;Publisher="<span class="Parameter">string</span>" <br />&#160;&#160;&#160;&#160;&#160;&#160;AmalgaMinVersion="<span class="Parameter">string</span>"&#160;&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;ApplicationAuthorization&gt;...&lt;/ApplicationAuthorization&gt;<br />&#160;&#160;&#160;&lt;/ApplicationManifest&gt;<br />&lt;/DeploymentManifest&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>
+                        <p>1-1: Required element that can occur once and only once.</p>
+                        <p class="note">This element is required only for application manifests. Other deployment manifest types do not use this element.<br /></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_DeploymentManifest.htm">DeploymentManifest</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_ApplicationAuthorization.htm">ApplicationAuthorization</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td>
+                        <p>(Required string.) The name of the publishing entity for the hosted application. This name is displayed in <MadCap:variable name="FeatureName.Management Console second use" />.</p>
+                        <p class="tip">This attribute supports localization.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AmalgaMinVersion</td>
+                    <td>
+                        <p>(Required string.) The string representation of a <a href="http://msdn.microsoft.com/en-us/library/e31ax1a7.aspx">System.Version</a> object, representing the minimum version of <MadCap:variable name="BrandingHSG.Amalga Short" /> required to run this hosted application.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>This element is required only if the parent <span class="MarkupLanguageElements">DeploymentManifest</span> element represents an application manifest. Otherwise, this element cannot be included. This element provides information on the publisher of a hosted application, as well as the authorization information for the hosted application, such as the resources exposed by the hosted application and the access levels needed to access those exposed resources.</p>
+        <p>The value of the <span class="MarkupLanguageElements">AmalgaMinVersion</span> attribute must be set to a valid string representation of the major, minor, build, and revision components of a <span class="ForeignCodeElements">System.Version</span> object. This attribute is used during deployment to ensure that the hosted application can be supported by the topology on which the hosted application is being deployed.</p>
+        <p class="SeeAlso">See Also</p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_WcfServiceManifest.htm" target="" title="" alt="">SDK_XML_Manifest_WcfManifest on page 1</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="SDK_XML_Manifest_DoorsWorkerManifest.htm" target="" title="" alt="">DoorsWorkerManifest Element on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

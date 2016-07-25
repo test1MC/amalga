@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1065" MadCap:lastWidth="836" MadCap:fileTags="TopicOwner.v-ccole,Status.20 - Development: under 50%,ReleaseTarget.TAP" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>CustomLookupId element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>Declares the custom lookup value of a source identifier parameter.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+             &lt;EnterpriseId&gt;
+               &lt;EnterpriseIdAction TransformName="<i>String</i>" ArchorTable="<i>String</i>"&gt;
+                  &lt;InputIdentifiers&gt;
+                     &lt;EncounterIdentifier Name="<i>String</i>"&gt;<b>
+                        &lt;CustomLookupId&gt;...&lt;/CustomLookupId&gt;</b>
+                     &lt;/EncounterIdentifier&gt;
+                     &lt;EncounterSetIdentifier Name="<i>String</i>"&gt;<b>
+                        &lt;CustomLookupId&gt;...&lt;/CustomLookupId&gt;</b>
+                     &lt;/EncounterSetIdentifier&gt;
+                     &lt;PatientRecordIdentifier Name="<i>String</i>"&gt;<b>
+                        &lt;CustomLookupId&gt;...&lt;/CustomLookupId&gt;</b>
+                     &lt;/PatientRecordIdentifier&gt;
+                     &lt;PersonIdentifier Name="<i>String</i>"&gt;<b>
+                        &lt;CustomLookupId&gt;...&lt;/CustomLookupId&gt;</b>
+                     &lt;/PersonIdentifier&gt;
+                     &lt;ProviderIdentifier Name="<i>String</i>"&gt;<b>
+                        &lt;CustomLookupId&gt;...&lt;/CustomLookupId&gt;</b>
+                     &lt;/ProviderIdentifier&gt;
+                  &lt;/InputIdentifiers&gt;
+               &lt;/EnterpriseIdAction&gt;	
+            &lt;/EnterpriseId&gt;
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>ParameterConfiguration (String?)</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_EncounterIdentifier.htm">EncounterIdentifier</a>, <a href="DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a>, <a href="DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a>, <a href="DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a>, <a href="DI_XML_Manifest_ProviderIdentifier.htm">ProviderIdentifier</a></td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p class="Label">Constraints</p>
+        <p>Declare the <span class="MarkupLanguageElements">CustomLookupId</span> element only within a service manifest of the <MadCap:variable name="Applications.Data Parser application" />.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentManifest xmlns="http://www.microsoft.com/2011/10/amalga/manifest/wcfservice"
+                    Type = "WcfService"
+                    Name="MaterializedEntityManager"
+                    InstanceName="MaterializedEntityManagerServiceInstance_1"
+		            Id="db2c62c5-6d18-4735-a2ab-ebd495b11d65"
+                    Version ="1.0.0.0">
+
+    <WcfServiceManifest LogicalHostName="FabricLogicalHost" AuthenticationMode ="None" AccessLevel="Public"  ClusteringMode="NLB"/>
+
+    <Settings />
+
+</DeploymentManifest>

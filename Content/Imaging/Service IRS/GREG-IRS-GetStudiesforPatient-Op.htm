@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="829" MadCap:lastWidth="632" MadCap:conditions="Features.Imaging,Region.US" MadCap:fileTags="TopicType.Ref_General,Personas.Carlos: IT Admin,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Get studies for patient</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Imaging Registry Service:Get studies for patient" />The <MadCap:variable name="Imaging.Imaging Registry and Document server" />service (<MadCap:variable name="Imaging.IRDS" />) can provide study information using the person ID.</p>
+        <p>The person ID corresponds to a patient. The application passes a person ID and the IRS will return the <MadCap:variable name="Imaging.DICOM" /> studies.</p>
+        <p class="h7">GetDicomStudiesForPatient</p>
+        <p class="code">[OperationContract]</p>
+        <p class="code">StudyInfoEntry[] GetDicomStudiesForPatient(string <span class="InputTextVariable">patientID</span>);</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col style="width: 100px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Patient ID</td>
+                    <td> The patient ID&#160;is an internal ID&#160;of the patient.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For the method, GetDICOMStudiesForPatient, see <MadCap:xref href="../../API/Ref/Microsoft.Amalga.Imaging.Registry/M_ImagingRegistryService_GetDicomStudiesForPatient_1_1558c4d8.htm">Syntax on page 1</MadCap:xref>. For all members of the IRS see <MadCap:xref href="../../API/Ref/Microsoft.Amalga.Imaging.Registry/AllMembers_T_ImagingRegistryService.htm">Constructors on page 1</MadCap:xref>.</p>
+        <p class="h7">Operation</p>
+        <ol>
+            <li>
+                <p>The client, or application, passes the person ID to the <MadCap:variable name="Imaging.IRDS" />.</p>
+                <p class="note">If the person ID parameter is null, an <span class="LabelCShrp">ArgumentNullException </span>will be thrown.</p>
+            </li>
+            <li>The IRS returns a list of the study information entries.</li>
+        </ol>
+        <p class="h7">Summary</p>
+        <p>The IRS&#160;returns a list of the study information entries. These entries include the basic study, series, and instance metadata for populating a study list on the client. Each study contains a collection of series, which contains basic series information, location information, collection of instance IDs. </p>
+        <p class="h7"><MadCap:variable name="BrandingHSG.AmalgaV2" /> databases</p>
+        <p>For a configuration that uses <MadCap:variable name="BrandingHSG.AmalgaV2" /> databases, the configuration parameter <span class="Label">EIDColumnContent </span>determines how the OID is mapped to an EID internally. </p>
+        <p>The information is  stored as a string in the <span class="Label">EidColumnContent </span>column. The following configuration entry is part of the <span class="Label">ImagingRegistryDocumentService.xml </span>service manifest:</p>
+        <p class="code">&#160;&#160;&lt;Settings&gt;</p>
+        <p class="code">&#160;&#160;&#160;&#160;&#160;&#160;&lt;Setting Name="EidColumnContent" Type="System.String" &gt;</p>
+        <p class="code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;DefaultValue&gt;EID&lt;/DefaultValue&gt;</p>
+        <p class="code">&#160;&#160;&#160;&#160;&#160;&#160;&lt;/Setting&gt;</p>
+        <p class="code">&#160;&#160;&lt;/Settings&gt;</p>
+        <p>The values are supplied during the deployment process. There is one configuration entry for this functionality. The <span class="Label">EidColumnContent </span>determines whether the provided person ID is patient-level matching (EIDfor SOID) or visit-level matching (EID). </p>
+    </body>
+</html>

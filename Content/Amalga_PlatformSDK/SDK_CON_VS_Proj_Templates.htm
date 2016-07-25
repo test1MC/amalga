@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Elvis: App Dev,TopicOwner.v-dennk,ReleaseTarget.CTP1,TopicType.Concept,EditingTags.7 - Editing issues resolved,Status.70 - Complete" MadCap:lastBlockDepth="6" MadCap:lastHeight="2342" MadCap:lastWidth="394" MadCap:ignoredWords="AmalgaWcfService;AmalgaDoorsWorker">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="BrandingMS.Microsoft Visual Studio" /> project templates</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Visual Studio;project templates;hosted applications;Application Framework" />This topic describes the project templates included with <MadCap:variable name="FeatureName.Amalga SDK" /> for use with <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" />.</p>
+        <p>The&#160;<MadCap:variable name="FeatureName.Amalga SDK" /> includes <MadCap:variable name="BrandingMS.Visual Studio second use" /> project templates to make it easier to develop both hosted applications and <MadCap:variable name="FeatureName.Amalga Framework" /> applications.</p>
+        <h2>Hosted applications</h2>
+        <p>Three <MadCap:variable name="BrandingMS.Visual Studio second use" /> project templates are provided for developing hosted applications, including hosted services. Use these project templates as the starting point for your hosted applications. Each template provides the appropriate deployment manifest, references, and sample code for developing a hosted application or hosted service.</p>
+        <ul>
+            <li>
+                <p>Amalga Application Project</p>
+                <p>This template provides an application manifest, which provides the metadata for a hosted application or hosted service. A Visual Studio solution that contains hosted applications, including hosted services, must contain at least one Visual Studio project created from this template. Other projects, such as an Amalga <MadCap:variable name="BrandingMS.WCF service" />e project, must contain a reference to a project created from this template.</p>
+            </li>
+            <li>
+                <p>Amalga WCF&#160;Service Project</p>
+                <p>This template provides a service manifest and sample classes for developing a hosted <MadCap:variable name="BrandingMS.WCF service" />, including a class that inherits from AmalgaWcfService. This template also provides references to Microsoft.Amalga.Data.DataClient and Microsoft.Amalga.Hosting.Runtime namespaces, as well as references to the namespaces most commonly used while developing a <MadCap:variable name="BrandingMS.WCF service" />.</p>
+            </li>
+            <li>
+                <p>Amalga Doors Worker Project</p>
+                <p>This template provides a service manifest and sample classes for developing a hosted <MadCap:variable name="BrandingMS.Doors service" />, including a class that inherits from AmalgaDoorsWorker. This template also provides references to Microsoft.Amalga.Data.DataClient and Microsoft.Amalga.Hosting.Runtime namespaces, as well as references for the namespaces most commonly used while developing a <MadCap:variable name="BrandingMS.Doors service" /> .</p>
+            </li>
+        </ul>
+        <h3>Display the <MadCap:variable name="BrandingMS.Visual Studio second use" />  project templates for hosted applications</h3>
+        <p>After you install <MadCap:variable name="FeatureName.Amalga SDK" />, the project templates are integrated with <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />, and can be used like any other installed template included with <MadCap:variable name="BrandingMS.Visual Studio second use" />. </p>
+        <p class="LabelforProcedures">To display the <MadCap:variable name="FeatureName.Amalga SDK" /> project templates in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> for hosted applications</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="Snippets/proc-Start-VS2010.flsnp" />
+            </li>
+            <li>From the File menu, click <span class="UIElementAction">New</span>, and then click <span class="UIElementAction">Project</span>.</li>
+            <li>In Installed Templates, click <span class="UIElementAction">Visual C#</span>.</li>
+        </ol>
+        <h2><MadCap:variable name="FeatureName.Amalga Framework" /> applications</h2>
+        <p>A <MadCap:variable name="BrandingMS.Visual Studio second use" /> template is provided to support <MadCap:variable name="FeatureName.Amalga Framework" /> applications that incorporate <MadCap:variable name="BrandingMS.SharePoint" /> features and functionality. The project template, named Amalga Empty SP Project, supports both sandboxed and farm <MadCap:variable name="BrandingMS.SharePoint" /> solutions. </p>
+        <p>This template provides a <MadCap:variable name="BrandingMS.SharePoint" /> Features collection, a <MadCap:variable name="BrandingMS.SharePoint" /> Solution Package deployment item, and a key file with an exportable public key. The project template also provides references to the most commonly used <MadCap:variable name="FeatureName.Amalga Framework" /> namespaces, as well as the namespaces most commonly used while developing a <MadCap:variable name="BrandingMS.SharePoint" /> application.</p>
+        <h3>Display the <MadCap:variable name="BrandingMS.Visual Studio second use" />  project templates for <MadCap:variable name="FeatureName.Amalga Framework" /> applications</h3>
+        <p>After installing <MadCap:variable name="FeatureName.Amalga SDK" />, the project templates are integrated with <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />. However, the project template cannot be used unless <MadCap:variable name="BrandingMS.SharePoint Foundation 2010" /> is also installed. If you attempt to create a <MadCap:variable name="BrandingMS.Visual Studio second use" /> project based on the Amalga Empty SP Project template without first installing the required <MadCap:variable name="BrandingMS.SharePoint" /> components, an error occurs.</p>
+        <p class="LabelforProcedures">To display the  project templates in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> for <MadCap:variable name="FeatureName.Amalga Framework" /> applications</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="Snippets/proc-Start-VS2010.flsnp">
+                </MadCap:snippetBlock>
+            </li>
+            <li>From the File menu, click <span class="UIElementAction">New</span>, and then click <span class="UIElementAction">Project</span>.</li>
+            <li>In Installed Templates, expand <span class="UIElementAction">Visual C#</span>, and then click <span class="UIElementAction">Amalga</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p>
+            <MadCap:xref href="DeploymentManifest/SDK_XML_Manifest__Overview.htm" target="" title="" alt="">Deployment Manifest Overview on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

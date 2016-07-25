@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="754.6667" MadCap:lastWidth="693.3334" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="1" MadCap:timestamp="2012-03-12T15:45:19.3929986-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="2" MadCap:timestamp="2012-03-12T15:46:10.4809122-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="3" MadCap:timestamp="2012-03-12T15:51:37.3714263-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T15:51:37.4806270-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Common schema collections</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the common schema collections, including schema restrictions, supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>The following common schema collections are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />. You can query the .NET data provider included with <MadCap:variable name="FeatureName.Amalga ADO.NET" />, .NET&#160;Framework Data Provider for Amalga, to determine the list of supported schema collections by calling the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbCollection</span> object with no arguments.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#DataSour" target="" title="" alt="">DataSourceInformation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#DataType" target="" title="" alt="">DataTypes on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#MetaData" target="" title="" alt="">MetaDataCollections on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Reserved" target="" title="" alt="">ReservedWords on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Restrict" target="" title="" alt="">Restrictions on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="DataSour"></a>DataSourceInformation</h2>
+        <p>This schema collection exposes information about the data source to which     <![CDATA[ ]]><MadCap:variable name="FeatureName.Amalga ADO.NET" /> is currently connected.</p>
+        <p>This schema collection has no schema restrictions or identifier parts.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CompositeIdentifierSeparatorPattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>The regular expression to match the composite separators in a composite identifier.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "\.".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>DataSourceProductName</p>
+                    </td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the product accessed by the data provider.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "Amalga".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DataSourceProductVersion</td>
+                    <td>string</td>
+                    <td>
+                        <p>The version of the product, in the native format used by the product, accessed by the data provider.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "0.0".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DataSourceProductVersionNormalized</td>
+                    <td>string</td>
+                    <td>
+                        <p>The normalized version of the product, such that it can be compared with <span class="ForeignCodeElements">String.Compare()</span>. The format of this column is consistent for all versions of the data provider, to prevent version 10 from sorting between version 1 and version 2.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "0.0".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GroupByBehavior</td>
+                    <td>GroupByBehavior</td>
+                    <td>
+                        <p>A <span class="ForeignCodeElements">System.Data.Common.GroupByBehavior</span> enumeration value that specifies the relationship between the columns in a GROUP BY&#160;clause and the non-aggregated columns in the select list.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to <span class="ForeignCodeElements">GroupByBehavior.Unrelated</span>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IdentifierPattern</td>
+                    <td>string</td>
+                    <td>A regular expression that matches an identifier and has a match value of the identifier. For example<MadCap:change MadCap:changes="1">,</MadCap:change> "[A-Za-z0-9_#$]".</td>
+                </tr>
+                <tr>
+                    <td>IdentifierCase</td>
+                    <td>IdentifierCase</td>
+                    <td>
+                        <p>A <span class="ForeignCodeElements">System.Data.Common.IdentifierCase</span> enumeration value that indicates whether non-quoted identifiers are treated as case sensitive.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to <span class="ForeignCodeElements">IdentifierCase.Insensitive</span>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>OrderByColumnsInSelect</td>
+                    <td>bool</td>
+                    <td>
+                        <p>Specifies whether columns in an ORDER BY clause must be in the select<MadCap:change MadCap:changes="1">ed</MadCap:change> list. A value of true indicates that they are required to be in the select<MadCap:change MadCap:changes="1">ed</MadCap:change> list<MadCap:change MadCap:changes="1">;</MadCap:change><MadCap:change MadCap:changes="2">,</MadCap:change> a value of false indicates that they are not required to be in the select<MadCap:change MadCap:changes="1">ed</MadCap:change> list.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to false.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ParameterMarkerFormat</td>
+                    <td>string</td>
+                    <td>
+                        <p>A format string that represents how to format a parameter. </p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "{0}".</p>
+                        <p class="note">By default, named parameter placeholders are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />, and the contents of this column reflect that default option. However, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> also supports sequential parameter placeholders. For more information about parameter placeholders, see <MadCap:xref href="DAT_CON_ConfiguringParameters.htm" target="" title="" alt="">Configuring parameters and parameter data types on page 1</MadCap:xref>.
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ParameterMarkerPattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>A regular expression that matches a parameter marker. It will have a match value of the parameter name, if any.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ParameterNameMaxLength</td>
+                    <td>int</td>
+                    <td>
+                        <p>The maximum length of a parameter name in characters.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to 128.</p>
+                        <p class="note">By default, named parameter placeholders are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />, and the contents of this column reflect that default option. However, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> also supports sequential parameter placeholders. For more information about parameter placeholders, see <MadCap:xref href="DAT_CON_ConfiguringParameters.htm" target="" title="" alt="">Configuring parameters and parameter data types on page 1</MadCap:xref>.
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ParameterNamePattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>A regular expression that matches the valid parameter names. </p>
+                        <p class="note">By default, named parameter placeholders are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />, and the contents of this column reflect that default option. However, <MadCap:variable name="FeatureName.Amalga ADO.NET" /> also supports sequential parameter placeholders. For more information about parameter placeholders, see <MadCap:xref href="DAT_CON_ConfiguringParameters.htm" target="" title="" alt="">Configuring parameters and parameter data types on page 1</MadCap:xref>.
+</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QuotedIdentifierPattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>A regular expression that matches a quoted identifier and has a match value of the identifier itself without the quotes. </p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "(([^\[]|\]\])*)".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QuotedIdentifierCase</td>
+                    <td>IdentifierCase</td>
+                    <td>
+                        <p>A <span class="ForeignCodeElements">System.Data.Common.IdentifierCase</span> enumeration value that indicates whether quoted identifiers are treated as case sensitive.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to <span class="ForeignCodeElements">IdentifierCase.Insensitive</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>StatementSeparatorPattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>A regular expression that matches the statement separator.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to ";".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>StringLiteralPattern</td>
+                    <td>string</td>
+                    <td>
+                        <p>A regular expression that matches a string literal and has a match value of the literal itself.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to "'(([^']|'')*)'".</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SupportedJoinOperators</td>
+                    <td>SupportedJoinOperators</td>
+                    <td>
+                        <p>A bitmask of <span class="ForeignCodeElements">System.Data.Common.SupportedJoinOperators</span> enumeration values that specify what types of SQL <MadCap:change MadCap:changes="4">JOIN</MadCap:change><MadCap:change MadCap:changes="3">join</MadCap:change> statements are supported by the data source.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to a bitmask that includes all <span class="ForeignCodeElements">SupportedJoinOperators</span> enumeration values other than <span class="ForeignCodeElements">SupportedJoinOperators.None</span>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="DataType"></a>DataTypes</h2>
+        <p>This schema collection exposes information about the data types that are supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />. </p>
+        <p>This schema collection has no schema restrictions or identifier parts.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>TypeName</td>
+                    <td>string</td>
+                    <td>
+                        <p>The data type name.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ProviderDbType</td>
+                    <td>int</td>
+                    <td>The type value that should be used when specifying a parameter's type.</td>
+                </tr>
+                <tr>
+                    <td>ColumnSize</td>
+                    <td>long</td>
+                    <td>
+                        <p>The length of a non-numeric column or parameter refers to either the maximum or the length defined for this type.</p>
+                        <p>For character data, this is the maximum or defined length in units.</p>
+                        <p>For date-time data types, this is the length of the string representation (assuming the maximum allowed precision of the fractional seconds component).</p>
+                        <p>For numeric data types, this is the upper bound on the maximum precision of the data type.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CreateFormat</td>
+                    <td>string</td>
+                    <td>The format string that represents how to add this column to a data definition statement, such as CREATE&#160;TABLE. Each element in the array should be represented by a "parameter marker" in the format string.</td>
+                </tr>
+                <tr>
+                    <td>CreateParameters</td>
+                    <td>string</td>
+                    <td>The creation parameters that must be specified when creating a column of this data type. Each creation parameter is listed in the string, separated by a comma in the order they are to be supplied.</td>
+                </tr>
+                <tr>
+                    <td>DataType</td>
+                    <td>string</td>
+                    <td>The name of the .NET&#160;Framework type for the data type.</td>
+                </tr>
+                <tr>
+                    <td>IsAutoIncrementable</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, indicates that a value of this data type may be auto-incrementing.</p>
+                        <p class="note">
+                            <MadCap:annotation MadCap:createDate="2012-03-12T16:19:56.6722943-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="unclear referent. &quot;This&quot; what?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T16:20:05.4672869-07:00">This</MadCap:annotation> merely indicates whether a column of this data type may be auto-incrementing, not that all columns of this type are auto-incrementing.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsBestMatch</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, indicates that the data type is the best match between all data types in the data store and the .NET&#160;Framework type specified in the value of the DataType column.</p>
+                        <p class="note">For each set of rows in which the value of the DataType column is the same, the IsBestMatch column is set to true for only one row.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsCaseSensitive</td>
+                    <td>bool</td>
+                    <td>If set to true, indicates that the data is a character type and is case-sensitive.</td>
+                </tr>
+                <tr>
+                    <td>IsFixedLength</td>
+                    <td>bool</td>
+                    <td>If set to true, indicates that columns of this data type created by data definition language (DDL) statements will be of fixed length. If set to false, then columns of this data type will be of variable length. If set to <span class="ForeignCodeElements">DBNull.Value</span>, it is not known whether <MadCap:variable name="FeatureName.Amalga ADO.NET" /> will map this field with a fixed-length or variable-length column.</td>
+                </tr>
+                <tr>
+                    <td>IsFixedPrecisionScale</td>
+                    <td>bool</td>
+                    <td>If set to true, indicates that the data type has a fixed precision and scale.</td>
+                </tr>
+                <tr>
+                    <td>IsLong</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, indicates that the data type contains very long data.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to true for the image, text, ntext, and xml data types.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsNullable</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, indicates that the data type is nullable. If set to false, indicates the data type is not nullable. If set to <span class="ForeignCodeElements">DBNull.Value</span>, it is not known whether the data type is nullable.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to true for all data types except the timestamp data type.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsSearchable</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, the data type can be used in a WHERE clause with any operator except the LIKE predicate.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to true for all data types except the image, text, ntext, and xml data types.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsSearchableWithLike</td>
+                    <td>bool</td>
+                    <td>
+                        <p>If set to true, the data type can be used with the LIKE predicate.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IsUnsigned</td>
+                    <td>bool</td>
+                    <td>If set to true, the data type is unsigned. If set to false, the data type is signed. If set to <span class="ForeignCodeElements">DBNull.Value</span>, this does not apply to the data type.</td>
+                </tr>
+                <tr>
+                    <td>MaximumScale</td>
+                    <td>short</td>
+                    <td>If the type indicator is a numeric type, this is the maximum number of digits allowed to the right of the decimal point. Otherwise, this column is set to <span class="ForeignCodeElements">DBNull.Value</span>.</td>
+                </tr>
+                <tr>
+                    <td>MinimumScale</td>
+                    <td>short</td>
+                    <td>If the type indicator is a numeric type, this is the minimum number of digits allowed to the right of the decimal point. Otherwise, this column is set to <span class="ForeignCodeElements">DBNull.Value</span>.</td>
+                </tr>
+                <tr>
+                    <td>IsConcurrencyType</td>
+                    <td>bool</td>
+                    <td>If set to true, the data type is updated every time the row is changed and the value of the column is different from all previous values. If set to false, the data type is not updated every time the row is changed. If set to <span class="ForeignCodeElements">DBNull.Value</span>, this data type is not supported.</td>
+                </tr>
+                <tr>
+                    <td>IsLiteralsSupported</td>
+                    <td>bool</td>
+                    <td>If set to true, the data type can be expressed as a literal.</td>
+                </tr>
+                <tr>
+                    <td>LiteralPrefix</td>
+                    <td>string</td>
+                    <td>The prefix applied to a given literal.</td>
+                </tr>
+                <tr>
+                    <td>LiteralSuffix</td>
+                    <td>string</td>
+                    <td>The suffix applied to a given literal.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="MetaData"></a>MetaDataCollections</h2>
+        <p>This schema collection exposes information about all of the schema collections supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>This schema collection has no schema restrictions or identifier parts.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CollectionName</td>
+                    <td>string</td>
+                    <td>The name of the schema collection. This value is passed to the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object to return the schema collection.</td>
+                </tr>
+                <tr>
+                    <td>NumberOfRestriction</td>
+                    <td>int</td>
+                    <td>The number of schema restrictions that may be specified for the schema collection.</td>
+                </tr>
+                <tr>
+                    <td>NumberOfIdentifierParts</td>
+                    <td>int</td>
+                    <td>
+                        <p>The number of parts in the composite identifier or object name referenced in the schema collection. For example, in <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is set to 3 for the Tables schema collection, and 4 for the Columns schema collection.</p>
+                        <p>For more information about <MadCap:variable name="FeatureName.Amalga ADO.NET" /> schema collections, see <MadCap:xref href="DAT_CON_AmalgaSchemaCollections.htm" target="" title="" alt=""> schema collections on page 1</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Reserved"></a>ReservedWords</h2>
+        <p>This schema collection exposes information about the words reserved by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>This schema collection has no schema restrictions or identifier parts.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ReservedWords</td>
+                    <td>string</td>
+                    <td>The words reserved by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Restrict"></a>Restrictions</h2>
+        <p>This schema collection exposes information about the schema restrictions supported by <MadCap:variable name="FeatureName.Amalga ADO.NET" />.</p>
+        <p>This schema collection has no schema restrictions or identifier parts.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Column name</th>
+                    <th>Data type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CollectionName</td>
+                    <td>string</td>
+                    <td>The name of the schema collection to which these schema restrictions apply.</td>
+                </tr>
+                <tr>
+                    <td>RestrictionName</td>
+                    <td>string</td>
+                    <td>The name of the schema restriction in the schema collection.</td>
+                </tr>
+                <tr>
+                    <td>ParameterName</td>
+                    <td>string</td>
+                    <td>
+                        <p>The name of the parameter used for the schema restriction.</p>
+                        <p>For <MadCap:variable name="FeatureName.Amalga ADO.NET" />, this column is typically set to "@<span class="Parameter">RestrictionName</span>", where <span class="Placeholder">RestrictionName</span> is the value of the RestrictionName column.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>RestrictonDefault</td>
+                    <td>string</td>
+                    <td>
+                        <p>Ignored. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>RestrictionNumber</td>
+                    <td>int</td>
+                    <td>The ordinal position within the string array that represents the schema restrictions, passed to the <span class="ForeignCodeElements">GetSchema</span> method of the <span class="ForeignCodeElements">AmalgaDbConnection</span> object.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

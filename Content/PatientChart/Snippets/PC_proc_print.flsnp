@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="114" MadCap:lastWidth="570" MadCap:conditions="Manuals.XRefOtherManual">
+    <body>
+        <p class="LabelforProcedures">To print</p>
+        <ol>
+            <li>Click the printer icon (<img src="../Images/PC_print.png" />).</li>
+            <li>Verify the output and click <span class="UIElementAction">Print</span>.</li>
+            <li>Select the print options and click <span class="UIElementAction">Print</span>.</li>
+        </ol>
+    </body>
+</html>

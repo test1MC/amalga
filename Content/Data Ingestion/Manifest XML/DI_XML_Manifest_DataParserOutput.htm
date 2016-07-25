@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1039" MadCap:lastWidth="762" MadCap:fileTags="Status.50 - InTech Review,ReleaseTarget.TAP,TopicOwner.v-ccole" MadCap:ignoredWords="DataParserConfiguration" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>DataParserOutput element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="DataParserOutput element" />Declares data-parser output tables and columns.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+   &lt;DefaultValue&gt;
+      &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+         &lt;DataParserConfiguration&gt;<b>
+            &lt;DataParserOutput&gt;</b>
+               &lt;Segment /&gt;<b>
+            &lt;DataParserOutput&gt;</b>
+         &lt;/DataParserConfiguration&gt;
+      ]]&gt;
+   &lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p>
+</pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>Array</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_Segment.htm">Segment</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">DataParserOutput</span> element is mandatory only if you need to transform shredded message data, perform a lookup, or derive a new column that was not automatically generated during shredding. If you use shredded input as the source type of an operation, then you must first declare the segments and elements in the <a href="DI_XML_Manifest_MessageShredderInput.htm">MessageShredderInput</a> element section of your data-parser service manifest. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p>In the data-parser output section, you can only derived one segment from a source segment and the Name attribute of segment must be the same as the SourceName attribute.</p>
+        <p class="Label">Correct usage</p><pre xml:space="preserve">&lt;DataParserOutput&gt;
+      &lt;Segment Name="PID " SourceName="PID"&gt;
+&lt;/DataParserOutput&gt;</pre>
+        <p class="Label">Incorrect usage</p><pre xml:space="preserve">&lt;DataParserOutput&gt;
+      &lt;Segment Name="PID " SourceName="PID"&gt;
+      &lt;Segment Name="PID2" SourceName="PID"&gt;
+&lt;/DataParserOutput&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

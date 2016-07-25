@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="5783" MadCap:lastWidth="632" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Customize patient matching work flows</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic covers customizing patient matching work flows to set the information which is displayed to users.</p>
+        <p>The patient matching process is comprised of a set of work flows where users submit their information for matching with an <MadCap:variable name="BrandingHSG.Amalga Short" /> patient ID, and the hospital staff subsequently processes the requests. You can customize the work flows to set which information to expose to users, and which information to collect from users. This topic covers customizing the three main patient matching work flows.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Create">Get the source files</a>
+            </li>
+            <li><a href="#Create">Create a new project</a>
+            </li>
+            <li><a href="#Customiz">Customize the Add a New Record work flow</a>
+            </li>
+            <li><a href="#Customiz2">Customize the Patient Match work flow</a>
+            </li>
+            <li><a href="#Customiz3">Customize the Patient Sign Up Link Request work flow</a>
+            </li>
+            <li>U<a href="#Update">pdate the <MadCap:variable name="BrandingMS.SharePoint" /> property bag</a></li>
+        </ul>
+        <h2><a name="Create"></a>Get the source files</h2>
+        <p>Throughout this walkthrough you will be using code from controls that are part of the <MadCap:variable name="BrandingHSG.Amalga Short" /> deployment. Rather than taking files directly from the default deployment, you should get them from the <MadCap:annotation MadCap:createDate="2012-02-23T14:02:31.5065958-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Need location from jasonra." MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T18:20:28.4385041-08:00">microsoft.amalga.appframework.wsp  </MadCap:annotation>solution package by following these steps.</p>
+        <ol>
+            <li>Navigate to<MadCap:annotation MadCap:createDate="2012-02-23T14:03:36.3100755-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="path to the solution package." MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T14:03:50.1644608-08:00"> \path\to\microsoft.amalga.appframework.wsp</MadCap:annotation>.</li>
+            <li>Rename microsoft.amalga.appframework.wsp with a .cab filename extension. Doing this allows you to open the file and browse the contents.</li>
+            <li>Open microsoft.amalga.appframework.cab and browse to <MadCap:annotation MadCap:createDate="2012-02-23T14:05:16.0860521-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="path?" MadCap:editor="v-wfren" MadCap:editDate="2012-02-23T20:25:42.7493689-08:00">\TEMPLATE\controltemplates\Amalga</MadCap:annotation>.</li>
+        </ol>
+        <h2>Create a new project</h2>
+        <p>The first step you need to take is creating a new project in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /> using the Amalga Empty SP Project template. This project will contain all of the customized work flows that you will add as you follow the walkthrough in this topic. To create the project, take the following steps.</p>
+        <ol>
+            <li>Open <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" />.</li>
+            <li style="font-weight: normal;">From the File menu, click New, then click Project.</li>
+            <li style="font-weight: normal;">Select .NET Framework 3.5.</li>
+            <li style="font-weight: normal;">Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short" />.</li>
+            <li style="font-weight: normal;">Select the <MadCap:variable name="BrandingHSG.Amalga Short" /> Empty SP Project template.</li>
+            <li>Name the project CustPatientMatch.</li>
+            <li>Click OK to create the project.</li>
+        </ol>
+        <h2><a name="Customiz"></a>Customize the Add a New Record work flow</h2>
+        <p>This section shows how to create a new record work flow by extending the default AddRecordPatientMatch and RecordInfoPatientMatch user controls.</p>
+        <p>If you have not done so already, get the default code by following the steps in <a href="#Create">Get the source files</a>.</p>
+        <h3>Extend the AddRecordPatientMatch control</h3>
+        <p>Follow these steps to create a new custom version of the AddRecordPatientMatch control using code from the default control template. </p>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short" /> User Control.</li>
+            <li>Name the control MyAddRecordPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate AddRecordPatientMatch.ascx.</li>
+            <li>Copy the code, and paste it into MyAddRecordPatientMatch.ascx.</li>
+            <li>
+                <p>In MyAddRecordPatientMatch.ascx, change the src attribute to reference MyRecordInfoPatientMatch.ascx  (you will add the control later). For example:</p>
+                <p class="code">&lt;%@ Register TagPrefix="Amalga" TagName="HealthVaultRecordPatientMatchEditor" Src="~/_controltemplates/CustPatientMatch/AddNewRecord/MyRecordInfoPatientMatch.ascx"  %&gt;</p>
+            </li>
+            <li>Open MyAddRecordPatientMatch.ascx.cs.</li>
+            <li>Update the MyAddRecordPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</li>
+            <li>
+                <p>In the MyAddRecordPatientMatch class, add a method to override ChangeViewMode(). For example:</p>
+                <p class="code">public override void ChangeViewMode(Mode viewMode)</p>
+                <p class="code">{</p>
+                <p class="code"> base.ChangeViewMode(viewMode);</p>
+                <p class="code"> if (viewMode == Mode.Review || viewMode == Mode.ReviewOnly)</p>
+                <p class="code"> {</p>
+                <p class="code"> this.RecordMatchInfoPatientMatch.InitializeReviewMode();</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+            </li>
+            <li>Open MyAddRecordPatientMatch.ascx.designer.cs.</li>
+            <li>
+                <p>Change the RecordMatchInfoPatientMatch global variable to MyRecordInfoPatientMatch. For example:</p>
+                <p class="code">protected global::CustPatientMatch.MyRecordInfoPatientMatch MyRecordInfoPatientMatch;</p>
+            </li>
+        </ol>
+        <h3>Extend the RecordInfoPatientMatch <MadCap:annotation MadCap:createDate="2012-02-24T13:32:38.2257688-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="Where do I get MyRecordInfoPatientMatch.InitializeReviewMode(); ?" MadCap:editor="v-wfren" MadCap:editDate="2012-02-24T13:32:49.8349296-08:00">control</MadCap:annotation></h3>
+        <p>Follow these steps to create a new custom version of the RecordInfoPatientMatch control using code from the default control template.</p>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short" /> User Control.</li>
+            <li>Name the control MyRecordInfoPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate RecordInfoPatientMatch.ascx.</li>
+            <li>Copy the code, and paste it into MyRecordInfoPatientMatch.ascx.</li>
+            <li>
+                <p>Change the CodeBehind attribute value to reference MyRecordInfoPatientMatch.ascx. For example:</p>
+                <p class="code">&lt;%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyRecordInfoPatientMatch.ascx.cs" ...</p>
+            </li>
+            <li>Open MyRecordInfoPatientMatch.ascx.cs.</li>
+            <li>Update the MyRecordInfoPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</li>
+        </ol>
+        <p>The HTML code in MyRecordInfoPatientMatch.ascx has two sections, "edit" and "review". The controls in these sections go together, so that if you remove a control from the "edit" section, the same should be done in the "review" section. To remove a control, set the style property to <span class="code">display:none</span>. </p>
+        <h4>Modify the page controls</h4>
+        <p>There are several modifications you will need to make to the page controls in MyRecordInfoPatientMatch.ascx. First, you need to remove all validation that is associated with each control. These are found in the form of <MadCap:variable name="BrandingHSG.Amalga Short" /> GenericRequiredValidator element. To remove the validator, delete the entire element.</p>
+        <p>Two type attributes are associated with each control in the add new record workflow, HVRecKey and PatientMatchKey. Any control which has the HVRecKey attribute set is used for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation, so verify that <MadCap:annotation MadCap:createDate="2012-02-24T19:32:45.5799563-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="And these are..." MadCap:editor="v-wfren" MadCap:editDate="2012-02-24T19:32:48.8842867-08:00">the required fields for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation</MadCap:annotation> are present. You can remove any optional <MadCap:variable name="BrandingHSG.HealthVault" /> record creation fields by either removing the key, or setting the style attribute for the containing div to display:none. Likewise, controls containing the PatientMatchKey attribute are used for the patient matching process. To remove a control from the patient matching process, remove the PatientMatchKey.</p>
+        <h2><a name="Customiz2"></a>Customize the Patient Match work flow</h2>
+        <p>These steps show how to create a new custom version of the PatientMatch control using code from the default control template. </p>
+        <h3>Extend the PatientMatch control</h3>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> User Control.</li>
+            <li>Name the control MyPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate PatientMatch.ascx.</li>
+            <li>
+                <p>Copy the code, and paste it into MyPatientMatch.ascx.</p>
+            </li>
+            <li>
+                <p>In MyPatientMatch.ascx, change the src attribute to reference MyMatchInfoPatientMatch.ascx  (you will add the control later). For example:</p>
+                <p class="code">&lt;%@ Register TagPrefix="Amalga" TagName="MatchInfoPatientMatch" Src="~/_controltemplates/CustPatientMatch/PatientMatch/MyMatchInfoPatientMatch.ascx"  %&gt;</p>
+            </li>
+            <li>Open MyPatientMatch.ascx.cs.</li>
+            <li>Update the MyPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</li>
+            <li>
+                <p>In the MyPatientMatch class, add a method to override ChangeViewMode(). For example:</p>
+                <p class="code">public override void ChangeViewMode(Mode viewMode)</p>
+                <p class="code">{</p>
+                <p class="code"> base.ChangeViewMode(viewMode);</p>
+                <p class="code"> if (viewMode == Mode.Review || viewMode == Mode.ReviewOnly)</p>
+                <p class="code"> {</p>
+                <p class="code"> this.RecordMatchInfoPatientMatch.InitializeReviewMode();</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+            </li>
+            <li>Open MyPatientMatch.ascx.designer.cs.</li>
+            <li>
+                <p>Change the RecordMatchInfoPatientMatch global variable to MyMatchInfoPatientMatch. For example:</p>
+                <p class="code">protected global::CustPatientMatch.MyMatchInfoPatientMatch MyMatchInfoPatientMatch;</p>
+            </li>
+        </ol>
+        <h3>Extend the MatchInfoPatientMatch control</h3>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> User Control.</li>
+            <li>Name the control MyMatchInfoPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate MatchInfoPatientMatch.ascx.</li>
+            <li>
+                <p>Copy the code, and paste it into MyMatchInfoPatientMatch.ascx.</p>
+            </li>
+            <li>Update the CodeBehind attribute value to reference MyMatchInfoPatientMatch.ascx.</li>
+            <li>
+                <p>Open MyMatchInfoPatientMatch.ascx.cs.</p>
+            </li>
+            <li>
+                <p>Update the MyMatchInfoPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</p>
+            </li>
+        </ol>
+        <p>The HTML code in MyMatchInfoPatientMatch .ascx has two sections, "edit" and "review". The controls in these sections go together, so that if you remove a control from the "edit" section, the same should be done in the "review" section. To remove a control, set the style property to <span class="code">display:none</span>. </p>
+        <h4>Modify the page controls</h4>
+        <p>There are several modifications you will need to make to the page controls in MyMatchInfoPatientMatch.ascx. First, you need to remove all validation that is associated with each control. These are found in the form of <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> GenericRequiredValidator element. To remove the validator, delete the entire element.</p>
+        <p>Two type attributes are associated with each control in the add new record workflow, HVRecKey and PatientMatchKey. Any control which has the HVRecKey attribute set is used for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation, so verify that <MadCap:annotation MadCap:createDate="2012-02-24T19:32:45.5799563-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="And these are..." MadCap:editor="v-wfren" MadCap:editDate="2012-02-24T19:32:48.8842867-08:00">the required fields for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation</MadCap:annotation> are present. You can remove any optional <MadCap:variable name="BrandingHSG.HealthVault" /> record creation fields by either removing the key, or setting the style attribute for the containing div to display:none. Likewise, controls containing the PatientMatchKey attribute are used for the patient matching process. To remove a control from the patient matching process, remove the PatientMatchKey.</p>
+        <h2><a name="Customiz3"></a>Customize the Patient Sign Up Link Request work flow</h2>
+        <p>These steps show how to create a new custom version of the AccountRecordPatientMatch control using code from the default control template. </p>
+        <h3>Extend the AccountRecordPatientMatch control</h3>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> User Control.</li>
+            <li>Name the control MyAccountRecordPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate AccountRecordPatientMatch.ascx.</li>
+            <li>
+                <p>Copy the code, and paste it into MyAccountRecordPatientMatch.ascx.</p>
+            </li>
+            <li>
+                <p>In MyAccountRecordPatientMatch.ascx, change the src attribute to reference MyRecordMatchInfoPatientMatch.ascx (you will add the control later). For example:</p>
+                <p class="code">&lt;%@ Register TagPrefix="Amalga" TagName="MatchInfoPatientMatch" Src="~/_controltemplates/CustPatientMatch/PatientMatch/MyRecordMatchInfoPatientMatch.ascx"  %&gt;</p>
+            </li>
+            <li>Open MyAccountRecordPatientMatch.ascx.cs.</li>
+            <li>Update the MyAccountRecordPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</li>
+            <li>
+                <p>In the MyPatientMatch class, add methods to override the ChangeViewMode() and Initialize() methods. For example:</p>
+                <p class="code">public override void ChangeViewMode(Mode viewMode)</p>
+                <p class="code">{</p>
+                <p class="code"> base.ChangeViewMode(viewMode);</p>
+                <p class="code"> if (viewMode == Mode.Review || viewMode == Mode.ReviewOnly)</p>
+                <p class="code"> {</p>
+                <p class="code"> this.RecordMatchInfoPatientMatch.InitializeReviewMode();</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+                <p class="code">public override void Initialize(Microsoft.Amalga.AppFramework.Web.Utility.AccountRecordMatchRequest armRequest, Mode viewMode)</p>
+                <p class="code">{</p>
+                <p class="code">base.Initialize(armRequest, viewMode);</p>
+                <p class="code">LnkAccountSubHeader.NavigateUrl = "https://&lt;FQDN&gt;:8080";</p>
+                <p class="code">if (viewMode != Mode.Initial)</p>
+                <p class="code">{</p>
+                <p class="code">LblAccountSubHeader.Visible = false;</p>
+                <p class="code">LnkAccountSubHeader.Visible = false;</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+            </li>
+            <li>Open MyAccountRecordPatientMatch.ascx.designer.cs.</li>
+            <li>
+                <p>Change the RecordMatchInfoPatientMatch global variable to MyRecordMatchInfoPatientMatch. For example:</p>
+                <p class="code">protected global::CustPatientMatch.MyRecordMatchInfoPatientMatch MyRecordMatchInfoPatientMatch;</p>
+            </li>
+        </ol>
+        <h3>Extend the RecordMatchInfoPatientMatch control</h3>
+        <ol>
+            <li>In Solution Explorer, right-click the <span class="UIElementName">CustPatientMatch </span>project, click <span class="UIElementName">Add</span>, then click <span class="UIElementName">New Item</span>.</li>
+            <li>Under Installed Templates, select <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> User Control.</li>
+            <li>Name the control MyRecordMatchInfoPatientMatch.</li>
+            <li>Click Add to create the control.</li>
+            <li>In the microsoft.amalga.appframework.cab, locate RecordMatchInfoPatientMatch.ascx.</li>
+            <li>
+                <p>Copy the code, and paste it into MyRecordMatchInfoPatientMatch.ascx.</p>
+            </li>
+            <li>Update the CodeBehind attribute value to reference MyRecordMatchInfoPatientMatch.ascx.</li>
+            <li>
+                <p>Open MyRecordMatchInfoPatientMatch.ascx.cs.</p>
+            </li>
+            <li>
+                <p>Update the MyRecordMatchInfoPatientMatch class to derive from BaseHealthVaultAccountRecordPatientMatchForm.</p>
+            </li>
+        </ol>
+        <p>The HTML code in MyRecordMatchInfoPatientMatch.ascx has two sections, "edit" and "review". The controls in these sections go together, so that if you remove a control from the "edit" section, the same should be done in the "review" section. To remove a control, set the style property to <span class="code">display:none</span>. </p>
+        <h4>Modify the page controls</h4>
+        <p>There are several modifications you will need to make to the page controls in MyRecordMatchInfoPatientMatch.ascx. First, you need to remove all validation that is associated with each control. These are found in the form of <MadCap:variable name="BrandingHSG.Amalga Short" /> GenericRequiredValidator element. To remove the validator, delete the entire element.</p>
+        <p>Two type attributes are associated with each control in the add new record workflow, HVRecKey and PatientMatchKey. Any control which has the HVRecKey attribute set is used for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation, so verify that <MadCap:annotation MadCap:createDate="2012-02-24T19:32:45.5799563-08:00" MadCap:creator="v-wfren" MadCap:initials="V-" MadCap:comment="And these are..." MadCap:editor="v-wfren" MadCap:editDate="2012-02-24T19:32:48.8842867-08:00">the required fields for <MadCap:variable name="BrandingHSG.HealthVault" /> record creation</MadCap:annotation> are present. You can remove any optional <MadCap:variable name="BrandingHSG.HealthVault" /> record creation fields by either removing the key, or setting the style attribute for the containing div to display:none. Likewise, controls containing the PatientMatchKey attribute are used for the patient matching process. To remove a control from the patient matching process, remove the PatientMatchKey.</p>
+        <h2>Update the <MadCap:variable name="BrandingMS.SharePoint" /> property bag</h2>
+        <p>The final customization step is updating the <MadCap:variable name="BrandingMS.SharePoint" /> property bag. This is done by adding code to create a new SPFeature and SPFeatureReceiver. The following procedure shows how to do this.</p>
+        <ol>
+            <li>Add a new class to the project.</li>
+            <li>Add a using directive for Microsoft.Sharepoint to the class.</li>
+            <li>
+                <p>Paste the following code into the class.</p>
+                <p class="code">public override void FeatureActivated(SPFeatureReceiverProperties properties)</p>
+                <p class="code">{</p>
+                <p class="code">using (var web = properties.Feature.Parent as SPWeb)</p>
+                <p class="code">{</p>
+                <p class="code">if (web == null) return;</p>
+                <p class="code">AddProperty(web, "HealthVaultAccountRecordPatientPortalPatientMatchFormAscx", "~/_controltemplates/CustPatientMatch/PatientMatch/MyPatientMatch.ascx");</p>
+                <p class="code">AddProperty(web, "HealthVaultAccountRecordPatientMatchFormAscx", "~/_controltemplates/CustPatientMatch/PatientSignUpLinkRequest/MyAccountRecordPatientMatch.ascx");</p>
+                <p class="code">AddProperty(web, "HealthVaultAccountRecordPatientMatchAddRecordFormAscx", "~/_controltemplates/CustPatientMatch/AddNewRecord/MyAddRecordPatientMatch.ascx");</p>
+                <p class="code">web.Update();</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+                <p class="code">private static void AddProperty(SPWeb web, string key, object value)</p>
+                <p class="code">{</p>
+                <p class="code">if (web.AllProperties.ContainsKey(key))</p>
+                <p class="code">{</p>
+                <p class="code">web.AllProperties.Remove(key);</p>
+                <p class="code">}</p>
+                <p class="code">web.AllProperties.Add(key, value);</p>
+                <p class="code">}</p>
+                <p class="code">// Uncomment the method below to handle the event raised before a feature is deactivated.</p>
+                <p class="code">public override void FeatureDeactivating(SPFeatureReceiverProperties properties)</p>
+                <p class="code">{</p>
+                <p class="code">using (var web = properties.Feature.Parent as SPWeb)</p>
+                <p class="code">{</p>
+                <p class="code">if (web == null) return;</p>
+                <p class="code">web.AllProperties.Remove("HealthVaultAccountRecordPatientPortalPatientMatchFormAscx");</p>
+                <p class="code">web.AllProperties.Remove("HealthVaultAccountRecordPatientMatchFormAscx");</p>
+                <p class="code">web.AllProperties.Remove("HealthVaultAccountRecordPatientMatchAddRecordFormAscx");</p>
+                <p class="code">web.Update();</p>
+                <p class="code">}</p>
+                <p class="code">}</p>
+            </li>
+            <li>Deploy the project.</li>
+            <li>Activate the feature by going to https://%ComputerName%.%UserDNSDomain%:8080/Patient/_Layouts/Settings.aspx.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_PagesMasterPageStyles.htm">Master page styles</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_PagesFoundational.htm">Foundational site definitions</a>
+        </p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_PagesPatientPortal.htm">Patient portal</a>
+        </p>
+    </body>
+</html>

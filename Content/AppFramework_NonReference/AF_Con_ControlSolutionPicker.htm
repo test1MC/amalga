@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1127" MadCap:lastWidth="656" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wfren,EditingTags.4 - Ready for Writer,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Solution Picker control</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">The Solution Picker control lets users navigate between solutions.</p>
+        <p>The Solution Picker control displays a drop-down list of all solutions for which the authenticated user has been granted permissions to view in <MadCap:variable name="BrandingMS.SharePoint" />. Solutions for which the user does not have <MadCap:variable name="BrandingMS.SharePoint" /> permissions are not shown in the list. When the user makes a selection, the default page for the selected solution automatically appears.</p>
+        <p class="warning">In order for the Solution Picker control  to work properly, users must have root-level read access on the site. This applies to all site navigation features.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li><a href="#Adding">Adding the Solution Picker control to a project</a>
+            </li>
+            <li><a href="#Customiz">Customizing a Solution Picker control instance</a>
+            </li>
+            <li><a href="#Managing">Managing Solution Picker list contents</a>
+            </li>
+            <li><a href="#Linking">Linking to non-solution pages</a>
+            </li>
+            <li><a href="#Control">Control behavior in nested hierarchies</a>
+            </li>
+        </ul>
+        <h2><a name="Adding"></a>Adding the Solution Picker control to a project</h2>
+        <p>You can add a Solution Picker control to a project in <MadCap:variable name="BrandingMS.Visual Studio second use" /> by following the instructions in <a href="AF_Con_UsingControls.htm">Toolbox controls</a>. </p>
+        <p class="note">The Solution Picker control is present by default in the header of the master page template for the provider and staff portal pages. You would only need to explicitly add this control in situations where the master page template was not being used.</p>
+        <h2><a name="Customiz"></a>Customizing a Solution Picker control instance</h2>
+        <p>You can change the appearance and behavior of each Solution picker control instance by editing the control properties in the <MadCap:variable name="BrandingMS.Visual Studio second use" /> Properties Window. For more information about properties of the Solution Picker control, see <a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_SolutionPicker.htm">SolutionPicker</a>.</p>
+        <h2><a name="Managing"></a>Managing Solution Picker list contents</h2>
+        <p>The visibility of solutions in the Solution Picker is managed by <MadCap:variable name="BrandingMS.SharePoint" /> permissions. There is no explicit way to add solutions to, or exclude solutions from the list. To expose a solution to a particular user or group, the administrator needs to grant the appropriate permissions. Likewise, to keep from exposing a solution to a particular user or group, the administrator should configure permissions so that the user or group does not have permissions for the site containing the solution. For more information, see <a href="http://office.microsoft.com/en-us/sharepoint-foundation-help/roadmap-grant-permissions-for-a-site-HA101794118.aspx?CTT=1">Roadmap: Grant permissions for a site</a>.</p>
+        <h2><a name="Control"></a>Control behavior in nested hierarchies</h2>
+        <p>The Solution Picker control displays only the solutions within its child hierarchy, and will not list any solution above that hierarchy. For example, if ProviderPortal-2 is a child of ProviderPortal-1, ProviderPortal-2 will appear in the solution picker of ProviderPortal-1. However, ProviderPortal-1 will not appear within the solution picker of ProviderPortal-2. This has a potential impact on navigation, because once a user has navigated to ProviderPortal-2 the only way to get back to the parent ProviderPortal-1 is by using the back button.</p>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="../API/Ref/Microsoft.Amalga.AppFramework.Web.UserControls/T_SolutionPicker.htm">SolutionPicker</a>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild"><a href="AF_Con_UsingControls.htm">Toolbox controls</a>
+        </p>
+    </body>
+</html>

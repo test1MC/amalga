@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="144" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To zoom in or zoom out of  a report</p>
+        <ul>
+            <li>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, click the zoom icon (<img src="../Images/AN_zoom.PNG" />) in the report you want to expand. The report will be resized to its original size as designed by the report author.</li>
+            <li>Click the unzoom icon (<img src="../Images/AN_unzoom.PNG" />) to return the report to its normal view.</li>
+        </ul>
+    </body>
+</html>

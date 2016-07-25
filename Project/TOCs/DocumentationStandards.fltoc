@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1" conditions="Production.StyleMaster">
+    <TocEntry Title="Introduction" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Abstracts_and_Intro.htm">
+        <TocEntry Title="Style and Usage Resources" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Resources.htm" />
+        <TocEntry Title="Tools" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Tools.htm">
+        </TocEntry>
+        <TocEntry Title="Processes" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Processes.htm" />
+        <TocEntry Title="Folder Organization" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Folder_Organization.htm" />
+        <TocEntry Title="Output File Format" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Output_File_Formats.htm" />
+        <TocEntry Title="File Name Conventions" Link="/Content/Standards and Style Guides/Documentation Standards/DS_File_Name_Conventions.htm" />
+        <TocEntry Title="Variables" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Variables.htm" />
+        <TocEntry Title="File Tag Sets" Link="/Content/Standards and Style Guides/Documentation Standards/DS_FileTags.htm" />
+        <TocEntry Title="Linking Strategy" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Links.htm" />
+        <TocEntry Title="Table of Contents Organization" Link="/Content/Standards and Style Guides/Documentation Standards/DS_TOC.htm" />
+        <TocEntry Title="TopicTypes" Link="/Content/Standards and Style Guides/Documentation Standards/DS_TopicTypes.htm" />
+        <TocEntry Title="Indexing" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Indexing.htm" />
+        <TocEntry Title="Art" Link="/Content/Standards and Style Guides/Documentation Standards/DS_Art.htm" />
+    </TocEntry>
+</CatapultToc>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="621.0001" MadCap:lastWidth="1015" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Namespace.Entity_Common" />.ImagingOrder entity</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <MadCap:snippetBlock src="SummarySnippets/C.ImageOrder.flsnp" />
+        <p>
+            <MadCap:keyword term="entity definitions:[%=Namespace.Entity_Common%].ImagingOrder" /><span class="Label">Entity concept code</span>: IPC</p>
+        <p>The concept code column specifies the semantic tags  for an entity or its properties.</p>
+        <table>
+            <col />
+            <col />
+            <col />
+            <col style="width: 477px;" />
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Concept code</th>
+                    <th>Concept domain</th>
+                    <th>Description </th>
+                </tr>
+                <tr>
+                    <td>AccessionNumber</td>
+                    <td>IPC-1
+</td>
+                    <td>HL7
+</td>
+                    <td>Generated number that identifies the filler order for an imaging service request.</td>
+                </tr>
+                <tr>
+                    <td>EncounterID</td>
+                    <td>EncounterID
+</td>
+                    <td>Amalga
+</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Encounter.htm" target="" title="" alt="">Common.Beta.Encounter entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>ImagingOrderID</td>
+                    <td>ImagingOrderID
+</td>
+                    <td>Amalga
+</td>
+                    <td>Primary key of the <MadCap:variable name="Namespace.Entity_Common" />.ImagingOrder entity.</td>
+                </tr>
+                <tr>
+                    <td>Modality</td>
+                    <td>IPC-5
+</td>
+                    <td>HL7
+</td>
+                    <td>Type of equipment requested to acquire data during performance of a procedure step.</td>
+                </tr>
+                <tr>
+                    <td>OrderID</td>
+                    <td>OrderID
+</td>
+                    <td>Amalga
+</td>
+                    <td>Foreign key to the <MadCap:xref href="DP_GREF_Common.Order.htm" target="" title="" alt="">Common.Beta.Order entity</MadCap:xref>.</td>
+                </tr>
+                <tr>
+                    <td>PersonID</td>
+                    <td>PersonID
+</td>
+                    <td>Amalga
+</td>
+                    <td>Enterprise-level patient identifier.</td>
+                </tr>
+                <tr>
+                    <td>ProtocolCode</td>
+                    <td>IPC-6
+</td>
+                    <td>HL7
+</td>
+                    <td>One or more coded entries that identify the protocol, according to which the scheduled procedure step will be performed.</td>
+                </tr>
+                <tr>
+                    <td>RequestedProcedureID</td>
+                    <td>IPC-2
+</td>
+                    <td>HL7
+</td>
+                    <td>Identifier of the requested procedure.</td>
+                </tr>
+                <tr>
+                    <td>ScheduledProcedureStepID</td>
+                    <td>IPC-4
+</td>
+                    <td>HL7
+</td>
+                    <td>Identifier of a particular subprocedure.</td>
+                </tr>
+                <tr>
+                    <td>ScheduledProcedureStepLocation</td>
+                    <td>IPC-8
+</td>
+                    <td>HL7
+</td>
+                    <td>Locally defined physical location of the modality resource being requested for the scheduled procedure step.</td>
+                </tr>
+                <tr>
+                    <td>ScheduledStationAETitle</td>
+                    <td>IPC-9
+</td>
+                    <td>HL7
+</td>
+                    <td>Application entity title of the modality resource being requested for the scheduled procedure step.</td>
+                </tr>
+                <tr>
+                    <td>ScheduledStationName</td>
+                    <td>IPC-7
+</td>
+                    <td>HL7
+</td>
+                    <td>Instance of the modality resource being requested for the performance of a particular scheduled procedure step.</td>
+                </tr>
+                <tr>
+                    <td>StudyInstanceUID</td>
+                    <td>IPC-3
+</td>
+                    <td>HL7
+</td>
+                    <td>Globally unique identifier assigned to the imaging study.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

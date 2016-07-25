@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet
+  Type="Author"
+  Comment="My set of author tags"
+  conditions="Production.StyleMaster">
+  <FileTag
+    Name="brettz"
+    Comment="Brett Zalkan" />
+  <FileTag
+    Name="v-ccole"
+    Comment="Chris Cole" />
+  <FileTag
+    Name="v-ciwyco"
+    Comment="Cindy Wyckoff" />
+  <FileTag
+    Name="v-dennk"
+    Comment="Dennis Kennedy" />
+  <FileTag
+    Name="v-kathen"
+    Comment="Kathy Henry" />
+  <FileTag
+    Name="v-keith"
+    Comment="Keith Heston" />
+  <FileTag
+    Name="v-mattbr"
+    Comment="Matt Briggs" />
+  <FileTag
+    Name="v-padenc"
+    Comment="Pamela Denchfield" />
+  <FileTag
+    Name="v-ssiera"
+    Comment="Stefan Sierakowski" />
+  <FileTag
+    Name="v-sgreg"
+    Comment="Steven Gregersen" />
+  <FileTag
+    Name="v-terenb"
+    Comment="Terence Buencamino" />
+  <FileTag
+    Name="v-toarri"
+    Comment="Toni Arritola" />
+  <FileTag
+    Name="v-wpete"
+    Comment="Will Peterman" />
+  <FileTag
+    Name="hgross"
+    Comment="Harold Gross" />
+  <FileTag
+    Name="CrossProject-Do Not Modify"
+    Comment="For snippets or topics (such as fm-Copyright.htm) that are used in multiple projects and administered by Hg, BRZ or the editors." />
+  <FileTag
+    Name="v-pegrue"
+    Comment="Peter Gruenbaum" />
+  <FileTag
+    Name="v-jofing"
+    Comment="Jonathan &quot;Jack&quot; Fingold" />
+  <FileTag
+    Name="StyleMasterResource"
+    Comment="For support files hosted in StyleMaster" />
+  <FileTag
+    Name="v-wfren"
+    Comment="William French" />
+</CatapultFileTagSet>

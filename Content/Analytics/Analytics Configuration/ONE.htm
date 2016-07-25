@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1455" MadCap:lastWidth="568" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-kathen,Personas.Carlos: IT Admin,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create and assign a user role</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p class="abstract"> <![CDATA[ ]]><MadCap:keyword term="user roles;report authors" />This topic describes how to create a Report Author role, link it to an access level, and assign Report Author permissions to a user.</p>
+        <p>Before a clinical user can create reports, a system administrator must create a Report Author role, and grant the user Report Author permissions by assigning their user name to the Report Author role.</p>
+        <p class="LabelforProcedures">To create the Report Author role</p>
+        <ol>
+            <li>Log on to the server where you want to create the role.</li>
+            <li>
+                <p>Start <MadCap:variable name="BrandingMS.Doors PowerShell 2.0" />: </p>
+                <p>Click <span class="UIElementAction">Start</span>, click <span class="UIElementAction">All Programs</span>, click <span class="UIElementAction">Accessories</span>, click <span class="UIElementAction">Doors PowerShell</span>, and then click <span class="UIElementAction">Doors PowerShell</span>.</p>
+            </li>
+            <li>At the <MadCap:variable name="BrandingMS.Doors PowerShell" />&#160;command prompt, type <span class="InputText">import-module .\Microsoft.Amalga.Powershell.dll</span>.</li>
+            <li>
+                <p>To verify that the DataExplorerPrivateReportAuthor access level is listed, type <span class="InputText">Get-AmAccessLevel -ApplicationOrFeatureInstanceName DataExplorerPrivate</span>.</p>
+                <p class="note">You will see a list of access levels that exist. Verify that DataExplorerPrivateReportAuthor is listed.</p>
+            </li>
+            <li>
+                <p>To create the Report Author role, type <span class="InputText">Add-AmRole -RoleName <span class="InputTextVariable">ReportAuthor</span> -DisplayName "Report Author"</span>.</p>
+                <p class="note">The role name (-RoleName) can be anything you choose, but the same name must be used when assigning the role to a user.</p>
+            </li>
+            <li>To assign the role to an access level, type <span class="InputText">Add-AmRoleToAccessLevel -ApplicationOrFeatureInstanceName DataExplorerPrivate -AccessLevelName DataExplorerPrivateReportAuthor -Roles ReportAuthor</span>.</li>
+            <li>Type <span class="InputText">exit</span> to close the <MadCap:variable name="BrandingMS.Doors PowerShell" /> command prompt.</li>
+        </ol>
+        <p class="note">For more information about using this cmdlet, see the Add-AMRoleToAccessLevel documentation in the <MadCap:variable name="BrandingMS.Doors PowerShell" /> reference for <MadCap:variable name="BrandingHSG.AmalgaV3 second use" />.</p>
+        <p class="LabelforProcedures">To assign the role to a user</p>
+        <ul>
+            <li>
+                <p>Type <span class="InputText">Add-AmRoleMembership -RoleName ReportAuthor -UserAccount</span> - "<span class="InputTextVariable">DOMAIN\acctname</span>" -DirectoryService MASTER.</p>
+                <p class="note">Make sure that you use the same role name (-RoleName) that you used when creating the role.</p>
+                <p class="note">For more information about using this cmdlet, see the Add-AmRoleMembership documentation in the <MadCap:variable name="BrandingMS.Doors PowerShell" /> reference for <MadCap:variable name="BrandingHSG.AmalgaV3 second use" />.</p>
+            </li>
+        </ul>
+        <p class="LabelforProcedures">To verify that the user has Report Author permissions</p>
+        <ol>
+            <li>On the server, type <span class="InputText">IISReset.exe</span>.</li>
+            <li>Have the user who was given Report Author permissions log on to <MadCap:variable name="BrandingHSG.Amalga Short" />.</li>
+            <li>From the <MadCap:variable name="UI-Labels.Patient Lists" /> landing page, open a patient list.</li>
+            <li>Click the Open the <MadCap:variable name="FeatureBrussels.Analytics" /> pane icon (<img src="../Images/AN_graph_mode.png" /> ).</li>
+            <li>Verify that the <strong>Create a report</strong> link is displayed.</li>
+        </ol>
+        <p class="LabelforProcedures">To remove Report Author permissions from a user</p>
+        <ol>
+            <li>Start <MadCap:variable name="BrandingMS.Doors PowerShell" />.</li>
+            <li>Type <span class="InputText">Remove-AmRoleMembership -RoleName ReportAuthor -UserAccount</span> "<span class="InputTextVariable">Domain\acctname</span>".</li>
+        </ol>
+        <p class="note">For more information about using this cmdlet, see the Remove-AmRoleMembership documentation in the <MadCap:variable name="BrandingMS.Doors PowerShell" /> reference for <MadCap:variable name="BrandingHSG.AmalgaV3 second use" />.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../AN_Con_Roles_Permissions.htm" target="" title="" alt=""> Roles and permissions  on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

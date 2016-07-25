@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1120" MadCap:lastWidth="1576" MadCap:fileTags="ReleaseTarget.CTP1,Personas.Debbie Data: DBA,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Materializer: SQL query to alter the binding view</h1>
+        <p class="PersonaDBA">&#160;</p><pre xml:space="preserve" class="code">Use [ClinicalData]
+Go
+/*This stored procedure alter the "Entity View, binding" to read from the "Materialized Entity View" table. 
+Prior to alter the view, you must validate that the "Materialized Entity View" have been fully populated. 
+You can compare the record count between the "Entity View, defining" view and "Materialized Entity View" table. 
+If the difference is less than the batch size you specify in the Materializer service configuration (default value is 500), 
+then your "Materialized Entity View" table is ready and you may proceed with altering the view procedure below:
+
+Procedure:
+1. Copy and paste the SQL Script to SQL Server Management Studio
+2. Connect to the server hosting the ClinicalData database for Amalga V3
+3. Update @namespace and @entityname variable with the entity namespace and entity name to be materialized
+4. Execute the SQL Script in its entirely
+5. Review the output message if there is any error when altering the view.
+
+Rollback procedure: In the case where you need to rollback, you can alter the view as follows:
+	ALTER VIEW EntityViews.v_bind&lt;Entity NameSpace&gt;&lt;Entity Name&gt;
+	 AS
+	SELECT * FROM EntityViews.v_def&lt;Entity NameSpace&gt;&lt;Entity Name&gt;
+Note to replace "." in the namespace with "_"
+For example:
+	ALTER VIEW EntityViews.v_bindCommon_BetaPatient
+	 AS
+	SELECT * FROM EntityViews.v_defCommon_BetaPatient
+*/
+
+DECLARE @entityname			AS sysname; 
+DECLARE @namespace			AS sysname;
+SET @namespace  = N'Common.Beta'	-- update with the name of your entity namespace
+SET @entityname = N'Patient';		-- update with the name of your entity
+
+-- Sanitize the namespace and entityname
+SET @namespace = REPLACE (@namespace, '.', '_')
+SET @entityname = REPLACE (@entityname, '.', '_')
+
+-- Define view name and materialized table name
+DECLARE @materializerschema		AS sysname = N'EntityViews';
+DECLARE @definingview			AS sysname = N'v_def' + @namespace+@entityname;
+DECLARE @bindingview			AS sysname = N'v_bind' + @namespace+@entityname;
+DECLARE @materializedtable		AS sysname = @namespace+@entityname + N'Materialized';
+
+-- obtain the latest version of view and table name
+SELECT  @definingview= ISNULL(MAX(name),@definingview) FROM sys.objects WHERE TYPE = N'V' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @definingview + N'%';
+SELECT  @bindingview= ISNULL(MAX(name),@bindingview) FROM sys.objects WHERE TYPE = N'V' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @bindingview + N'%';
+SELECT  @materializedtable= ISNULL(MAX(name),@materializedtable) FROM sys.objects WHERE TYPE = N'U' and OBJECT_SCHEMA_NAME(object_id) = @materializerschema and name like  @materializedtable + N'%';
+ 
+-- ALTER binding view to read from materialized table
+DECLARE @SQLString AS NVARCHAR(MAX)
+DECLARE @SQLString_prev AS NVARCHAR(MAX)
+-- collect the previous entity
+SELECT @SQLString_prev = REPLACE(definition, N'CREATE VIEW', N'ALTER VIEW') FROM  sys.sql_modules
+WHERE OBJECT_NAME(object_id) = @bindingview and OBJECT_SCHEMA_NAME(OBJECT_ID) = @materializerschema
+-- prepare sql statement to alter the binding view
+SET @SQLString = N'ALTER VIEW ' + @materializerschema + N'.' + @bindingview +
+N' AS 
+SELECT * FROM ' + @materializerschema + '.' + @materializedtable 
+
+BEGIN TRY
+	EXECUTE sp_executesql @SQLString
+	PRINT N'Binding View ' + @materializerschema + N'.' + @bindingview + N' has been updated to read from materialized table'
+	PRINT N'To roll back the changes from reading from the materialized table execute the following'  +CHAR(13) + CHAR(13) + @SQLString_prev
+END TRY
+BEGIN CATCH
+	PRINT N'Fail in updating binding view ' + @materializerschema + '.' + @bindingview
+	PRINT ERROR_NUMBER() 
+	PRINT ERROR_MESSAGE() 
+END CATCH</pre>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Task_MaterializerRedirect.htm" target="" title="" alt="">Redirect an entity view to a materialized entity view</MadCap:xref>
+        </p>
+    </body>
+</html>

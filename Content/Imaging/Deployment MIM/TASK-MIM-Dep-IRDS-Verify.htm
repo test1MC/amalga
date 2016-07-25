@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="Personas.Carlos: IT Admin,TopicType.Procedure,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Releases.Investigation Use" MadCap:lastBlockDepth="8" MadCap:lastHeight="773" MadCap:lastWidth="488">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Verify the <MadCap:variable name="Imaging.Imaging Registry and Document (application)" /> application</h1>
+        <p class="PersonaITAdmin">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging:IRDA deployment" />The<MadCap:variable name="Imaging.IRDA" /> should be installed on a logical host at the central site. </p>
+        <p class="LabelforProcedures">To verify the deployment of the <MadCap:variable name="Imaging.IRDA" /></p>
+        <ol>
+            <li>From Doors <span class="Label">Start</span>, click <span class="Label">All Programs</span>, point to <span class="Label"><MadCap:variable name="BrandingMS.Microsoft Visual Studio" style="mc-tag-and-class: ;" /></span>, point to <span class="Label">Visual Studio Tools</span>, and then click <span class="Label">Visual Studio Command Prompt</span>.</li>
+            <li>Type:<span class="InputText"> WCFTestClient</span>.</li>
+            <li>Right-click <span class="Label">My Service Project</span> and then click <span class="Label">Add </span>service.</li>
+            <li>Type: <span class="InputText">https://<span class="InputTextVariable">Your_Machine_FQDN</span>:8801/<span class="InputTextVariable">Your_Instance_Name</span>/Microsoft.Amalga.Imaging.Registry.ImagingRegistryService.svc</span><p>in the<span class="Label"> Add service</span> box</p></li>
+            <li>Edit the configuration by changing <span class="Label">MaxBufferSize </span>and <span class="Label">MaxReceivedMessageSize </span>from the default to <span class="InputText">1073741824</span>.</li>
+            <li>Type:<span class="InputText"> 28cc695d-4891-4a47-827a-c7dcc3a92ef0</span> in the <span class="Label">patient ID</span> box.</li>
+            <li>Click <span class="UIElementAction">Invoke</span>. Verify the presence of the study, series, and instance-level metadata.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="LAN-MIM-Dep.htm">Installation steps on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

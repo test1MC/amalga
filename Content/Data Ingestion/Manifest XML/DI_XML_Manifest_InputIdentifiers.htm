@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="824" MadCap:lastWidth="624" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.TAP,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>InputIdentifiers element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="InputIdentifiers element" />Declares one or more source identifiers for enterprise identifier mapping.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;DataParserConfiguration&gt;
+            &lt;EnterpriseId&gt;
+                &lt;EnterpriseIdAction&gt; Action=<i>String</i> AnchorTable=<i>String</i> &gt;<b>
+                   &lt;InputIdentifiers&gt;</b>
+                      &lt;EncounterIdentifier&gt;...&lt;/EncounterIdentifier&gt;
+                      &lt;EncounterSetIdentifier&gt;...&lt;/EncounterSetIdentifier&gt;
+                      &lt;PatientRecordIdentifier&gt;...&lt;/PatientRecordIdentifier&gt;
+                      &lt;PersonIdentifier&gt;...&lt;/PersonIdentifier&gt;
+                      &lt;ProviderIdentifier&gt;...&lt;/ProviderIdentifier&gt;<b>
+                   &lt;/InputIdentifiers&gt;</b>
+                &lt;/EnterpriseIdAction&gt;
+             &lt;/EnterpriseId&gt;
+          &lt;/DataParserConfiguration&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-<i>n</i>: Optional element that can occur one or more times.
+<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_EnterpriseIdAction.htm">EnterpriseIdAction</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="DI_XML_Manifest_EncounterIdentifier.htm">EncounterIdentifier</a>, <a href="DI_XML_Manifest_EncounterSetIdentifier.htm">EncounterSetIdentifier</a>, <a href="DI_XML_Manifest_PatientRecordIdentifier.htm">PatientRecordIdentifier</a>, <a href="DI_XML_Manifest_PersonIdentifier.htm">PersonIdentifier</a>, <a href="DI_XML_Manifest_ProviderIdentifier.htm">ProviderIdentifier</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">InputIdentifier</span> element contains one or more source identifier parameters. A source identifier parameter can represent  an encounter, encounter set, patient record, person, or provider. The <span class="MarkupLanguageElements">InputIdentifiers</span> element must include at least one source identifier, but it is not mandatory to define every source identifier.</p>
+        <p>Declare the <span class="MarkupLanguageElements">InputIdentifiers</span> element in the service manifest of the <MadCap:variable name="Applications.Data Parser application" />. Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="../DI_XML_ParseSrvEx.htm">Data parser: service manifest example</a>
+        </p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_DataParserConfiguration.htm">DataParserConfiguration element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

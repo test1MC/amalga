@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:lastBlockDepth="6" MadCap:lastHeight="683.6667" MadCap:lastWidth="608" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>IdleConnectionTimeout setting</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="IdleConnectionTimeout setting" />Sets the number of seconds for shredding to pause when there is no data to be processed.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="IdleConnectionTimeout" Type="System.Int32"&gt;
+   &lt;DefaultValue&gt;...&lt;/DefaultValue&gt;
+&lt;/Setting&gt; ]</span></p></pre>
+        <h4>Setting characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and range</td>
+                    <td>Integer with a valid range of 5000 to 10000 milliseconds.</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Target applications</td>
+                    <td>
+                        <p><a href="../DI_Con_AcquireSummary.htm">Feed Acquisition</a> (service manifest)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Example</h4>
+        <p>A value of 5000 milliseconds (5 seconds) should match the connection requirements of the source system and can be used as a default value in most cases. In the following example, a new connection will replace the old connection in 5 seconds if the old connection remains idle during the waiting time.</p><pre xml:space="preserve">&lt;Setting Name="IdleConnectionTimeout" Type="System.Int32"&gt;
+                &lt;DefaultValue&gt;5000&lt;/DefaultValue&gt;
+&lt;/Setting&gt;</pre>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Ovw_PipelineConfigSettings.htm">Pipeline configuration settings</a>
+        </p>
+        <p>
+            <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm" target="" title="" alt="">Setting element</MadCap:xref>
+        </p>
+    </body>
+</html>

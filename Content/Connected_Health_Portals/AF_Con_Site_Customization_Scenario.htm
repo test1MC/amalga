@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="519" MadCap:lastWidth="997" MadCap:fileTags="TopicType.Concept,TopicOwner.v-kathen,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.7 - Editing issues resolved,Personas.All" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Customize your sites</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes a typical scenario for creating your own <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> solutions using foundational site definitions.</p>
+        <p>The <a href="../AppFramework_NonReference/AF_Con_PagesFoundational.htm">Foundational site definitions</a> provide a starting point for the development of solutions that can be deployed for patient, provider, and staff access. Using the foundation sites provisioned with baseline master pages available in <MadCap:variable name="BrandingMS.SharePoint" />, you can create a customized experience for your customers.</p>
+        <p>The following steps represent a typical, but not comprehensive, scenario for customization:</p>
+        <ul>
+            <li>Customize the look and feel of the portal header (logo, background color).</li>
+            <li>Create a new solution site in <MadCap:variable name="BrandingMS.SharePoint" />.</li>
+            <li>
+                <p>Link that site to the correct parent site so that it will appear in the solution picker.</p>
+                <p class="note">If you use the Staff Portal site template, the linking will be done automatically. If you use a different site template, contact your <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> engineering partner for instructions.</p>
+            </li>
+        </ul>
+        <ul>
+            <li>Create a new empty Amalga project in <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> and create pages for deployment to your sites.</li>
+            <li>
+                <p>Add controls to your pages.  These can be any of the existing <MadCap:variable name="BrandingMS.Toolbox first use" /> controls (see <MadCap:xref href="../AppFramework_NonReference/AF_Con_Controls.htm" target="" title="" alt=""> controls</MadCap:xref><MadCap:conditionalText MadCap:conditions="Production.doNOTbuild"> and <a href="../AppFramework_NonReference/AF_Con_ExtendControls.htm">Creating a new control</a></MadCap:conditionalText>) or you can create your own using the <MadCap:variable name="BrandingHSG.Amalga Short" /> templates and base control classes accessed by clicking <span class="UIElementAction">Add Item</span> in <MadCap:variable name="BrandingMS.Visual Studio second use" />.</p>
+            </li>
+            <li>Deploy the project to the site so that the pages will display in the Carousel Navigation bar</li>
+        </ul>
+        <p>For more information  about creating a customized experience, contact your <MadCap:variable name="BrandingHSG.AmalgaV3 first use" /> engineering partner.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../AppFramework_NonReference/AF_Con_Controls.htm" target="" title="" alt=""> controls</MadCap:xref>
+        </p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../AppFramework_NonReference/AF_Con_ExtendControls.htm" target="" title="" alt="" MadCap:conditions="Production.doNOTbuild">Creating a new  control</MadCap:xref>
+        </p>
+    </body>
+</html>

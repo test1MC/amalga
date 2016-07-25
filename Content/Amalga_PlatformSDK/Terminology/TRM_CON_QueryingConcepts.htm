@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="2369.667" MadCap:lastWidth="728" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,ReleaseTarget.TAP,Personas.Elvis: App Dev,Status.60 - Revising,EditingTags.7 - Editing issues resolved" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Querying concepts</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">
+            <MadCap:keyword term="Terminology platform application:concepts;concepts:Terminology platform application;GetConcepts method:Terminology platform application;GetConceptsById method:Terminology platform application;ITerminologyQueryService interface:Terminology platform application;Microsoft.Terminology entity namespace:Concept entity;Concept entity:Microsoft.Terminology entity namespace;SearchFilter class:Terminology platform application;Terminology platform application:GetConcepts method;Terminology platform application:GetConceptsById method;Terminology platform application:ITerminologyQueryService interface;Terminology platform application:SearchFilter class;Terminology platform application:Concept class;Concept class:Terminology platform application;TerminologyService service:Terminology platform application;Terminology platform application:TerminologyService service" />This topic describes how to retrieve information for concepts stored by the Terminology hosted application.</p>
+        <p>You can use either the ITerminologyQueryService service contract, from the TerminologyService service, or the Microsoft.Terminology.Beta.Concept entity to retrieve information about concepts from the Terminology hosted application.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Using" target="" title="" alt="">Using ITerminologyQueryService on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Using2" target="" title="" alt="">Using Microsoft.Terminology.Beta.Concept on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Using"></a>Using ITerminologyQueryService</h2>
+        <p>You can use the GetConcepts operation, included in the ITerminologyQueryService service contract from the TerminologyService service, to retrieve an array of Concept objects, filtered by passing an array of SearchFilter objects. If you know the identifiers for the concepts to be retrieved, you can also use the GetConceptsById operation to retrieve an array of Concept objects, given an array of strings containing concept identifiers.</p>
+        <p>When using the GetConcepts operation, the array of SearchFilter objects represents the logical conjunction of all search filters; that is, the set of search filters for the operation is treated as a logical AND. You can set the following properties for each SearchFilter object to filter the concepts returned by the operation.</p>
+        <table style="width: 100%;">
+            <col>
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>PropertyName</td>
+                    <td>The name of the concept property on which to filter the search.</td>
+                </tr>
+                <tr>
+                    <td>PropertyValue</td>
+                    <td>The value of the concept property, specified in the PropertyName property, on which to filter the search.</td>
+                </tr>
+                <tr>
+                    <td>SearchType</td>
+                    <td>
+                        <p>The type of search to perform, as determined by one of the following SearchType enumeration values:</p>
+                        <ul>
+                            <li>
+                                <p>ExactMatch</p>
+                                <p>The value specified in PropertyValue must match exactly the value of the property specified in PropertyName.</p>
+                            </li>
+                            <li>
+                                <p>PrefixMatch</p>
+                                <p>The value of the property specified in PropertyName must start with the value specified in PropertyValue.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Example</h3>
+        <p>The following example invokes the GetConcepts operation from the ITerminologyQueryService service contract to return an array of Concept objects representing the concepts for which the concept name starts with "Brevibacillus".</p><pre xml:space="preserve">public Concept[] GetConceptsFromService()
+{
+    // Use GetConcepts from ITerminologyQueryService to retrieve
+    // an array of Concept objects.
+
+    // First, resolve the service endpoint and connect to the service.
+    // Resolve the service endpoint.
+    ServiceEndPoint terminologyEndPoint = HostedServiceResolver.ResolveServiceEndPoint(
+       (ApplicationDependency)ApplicationConfiguration.Dependencies["TerminologyApplicationDependency"],
+       new Guid("8c3be61d-021b-419a-ad9a-4c74b7b115ea"),
+       "Microsoft.Amalga.Terminology.ServiceContracts.ITerminologyQueryService");
+
+    // Open the client channel and instantiate the WCF client.
+    ITerminologyQueryService terminologyServiceClient =
+       AmalgaWcfChannelFactory&lt;ITerminologyQueryService&gt;.CreateChannel(terminologyEndPoint);
+
+    // Define an array of SearchFilter objects, and add a new SearchFilter 
+    // object that limits the search to the clinical concepts for which the name
+    // of the concept starts with "Brevibacillus".
+    SearchFilter[] testArray = new SearchFilter[1] {
+        new SearchFilter() {
+            SearchType = SearchType.PrefixMatch,
+            PropertyName = SearchPropertyName.ConceptName,
+            PropertyValue = "Brevibacillus"
+        }
+    };
+
+    // Invoke the operation from the service, and
+    // return the resulting array of Concept objects.
+    return (Concept[])terminologyServiceClient.GetConcepts(testArray);
+}
+</pre>
+        <h2><a name="Using2"></a>Using Microsoft.Terminology.Beta.Concept</h2>
+        <p>You can also use the Concept entity, included in the Microsoft.Terminology.Beta entity namespace, to retrieve concepts. Once an application view for the Concept entity is added to the virtual schema of your hosted application, you can then use <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from the application view. For more information about using <MadCap:variable name="FeatureName.Amalga ADO.NET" /> to retrieve information from application views, see <MadCap:xref href="../DataConnector/DAT_CON_RetrievingDataDataReader.htm" target="" title="" alt="">Retrieving data using AmalgaDbDataReader
+ on page 1</MadCap:xref>.</p>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Tasks</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_QueryingRelationships.htm" target="" title="" alt="">Querying relationships on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">References</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="../../DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Concept.htm" target="" title="" alt="">Microsoft.Terminology.Concept entity on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="">Concepts</p>
+        <p MadCap:conditions="">
+            <MadCap:xref href="TRM_CON_Concepts.htm" target="" title="" alt="">Concepts on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1588" MadCap:lastWidth="381" MadCap:fileTags="TopicOwner.v-ccole,ReleaseTarget.CTP1,Status.70 - Complete,EditingTags.7 - Editing issues resolved" MadCap:conditions="Production.doNOTbuild,Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Rebuild a materialized entity view after an update</h1>
+        <p class="PersonaDBA">&#160;</p>
+        <p>
+            <MadCap:keyword term="materialized entity view:rebuild" />When the defining query of an entity is updated for an existing materialized entity view, you must rebuild the materialized entity view.</p>
+        <p class="LabelforProcedures">To rebuild a materialized entity view after updating an entity defining query</p>
+        <ol>
+            <li>Stop the Materializer application service instance.</li>
+            <li>
+                <p>Unregister the Materializer application instance using the following syntax:</p>
+                <p class="Syntax">Unregister-AmInstanceWithLogicalHostInstance -InstanceType ApplicationInstance -InstanceName <span class="Placeholder">ApplicationInstanceName</span>-LogicalHostName <span class="Placeholder">LogicalHostName</span></p>
+                <p>For example, type the following cmdlet to unregister the MaterializerApplication_Patient instance from the Fabric logical host:</p>
+                <p class="InputText">Unregister-AmInstanceWithLogicalHostInstance -InstanceType ApplicationInstance -InstanceName MaterializerApplication_Patient -LogicalHostName FabricLogicalHost</p>
+            </li>
+            <li>
+                <p>From the computer, cluster, or network load-balanced (NLB) node where the application was deployed, type the following cmdlet:</p>
+                <p class="InputText">Sync-PhysicalHost</p>
+            </li>
+            <li>
+                <p>Unpublished the Materializer application instance using the following syntax:</p>
+                <p class="Syntax">Unpublish-AmApplicationInstance <span class="Placeholder">ApplicationInstanceName</span></p>
+                <p>For example, type the following cmdlet to unpublish the MaterializedApplication_Patient instance:</p>
+                <p class="InputText">Unpublish-AmApplicationInstance MaterializerApplication_Patient</p>
+            </li>
+            <li>
+                <p>Prepare a new Materializer application manifests for the new instance. Publish and deploy Materialization application. For setup instructions, see  <MadCap:xref href="DP_Task_MaterializeApp.htm" target="" title="" alt="">Materializer application</MadCap:xref>.</p>
+            </li>
+            <li>
+                <p>Redirect an entity view to the new SQL Server table. For instructions, <MadCap:xref href="DP_Task_MaterializerRedirect.htm" target="" title="" alt="">Redirect an entity view to a materialized entity view</MadCap:xref>.</p>
+            </li>
+        </ol>
+        <p class="LabelforProcedures">(Optional) To clean up extra SQL Server objects</p>
+        <p>You can remove older versions of defining view, binding view, and materialized table. When an update is made on the defining query, the materializer process creates a new version for a set of defining view, binding view, and SQL Server table. A materialized entity view only uses the latest version of the view and table. You can remove all the views and tables that are not used by the process by dropping the SQL Server object from SQL Server Management Studio using the following statements:<br /></p>
+        <ul>
+            <p class="code">DROP VIEW EntityViews.v_def<span class="Placeholder">NamespaceEntityname</span>_<span class="Placeholder">YYMMDDHHMMSS</span></p>
+            <p class="code">DROP VIEW EntityViews.v_bind<span class="Placeholder">NamespaceEntityname</span>_<span class="Placeholder">YYMMDDHHMMSS</span></p>
+            <p class="code">DROP TABLE EntityViews.<span class="Placeholder">NamespaceEntityname</span>Materialized_<span class="Placeholder">YYMMDDHHMMSS</span></p>
+        </ul>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="DP_Ovw_MaterializeView.htm" target="" title="" alt="">Materialized entity views</MadCap:xref>
+        </p>
+    </body>
+</html>

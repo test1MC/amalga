@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="973" MadCap:lastWidth="750" MadCap:fileTags="TopicOwner.v-dennk,TopicType.Ref_General,Personas.Elvis: App Dev,Status.70 - Complete,ReleaseTarget.TAP,EditingTags.7 - Editing issues resolved">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Contract element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the Contract element.</p>
+        <p>Declares a service contract exposed by a hosted <MadCap:variable name="BrandingMS.WCF service" />. </p>
+        <h4>Syntax</h4>
+        <p class="Syntax"><b>&lt;Contracts&gt;<br />&#160;&#160;&#160;&lt;Contract Name = "<span class="Parameter">string</span>" &gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&lt;Bindings&gt;...&lt;/Bindings&gt;<br />&#160;&#160;&#160;&lt;/Contract&gt;<br />&lt;/Contracts&gt;</b>
+        </p>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>1-<i>n</i>:
+Required element that can occur one or more times.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="SDK_XML_Manifest_Contracts.htm">Contracts</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td><a href="SDK_XML_Manifest_Bindings.htm">Bindings</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Attributes</h4>
+        <table style="width: 100%;">
+            <col style="width: 167px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <p>(Required string.) The fully qualified name of the object or member exposed by the service contract. For example, "Namespace.Application.ServiceInterface".</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">Contract</span> element represents a service contract, which determines what objects or members are exposed for use by other hosted applications, as well as the bindings that apply to that service contract.</p>
+    </body>
+</html>

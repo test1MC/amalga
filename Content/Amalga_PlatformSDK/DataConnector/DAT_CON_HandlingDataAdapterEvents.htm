@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="834" MadCap:lastWidth="630.6666" MadCap:fileTags="TopicType.Concept,TopicOwner.v-dennk,Status.50 - InTech Review,ReleaseTarget.TAP,Personas.Elvis: App Dev,EditingTags.4 - Ready for Writer" MadCap:conditions="Region.US">
+    <head>
+        <MadCap:changeData>
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="4" MadCap:timestamp="2012-03-12T23:42:49.2451116-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="5" MadCap:timestamp="2012-03-12T23:42:49.2763118-07:00" />
+            <MadCap:RemoveChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="6" MadCap:timestamp="2012-03-12T23:45:29.9890676-07:00" />
+            <MadCap:AddChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="7" MadCap:timestamp="2012-03-12T23:45:48.4018576-07:00" />
+            <MadCap:BindChange MadCap:userName="v-labenn" MadCap:initials="LLB" MadCap:id="8" MadCap:timestamp="2012-03-12T23:46:19.9452598-07:00" />
+        </MadCap:changeData>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Handling AmalgaDbDataAdapter events</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes the events supported by the <span class="codeEntity">AmalgaDbDataAdapter </span>object in <MadCap:variable name="FeatureName.Amalga ADO.NET" /> and how to handle them.</p>
+        <p>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object exposes the following three events that you can use to respond to changes made to data:</p>
+        <ul>
+            <li>
+                <p>RowUpdating</p>
+                <p>The <span class="ForeignCodeElements">RowUpdating</span> event occurs when an UPDATE, INSERT, or DELETE operation on a row is about to begin, as a result of the invocation of the <span class="ForeignCodeElements">Update</span> method.</p>
+            </li>
+            <li>
+                <p>RowUpdated</p>
+                <p>The <span class="ForeignCodeElements">RowUpdated</span> event occurs when an UPDATE, INSERT, or DELETE operation on a row has completed, as a result of the invocation of the <span class="ForeignCodeElements">Update</span> method.</p>
+            </li>
+            <li>
+                <p>FillError</p>
+                <p>The <span class="ForeignCodeElements">FillError</span> event occurs when an error occurs during the invocation of the <span class="ForeignCodeElements">Fill</span> method.</p>
+            </li>
+        </ul>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Handling" target="" title="" alt="">Handling the RowUpdating and RowUpdated events on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Handling2" target="" title="" alt="">Handling the FillError event on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Handling"></a>Handling the RowUpdating and RowUpdated events</h2>
+        <p>The <span class="ForeignCodeElements">RowUpdating</span> event is raised before any update to a row from the <span class="ForeignCodeElements">DataSet</span> object has been processed by an instance of the DataConnector platform application. The <span class="ForeignCodeElements">RowUpdated</span> event is raised after any update to a row from the <span class="ForeignCodeElements">DataSet</span> object has been processed by an instance of the DataConnector platform application. </p>
+        <p>As a result, you can use the <span class="ForeignCodeElements">RowUpdating</span> event to modify update behavior before it happens, to provide additional handling when an update will occur, to retain a reference to an updated row, to cancel the current update and schedule it for a batch process to be processed later, and so on. </p>
+        <p>You can use the <span class="ForeignCodeElements">RowUpdated</span> event to respond to errors and exceptions that occurred during the update. You can add information to the <span class="ForeignCodeElements">DataSet</span> object, provide retry logic, and so on.</p>
+        <p>The <span class="ForeignCodeElements">RowUpdatingEventArgs</span> and <span class="ForeignCodeElements">RowUpdatedEventArgs</span> objects, passed as arguments to the <span class="ForeignCodeElements">RowUpdating</span> and <span class="ForeignCodeElements">RowUpdated</span> events, respectively, include the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Command</td>
+                    <td>The <span class="ForeignCodeElements">AmalgaDbCommand</span> object used to perform the operation.</td>
+                </tr>
+                <tr>
+                    <td>Errors</td>
+                    <td>A <span class="ForeignCodeElements">System.Exception</span> object representing any errors generated when the <span class="ForeignCodeElements">AmalgaDbCommand</span> object in the <span class="ForeignCodeElements">Command</span> property was executed.</td>
+                </tr>
+                <tr>
+                    <td>Row</td>
+                    <td>The <span class="ForeignCodeElements">DataRow</span> object representing the row to be sent to the DataConnector instance for the operation.</td>
+                </tr>
+                <tr>
+                    <td>StatementType</td>
+                    <td>
+                        <p>A <span class="ForeignCodeElements">StatementType</span> enumeration value describing the type of SQL statement to be executed. The property is set to one of the following<MadCap:annotation MadCap:createDate="2012-03-12T23:41:43.7222753-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="should the enumeration values in the bulleted list below be styled as .codeEntity?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:42:18.8849007-07:00"> enumeration values</MadCap:annotation>:</p>
+                        <ul>
+                            <li>
+                                <p>Batch</p>
+                            </li>
+                            <li>
+                                <p>Delete</p>
+                            </li>
+                            <li>
+                                <p>Insert</p>
+                            </li>
+                            <li>
+                                <p>Select</p>
+                            </li>
+                            <li>
+                                <p>Update</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>
+                        <p>An <span class="ForeignCodeElements">UpdateStatus</span> enumeration value describing the action to take <MadCap:change MadCap:changes="5">on</MadCap:change><MadCap:change MadCap:changes="4">with regard to </MadCap:change>the current and remaining rows during the operation. When the event is raised, the property is set to one of the following enumeration values:</p>
+                        <ul>
+                            <li>
+                                <p>
+                                    <MadCap:annotation MadCap:createDate="2012-03-12T23:42:59.9787980-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="same question as above" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:43:09.3544581-07:00">Continue</MadCap:annotation>
+                                </p>
+                                <p>No errors occurred during the update.</p>
+                            </li>
+                            <li>
+                                <p>ErrorsOccurred</p>
+                                <p>One or more errors occurred during the update.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TableMapping</td>
+                    <td>A <span class="ForeignCodeElements">DataTableMapping</span> object representing the table mapping to be sent to the DataConnector instance for the operation.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>You can use the <span class="ForeignCodeElements">Status</span> property to determine if an error has occurred during the update and, if desired, to control the actions against the current and resulting rows. When the event occurs, the <span class="ForeignCodeElements">Status</span> property is set to either <span class="ForeignCodeElements">UpdateStatus.Continue</span> or <span class="ForeignCodeElements">UpdateStatus.ErrorsOccurred</span>. The following table shows the <span class="ForeignCodeElements">UpdateStatus</span> enumeration values to which you can set the <span class="ForeignCodeElements">Status</span> property to control later actions during the update.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Enumeration value</th>
+                    <th>Resulting action</th>
+                </tr>
+                <tr>
+                    <td>Continue</td>
+                    <td>Continue the update.</td>
+                </tr>
+                <tr>
+                    <td>ErrorsOccurred</td>
+                    <td>Abort the update and throw an exception.</td>
+                </tr>
+                <tr>
+                    <td>SkipCurrentRow</td>
+                    <td>Ignore the current row and continue the update.</td>
+                </tr>
+                <tr>
+                    <td>SkipAllRemainingRows</td>
+                    <td>Abort the update and do not throw an exception.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Setting the <span class="ForeignCodeElements">Status</span> property to <span class="ForeignCodeElements">UpdateStatus.ErrorsOccurred</span> causes an exception to be thrown. You can control which exception is thrown by setting the <span class="ForeignCodeElements">Errors</span> property to the desired exception. Using one of the other <span class="ForeignCodeElements">UpdateStatus</span> enumeration values for the <span class="ForeignCodeElements">Status</span> property prevents an exception from being thrown.</p>
+        <p>You can also use the <span class="ForeignCodeElements">ContinueUpdateOnError</span> property of the <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object to handle errors for updated rows. If the property is set to true, when an update to a row results in an exception being thrown, the text of the exception is placed in the <span class="ForeignCodeElements">RowError</span> property of the <span class="ForeignCodeElements">DataRow</span> object for that particular row, and processing continues without throwing an exception. <MadCap:annotation MadCap:createDate="2012-03-12T23:44:47.4495513-07:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="this &quot;action&quot;?" MadCap:editor="v-labenn" MadCap:editDate="2012-03-12T23:44:52.0144019-07:00">This</MadCap:annotation> enables you to respond to errors when the <span class="ForeignCodeElements">Update</span> method is complete, in contrast to the <span class="ForeignCodeElements">RowUpdated</span> event, which enables you to respond to errors when the error is encountered.</p>
+        <p>Two additional properties, <span class="ForeignCodeElements">RecordsAffected</span> and <span class="ForeignCodeElements">RowCount</span>, are provided for the <span class="ForeignCodeElements">RowUpdatedEventArgs</span> object to indicate, respectively, how many records were affected by the update and how many rows were processed in a batch of updated records.</p>
+        <h2><a name="Handling2"></a>Handling the FillError event</h2>
+        <p>The <span class="ForeignCodeElements">AmalgaDbDataAdapter</span> object raises the <span class="ForeignCodeElements">FillError</span> event when an error occurs during the invocation of the <span class="ForeignCodeElements">Fill</span> method. This type of error <MadCap:change MadCap:changes="6">commonly </MadCap:change>occurs when the data in a row being added <MadCap:change MadCap:changes="7">can</MadCap:change><MadCap:change MadCap:changes="6">could </MadCap:change>not be converted to a .NET&#160;Framework type without some loss of precision.</p>
+        <p>If an error occurs during a <span class="ForeignCodeElements">Fill</span> method<MadCap:change MadCap:changes="7"> action</MadCap:change>, the current row is not added to the <span class="ForeignCodeElements">DataTable</span> object. The <span class="ForeignCodeElements">FillError</span> event enables you to resolve the error and add the row, or to ignore the excluded row and continue the <span MadCap:changes="8" class="codeEntity">Fill </span>method.</p>
+        <p>The <span class="ForeignCodeElements">FillErrorEventArgs</span> object, passed as an argument to the <span class="ForeignCodeElements">FillError</span> event, includes the following properties<MadCap:change MadCap:changes="7">.</MadCap:change><MadCap:change MadCap:changes="6">:</MadCap:change></p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Continue</td>
+                    <td>A Boolean value indicating whether to continue the operation. Setting this property to false halts the operation and throws an exception. Setting this property to true continues the operation despite the error and an exception is not thrown.</td>
+                </tr>
+                <tr>
+                    <td>DataTable</td>
+                    <td>The <span class="ForeignCodeElements">DataTable</span> object being filled when the error occurred.</td>
+                </tr>
+                <tr>
+                    <td>Errors</td>
+                    <td>A <span class="ForeignCodeElements">System.Exception</span> object representing the error that occurred.</td>
+                </tr>
+                <tr>
+                    <td>Values</td>
+                    <td>An array of objects that contains the values of the row being added when the error occurred. The ordinal references of the array correspond to the ordinal references of the columns for the row being added. For example, <span class="ForeignCodeElements">Values[0]</span> is the value that was being added as the first column of the row.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

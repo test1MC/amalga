@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Microsoft.Terminology entity namespace"
+    Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_Nav_EntityDefs.htm"
+    ReplaceMergeNode="true">
+    <TocEntry
+      Title="Microsoft.Terminology.Concept entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Concept.htm"></TocEntry>
+    <TocEntry
+      Title="Microsoft.Terminology.Relationship entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Relationship.htm"></TocEntry>
+    <TocEntry
+      Title="Microsoft.Terminology.RelationshipType entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.RelationshipType.htm" />
+    <TocEntry
+      Title="Microsoft.Terminology.RootConcept entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.RootConcept.htm" />
+    <TocEntry
+      Title="Microsoft.Terminology.SupportedLanguage entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.SupportedLanguage.htm" />
+    <TocEntry
+      Title="Microsoft.Terminology.Synonym entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Synonym.htm" />
+    <TocEntry
+      Title="Microsoft.Terminology.Terminology entity"
+      Link="/Content/DataPlatform1/Entity_MS_Terminology/DP_GREF_Terminology.Terminology.htm" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="54" MadCap:lastWidth="660">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p class="note">Semantic tags are optional. The maximum number of tags <MadCap:annotation MadCap:createDate="2011-11-14T10:59:55.0266210-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="from Dongbai email 11/14/2011" MadCap:editor="v-padenc" MadCap:editDate="2011-11-14T11:00:01.9609603-08:00">per property is 64</MadCap:annotation>. </p>
+    </body>
+</html>

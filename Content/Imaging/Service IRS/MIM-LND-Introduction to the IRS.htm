@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:fileTags="TopicType.LandingPage,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP" MadCap:conditions="Features.Imaging,Region.US" MadCap:lastBlockDepth="6" MadCap:lastHeight="606" MadCap:lastWidth="611">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="Imaging.Imaging Registry and Document server" /> application (IRDA)</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p>
+            <MadCap:keyword term="Imaging Registry and Document Service Application" />The <MadCap:variable name="Imaging.Imaging Registry and Document server" /> application (IRDA) exposes the following two APIs for consumption by <MadCap:variable name="BrandingHSG.Amalga Short" /> controls and applications, including the <MadCap:variable name="Imaging.Study browser web part" />:</p>
+        <ol>
+            <li>Study, series, instance-level metadata</li>
+            <li>The name of the corresponding <MadCap:variable name="Imaging.Image Delivery server" /> application instance for a given site ID</li>
+        </ol>
+        <p>Typically, a provider works with  multiple healthcare facilities, including hospitals, clinics, and other service delivery points, which may be geographically remote from each other. <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> collects the medical data from different sites and systems by ingesting and storing the text-based HL-7 feeds at a central location. While the bandwidth between geographically -remote sites may be sufficient to enable a centralized approach for HL-7 messages, it does not meet the scalability demands of <MadCap:variable name="Imaging.DICOM"></MadCap:variable> data sets, each of which can involve transferring gigabytes of data. Furthermore, the concurrent accesses to centralized <MadCap:variable name="Imaging.DICOM"></MadCap:variable> data from different sites would have a negative impact on performance.</p>
+        <p>To overcome these issues, <MadCap:variable name="BrandingHSG.Amalga Medical Imaging Module" /> supports a distributed topology: <MadCap:variable name="Imaging.DICOM" /> feeds are received and stored locally, while the metadata extracted from <MadCap:variable name="Imaging.DICOM" /> headers is stored at a central location, similar to HL-7 feeds.</p>
+        <p class="Label">In this section</p>
+        <MadCap:miniTocProxy style="mc-toc-depth: 1;" />
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="../Web Part Study Browser/MIM-LAN-Introduction-Study-Browser-Web-Part.htm">Study Browser Web Part on page 1</MadCap:xref>
+        </p>
+    </body>
+</html>

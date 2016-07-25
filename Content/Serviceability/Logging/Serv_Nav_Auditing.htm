@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1209" MadCap:lastWidth="608" MadCap:fileTags="TopicType.Navigation,Status.70 - Complete,TopicOwner.v-keith,ReleaseTarget.TAP">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain-Editorial.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Auditing</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This section contains information about the types of data audited by <MadCap:variable name="BrandingHSG.Amalga Short" /> and the audit table schemas.</p>
+        <p>To access auditing data, use standard database reporting tools. </p>
+        <p><MadCap:variable name="BrandingHSG.Amalga Short" /> automatically audits data in the following categories to support regulatory compliance and internal traceability. </p>
+        <p class="Label">Data access</p>
+        <p>Any read or write activity in the <MadCap:variable name="BrandingHSG.Amalga Short" /> clinical databases or application databases is audited. The following information is captured.</p>
+        <ul>
+            <li>User, time, and details of the data query are captured</li>
+            <li>Primary keys of the data rows accessed are captured</li>
+        </ul>
+        <p class="Label">Application access</p>
+        <p>All application access operations are audited. The following information is captured.</p>
+        <ul>
+            <li>User and time of <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted service operations</li>
+            <li>User and time of access to third party application service operations</li>
+        </ul>
+        <p class="Label">Administration and management</p>
+        <p>Audits the user and time of the following items.</p>
+        <ul>
+            <li>Any administration action, with the exception of the initial setup of platform services</li>
+            <li>Any data access by a user member of an administrative role</li>
+            <li>Calls to <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> web service operations in the following areas.<ul style="list-style-type: circle;"><li>Topology</li><li>Service discovery</li><li>Security</li><li>Authorization management</li><li>Virtual schema management</li><li>Query translation</li><li>Data access control </li><li>Diagnostic logging</li><li>Audit</li></ul></li>
+        </ul>
+        <p class="Label">Custom auditing</p>
+        <p>In addition to standard auditing, developers can add calls to the custom audit application programming interface (API) to create supplemental audit data. The custom audit operations can use a set of predefined audit operation types. For more information, see <MadCap:xref href="Serv Ref Audit Custom Audit OperationTypes.htm" target="" title="" alt="">Serv Ref Audit Custom Audit OperationTypes</MadCap:xref>.</p>
+        <h2>Audit data access</h2>
+        <p>For <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />, audit data should be accessed by using standard database reporting tools. The following links contain the audit table schemas.</p>
+        <p class="note">Call stacks periodically appear in the audit log due to cache refresh.</p>
+        <p class="Label">In this section</p>
+        <MadCap:miniTocProxy />
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">
+            <MadCap:annotation MadCap:createDate="2012-01-05T10:03:20.5429468-08:00" MadCap:creator="v-labenn" MadCap:initials="LLB" MadCap:comment="Remove the Production.DoNotBuild condition as you add cross-references to your topic." MadCap:editor="v-ciwyco" MadCap:editDate="2012-01-05T21:04:59.9788827-08:00">See also</MadCap:annotation>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

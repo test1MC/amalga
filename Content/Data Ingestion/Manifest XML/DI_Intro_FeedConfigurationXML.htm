@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="617.6666" MadCap:lastWidth="598" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.50 - InTech Review" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>FeedConfigurationXML setting</h1>
+        <p class="PersonaDISpecialist">&#160;</p>
+        <p>
+            <MadCap:keyword term="FeedConfigurationXML setting" />The following hierarchy describes the XML elements used for <MadCap:variable name="Applications.Feed Acquisition (application)" />, <MadCap:variable name="Applications.Message Shredder (application)" />, and <MadCap:variable name="Applications.Data Parser (application)" /> applications.</p><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;"><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">&lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;</a> 
+   <a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">&lt;DefaultValue&gt;</a> [CDATA]
+      <a href="DI_XML_Manifest_Feeds.htm">&lt;Feeds /&gt;</a>
+      <a href="DI_XML_Manifest_MessageShredderConfiguration.htm">&lt;MessageShredderConfiguration /&gt;</a>
+      <a href="DI_XML_Manifest_DataParserConfiguration.htm">&lt;DataParserConfiguration /&gt;</a></span></p></pre>
+        <p>The FeedConfigurationXML setting contains many of the XML elements and attributes needed to configure pipeline applications. Each application area has a separate root element and distinct element hierarchy in this setting group. The hierarchies in the following table provide a full list of elements for each application.</p>
+        <table style="width: 95%; margin-left: 0; margin-right: auto;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Application</th>
+                    <th>Hierarchy</th>
+                </tr>
+                <tr>
+                    <td><MadCap:variable name="Applications.Feed Acquisition (application)" />
+                    </td>
+                    <td><a href="../DI_XML_List_Acquire.htm">[%=Applications.Feed Acquisition (application)%] hierarchy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><MadCap:variable name="Applications.Message Shredder (application)" />
+                    </td>
+                    <td><a href="../DI_XML_List_Shred.htm">[%=Applications.Message Shredder (application)%] hierarchy</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><MadCap:variable name="Applications.Data Parser (application)" />
+                    </td>
+                    <td><a href="../DI_XML_List_Parse.htm">[%=Applications.Data Parser (application)%] hierarchy</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso">See also</p>
+        <p>
+            <MadCap:xref href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest__Hierarchy.htm" target="" title="" alt="">Deployment manifest XML hierarchy</MadCap:xref>
+        </p>
+    </body>
+</html>

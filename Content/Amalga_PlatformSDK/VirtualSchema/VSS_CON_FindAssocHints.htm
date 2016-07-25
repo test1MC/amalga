@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1745.333" MadCap:lastWidth="467.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Finding entity association hints using concepts</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to find entity association hints for an entity using the VirtualSchema platform feature in <MadCap:variable name="BrandingHSG.AmalgaV3 first use" />.</p>
+        <p>You can find entity association hints for an entity by invoking the <span class="codeEntity">FindAssociationHintsUsingConcepts</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">FindAssociationHintsUsingConcepts</span>, you must specify a <span class="codeEntity">System.Guid</span> object that represents the globally unique identifier of the entity to be examined.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the EntityAssociationHint object on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When <span class="codeEntity">FindAssociationHintsUsingConcepts</span> is invoked, the VirtualSchemaService service performs the following steps:</p>
+        <ol>
+            <li>Finds the concepts, if any, attached to entity properties for the specified entity, and then retrieves all of the entity properties in the <MadCap:variable name="FeatureName.Amalga entity registry" /> that have the same associated concepts.</li>
+            <li>For each entity containing an entity property with a matching associated concept, find the entity properties for which primary key constraints have been defined.</li>
+            <li>For the specified entity, find any related child and peer entities, based on an examination of primary key constraints and foreign key constraints.</li>
+            <li>For the specified entity, find any entities that have a parent/child relationship.</li>
+            <li>Return an array of EntityAssociationHint objects, representing the entity association hints found by the operation.</li>
+        </ol>
+        <h2><a name="Working"></a>Working with the EntityAssociationHint object</h2>
+        <p class="Figure">The EntityAssociationHint object represents a suggested relationship between the specified entity and another entity in the <MadCap:variable name="FeatureName.Amalga entity registry" />. You can use the contents of the EntityAssociationHint object to create entity associations based on the concepts shared by other entities with the specified entity. For more information about creating entity associations, see <MadCap:xref href="VSS_CON_CreateEntityAssoc.htm" target="" title="" alt="">Creating an entity association on page 1</MadCap:xref>.</p>
+        <p class="Figure">The EntityAssociationHint object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>
+                        <p>An AssociationCardinality enumeration value indicating the cardinality of the suggested entity association. The property can be set to one of the following enumeration values:</p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <th>Enumeration value</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>ManyToOne</td>
+                                    <td>Many-to-one relationship</td>
+                                </tr>
+                                <tr>
+                                    <td>OneToMany</td>
+                                    <td>One-to-many relationship</td>
+                                </tr>
+                                <tr>
+                                    <td>OneToOne</td>
+                                    <td>One-to-one relationship</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ChildEntity</td>
+                    <td>An EntityInfo object representing the child entity in the suggested entity association.</td>
+                </tr>
+                <tr>
+                    <td>ChildEntityProperties</td>
+                    <td>An array of EntityPropertyInfo objects representing the entity properties to be referenced from the child entity in the suggested entity association.</td>
+                </tr>
+                <tr>
+                    <td>ExtensionData</td>
+                    <td>
+                        <p>An <span class="codeEntity">ExtensionDataObject</span> object representing extra data used when serializing and deserializing the object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ParentEntity</td>
+                    <td>An EntityInfo object representing the parent entity in the suggested entity association.</td>
+                </tr>
+                <tr>
+                    <td>ParentEntityProperties</td>
+                    <td>An array of EntityPropertyInfo objects representing the entity properties to be referenced from the parent entity in the suggested entity association.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

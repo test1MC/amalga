@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1509" MadCap:lastWidth="878" MadCap:fileTags="TopicType.Procedure,TopicOwner.v-dennk,ReleaseTarget.CTP1,Personas.Elvis: App Dev,EditingTags.7 - Editing issues resolved,Status.70 - Complete">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Generate a WCF client</h1>
+        <p class="PersonaAppDev">&#160;</p>
+        <p class="abstract">This topic describes how to generate a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)" /> client from a running WCF service by using the ServiceModel Metadata Utility Tool (svcutil.exe).</p>
+        <p>You must have a <MadCap:variable name="BrandingMS.Doors Communication Foundation (WCF)"></MadCap:variable> client present in your <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> hosted application, included in a hosted service project, to use the available features of a WCF service, such as an <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> platform service.</p>
+        <p>You can generate a WCF client from a running WCF service, including <MadCap:variable name="BrandingHSG.Amalga Short" /> platform services, by using the ServiceModel Metadata Utility Tool (svcutil.exe). This is the preferred method for generating a WCF client for an <MadCap:variable name="BrandingHSG.Amalga Short" /> platform service. </p>
+        <p class="note">You can also add a service reference within <MadCap:variable name="BrandingMS.Microsoft Visual Studio 2010" /> to generate a WCF client. For more information about adding a service reference, see <MadCap:xref href="SDK_PROC_Add_Svc_Reference.htm" target="" title="" alt="">Add a service reference on page 1</MadCap:xref>.</p>
+        <p>Once the WCF client is generated, you must then add the WCF client to the hosted service project.</p>
+        <p>The following procedures demonstrate how to generate a WCF client using svcutil.exe, and then add the generated WCF client to a hosted service project.</p>
+        <p class="LabelforProcedures">To generate a WCF client using svcutil.exe</p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-StartCmd.flsnp" />
+            </li>
+            <li>
+                <p>Run the following command, replacing <span class="Placeholder">ProjectFolder</span> with the folder of the hosted service project in which the WCF client will be added.</p>
+                <p class="InputText">cd <span class="InputTextVariable">ProjectFolder</span></p>
+            </li>
+            <li>
+                <p>Run the following command, replacing <span class="Placeholder">SvcutilPath</span> with the full path of the folder in which svcutil.exe is located and <span class="Placeholder">WCFServiceURL</span> with the Uniform Resource Locator (URL) of the WCF service's Metadata Exchange (MEX) address or HTTP&#160;GET address.</p>
+                <p class="InputText"><span class="InputTextVariable">SvcutilPath</span>\svcutil.exe <span class="InputTextVariable">WCFServiceURL</span> /noConfig</p>
+                <p class="caution">You should only reference services from a trusted source. Adding references from an untrusted source may compromise security.</p>
+            </li>
+        </ol>
+        <p>The command generates a Visual C# source (.cs) file containing the C# code for the WCF client, named <span class="Placeholder">ServiceEndpoint</span>.cs, in which <span class="Placeholder">ServiceEndpoint</span> is replaced with the name of the service endpoint from which the WCF client was generated.</p>
+        <p>The following example demonstrates how to create a WCF client, in a Visual C# source file named TerminologyService.cs, for the Terminology service included with Amalga.</p>
+        <p class="code">"C:\Program Files (x86)\Microsoft SDKs\Doors\v7.0A\Bin\svcutil" https://www.logicalhost.com:8801/TerminologyService_Ins1/Microsoft.Amalga.Terminology.TerminologyService.TerminologyService.svc</p>
+        <p class="LabelforProcedures">To add a generated WCF client to a hosted service project in <MadCap:variable name="BrandingMS.Visual Studio 2010 second use" /></p>
+        <ol>
+            <li>
+                <MadCap:snippetBlock src="../Snippets/proc-Start-VS2010.flsnp" />
+            </li>
+            <li>Open the solution containing the hosted service project to which the generated WCF client is to be added.</li>
+            <li>In Solution Explorer, right-click the hosted service project, click <span class="UIElementAction">Add</span>, and then click <span class="UIElementAction">Existing Item</span>.</li>
+            <li>Select the Visual C# source file containing the code for the generated WCF client, and then click <span class="UIElementAction">Add</span>.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="SDK_NAV_ServiceEndpointsContracts.htm" target="" title="" alt="">Service Endpoint Reference on page 1</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="8" MadCap:lastHeight="1815" MadCap:lastWidth="368" MadCap:fileTags="TopicType.Procedure,Status.60 - Revising,Personas.Elvis: App Dev,ReleaseTarget.CTP1,TopicOwner.v-dennk">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Create a new read-write application view</h1>
+        <p class="abstract">
+            <MadCap:keyword term="application views" />This topic describes how to create a new read-write application view using <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+        <p>In some situations, you may want to create an application view that contains writable data. For example, you could create a view to store notes that users have written about data that has been ingested. When the virtual schema is created, <MadCap:variable name="BrandingHSG.Amalga Short" /> will automatically create a database for the application instance, as well as the necessary tables and types in the database to hold the writable data.</p>
+        <p>The following procedure describes how to define a read-write application view in the virtual schema, using <MadCap:variable name="FeatureName.virtual schema designer" />.</p>
+        <p class="LabelforProcedures">To create a new read-write application view using <MadCap:variable name="FeatureName.virtual schema designer" /></p>
+        <ol>
+            <li>In Solution Explorer, right-click the data manifest (.edmx) file for the hosted application, and then click <span class="UIElementAction">Open</span>.</li>
+            <li>Right-click an empty area in the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />, click&#160;<span class="UIElementAction">Add</span>, and then click <span class="UIElementAction">Entity</span>.</li>
+            <li>In Solution Explorer, right-click the data manifest (.edmx) file Right-click in an empty portion of the designer window and select <span class="UIElementAction">Add </span>and then <span class="UIElementAction">Entity</span>. </li>
+            <li>
+                <p>In <span class="UIElementAction">Entity name</span>, specify the name of the new read-write application view.</p>
+                <p class="note">The name must be unique within the virtual schema.</p>
+            </li>
+            <li>In <span class="UIElementAction">Base type</span>, select <span class="UIElementAction">(None)</span>.</li>
+            <li>In <span class="UIElementAction">Entity Set</span>, specify a name for the entity set.</li>
+            <li>In Key Property, select <span class="UIElementAction">Create key property</span>.</li>
+            <li>In <span class="UIElementAction">Property name</span>, specify the name of the primary key property for the read-write application view.</li>
+            <li>In <span class="UIElementAction">Property type</span>, specify the data type of the primary key property for the read-write application view.</li>
+            <li>Click <span class="UIElementAction">OK</span>.</li>
+            <li>
+                <p>In the Add Entity dialog box, fill out information about the entity you are creating  and click <span class="UIElementAction">OK</span>. </p>
+            </li>
+        </ol>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-29T10:05:48.3626881-07:00" MadCap:creator="v-dennk" MadCap:initials="DWK" MadCap:comment="Subsequent procedure must be moved to a new topic, and this material reframed appropriately. This is the best I could do 1.5 hours before CTP1 build signoff." MadCap:editor="v-dennk" MadCap:editDate="2011-10-29T10:06:27.3777879-07:00">The</MadCap:annotation> new read-write application view is now added to the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />. You can confirm that the application view is read-write by checking the value of the CanWrite property for the EntityType object that represents the read-write application view in the Properties window. If the property is set to True, it is a read-write application view; otherwise, it is a read-only applicaiton view. </p>
+        <p>You can now create new properties, such as scalar properties, for the new read-write application view.</p>
+        <p class="LabelforProcedures">To create a scalar property for a read-write application view</p>
+        <ol>
+            <li>
+                <p>In the visual design surface of <MadCap:variable name="FeatureName.virtual schema designer" />, right-click the application view, click <span class="UIElementAction">Add</span>, and then click <span class="UIElementAction"> Scalar Property</span>.</p>
+                <p>A new scalar property is added to the entity with the following default property values:</p>
+                <table style="width: 100%;">
+                    <col />
+                    <col />
+                    <tbody>
+                        <tr>
+                            <th>Property name</th>
+                            <th>Default value</th>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>Int16</td>
+                        </tr>
+                        <tr>
+                            <td>Nullable</td>
+                            <td>True</td>
+                        </tr>
+                        <tr>
+                            <td>Entity Key</td>
+                            <td>
+                                <p>False</p>
+                                <p>The new scalar property is not part of the entity key.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>"Property", followed by a number to make the property name unique in the entity and its hierarchy.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>The new scalar property is added in edit mode, so that the name can be changed.</p>
+            </li>
+            <li>Replace the default property name with the intended name of the new scalar property.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="137" MadCap:lastWidth="570" MadCap:fileTags="EditingTags.4 - Ready for Writer">
+    <head>
+    </head>
+    <body>
+        <p class="LabelforProcedures">To view report properties</p>
+        <ul>
+            <li>
+                <p>In the <MadCap:variable name="FeatureBrussels.Analytics" /> pane, in the report for which you want to view properties, click the Options icon (<img src="../Images/AN_settings.png" /> ), and then click <span class="UIElementAction">View properties</span>.</p>
+                <p>The Report properties dialog box will be displayed.</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="853" MadCap:lastWidth="576" MadCap:fileTags="TopicType.Concept,Personas.Carlos: IT Admin,ReleaseTarget.TAP,TopicOwner.v-keith,EditingTags.4 - Ready for Writer,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Physical architecture</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes the components of the <MadCap:variable name="BrandingHSG.Amalga Short" /> physical topology.</p>
+        <p>The physical architecture is designed to be flexible and support capacity growth through adding additional servers as required. The topology used in this topic is the suggested model for constructing your own physical infrastructure.</p>
+        <h2><MadCap:variable name="BrandingHSG.AmalgaV3 first use"></MadCap:variable> physical architecture concepts</h2>
+        <p>Logical hosts replace the server role as the central unit of an <MadCap:variable name="BrandingHSG.Amalga Short" /> topology. Logical hosts contain pools of services or applications that are grouped together based on security and performance requirements. A logical host is a management abstraction that does not correspond to a single physical item. It may have one or more physical machines, and those physical machines may contain one or more virtual machines (VMs). </p>
+        <p>All of the servers, either physical or virtual, within a logical host are treated as a unit during application deployment and topology management functions. As a result, instead of deploying a newly developed application to a specific physical machine, you deploy the application to a logical host. <MadCap:variable name="BrandingHSG.Amalga Short" /> platform services then manages the deployment of that application onto the physical and virtual machines within the logical host.</p>
+        <p>
+            <img src="../../Installation/Images/LogicalHost1.png" style="float: right;width: 191px;height: 136px;padding-left: 12px;">
+            </img>Logical hosts can be of three types: Failover, Network Load Balancing (NLB), or None.</p>
+        <p>All <MadCap:variable name="BrandingHSG.Amalga Short" /> features and applications must be deployed onto logical hosts. They cannot be installed directly on physical machines. So, from a configuration and management perspective, all features and applications are linked to logical hosts rather than physical hosts. The benefits of this abstraction are realized in simplified installation and management.</p>
+        <ul>
+            <li>Single servers, failover clusters, and Network Load Balancing (NLB) servers are handled identically when deploying and managing applications and features.</li>
+            <li>The physical infrastructure underlying the logical hosts can be changed while preserving the logical view at the administrative level.</li>
+            <li>Migrating applications and platform features to balance the topology for operational or performance requirements is easier since the links are maintained at the level of the logical host. </li>
+        </ul>
+        <h2><MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> reference topology</h2>
+        <p>Several general design principles were considered in the design of the reference topology.</p>
+        <ul>
+            <li>Virtual machines are used in areas other than storage clusters to allow for operational flexibility and the ability to add additional application or service instances as required.</li>
+            <li>All logical hosts have failure protection at the virtual and physical machine levels. The virtual machines can be failed-over to support system software updates at the logical host level, and physical servers can be upgraded or replaced while keeping the virtual machines active on other servers.</li>
+            <li>Failover clusters are required for all logical hosts supporting <MadCap:variable name="BrandingMS.SQL Server"></MadCap:variable> activity to support availability and performance. Additionally, they may be used to support applications that contain services designed to run on a failover cluster.</li>
+            <li>Network Load Balancing (NLB) implementations are used for all non-<MadCap:variable name="BrandingMS.SQL Server" /> logical hosts to support improving performance by adding additional cluster nodes or physical machines. NLB clusters can also be used to support applications containing services that are designed for a NLB cluster.</li>
+        </ul>
+        <p>&#160;</p>
+        <p>
+            <img src="../Images/ArchPhysical_4.png" style="width: 640px;height: 343px;" />
+        </p>
+        <h6 style="font-size: 10pt;">Logical Host 1 - Data Ingestion</h6>
+        <p style="font-size: 10pt;">The failover cluster labeled Logical Host 1 in the diagram contains the data acquisition, pipeline, and eventing features. It is configured as a failover cluster to prevent any possibility of data loss during the ingestion process.</p>
+        <h6 style="font-size: 10pt;">Logical Host 2 - Privileged Services</h6>
+        <p>The platform services logical host supports the topology management and provides key services to the entire system. Is should be implemented as an NLB logical host.</p>
+        <h6 style="font-size: 10pt;">Logical Host 3 - Applications and Services</h6>
+        <p>The application services logical host represents a pool of <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> applications. Depending on the number and type of applications implemented, there might be more than one such pool. The applications are separated from the platform services logical host to introduce a security boundary.</p>
+        <p>Application services should be implemented on a NLB logical host. There should be more than two application services nodes (VMs or physical machines) in the NLB logical host. During data-bound operations, the application is waiting for a response from the database and other application requests may be blocked. 
+By increasing the number of application instances, we can scale up the number of requests that can be in process at the same time.          <![CDATA[
+]]></p>
+        <h6 style="font-size: 10pt;">Data Server Cluster</h6>
+        <p>The logical host supporting the primary topology, message queue, and clinical database is unique in two aspects.</p>
+        <ol>
+            <li>The logical host is composed only of physical machines and cannot include virtual machines, in order to provide higher availability through physical isolation.</li>
+            <li>The logical host is an active-active failover cluster in order to support increased machine utilization and higher performance.</li>
+        </ol>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="Arch_Concept_Logical.htm" target="" title="" alt="">Logical architecture</MadCap:xref>
+        </p>
+        <p>
+            <MadCap:xref href="Arch_Concept_DataPipe.htm" target="" title="" alt="">Data architecture</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

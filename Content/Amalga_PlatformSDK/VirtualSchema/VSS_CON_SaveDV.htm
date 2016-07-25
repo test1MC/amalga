@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1822" MadCap:lastWidth="506.6667" MadCap:fileTags="TopicType.Concept,TopicOwner.StyleMasterResource" MadCap:conditions="Releases.Investigation Use">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">Saving a dynamic view</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to save a dynamic view using the VirtualSchema platform feature.</p>
+        <p>You can create or update a dynamic view by invoking the <span class="codeEntity">SaveDynamicView</span> operation from the IVirtualSchemaManagementService service contract for the VirtualSchemaService service. When invoking <span class="codeEntity">SaveDynamicView</span>, you must specify a <span class="codeEntity">DynamicViewDefinition</span> object that represents the dynamic view to be created or updated.</p>
+        <p class="Label">In this topic</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Working" target="" title="" alt="">Working with the DynamicViewDefinition object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Working2" target="" title="" alt="">Working with the EntityPropertyInfo object on page 1</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Invoking" target="" title="" alt="">Invoking the operation on page 1</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Working"></a>Working with the DynamicViewDefinition object</h2>
+        <p>The DynamicViewDefinition object represents the schema and binding of a dynamic view to be created or updated. The DynamicViewDefinition object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>ApplicationName</td>
+                    <td>A string containing the name of the hosted application creating or updating the dynamic view.</td>
+                </tr>
+                <tr>
+                    <td>Binding</td>
+                    <td>A string containing the defining query for the entity binding used by the dynamic view.</td>
+                </tr>
+                <tr>
+                    <td>Columns</td>
+                    <td>A collection of EntityPropertyInfo objects, representing the entity properties for the dynamic view.</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>A string containing the name of the dynamic view.</td>
+                </tr>
+                <tr>
+                    <td>Schema</td>
+                    <td>A string containing the namespace of the dynamic view.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Working2"></a>Working with the EntityPropertyInfo object</h2>
+        <p>For each entity property to be included in the dynamic view, a corresponding EntityPropertyInfo object must be created and added to the collection for the Columns property of the DynamicViewDefinition object. The ordinal position of each EntityPropertyInfo object in the collection determines the ordinal position of each entity property included with the dynamic view. </p>
+        <p>The EntityPropertyInfo object has the following properties.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Property name</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>DataType</td>
+                    <td>A string representing the data type of the column for the dynamic view.</td>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>
+                        <p>A System.Guid object representing the globally unique identifier (GUID) of the column for the dynamic view.</p>
+                        <p class="noteInTable">Do not specify a value for this property. A new GUID is automatically generated, overwriting the value in this property, when the dynamic view is created.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>A string representing the name of the column for the dynamic view.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Invoking"></a>Invoking the operation</h2>
+        <p>When the SaveDynamicView operation is invoked, the following steps are performed:</p>
+        <ol>
+            <li>
+                <p>Validate the contents of the DynamicViewDefinition object, to ensure that the following conditions are met. If the following conditions are not met, an exception is thrown:</p>
+                <ol style="list-style-type: lower-alpha;">
+                    <li>Values are specified for the ApplicationName, Binding, Columns, and Name properties.</li>
+                    <li>At least one EntityPropertyInfo object is specified in the collection for the Columns property.</li>
+                    <li>Values are specified for the Name and DataType properties of each EntityPropertyInfo object included in the collection for the Columns property.</li>
+                </ol>
+            </li>
+            <li>
+                <p>Ensure that the Name property of the DynamicViewDefinition object does not use a reserved entity name.</p>
+            </li>
+            <li>Start a transaction for saving the dynamic view.</li>
+            <li>If a dynamic view with the same name already exists, delete the existing dynamic view. If an application view with the same name already exists, throw an exception.</li>
+            <li>Create a new dynamic view, using the information provided by the DynamicViewDefinition object.</li>
+            <li>Commit the transaction.</li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="Production.doNOTbuild">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Concepts</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Other resources </p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+    </body>
+</html>

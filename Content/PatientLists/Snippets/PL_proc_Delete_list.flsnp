@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="95" MadCap:lastWidth="320">
+    <body>
+        <p class="LabelforProcedures">To delete a patient list</p>
+        <ol>
+            <li>Click <span class="UIElementAction">More</span>, and then click <span class="UIElementAction">Delete list</span>.</li>
+            <li>Click <span class="UIElementAction">Delete list</span> to confirm the deletion.</li>
+        </ol>
+    </body>
+</html>

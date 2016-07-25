@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="4059.333" MadCap:lastWidth="736.6666" MadCap:fileTags="TopicType.Concept,TopicOwner.v-wpete,EditingTags.7 - Editing issues resolved,Status.30 - Development: over 50%,ReleaseTarget.TAP" MadCap:ignoredWords="HealthRecordItem;HealthVault" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 style="font-style: normal;">HealthVault Connector</h1>
+        <p class="PersonaAll">
+            <MadCap:keyword term="HealthVault;Connector" />
+        </p>
+        <p class="abstract">This topic describes the HealthVault Connector feature of the <MadCap:variable name="FeatureName.Amalga Framework" />.</p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-29T00:16:39.8643236-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Nothing you need to do, just questions that can be resolve After CTP1." MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-29T00:17:07.1663236-07:00">The</MadCap:annotation> <![CDATA[ ]]><MadCap:annotation MadCap:createDate="2011-10-28T23:28:21.6933236-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Will probably add a variable for [HealthVault Connector]," MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-28T23:28:42.4423236-07:00">HealthVault Connector</MadCap:annotation> allows <MadCap:variable name="FeatureName.Amalga Framework second use" /> applications to establish offline connections to <MadCap:variable name="BrandingHSG.HealthVault" /> records, and to use those connections to send clinical documents and other data to <MadCap:variable name="BrandingHSG.HealthVault" />. It also provides connection information that allows applications to establish their own online connection using the <a href="http://go.microsoft.com/fwlink?LinkId=234041">HealthVault API</a>.</p>
+        <p>This topic contains the following subsections:</p>
+        <ul>
+            <li>
+                <MadCap:xref href="#Establis" target="" title="" alt="">Establishing an offline Direct to Clinical connection to a  record</MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Sending" target="" title="" alt="">Sending data to </MadCap:xref>
+            </li>
+            <li>
+                <MadCap:xref href="#Providin" target="" title="" alt="">Providing  configuration information</MadCap:xref>
+            </li>
+        </ul>
+        <h2><a name="Establis"></a>Establishing an offline Direct to Clinical connection to a <MadCap:variable name="BrandingHSG.HealthVault" /> record</h2>
+        <p>A Direct to Clinical connection allows health information to be sent to a <MadCap:variable name="BrandingHSG.HealthVault" /> record. The information is written to a temporary store, and is not added to the <MadCap:variable name="BrandingHSG.HealthVault" /> record until the connection is authorized.</p>
+        <p>A typical application of a Direct to Clinical connection is when a clinician wants to send a document to a patient's HealthVault record, but it is not convenient for the patient to log in to HealthVault and authorize the connection. Instead, the patient provides the clinician with a secret question and its answer. The clinician sends the document using a Direct to Clinical connection, which responds with a secret code that is given to the patient. Later, the patient logs in to the HealthVault shell, answers the provided question, and enters the secret code. The connection is authorized, and the document is saved in the patient's HealthVault record.</p>
+        <p>Before the document can be sent, the application must request a connection by calling <a href="../API/Ref/Microsoft.Amalga.HealthVaultConnector.Service/M_HealthVaultConnectorService_CreatePendingConnection_1_b0657536.htm">CreatePendingConnection</a>. The request must include the following information:</p>
+        <ul>
+            <li><span class="Label">PersonId</span> – the <MadCap:annotation MadCap:createDate="2011-10-28T23:42:08.3743236-07:00" MadCap:creator="v-ciwyco" MadCap:initials="CJW" MadCap:comment="Are these still called Amalga IDs?" MadCap:editor="v-ciwyco" MadCap:editDate="2011-10-28T23:42:22.0133236-07:00"><MadCap:annotation MadCap:createDate="2011-11-17T17:03:10.7932335-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="As far as I know." MadCap:editor="v-wipete" MadCap:editDate="2011-11-17T17:03:14.9206827-08:00">Amalga ID</MadCap:annotation></MadCap:annotation> associated with the patient.</li>
+            <li><span class="Label">PatientName</span> – the name of the patient.</li>
+            <li><span class="Label">SecurityQuestion</span> – the secret question that the patient will be asked when they authorize the connection request using the <MadCap:variable name="BrandingHSG.HealthVault" /> shell.</li>
+            <li><span class="Label">SecurityAnswer</span> – the answer that the patient must provide in order to authorize the connection request using the <MadCap:variable name="BrandingHSG.HealthVault" /> shell.</li>
+            <li><span class="Label">Comments</span> – A comment associated with the connection request. The comment can  help the patient tell one request apart from another, if there is more than one pending request.</li>
+        </ul>
+        <p>If the connection request is successful, it returns a secret code value. The patient will need to use the secret code later in order to authorize the connection request.</p>
+        <p class="caution">A successful request means that the patient has enough information to authorize the connection, not that the connection has been authorized. The application may send documents to the <MadCap:variable name="BrandingHSG.HealthVault" /> account without waiting, but the documents will not be delivered until the patient authorizes the connection.</p>
+        <p>The HealthVault Connector can also be used to retrieve a list of connection requests for a given user. Connection requests can be deleted, but only if they have not been authorized. Once a patient has authorized a connection, it can be deleted only by the patient, using the <MadCap:variable name="BrandingHSG.HealthVault" /> shell.</p>
+        <h2><a name="Sending"></a>Sending data to <MadCap:variable name="BrandingHSG.HealthVault" /></h2>
+        <p>The HealthVault Connector can use a successful connection to send clinical documents or native <MadCap:variable name="BrandingHSG.HealthVault" /> data to a <MadCap:variable name="BrandingHSG.HealthVault" /> account.</p>
+        <p class="note">It is possible to update a record after it has been sent.</p>
+        <h3>Clinical documents</h3>
+        <p>The  <a href="../API/Ref/Microsoft.Amalga.HealthVaultConnector.Service/M_HealthVaultConnectorService_SendVisitSummary_3_14534e16.htm">SendVisitSummary </a>method calls the <a href="../API/Ref/Microsoft.Amalga.ClinicalDocument.Service/T_ClinicalDocumentService.htm">ClinicalDocumentService</a> application to generate a collection of visit summaries for a given visit ID. The collection includes file attachments associated with the visit summaries, if there are any available.</p>
+        <p>Any request to send data to <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> must include the following information:</p>
+        <ul>
+            <li><span class="Label">PersonId</span> – the Amalga ID associated with the patient.</li>
+            <li><span class="Label">VisitId</span> – the <MadCap:variable name="BrandingHSG.Amalga Short"></MadCap:variable> Visit Identifier of the patient visit for which documentation will be created and sent to <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable>.</li>
+            <li><span class="Label">Format</span> – the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> specific format (CCR, C-32, Medications, Immunizations, etc.) that will be applied to the created documents.</li>
+            <li><span class="Label">Title</span> – the title of the created document.</li>
+        </ul>
+        <p>For more information, see <a href="AF_Con_EC_ClinicalDocument1.htm">Clinical Documents</a>.</p>
+        <h3><MadCap:variable name="BrandingHSG.HealthVault" /> native types</h3>
+        <p>
+            <MadCap:annotation MadCap:createDate="2011-10-10T03:31:53.9143409-07:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="The code comments refer to an XPathFilter here.  I don't see one. " MadCap:editor="v-wipete" MadCap:editDate="2011-10-10T03:32:42.2388736-07:00">The <a href="../API/Ref/Microsoft.Amalga.HealthVaultConnector.Service/M_HealthVaultConnectorService_SendItems_2_c3e4f8f9.htm">SendItems</a> method</MadCap:annotation> sends a collection of <MadCap:variable name="BrandingHSG.HealthVault" /> <![CDATA[ ]]><a href="http://go.microsoft.com/fwlink?LinkId=234040">HealthRecordItem</a> objects to a specified person's <MadCap:variable name="BrandingHSG.HealthVault" /> record, if the current user is authorized to do so.</p>
+        <p>Any request to send data to <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> must include the following information:</p>
+        <ul>
+            <li><span class="Label">PersonId</span> – the Amalga ID associated with the patient.</li>
+            <li><span class="Label">Items</span> – a collection of native <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> items to be sent to HealthVault.</li>
+        </ul>
+        <h3>Signing documents</h3>
+        <p>Both clinical documents and <MadCap:variable name="BrandingHSG.HealthVault" /> native types can be signed when they are sent to <MadCap:variable name="BrandingHSG.HealthVault" />.</p>
+        <p>Document signing is controlled by the <span class="Label">SignDataSendToHealthVault</span> and <span class="Label">HVSignCertThumbprint</span> application settings. If <span class="Label">SignDataSendToHealthVault</span> is <span class="Label">true</span>, the HealthVault Connector will search the <code>LocalMachine\Personal certificate</code> store for the certificate whose thumbprint value matches <span class="Label">HVSignCertThumbprint</span>. That certificate will be used to sign all sent items.</p>
+        <p>For more information about setting and changing configuration settings, see <a href="AF_Con_Configuration1.htm">Application configuration and user settings</a>.</p>
+        <h2><a name="Providin"></a>Providing <MadCap:variable name="BrandingHSG.HealthVault" /> configuration information</h2>
+        <p>When an <MadCap:variable name="BrandingHSG.Amalga Short" /> implementation is deployed, the setup process establishes a common <MadCap:variable name="BrandingHSG.HealthVault" /> identity for all applications hosted within that implementation. The HealthVault Connector stores that information, and provides it to other applications on request.</p>
+        <p>Applications that rely on the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable>Record Selector control to work with <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> data do not need to establish an independent connection.</p>
+        <p>However, any <MadCap:variable name="FeatureName.Amalga Framework second use" /> application can use the connection information provided by the HealthVault Connector to connect to <MadCap:variable name="BrandingHSG.HealthVault" /> using the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK, then work with <MadCap:variable name="BrandingHSG.HealthVault" /> records using the standard <MadCap:variable name="BrandingHSG.HealthVault" /> APIs.</p>
+        <p>The following configuration information is returned to the caller as a <span class="Label">HealthVaultConnectionConfig</span> object:</p>
+        <ul>
+            <li><span class="Label">ApplicationCertificate</span>: The base64-encoded client certificate, including the private key needed to authenticate with HealthVault.</li>
+            <li><span class="Label">ApplicationId</span>: The HealthVault Application Id for this instance of Amalga.</li>
+            <li><span class="Label">ServiceURL</span>: The URL of the HealthVault service.</li>
+            <li><span class="Label">ShellUrl</span>: The URL for HealthVault shell. </li>
+        </ul>
+        <p class="caution">Do not store or cache the application certificate.</p>
+        <h2>Configuration</h2>
+        <p>The behavior of the  <a href="../API/Ref/Microsoft.Amalga.HealthVaultConnector.Service/T_HealthVaultConnectorService.htm">HealthVaultConnectorService </a>is determined by the values of the following configuration settings.</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <th>Setting name</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>HVApplicationId</td>
+                    <td>Guid</td>
+                    <td>42500dec-6730-4c97-9cd1-896ae69c91f2</td>
+                    <td>The <MadCap:variable name="BrandingHSG.HealthVault" /> application ID.</td>
+                </tr>
+                <tr>
+                    <td>HVServiceUrl</td>
+                    <td>String</td>
+                    <td>https://platform.healthvault-ppe.com/platform/wildcat.ashx</td>
+                    <td>The URL&#160;of the <MadCap:variable name="BrandingHSG.HealthVault" /> platform service.</td>
+                </tr>
+                <tr>
+                    <td>HVShellUrl</td>
+                    <td>String</td>
+                    <td>https://account.healthvault-ppe.com/default.aspx</td>
+                    <td>The URL&#160;of the <MadCap:variable name="BrandingHSG.HealthVault" /> shell.</td>
+                </tr>
+                <tr>
+                    <td>HVCertSubject</td>
+                    <td>String</td>
+                    <td>CN=WildcatApp-42500dec-6730-4c97-9cd1-896ae69c91f2</td>
+                    <td>The name of the <MadCap:variable name="BrandingHSG.HealthVault" /> Certificate Subject.</td>
+                </tr>
+                <tr>
+                    <td>AmalgaHVServerTimeOffset</td>
+                    <td>Int32</td>
+                    <td>-10</td>
+                    <td>The time offset between the <MadCap:variable name="BrandingHSG.Amalga Short" /> and <MadCap:variable name="BrandingHSG.HealthVault" /> servers (in minutes.)</td>
+                </tr>
+                <tr>
+                    <td>SignDataSendToHealthVault</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Determines whether or not data items are signed before they are sent to <MadCap:variable name="BrandingHSG.HealthVault" />.</td>
+                </tr>
+                <tr>
+                    <td>ValidateSigningCert</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Determines whether or not the service will validate the certificate used to sign <MadCap:variable name="BrandingHSG.HealthVault" /> data. Validation includes verification of the certificate expiration date and revocation status.</td>
+                </tr>
+                <tr>
+                    <td>HVSignCertThumbprint</td>
+                    <td>String</td>
+                    <td>38318D22DC9A0D8880114C0415FF0875D23BE654</td>
+                    <td>
+                        <p>The thumbprint value of a certificate in the Local Machine Personal certificate store.</p>
+                        <p>The certificate must have an exportable private key.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AmalgaSourceString</td>
+                    <td>String</td>
+                    <td>Amalga V3</td>
+                    <td>The source string added to data sent to <MadCap:variable name="BrandingHSG.HealthVault" />.</td>
+                </tr>
+                <tr>
+                    <td>MaxBlobSize</td>
+                    <td>Int32</td>
+                    <td>10</td>
+                    <td>
+                        <p>The maximum blob size, in megabytes, that the <MadCap:variable name="BrandingHSG.HealthVault" /> Connector will accept and send to <MadCap:variable name="BrandingHSG.HealthVault" />.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SaveItemXmlToDataLog</td>
+                    <td>Boolean</td>
+                    <td>true</td>
+                    <td>
+                        <p>Save ItemXml value sent to HealthVault in DataLog</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>UseProxyServer</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>Determines whether or not outbound calls to the <MadCap:variable name="BrandingHSG.HealthVault" /> service will be sent using a proxy server.</td>
+                </tr>
+                <tr>
+                    <td>ProxyServerAddress</td>
+                    <td>String</td>
+                    <td>&#160;</td>
+                    <td>The URL of the proxy server that will be used for outbound calls to the <MadCap:variable name="BrandingHSG.HealthVault" /> service. If this value is empty, outbound calls will use the <MadCap:annotation MadCap:createDate="2011-11-09T22:11:42.9518193-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="DefaultWebProxy" MadCap:editor="v-wipete" MadCap:editDate="2011-11-09T22:11:47.6942801-08:00">default web proxy</MadCap:annotation>.</td>
+                </tr>
+                <tr>
+                    <td>UseDefaultNetworkCredential</td>
+                    <td>Boolean</td>
+                    <td>true</td>
+                    <td>Determines whether calls to the proxy server will use the <MadCap:annotation MadCap:createDate="2011-11-09T22:12:26.3203753-08:00" MadCap:creator="v-wipete" MadCap:initials="WRP" MadCap:comment="DefaultNetworkCredential" MadCap:editor="v-wipete" MadCap:editDate="2011-11-09T22:12:27.7555937-08:00">default network credential</MadCap:annotation> (<span class="InputText">true</span>), or a custom credential (<span class="InputText">false</span>).</td>
+                </tr>
+                <tr>
+                    <td>ProxyServerUsername</td>
+                    <td>String</td>
+                    <td>&#160;</td>
+                    <td>The username for the credential used with the proxy server. Only used if the <span class="Label">UseDefaultNetworkCredential </span>setting is <span class="InputText">false</span>.</td>
+                </tr>
+                <tr>
+                    <td>ProxyServerPassword</td>
+                    <td>String</td>
+                    <td>&#160;</td>
+                    <td>The password for the credential used with the proxy server. Only used if the <span class="Label">UseDefaultNetworkCredential </span>setting is <span class="InputText">false</span>.</td>
+                </tr>
+                <tr>
+                    <td>ProxyServerDomain</td>
+                    <td>String</td>
+                    <td>&#160;</td>
+                    <td>The domain for the credential used with the proxy server. Only used if the <span class="Label">UseDefaultNetworkCredential </span>setting is <span class="InputText">false</span>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information on user settings, see <a href="AF_Con_Configuration1.htm">Application configuration and user settings</a>.</p>
+        <p class="SeeAlso">See also</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">Tasks [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead" MadCap:conditions="Production.doNOTbuild">References [Optional]</p>
+        <p MadCap:conditions="Production.doNOTbuild">[Cross reference or hyperlink if external resource]</p>
+        <p class="SeeAlsoSubHead">Concepts</p>
+        <p><a href="AF_Con_Configuration1.htm">Application configuration and user settings</a>
+        </p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234041">Getting Started with the <MadCap:variable name="BrandingHSG.HealthVault"></MadCap:variable> SDK</a>
+        </p>
+        <p class="SeeAlsoSubHead">Other resources</p>
+        <p><a href="http://go.microsoft.com/fwlink?LinkId=234041">Download the <MadCap:variable name="BrandingHSG.HealthVault" /> SDK</a>
+        </p>
+    </body>
+</html>

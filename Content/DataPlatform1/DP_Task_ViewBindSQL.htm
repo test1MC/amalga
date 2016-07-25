@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="901" MadCap:lastWidth="608" MadCap:fileTags="TopicOwner.v-padenc,TopicType.Procedure,ReleaseTarget.TAP,Personas.All,Status.60 - Revising" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>View the binding SQL statement for an entity</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p class="abstract">This topic describes how to view the binding SQL statement for an entity.                       <![CDATA[   ]]></p>
+        <p>
+            <MadCap:keyword term="entity binding" />You can view the binding SQL&#160;statement (TRANSACT-SQL SELECT statement) that is used to select data for an entity. </p>
+        <p>
+            <MadCap:annotation MadCap:createDate="2012-03-01T10:38:32.2396056-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to mark topic complete once Dongbai reviews added example. \r\n\r\n3/1 sent added example to Dongbai for review, with question on whether he wants to provide an exmaple of a binding SQL statement that contains multiple binding sources" MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T11:31:44.2565322-08:00">Example </MadCap:annotation>of a simple binding SQL&#160;statement selecting patient data for an entity:&#160;</p><pre xml:space="preserve">
+      SELECT [EID]
+         ,[FName]
+         ,[LName]
+         ,[SSN]
+         ,[DOB]
+         ,[DOB_o]
+      FROM [AzADT].[dbo].[HIS601]</pre>
+        <p>In <MadCap:variable name="FeatureName.Management Console second use" />, the TRANSACT-SQL SELECT statement is generated using each binding source in sequence,  with a <MadCap:annotation MadCap:createDate="2012-03-01T10:39:22.3332512-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="possible gap: \r\n- show example of a binding SQL statement containing multiple binding sources " MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T10:39:41.9497172-08:00">UNION statement </MadCap:annotation>to combine all binding sources for the entity. </p>
+        <p class="note">
+            <MadCap:snippetText src="../Resources/Snippets/info-rolereq4proc.flsnp" />
+            <br /><span class="Label">Required Role:</span>&#160;AmalgaAppAdmin, AmalgaDataAdmin, or AmalgaSysAdmin </p>
+        <p class="LabelforProcedures">To view the binding SQL&#160;statement for an entity</p>
+        <ol>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-open-MC-EM.flsnp" />
+                </p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/info-open-MC-EM.flsnp" />
+                </p>
+            </li>
+            <li>
+                <MadCap:snippetText src="../Serviceability/Snippets/procst-entity-expand.flsnp">
+                </MadCap:snippetText>
+            </li>
+            <li>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procst-click-entitybinding.flsnp">
+                    </MadCap:snippetText> <![CDATA[ ]]></p>
+                <p>
+                    <MadCap:snippetText src="../Serviceability/Snippets/procre-click-entitybinding.flsnp">
+                    </MadCap:snippetText>
+                </p>
+            </li>
+            <li>
+                <p>Click the <MadCap:variable name="UI-Labels.Binding SQL" /> pane. </p>
+                <p>The <MadCap:variable name="UI-Labels.Binding SQL" /> pane expands to show the TRANSACT-SQL SELECT statement used to select data for the current entity. </p>
+            </li>
+        </ol>
+        <p class="SeeAlso" MadCap:conditions="">See also</p>
+        <p class="SeeAlsoSubHead">Tasks</p>
+        <p><a href="../MasterTOCLandingPages(BZ)/V3_LND_EntityBindingMgmt.htm">Entity binding configuration tasks</a>
+        </p>
+        <p class="SeeAlsoSubHead">References</p>
+        <p>
+            <MadCap:xref href="../Serviceability/Management Console/Entity Management/SERV_VREF_EntityBinding.htm" target="" title="" alt="">Entity binding pane</MadCap:xref>
+        </p>
+        <p class="SeeAlsoSubHead">
+            <MadCap:annotation MadCap:createDate="2011-12-20T10:18:55.3843190-08:00" MadCap:creator="v-padenc" MadCap:initials="v-padenc" MadCap:comment="PD to add xrefs: \r\n- entities (Dennis)\r\n- entity registry (Dennis)\r\n- virtual schema (Dennis)\r\n- materialization (Chris); if applicable with ctp2" MadCap:editor="v-padenc" MadCap:editDate="2012-03-01T09:51:25.1611778-08:00">Concepts </MadCap:annotation>
+        </p>
+        <p>
+            <MadCap:xref href="DP_Ovw_ManageEntityBinding.htm" target="" title="" alt="">Entity binding overview</MadCap:xref>
+        </p>
+    </body>
+</html>

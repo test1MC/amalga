@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1123" MadCap:lastWidth="2480" MadCap:fileTags="ReleaseTarget.TAP,TopicOwner.v-ccole,Personas.Mahesh: DI Specialist,Status.70 - Complete" MadCap:conditions="Region.US">
+    <head>
+        <link href="../../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>AckCapture element</h1>
+        <p class="PersonaAll">&#160;</p>
+        <p>
+            <MadCap:keyword term="AckCapture element" />Declares a regular expression capture string for the different elements within HL7 messages.</p>
+        <h4>Syntax</h4><pre xml:space="preserve"><p class="Syntax"><span style="font-size: 10pt;">[ &lt;Setting Name="FeedConfigurationXml" Type="System.String"&gt;
+    &lt;DefaultValue&gt;
+       &lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          &lt;Feeds&gt;
+             &lt;Feed Name="<i>String</i>"&gt;
+                &lt;ReceiveAdapter&gt; Name="<i>String</i>"<b>
+                   &lt;AckCapture&gt;...&lt;/AckCapture&gt;</b>
+                &lt;/ReceiveAdapter&gt;
+             &lt;/Feed&gt;	
+          &lt;/Feeds&gt;
+       ]]&gt;
+    &lt;/DefaultValue&gt;
+ &lt;/Setting&gt; ]</span></p></pre>
+        <h4>Element characteristics</h4>
+        <table style="width: 100%;">
+            <col style="width: 169px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Data type and length</td>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <td>Default value</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Cardinality</td>
+                    <td>0-1: Optional element that can occur once and only once.<br /></td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Element relationships</h4>
+        <table style="width: 100%;">
+            <col style="width: 168px;">
+            </col>
+            <col>
+            </col>
+            <tbody>
+                <tr>
+                    <th>Relationship</th>
+                    <th>Element</th>
+                </tr>
+                <tr>
+                    <td>Parent elements</td>
+                    <td><a href="DI_XML_Manifest_ReceiveAdapter.htm">ReceiveAdapter</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Child elements</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Remarks</h4>
+        <p>The <span class="MarkupLanguageElements">AckCapture</span> element defines the regular expression capture string used by the application instance to acquire the different HL7 elements within each message. HL7 elements appear as substrings between  separator characters (“|”). For more information about defining the capture string of a regular expression, see <a href="http://go.microsoft.com/fwlink?LinkID=230529">Regular Expression Classes</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> at <a href="http://go.microsoft.com/fwlink?LinkID=230529">http://go.microsoft.com/fwlink/?LinkID=230529</a></MadCap:conditionalText> or <a href="http://go.microsoft.com/fwlink?LinkID=230532">How to match a pattern by using regular expressions and Visual C#</a><MadCap:conditionalText MadCap:conditions="Production.PrintOnly"> at <a href="http://go.microsoft.com/fwlink?LinkID=230532">http://go.microsoft.com/fwlink/?LinkID=230532</a></MadCap:conditionalText>.</p>
+        <p>You can use the <span class="MarkupLanguageElements">AckCapture</span> element to configure an instance of the <MadCap:variable name="Applications.Feed Acquisition application" /> when the message transport format is MLLP. Before applying this element tag, set the <span class="MarkupLanguageElements">Name</span> attribute value of the <MadCap:xref href="DI_XML_Manifest_ReceiveAdapter.htm" target="" title="" alt="">ReceiveAdapter element</MadCap:xref>  to "Microsoft.Amalga.Pipeline.AcquisitionAdapters.MLLPServer". Do not declare this element in the manifests of other pipeline applications.</p>
+        <p class="Label">Example</p>
+        <p>In the following example,  <span class="code">(?&amp;lt;tok0&amp;gt;[^|]*)</span> defines a capture element of <span class="code">(?&lt;tok0&gt;[^|]*)</span>. If the incoming message is “MSH|...”, the application sets the value of &lt;tok0&gt;  equal to MSH.</p>
+        <p class="code">&lt;ackcapture&gt;<br />(?&amp;lt;tok0&amp;gt;[^|]*)\|(?&amp;lt;tok1&amp;gt;[^|]*)\|(?&amp;lt;tok2&amp;gt;[^|]*)\|(?&amp;lt;tok3&amp;gt;[^|]*)\|(?&amp;lt;tok4&amp;gt;[^|]*)\|(?&amp;lt;tok5&amp;gt;[^|]*)\|(?&amp;lt;tok6&amp;gt;[^|]*)\|(?&amp;lt;tok7&amp;gt;[^|]*)\|(?&amp;lt;tok8&amp;gt;[^|]*)\|(?&amp;lt;tok9&amp;gt;[^|]*)\|(?&amp;lt;tok10&amp;gt;[^|]*)\|(?&amp;lt;tok11&amp;gt;[^|]*)\|(?&amp;lt;tok12&amp;gt;[^|]*)\|(?&amp;lt;tok13&amp;gt;[^|]*)<br />&lt;/ackcapture&gt;
+</p>
+        <p class="SeeAlso">See also</p>
+        <p><a href="DI_Intro_FeedConfigurationXML.htm">FeedConfigurationXML setting</a>
+        </p>
+        <p><a href="DI_XML_Manifest_AckFormular.htm">AckFormular element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feed.htm">Feed element</a>
+        </p>
+        <p><a href="DI_XML_Manifest_Feeds.htm">Feeds element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_DefaultValue.htm">DefaultValue element</a>
+        </p>
+        <p><a href="../../Amalga_PlatformSDK/DeploymentManifest/SDK_XML_Manifest_Setting.htm">Setting element</a>
+        </p>
+    </body>
+</html>

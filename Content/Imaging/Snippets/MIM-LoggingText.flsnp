@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="311" MadCap:lastWidth="637" MadCap:conditions="Features.Imaging" MadCap:fileTags="EditingTags.7 - Editing issues resolved,TopicOwner.v-mattbr,Status.60 - Revising,ReleaseTarget.TAP">
+    <head>
+    </head>
+    <body>
+        <p>The logging engine consists of two parts:</p>
+        <ul>
+            <li><span class="Label"><MadCap:variable name="BrandingHSG.Amalga Short" /> Logging API for <MadCap:variable name="BrandingHSG.Amalga Short" /> hosted applications</span>
+                <p>The API is included within the <MadCap:variable name="BrandingHSG.Amalga Short" /> Application Hosting Runtime. Hosted applications use the API to log messages to the logging system. The API, in turn, posts the messages to the local server’s Event Tracing for Doors (ETW) services. ETW will alert the <MadCap:variable name="BrandingHSG.Amalga Short" /> Logging Listener when ETW has received messages to be logged.</p>
+            </li>
+            <li><span class="Label">The <MadCap:variable name="BrandingHSG.Amalga Short" /> Logging Listener for Event Tracing for Doors</span>
+                <p>The ETW listener is notified by ETW when there are messages in the ETW queue awaiting retrieval. The Listener will pull messages from ETW and post them to the <MadCap:variable name="BrandingHSG.Amalga Short" /> Fabric Services SQL Server database.</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="2432" MadCap:lastWidth="568" MadCap:conditions="Region.US">
+    <head>
+        <link href="../Resources/Stylesheets/AmalgaMain.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Installing <MadCap:variable name="BrandingHSG.AmalgaV3 second use" /></h1>
+        <p class="note">Complete the preparation steps for 'All Servers', 'Platform', 'Database', and 'Application' before attempting the following steps.</p>
+        <p class="note">For a full list of command arguments see <MadCap:xref href="CTP2 - 08a Setup utility.htm" target="" title="" alt="">Setup  utility reference</MadCap:xref>.</p>
+        <p>&#160;</p>
+        <h2>On the Platform Host</h2>
+        <h3>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> Platform Services</h3>
+        <ol>
+            <li>Open a Doors Command prompt with Administrator permissions</li>
+            <li>Navigate to the AmalgaInstallationFiles folder you created earlier</li>
+            <li>Navigate to the 'Platform' folder (<span class="Label">EXAMPLE</span>. <span class="InputText">c:\users\myuser\desktop\AmalgaInstallationFiles\Platform</span>)</li>
+            <li>Type the following command at the prompt: <br /><code>Setup.exe /Feature=PlatformServices /Install /LogicalHostName=&lt;NameofPlatormLogicalHost&gt; /SystemDBServerInstance=&lt;NameofDatabaseLogicalHost&gt; /PlatformClusterName=&lt;FullyQualifiedDomainNameofPlatformHost&gt; /PlatformSSLThumbPrint=&lt;ThumbPrintofSSLCertificate&gt; /LogicalHostType=NONE /eula accept</code></li>
+        </ol>
+        <p class="Syntax"><span class="Label">EXAMPLE</span>: Setup.exe /Feature=PlatformServices /Install /LogicalHostName=AmalgaPlatform /SystemDBServerInstance=AmalgaDatabase /PlatformClusterName=AmalgaPlatform.ContosoHospital.com /PlatformSSLThumbPrint=a12b3c4e5f6a7b8c9e0f1a2b3c4e5f6a7b8c9dff /LogicalHostType=NONE /eula accept</p>
+        <h3>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.Management Console second use" /></h3>
+        <ol>
+            <li>Open a Doors Command prompt with Administrator permissions</li>
+            <li>Navigate to the AmalgaInstallationFiles folder you created earlier</li>
+            <li>Navigate to the 'Platform' folder (<span class="Label">EXAMPLE</span>. <span class="InputText">c:\users\myuser\desktop\AmalgaInstallationFiles\Platform</span>)</li>
+            <li>Type the following command at the prompt: <br /><span class="InputText">setup.exe /Feature=ManagementConsole /Install /PlatformClusterName=&lt;FullyQualifiedDomainNameofPlatformCluster&gt;  /LogicalHostName=&lt;NameofPlatformLogicalHost&gt; /AdminWebsiteSSLThumbprint=&lt;ThumbPrintofSSLCertificate&gt; /AdminWebsiteClusterName=&lt;FullyQualifiedDomainNameofPlatformHost&gt; /eula accept</span></li>
+        </ol>
+        <p class="Syntax"><span class="Label">EXAMPLE</span>: setup.exe /Feature=ManagementConsole /Install /PlatformClusterName=AmalgaPlatform.ContosoHospital.com /LogicalHostName=AmalgaPlatform /AdminWebsiteSSLThumbprint=a12b3c4e5f6a7b8c9e0f1a2b3c4e5f6a7b8c9dff /AdminWebsiteClusterName=AmalgaPlatform.ContosoHospital.com /eula accept</p>
+        <h3>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> <![CDATA[ ]]><MadCap:variable name="FeatureName.Data pipeline sentence case" /> Storage</h3>
+        <ol>
+            <li>Open a Doors Command prompt with Administrator permissions</li>
+            <li>Navigate to the AmalgaInstallationFiles folder you created earlier</li>
+            <li>Navigate to the 'Platform' folder (<span class="Label">EXAMPLE</span>. <span class="InputText">c:\users\myuser\desktop\AmalgaInstallationFiles\Platform</span>)</li>
+            <li>Type the following command at the prompt: <br /><span class="InputText">Setup.exe /Feature=DataPipelineStorage /Install /TerminologyDBName=&lt;NameofTerminologyDatabase&gt; /ClinicalDataDBServerInstance=&lt;NameofDatabaseServer&gt; /MessageQueueDBServerInstance=&lt;NameofDatabaseServer&gt; /eula accept</span></li>
+        </ol>
+        <p class="Syntax"><span class="Label">EXAMPLE:</span> Setup.exe /Feature=DataPipelineStorage /Install /TerminologyDBName=HLI /ClinicalDataDBServerInstance=AmalgaDatabase.ContosoHospital.com /MessageQueueDBServerInstance=AmalgaDatabase.ContosoHospital.com /eula accept</p>
+        <h3>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> Feature Application Services</h3>
+        <ol>
+            <li>Open a Doors Command prompt with Administrator permissions</li>
+            <li>Navigate to the AmalgaInstallationFiles folder you created earlier</li>
+            <li>Navigate to the 'Platform' folder (<span class="Label">EXAMPLE</span>. <span class="InputText">c:\users\myuser\desktop\AmalgaInstallationFiles\Platform</span>)</li>
+            <li>Type the following command at the prompt: <br /><span class="InputText">Setup.exe /Feature=ApplicationServices /Install /LogicalHostName=&lt;NameofPlatformLogicalHost&gt; /LogicalHostType=None /ApplicationSSLThumbPrint=&lt;ThumbPrintofSSLCertificate&gt; /PlatformClusterName=&lt;FullyQualifiedDomainNameofPlatformClusterHost&gt; /ApplicationClusterName=&lt;FullyQualifiedDomainNameofPlatformClusterHost&gt; /eula accept</span></li>
+        </ol>
+        <p class="Syntax"><span class="Label">EXAMPLE:</span> Setup.exe /Feature=ApplicationServices /Install /LogicalHostName=AmalgaDatabase /LogicalHostType=None /ApplicationSSLThumbPrint=a12b3c4e5f6a7b8c9e0f1a2b3c4e5f6a7b8c9dff /PlatformClusterName=AmalgaDatabase.ContosoHospital.com /ApplicationClusterName=AmalgaPlatform.ContosoHospital.com /eula accept</p>
+        <h2>On the Application Host</h2>
+        <h3>Install <MadCap:variable name="BrandingHSG.Amalga Short" /> Application Services</h3>
+        <ol>
+            <li>Open a Doors Command prompt with Administrator permissions</li>
+            <li>Navigate to the AmalgaInstallationFiles folder you created earlier</li>
+            <li>Navigate to the 'Platform' folder (<span class="Label">EXAMPLE</span>. <span class="InputText">c:\users\myuser\desktop\AmalgaInstallationFiles\Platform</span>)</li>
+            <li>Type the following command at the prompt: <br /><span class="InputText">Setup.exe /Feature=ApplicationServices /Install /LogicalHostName=&lt;NameofAmalgaApplicationHost&gt; /LogicalHostType=None /ApplicationSSLThumbPrint=&lt;ThumbPrintofSSLCertificate&gt; /PlatformClusterName=&lt;FullyQualifiedDomainNameofPlatformHost&gt; /ApplicationClusterName=&lt;FullyQualifiedDomainNameofApplicationHost&gt; /eula accept</span></li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>
