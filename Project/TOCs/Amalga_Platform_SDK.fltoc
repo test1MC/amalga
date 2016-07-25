@@ -565,4 +565,34 @@
       ComputeToc="false"
       Title="[%=BrandingHSG.Amalga Short%] reference library" />
   </TocEntry>
+  <TocEntry
+    Title="Amalga_A">
+    <TocEntry
+      Title="Amalga_AB">
+      <TocEntry
+        Title="Amalga_TopicAB"
+        Link="/Content/Amalga_A/Amalga_AB/Amalga_TopicAB.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Amalga_Topic"
+      Link="/Content/Amalga_A/Amalga_Topic.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Amalga_Don">
+    <TocEntry
+      Title="Don">
+      <TocEntry
+        Title="Don_Level2">
+        <TocEntry
+          Title="Don_level3">
+          <TocEntry
+            Title="Don_sub"
+            Link="/Content/Amalga_Don/Don/Don_Level2/Don_level3/Don_sub.htm" />
+        </TocEntry>
+      </TocEntry>
+      <TocEntry
+        Title="Don_sub"
+        Link="/Content/Amalga_Don/Don/Don_sub.htm" />
+    </TocEntry>
+  </TocEntry>
 </CatapultToc>
